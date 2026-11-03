@@ -161,5 +161,5 @@ synced from the CDIF **metadataBuildingBlocks** source (see
 
 ## Development branch
 
-Active work for the 2026-06 review revision is on the `reviewRevision202606` branch. `main` reflects the prior release state. New changes should target the review branch; it is merged to main on release.
+Work happens on `main`: this repo is a draft, and the 2026-06 review branch (`reviewRevision202606`) has been merged into it. GitHub Pages serves `main`, so the HTML view and the w3id IRIs reflect whatever is merged there. New changes should be PRs against `main`.
 

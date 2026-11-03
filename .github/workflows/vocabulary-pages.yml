@@ -6,8 +6,8 @@
 #     the `check` job fails a PR whose generated files are stale.
 #   - the iSamples vocabulary tooling (isamplesorg/vocabularies, vocab2mdCacheV2.py) writes
 #     Quarto markdown from activityTypes.ttl and Quarto renders it to HTML. The `render` job
-#     commits that to vocabularies/docs/ on the release branch, because GitHub Pages serves
-#     that branch as it is; on a PR it only renders, and uploads the pages as an artifact.
+#     commits that to vocabularies/docs/ on main, because GitHub Pages serves
+#     main as it is; on a PR it only renders, and uploads the pages as an artifact.
 # w3id.org/cdif/provenance/activityType[/<concept>] redirects into these files by
 # content negotiation (HTML, Turtle, JSON-LD).
 #
@@ -25,7 +25,7 @@ on:
       - 'tools/buildVocabularyFiles.py'
       - '.github/workflows/vocabulary-pages.yml'
   push:
-    branches: [reviewRevision202606]
+    branches: [main]
     paths:
       - 'vocabularies/activityTypes.jsonld'
       - 'tools/buildVocabularyFiles.py'

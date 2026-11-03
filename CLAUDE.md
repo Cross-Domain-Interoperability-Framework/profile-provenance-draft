@@ -10,9 +10,10 @@ It is one of the `profile-*` release repos under `C:\GithubC\CDIF\`; the canonic
 
 ## Branches
 
-Work targets **`reviewRevision202606`**, not `main` — `main` is the prior release and the review
-branch is merged into it on release. (mBB's `sync_release_repos.py` docstring says release repos now
-use an `updates` branch; this repo has no such branch, so check what is checked out before syncing.)
+Work targets **`main`**: the repo is a draft, `reviewRevision202606` was merged into it (2026-10-28),
+and GitHub Pages serves `main`, so whatever lands there is what the w3id IRIs resolve to. Branch from
+`main` and PR into it. (mBB's `sync_release_repos.py` docstring says release repos now use an
+`updates` branch; this repo has no such branch, so check what is checked out before syncing.)
 
 ## What is generated, and where to fix it
 
@@ -26,7 +27,7 @@ Most of the root is NOT authored here. Edit the source, never the copy:
 | `FrameAndValidate.py` | `Cross-Domain-Interoperability-Framework/validation` `tools/FrameAndValidate.py` | `python tools/sync_frameandvalidate.py --apply` in that repo. Carries a DO-NOT-EDIT banner; CI (`check-frameandvalidate.yml`) fails on any body drift from the normative copy |
 | `examples/*.cdifprov.json` (Galaxy, Bennu) | `examples/ROCRATE/*` | the converters in `tools/` — fix the converter and regenerate, not the output |
 | `vocabularies/activityTypes.ttl`, `vocabularies/activityType/*.{jsonld,ttl}` | `vocabularies/activityTypes.jsonld` | `python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld`, committed with the source change; CI (`vocabulary-pages.yml`) fails a PR whose copies are stale |
-| `vocabularies/docs/` | `vocabularies/activityTypes.ttl` | the iSamples `vocab2mdCacheV2.py` markdown writer plus Quarto, run and committed by `vocabulary-pages.yml` on push to `reviewRevision202606`; never by hand |
+| `vocabularies/docs/` | `vocabularies/activityTypes.ttl` | the iSamples `vocab2mdCacheV2.py` markdown writer plus Quarto, run and committed by `vocabulary-pages.yml` on push to `main`; never by hand |
 
 Authored here: `cdifProvenance-frame.jsonld`, the converters in `tools/`, `ODIS_provExampleJulesVerne.json`,
 the docs (`README.md`, `ProvenanceOptions.md`, `agents.md`, `PROV_Classes.ttl`), and
