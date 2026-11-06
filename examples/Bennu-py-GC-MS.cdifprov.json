@@ -6,7 +6,7 @@
     "dcterms": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#"
   },
-  "@id": "#dataset",
+  "@id": "#dataset354",
   "@type": [
     "schema:Dataset"
   ],
@@ -14,8 +14,7 @@
   "schema:dateModified": "2023-11-21",
   "schema:subjectOf": {
     "@type": [
-      "schema:Dataset",
-      "dcat:CatalogRecord"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       {
@@ -24,7 +23,7 @@
     ],
     "@id": "#metadata",
     "schema:about": {
-      "@id": "#dataset"
+      "@id": "#dataset354"
     },
     "dcterms:conformsTo": [
       {
@@ -41,24 +40,19 @@
       "@id": "#SamplePreparation_1",
       "schema:name": "Sample preparation — load bulk sample into quartz tube",
       "schema:description": "Approximately 1 mg of bulk aggregate from the TAGSAM collection device was loaded and weighed inside a quartz tube, which was then placed into the pyrolysis oven interfaced with the GC-MS system.",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
       "schema:instrument": {
         "@type": [
-          "schema:Thing",
-          "schema:SoftwareApplication"
+          "schema:Thing"
         ],
         "@id": "#PyrolysisOven",
         "schema:name": "Pyrolysis Oven",
         "schema:description": "Pyrolysis front-end interface coupled to the GC-MS system. Flash heats samples at 10°C/ms to target temperatures up to 1300°C. For this analysis, target temperature was approximately 600°C."
       },
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
-            "prov:Entity",
             "schema:Thing"
           ],
           "@id": "#OREX-803003-0",
@@ -90,9 +84,6 @@
       "@id": "#Pyrolysis_1",
       "schema:name": "Flash pyrolysis of Bennu sample at ~600°C",
       "schema:description": "The prepared sample was flash-heated at 10°C/ms to approximately 600°C. Thermally extracted volatiles were carried in a helium stream along a heated transfer line (300°C) into the GC-MS system. Pyrolysis breaks macromolecular material into discrete smaller components. Note: bulk samples may contain soluble organic matter (SOM) that can produce thermal degradation products and rearrangement reactions, making it difficult to distinguish IOM-derived vs. SOM-derived compounds.",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
       "schema:instrument": {
@@ -122,20 +113,24 @@
       "@id": "#GCSeparation_1",
       "schema:name": "Gas chromatographic separation on Rtx-5ms column",
       "schema:description": "Pyrolysis products separated on an Rtx-5ms nonpolar fused silica capillary column (30 m × 0.250 mm × 0.50 µm, with 5 m guard). Split injection (10:1, 300°C inlet). Oven program: 40°C hold → ramp at ~3.5°C/min to 300°C → hold at 300°C. Total run 87.79 min. Helium carrier at 1.500 mL/min constant flow.",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
-      "schema:instrument": {
-        "@type": [
-          "schema:Thing",
-          "schema:SoftwareApplication"
-        ],
-        "@id": "#GasChromatograph",
-        "schema:name": "Gas Chromatograph",
-        "schema:description": "GC fitted with Rtx-5ms (5% diphenyl / 95% dimethyl polysiloxane) fused silica capillary column, 30 m × 0.250 mm × 0.50 µm film thickness, with 5 m × 0.250 mm guard column. Front inlet operated in split mode (10:1 ratio, 15.0 mL/min split flow) at 300°C. Helium carrier gas at 1.500 mL/min constant flow. Oven program: 40°C (hold) → 300°C (~3.5°C/min) → 300°C (hold). Total run time 87.79 minutes."
-      },
+      "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:Thing",
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "@id": "#GasChromatograph",
+              "schema:name": "Gas Chromatograph",
+              "schema:description": "GC fitted with Rtx-5ms (5% diphenyl / 95% dimethyl polysiloxane) fused silica capillary column, 30 m × 0.250 mm × 0.50 µm film thickness, with 5 m × 0.250 mm guard column. Front inlet operated in split mode (10:1 ratio, 15.0 mL/min split flow) at 300°C. Helium carrier gas at 1.500 mL/min constant flow. Oven program: 40°C (hold) → 300°C (~3.5°C/min) → 300°C (hold). Total run time 87.79 minutes."
+            }
+          ]
+        }
+      ],
       "schema:object": [
         {
           "@id": "#PyrolysisProducts"
@@ -160,21 +155,25 @@
       "@id": "#MSDetection_FullScan_1",
       "schema:name": "MS detection — Full Scan mode (m/z 50–500)",
       "schema:description": "Continuous full scan acquisition across m/z 50–500 in positive EI mode for the entire 87.79-minute run (scan time 0.100 s). Provides comprehensive mass spectral data for compound identification via fragmentation pattern matching against spectral libraries and comparison with analytical reference standards. Ion source and transfer line at 300°C.",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
-      "schema:instrument": {
-        "@type": [
-          "schema:Thing",
-          "schema:SoftwareApplication"
-        ],
-        "@id": "#TSQ_MassSpectrometer",
-        "schema:name": "Thermo Scientific TSQ Triple-Quadrupole Mass Spectrometer",
-        "schema:description": "TSQ triple-quadrupole MS operated in electron ionization (EI) mode, positive polarity. MS transfer line 300°C, ion source 300°C. Detector gain 100,000. Operated in simultaneous full scan and timed SRM/MRM acquisition modes.",
-        "schema:url": "https://www.thermofisher.com/"
-      },
+      "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:Thing",
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "@id": "#TSQ_MassSpectrometer",
+              "schema:name": "Thermo Scientific TSQ Triple-Quadrupole Mass Spectrometer",
+              "schema:description": "TSQ triple-quadrupole MS operated in electron ionization (EI) mode, positive polarity. MS transfer line 300°C, ion source 300°C. Detector gain 100,000. Operated in simultaneous full scan and timed SRM/MRM acquisition modes.",
+              "schema:url": "https://www.thermofisher.com/"
+            }
+          ]
+        }
+      ],
       "schema:object": [
         {
           "@id": "#SeparatedEluent"
@@ -203,9 +202,6 @@
       "@id": "#MSDetection_MRM_1",
       "schema:name": "MS detection — Timed SRM/MRM mode (38 target compounds)",
       "schema:description": "Simultaneous timed Selected Reaction Monitoring targeting 38 compounds (aromatic hydrocarbons, PAHs, sulfur-bearing organics, oxygen/nitrogen heterocycles) via 2–3 diagnostic precursor→product ion transitions per compound. Minimum dwell time 10.0 ms, desired window 0.6 min, 6 scans per peak. Precursor and product resolution both Normal. Dramatically increased detection sensitivity versus full scan, enabling detection of low-abundance organics and more accurate quantification.",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
       "schema:instrument": {

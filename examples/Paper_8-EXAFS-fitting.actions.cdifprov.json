@@ -39,23 +39,38 @@
       ],
       "@id": "#5b1292dc-6021-45f6-8f81-40d977069fc9",
       "schema:name": "Workflow to reproduce paper 8 EXAFS fitting",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-09-27T15:27:15.076443",
       "schema:endTime": "2024-09-27T15:27:15.076453",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:additionalType": [
-          "bios:ComputationalWorkflow"
-        ],
-        "schema:name": "Workflow to reproduce paper 8 EXAFS fitting",
-        "@id": "workflows/0a07785dca20180d.gxwf.yml"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": {
+            "@type": [
+              "schema:SoftwareApplication"
+            ],
+            "schema:name": "Galaxy workflow engine",
+            "schema:version": "24.1"
+          }
+        },
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:additionalType": [
+                {
+                  "@id": "bios:ComputationalWorkflow"
+                }
+              ],
+              "schema:name": "Workflow to reproduce paper 8 EXAFS fitting",
+              "@id": "workflows/0a07785dca20180d.gxwf.yml"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -91,15 +106,6 @@
           "@id": "datasets/Pd_cif_file.cif_b0b2392468d82f00.cif",
           "schema:name": "Pd_cif_file.cif",
           "schema:encodingFormat": "text/plain"
-        },
-        {
-          "bios:computationalTool": {
-            "@type": [
-              "schema:SoftwareApplication"
-            ],
-            "schema:name": "Galaxy workflow engine",
-            "schema:version": "24.1"
-          }
         }
       ]
     },
@@ -110,9 +116,6 @@
       ],
       "@id": "#step-1-4",
       "schema:name": "4",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 1,
       "prov:wasInfluencedBy": {
@@ -136,9 +139,6 @@
       ],
       "@id": "#step-2-5",
       "schema:name": "5",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 2,
       "prov:wasInfluencedBy": {
@@ -162,9 +162,6 @@
       ],
       "@id": "#step-3-6",
       "schema:name": "6",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 3,
       "prov:wasInfluencedBy": {
@@ -188,9 +185,6 @@
       ],
       "@id": "#step-4-7",
       "schema:name": "7",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 4,
       "prov:wasInfluencedBy": {
@@ -214,9 +208,6 @@
       ],
       "@id": "#step-5-8",
       "schema:name": "8",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 5,
       "prov:wasInfluencedBy": {
@@ -272,9 +263,6 @@
       ],
       "@id": "#step-6-9",
       "schema:name": "9",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 6,
       "prov:wasInfluencedBy": {
@@ -330,9 +318,6 @@
       ],
       "@id": "#step-7-10",
       "schema:name": "10",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 7,
       "prov:wasInfluencedBy": {

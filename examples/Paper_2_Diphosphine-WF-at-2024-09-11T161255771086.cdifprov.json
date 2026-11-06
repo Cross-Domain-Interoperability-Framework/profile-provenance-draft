@@ -39,9 +39,6 @@
       ],
       "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339",
       "schema:name": "Paper_2_Diphosphine-WF",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-09-11T16:11:48.596770",
       "schema:endTime": "2024-09-11T16:11:48.628535",
@@ -50,7 +47,9 @@
           "schema:HowTo"
         ],
         "schema:additionalType": [
-          "bios:ComputationalWorkflow"
+          {
+            "@id": "bios:ComputationalWorkflow"
+          }
         ],
         "schema:name": "Paper_2_Diphosphine-WF workflow",
         "@id": "workflows/1967248db44ca916.gxwf.yml",

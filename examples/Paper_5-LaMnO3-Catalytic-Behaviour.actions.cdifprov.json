@@ -39,23 +39,38 @@
       ],
       "@id": "#0b43a0c7-a2a8-4c17-98ac-da8d89c9bb16",
       "schema:name": "LaMnO3 Catalytic Behaviour",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-30T14:02:40.265013",
       "schema:endTime": "2024-10-30T14:02:40.265017",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:additionalType": [
-          "bios:ComputationalWorkflow"
-        ],
-        "schema:name": "LaMnO3 Catalytic Behaviour",
-        "@id": "workflows/f06ca0d3d213b10e.gxwf.yml"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": {
+            "@type": [
+              "schema:SoftwareApplication"
+            ],
+            "schema:name": "Galaxy workflow engine",
+            "schema:version": "24.1"
+          }
+        },
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:additionalType": [
+                {
+                  "@id": "bios:ComputationalWorkflow"
+                }
+              ],
+              "schema:name": "LaMnO3 Catalytic Behaviour",
+              "@id": "workflows/f06ca0d3d213b10e.gxwf.yml"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -91,15 +106,6 @@
           "@id": "datasets/1667441.cif_7be2e841c9ddb917.cif",
           "schema:name": "1667441.cif",
           "schema:encodingFormat": "text/plain"
-        },
-        {
-          "bios:computationalTool": {
-            "@type": [
-              "schema:SoftwareApplication"
-            ],
-            "schema:name": "Galaxy workflow engine",
-            "schema:version": "24.1"
-          }
         }
       ]
     },
@@ -110,9 +116,6 @@
       ],
       "@id": "#step-1-4",
       "schema:name": "4",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 1,
       "prov:wasInfluencedBy": {
@@ -136,9 +139,6 @@
       ],
       "@id": "#step-2-5",
       "schema:name": "5",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 2,
       "prov:wasInfluencedBy": {
@@ -162,9 +162,6 @@
       ],
       "@id": "#step-3-6",
       "schema:name": "6",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 3,
       "prov:wasInfluencedBy": {
@@ -188,9 +185,6 @@
       ],
       "@id": "#step-4-7",
       "schema:name": "7",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 4,
       "prov:wasInfluencedBy": {
@@ -214,9 +208,6 @@
       ],
       "@id": "#step-5-8",
       "schema:name": "8",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 5,
       "prov:wasInfluencedBy": {
@@ -240,9 +231,6 @@
       ],
       "@id": "#step-6-9",
       "schema:name": "9",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 6,
       "prov:wasInfluencedBy": {
@@ -271,9 +259,6 @@
       ],
       "@id": "#step-7-10",
       "schema:name": "10",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 7,
       "prov:wasInfluencedBy": {
@@ -302,9 +287,6 @@
       ],
       "@id": "#step-8-11",
       "schema:name": "11",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 8,
       "prov:wasInfluencedBy": {
@@ -333,9 +315,6 @@
       ],
       "@id": "#step-9-12",
       "schema:name": "12",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 9,
       "prov:wasInfluencedBy": {
@@ -364,9 +343,6 @@
       ],
       "@id": "#step-10-13",
       "schema:name": "13",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 10,
       "prov:wasInfluencedBy": {
@@ -403,9 +379,6 @@
       ],
       "@id": "#step-11-14",
       "schema:name": "14",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 11,
       "prov:wasInfluencedBy": {
@@ -442,9 +415,6 @@
       ],
       "@id": "#step-12-15",
       "schema:name": "15",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 12,
       "prov:wasInfluencedBy": {
@@ -503,9 +473,6 @@
       ],
       "@id": "#step-13-16",
       "schema:name": "16",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:position": 13,
       "prov:wasInfluencedBy": {

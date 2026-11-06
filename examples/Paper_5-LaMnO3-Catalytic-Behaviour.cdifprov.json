@@ -39,9 +39,6 @@
       ],
       "@id": "#0b43a0c7-a2a8-4c17-98ac-da8d89c9bb16",
       "schema:name": "LaMnO3 Catalytic Behaviour",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-30T14:02:40.265013",
       "schema:endTime": "2024-10-30T14:02:40.265017",
@@ -50,7 +47,9 @@
           "schema:HowTo"
         ],
         "schema:additionalType": [
-          "bios:ComputationalWorkflow"
+          {
+            "@id": "bios:ComputationalWorkflow"
+          }
         ],
         "schema:name": "LaMnO3 Catalytic Behaviour workflow",
         "@id": "workflows/f06ca0d3d213b10e.gxwf.yml",
