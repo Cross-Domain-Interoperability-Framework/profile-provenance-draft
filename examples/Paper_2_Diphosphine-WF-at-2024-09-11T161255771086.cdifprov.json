@@ -14,8 +14,7 @@
   "schema:dateModified": "2024-09-11",
   "schema:subjectOf": {
     "@type": [
-      "schema:Dataset",
-      "dcat:CatalogRecord"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       {
