@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "ex": "https://example.org/cdif-prov/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov:generatedAtTime": {"@type": "xsd:dateTime"},
+    "prov:startedAtTime": {"@type": "xsd:dateTime"},
+    "prov:endedAtTime": {"@type": "xsd:dateTime"},
+    "prov:atTime": {"@type": "xsd:dateTime"}
+  },
+  "@id": "ex:derivedData01",
+  "@type": [
+    "prov:Entity",
+    "ex:DerivedData"
+  ],
+"prov:wasGeneratedBy":{
+    "@id": "ex:derivation01",
+    "@type": [
+      "prov:Activity",
+      "ex:Derivation"
+    ],
+    "prov:startedAtTime":  "2026-11-05T10:23:14Z",
+    "prov:endedAtTime":  "2026-11-05T10:23:18Z",
+    "prov:used":
+    [
+    {
+          "@id": "ex:derivationSpec01",
+          "@type": [
+            "prov:Entity",
+            "prov:Plan",
+            "ex:DerivationSpecification"
+          ]
+          },
+     {
+        "prov:entity": {"@id": "ex:processedData01"},
+        "prov:hadRole": {"@id": "ex:InputData"}
+        ]
+      }
+    ],
+    "prov:qualifiedAssociation": {
+      "@type": "prov:Association",
+      "prov:agent": {"@id": "ex:software01"},
+      "prov:hadRole": {"@id": "ex:DerivationAgent"},
+      "prov:hadPlan": {"@id": "ex:derivationSpec01"}
+    }
+  },
+  "prov:wasDerivedFrom":{
+      "@id": "ex:processedData01",
+      "@type": [
+        "prov:Entity",
+        "ex:ProcessedData"
+      ],
+      "prov:wasGeneratedBy":{
+          "@id": "ex:processing01",
+          "@type": [
+            "prov:Activity",
+            "ex:Processing"
+          ],
+          "prov:startedAtTime": "2026-11-05T10:21:00Z",
+          "prov:endedAtTime":  "2026-11-05T10:21:04Z",
+          "prov:used":[{
+                "@id": "ex:sourceData01",
+                "@type": [
+                  "prov:Entity",
+                  "ex:SourceData"
+                ],
+                "prov:generatedAtTime": "2026-11-05T10:20:00Z" ,
+                "prov:hadRole": {"@id": "ex:InputData"}
+            },
+            {
+                "@id": "ex:processingSpec01",
+                "@type": [
+                  "prov:Entity",
+                  "prov:Plan",
+                  "ex:ProcessingSpecification"
+                ]
+            }
+         ]
+        }
+      },
+      "prov:qualifiedDerivation": {
+        "@type": "prov:Derivation",
+        "prov:entity": {"@id": "ex:sourceData01"},
+        "prov:hadActivity": {"@id": "ex:processing01"}
+      }
+    }
+    }
+
+  
+}
