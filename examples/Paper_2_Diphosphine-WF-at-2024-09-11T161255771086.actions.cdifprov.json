@@ -144,10 +144,6 @@
       "@id": "#step-1-7",
       "schema:name": "7",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 1,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:56.389335",
       "schema:endTime": "2024-09-11T16:13:07.296691",
       "prov:used": [
@@ -225,10 +221,6 @@
       "@id": "#step-2-8",
       "schema:name": "8",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 2,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:56.564968",
       "schema:endTime": "2024-09-11T16:13:07.333407",
       "prov:used": [
@@ -306,10 +298,6 @@
       "@id": "#step-3-9",
       "schema:name": "9",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 3,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:56.731893",
       "schema:endTime": "2024-09-11T16:13:07.150182",
       "prov:used": [
@@ -387,10 +375,6 @@
       "@id": "#step-4-10",
       "schema:name": "10",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 4,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:56.898903",
       "schema:endTime": "2024-09-11T16:13:06.812148",
       "prov:used": [
@@ -463,10 +447,6 @@
       "@id": "#step-5-11",
       "schema:name": "11",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 5,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:57.027034",
       "schema:endTime": "2024-09-11T16:13:05.268725",
       "prov:used": [
@@ -539,10 +519,6 @@
       "@id": "#step-6-12",
       "schema:name": "12",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 6,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:57.197674",
       "schema:endTime": "2024-09-11T16:13:09.247415",
       "prov:used": [
@@ -616,10 +592,6 @@
       "@id": "#step-7-13",
       "schema:name": "13",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 7,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:57.361991",
       "schema:endTime": "2024-09-11T16:13:08.186289",
       "prov:used": [
@@ -692,10 +664,6 @@
       "@id": "#step-8-14",
       "schema:name": "14",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 8,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:57.521719",
       "schema:endTime": "2024-09-11T16:13:15.496196",
       "prov:used": [
@@ -713,30 +681,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-4-10"
-        },
-        {
-          "@id": "#step-5-11"
-        },
-        {
-          "@id": "#step-1-7"
-        },
-        {
-          "@id": "#step-2-8"
-        },
-        {
-          "@id": "#step-3-9"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-7-athena_project_file",
+          "@id": "#step-1-7/output-athena_project_file",
           "schema:name": "7/athena_project_file"
         },
         {
@@ -744,7 +695,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-8-athena_project_file",
+          "@id": "#step-2-8/output-athena_project_file",
           "schema:name": "8/athena_project_file"
         },
         {
@@ -752,7 +703,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-9-athena_project_file",
+          "@id": "#step-3-9/output-athena_project_file",
           "schema:name": "9/athena_project_file"
         },
         {
@@ -760,7 +711,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-10-athena_project_file",
+          "@id": "#step-4-10/output-athena_project_file",
           "schema:name": "10/athena_project_file"
         },
         {
@@ -768,7 +719,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-11-athena_project_file",
+          "@id": "#step-5-11/output-athena_project_file",
           "schema:name": "11/athena_project_file"
         }
       ],
@@ -802,10 +753,6 @@
       "@id": "#step-9-15",
       "schema:name": "15",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 9,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:57.681972",
       "schema:endTime": "2024-09-11T16:13:18.630077",
       "prov:used": [
@@ -823,33 +770,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-4-10"
-        },
-        {
-          "@id": "#step-5-11"
-        },
-        {
-          "@id": "#step-6-12"
-        },
-        {
-          "@id": "#step-1-7"
-        },
-        {
-          "@id": "#step-2-8"
-        },
-        {
-          "@id": "#step-3-9"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-7-athena_project_file",
+          "@id": "#step-1-7/output-athena_project_file",
           "schema:name": "7/athena_project_file"
         },
         {
@@ -857,7 +784,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-8-athena_project_file",
+          "@id": "#step-2-8/output-athena_project_file",
           "schema:name": "8/athena_project_file"
         },
         {
@@ -865,7 +792,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-9-athena_project_file",
+          "@id": "#step-3-9/output-athena_project_file",
           "schema:name": "9/athena_project_file"
         },
         {
@@ -873,7 +800,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-10-athena_project_file",
+          "@id": "#step-4-10/output-athena_project_file",
           "schema:name": "10/athena_project_file"
         },
         {
@@ -881,7 +808,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-11-athena_project_file",
+          "@id": "#step-5-11/output-athena_project_file",
           "schema:name": "11/athena_project_file"
         },
         {
@@ -889,7 +816,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-12-athena_project_file",
+          "@id": "#step-6-12/output-athena_project_file",
           "schema:name": "12/athena_project_file"
         }
       ],
@@ -923,10 +850,6 @@
       "@id": "#step-10-16",
       "schema:name": "16",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 10,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:57.810520",
       "schema:endTime": "2024-09-11T16:13:18.652992",
       "prov:used": [
@@ -944,33 +867,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-4-10"
-        },
-        {
-          "@id": "#step-5-11"
-        },
-        {
-          "@id": "#step-6-12"
-        },
-        {
-          "@id": "#step-1-7"
-        },
-        {
-          "@id": "#step-2-8"
-        },
-        {
-          "@id": "#step-3-9"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-7-athena_project_file",
+          "@id": "#step-1-7/output-athena_project_file",
           "schema:name": "7/athena_project_file"
         },
         {
@@ -978,7 +881,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-8-athena_project_file",
+          "@id": "#step-2-8/output-athena_project_file",
           "schema:name": "8/athena_project_file"
         },
         {
@@ -986,7 +889,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-9-athena_project_file",
+          "@id": "#step-3-9/output-athena_project_file",
           "schema:name": "9/athena_project_file"
         },
         {
@@ -994,7 +897,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-10-athena_project_file",
+          "@id": "#step-4-10/output-athena_project_file",
           "schema:name": "10/athena_project_file"
         },
         {
@@ -1002,7 +905,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-11-athena_project_file",
+          "@id": "#step-5-11/output-athena_project_file",
           "schema:name": "11/athena_project_file"
         },
         {
@@ -1010,7 +913,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-12-athena_project_file",
+          "@id": "#step-6-12/output-athena_project_file",
           "schema:name": "12/athena_project_file"
         }
       ],
@@ -1044,10 +947,6 @@
       "@id": "#step-11-17",
       "schema:name": "17",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 11,
-      "prov:wasInfluencedBy": {
-        "@id": "#b37e0481-a1a1-4919-a3b7-c4ea91c07339"
-      },
       "schema:startTime": "2024-09-11T16:12:57.938754",
       "schema:endTime": "2024-09-11T16:13:16.432877",
       "prov:used": [
@@ -1065,30 +964,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-4-10"
-        },
-        {
-          "@id": "#step-7-13"
-        },
-        {
-          "@id": "#step-1-7"
-        },
-        {
-          "@id": "#step-2-8"
-        },
-        {
-          "@id": "#step-3-9"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-7-athena_project_file",
+          "@id": "#step-1-7/output-athena_project_file",
           "schema:name": "7/athena_project_file"
         },
         {
@@ -1096,7 +978,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-8-athena_project_file",
+          "@id": "#step-2-8/output-athena_project_file",
           "schema:name": "8/athena_project_file"
         },
         {
@@ -1104,7 +986,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-9-athena_project_file",
+          "@id": "#step-3-9/output-athena_project_file",
           "schema:name": "9/athena_project_file"
         },
         {
@@ -1112,7 +994,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-10-athena_project_file",
+          "@id": "#step-4-10/output-athena_project_file",
           "schema:name": "10/athena_project_file"
         },
         {
@@ -1120,7 +1002,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-13-athena_project_file",
+          "@id": "#step-7-13/output-athena_project_file",
           "schema:name": "13/athena_project_file"
         }
       ],

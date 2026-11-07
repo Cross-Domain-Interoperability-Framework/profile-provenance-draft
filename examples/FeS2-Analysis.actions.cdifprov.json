@@ -157,10 +157,6 @@
       "@id": "#step-1-2",
       "schema:name": "2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 1,
-      "prov:wasInfluencedBy": {
-        "@id": "#d5787109-088d-4886-a72e-03f42a4ec5cc"
-      },
       "schema:startTime": "2024-10-23T14:09:56.823447",
       "schema:endTime": "2024-10-23T14:10:04.994552",
       "prov:used": [
@@ -191,12 +187,12 @@
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-2-athena_project_file",
+          "@id": "#step-1-2/output-athena_project_file",
           "schema:name": "2/athena_project_file"
         },
         {
           "@type": "schema:Thing",
-          "@id": "#output-2-plot",
+          "@id": "#step-1-2/output-plot",
           "schema:name": "2/plot"
         }
       ],
@@ -246,10 +242,6 @@
       "@id": "#step-2-3",
       "schema:name": "3",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 2,
-      "prov:wasInfluencedBy": {
-        "@id": "#d5787109-088d-4886-a72e-03f42a4ec5cc"
-      },
       "schema:startTime": "2024-10-23T14:09:57.007640",
       "schema:endTime": "2024-10-23T14:10:09.006182",
       "prov:used": [
@@ -415,10 +407,6 @@
       "@id": "#step-3-4",
       "schema:name": "4",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 3,
-      "prov:wasInfluencedBy": {
-        "@id": "#d5787109-088d-4886-a72e-03f42a4ec5cc"
-      },
       "schema:startTime": "2024-10-23T14:09:57.141933",
       "schema:endTime": "2024-10-23T14:10:18.969215",
       "prov:used": [
@@ -436,18 +424,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-2-3"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-3-out_dir",
+          "@id": "#step-2-3/output-out_dir",
           "schema:name": "3/out_dir"
         },
         {
@@ -455,19 +438,19 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-3-out_csv",
+          "@id": "#step-2-3/output-out_csv",
           "schema:name": "3/out_csv"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-4-gds_csv",
+          "@id": "#step-3-4/output-gds_csv",
           "schema:name": "4/gds_csv"
         },
         {
           "@type": "schema:Thing",
-          "@id": "#output-4-sp_csv",
+          "@id": "#step-3-4/output-sp_csv",
           "schema:name": "4/sp_csv"
         }
       ],
@@ -506,10 +489,6 @@
       "@id": "#step-4-5",
       "schema:name": "5",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 4,
-      "prov:wasInfluencedBy": {
-        "@id": "#d5787109-088d-4886-a72e-03f42a4ec5cc"
-      },
       "schema:startTime": "2024-10-23T14:09:56.910615",
       "schema:endTime": "2024-10-23T14:10:05.023876",
       "prov:used": [
@@ -527,24 +506,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-1-2"
-        },
-        {
-          "@id": "#step-2-3"
-        },
-        {
-          "@id": "#step-3-4"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-4-gds_csv",
+          "@id": "#step-3-4/output-gds_csv",
           "schema:name": "4/gds_csv"
         },
         {
@@ -552,7 +520,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-4-sp_csv",
+          "@id": "#step-3-4/output-sp_csv",
           "schema:name": "4/sp_csv"
         },
         {
@@ -560,7 +528,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-3-out_dir",
+          "@id": "#step-2-3/output-out_dir",
           "schema:name": "3/out_dir"
         },
         {
@@ -568,24 +536,24 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-2-athena_project_file",
+          "@id": "#step-1-2/output-athena_project_file",
           "schema:name": "2/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-5-rmr",
+          "@id": "#step-4-5/output-rmr",
           "schema:name": "5/rmr"
         },
         {
           "@type": "schema:Thing",
-          "@id": "#output-5-chikr",
+          "@id": "#step-4-5/output-chikr",
           "schema:name": "5/chikr"
         },
         {
           "@type": "schema:Thing",
-          "@id": "#output-5-fit_report",
+          "@id": "#step-4-5/output-fit_report",
           "schema:name": "5/fit_report"
         }
       ],

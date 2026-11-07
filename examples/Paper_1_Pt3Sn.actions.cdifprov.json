@@ -246,10 +246,6 @@
       "@id": "#step-1-Extract-Sn-Foil",
       "schema:name": "Extract Sn Foil",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 1,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.220005",
       "schema:endTime": "2024-10-14T16:47:57.053179",
       "prov:used": [
@@ -333,10 +329,6 @@
       "@id": "#step-2-Extract-SnO2",
       "schema:name": "Extract SnO2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 2,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.326585",
       "schema:endTime": "2024-10-14T16:47:56.007141",
       "prov:used": [
@@ -420,10 +412,6 @@
       "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2",
       "schema:name": "Merge Sn K edge H2 under H2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 3,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.441993",
       "schema:endTime": "2024-10-14T16:47:59.267649",
       "prov:used": [
@@ -508,10 +496,6 @@
       "@id": "#step-4-Merge-Sn-K-edge-H2",
       "schema:name": "Merge Sn K edge H2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 4,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.553223",
       "schema:endTime": "2024-10-14T16:47:59.312173",
       "prov:used": [
@@ -596,10 +580,6 @@
       "@id": "#step-5-Merge-Sn-K-edge-Ar",
       "schema:name": "Merge Sn K edge Ar",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 5,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.664215",
       "schema:endTime": "2024-10-14T16:48:00.882046",
       "prov:used": [
@@ -684,10 +664,6 @@
       "@id": "#step-6-Merge-Sn-K-edge-Air",
       "schema:name": "Merge Sn K edge Air",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 6,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.777298",
       "schema:endTime": "2024-10-14T16:47:55.880658",
       "prov:used": [
@@ -772,10 +748,6 @@
       "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2",
       "schema:name": "Merge Pt L3 edge H2 under H2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 7,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.930596",
       "schema:endTime": "2024-10-14T16:48:00.828245",
       "prov:used": [
@@ -856,10 +828,6 @@
       "@id": "#step-8-Merge-Pt-L3-edge-H2",
       "schema:name": "Merge Pt L3 edge H2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 8,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.090291",
       "schema:endTime": "2024-10-14T16:48:00.933633",
       "prov:used": [
@@ -940,10 +908,6 @@
       "@id": "#step-9-Merge-Pt-L3-edge-Ar",
       "schema:name": "Merge Pt L3 edge Ar",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 9,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.252704",
       "schema:endTime": "2024-10-14T16:48:08.027215",
       "prov:used": [
@@ -1024,10 +988,6 @@
       "@id": "#step-10-Merge-Pt-L3-edge-Air",
       "schema:name": "Merge Pt L3 edge Air",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 10,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.393183",
       "schema:endTime": "2024-10-14T16:48:09.055214",
       "prov:used": [
@@ -1108,10 +1068,6 @@
       "@id": "#step-11-Pt3Sn-FEFF:-Sn",
       "schema:name": "Pt3Sn FEFF: Sn",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 11,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.499667",
       "schema:endTime": "2024-10-14T16:48:10.104907",
       "prov:used": [
@@ -1179,10 +1135,6 @@
       "@id": "#step-12-Pt3Sn-FEFF:-Pt",
       "schema:name": "Pt3Sn FEFF: Pt",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 12,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.597194",
       "schema:endTime": "2024-10-14T16:48:03.832203",
       "prov:used": [
@@ -1250,10 +1202,6 @@
       "@id": "#step-13-SnO2-FEFF",
       "schema:name": "SnO2 FEFF",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 13,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.709081",
       "schema:endTime": "2024-10-14T16:48:07.051566",
       "prov:used": [
@@ -1321,10 +1269,6 @@
       "@id": "#step-14-PtO2-FEFF",
       "schema:name": "PtO2 FEFF",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 14,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.823783",
       "schema:endTime": "2024-10-14T16:48:07.817207",
       "prov:used": [
@@ -1392,10 +1336,6 @@
       "@id": "#step-15-LCF:-Sn-Foil-/-SnO2,-H2",
       "schema:name": "LCF: Sn Foil / SnO2, H2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 15,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.983788",
       "schema:endTime": "2024-10-14T16:48:10.192689",
       "prov:used": [
@@ -1413,24 +1353,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-1-Extract-Sn-Foil"
-        },
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-4-Merge-Sn-K-edge-H2"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20Sn%20Foil-athena_project_file",
+          "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
           "schema:name": "Extract Sn Foil/athena_project_file"
         },
         {
@@ -1438,7 +1367,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1446,14 +1375,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2-athena_project_file",
+          "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Sn%20Foil%20/%20SnO2,%20H2-plot",
+          "@id": "#step-15-LCF:-Sn-Foil-/-SnO2,-H2/output-plot",
           "schema:name": "LCF: Sn Foil / SnO2, H2/plot"
         }
       ],
@@ -1524,10 +1453,6 @@
       "@id": "#step-16-LCF:-Pt3Sn-/-SnO2,-H2",
       "schema:name": "LCF: Pt3Sn / SnO2, H2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 16,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.161925",
       "schema:endTime": "2024-10-14T16:48:10.215560",
       "prov:used": [
@@ -1545,24 +1470,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-4-Merge-Sn-K-edge-H2"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -1570,7 +1484,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1578,14 +1492,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2-athena_project_file",
+          "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Pt3Sn%20/%20SnO2,%20H2-plot",
+          "@id": "#step-16-LCF:-Pt3Sn-/-SnO2,-H2/output-plot",
           "schema:name": "LCF: Pt3Sn / SnO2, H2/plot"
         }
       ],
@@ -1656,10 +1570,6 @@
       "@id": "#step-17-LCF:-Sn-Foil-/-SnO2,-Ar",
       "schema:name": "LCF: Sn Foil / SnO2, Ar",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 17,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.324376",
       "schema:endTime": "2024-10-14T16:48:13.330578",
       "prov:used": [
@@ -1677,24 +1587,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-1-Extract-Sn-Foil"
-        },
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-5-Merge-Sn-K-edge-Ar"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20Sn%20Foil-athena_project_file",
+          "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
           "schema:name": "Extract Sn Foil/athena_project_file"
         },
         {
@@ -1702,7 +1601,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1710,14 +1609,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Ar-athena_project_file",
+          "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Sn K edge Ar/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Sn%20Foil%20/%20SnO2,%20Ar-plot",
+          "@id": "#step-17-LCF:-Sn-Foil-/-SnO2,-Ar/output-plot",
           "schema:name": "LCF: Sn Foil / SnO2, Ar/plot"
         }
       ],
@@ -1788,10 +1687,6 @@
       "@id": "#step-18-LCF:-Pt3Sn-/-SnO2,-Ar",
       "schema:name": "LCF: Pt3Sn / SnO2, Ar",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 18,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.464044",
       "schema:endTime": "2024-10-14T16:48:12.615747",
       "prov:used": [
@@ -1809,24 +1704,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-5-Merge-Sn-K-edge-Ar"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -1834,7 +1718,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1842,14 +1726,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Ar-athena_project_file",
+          "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Sn K edge Ar/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Pt3Sn%20/%20SnO2,%20Ar-plot",
+          "@id": "#step-18-LCF:-Pt3Sn-/-SnO2,-Ar/output-plot",
           "schema:name": "LCF: Pt3Sn / SnO2, Ar/plot"
         }
       ],
@@ -1920,10 +1804,6 @@
       "@id": "#step-19-Sn-K-XANES-Plot",
       "schema:name": "Sn K XANES Plot",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 19,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.664617",
       "schema:endTime": "2024-10-14T16:48:12.860339",
       "prov:used": [
@@ -1941,33 +1821,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-1-Extract-Sn-Foil"
-        },
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-6-Merge-Sn-K-edge-Air"
-        },
-        {
-          "@id": "#step-5-Merge-Sn-K-edge-Ar"
-        },
-        {
-          "@id": "#step-4-Merge-Sn-K-edge-H2"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20Sn%20Foil-athena_project_file",
+          "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
           "schema:name": "Extract Sn Foil/athena_project_file"
         },
         {
@@ -1975,7 +1835,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1983,7 +1843,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -1991,7 +1851,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2-athena_project_file",
+          "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2/athena_project_file"
         },
         {
@@ -1999,7 +1859,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Ar-athena_project_file",
+          "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Sn K edge Ar/athena_project_file"
         },
         {
@@ -2007,7 +1867,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Air-athena_project_file",
+          "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
           "schema:name": "Merge Sn K edge Air/athena_project_file"
         }
       ],
@@ -2059,10 +1919,6 @@
       "@id": "#step-20-LCF:-Sn-Foil-/-SnO2,-Air",
       "schema:name": "LCF: Sn Foil / SnO2, Air",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 20,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.845649",
       "schema:endTime": "2024-10-14T16:48:07.773240",
       "prov:used": [
@@ -2080,24 +1936,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-1-Extract-Sn-Foil"
-        },
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-6-Merge-Sn-K-edge-Air"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20Sn%20Foil-athena_project_file",
+          "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
           "schema:name": "Extract Sn Foil/athena_project_file"
         },
         {
@@ -2105,7 +1950,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -2113,14 +1958,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Air-athena_project_file",
+          "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
           "schema:name": "Merge Sn K edge Air/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Sn%20Foil%20/%20SnO2,%20Air-plot",
+          "@id": "#step-20-LCF:-Sn-Foil-/-SnO2,-Air/output-plot",
           "schema:name": "LCF: Sn Foil / SnO2, Air/plot"
         }
       ],
@@ -2191,10 +2036,6 @@
       "@id": "#step-21-LCF:-Pt3Sn-/-SnO2,-Air",
       "schema:name": "LCF: Pt3Sn / SnO2, Air",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 21,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.965574",
       "schema:endTime": "2024-10-14T16:48:09.800340",
       "prov:used": [
@@ -2212,24 +2053,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-6-Merge-Sn-K-edge-Air"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -2237,7 +2067,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -2245,14 +2075,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Air-athena_project_file",
+          "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
           "schema:name": "Merge Sn K edge Air/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Pt3Sn%20/%20SnO2,%20Air-plot",
+          "@id": "#step-21-LCF:-Pt3Sn-/-SnO2,-Air/output-plot",
           "schema:name": "LCF: Pt3Sn / SnO2, Air/plot"
         }
       ],
@@ -2323,10 +2153,6 @@
       "@id": "#step-22-Pt-L3-XANES-Plot",
       "schema:name": "Pt L3 XANES Plot",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 22,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.130416",
       "schema:endTime": "2024-10-14T16:48:18.349692",
       "prov:used": [
@@ -2344,27 +2170,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-10-Merge-Pt-L3-edge-Air"
-        },
-        {
-          "@id": "#step-9-Merge-Pt-L3-edge-Ar"
-        },
-        {
-          "@id": "#step-8-Merge-Pt-L3-edge-H2"
-        },
-        {
-          "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge H2 under H2/athena_project_file"
         },
         {
@@ -2372,7 +2184,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20H2-athena_project_file",
+          "@id": "#step-8-Merge-Pt-L3-edge-H2/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge H2/athena_project_file"
         },
         {
@@ -2380,7 +2192,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20Ar-athena_project_file",
+          "@id": "#step-9-Merge-Pt-L3-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge Ar/athena_project_file"
         },
         {
@@ -2388,7 +2200,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20Air-athena_project_file",
+          "@id": "#step-10-Merge-Pt-L3-edge-Air/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge Air/athena_project_file"
         }
       ],
@@ -2440,10 +2252,6 @@
       "@id": "#step-23-41",
       "schema:name": "41",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 23,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.323891",
       "schema:endTime": "2024-10-14T16:48:15.343934",
       "prov:used": [
@@ -2461,27 +2269,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-12-Pt3Sn-FEFF:-Pt"
-        },
-        {
-          "@id": "#step-11-Pt3Sn-FEFF:-Sn"
-        },
-        {
-          "@id": "#step-14-PtO2-FEFF"
-        },
-        {
-          "@id": "#step-13-SnO2-FEFF"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-PtO2%20FEFF-out_dir",
+          "@id": "#step-14-PtO2-FEFF/output-out_dir",
           "schema:name": "PtO2 FEFF/out_dir"
         },
         {
@@ -2489,7 +2283,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-SnO2%20FEFF-out_csv",
+          "@id": "#step-13-SnO2-FEFF/output-out_csv",
           "schema:name": "SnO2 FEFF/out_csv"
         },
         {
@@ -2497,7 +2291,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-SnO2%20FEFF-out_dir",
+          "@id": "#step-13-SnO2-FEFF/output-out_dir",
           "schema:name": "SnO2 FEFF/out_dir"
         },
         {
@@ -2505,7 +2299,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Pt3Sn%20FEFF:%20Sn-out_csv",
+          "@id": "#step-11-Pt3Sn-FEFF:-Sn/output-out_csv",
           "schema:name": "Pt3Sn FEFF: Sn/out_csv"
         },
         {
@@ -2513,7 +2307,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-PtO2%20FEFF-out_csv",
+          "@id": "#step-14-PtO2-FEFF/output-out_csv",
           "schema:name": "PtO2 FEFF/out_csv"
         },
         {
@@ -2521,7 +2315,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Pt3Sn%20FEFF:%20Pt-out_csv",
+          "@id": "#step-12-Pt3Sn-FEFF:-Pt/output-out_csv",
           "schema:name": "Pt3Sn FEFF: Pt/out_csv"
         },
         {
@@ -2529,7 +2323,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Pt3Sn%20FEFF:%20Pt-out_dir",
+          "@id": "#step-12-Pt3Sn-FEFF:-Pt/output-out_dir",
           "schema:name": "Pt3Sn FEFF: Pt/out_dir"
         },
         {
@@ -2537,7 +2331,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Pt3Sn%20FEFF:%20Sn-out_dir",
+          "@id": "#step-11-Pt3Sn-FEFF:-Sn/output-out_dir",
           "schema:name": "Pt3Sn FEFF: Sn/out_dir"
         }
       ],
@@ -2782,10 +2576,6 @@
       "@id": "#step-24-Artemis:-H2-under-H2",
       "schema:name": "Artemis: H2 under H2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 24,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.469422",
       "schema:endTime": "2024-10-14T16:48:48.455963",
       "prov:used": [
@@ -2803,24 +2593,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-23-41"
-        },
-        {
-          "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge H2 under H2/athena_project_file"
         },
         {
@@ -2828,7 +2607,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -2836,7 +2615,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-sp_csv",
+          "@id": "#step-23-41/output-sp_csv",
           "schema:name": "41/sp_csv"
         },
         {
@@ -2844,7 +2623,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-gds_csv",
+          "@id": "#step-23-41/output-gds_csv",
           "schema:name": "41/gds_csv"
         },
         {
@@ -2852,7 +2631,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-merged_directories",
+          "@id": "#step-23-41/output-merged_directories",
           "schema:name": "41/merged_directories"
         }
       ],
@@ -2922,10 +2701,6 @@
       "@id": "#step-25-Artemis:-H2",
       "schema:name": "Artemis: H2",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 25,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.604062",
       "schema:endTime": "2024-10-14T16:48:31.080319",
       "prov:used": [
@@ -2943,24 +2718,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-23-41"
-        },
-        {
-          "@id": "#step-8-Merge-Pt-L3-edge-H2"
-        },
-        {
-          "@id": "#step-4-Merge-Sn-K-edge-H2"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20H2-athena_project_file",
+          "@id": "#step-8-Merge-Pt-L3-edge-H2/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge H2/athena_project_file"
         },
         {
@@ -2968,7 +2732,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2-athena_project_file",
+          "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2/athena_project_file"
         },
         {
@@ -2976,7 +2740,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-sp_csv",
+          "@id": "#step-23-41/output-sp_csv",
           "schema:name": "41/sp_csv"
         },
         {
@@ -2984,7 +2748,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-gds_csv",
+          "@id": "#step-23-41/output-gds_csv",
           "schema:name": "41/gds_csv"
         },
         {
@@ -2992,7 +2756,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-merged_directories",
+          "@id": "#step-23-41/output-merged_directories",
           "schema:name": "41/merged_directories"
         }
       ],
@@ -3062,10 +2826,6 @@
       "@id": "#step-26-Artemis:-Ar",
       "schema:name": "Artemis: Ar",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 26,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.744382",
       "schema:endTime": "2024-10-14T16:48:29.229657",
       "prov:used": [
@@ -3083,24 +2843,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-23-41"
-        },
-        {
-          "@id": "#step-9-Merge-Pt-L3-edge-Ar"
-        },
-        {
-          "@id": "#step-5-Merge-Sn-K-edge-Ar"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20Ar-athena_project_file",
+          "@id": "#step-9-Merge-Pt-L3-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge Ar/athena_project_file"
         },
         {
@@ -3108,7 +2857,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Ar-athena_project_file",
+          "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Sn K edge Ar/athena_project_file"
         },
         {
@@ -3116,7 +2865,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-sp_csv",
+          "@id": "#step-23-41/output-sp_csv",
           "schema:name": "41/sp_csv"
         },
         {
@@ -3124,7 +2873,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-gds_csv",
+          "@id": "#step-23-41/output-gds_csv",
           "schema:name": "41/gds_csv"
         },
         {
@@ -3132,7 +2881,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-merged_directories",
+          "@id": "#step-23-41/output-merged_directories",
           "schema:name": "41/merged_directories"
         }
       ],
@@ -3202,10 +2951,6 @@
       "@id": "#step-27-Artemis:-Air",
       "schema:name": "Artemis: Air",
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 27,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.877459",
       "schema:endTime": "2024-10-14T16:48:29.255189",
       "prov:used": [
@@ -3223,24 +2968,13 @@
           ]
         }
       ],
-      "prov:wasInformedBy": [
-        {
-          "@id": "#step-23-41"
-        },
-        {
-          "@id": "#step-10-Merge-Pt-L3-edge-Air"
-        },
-        {
-          "@id": "#step-6-Merge-Sn-K-edge-Air"
-        }
-      ],
       "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20Air-athena_project_file",
+          "@id": "#step-10-Merge-Pt-L3-edge-Air/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge Air/athena_project_file"
         },
         {
@@ -3248,7 +2982,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Air-athena_project_file",
+          "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
           "schema:name": "Merge Sn K edge Air/athena_project_file"
         },
         {
@@ -3256,7 +2990,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-sp_csv",
+          "@id": "#step-23-41/output-sp_csv",
           "schema:name": "41/sp_csv"
         },
         {
@@ -3264,7 +2998,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-gds_csv",
+          "@id": "#step-23-41/output-gds_csv",
           "schema:name": "41/gds_csv"
         },
         {
@@ -3272,7 +3006,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-merged_directories",
+          "@id": "#step-23-41/output-merged_directories",
           "schema:name": "41/merged_directories"
         }
       ],
