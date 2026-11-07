@@ -15,11 +15,10 @@ Output structure:
     - OrganizeAction → Galaxy engine activity
     - CreateAction → top-level workflow execution (references sub-activities)
     - One prov:Activity per workflow step, linked by:
-      - prov:wasInformedBy → upstream step activities
-      - prov:used → input entities (from upstream step outputs or workflow inputs)
+      - schema:object → input entities (an upstream step's schema:result, or a
+        workflow input), which is what orders the steps
       - schema:result → output entities
       - schema:instrument → tool used for that step
-  - Step activities link back to the top-level CreateAction via prov:wasInfluencedBy
 
 Usage:
     python galaxyROCrateToCDIFActions.py Paper_1_Pt3Sn.rocrate.zip -o output.json
@@ -596,7 +595,30 @@ def _build_collection_ref(entity, index):
 
 # --- Build per-step activity nodes ---
 
-def _build_step_activity(step, job, position, step_id_map, parent_id=None,
+def _output_entity_id(activity_id, output_name):
+    """The one id for an artifact a step produced.
+
+    Both sides of the data flow must mint this the same way or the join never
+    closes. It used to be minted twice, from different material: the producer
+    from the step NAME when CWL declared outputs ("#output-{name}-{out}") and
+    from the activity id when it fell back to Galaxy jobs
+    ("{act_id}/output-{out}"), with the consumer choosing between the same two
+    independently. A step whose producer took one branch and whose consumer
+    took the other named the same file twice and matched neither -- measured
+    2026-11-07 as 110 of 113 consumed entity ids that no activity produced, so
+    schema:object/schema:result described no graph at all and prov:wasInformedBy
+    was the only thing still holding the step order together.
+
+    The activity id is the stable half: it is unique per step, already in
+    step_id_map for cross-referencing, and already space-stripped. The step
+    name is not -- names repeat and carry spaces, which _encode_ids then
+    percent-encodes on whichever side produced them.
+    """
+    return "%s/output-%s" % (activity_id, output_name)
+
+
+
+def _build_step_activity(step, job, step_id_map,
                          job_index=None, job_inputs=None, job_outputs=None,
                          matched_steps=None):
     """Build a prov:Activity node for a single workflow step.
@@ -604,9 +626,7 @@ def _build_step_activity(step, job, position, step_id_map, parent_id=None,
     Args:
         step: CWL step definition dict
         job: matched Galaxy job dict (or None)
-        position: 1-based step position
         step_id_map: dict mapping step name -> activity @id for cross-references
-        parent_id: @id of the parent CreateAction activity
         job_index: index of this job in tool_jobs list (for data flow lookup)
         job_inputs: per-job input list from _build_job_data_flow
         job_outputs: per-job output list from _build_job_data_flow
@@ -615,18 +635,22 @@ def _build_step_activity(step, job, position, step_id_map, parent_id=None,
     step_name = step["name"]
     act_id = step_id_map[step_name]
 
+    # No schema:position: it is out of domain here. schema.org gives position
+    # domainIncludes CreativeWork and ListItem, and this node is neither -- it
+    # is a schema:Action / prov:Activity. Step order is carried by the data
+    # flow (schema:object naming a prior step's schema:result) and, for a total
+    # order, by schema:startTime. No prov:wasInfluencedBy either: it is the
+    # root of the PROV influence hierarchy, so "this step was influenced by
+    # that workflow run" is the vaguest available statement and entails
+    # nothing useful. No schema:additionalType CreateAction: a step is not the
+    # workflow-creation action, and the marker is read back at top level to
+    # find the run itself.
     node = {
         "@type": ["schema:Action", "prov:Activity"],
         "@id": act_id,
         "schema:name": step_name,
-        "schema:additionalType": ["schema:CreateAction"],
         "schema:actionStatus": "schema:CompletedActionStatus",
-        "schema:position": position,
     }
-
-    # Link to parent workflow activity
-    if parent_id:
-        node["prov:wasInfluencedBy"] = {"@id": parent_id}
 
     # Timestamps from job
     if job:
@@ -651,9 +675,13 @@ def _build_step_activity(step, job, position, step_id_map, parent_id=None,
         node["schema:instrument"] = inst
 
     # --- Data flow ---
-    # Use CWL sources for prov:wasInformedBy and prov:used when available;
-    # fall back to Galaxy job dataset mappings otherwise.
-    # For schema:result, always prefer CWL outputs but fall back to jobs.
+    # Inputs go to schema:object and outputs to schema:result, both naming
+    # entities through _output_entity_id so a consumer's id is the producer's
+    # id. prov:used is left for role-keyed non-data inputs (the tool, via
+    # bios:computationalTool in _demote_organize_actions) -- data inputs are
+    # the object the action was carried out upon, not a role.
+    # CWL sources are used when available, with Galaxy job dataset mappings as
+    # the fallback; schema:result prefers CWL outputs and falls back to jobs.
     has_cwl_sources = bool(step.get("source_steps") or step.get("sources"))
     has_cwl_outputs = bool(step.get("outputs"))
     has_job_flow = (job_index is not None and job_inputs and job_outputs)
@@ -665,78 +693,68 @@ def _build_step_activity(step, job, position, step_id_map, parent_id=None,
             if j is not None:
                 job_to_step[i] = step_id_map.get(s["name"])
 
-    # --- prov:wasInformedBy and prov:used ---
+    # --- schema:object (inputs) ---
     if has_cwl_sources:
         # CWL-based input flow
-        source_steps = step.get("source_steps", set())
-        if source_steps:
-            informed_by = []
-            for src in sorted(source_steps):
-                if src in step_id_map:
-                    informed_by.append({"@id": step_id_map[src]})
-            if informed_by:
-                node["prov:wasInformedBy"] = informed_by
-
         sources = step.get("sources", [])
         if sources:
-            used_refs = []
+            input_refs = []
             for s in sources:
                 if isinstance(s, str):
                     if "/" in s:
                         src_step, src_output = s.split("/", 1)
-                        used_refs.append({
-                            "@type": "schema:Thing",
-                            "@id": f"#output-{src_step}-{src_output}",
+                        if src_step in step_id_map:
+                            ref_id = _output_entity_id(
+                                step_id_map[src_step], src_output)
+                        else:
+                            # No activity produces it, so there is nothing to
+                            # join to; keep it distinguishable rather than
+                            # minting an id that looks like a step output.
+                            ref_id = f"#external-{src_step}-{src_output}"
+                        input_refs.append({
+                            "@type": ["prov:Entity"],
+                            "@id": ref_id,
                             "schema:name": f"{src_step}/{src_output}",
                         })
                     else:
-                        used_refs.append({
-                            "@type": "schema:Thing",
+                        input_refs.append({
+                            "@type": ["prov:Entity"],
                             "@id": f"#input-{s}",
                             "schema:name": s,
                         })
-            if used_refs:
-                node["prov:used"] = used_refs
+            if input_refs:
+                node["schema:object"] = input_refs
 
     elif has_job_flow:
         # Job-based input flow from Galaxy dataset mappings
         inputs = job_inputs[job_index] if job_index < len(job_inputs) else []
         if inputs:
-            informed_set = set()
-            used_refs = []
+            input_refs = []
             for in_name, ds_id, src_job_idx, src_out_name in inputs:
                 if src_job_idx is not None and src_job_idx in job_to_step:
-                    informed_set.add(src_job_idx)
                     src_step_id = job_to_step[src_job_idx]
                     src_step_name = matched_steps[src_job_idx][0]["name"] \
                         if src_job_idx < len(matched_steps) else f"job-{src_job_idx}"
-                    used_refs.append({
-                        "@type": "schema:Thing",
-                        "@id": f"{src_step_id}/output-{src_out_name}",
+                    input_refs.append({
+                        "@type": ["prov:Entity"],
+                        "@id": _output_entity_id(src_step_id, src_out_name),
                         "schema:name": f"{src_step_name}/{src_out_name}",
                     })
                 else:
-                    used_refs.append({
-                        "@type": "schema:Thing",
+                    input_refs.append({
+                        "@type": ["prov:Entity"],
                         "@id": f"#external-{ds_id[:12]}",
                         "schema:name": f"workflow input ({in_name})",
                     })
 
-            if informed_set:
-                informed_by = []
-                for idx in sorted(informed_set):
-                    if idx in job_to_step:
-                        informed_by.append({"@id": job_to_step[idx]})
-                node["prov:wasInformedBy"] = informed_by
-
             seen = set()
             deduped = []
-            for ref in used_refs:
+            for ref in input_refs:
                 if ref["@id"] not in seen:
                     seen.add(ref["@id"])
                     deduped.append(ref)
             if deduped:
-                node["prov:used"] = deduped
+                node["schema:object"] = deduped
 
     # --- schema:result ---
     if has_cwl_outputs:
@@ -744,8 +762,8 @@ def _build_step_activity(step, job, position, step_id_map, parent_id=None,
         result_refs = []
         for out in outputs:
             result_refs.append({
-                "@type": "schema:Thing",
-                "@id": f"#output-{step_name}-{out}",
+                "@type": ["prov:Entity"],
+                "@id": _output_entity_id(act_id, out),
                 "schema:name": f"{step_name}/{out}",
             })
         if result_refs:
@@ -758,11 +776,11 @@ def _build_step_activity(step, job, position, step_id_map, parent_id=None,
             result_refs = []
             seen = set()
             for out_name, ds_id in outputs:
-                ref_id = f"{act_id}/output-{out_name}"
+                ref_id = _output_entity_id(act_id, out_name)
                 if ref_id not in seen:
                     seen.add(ref_id)
                     result_refs.append({
-                        "@type": "schema:Thing",
+                        "@type": ["prov:Entity"],
                         "@id": ref_id,
                         "schema:name": f"{step_name}/{out_name}",
                     })
@@ -954,11 +972,13 @@ def convert_galaxy_crate_actions(input_path, verbose=False):
                         "@id": wf_entity.get("@id"),
                     }
 
-        # Inputs (object) → prov:used
+        # Inputs (object) → schema:object. prov:used stays role-keyed: the
+        # two shared one array until 2026-11-07, so a data entity and a
+        # bios:computationalTool role key sat side by side in it.
         if is_create:
             objects = _ensure_list(action.get("object"))
             if objects:
-                used_items = []
+                input_items = []
                 for obj_ref in objects:
                     ref_id = obj_ref.get("@id") if isinstance(obj_ref, dict) else obj_ref
                     if ref_id and not _should_skip(ref_id):
@@ -966,13 +986,13 @@ def convert_galaxy_crate_actions(input_path, verbose=False):
                         if entity:
                             etypes = _get_types(entity)
                             if "Collection" in etypes:
-                                used_items.append(_build_collection_ref(entity, index))
+                                input_items.append(_build_collection_ref(entity, index))
                             else:
-                                used_items.append(_build_file_ref(entity))
+                                input_items.append(_build_file_ref(entity))
                         else:
-                            used_items.append({"@type": "schema:Thing", "@id": ref_id})
-                if used_items:
-                    node["prov:used"] = used_items
+                            input_items.append({"@type": ["prov:Entity"], "@id": ref_id})
+                if input_items:
+                    node["schema:object"] = input_items
 
             # Results
             results = _ensure_list(action.get("result"))
@@ -989,7 +1009,7 @@ def convert_galaxy_crate_actions(input_path, verbose=False):
                             else:
                                 result_items.append(_build_file_ref(entity))
                         else:
-                            result_items.append({"@type": "schema:Thing", "@id": ref_id})
+                            result_items.append({"@type": ["prov:Entity"], "@id": ref_id})
                 if result_items:
                     node["schema:result"] = result_items
 
@@ -1019,13 +1039,6 @@ def convert_galaxy_crate_actions(input_path, verbose=False):
 
         activity_nodes.append(node)
 
-    # Find the CreateAction @id for parent linking
-    create_action_id = None
-    for node in activity_nodes:
-        if "schema:CreateAction" in node.get("schema:additionalType", []):
-            create_action_id = node.get("@id")
-            break
-
     # Build job data flow maps for fallback when CWL lacks output declarations
     _producer, ji, jo = _build_job_data_flow(tool_jobs)
 
@@ -1043,7 +1056,7 @@ def convert_galaxy_crate_actions(input_path, verbose=False):
     for i, (step, job) in enumerate(matched_steps):
         tj_idx = job_index_map.get(i)
         step_node = _build_step_activity(
-            step, job, i + 1, step_id_map, create_action_id,
+            step, job, step_id_map,
             job_index=tj_idx, job_inputs=ji, job_outputs=jo,
             matched_steps=matched_steps,
         )
