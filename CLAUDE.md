@@ -25,7 +25,7 @@ Most of the root is NOT authored here. Edit the source, never the copy:
 | `provenanceRules.shacl` | mBB `validate_shacl --emit-shapes` over the same block | same sync |
 | `examples/exampleCdifProvenance.json`, `examples/exampleEPMAProvenance.json` | mBB block's `example*.json` | same sync |
 | `FrameAndValidate.py` | `Cross-Domain-Interoperability-Framework/validation` `tools/FrameAndValidate.py` | `python tools/sync_frameandvalidate.py --apply` in that repo. Carries a DO-NOT-EDIT banner; CI (`check-frameandvalidate.yml`) fails on any body drift from the normative copy |
-| `examples/*.cdifprov.json` (Galaxy, Bennu) | `examples/ROCRATE/*` | the converters in `tools/` — fix the converter and regenerate, not the output |
+| `examples/*.cdifprov.json` (Galaxy `*.actions.*`, Bennu) | `examples/ROCRATE/*` | the converters in `tools/` — fix the converter and regenerate, not the output |
 | `vocabularies/activityTypes.ttl`, `vocabularies/activityType/*.{jsonld,ttl}` | `vocabularies/activityTypes.jsonld` | `python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld`, committed with the source change; CI (`vocabulary-pages.yml`) fails a PR whose copies are stale |
 | `vocabularies/docs/` | `vocabularies/activityTypes.ttl` | the iSamples `vocab2mdCacheV2.py` markdown writer plus Quarto, run and committed by `vocabulary-pages.yml` on push to `main`; never by hand |
 
@@ -56,8 +56,7 @@ pyshacl -s provenanceRules.shacl -df json-ld -f human <doc.json>
 
 # Converters (RO-Crate -> cdifProv)
 python tools/WRROCToCdifProv.py examples/ROCRATE/<crate>.json -o examples/<name>.cdifprov.json -v
-python tools/galaxyROCrateToCDIF.py <crate.zip|dir> -o examples/<name>.cdifprov.json -v                 # HowTo/HowToStep form
-python tools/galaxyROCrateToCDIFActions.py <crate.zip|dir> -o examples/<name>.actions.cdifprov.json -v  # one Action per step
+python tools/galaxyROCrateToCDIFActions.py <crate.zip|dir> -o examples/<name>.actions.cdifprov.json -v
 ```
 
 There is no test suite; "the tests" are FrameAndValidate `-v` plus pyshacl over every file in
@@ -76,9 +75,16 @@ violation counts unchanged).
   the converters percent-encode definitions and references together. When adding an example, parse
   it and compare a property's triple count to its key count in the JSON — they must be equal.
 
-Both converters must also keep `OrganizeAction` (the Galaxy engine run) OUT of
+The Galaxy converter must also keep `OrganizeAction` (the Galaxy engine run) OUT of
 `prov:wasGeneratedBy`; it is recorded as a `bios:computationalTool` role entry instead. See the
 README changelog for the evidence.
+
+## archive/
+
+Galaxy runs are modelled one action per workflow step, so techniques, agents, inputs and outputs
+attach to the step. The earlier HowTo/step form (steps as a recipe inside one `CreateAction`) is
+retired: its converter and outputs are in `archive/`, kept for reference, not maintained, and not
+part of "the tests" over `examples/`.
 
 ## Modelling conventions the converters and examples follow
 

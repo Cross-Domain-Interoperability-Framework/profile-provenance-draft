@@ -185,7 +185,7 @@ The [converted cdifProvActivity output](./examples/Bennu-py-GC-MSarc.cdifprov.js
 
 ## 5\. Mapping WRROC/ARC to cdifProvActivity
 
-A converter tool ([tools/WRROCToCdifProv.py](tools/WRROCToCdifProv.py) in this repository; also in the [packaging](https://github.com/Cross-Domain-Interoperability-Framework/packaging/tree/main/tools) repository) transforms WRROC and ARC RO-Crate files into cdifProvActivity-compatible `@graph` documents. Two Galaxy-specific converters, [tools/galaxyROCrateToCDIF.py](tools/galaxyROCrateToCDIF.py) and [tools/galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py), produce the HowTo/step form and the one-Action-per-step form respectively ([§6](#6-representing-multi-step-provenance)).
+A converter tool ([tools/WRROCToCdifProv.py](tools/WRROCToCdifProv.py) in this repository; also in the [packaging](https://github.com/Cross-Domain-Interoperability-Framework/packaging/tree/main/tools) repository) transforms WRROC and ARC RO-Crate files into cdifProvActivity-compatible `@graph` documents. Two Galaxy-specific converters, [archive/tools/galaxyROCrateToCDIF.py](archive/tools/galaxyROCrateToCDIF.py) (archived) and [tools/galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py), produce the HowTo/step form and the one-Action-per-step form respectively ([§6](#6-representing-multi-step-provenance)).
 
 ### 5.1 Property Mapping
 
@@ -336,7 +336,7 @@ Both approaches are valid cdifProvActivity. The choice depends on the level of d
 * **Use Option B** (HowTo steps) when the methodology is the primary concern and step-level execution detail is not needed — e.g., describing a standard operating procedure without per-step timestamps or parameter values.
 * **Combine both**: Use Option A for the retrospective provenance (what was done) and include `schema:actionProcess` on each activity pointing to the protocol/methodology (how it should be done). This is what the ARC profile naturally produces — `LabProcess` activities with `executesLabProtocol` → `LabProtocol`.
 
-The Galaxy examples here exist in both forms for side-by-side comparison. `galaxyROCrateToCDIF.py` produces Option B, and `galaxyROCrateToCDIFActions.py` produces Option A. In the Option A output, each step is linked to its upstream steps with `prov:wasInformedBy` and back to the parent workflow action with `prov:wasInfluencedBy`.
+The Galaxy examples were first produced in both forms for side-by-side comparison. Option A was kept, because it lets techniques, agents, inputs and outputs attach to the step that used or produced them: `galaxyROCrateToCDIFActions.py` produces it, and in its output a step's inputs are its `schema:object` (an upstream step's `schema:result`, or a workflow input), which is what orders the steps. The Option B converter, `galaxyROCrateToCDIF.py`, and its outputs are in [archive/](archive/).
 
 The geochemistry profile ([§12](#12-a-domain-profile-built-on-cdifprovactivity-geochemistry-ada)) takes the "combine both" route one step further. The procedure is a separately published **plan** carrying the HowTo steps, and the analysis record is an activity that references that plan.
 
@@ -683,6 +683,6 @@ What this document changes relative to [ProvenanceOptions.md](ProvenanceOptions.
 ### Tools
 
 * [WRROCToCdifProv.py](tools/WRROCToCdifProv.py) — WRROC/ARC to cdifProvActivity converter
-* [galaxyROCrateToCDIF.py](tools/galaxyROCrateToCDIF.py) / [galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py) — Galaxy RO-Crate to cdifProvActivity, HowTo/step and multi-activity forms
+* [galaxyROCrateToCDIF.py](archive/tools/galaxyROCrateToCDIF.py) (archived) / [galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py) — Galaxy RO-Crate to cdifProvActivity, HowTo/step and multi-activity forms
 * [ROCrateToCDIF.py](https://github.com/Cross-Domain-Interoperability-Framework/packaging/tree/main/tools/ROCrateToCDIF.py) — RO-Crate to full CDIF metadata converter
 

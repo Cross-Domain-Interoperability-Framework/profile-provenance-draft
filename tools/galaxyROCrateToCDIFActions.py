@@ -5,7 +5,7 @@ Galaxy RO-Crate to CDIF Provenance Converter — Multi-Activity Approach
 Reads a Galaxy Workflow Run RO-Crate (zip or directory) and produces a
 CDIF cdifProv document where each workflow step is a separate prov:Activity.
 
-This is the alternative to the HowTo/step approach in galaxyROCrateToCDIF.py.
+This replaces the HowTo/step approach of archive/tools/galaxyROCrateToCDIF.py.
 Instead of embedding steps as schema:HowToStep within a single activity's
 schema:actionProcess, each CWL step becomes its own [schema:Action, prov:Activity]
 node with explicit data-flow links between steps.
@@ -59,7 +59,7 @@ SKIP_IDS = {"ro-crate-metadata.json", "ro-crate-metadata.jsonld", "./"}
 PROFILE_PREFIXES = ("https://w3id.org/ro/", "https://w3id.org/workflowhub/")
 
 
-# --- Crate reading (shared with galaxyROCrateToCDIF.py) ---
+# --- Crate reading (copied from archive/tools/galaxyROCrateToCDIF.py) ---
 
 def _read_crate_files(input_path):
     """Read relevant files from a zip or directory."""
