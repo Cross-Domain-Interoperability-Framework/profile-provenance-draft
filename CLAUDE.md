@@ -64,7 +64,7 @@ There is no test suite; "the tests" are FrameAndValidate `-v` plus pyshacl over 
 `examples/`. A sync is judged by both staying where they were (all examples pass the schema; SHACL
 violation counts unchanged).
 
-## Two traps that report PASS while wrong
+## Traps that report PASS while wrong
 
 - **Framing picks the node matching the frame's root `@type` (`schema:Dataset`).**
   `ODIS_provExampleJulesVerne.json` has an `Action` root, so its framed output describes a different
@@ -75,6 +75,17 @@ violation counts unchanged).
   expansion, after the JSON Schema gate has passed. Galaxy crates carry spaces and pipes in `@id`s;
   the converters percent-encode definitions and references together. When adding an example, parse
   it and compare a property's triple count to its key count in the JSON — they must be equal.
+- **A sub-frame that names properties also filters.** In `cdifProvenance-frame.jsonld`, a value
+  under `"prov:used": {"@embed": …, "schema:instrument": {…}}` is kept only if it has
+  `schema:instrument`; everything else is silently left out of the framed output, so the JSON Schema
+  never sees it. Until 2026-11-10 the activity sub-frames for `prov:used`, `schema:agent`,
+  `schema:participant`, `schema:actionProcess` and `prov:wasAssociatedWith` did this, and most
+  inputs, Role agents and stepless procedures were never validated. Keep those sub-frames to
+  `@embed` only (`@default` does not stop pyld filtering). `prov:used` is `@once`: with `@always`
+  the frame copies each earlier step's whole output into the next step's `prov:used`, where it fails
+  the `{@id}` and inline-`prov:Entity` branches. A check: parse the framed output (`-o`) and compare
+  its triple count with the source's. What is still lost is `schema:result` descriptions, which
+  FrameAndValidate's `REFERENCE_ONLY_KEYS` collapses to `{@id}` (validation repo).
 
 Both converters must also keep `OrganizeAction` (the Galaxy engine run) OUT of
 `prov:wasGeneratedBy`; it is recorded as a `bios:computationalTool` role entry instead. See the
