@@ -54,7 +54,8 @@ ex:runSequence a cdi:Sequence ;
 
 # --- Steps ----------------------------------------------------------------------------------
 
-ex:waterSampling01 a cdi:Step ;
+ex:waterSampling01 a cdi:Step ;  
+	#Step is a subclass of Activity
     cdi:Activity-name [ a cdi:ObjectName ; cdi:ObjectName-name "Water sampling" ] ;
     cdi:Activity-entityUsed     [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/riverReach01"^^xsd:anyURI ] ;
     cdi:Activity-entityProduced [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/waterSample01"^^xsd:anyURI ] ;
@@ -104,7 +105,11 @@ ex:validation a cdi:Step ;
 
 # --- Parameters, each bound to the entity it carried in this run ----------------------------
 
-ex:p-sample-out           a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/waterSample01"^^xsd:anyURI ] .
+ex:p-sample-out           
+	a cdi:Parameter ; 
+	cdi:Parameter-entityBound 
+		[ a cdi:Reference ; 
+			cdi:Reference-uri "https://example.org/cdif-prov/waterSample01"^^xsd:anyURI ] .
 ex:p-sample-in            a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/waterSample01"^^xsd:anyURI ] .
 ex:p-absorbance-out       a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/absorbanceSource"^^xsd:anyURI ] .
 ex:p-absorbance-in        a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/absorbanceSource"^^xsd:anyURI ] .

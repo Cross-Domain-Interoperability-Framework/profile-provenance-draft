@@ -6,6 +6,7 @@
     "dcat": "http://www.w3.org/ns/dcat#",
     "bios": "https://bioschemas.org/",
     "at": "https://w3id.org/cdif/provenance/activityType/",
+    "p": "http://purl.org/net/p-plan#",
     "ex": "https://example.org/cdif-prov/"
   },
   "@id": "ex:validationResult",
@@ -73,13 +74,48 @@
         "schema:name": "Determine analyte concentration from absorbance, with uncertainty and validation",
         "schema:description": "Laboratory method for a dissolved analyte in surface water by colorimetric absorbance, calibrated against certified standards.",
         "schema:step": [
-          {"@type": ["schema:HowToStep"], "schema:position": 1, "schema:name": "Water sampling"},
-          {"@type": ["schema:HowToStep"], "schema:position": 2, "schema:name": "Instrument calibration"},
-          {"@type": ["schema:HowToStep"], "schema:position": 3, "schema:name": "Absorbance measurement"},
-          {"@type": ["schema:HowToStep"], "schema:position": 4, "schema:name": "Blank correction"},
-          {"@type": ["schema:HowToStep"], "schema:position": 5, "schema:name": "Calibration-based derivation"},
-          {"@type": ["schema:HowToStep"], "schema:position": 6, "schema:name": "Uncertainty assessment"},
-          {"@type": ["schema:HowToStep"], "schema:position": 7, "schema:name": "Validation"}
+          {
+            "@id": "ex:step-sampling",
+            "@type": ["schema:HowToStep", "p:Step"],
+            "schema:position": 1,
+            "schema:name": "Water sampling"
+          },
+          {
+            "@id": "ex:step-calibration",
+            "@type": ["schema:HowToStep", "p:Step"],
+            "schema:position": 2,
+            "schema:name": "Instrument calibration"
+          },
+          {
+            "@id": "ex:step-absorbance",
+            "@type": ["schema:HowToStep", "p:Step"],
+            "schema:position": 3,
+            "schema:name": "Absorbance measurement"
+          },
+          {
+            "@id": "ex:step-blankCorrection",
+            "@type": ["schema:HowToStep", "p:Step"],
+            "schema:position": 4,
+            "schema:name": "Blank correction"
+          },
+          {
+            "@id": "ex:step-derivation",
+            "@type": ["schema:HowToStep", "p:Step"],
+            "schema:position": 5,
+            "schema:name": "Calibration-based derivation"
+          },
+          {
+            "@id": "ex:step-uncertainty",
+            "@type": ["schema:HowToStep", "p:Step"],
+            "schema:position": 6,
+            "schema:name": "Uncertainty assessment"
+          },
+          {
+            "@id": "ex:step-validation",
+            "@type": ["schema:HowToStep", "p:Step"],
+            "schema:position": 7,
+            "schema:name": "Validation"
+          }
         ]
       },
       "prov:used": [{"@id": "ex:waterSample01"}],
@@ -89,6 +125,7 @@
       "@id": "ex:waterSampling01",
       "@type": ["prov:Activity", "schema:Action"],
       "schema:additionalType": [{"@id": "at:sampling"}],
+      "p:correspondsToStep": {"@id": "ex:step-sampling"},
       "schema:name": "Water sampling",
       "schema:description": "Grab sample of surface water from the river reach, filtered on site.",
       "schema:startTime": "2026-11-04T08:10:00Z",
@@ -127,6 +164,7 @@
       "@id": "ex:instrumentCalibration01",
       "@type": ["prov:Activity", "schema:Action"],
       "schema:additionalType": [{"@id": "at:instrumentCalibration"}],
+      "p:correspondsToStep": {"@id": "ex:step-calibration"},
       "schema:name": "Instrument calibration",
       "schema:description": "Absorbance of five certified standards measured to fit the response line used to convert sample absorbance to concentration.",
       "schema:startTime": "2026-11-05T09:40:00Z",
@@ -200,6 +238,7 @@
       "@id": "ex:absorbanceMeasurementAttempt01",
       "@type": ["prov:Activity", "schema:Action"],
       "schema:additionalType": [{"@id": "at:dataAcquisition"}],
+      "p:correspondsToStep": {"@id": "ex:step-absorbance"},
       "schema:name": "Absorbance measurement, first attempt",
       "schema:startTime": "2026-11-05T10:12:00Z",
       "schema:endTime": "2026-11-05T10:13:00Z",
@@ -212,6 +251,7 @@
       "@id": "ex:absorbanceMeasurement",
       "@type": ["prov:Activity", "schema:Action"],
       "schema:additionalType": [{"@id": "at:dataAcquisition"}],
+      "p:correspondsToStep": {"@id": "ex:step-absorbance"},
       "schema:name": "Absorbance measurement",
       "schema:description": "Colour reagent added to an aliquot of the sample; absorbance read at 540 nm against a reagent blank.",
       "schema:identifier": "MEAS-2026-11-05-002",
@@ -322,6 +362,7 @@
       "@id": "ex:blankCorrection",
       "@type": ["prov:Activity", "schema:Action"],
       "schema:additionalType": [{"@id": "at:dataProcessing"}],
+      "p:correspondsToStep": {"@id": "ex:step-blankCorrection"},
       "schema:name": "Blank correction",
       "schema:description": "Reagent-blank absorbance subtracted from the sample absorbance.",
       "schema:startTime": "2026-11-05T10:21:00Z",
@@ -367,6 +408,7 @@
       "@id": "ex:calibrationDerivation",
       "@type": ["prov:Activity", "schema:Action"],
       "schema:additionalType": [{"@id": "at:deriving"}],
+      "p:correspondsToStep": {"@id": "ex:step-derivation"},
       "schema:name": "Calibration-based derivation",
       "schema:description": "Concentration computed from corrected absorbance with the calibration curve.",
       "schema:startTime": "2026-11-05T10:23:14Z",
@@ -425,6 +467,7 @@
       "@id": "ex:uncertaintyAssessment",
       "@type": ["prov:Activity", "schema:Action"],
       "schema:additionalType": [{"@id": "at:analysing"}],
+      "p:correspondsToStep": {"@id": "ex:step-uncertainty"},
       "schema:name": "Uncertainty assessment",
       "schema:description": "Combined standard uncertainty of the concentration from calibration, repeatability and volume contributions.",
       "schema:actionStatus": "http://schema.org/CompletedActionStatus",
@@ -460,6 +503,7 @@
       "@id": "ex:validation",
       "@type": ["prov:Activity", "schema:Action"],
       "schema:additionalType": [{"@id": "at:qualityControl"}],
+      "p:correspondsToStep": {"@id": "ex:step-validation"},
       "schema:name": "Validation",
       "schema:description": "Concentration and its uncertainty checked against the acceptance criterion for the method.",
       "schema:actionStatus": "http://schema.org/CompletedActionStatus",

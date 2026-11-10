@@ -118,6 +118,30 @@ the PROV-O graph the master already gives.
 * **The plain-relations Turtle declares schema.org as `schema1:`** (an artefact of how it was
 generated); its JSON-LD uses `schema:`.
 
+### Rooted on the run
+
+Where a source has the overall run, `ex:concentrationRun`, a second tree is rooted on it
+(`python tools/rdfToJsonLdTree.py SRC OUT --root ex:concentrationRun`). What hangs directly under
+the run shows how each approach ties a step to it:
+
+|approach|run-rooted tree|under the run|
+|---|---|---|
+|PROV-O, qualified|[prov-o-qualified/cdif\_provenance\_quantitative.run-rooted.jsonld](prov-o-qualified/cdif_provenance_quantitative.run-rooted.jsonld)|5 steps, by `@reverse dcterms:isPartOf` (the sampling is not part of the run; it is reached through the sample)|
+|PROV-O, plain relations|[prov-o-unqualified/cdif\_provenance\_quantitative.run-rooted.jsonld](prov-o-unqualified/cdif_provenance_quantitative.run-rooted.jsonld)|the same 5 steps; the two plans no longer linked by `hadPlan` are in `@included`|
+|cdifProv|[cdifprov-schemaorg/cdif\_provenance\_quantitative.run-rooted.jsonld](cdifprov-schemaorg/cdif_provenance_quantitative.run-rooted.jsonld)|no steps: nothing links a step to the run. The run's `schema:result` is the Dataset, and the other activities hang from the Dataset's `prov:wasGeneratedBy`|
+|DDI-CDI|[ddi-cdi/cdif\_provenance\_quantitative.run-rooted.jsonld](ddi-cdi/cdif_provenance_quantitative.run-rooted.jsonld)|6 steps, forward, by `cdi:Activity\_has\_Step`; the analyst by `@reverse cdi:ProcessingAgent\_performs\_Activity`; the laboratory, which nothing links to (note 11), in `@included`|
+|ProvONE|[provone/cdif\_provenance\_quantitative.run-rooted.jsonld](provone/cdif_provenance_quantitative.run-rooted.jsonld)|6 steps, by `@reverse provone:wasPartOf`; `ex:validationResult`, whose only link is a qualified generation (entity → blank node → activity), in `@included`|
+
+Not possible for **P-Plan** and **SOSA/SSN** (overlays that do not contain the run; P-Plan names it
+only in a comment), **RO-Crate** (a Process Run Crate has no overall action: the root Dataset
+`mentions` the six actions) or **PROV-JSON** (not JSON-LD).
+
+A node that points *at* the run (a step that is part of it, an agent that performs it) is placed
+directly under the run with `@reverse`; any other node that points into the tree goes under the
+nearest node it points at; anything unconnected goes in `@included`. Each file is isomorphic to its
+source under rdflib and pyld (`xsd:double` values compared by value: pyld writes them in canonical
+E-notation).
+
 ## The matrix
 
 ✔ native · ◐ partial, see note · **ann** only as an annotation from another vocabulary
@@ -181,7 +205,7 @@ cost of skipping the qualified pattern for this scenario: *who and what played w
 20. A Workflow Run Crate (not Process Run) adds a `ComputationalWorkflow` and `HowToStep`s.
 21. `Activity-description` text, or `Step-script` for executable code; no plan class.
 22. `actionProcess` is a `schema:HowTo`: `url` for the video, `prepTime`, `performTime`, `estimatedCost`.
-23. The run's `schema:HowTo` lists ordered `schema:step`s with `schema:position`, but a step is only a name: nothing links it to the activity that carried it out. (Steps as the only record of the run, the HowTo/step form, was retired in this repo; see [../archive/](../archive/).)
+23. The run's `schema:HowTo` lists ordered `schema:step`s with `schema:position`, and each activity points to the step it carried out with P-Plan's `p:correspondsToStep` (the steps are also typed `p:Step`); schema.org has no Action → HowToStep property (`schema:actionProcess` takes a whole HowTo), so the link is borrowed from P-Plan. It runs from the run to the plan, so the plan stays reusable: both absorbance activities, the failed attempt and the repeat, point to the same step. (Steps as the only record of the run, the HowTo/step form, was retired in this repo; see [../archive/](../archive/).)
 24. Programs and their channels; the order follows from the wiring, not a sequence.
 25. Steps share the master's IRIs; entities do not: `Reference-uri` is a literal, so a graph merge does not connect them.
 
@@ -245,7 +269,7 @@ except the failed attempt; the schema itself requires none of them.
 ## What this suggests
 
 * **Qualified PROV-O is the most expressive serialization**, and the only one that keeps who and what played which part without inventing keys. Plain PROV-O and Process Run Crate lose exactly that.
-* **cdifProv covers the Jules Verne features best** (person, status, procedure details, result about the sample, instrument as a typed thing), but its plan steps are not linked to the activities, there is no part-of, the tool role is weak, and the draft's quality and acquisition-mode provisions have no slot.
+* **cdifProv covers the Jules Verne features best** (person, status, procedure details, result about the sample, instrument as a typed thing), but it links activities to plan steps only by borrowing P-Plan's `p:correspondsToStep`, there is no part-of, the tool role is weak, and the draft's quality and acquisition-mode provisions have no slot.
 * **The overlays answer different questions and combine.** P-Plan or ProvONE adds the plan and wiring that every retrospective form lacks; SOSA adds what was measured (feature, sample, property, sensor) that none of the others can say. Each needs PROV for the rest.
 * **DDI-CDI** is strong on structure (steps, sequence, information flow) and weak on the run (no times, roles or status). It needs review by someone who uses it before any conclusion.
 

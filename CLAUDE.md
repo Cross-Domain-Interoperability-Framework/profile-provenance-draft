@@ -59,7 +59,7 @@ python tools/WRROCToCdifProv.py examples/ROCRATE/<crate>.json -o examples/<name>
 python tools/galaxyROCrateToCDIFActions.py <crate.zip|dir> -o examples/<name>.actions.cdifprov.json -v
 
 # Any RDF (Turtle, flattened JSON-LD) -> compacted tree JSON-LD; exits 1 unless the output is isomorphic
-python tools/rdfToJsonLdTree.py <src.ttl|src.json> <out.jsonld> [--base <iri>]
+python tools/rdfToJsonLdTree.py <src.ttl|src.json> <out.jsonld> [--base <iri>] [--root <iri>]
 ```
 
 There is no test suite; "the tests" are FrameAndValidate `-v` plus pyshacl over every file in
