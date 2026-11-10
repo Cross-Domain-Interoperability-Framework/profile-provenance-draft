@@ -1,0 +1,388 @@
+{
+  "@context": {
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "ex": "https://example.org/cdif-prov/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "cdi:Reference-uri": {"@type": "xsd:anyURI"},
+    "cdi:SequencePosition-value": {"@type": "xsd:integer"}
+  },
+  "@id": "ex:concentrationRun",
+  "@type": "cdi:Activity",
+  "cdi:Activity-name": {
+    "@type": "cdi:ObjectName",
+    "cdi:ObjectName-name": "Concentration determination run"
+  },
+  "cdi:Activity-description": "Determine analyte concentration from absorbance, with uncertainty and validation.",
+  "cdi:Activity-standardModelMapping": {
+    "@type": "cdi:Reference",
+    "cdi:Reference-uri": "http://www.w3.org/ns/prov#Activity"
+  },
+  "cdi:Activity_has_Step": [
+    {
+      "@id": "ex:waterSampling01",
+      "@type": "cdi:Step",
+      "cdi:Activity-name": {
+        "@type": "cdi:ObjectName",
+        "cdi:ObjectName-name": "Water sampling"
+      },
+      "cdi:Activity-entityUsed": {
+        "@type": "cdi:Reference",
+        "cdi:Reference-uri": "https://example.org/cdif-prov/riverReach01"
+      },
+      "cdi:Activity-entityProduced": {
+        "@type": "cdi:Reference",
+        "cdi:Reference-uri": "https://example.org/cdif-prov/waterSample01"
+      },
+      "cdi:Step_produces_Parameter": {
+        "@id": "ex:p-sample-out",
+        "@type": "cdi:Parameter",
+        "cdi:Parameter-entityBound": {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/waterSample01"
+        }
+      }
+    },
+    {
+      "@id": "ex:absorbanceMeasurement",
+      "@type": "cdi:Step",
+      "cdi:Activity-name": {
+        "@type": "cdi:ObjectName",
+        "cdi:ObjectName-name": "Absorbance measurement"
+      },
+      "cdi:Activity-description": "Absorbance measurement in a 1 cm cuvette with a colour-forming reagent. Procedure: https://example.org/cdif-prov/video/absorbance-procedure.mp4",
+      "cdi:Activity-entityUsed": [
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/waterSample01"
+        },
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/colourReagent01"
+        },
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/cuvette01"
+        }
+      ],
+      "cdi:Activity-entityProduced": {
+        "@type": "cdi:Reference",
+        "cdi:Reference-uri": "https://example.org/cdif-prov/absorbanceSource"
+      },
+      "cdi:Step_produces_Parameter": {
+        "@id": "ex:p-absorbance-out",
+        "@type": "cdi:Parameter",
+        "cdi:Parameter-entityBound": {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/absorbanceSource"
+        }
+      },
+      "cdi:Step_receives_Parameter": {
+        "@id": "ex:p-sample-in",
+        "@type": "cdi:Parameter",
+        "cdi:Parameter-entityBound": {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/waterSample01"
+        }
+      },
+      "@reverse": {
+        "cdi:ProcessingAgent_performs_Activity": {
+          "@id": "ex:spectrophotometer01",
+          "@type": [
+            "cdi:ProcessingAgent",
+            "cdi:Machine"
+          ],
+          "cdi:ProcessingAgent_operatesOn_ProductionEnvironment": {"@id": "ex:laboratoryEnvironment"},
+          "cdi:Machine-name": {
+            "@type": "cdi:ObjectName",
+            "cdi:ObjectName-name": "UV-Vis spectrophotometer"
+          }
+        }
+      }
+    },
+    {
+      "@id": "ex:blankCorrection",
+      "@type": "cdi:Step",
+      "cdi:Activity-name": {
+        "@type": "cdi:ObjectName",
+        "cdi:ObjectName-name": "Blank correction"
+      },
+      "cdi:Activity-entityUsed": [
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/absorbanceSource"
+        },
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/blankCorrectionSpec"
+        }
+      ],
+      "cdi:Activity-entityProduced": {
+        "@type": "cdi:Reference",
+        "cdi:Reference-uri": "https://example.org/cdif-prov/correctedAbsorbance"
+      },
+      "cdi:Step_produces_Parameter": {
+        "@id": "ex:p-corrected-out",
+        "@type": "cdi:Parameter",
+        "cdi:Parameter-entityBound": {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/correctedAbsorbance"
+        }
+      },
+      "cdi:Step_receives_Parameter": {
+        "@id": "ex:p-absorbance-in",
+        "@type": "cdi:Parameter",
+        "cdi:Parameter-entityBound": {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/absorbanceSource"
+        }
+      },
+      "@reverse": {
+        "cdi:ProcessingAgent_performs_Activity": {
+          "@id": "ex:analysisSoftware",
+          "@type": [
+            "cdi:ProcessingAgent",
+            "cdi:Machine"
+          ],
+          "cdi:ProcessingAgent_performs_Activity": [
+            {"@id": "ex:calibrationDerivation"},
+            {"@id": "ex:uncertaintyAssessment"},
+            {"@id": "ex:validation"}
+          ],
+          "cdi:Machine-name": {
+            "@type": "cdi:ObjectName",
+            "cdi:ObjectName-name": "Analysis software"
+          }
+        }
+      }
+    },
+    {
+      "@id": "ex:calibrationDerivation",
+      "@type": "cdi:Step",
+      "cdi:Activity-name": {
+        "@type": "cdi:ObjectName",
+        "cdi:ObjectName-name": "Calibration-based derivation"
+      },
+      "cdi:Activity-entityUsed": [
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/correctedAbsorbance"
+        },
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/calibrationRelationship"
+        }
+      ],
+      "cdi:Activity-entityProduced": {
+        "@type": "cdi:Reference",
+        "cdi:Reference-uri": "https://example.org/cdif-prov/concentration"
+      },
+      "cdi:Step_produces_Parameter": {
+        "@id": "ex:p-concentration-out",
+        "@type": "cdi:Parameter",
+        "cdi:Parameter-entityBound": {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/concentration"
+        }
+      },
+      "cdi:Step_receives_Parameter": {
+        "@id": "ex:p-corrected-in",
+        "@type": "cdi:Parameter",
+        "cdi:Parameter-entityBound": {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/correctedAbsorbance"
+        }
+      }
+    },
+    {
+      "@id": "ex:uncertaintyAssessment",
+      "@type": "cdi:Step",
+      "cdi:Activity-name": {
+        "@type": "cdi:ObjectName",
+        "cdi:ObjectName-name": "Uncertainty assessment"
+      },
+      "cdi:Activity-entityUsed": [
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/concentration"
+        },
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/uncertaintySpec"
+        }
+      ],
+      "cdi:Activity-entityProduced": {
+        "@type": "cdi:Reference",
+        "cdi:Reference-uri": "https://example.org/cdif-prov/concentrationUncertainty"
+      },
+      "cdi:Step_produces_Parameter": {
+        "@id": "ex:p-uncertainty-out",
+        "@type": "cdi:Parameter",
+        "cdi:Parameter-entityBound": {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/concentrationUncertainty"
+        }
+      },
+      "cdi:Step_receives_Parameter": {
+        "@id": "ex:p-concentration-in-unc",
+        "@type": "cdi:Parameter",
+        "cdi:Parameter-entityBound": {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/concentration"
+        }
+      }
+    },
+    {
+      "@id": "ex:validation",
+      "@type": "cdi:Step",
+      "cdi:Activity-name": {
+        "@type": "cdi:ObjectName",
+        "cdi:ObjectName-name": "Validation"
+      },
+      "cdi:Activity-entityUsed": [
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/concentration"
+        },
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/concentrationUncertainty"
+        },
+        {
+          "@type": "cdi:Reference",
+          "cdi:Reference-uri": "https://example.org/cdif-prov/validationCriterion"
+        }
+      ],
+      "cdi:Activity-entityProduced": {
+        "@type": "cdi:Reference",
+        "cdi:Reference-uri": "https://example.org/cdif-prov/validationResult"
+      },
+      "cdi:Step_receives_Parameter": [
+        {
+          "@id": "ex:p-concentration-in-val",
+          "@type": "cdi:Parameter",
+          "cdi:Parameter-entityBound": {
+            "@type": "cdi:Reference",
+            "cdi:Reference-uri": "https://example.org/cdif-prov/concentration"
+          }
+        },
+        {
+          "@id": "ex:p-uncertainty-in",
+          "@type": "cdi:Parameter",
+          "cdi:Parameter-entityBound": {
+            "@type": "cdi:Reference",
+            "cdi:Reference-uri": "https://example.org/cdif-prov/concentrationUncertainty"
+          }
+        }
+      ]
+    }
+  ],
+  "cdi:Activity_hasInternal_ControlLogic": {
+    "@id": "ex:runSequence",
+    "@type": "cdi:Sequence",
+    "cdi:ControlLogic-name": {
+      "@type": "cdi:ObjectName",
+      "cdi:ObjectName-name": "Run order"
+    },
+    "cdi:Sequence_has_SequencePosition": [
+      {
+        "@type": "cdi:SequencePosition",
+        "cdi:SequencePosition-value": "1",
+        "cdi:SequencePosition_indexes_Activity": {"@id": "ex:waterSampling01"}
+      },
+      {
+        "@type": "cdi:SequencePosition",
+        "cdi:SequencePosition-value": "2",
+        "cdi:SequencePosition_indexes_Activity": {"@id": "ex:absorbanceMeasurement"}
+      },
+      {
+        "@type": "cdi:SequencePosition",
+        "cdi:SequencePosition-value": "3",
+        "cdi:SequencePosition_indexes_Activity": {"@id": "ex:blankCorrection"}
+      },
+      {
+        "@type": "cdi:SequencePosition",
+        "cdi:SequencePosition-value": "4",
+        "cdi:SequencePosition_indexes_Activity": {"@id": "ex:calibrationDerivation"}
+      },
+      {
+        "@type": "cdi:SequencePosition",
+        "cdi:SequencePosition-value": "5",
+        "cdi:SequencePosition_indexes_Activity": {"@id": "ex:uncertaintyAssessment"}
+      },
+      {
+        "@type": "cdi:SequencePosition",
+        "cdi:SequencePosition-value": "6",
+        "cdi:SequencePosition_indexes_Activity": {"@id": "ex:validation"}
+      }
+    ],
+    "cdi:ControlLogic_has_InformationFlowDefinition": [
+      {
+        "@type": "cdi:InformationFlowDefinition",
+        "cdi:InformationFlowDefinition_from_Parameter": {"@id": "ex:p-sample-out"},
+        "cdi:InformationFlowDefinition_to_Parameter": {"@id": "ex:p-sample-in"}
+      },
+      {
+        "@type": "cdi:InformationFlowDefinition",
+        "cdi:InformationFlowDefinition_from_Parameter": {"@id": "ex:p-absorbance-out"},
+        "cdi:InformationFlowDefinition_to_Parameter": {"@id": "ex:p-absorbance-in"}
+      },
+      {
+        "@type": "cdi:InformationFlowDefinition",
+        "cdi:InformationFlowDefinition_from_Parameter": {"@id": "ex:p-corrected-out"},
+        "cdi:InformationFlowDefinition_to_Parameter": {"@id": "ex:p-corrected-in"}
+      },
+      {
+        "@type": "cdi:InformationFlowDefinition",
+        "cdi:InformationFlowDefinition_from_Parameter": {"@id": "ex:p-concentration-out"},
+        "cdi:InformationFlowDefinition_to_Parameter": {"@id": "ex:p-concentration-in-unc"}
+      },
+      {
+        "@type": "cdi:InformationFlowDefinition",
+        "cdi:InformationFlowDefinition_from_Parameter": {"@id": "ex:p-concentration-out"},
+        "cdi:InformationFlowDefinition_to_Parameter": {"@id": "ex:p-concentration-in-val"}
+      },
+      {
+        "@type": "cdi:InformationFlowDefinition",
+        "cdi:InformationFlowDefinition_from_Parameter": {"@id": "ex:p-uncertainty-out"},
+        "cdi:InformationFlowDefinition_to_Parameter": {"@id": "ex:p-uncertainty-in"}
+      }
+    ]
+  },
+  "@reverse": {
+    "cdi:ProcessingAgent_performs_Activity": {
+      "@id": "ex:analyst01",
+      "@type": [
+        "cdi:Individual",
+        "cdi:ProcessingAgent"
+      ],
+      "cdi:Individual-individualName": {
+        "@type": "cdi:IndividualName",
+        "cdi:IndividualName-firstGiven": "Ana",
+        "cdi:IndividualName-lastFamily": "Lima",
+        "cdi:IndividualName-prefix": "Dr"
+      },
+      "cdi:ProcessingAgent_performs_Activity": [
+        {"@id": "ex:waterSampling01"},
+        {"@id": "ex:absorbanceMeasurement"}
+      ],
+      "cdi:ProcessingAgent_operatesOn_ProductionEnvironment": {
+        "@id": "ex:laboratoryEnvironment",
+        "@type": "cdi:ProductionEnvironment",
+        "cdi:ProductionEnvironment-name": {
+          "@type": "cdi:ObjectName",
+          "cdi:ObjectName-name": "Analytical laboratory"
+        }
+      }
+    }
+  },
+  "@included": [
+    {
+      "@id": "ex:laboratory01",
+      "@type": "cdi:Organization",
+      "cdi:Organization-organizationName": {
+        "@type": "cdi:OrganizationName",
+        "cdi:ObjectName-name": "Analytical laboratory"
+      }
+    }
+  ]
+}

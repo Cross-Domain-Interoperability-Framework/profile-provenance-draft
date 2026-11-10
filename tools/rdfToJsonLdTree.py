@@ -7,13 +7,16 @@ tree-shaped JSON-LD, so the provenance approaches in examples/ can be compared i
 CDIF's RDF implementations use.
 
 Usage:
-    python tools/rdfToJsonLdTree.py SRC OUT [--base IRI]
+    python tools/rdfToJsonLdTree.py SRC OUT [--base IRI] [--root IRI]
 
     --base  base IRI for relative @ids (e.g. an RO-Crate's "./"); they are written back relative.
+    --root  IRI or CURIE of the node to root the tree on, overriding the Dataset rule.
 
 Layout:
-- The root is the schema:Dataset when there is one. Anything pointing at it that is not otherwise
-  reached (e.g. an RO-Crate metadata descriptor's schema:about) is nested under it with @reverse.
+- The root is the --root node, else the schema:Dataset when there is one. A node not reached from it
+  that points into the tree (an RO-Crate metadata descriptor's schema:about, a DDI-CDI agent's
+  ProcessingAgent_performs_Activity) is nested with @reverse under the first node it points at, and
+  anything still unconnected goes in the root's @included, so the root is the one top-level object.
   Otherwise roots are the named nodes nothing else points at, largest tree first, in @graph when
   there are several.
 - A node is described in full where it is first reached and is an {"@id"} reference after that.
@@ -35,6 +38,7 @@ rdflib.NORMALIZE_LITERALS = False
 
 ap = argparse.ArgumentParser()
 ap.add_argument('src'); ap.add_argument('out'); ap.add_argument('--base')
+ap.add_argument('--root', help='IRI or CURIE of the node to root the tree on (overrides the Dataset rule)')
 a = ap.parse_args()
 text = open(a.src, encoding='utf-8').read()
 is_ttl = a.src.endswith('.ttl')
@@ -89,7 +93,7 @@ for s, p, o in g:
 coerce = {p: next(iter(ts))[1] for p, ts in lit_types.items()
           if len(ts) == 1 and next(iter(ts))[0] == 'dt' and next(iter(ts))[1] not in (None, XSD.string)}
 
-done, bn_ids = set(), {}
+done, bn_ids, desc = set(), {}, {}      # desc: node -> the dict that describes it in full
 def val(o, p):
     if isinstance(o, Literal):
         if o.language: return {'@value': str(o), '@language': o.language}
@@ -101,7 +105,7 @@ def val(o, p):
     if isinstance(o, BNode) or o in named: return node(o)
     return {'@id': qq(o)}
 def node(s, skip=None):                 # skip: a (predicate, object) to leave out, stated by @reverse instead
-    done.add(s); n = {}
+    done.add(s); n = {}; desc[s] = n
     if isinstance(s, URIRef): n['@id'] = qq(s)
     elif incoming[s] > 1: bn_ids[s] = f'_:b{len(bn_ids)}'; n['@id'] = bn_ids[s]
     ts = sorted(g.objects(s, RDF.type), key=first_pos)
@@ -114,17 +118,33 @@ def node(s, skip=None):                 # skip: a (predicate, object) to leave o
         n[qq(p)] = vs[0] if len(vs) == 1 else vs
     return n
 
-# A schema:Dataset is the preferred root (CDIF records are rooted on the Dataset). Whatever points at
-# it and is not otherwise reached (e.g. an RO-Crate metadata descriptor's schema:about) is nested
-# under it with @reverse, so the record stays one tree.
+# The root is the node named by --root, else a schema:Dataset (CDIF records are rooted on the Dataset).
+# A node that is not reached from it but points into the tree (an RO-Crate metadata descriptor's
+# schema:about, a DDI-CDI agent's ProcessingAgent_performs_Activity) is nested with @reverse under the
+# first node it points at. Anything still unconnected goes in the root's @included, so the root stays
+# the one top-level object.
 DATASET = URIRef('http://schema.org/Dataset')
-datasets = sorted((n for n in named if (n, RDF.type, DATASET) in g), key=lambda r: -reach(r))
+def expand(t):
+    pre, _, local = t.partition(':')
+    return URIRef(PFX[pre] + local if pre in PFX and not t.startswith('http') else t)
+if a.root:
+    main = expand(a.root)
+    if main not in named: sys.exit(f'--root {a.root}: no such node in {a.src}')
+else:
+    datasets = sorted((n for n in named if (n, RDF.type, DATASET) in g), key=lambda r: -reach(r))
+    main = datasets[0] if datasets else None
 trees = []
-if datasets:
-    main = datasets[0]; tree = node(main); rev = defaultdict(list)
-    for s, p in sorted(g.subject_predicates(main), key=lambda sp: first_pos(sp[0])):
-        if s not in done: rev[qq(p)].append(node(s, skip=(p, main)))
-    if rev: tree['@reverse'] = {k: v[0] if len(v) == 1 else v for k, v in rev.items()}
+if main is not None:
+    tree = node(main)
+    while True:
+        cands = [(first_pos(s), s, p, o) for s, p, o in g if s in named and s not in done
+                 and p != RDF.type and o in desc]
+        if not cands: break
+        _, s, p, o = min(cands, key=lambda c: (c[0], list(desc).index(c[3])))
+        rev = desc[o].setdefault('@reverse', {}); k = qq(p); child = node(s, skip=(p, o))
+        rev[k] = child if k not in rev else (rev[k] if isinstance(rev[k], list) else [rev[k]]) + [child]
+    rest = [node(r) for r in sorted((x for x in named if x not in done), key=first_pos) if r not in done]
+    if rest: tree['@included'] = rest
     trees.append(tree)
 trees += [node(r) for r in roots if r not in done]
 left = [x for x in named if x not in done]          # nodes only reachable inside a cycle

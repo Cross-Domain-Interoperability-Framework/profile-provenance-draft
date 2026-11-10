@@ -96,6 +96,7 @@ tree-shaped JSON-LD copy beside its source:
 |PROV-O, plain relations|[prov-o-unqualified/cdif\_provenance\_quantitative.jsonld](prov-o-unqualified/cdif_provenance_quantitative.jsonld)|3: `ex:validationResult`, plus the two plans, cut off once `hadPlan` is dropped|
 |RO-Crate|[ro-crate/cdif\_provenance\_quantitative.jsonld](ro-crate/cdif_provenance_quantitative.jsonld)|1: the crate's root `schema:Dataset` (`./`), with the metadata descriptor nested under `@reverse`|
 |DDI-CDI|[ddi-cdi/cdif\_provenance\_quantitative.jsonld](ddi-cdi/cdif_provenance_quantitative.jsonld)|4: the agents (`ProcessingAgent\_performs\_Activity` points from agent to activity)|
+|DDI-CDI, rooted on the run|[ddi-cdi/cdif\_provenance\_quantitative.run-rooted.jsonld](ddi-cdi/cdif_provenance_quantitative.run-rooted.jsonld)|1: `ex:concentrationRun` (`--root ex:concentrationRun`). Its steps nest under `cdi:Activity\_has\_Step`; each agent sits under the first activity it performs, with `@reverse`; the laboratory, which nothing in the process model links to (note 11), is in `@included`|
 |P-Plan|[p-plan/cdif\_provenance\_quantitative.jsonld](p-plan/cdif_provenance_quantitative.jsonld)|20: each activity and entity of the run, with its step or variable, and the plan, nested inside|
 |ProvONE|[provone/cdif\_provenance\_quantitative.jsonld](provone/cdif_provenance_quantitative.jsonld)|1|
 |SOSA/SSN|[sosa/cdif\_provenance\_quantitative.jsonld](sosa/cdif_provenance_quantitative.jsonld)|3: the three observations and the sampling|
