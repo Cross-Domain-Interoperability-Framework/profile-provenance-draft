@@ -14,8 +14,7 @@
   "schema:dateModified": "2024-10-28",
   "schema:subjectOf": {
     "@type": [
-      "schema:Dataset",
-      "dcat:CatalogRecord"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       {
@@ -40,9 +39,6 @@
       ],
       "@id": "#5b1292dc-6021-45f6-8f81-40d977069fc9",
       "schema:name": "Workflow to reproduce paper 8 EXAFS fitting",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-09-27T15:27:15.076443",
       "schema:endTime": "2024-09-27T15:27:15.076453",
@@ -51,7 +47,9 @@
           "schema:HowTo"
         ],
         "schema:additionalType": [
-          "bios:ComputationalWorkflow"
+          {
+            "@id": "bios:ComputationalWorkflow"
+          }
         ],
         "schema:name": "Workflow to reproduce paper 8 EXAFS fitting workflow",
         "@id": "workflows/0a07785dca20180d.gxwf.yml",

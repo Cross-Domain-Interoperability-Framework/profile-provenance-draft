@@ -14,8 +14,7 @@
   "schema:dateModified": "2024-10-14",
   "schema:subjectOf": {
     "@type": [
-      "schema:Dataset",
-      "dcat:CatalogRecord"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       {
@@ -40,23 +39,38 @@
       ],
       "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418",
       "schema:name": "Paper 1: XANES, LCF, EXAFS",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:46:03.039565",
       "schema:endTime": "2024-10-14T16:46:03.039568",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:additionalType": [
-          "bios:ComputationalWorkflow"
-        ],
-        "schema:name": "Paper 1: XANES, LCF, EXAFS",
-        "@id": "workflows/bf972370cf6dfa23.gxwf.yml"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": {
+            "@type": [
+              "schema:SoftwareApplication"
+            ],
+            "schema:name": "Galaxy workflow engine",
+            "schema:version": "24.1"
+          }
+        },
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:additionalType": [
+                {
+                  "@id": "bios:ComputationalWorkflow"
+                }
+              ],
+              "schema:name": "Paper 1: XANES, LCF, EXAFS",
+              "@id": "workflows/bf972370cf6dfa23.gxwf.yml"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -221,15 +235,6 @@
           ],
           "@id": "#Sn3Pt%20Pt%20Calibration-pv",
           "schema:name": "Sn3Pt Pt Calibration"
-        },
-        {
-          "bios:computationalTool": {
-            "@type": [
-              "schema:SoftwareApplication"
-            ],
-            "schema:name": "Galaxy workflow engine",
-            "schema:version": "24.1"
-          }
         }
       ]
     },
@@ -240,25 +245,25 @@
       ],
       "@id": "#step-1-Extract-Sn-Foil",
       "schema:name": "Extract Sn Foil",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 1,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.220005",
       "schema:endTime": "2024-10-14T16:47:57.053179",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -323,25 +328,25 @@
       ],
       "@id": "#step-2-Extract-SnO2",
       "schema:name": "Extract SnO2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 2,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.326585",
       "schema:endTime": "2024-10-14T16:47:56.007141",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -406,25 +411,25 @@
       ],
       "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2",
       "schema:name": "Merge Sn K edge H2 under H2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 3,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.441993",
       "schema:endTime": "2024-10-14T16:47:59.267649",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -490,25 +495,25 @@
       ],
       "@id": "#step-4-Merge-Sn-K-edge-H2",
       "schema:name": "Merge Sn K edge H2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 4,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.553223",
       "schema:endTime": "2024-10-14T16:47:59.312173",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -574,25 +579,25 @@
       ],
       "@id": "#step-5-Merge-Sn-K-edge-Ar",
       "schema:name": "Merge Sn K edge Ar",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 5,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.664215",
       "schema:endTime": "2024-10-14T16:48:00.882046",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -658,25 +663,25 @@
       ],
       "@id": "#step-6-Merge-Sn-K-edge-Air",
       "schema:name": "Merge Sn K edge Air",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 6,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.777298",
       "schema:endTime": "2024-10-14T16:47:55.880658",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -742,25 +747,25 @@
       ],
       "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2",
       "schema:name": "Merge Pt L3 edge H2 under H2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 7,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:46.930596",
       "schema:endTime": "2024-10-14T16:48:00.828245",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -822,25 +827,25 @@
       ],
       "@id": "#step-8-Merge-Pt-L3-edge-H2",
       "schema:name": "Merge Pt L3 edge H2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 8,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.090291",
       "schema:endTime": "2024-10-14T16:48:00.933633",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -902,25 +907,25 @@
       ],
       "@id": "#step-9-Merge-Pt-L3-edge-Ar",
       "schema:name": "Merge Pt L3 edge Ar",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 9,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.252704",
       "schema:endTime": "2024-10-14T16:48:08.027215",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -982,25 +987,25 @@
       ],
       "@id": "#step-10-Merge-Pt-L3-edge-Air",
       "schema:name": "Merge Pt L3 edge Air",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 10,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.393183",
       "schema:endTime": "2024-10-14T16:48:09.055214",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -1062,25 +1067,25 @@
       ],
       "@id": "#step-11-Pt3Sn-FEFF:-Sn",
       "schema:name": "Pt3Sn FEFF: Sn",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 11,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.499667",
       "schema:endTime": "2024-10-14T16:48:10.104907",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_feff",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_feff",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -1129,25 +1134,25 @@
       ],
       "@id": "#step-12-Pt3Sn-FEFF:-Pt",
       "schema:name": "Pt3Sn FEFF: Pt",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 12,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.597194",
       "schema:endTime": "2024-10-14T16:48:03.832203",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_feff",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_feff",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -1196,25 +1201,25 @@
       ],
       "@id": "#step-13-SnO2-FEFF",
       "schema:name": "SnO2 FEFF",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 13,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.709081",
       "schema:endTime": "2024-10-14T16:48:07.051566",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_feff",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_feff",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -1263,25 +1268,25 @@
       ],
       "@id": "#step-14-PtO2-FEFF",
       "schema:name": "PtO2 FEFF",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 14,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.823783",
       "schema:endTime": "2024-10-14T16:48:07.817207",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_feff",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_feff",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -1330,42 +1335,31 @@
       ],
       "@id": "#step-15-LCF:-Sn-Foil-/-SnO2,-H2",
       "schema:name": "LCF: Sn Foil / SnO2, H2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 15,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:47.983788",
       "schema:endTime": "2024-10-14T16:48:10.192689",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_lcf",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-1-Extract-Sn-Foil"
-        },
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-4-Merge-Sn-K-edge-H2"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_lcf",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20Sn%20Foil-athena_project_file",
+          "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
           "schema:name": "Extract Sn Foil/athena_project_file"
         },
         {
@@ -1373,7 +1367,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1381,14 +1375,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2-athena_project_file",
+          "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Sn%20Foil%20/%20SnO2,%20H2-plot",
+          "@id": "#step-15-LCF:-Sn-Foil-/-SnO2,-H2/output-plot",
           "schema:name": "LCF: Sn Foil / SnO2, H2/plot"
         }
       ],
@@ -1458,42 +1452,31 @@
       ],
       "@id": "#step-16-LCF:-Pt3Sn-/-SnO2,-H2",
       "schema:name": "LCF: Pt3Sn / SnO2, H2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 16,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.161925",
       "schema:endTime": "2024-10-14T16:48:10.215560",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_lcf",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-4-Merge-Sn-K-edge-H2"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_lcf",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -1501,7 +1484,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1509,14 +1492,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2-athena_project_file",
+          "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Pt3Sn%20/%20SnO2,%20H2-plot",
+          "@id": "#step-16-LCF:-Pt3Sn-/-SnO2,-H2/output-plot",
           "schema:name": "LCF: Pt3Sn / SnO2, H2/plot"
         }
       ],
@@ -1586,42 +1569,31 @@
       ],
       "@id": "#step-17-LCF:-Sn-Foil-/-SnO2,-Ar",
       "schema:name": "LCF: Sn Foil / SnO2, Ar",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 17,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.324376",
       "schema:endTime": "2024-10-14T16:48:13.330578",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_lcf",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-1-Extract-Sn-Foil"
-        },
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-5-Merge-Sn-K-edge-Ar"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_lcf",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20Sn%20Foil-athena_project_file",
+          "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
           "schema:name": "Extract Sn Foil/athena_project_file"
         },
         {
@@ -1629,7 +1601,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1637,14 +1609,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Ar-athena_project_file",
+          "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Sn K edge Ar/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Sn%20Foil%20/%20SnO2,%20Ar-plot",
+          "@id": "#step-17-LCF:-Sn-Foil-/-SnO2,-Ar/output-plot",
           "schema:name": "LCF: Sn Foil / SnO2, Ar/plot"
         }
       ],
@@ -1714,42 +1686,31 @@
       ],
       "@id": "#step-18-LCF:-Pt3Sn-/-SnO2,-Ar",
       "schema:name": "LCF: Pt3Sn / SnO2, Ar",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 18,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.464044",
       "schema:endTime": "2024-10-14T16:48:12.615747",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_lcf",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-5-Merge-Sn-K-edge-Ar"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_lcf",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -1757,7 +1718,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1765,14 +1726,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Ar-athena_project_file",
+          "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Sn K edge Ar/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Pt3Sn%20/%20SnO2,%20Ar-plot",
+          "@id": "#step-18-LCF:-Pt3Sn-/-SnO2,-Ar/output-plot",
           "schema:name": "LCF: Pt3Sn / SnO2, Ar/plot"
         }
       ],
@@ -1842,51 +1803,31 @@
       ],
       "@id": "#step-19-Sn-K-XANES-Plot",
       "schema:name": "Sn K XANES Plot",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 19,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.664617",
       "schema:endTime": "2024-10-14T16:48:12.860339",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_plot",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-1-Extract-Sn-Foil"
-        },
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-6-Merge-Sn-K-edge-Air"
-        },
-        {
-          "@id": "#step-5-Merge-Sn-K-edge-Ar"
-        },
-        {
-          "@id": "#step-4-Merge-Sn-K-edge-H2"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_plot",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20Sn%20Foil-athena_project_file",
+          "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
           "schema:name": "Extract Sn Foil/athena_project_file"
         },
         {
@@ -1894,7 +1835,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -1902,7 +1843,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -1910,7 +1851,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2-athena_project_file",
+          "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2/athena_project_file"
         },
         {
@@ -1918,7 +1859,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Ar-athena_project_file",
+          "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Sn K edge Ar/athena_project_file"
         },
         {
@@ -1926,7 +1867,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Air-athena_project_file",
+          "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
           "schema:name": "Merge Sn K edge Air/athena_project_file"
         }
       ],
@@ -1977,42 +1918,31 @@
       ],
       "@id": "#step-20-LCF:-Sn-Foil-/-SnO2,-Air",
       "schema:name": "LCF: Sn Foil / SnO2, Air",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 20,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.845649",
       "schema:endTime": "2024-10-14T16:48:07.773240",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_lcf",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-1-Extract-Sn-Foil"
-        },
-        {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-6-Merge-Sn-K-edge-Air"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_lcf",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20Sn%20Foil-athena_project_file",
+          "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
           "schema:name": "Extract Sn Foil/athena_project_file"
         },
         {
@@ -2020,7 +1950,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -2028,14 +1958,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Air-athena_project_file",
+          "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
           "schema:name": "Merge Sn K edge Air/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Sn%20Foil%20/%20SnO2,%20Air-plot",
+          "@id": "#step-20-LCF:-Sn-Foil-/-SnO2,-Air/output-plot",
           "schema:name": "LCF: Sn Foil / SnO2, Air/plot"
         }
       ],
@@ -2105,42 +2035,31 @@
       ],
       "@id": "#step-21-LCF:-Pt3Sn-/-SnO2,-Air",
       "schema:name": "LCF: Pt3Sn / SnO2, Air",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 21,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:48.965574",
       "schema:endTime": "2024-10-14T16:48:09.800340",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_lcf",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-2-Extract-SnO2"
-        },
-        {
-          "@id": "#step-6-Merge-Sn-K-edge-Air"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_lcf",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -2148,7 +2067,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Extract%20SnO2-athena_project_file",
+          "@id": "#step-2-Extract-SnO2/output-athena_project_file",
           "schema:name": "Extract SnO2/athena_project_file"
         },
         {
@@ -2156,14 +2075,14 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Air-athena_project_file",
+          "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
           "schema:name": "Merge Sn K edge Air/athena_project_file"
         }
       ],
       "schema:result": [
         {
           "@type": "schema:Thing",
-          "@id": "#output-LCF:%20Pt3Sn%20/%20SnO2,%20Air-plot",
+          "@id": "#step-21-LCF:-Pt3Sn-/-SnO2,-Air/output-plot",
           "schema:name": "LCF: Pt3Sn / SnO2, Air/plot"
         }
       ],
@@ -2233,45 +2152,31 @@
       ],
       "@id": "#step-22-Pt-L3-XANES-Plot",
       "schema:name": "Pt L3 XANES Plot",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 22,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.130416",
       "schema:endTime": "2024-10-14T16:48:18.349692",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_plot",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-10-Merge-Pt-L3-edge-Air"
-        },
-        {
-          "@id": "#step-9-Merge-Pt-L3-edge-Ar"
-        },
-        {
-          "@id": "#step-8-Merge-Pt-L3-edge-H2"
-        },
-        {
-          "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_plot",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge H2 under H2/athena_project_file"
         },
         {
@@ -2279,7 +2184,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20H2-athena_project_file",
+          "@id": "#step-8-Merge-Pt-L3-edge-H2/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge H2/athena_project_file"
         },
         {
@@ -2287,7 +2192,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20Ar-athena_project_file",
+          "@id": "#step-9-Merge-Pt-L3-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge Ar/athena_project_file"
         },
         {
@@ -2295,7 +2200,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20Air-athena_project_file",
+          "@id": "#step-10-Merge-Pt-L3-edge-Air/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge Air/athena_project_file"
         }
       ],
@@ -2346,45 +2251,31 @@
       ],
       "@id": "#step-23-41",
       "schema:name": "41",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 23,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.323891",
       "schema:endTime": "2024-10-14T16:48:15.343934",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_select_paths",
-        "schema:version": "0.9.80+galaxy0",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.80+galaxy0"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-12-Pt3Sn-FEFF:-Pt"
-        },
-        {
-          "@id": "#step-11-Pt3Sn-FEFF:-Sn"
-        },
-        {
-          "@id": "#step-14-PtO2-FEFF"
-        },
-        {
-          "@id": "#step-13-SnO2-FEFF"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_select_paths",
+              "schema:version": "0.9.80+galaxy0",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.80+galaxy0"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-PtO2%20FEFF-out_dir",
+          "@id": "#step-14-PtO2-FEFF/output-out_dir",
           "schema:name": "PtO2 FEFF/out_dir"
         },
         {
@@ -2392,7 +2283,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-SnO2%20FEFF-out_csv",
+          "@id": "#step-13-SnO2-FEFF/output-out_csv",
           "schema:name": "SnO2 FEFF/out_csv"
         },
         {
@@ -2400,7 +2291,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-SnO2%20FEFF-out_dir",
+          "@id": "#step-13-SnO2-FEFF/output-out_dir",
           "schema:name": "SnO2 FEFF/out_dir"
         },
         {
@@ -2408,7 +2299,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Pt3Sn%20FEFF:%20Sn-out_csv",
+          "@id": "#step-11-Pt3Sn-FEFF:-Sn/output-out_csv",
           "schema:name": "Pt3Sn FEFF: Sn/out_csv"
         },
         {
@@ -2416,7 +2307,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-PtO2%20FEFF-out_csv",
+          "@id": "#step-14-PtO2-FEFF/output-out_csv",
           "schema:name": "PtO2 FEFF/out_csv"
         },
         {
@@ -2424,7 +2315,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Pt3Sn%20FEFF:%20Pt-out_csv",
+          "@id": "#step-12-Pt3Sn-FEFF:-Pt/output-out_csv",
           "schema:name": "Pt3Sn FEFF: Pt/out_csv"
         },
         {
@@ -2432,7 +2323,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Pt3Sn%20FEFF:%20Pt-out_dir",
+          "@id": "#step-12-Pt3Sn-FEFF:-Pt/output-out_dir",
           "schema:name": "Pt3Sn FEFF: Pt/out_dir"
         },
         {
@@ -2440,7 +2331,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Pt3Sn%20FEFF:%20Sn-out_dir",
+          "@id": "#step-11-Pt3Sn-FEFF:-Sn/output-out_dir",
           "schema:name": "Pt3Sn FEFF: Sn/out_dir"
         }
       ],
@@ -2684,42 +2575,31 @@
       ],
       "@id": "#step-24-Artemis:-H2-under-H2",
       "schema:name": "Artemis: H2 under H2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 24,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.469422",
       "schema:endTime": "2024-10-14T16:48:48.455963",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_artemis",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-23-41"
-        },
-        {
-          "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2"
-        },
-        {
-          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_artemis",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge H2 under H2/athena_project_file"
         },
         {
@@ -2727,7 +2607,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2%20under%20H2-athena_project_file",
+          "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
         },
         {
@@ -2735,7 +2615,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-sp_csv",
+          "@id": "#step-23-41/output-sp_csv",
           "schema:name": "41/sp_csv"
         },
         {
@@ -2743,7 +2623,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-gds_csv",
+          "@id": "#step-23-41/output-gds_csv",
           "schema:name": "41/gds_csv"
         },
         {
@@ -2751,7 +2631,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-merged_directories",
+          "@id": "#step-23-41/output-merged_directories",
           "schema:name": "41/merged_directories"
         }
       ],
@@ -2820,42 +2700,31 @@
       ],
       "@id": "#step-25-Artemis:-H2",
       "schema:name": "Artemis: H2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 25,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.604062",
       "schema:endTime": "2024-10-14T16:48:31.080319",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_artemis",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-23-41"
-        },
-        {
-          "@id": "#step-8-Merge-Pt-L3-edge-H2"
-        },
-        {
-          "@id": "#step-4-Merge-Sn-K-edge-H2"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_artemis",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20H2-athena_project_file",
+          "@id": "#step-8-Merge-Pt-L3-edge-H2/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge H2/athena_project_file"
         },
         {
@@ -2863,7 +2732,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20H2-athena_project_file",
+          "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
           "schema:name": "Merge Sn K edge H2/athena_project_file"
         },
         {
@@ -2871,7 +2740,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-sp_csv",
+          "@id": "#step-23-41/output-sp_csv",
           "schema:name": "41/sp_csv"
         },
         {
@@ -2879,7 +2748,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-gds_csv",
+          "@id": "#step-23-41/output-gds_csv",
           "schema:name": "41/gds_csv"
         },
         {
@@ -2887,7 +2756,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-merged_directories",
+          "@id": "#step-23-41/output-merged_directories",
           "schema:name": "41/merged_directories"
         }
       ],
@@ -2956,42 +2825,31 @@
       ],
       "@id": "#step-26-Artemis:-Ar",
       "schema:name": "Artemis: Ar",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 26,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.744382",
       "schema:endTime": "2024-10-14T16:48:29.229657",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_artemis",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-23-41"
-        },
-        {
-          "@id": "#step-9-Merge-Pt-L3-edge-Ar"
-        },
-        {
-          "@id": "#step-5-Merge-Sn-K-edge-Ar"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_artemis",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20Ar-athena_project_file",
+          "@id": "#step-9-Merge-Pt-L3-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge Ar/athena_project_file"
         },
         {
@@ -2999,7 +2857,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Ar-athena_project_file",
+          "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
           "schema:name": "Merge Sn K edge Ar/athena_project_file"
         },
         {
@@ -3007,7 +2865,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-sp_csv",
+          "@id": "#step-23-41/output-sp_csv",
           "schema:name": "41/sp_csv"
         },
         {
@@ -3015,7 +2873,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-gds_csv",
+          "@id": "#step-23-41/output-gds_csv",
           "schema:name": "41/gds_csv"
         },
         {
@@ -3023,7 +2881,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-merged_directories",
+          "@id": "#step-23-41/output-merged_directories",
           "schema:name": "41/merged_directories"
         }
       ],
@@ -3092,42 +2950,31 @@
       ],
       "@id": "#step-27-Artemis:-Air",
       "schema:name": "Artemis: Air",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 27,
-      "prov:wasInfluencedBy": {
-        "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418"
-      },
       "schema:startTime": "2024-10-14T16:47:49.877459",
       "schema:endTime": "2024-10-14T16:48:29.255189",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_artemis",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-23-41"
-        },
-        {
-          "@id": "#step-10-Merge-Pt-L3-edge-Air"
-        },
-        {
-          "@id": "#step-6-Merge-Sn-K-edge-Air"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_artemis",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Pt%20L3%20edge%20Air-athena_project_file",
+          "@id": "#step-10-Merge-Pt-L3-edge-Air/output-athena_project_file",
           "schema:name": "Merge Pt L3 edge Air/athena_project_file"
         },
         {
@@ -3135,7 +2982,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-Merge%20Sn%20K%20edge%20Air-athena_project_file",
+          "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
           "schema:name": "Merge Sn K edge Air/athena_project_file"
         },
         {
@@ -3143,7 +2990,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-sp_csv",
+          "@id": "#step-23-41/output-sp_csv",
           "schema:name": "41/sp_csv"
         },
         {
@@ -3151,7 +2998,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-gds_csv",
+          "@id": "#step-23-41/output-gds_csv",
           "schema:name": "41/gds_csv"
         },
         {
@@ -3159,7 +3006,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-41-merged_directories",
+          "@id": "#step-23-41/output-merged_directories",
           "schema:name": "41/merged_directories"
         }
       ],

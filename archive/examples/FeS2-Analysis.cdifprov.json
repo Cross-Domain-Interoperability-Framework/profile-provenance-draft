@@ -14,8 +14,7 @@
   "schema:dateModified": "2024-10-23",
   "schema:subjectOf": {
     "@type": [
-      "schema:Dataset",
-      "dcat:CatalogRecord"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       {
@@ -40,9 +39,6 @@
       ],
       "@id": "#d5787109-088d-4886-a72e-03f42a4ec5cc",
       "schema:name": "FeS2 Analysis",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-23T14:09:38.754317",
       "schema:endTime": "2024-10-23T14:09:38.754320",
@@ -51,7 +47,9 @@
           "schema:HowTo"
         ],
         "schema:additionalType": [
-          "bios:ComputationalWorkflow"
+          {
+            "@id": "bios:ComputationalWorkflow"
+          }
         ],
         "schema:name": "FeS2 Analysis workflow",
         "@id": "workflows/6f2a09489271f4de.gxwf.yml",

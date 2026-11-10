@@ -43,17 +43,7 @@ python tools/WRROCToCdifProv.py input-rocrate.json -o output.cdifprov.json -v
 python tools/WRROCToCdifProv.py input-rocrate.json
 ```
 
-- **[tools/galaxyROCrateToCDIF.py](tools/galaxyROCrateToCDIF.py)** — Converts full Galaxy RO-Crate archives (zip or directory) into cdifProv documents with per-step methodology detail. Reads `ro-crate-metadata.json`, CWL abstract workflow (step definitions), Galaxy workflow YAML (input defaults), and `jobs_attrs.txt` (execution records with tool IDs, versions, parameters, and timestamps). Output represents workflow steps as `schema:HowToStep` entries within a `schema:actionProcess` → `schema:HowTo` structure, with `bios:computationalTool` listing all tools used. Grouped parameters with shared prefixes are compacted into `schema:StructuredValue` objects for readability. Requires PyYAML.
-
-```bash
-# Convert Galaxy RO-Crate zip
-python tools/galaxyROCrateToCDIF.py crate.rocrate.zip -o output.cdifprov.json
-
-# Convert extracted directory
-python tools/galaxyROCrateToCDIF.py crate-directory/ -o output.cdifprov.json -v
-```
-
-- **[tools/galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py)** — Multi-activity variant of the Galaxy converter. Instead of a single `CreateAction` with `HowTo`/`HowToStep` methodology, each workflow step becomes its own `[schema:Action, prov:Activity]` with `prov:wasInformedBy` linking upstream data dependencies and `prov:wasInfluencedBy` linking back to the parent workflow action. Data flow is reconstructed from CWL step declarations when available, falling back to Galaxy job dataset mappings. Produces `.actions.cdifprov.json` files for side-by-side comparison with the HowTo/step approach.
+- **[tools/galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py)** — Converts Galaxy RO-Crate archives (zip or directory) into cdifProv documents in which each workflow step is its own `[schema:Action, prov:Activity]`, so techniques, agents, inputs and outputs attach to the step that used or produced them. A step's inputs are its `schema:object` (an upstream step's `schema:result`, or a workflow input), which is what orders the steps; its tool is its `schema:instrument`. Data flow is reconstructed from CWL step declarations when available, falling back to Galaxy job dataset mappings. Produces `.actions.cdifprov.json` files. Requires PyYAML. (The earlier HowTo/step converter, which described the steps as a recipe inside one `CreateAction`, is in [archive/](archive/).)
 
 ```bash
 # Convert Galaxy RO-Crate zip (multi-activity output)
@@ -71,15 +61,14 @@ The [Examples/](Examples/) folder contains provenance instance documents in vari
 |---|---|
 | `ODIS_provExampleJulesVerne.json` | ODIS/OIH provenance example (schema.org Action pattern) |
 | `Bennu-py-GC-MS*.json` | Bennu asteroid py-GC-MS/MS analytical workflow — standard WRROC and ARC profile versions, with source RO-Crates and cdifProv conversions |
-| `FeS2-Analysis.cdifprov.json` | Galaxy FeS2 workflow — HowTo/step cdifProv conversion |
-| `FeS2-Analysis.actions.cdifprov.json` | Galaxy FeS2 workflow — multi-activity cdifProv conversion |
-| `Paper_1_Pt3Sn.*.cdifprov.json` | Galaxy Pt3Sn catalyst workflow (both formats) |
-| `Paper_2_Diphosphine*.*.cdifprov.json` | Galaxy Diphosphine workflow (both formats) |
-| `Paper_3-Au-colloids.*.cdifprov.json` | Galaxy Au colloids workflow (both formats) |
-| `Paper_5-LaMnO3*.*.cdifprov.json` | Galaxy LaMnO3 catalytic behaviour workflow (both formats) |
-| `Paper_8-EXAFS-fitting.*.cdifprov.json` | Galaxy EXAFS fitting workflow (both formats) |
+| `FeS2-Analysis.actions.cdifprov.json` | Galaxy FeS2 workflow |
+| `Paper_1_Pt3Sn.actions.cdifprov.json` | Galaxy Pt3Sn catalyst workflow |
+| `Paper_2_Diphosphine*.actions.cdifprov.json` | Galaxy Diphosphine workflow |
+| `Paper_3-Au-colloids.actions.cdifprov.json` | Galaxy Au colloids workflow |
+| `Paper_5-LaMnO3*.actions.cdifprov.json` | Galaxy LaMnO3 catalytic behaviour workflow |
+| `Paper_8-EXAFS-fitting.actions.cdifprov.json` | Galaxy EXAFS fitting workflow |
 
-Galaxy workflow RO-Crates originate from [Zenodo record 13842780](https://zenodo.org/records/13842780). Galaxy `.cdifprov.json` files were generated using [tools/galaxyROCrateToCDIF.py](tools/galaxyROCrateToCDIF.py) (HowTo/step approach) and `.actions.cdifprov.json` files using [tools/galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py) (multi-activity approach). Bennu ARC examples were generated using [tools/WRROCToCdifProv.py](tools/WRROCToCdifProv.py).
+Galaxy workflow RO-Crates originate from [Zenodo record 13842780](https://zenodo.org/records/13842780). Galaxy `.actions.cdifprov.json` files were generated using [tools/galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py) (one action per step). The HowTo/step conversions of the same crates are in [archive/examples/](archive/examples/). Bennu ARC examples were generated using [tools/WRROCToCdifProv.py](tools/WRROCToCdifProv.py).
 
 #### One example reports on a different node, by design
 

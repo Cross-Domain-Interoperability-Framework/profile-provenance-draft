@@ -1,0 +1,189 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "ex": "https://example.org/cdif-prov/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov:startedAtTime": {"@type": "xsd:dateTime"},
+    "prov:endedAtTime": {"@type": "xsd:dateTime"},
+    "prov:atTime": {"@type": "xsd:dateTime"}
+  },
+  "@id": "ex:themeValidationResult",
+  "@type": [
+    "prov:Entity",
+    "ex:ValidationObject"
+  ],
+  "prov:wasGeneratedBy": {
+    "@id": "ex:themeValidation",
+    "@type": [
+      "prov:Activity",
+      "ex:Assessment",
+      "ex:Validation"
+    ],
+    "prov:used": [
+      {
+        "@id": "ex:theme01",
+        "@type": [
+          "prov:Entity",
+          "ex:Theme",
+          "ex:Finding"
+        ],
+        "prov:wasGeneratedBy": {
+          "@id": "ex:themeDevelopment",
+          "@type": [
+            "prov:Activity",
+            "ex:Inference",
+            "ex:ThematicSynthesis"
+          ],
+          "prov:qualifiedUsage": [
+            {
+              "@type": "prov:Usage",
+              "prov:entity": {
+                "@id": "ex:codeAssignment",
+                "@type": [
+                  "prov:Entity",
+                  "ex:DerivedData",
+                  "ex:CodeAssignment"
+                ],
+                "prov:wasGeneratedBy": {
+                  "@id": "ex:codingActivity",
+                  "@type": [
+                    "prov:Activity",
+                    "ex:Derivation",
+                    "ex:QualitativeCoding"
+                  ],
+                  "prov:qualifiedUsage": [
+                    {
+                      "@type": "prov:Usage",
+                      "prov:entity": {
+                        "@id": "ex:responseSegment",
+                        "@type": [
+                          "prov:Entity",
+                          "ex:ProcessedData",
+                          "ex:ResponseSegment"
+                        ],
+                        "prov:qualifiedGeneration": {
+                          "@type": "prov:Generation",
+                          "prov:atTime": "2026-11-05T09:10:00Z",
+                          "prov:activity": {
+                            "@id": "ex:textProcessing",
+                            "@type": [
+                              "prov:Activity",
+                              "ex:Processing"
+                            ],
+                            "prov:startedAtTime": "2026-11-05T09:00:00Z",
+                            "prov:endedAtTime": "2026-11-05T09:10:00Z",
+                            "prov:qualifiedUsage": [
+                              {
+                                "@type": "prov:Usage",
+                                "prov:entity": {
+                                  "@id": "ex:submittedResponse",
+                                  "@type": [
+                                    "prov:Entity",
+                                    "ex:SourceData",
+                                    "ex:SubmittedData"
+                                  ]
+                                },
+                                "prov:hadRole": {"@id": "ex:InputData"}
+                              },
+                              {
+                                "@type": "prov:Usage",
+                                "prov:entity": {
+                                  "@id": "ex:processingGuide",
+                                  "@type": [
+                                    "prov:Entity",
+                                    "prov:Plan",
+                                    "ex:ProcessingSpecification"
+                                  ]
+                                },
+                                "prov:hadRole": {"@id": "ex:ProcessingSpecificationRole"}
+                              }
+                            ],
+                            "prov:qualifiedAssociation": {
+                              "@type": "prov:Association",
+                              "prov:agent": {
+                                "@id": "ex:researcherA",
+                                "@type": "prov:Person"
+                              },
+                              "prov:hadRole": {"@id": "ex:DataProcessor"},
+                              "prov:hadPlan": {"@id": "ex:processingGuide"}
+                            }
+                          }
+                        },
+                        "prov:qualifiedDerivation": {
+                          "@type": "prov:Derivation",
+                          "prov:entity": {"@id": "ex:submittedResponse"},
+                          "prov:hadActivity": {"@id": "ex:textProcessing"}
+                        }
+                      },
+                      "prov:hadRole": {"@id": "ex:SourceResponse"}
+                    },
+                    {
+                      "@type": "prov:Usage",
+                      "prov:entity": {
+                        "@id": "ex:codebookV2",
+                        "@type": [
+                          "prov:Entity",
+                          "prov:Plan",
+                          "ex:DerivationSpecification",
+                          "ex:Codebook"
+                        ]
+                      },
+                      "prov:hadRole": {"@id": "ex:CodingSpecification"}
+                    }
+                  ],
+                  "prov:qualifiedAssociation": {
+                    "@type": "prov:Association",
+                    "prov:agent": {"@id": "ex:researcherA"},
+                    "prov:hadRole": {"@id": "ex:Coder"},
+                    "prov:hadPlan": {"@id": "ex:codebookV2"}
+                  }
+                },
+                "prov:wasDerivedFrom": {"@id": "ex:responseSegment"},
+                "prov:wasAttributedTo": {"@id": "ex:researcherA"}
+              },
+              "prov:hadRole": {"@id": "ex:AnalyticalInput"}
+            },
+            {
+              "@type": "prov:Usage",
+              "prov:entity": {
+                "@id": "ex:analyticalFramework",
+                "@type": [
+                  "prov:Entity",
+                  "prov:Plan",
+                  "ex:InferenceSpecification"
+                ]
+              },
+              "prov:hadRole": {"@id": "ex:InferenceSpecificationRole"}
+            }
+          ],
+          "prov:qualifiedAssociation": {
+            "@type": "prov:Association",
+            "prov:agent": {"@id": "ex:researcherA"},
+            "prov:hadRole": {"@id": "ex:Analyst"},
+            "prov:hadPlan": {"@id": "ex:analyticalFramework"}
+          }
+        },
+        "prov:wasDerivedFrom": {"@id": "ex:codeAssignment"},
+        "prov:wasAttributedTo": {"@id": "ex:researcherA"}
+      },
+      {
+        "@id": "ex:codingUncertainty",
+        "@type": [
+          "prov:Entity",
+          "ex:UncertaintyObject"
+        ],
+        "prov:wasGeneratedBy": {
+          "@id": "ex:codingAssessment",
+          "@type": [
+            "prov:Activity",
+            "ex:Assessment",
+            "ex:UncertaintyAssessment"
+          ],
+          "prov:used": {"@id": "ex:codeAssignment"}
+        },
+        "prov:wasDerivedFrom": {"@id": "ex:codeAssignment"}
+      }
+    ]
+  },
+  "prov:wasDerivedFrom": {"@id": "ex:theme01"}
+}

@@ -14,8 +14,7 @@
   "schema:dateModified": "2023-11-21",
   "schema:subjectOf": {
     "@type": [
-      "schema:Dataset",
-      "dcat:CatalogRecord"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       {
@@ -42,8 +41,9 @@
       "schema:name": "Py-GC-MS/MS analysis of OREX-803003-0",
       "schema:description": "Complete py-GC-MS/MS analysis session for Bennu asteroid sample OREX-803003-0, session identifier: 20231121_GCMS_GSFC_OREX-803003-0_1.",
       "schema:additionalType": [
-        "schema:CreateAction",
-        "bios:LabProcess"
+        {
+          "@id": "bios:LabProcess"
+        }
       ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2023-11-21T00:00:00Z",
@@ -57,8 +57,12 @@
         "schema:name": "Py-GC-MS/MS analysis protocol for OSIRIS-REx Bennu sample",
         "schema:description": "Flash pyrolysis coupled to gas chromatography-tandem mass spectrometry with simultaneous full scan (m/z 50–500) and timed SRM/MRM acquisition targeting 38 organic compounds. Method identifier: Mojarro_88min_MRM_4_IOM+FullScan_10_1_Split_py. Intended use: Characterization of complex organic mixtures in bulk solid extraterrestrial samples by direct microanalysis without chemical pretreatment.",
         "schema:additionalType": [
-          "bios:LabProtocol",
-          "bios:ComputationalWorkflow"
+          {
+            "@id": "bios:LabProtocol"
+          },
+          {
+            "@id": "bios:ComputationalWorkflow"
+          }
         ],
         "bios:labEquipment": [
           {
@@ -100,7 +104,9 @@
             "schema:name": "Sample mass",
             "schema:description": "Mass of bulk sample loaded into quartz tube",
             "schema:additionalType": [
-              "bios:FormalParameter",
+              {
+                "@id": "bios:FormalParameter"
+              },
               "PropertyValue"
             ]
           },
@@ -112,7 +118,9 @@
             "schema:name": "Pyrolysis target temperature",
             "schema:description": "Target temperature for flash pyrolysis",
             "schema:additionalType": [
-              "bios:FormalParameter",
+              {
+                "@id": "bios:FormalParameter"
+              },
               "PropertyValue"
             ]
           },
@@ -124,7 +132,9 @@
             "schema:name": "Pyrolysis heating rate",
             "schema:description": "Rate of flash heating",
             "schema:additionalType": [
-              "bios:FormalParameter",
+              {
+                "@id": "bios:FormalParameter"
+              },
               "PropertyValue"
             ]
           }
@@ -137,7 +147,9 @@
             "@id": "#param_outputFormat",
             "schema:name": "Output data format",
             "schema:additionalType": [
-              "bios:FormalParameter",
+              {
+                "@id": "bios:FormalParameter"
+              },
               "PropertyValue"
             ]
           }
@@ -177,7 +189,9 @@
                 "@id": "#param_preparedSampleForm",
                 "schema:name": "Prepared sample form",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               }
@@ -209,7 +223,9 @@
                 "@id": "#param_transferLineTemp",
                 "schema:name": "Transfer line temperature",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               }
@@ -235,7 +251,9 @@
                 "@id": "#param_columnType",
                 "schema:name": "GC column type",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -246,7 +264,9 @@
                 "@id": "#param_carrierGasFlow",
                 "schema:name": "Carrier gas flow rate",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -257,7 +277,9 @@
                 "@id": "#param_splitRatio",
                 "schema:name": "Inlet split ratio",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -268,7 +290,9 @@
                 "@id": "#param_inletTemp",
                 "schema:name": "Inlet temperature",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -279,7 +303,9 @@
                 "@id": "#param_ovenProgram",
                 "schema:name": "GC oven temperature program",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               }
@@ -305,7 +331,9 @@
                 "@id": "#param_scanRange",
                 "schema:name": "Full scan m/z range",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -316,7 +344,9 @@
                 "@id": "#param_ionizationMode",
                 "schema:name": "Ionization mode",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -327,7 +357,9 @@
                 "@id": "#param_mrmCompoundCount",
                 "schema:name": "Number of MRM target compounds",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               }
@@ -346,8 +378,12 @@
         "schema:name": "Py-GC-MS/MS analysis protocol for OSIRIS-REx Bennu sample",
         "schema:description": "Flash pyrolysis coupled to gas chromatography-tandem mass spectrometry with simultaneous full scan (m/z 50–500) and timed SRM/MRM acquisition targeting 38 organic compounds. Method identifier: Mojarro_88min_MRM_4_IOM+FullScan_10_1_Split_py. Intended use: Characterization of complex organic mixtures in bulk solid extraterrestrial samples by direct microanalysis without chemical pretreatment.",
         "schema:additionalType": [
-          "bios:LabProtocol",
-          "bios:ComputationalWorkflow"
+          {
+            "@id": "bios:LabProtocol"
+          },
+          {
+            "@id": "bios:ComputationalWorkflow"
+          }
         ],
         "bios:labEquipment": [
           {
@@ -389,7 +425,9 @@
             "schema:name": "Sample mass",
             "schema:description": "Mass of bulk sample loaded into quartz tube",
             "schema:additionalType": [
-              "bios:FormalParameter",
+              {
+                "@id": "bios:FormalParameter"
+              },
               "PropertyValue"
             ]
           },
@@ -401,7 +439,9 @@
             "schema:name": "Pyrolysis target temperature",
             "schema:description": "Target temperature for flash pyrolysis",
             "schema:additionalType": [
-              "bios:FormalParameter",
+              {
+                "@id": "bios:FormalParameter"
+              },
               "PropertyValue"
             ]
           },
@@ -413,7 +453,9 @@
             "schema:name": "Pyrolysis heating rate",
             "schema:description": "Rate of flash heating",
             "schema:additionalType": [
-              "bios:FormalParameter",
+              {
+                "@id": "bios:FormalParameter"
+              },
               "PropertyValue"
             ]
           }
@@ -426,7 +468,9 @@
             "@id": "#param_outputFormat",
             "schema:name": "Output data format",
             "schema:additionalType": [
-              "bios:FormalParameter",
+              {
+                "@id": "bios:FormalParameter"
+              },
               "PropertyValue"
             ]
           }
@@ -466,7 +510,9 @@
                 "@id": "#param_preparedSampleForm",
                 "schema:name": "Prepared sample form",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               }
@@ -498,7 +544,9 @@
                 "@id": "#param_transferLineTemp",
                 "schema:name": "Transfer line temperature",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               }
@@ -524,7 +572,9 @@
                 "@id": "#param_columnType",
                 "schema:name": "GC column type",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -535,7 +585,9 @@
                 "@id": "#param_carrierGasFlow",
                 "schema:name": "Carrier gas flow rate",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -546,7 +598,9 @@
                 "@id": "#param_splitRatio",
                 "schema:name": "Inlet split ratio",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -557,7 +611,9 @@
                 "@id": "#param_inletTemp",
                 "schema:name": "Inlet temperature",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -568,7 +624,9 @@
                 "@id": "#param_ovenProgram",
                 "schema:name": "GC oven temperature program",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               }
@@ -594,7 +652,9 @@
                 "@id": "#param_scanRange",
                 "schema:name": "Full scan m/z range",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -605,7 +665,9 @@
                 "@id": "#param_ionizationMode",
                 "schema:name": "Ionization mode",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               },
@@ -616,7 +678,9 @@
                 "@id": "#param_mrmCompoundCount",
                 "schema:name": "Number of MRM target compounds",
                 "schema:additionalType": [
-                  "bios:FormalParameter",
+                  {
+                    "@id": "bios:FormalParameter"
+                  },
                   "PropertyValue"
                 ]
               }
@@ -635,7 +699,9 @@
             "schema:Thing"
           ],
           "schema:additionalType": [
-            "bios:Sample"
+            {
+              "@id": "bios:Sample"
+            }
           ],
           "@id": "#OREX-803003-0",
           "schema:name": "Bennu asteroid sample OREX-803003-0",
@@ -736,8 +802,9 @@
       "schema:name": "Sample preparation — load Bennu aggregate into quartz tube",
       "schema:description": "Approximately 1 mg of bulk aggregate from the TAGSAM collection device loaded and weighed inside a quartz tube, placed into pyrolysis oven interfaced with GC-MS.",
       "schema:additionalType": [
-        "schema:CreateAction",
-        "bios:LabProcess"
+        {
+          "@id": "bios:LabProcess"
+        }
       ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
@@ -761,7 +828,9 @@
             "schema:Thing"
           ],
           "schema:additionalType": [
-            "bios:Sample"
+            {
+              "@id": "bios:Sample"
+            }
           ],
           "@id": "#PreparedSample",
           "schema:name": "Prepared sample in quartz tube",
@@ -819,8 +888,9 @@
       "schema:name": "Flash pyrolysis at ~600°C",
       "schema:description": "Flash-heated at 10°C/ms to approximately 600°C. Volatiles carried in helium through heated transfer line (300°C). Note: bulk samples may contain SOM producing thermal degradation products and rearrangement reactions, making it difficult to distinguish IOM-derived vs. SOM-derived compounds.",
       "schema:additionalType": [
-        "schema:CreateAction",
-        "bios:LabProcess"
+        {
+          "@id": "bios:LabProcess"
+        }
       ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
@@ -844,7 +914,9 @@
             "schema:Thing"
           ],
           "schema:additionalType": [
-            "bios:Sample"
+            {
+              "@id": "bios:Sample"
+            }
           ],
           "@id": "#PyrolysisProducts",
           "schema:name": "Pyrolysis volatiles in helium carrier stream",
@@ -928,8 +1000,9 @@
       "schema:name": "GC separation on Rtx-5ms column",
       "schema:description": "Chromatographic separation on Rtx-5ms column (30 m × 0.250 mm × 0.50 µm, 5 m guard). Split injection 10:1 at 300°C. Oven: 40°C hold → ~3.5°C/min → 300°C hold. He carrier 1.500 mL/min. Run time 87.79 min.",
       "schema:additionalType": [
-        "schema:CreateAction",
-        "bios:LabProcess"
+        {
+          "@id": "bios:LabProcess"
+        }
       ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
@@ -953,7 +1026,9 @@
             "schema:Thing"
           ],
           "schema:additionalType": [
-            "bios:Sample"
+            {
+              "@id": "bios:Sample"
+            }
           ],
           "@id": "#SeparatedEluent",
           "schema:name": "Chromatographically separated eluent",
@@ -1071,8 +1146,9 @@
       "schema:name": "Dual-mode MS detection (full scan + MRM)",
       "schema:description": "Simultaneous full scan (m/z 50–500, EI positive, 0.100 s scan time) and timed SRM/MRM (38 compounds, 2–3 transitions each). Ion source and transfer line at 300°C. Detector gain 100,000.",
       "schema:additionalType": [
-        "schema:CreateAction",
-        "bios:LabProcess"
+        {
+          "@id": "bios:LabProcess"
+        }
       ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",

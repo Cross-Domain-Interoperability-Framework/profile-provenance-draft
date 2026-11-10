@@ -14,8 +14,7 @@
   "schema:dateModified": "2024-09-27",
   "schema:subjectOf": {
     "@type": [
-      "schema:Dataset",
-      "dcat:CatalogRecord"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       {
@@ -40,9 +39,6 @@
       ],
       "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5",
       "schema:name": "Workflow constructed from history ''Extracting structural information of Au colloids at ultra-dilute concentrations: identification of growth during nanoparticle immobilization (paper-3''",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-09-27T10:28:59.043893",
       "schema:endTime": "2024-09-27T10:28:59.043905",
@@ -51,7 +47,9 @@
           "schema:HowTo"
         ],
         "schema:additionalType": [
-          "bios:ComputationalWorkflow"
+          {
+            "@id": "bios:ComputationalWorkflow"
+          }
         ],
         "schema:name": "Workflow constructed from history ''Extracting structural information of Au colloids at ultra-dilute concentrations: identification of growth during nanoparticle immobilization (paper-3'' workflow",
         "@id": "workflows/1a5c6ad02e8082a6.gxwf.yml",

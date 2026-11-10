@@ -14,8 +14,7 @@
   "schema:dateModified": "2024-09-27",
   "schema:subjectOf": {
     "@type": [
-      "schema:Dataset",
-      "dcat:CatalogRecord"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       {
@@ -40,23 +39,29 @@
       ],
       "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5",
       "schema:name": "Workflow constructed from history ''Extracting structural information of Au colloids at ultra-dilute concentrations: identification of growth during nanoparticle immobilization (paper-3''",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-09-27T10:28:59.043893",
       "schema:endTime": "2024-09-27T10:28:59.043905",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:additionalType": [
-          "bios:ComputationalWorkflow"
-        ],
-        "schema:name": "Workflow constructed from history ''Extracting structural information of Au colloids at ultra-dilute concentrations: identification of growth during nanoparticle immobilization (paper-3''",
-        "@id": "workflows/1a5c6ad02e8082a6.gxwf.yml"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:additionalType": [
+                {
+                  "@id": "bios:ComputationalWorkflow"
+                }
+              ],
+              "schema:name": "Workflow constructed from history ''Extracting structural information of Au colloids at ultra-dilute concentrations: identification of growth during nanoparticle immobilization (paper-3''",
+              "@id": "workflows/1a5c6ad02e8082a6.gxwf.yml"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -84,25 +89,25 @@
       ],
       "@id": "#step-1-1",
       "schema:name": "1",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 1,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:39.342295",
       "schema:endTime": "2024-09-27T10:30:46.390132",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -147,25 +152,25 @@
       ],
       "@id": "#step-2-2",
       "schema:name": "2",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 2,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:39.437429",
       "schema:endTime": "2024-09-27T10:30:46.672024",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -210,25 +215,25 @@
       ],
       "@id": "#step-3-3",
       "schema:name": "3",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 3,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:39.530865",
       "schema:endTime": "2024-09-27T10:30:46.990772",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -273,25 +278,25 @@
       ],
       "@id": "#step-4-4",
       "schema:name": "4",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 4,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:39.619530",
       "schema:endTime": "2024-09-27T10:30:50.040010",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -336,25 +341,25 @@
       ],
       "@id": "#step-5-5",
       "schema:name": "5",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 5,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:39.707046",
       "schema:endTime": "2024-09-27T10:30:49.524233",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -399,25 +404,25 @@
       ],
       "@id": "#step-6-6",
       "schema:name": "6",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 6,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:39.798614",
       "schema:endTime": "2024-09-27T10:30:49.542732",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -462,25 +467,25 @@
       ],
       "@id": "#step-7-7",
       "schema:name": "7",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 7,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:39.900525",
       "schema:endTime": "2024-09-27T10:30:49.710736",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -525,25 +530,25 @@
       ],
       "@id": "#step-8-8",
       "schema:name": "8",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 8,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:40.032227",
       "schema:endTime": "2024-09-27T10:30:51.940457",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_athena",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
-      },
       "prov:used": [
+        {
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_athena",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
@@ -670,48 +675,31 @@
       ],
       "@id": "#step-9-9",
       "schema:name": "9",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 9,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:40.350505",
       "schema:endTime": "2024-09-27T10:31:00.598912",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_plot",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-1-1"
-        },
-        {
-          "@id": "#step-2-2"
-        },
-        {
-          "@id": "#step-3-3"
-        },
-        {
-          "@id": "#step-4-4"
-        },
-        {
-          "@id": "#step-5-5"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_plot",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-1-athena_project_file",
+          "@id": "#step-1-1/output-athena_project_file",
           "schema:name": "1/athena_project_file"
         },
         {
@@ -719,7 +707,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-2-athena_project_file",
+          "@id": "#step-2-2/output-athena_project_file",
           "schema:name": "2/athena_project_file"
         },
         {
@@ -727,7 +715,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-3-athena_project_file",
+          "@id": "#step-3-3/output-athena_project_file",
           "schema:name": "3/athena_project_file"
         },
         {
@@ -735,7 +723,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-4-athena_project_file",
+          "@id": "#step-4-4/output-athena_project_file",
           "schema:name": "4/athena_project_file"
         },
         {
@@ -743,7 +731,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-5-athena_project_file",
+          "@id": "#step-5-5/output-athena_project_file",
           "schema:name": "5/athena_project_file"
         }
       ],
@@ -827,45 +815,31 @@
       ],
       "@id": "#step-10-10",
       "schema:name": "10",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
-      "schema:position": 10,
-      "prov:wasInfluencedBy": {
-        "@id": "#c11186ad-4e77-43ae-8f18-21f1744094d5"
-      },
       "schema:startTime": "2024-09-27T10:30:40.614112",
       "schema:endTime": "2024-09-27T10:31:00.230629",
-      "schema:instrument": {
-        "@type": [
-          "schema:SoftwareApplication"
-        ],
-        "schema:name": "larch_plot",
-        "schema:version": "0.9.80+galaxy1",
-        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1"
-      },
-      "prov:wasInformedBy": [
+      "prov:used": [
         {
-          "@id": "#step-1-1"
-        },
-        {
-          "@id": "#step-2-2"
-        },
-        {
-          "@id": "#step-6-6"
-        },
-        {
-          "@id": "#step-7-7"
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication",
+                "prov:Entity"
+              ],
+              "schema:name": "larch_plot",
+              "schema:version": "0.9.80+galaxy1",
+              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1"
+            }
+          ]
         }
       ],
-      "prov:used": [
+      "schema:object": [
         {
           "@type": [
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-1-athena_project_file",
+          "@id": "#step-1-1/output-athena_project_file",
           "schema:name": "1/athena_project_file"
         },
         {
@@ -873,7 +847,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-2-athena_project_file",
+          "@id": "#step-2-2/output-athena_project_file",
           "schema:name": "2/athena_project_file"
         },
         {
@@ -881,7 +855,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-6-athena_project_file",
+          "@id": "#step-6-6/output-athena_project_file",
           "schema:name": "6/athena_project_file"
         },
         {
@@ -889,7 +863,7 @@
             "prov:Entity",
             "schema:Thing"
           ],
-          "@id": "#output-7-athena_project_file",
+          "@id": "#step-7-7/output-athena_project_file",
           "schema:name": "7/athena_project_file"
         }
       ],

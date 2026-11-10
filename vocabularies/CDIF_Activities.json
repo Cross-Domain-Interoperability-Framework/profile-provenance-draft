@@ -1,0 +1,709 @@
+{
+	"@context": {
+		"skos": "http://www.w3.org/2004/02/skos/core#",
+		"Concept": "skos:Concept",
+		"ConceptScheme": "skos:ConceptScheme",
+		"prefLabel": "skos:prefLabel",
+		"altLabel": "skos:altLabel",
+		"definition": "skos:definition",
+		"broader": {
+			"@id": "skos:broader",
+			"@type": "@id"
+		},
+		"narrower": {
+			"@id": "skos:narrower",
+			"@type": "@id"
+		},
+		"inScheme": {
+			"@id": "skos:inScheme",
+			"@type": "@id"
+		},
+		"notation": "skos:notation",
+		"hasTopConcept": {
+			"@id": "skos:hasTopConcept",
+			"@type": "@id"
+		},
+		"note": "skos:note",
+		"dc": "http://purl.org/dc/terms/",
+		"references": {
+			"@id": "dc:references",
+			"@type": "@id"
+		},
+		"exactMatch": {
+			"@id": "skos:exactMatch",
+			"@type": "@id"
+		},
+		"closeMatch": {
+			"@id": "skos:closeMatch",
+			"@type": "@id"
+		},
+		"relatedMatch": {
+			"@id": "skos:relatedMatch",
+			"@type": "@id"
+		},
+		"broadMatch": {
+			"@id": "skos:broadMatch",
+			"@type": "@id"
+		},
+		"narrowMatch": {
+			"@id": "skos:narrowMatch",
+			"@type": "@id"
+		},
+		"topConceptOf": {
+			"@id": "skos:topConceptOf",
+			"@type": "@id"
+		}
+	},
+	"@graph": [
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"@type": "skos:ConceptScheme",
+			"prefLabel": {
+				"@value": "Concepts for CDIF Provenance Activities",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "This is a list of activities related to the description of provenance for data and related resources used for research, intended to be sufficiently generic to support use across domain and infrastructure boundaries.",
+				"@language": "en"
+			},
+			"hasTopConcept": [
+				"https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+				"https://w3id.org/cdif/concepts/provenance/activity/Access",
+				"https://w3id.org/cdif/concepts/provenance/activity/Aggregation",
+				"https://w3id.org/cdif/concepts/provenance/activity/Analysis",
+				"https://w3id.org/cdif/concepts/provenance/activity/Archiving",
+				"https://w3id.org/cdif/concepts/provenance/activity/Calibration",
+				"https://w3id.org/cdif/concepts/provenance/activity/Cataloguing",
+				"https://w3id.org/cdif/concepts/provenance/activity/Configuration",
+				"https://w3id.org/cdif/concepts/provenance/activity/Creation",
+				"https://w3id.org/cdif/concepts/provenance/activity/DataTransformation",
+				"https://w3id.org/cdif/concepts/provenance/activity/DataValidation",
+				"https://w3id.org/cdif/concepts/provenance/activity/Derivation",
+				"https://w3id.org/cdif/concepts/provenance/activity/DataExtraction",
+				"https://w3id.org/cdif/concepts/provenance/activity/SampleExtraction",
+				"https://w3id.org/cdif/concepts/provenance/activity/DataHarmonisation",
+				"https://w3id.org/cdif/concepts/provenance/activity/DataIntegration",
+				"https://w3id.org/cdif/concepts/provenance/activity/Observation",
+				"https://w3id.org/cdif/concepts/provenance/activity/Measurement",
+				"https://w3id.org/cdif/concepts/provenance/activity/Count",
+				"https://w3id.org/cdif/concepts/provenance/activity/DigitalPreservation",
+				"https://w3id.org/cdif/concepts/provenance/activity/QualityControl",
+				"https://w3id.org/cdif/concepts/provenance/activity/Sampling",
+				"https://w3id.org/cdif/concepts/provenance/activity/ExperimentalDesign",
+				"https://w3id.org/cdif/concepts/provenance/activity/DataClassificationAndCoding",
+				"https://w3id.org/cdif/concepts/provenance/activity/VariableAndUnitDerivation",
+				"https://w3id.org/cdif/concepts/provenance/activity/Weighting",
+				"https://w3id.org/cdif/concepts/provenance/activity/DisclosureControl",
+				"https://w3id.org/cdif/concepts/provenance/activity/OutputInterpretationAndExplanation",
+				"https://w3id.org/cdif/concepts/provenance/activity/FormatStandardization",
+				"https://w3id.org/cdif/concepts/provenance/activity/DataAdjustmentAndNormalization",
+				"https://w3id.org/cdif/concepts/provenance/activity/DataAndMetadataMappings"
+			]
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Overarching Activities",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "The GSBPM recognises several overarching activities that apply throughout the production phases, and across statistical business processes. For example, quality is monitored and checked at various stages of the production. Management of data and metadata is done throughout the process, not at a certain sub-process only. While the production process involves different units and expertise in the organisation at different stages, it is important that these overarching activities are conducted in a consistent manner in accordance with organisation-wide standards and policies, and with close coordination with a central unit.",
+				"@language": "en"
+			},
+			"narrower": [
+				"https://w3id.org/cdif/concepts/GSBPM-5.2/activity/QualityManagement",
+				"https://w3id.org/cdif/concepts/GSBPM-5.2/activity/MetadataManagement",
+				"https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataManagement",
+				"https://w3id.org/cdif/concepts/GSBPM-5.2/activity/ProcessDataManagement",
+				"https://w3id.org/cdif/concepts/GSBPM-5.2/activity/KnowledgeManagement",
+				"https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataSupplierManagement"
+			],
+			"exactMatch": "http://unece.org/OverarchingActivities",
+			"references": [
+				"https://unece.org/statistics/documents/2019/01/standards/gamso-v12",
+				"https://unece.github.io/GSIM-2.0/"
+			],
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/QualityManagement",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Quality Management",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "The quality management overarching activity of GSBPM refers specifically to the management of product and process quality that takes place within the scope of the production process.\n More broadly, the concept of quality concerns organisations, products, sources and processes. Quality at an institutional level (e.g. adoption of a Quality Policy or Quality Assurance Framework) or in areas that are not directly related to the production (e.g., quality of new employee onboarding programme) is considered in the GAMSO.\n The main goal of quality management within the statistical business process is to understand and manage the quality of the statistical sources, processes and products. There is general agreement among statistical organisations that quality should be defined according to the ISO 9000-2015 standard: 'The degree to which a set of inherent characteristics of an object fulfils requirements'.(ISO 9000:2015, Quality management systems - Fundamentals and vocabulary. International Organization for Standardization) Thus, quality is a complex and multi-faceted concept, usually defined in terms of several quality dimensions. The dimensions of quality that are considered most important depend on user perspectives, needs and priorities, which vary between processes and across groups of users.\n In order to improve quality, quality management should be present throughout the business process model. It is closely linked to the Evaluate phase, however, quality management has both a deeper and broader scope. As well as evaluating iterations of a process, it is also necessary to evaluate separate phases and sub-processes, ideally each time they are applied, but at least according to an agreed schedule. (A suggested list of quality indicators for the GSBPM which can be used as a reference or a checklist to identify gaps and/or duplication of work in the organisation can be found at the Quality Indicators for the GSBPM – for Statistics derived from Surveys and Administrative Data Sources (https://statswiki.unece.org/display/GSBPM/Quality+Indicators) sub-processes to prevent and monitor errors and sources of risks. These should be documented, and can be used for quality reporting.) Metadata generated by the different sub-processes themselves are also of interest as an input for process quality management. These evaluations can apply within a specific process, or across several processes that use common components.  In addition, a fundamental role in quality management is played by the set of quality control actions that should be implemented within the sub-processes to prevent and monitor errors and sources of risks. These should be documented, and can be used for quality reporting.\n Within an organisation, quality management will usually refer to a specific quality framework, and may therefore take different forms and deliver different results within different organisations. The current multiplicity of quality frameworks enhances the importance of the benchmarking and peer review approaches to evaluation, and whilst these approaches are unlikely to be feasible for every iteration of every part of every statistical business process, they should be used in a systematic way according to a pre-determined schedule that allows for the review of all main parts of the process within a specified time period. (A suitable global framework is the National Quality Assurance Framework developed by a global expert group under the United Nations Statistical Commission (https://unstats.un.org/unsd/methodology/dataquality/un-nqaf-manual/).)\n Broadening the field of application of the quality management overarching activity, evaluation of groups of statistical business processes can also be considered, in order to identify potential duplication or gaps.\n All evaluations result in feedback, which should be used to improve the relevant process, phase or sub-process, creating a quality loop that reinforces the approach to continuous improvements and organisational learning. The Quality loop has four main stages:\n • Plan: The Plan stage refers mainly to the first three phases of GSBPM. Selecting a quality framework or designing one must be part of the design of the production process, to have the means of producing information needed to manage quality of the process and of the statistical products;\n - Run: When running the process, care must be taken to compile data and metadata for quality management, with updated data and metadata coming from performing each phase of GSBPM;\n - Evaluate: Assessment of quality indicators must be made throughout the process to make any needed correction on time. During the Evaluate phase, a summary and analysis of the quality information gathered together with any change made during the process will generate conclusions about any improvements that may be needed;\n - Improve: In response to the quality assessment, any needed improvements to the process can be applied, and then reflected during the Plan stage of the cycle.\n Examples of quality management activities include:\n - Assessing risks and implementing risk treatments to ensure fit-for-purpose quality;\n - Setting quality criteria to be used in the process;\n - Setting process quality targets and monitoring compliance;\n - Seeking and analysing user feedback;\n - Reviewing operations and documenting lessons learned;\n - Examining process metadata and quality indicators;\n - Internal or external auditing on the process.\n Quality indicators support a process-oriented quality management. A suggested list of quality indicators for phases and sub-processes of the GSBPM as well as for the overarching quality and Metadata Management processes can be found at the Quality Indicators for the GSBPM – for Statistics derived from Surveys and Administrative Data Sources9. Among others, they can be used as a checklist to identify gaps and/or duplication of work in the organisation.",
+				"@language": "en"
+			},
+			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+			"exactMatch": "http://unece.org/QualityManagement",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/MetadataManagement",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Metadata Management",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Metadata has an important role and must be managed at an operational level within the statistical production process, in accordance with relevant corporate policies and standards. When aspects of metadata management are considered at corporate or strategic level (e.g. there are metadata systems that impact large parts of the production system), it should be considered in the framework of the GAMSO.\n 46. Good metadata management is essential for the efficient operation of statistical business processes. Metadata are present in every phase, either created, updated or carried forward from a previous phase or reused from another business process. In the context of this model, the emphasis of the overarching activity of metadata management is on the design/creation/revision, updating, use, and archiving of statistical metadata, though metadata on the different sub-processes themselves are also of interest, including as an input for quality management. The key challenge is to ensure that these metadata are captured as early as possible, and stored and transferred from phase to phase alongside the data they refer to. Metadata management strategy and systems are therefore vital to the operation of this model, and these can be facilitated by the GSIM.\n 47. The GSIM supports a consistent approach to metadata, facilitating the primary role for metadata, that is, that metadata should uniquely and formally define the content and links between information classes and processes in the statistical information system.",
+				"@language": "en"
+			},
+			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+			"exactMatch": "http://unece.org/MetadataManagement",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataManagement",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Management",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Data management is essential as data are produced within many of the activities in the statistical business process and are the key outputs. The main goal of data management is to ensure that data are appropriately used and usable throughout their lifecycle. Managing data throughout their lifecycle covers activities such as planning and evaluation of data management processes as well as establishing and implementing processes related to collection, organisation, use, protection, preservation and disposal of the data.\n How data are managed will be closely linked to the use of the data, which in turn is linked to the statistical business process where the data are created. Both data and the processes in which they are created must be well defined in order to ensure proper data management.\n Examples of data management activities include:\n - Designing data structures and associated data sets, and the provenance and flow of data through the statistical business process;\n - Identifying database (repositories) to store the data and administration of the database;\n - Documenting the data (e.g. registering and inventorying data, classifying data according to content, retention or other required classification);\n - Determining retention periods of data and archiving;\n - Securing data against unauthorised access and use;\n - Safeguarding data against technological change, physical media degradation, data corruption; - Performing data integrity checks (e.g. periodic checks providing assurance about the accuracy and consistency of data over its entire lifecycle);\n - Performing disposition activities once the retention period of the data is expired.",
+				"@language": "en"
+			},
+			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+			"exactMatch": "http://unece.org/DataManagement",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/ProcessDataManagement",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Process Data Management",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "The Process Data Management overarching activity within GSBPM refers to the management of process data that takes place within the scope of the production process. Activities related to management of process data at the corporate level should be considered in the framework of the GAMSO.\n This overarching activity includes activities of registering, systematising, and using data arising from carrying out the statistical business process. This could include, for example, paradata logs resulting from the execution of code, as well as information arising from fieldwork. (Process metadata, or data about the process by which the data were collected.) This data is not quality information in itself, as it may be very detailed (such as the length of time taken by a single field worker to conduct a single interview), but it could possibly be used to derive quality information (such as total or average time for conducting interviews).\n Such process data can be reviewed to evaluate how the statistical business process is carried out, for example to optimise its efficiency, or to detect possible problems that have occurred and reveal their cause. Process data could also be used to detect and understand patterns in the data used to produce statistics.",
+				"@language": "en"
+			},
+			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+			"exactMatch": "http://unece.org/ProcessDataManagement",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/KnowledgeManagement",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Knowledge Management",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "The Knowledge Management overarching activity refers to the management of knowledge specific to the production process. Activities related to knowledge management at the corporate level should be considered in the framework of the GAMSO, such as GAMSO’s Manage Information and Knowledge, under its Corporate Support area.\n This Knowledge Management overarching activity within GSBPM refers specifically to the updating of documentation for the production process (e.g. handbooks, manuals, guidance notes already created within sub-process 3.7 (Finalise production systems)) based on knowledge about it. Managing knowledge in a systematic way using such documentation allows it to inform and improve the production process. It can be taken into account when developing training for those who produce statistics, and can also inform evaluation of the production process.\n Knowledge can be derived from a diverse array of sources, including the experience obtained from each of the individuals involved in the process, which may relate to the code of algorithms, software programmes and scripts used along the statistical lifecycle, good practices, or lessons learned. Reference metadata, analysis of paradata, incidents, process logs, data anomalies, and other subproducts of the statistical process execution, while not knowledge in themselves, can all lead to useful knowledge about the production process which can be documented in order to be passed on to others.",
+				"@language": "en"
+			},
+			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+			"exactMatch": "http://unece.org/KnowledgeManagement",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataSupplierManagement",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Supplier Management",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "The Data Supplier Management overarching activity within GSBPM refers to the management of data suppliers that takes place within the scope of the production process. Activities related to management of data suppliers at the corporate level should be considered in the framework of the GAMSO, such as in its Manage Data Suppliers activity under Corporate Support.\n Building on GAMSO's corporate support activity Manage Data Suppliers, which emphasises managing data suppliers, such as ensuring compliance with agreements, this overarching activity within GSBPM extends to technical-level engagement with data suppliers, including those supplying registers.\n This overarching activity can include:\n - Requiring specific information about the input data when metadata and/or documentation are scarce;\n - Asking for assistance from the data supplier to overcome technical or operational issues; and/or\n - Requesting additional information in case of unexpected changes in the data received.\n - Cross-process burden management, profiling and management of contact information (e.g. within registers).",
+				"@language": "en"
+			},
+			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+			"exactMatch": "http://unece.org/DataSupplierManagement",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Access",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Access",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity during which an agent realises its rights and abilities to interact with a disseminating agency to obtain an entity.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Aggregation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Aggregation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity during which multiple entities are gathered together and assembled into a whole based on a defined set of criteria.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Analysis",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Analysis",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity during which one or more entities are studied by examining their constituent parts and the interrelationships between those parts in order to increase the user's knowledge about those entities.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Archiving",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Archiving",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which an entity is transferred to a facility charged with its long-term (generally >10 years) preservation.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Calibration",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Calibration",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity during which measurement data produced by a (physical) instrument (like a sensor) or similar entity are compared to a reference dataset or other material with known accuracy in order to establish, verify, or document the accuracy of the instrument.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Cataloguing",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Cataloguing",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity during which the existence of an entity is added to a systematic list.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Configuration",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Configuration",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity during which an entity (e.g. a system resource) is modified to grant it desirable properties or dispose it to desirable behaviour (for example by adjusting parameters).",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Creation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Creation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which an entity is brought into existence. Serves as a superclass for other more expressive classes that create entities, such as authoring.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataCleaning",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Cleaning",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "A data transformation during which erroneous, duplicated, or corrupted data is edited or removed from a volume of data.",
+				"@language": "en"
+			},
+			"broader": "https://w3id.org/cdif/concepts/provenance/activity/DataTransformation",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataTransformation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Transformation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which data is modified.",
+				"@language": "en"
+			},
+			"narrower": [
+				"https://w3id.org/cdif/concepts/provenance/activity/DataCleaning"
+			],
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataValidation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Validation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity during which data is evaluated in relation to some specification or criteria, usually assessing its soundness, justifiability, or appropriateness for a specified purpose.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Derivation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Derivation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "A process through which a new data entity (dataset or variable) is created from parts or all of pre-existing data entities.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataExtraction",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Extraction",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which a part of data is selected and isolated according to some criteria and for a specific purpose.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/SampleExtraction",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Extraction (Sample)",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which a physical sample is collected from the environment, from a (museum or other) collection, aliquoted from a stock (solution) or otherwise sampled for analysis.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataHarmonisation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Harmonisation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An (ex post) activity through which data are transformed to regularise their properties, allowing meaningful collective treatment.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataIntegration",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Integration",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which multiple data sources are combined into a coherent whole.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Observation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Observation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity which results in a record describing the object of interest.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Measurement",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Measurement",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity which results in a quantitative value describing some characteristic of the object of interest.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Count",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Count",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity which results in an enumeration of some aspect of a population or its members.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DigitalPreservation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Digital Preservation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Series of managed activities necessary to ensure continued access to digital materials for as long as necessary that ensures materials are accessible, understandable, and valuable to designated communities.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/QualityControl",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Quality Control",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which an entity's compliance to a set of defined criteria is assessed, resulting in acceptance or rejection of that entity in a set of further activities.",
+				"@language": "en"
+			},
+			"narrower": [
+				"https://w3id.org/cdif/concepts/provenance/activity/QualityControlData",
+				"https://w3id.org/cdif/concepts/provenance/activity/QualityControlMetadata"
+			],
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/QualityControlData",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Quality Control (Data)",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which a data entity's compliance to a set of defined criteria is assessed, resulting in acceptance, rejection or modification of that entity in a set of further activities.",
+				"@language": "en"
+			},
+			"broader": "https://w3id.org/cdif/concepts/provenance/activity/QualityControl",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/QualityControlMetadata",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Quality Control (Metadata)",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which an entity's metadata compliance to a set of defined criteria is assessed, resulting in acceptance, rejection or modification of that entity in a set of further activities.",
+				"@language": "en"
+			},
+			"broader": "https://w3id.org/cdif/concepts/provenance/activity/QualityControl",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Sampling",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Sampling",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "An activity through which a portion of an entity is used to represent the whole, for some purpose.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/ExperimentalDesign",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Experimental Design",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "The systematic planning of an experiment, including the selection and allocation of experimental units, treatments, controls, and measurement procedures, to evaluate causal relationships while minimizing bias and controlling variability.",
+				"@language": "en"
+			},
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataClassificationAndCoding",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Classification and Coding",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Assign codes to textual descriptions according to pre-determined classification schemes.",
+				"@language": "en"
+			},
+			"closeMatch": "http://unece.org/5.2-ClassifyAndCode",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/VariableAndUnitDerivation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Variable and Unit Derivation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Derives variables and units that are not explicitly provided in the collection, but are needed to deliver the required outputs.",
+				"@language": "en"
+			},
+			"closeMatch": "http://unece.org/5.5-DeriveNewVariablesAndUnits",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Weighting",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Weighting",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Creates weights for unit data records according to a methodology.",
+				"@language": "en"
+			},
+			"closeMatch": "http://unece.org/5.6-CalculateWeights",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DisclosureControl",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Disclosure Control",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Ensures that the data (and metadata) to be disseminated or internally stored for future use do not breach the appropriate rules on confidentiality according to either organisational policies and rules, or to the process-specific methodology used.",
+				"@language": "en"
+			},
+			"closeMatch": "http://unece.org/6.4-ApplyDisclosureControl",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/OutputInterpretationAndExplanation",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Output Interpretation and Explanation",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Examination and analysis of statistical outputs to identify and explain patterns, trends, relationships, differences, and unexpected results.",
+				"@language": "en"
+			},
+			"closeMatch": "http://unece.org/6.3-InterpretAndExplainOutputs",
+			"references": "https://unece.org/statistics/gsbpm-v5.2",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/FormatStandardization",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Format Standardization",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Modify physical representations and data types to conform to standards and to best support interoperability.",
+				"@language": "en"
+			},
+			"references": "https://unece.org/statistics/csda",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataAdjustmentAndNormalization",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data Adjustment and Normalization",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Perform seasonal and other statistical adjustments to data values to improve accuracy and align data values to a notionally common scale or a probability distribution to make datasets comparable.",
+				"@language": "en"
+			},
+			"references": "https://unece.org/statistics/csda",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		},
+		{
+			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataAndMetadataMappings",
+			"@type": "skos:Concept",
+			"prefLabel": {
+				"@value": "Data and Metadata Mappings",
+				"@language": "en"
+			},
+			"definition": {
+				"@value": "Provide correspondences between units, variables and their representations for data integration and alignment.",
+				"@language": "en"
+			},
+			"references": "https://unece.org/statistics/csda",
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+		}
+	]
+}

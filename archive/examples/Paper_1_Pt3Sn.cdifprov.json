@@ -14,8 +14,7 @@
   "schema:dateModified": "2024-10-14",
   "schema:subjectOf": {
     "@type": [
-      "schema:Dataset",
-      "dcat:CatalogRecord"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       {
@@ -40,9 +39,6 @@
       ],
       "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418",
       "schema:name": "Paper 1: XANES, LCF, EXAFS",
-      "schema:additionalType": [
-        "schema:CreateAction"
-      ],
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:46:03.039565",
       "schema:endTime": "2024-10-14T16:46:03.039568",
@@ -51,7 +47,9 @@
           "schema:HowTo"
         ],
         "schema:additionalType": [
-          "bios:ComputationalWorkflow"
+          {
+            "@id": "bios:ComputationalWorkflow"
+          }
         ],
         "schema:name": "Paper 1: XANES, LCF, EXAFS workflow",
         "@id": "workflows/bf972370cf6dfa23.gxwf.yml",
