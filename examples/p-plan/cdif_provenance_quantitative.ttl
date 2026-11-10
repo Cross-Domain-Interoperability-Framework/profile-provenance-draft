@@ -1,0 +1,106 @@
+# P-Plan view of examples/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
+# "quantitative" scenario, extended with sampling and the absorbance measurement).
+#
+# P-Plan (http://purl.org/net/p-plan#) adds the PROSPECTIVE side that PROV-O leaves open: the plan
+# as steps with input and output variables and an order, written before anything runs. The run
+# (the PROV activities and entities of the master, same IRIs) is then bound to the plan: each
+# activity corresponds to a step, each entity to a variable.
+#
+# Merge this file with the master Turtle to get plan + run in one graph. Nothing in the run is
+# restated here except the P-Plan typing that the binding properties need.
+
+@prefix p:    <http://purl.org/net/p-plan#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ex:   <https://example.org/cdif-prov/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- The plan: what is meant to happen ------------------------------------------------------
+
+ex:concentrationDeterminationPlan a p:Plan ;
+    rdfs:label "Determine analyte concentration from absorbance, with uncertainty and validation" .
+
+ex:samplingStep a p:Step ;
+    rdfs:label "Water sampling" ;
+    p:isStepOfPlan ex:concentrationDeterminationPlan ;
+    p:hasInputVar ex:sampledFeatureVar ;
+    p:hasOutputVar ex:sampleVar .
+
+ex:absorbanceStep a p:Step ;
+    rdfs:label "Absorbance measurement" ;
+    p:isStepOfPlan ex:concentrationDeterminationPlan ;
+    p:isPrecededBy ex:samplingStep ;
+    p:hasInputVar ex:sampleVar, ex:instrumentVar, ex:reagentVar, ex:toolVar ;
+    p:hasOutputVar ex:rawAbsorbanceVar .
+
+ex:blankCorrectionStep a p:Step ;
+    rdfs:label "Blank correction" ;
+    p:isStepOfPlan ex:concentrationDeterminationPlan ;
+    p:isPrecededBy ex:absorbanceStep ;
+    p:hasInputVar ex:rawAbsorbanceVar, ex:blankCorrectionSpecVar ;
+    p:hasOutputVar ex:correctedAbsorbanceVar .
+
+ex:calibrationStep a p:Step ;
+    rdfs:label "Calibration-based derivation" ;
+    p:isStepOfPlan ex:concentrationDeterminationPlan ;
+    p:isPrecededBy ex:blankCorrectionStep ;
+    p:hasInputVar ex:correctedAbsorbanceVar, ex:calibrationRelationshipVar ;
+    p:hasOutputVar ex:concentrationVar .
+
+ex:uncertaintyStep a p:Step ;
+    rdfs:label "Uncertainty assessment" ;
+    p:isStepOfPlan ex:concentrationDeterminationPlan ;
+    p:isPrecededBy ex:calibrationStep ;
+    p:hasInputVar ex:concentrationVar, ex:uncertaintySpecVar ;
+    p:hasOutputVar ex:concentrationUncertaintyVar .
+
+ex:validationStep a p:Step ;
+    rdfs:label "Validation" ;
+    p:isStepOfPlan ex:concentrationDeterminationPlan ;
+    p:isPrecededBy ex:uncertaintyStep ;
+    p:hasInputVar ex:concentrationVar, ex:concentrationUncertaintyVar, ex:validationCriterionVar ;
+    p:hasOutputVar ex:validationResultVar .
+
+# Variables: placeholders for whatever entity fills the slot in a given run. A variable says
+# nothing about the KIND of input (sample, instrument, reagent): only its label does.
+ex:sampledFeatureVar           a p:Variable ; rdfs:label "feature sampled" ;           p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:sampleVar                   a p:Variable ; rdfs:label "water sample" ;              p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:instrumentVar               a p:Variable ; rdfs:label "spectrophotometer" ;         p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:reagentVar                  a p:Variable ; rdfs:label "colour-forming reagent" ;    p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:toolVar                     a p:Variable ; rdfs:label "cuvette" ;                   p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:rawAbsorbanceVar            a p:Variable ; rdfs:label "raw absorbance" ;            p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:blankCorrectionSpecVar      a p:Variable ; rdfs:label "blank-correction method" ;   p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:correctedAbsorbanceVar      a p:Variable ; rdfs:label "corrected absorbance" ;      p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:calibrationRelationshipVar  a p:Variable ; rdfs:label "calibration relationship" ;  p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:concentrationVar            a p:Variable ; rdfs:label "concentration" ;             p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:uncertaintySpecVar          a p:Variable ; rdfs:label "uncertainty method" ;        p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:concentrationUncertaintyVar a p:Variable ; rdfs:label "concentration uncertainty" ; p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:validationCriterionVar      a p:Variable ; rdfs:label "validation criterion" ;      p:isVariableOfPlan ex:concentrationDeterminationPlan .
+ex:validationResultVar         a p:Variable ; rdfs:label "validation result" ;         p:isVariableOfPlan ex:concentrationDeterminationPlan .
+
+# --- The binding: what did happen, mapped onto the plan -------------------------------------
+# p:correspondsToStep has domain p:Activity, and p:correspondsToVariable domain p:Entity, so the
+# run's activities and entities take those types here (both are subclasses of the PROV ones).
+# The run itself already follows the plan in the master: ex:concentrationRun's association has
+# prov:hadPlan ex:concentrationDeterminationPlan.
+
+ex:waterSampling01        a p:Activity ; p:correspondsToStep ex:samplingStep .
+ex:absorbanceMeasurement  a p:Activity ; p:correspondsToStep ex:absorbanceStep .
+ex:blankCorrection        a p:Activity ; p:correspondsToStep ex:blankCorrectionStep .
+ex:calibrationDerivation  a p:Activity ; p:correspondsToStep ex:calibrationStep .
+ex:uncertaintyAssessment  a p:Activity ; p:correspondsToStep ex:uncertaintyStep .
+ex:validation             a p:Activity ; p:correspondsToStep ex:validationStep .
+
+ex:riverReach01              a p:Entity ; p:correspondsToVariable ex:sampledFeatureVar .
+ex:waterSample01             a p:Entity ; p:correspondsToVariable ex:sampleVar .
+ex:spectrophotometer01       a p:Entity ; p:correspondsToVariable ex:instrumentVar .
+ex:colourReagent01           a p:Entity ; p:correspondsToVariable ex:reagentVar .
+ex:cuvette01                 a p:Entity ; p:correspondsToVariable ex:toolVar .
+ex:absorbanceSource          a p:Entity ; p:correspondsToVariable ex:rawAbsorbanceVar .
+ex:blankCorrectionSpec       a p:Entity ; p:correspondsToVariable ex:blankCorrectionSpecVar .
+ex:correctedAbsorbance       a p:Entity ; p:correspondsToVariable ex:correctedAbsorbanceVar .
+ex:calibrationRelationship   a p:Entity ; p:correspondsToVariable ex:calibrationRelationshipVar .
+ex:concentration             a p:Entity ; p:correspondsToVariable ex:concentrationVar .
+ex:uncertaintySpec           a p:Entity ; p:correspondsToVariable ex:uncertaintySpecVar .
+ex:concentrationUncertainty  a p:Entity ; p:correspondsToVariable ex:concentrationUncertaintyVar .
+ex:validationCriterion       a p:Entity ; p:correspondsToVariable ex:validationCriterionVar .
+ex:validationResult          a p:Entity ; p:correspondsToVariable ex:validationResultVar .

@@ -1,0 +1,248 @@
+{
+  "@context": {
+    "p": "http://purl.org/net/p-plan#",
+    "ex": "https://example.org/cdif-prov/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "ex:validation",
+      "@type": "p:Activity",
+      "p:correspondsToStep": {
+        "@id": "ex:validationStep",
+        "@type": "p:Step",
+        "rdfs:label": "Validation",
+        "p:isStepOfPlan": {
+          "@id": "ex:concentrationDeterminationPlan",
+          "@type": "p:Plan",
+          "rdfs:label": "Determine analyte concentration from absorbance, with uncertainty and validation"
+        },
+        "p:hasInputVar": [
+          {
+            "@id": "ex:concentrationVar",
+            "@type": "p:Variable",
+            "rdfs:label": "concentration",
+            "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+          },
+          {
+            "@id": "ex:concentrationUncertaintyVar",
+            "@type": "p:Variable",
+            "rdfs:label": "concentration uncertainty",
+            "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+          },
+          {
+            "@id": "ex:validationCriterionVar",
+            "@type": "p:Variable",
+            "rdfs:label": "validation criterion",
+            "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+          }
+        ],
+        "p:hasOutputVar": {
+          "@id": "ex:validationResultVar",
+          "@type": "p:Variable",
+          "rdfs:label": "validation result",
+          "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+        },
+        "p:isPrecededBy": {
+          "@id": "ex:uncertaintyStep",
+          "@type": "p:Step",
+          "rdfs:label": "Uncertainty assessment",
+          "p:isStepOfPlan": {"@id": "ex:concentrationDeterminationPlan"},
+          "p:hasInputVar": [
+            {"@id": "ex:concentrationVar"},
+            {
+              "@id": "ex:uncertaintySpecVar",
+              "@type": "p:Variable",
+              "rdfs:label": "uncertainty method",
+              "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+            }
+          ],
+          "p:hasOutputVar": {"@id": "ex:concentrationUncertaintyVar"},
+          "p:isPrecededBy": {
+            "@id": "ex:calibrationStep",
+            "@type": "p:Step",
+            "rdfs:label": "Calibration-based derivation",
+            "p:isStepOfPlan": {"@id": "ex:concentrationDeterminationPlan"},
+            "p:hasInputVar": [
+              {
+                "@id": "ex:correctedAbsorbanceVar",
+                "@type": "p:Variable",
+                "rdfs:label": "corrected absorbance",
+                "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+              },
+              {
+                "@id": "ex:calibrationRelationshipVar",
+                "@type": "p:Variable",
+                "rdfs:label": "calibration relationship",
+                "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+              }
+            ],
+            "p:hasOutputVar": {"@id": "ex:concentrationVar"},
+            "p:isPrecededBy": {
+              "@id": "ex:blankCorrectionStep",
+              "@type": "p:Step",
+              "rdfs:label": "Blank correction",
+              "p:isStepOfPlan": {"@id": "ex:concentrationDeterminationPlan"},
+              "p:hasInputVar": [
+                {
+                  "@id": "ex:rawAbsorbanceVar",
+                  "@type": "p:Variable",
+                  "rdfs:label": "raw absorbance",
+                  "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+                },
+                {
+                  "@id": "ex:blankCorrectionSpecVar",
+                  "@type": "p:Variable",
+                  "rdfs:label": "blank-correction method",
+                  "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+                }
+              ],
+              "p:hasOutputVar": {"@id": "ex:correctedAbsorbanceVar"},
+              "p:isPrecededBy": {
+                "@id": "ex:absorbanceStep",
+                "@type": "p:Step",
+                "rdfs:label": "Absorbance measurement",
+                "p:isStepOfPlan": {"@id": "ex:concentrationDeterminationPlan"},
+                "p:hasInputVar": [
+                  {
+                    "@id": "ex:sampleVar",
+                    "@type": "p:Variable",
+                    "rdfs:label": "water sample",
+                    "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+                  },
+                  {
+                    "@id": "ex:instrumentVar",
+                    "@type": "p:Variable",
+                    "rdfs:label": "spectrophotometer",
+                    "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+                  },
+                  {
+                    "@id": "ex:reagentVar",
+                    "@type": "p:Variable",
+                    "rdfs:label": "colour-forming reagent",
+                    "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+                  },
+                  {
+                    "@id": "ex:toolVar",
+                    "@type": "p:Variable",
+                    "rdfs:label": "cuvette",
+                    "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+                  }
+                ],
+                "p:hasOutputVar": {"@id": "ex:rawAbsorbanceVar"},
+                "p:isPrecededBy": {
+                  "@id": "ex:samplingStep",
+                  "@type": "p:Step",
+                  "rdfs:label": "Water sampling",
+                  "p:isStepOfPlan": {"@id": "ex:concentrationDeterminationPlan"},
+                  "p:hasInputVar": {
+                    "@id": "ex:sampledFeatureVar",
+                    "@type": "p:Variable",
+                    "rdfs:label": "feature sampled",
+                    "p:isVariableOfPlan": {"@id": "ex:concentrationDeterminationPlan"}
+                  },
+                  "p:hasOutputVar": {"@id": "ex:sampleVar"}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "@id": "ex:uncertaintyAssessment",
+      "@type": "p:Activity",
+      "p:correspondsToStep": {"@id": "ex:uncertaintyStep"}
+    },
+    {
+      "@id": "ex:calibrationDerivation",
+      "@type": "p:Activity",
+      "p:correspondsToStep": {"@id": "ex:calibrationStep"}
+    },
+    {
+      "@id": "ex:blankCorrection",
+      "@type": "p:Activity",
+      "p:correspondsToStep": {"@id": "ex:blankCorrectionStep"}
+    },
+    {
+      "@id": "ex:absorbanceMeasurement",
+      "@type": "p:Activity",
+      "p:correspondsToStep": {"@id": "ex:absorbanceStep"}
+    },
+    {
+      "@id": "ex:waterSampling01",
+      "@type": "p:Activity",
+      "p:correspondsToStep": {"@id": "ex:samplingStep"}
+    },
+    {
+      "@id": "ex:riverReach01",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:sampledFeatureVar"}
+    },
+    {
+      "@id": "ex:waterSample01",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:sampleVar"}
+    },
+    {
+      "@id": "ex:spectrophotometer01",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:instrumentVar"}
+    },
+    {
+      "@id": "ex:colourReagent01",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:reagentVar"}
+    },
+    {
+      "@id": "ex:cuvette01",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:toolVar"}
+    },
+    {
+      "@id": "ex:absorbanceSource",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:rawAbsorbanceVar"}
+    },
+    {
+      "@id": "ex:blankCorrectionSpec",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:blankCorrectionSpecVar"}
+    },
+    {
+      "@id": "ex:correctedAbsorbance",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:correctedAbsorbanceVar"}
+    },
+    {
+      "@id": "ex:calibrationRelationship",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:calibrationRelationshipVar"}
+    },
+    {
+      "@id": "ex:concentration",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:concentrationVar"}
+    },
+    {
+      "@id": "ex:uncertaintySpec",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:uncertaintySpecVar"}
+    },
+    {
+      "@id": "ex:concentrationUncertainty",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:concentrationUncertaintyVar"}
+    },
+    {
+      "@id": "ex:validationCriterion",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:validationCriterionVar"}
+    },
+    {
+      "@id": "ex:validationResult",
+      "@type": "p:Entity",
+      "p:correspondsToVariable": {"@id": "ex:validationResultVar"}
+    }
+  ]
+}

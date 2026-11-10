@@ -1,0 +1,140 @@
+# DDI-CDI 1.0 view of examples/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
+# quantitative scenario, extended). DRAFT: written from the DDI-CDI 1.0 ontology
+# (docs.ddialliance.org/DDI-CDI/1.0/model/encoding/ontology/), every term and every
+# domain/range checked against it, but not yet reviewed by anyone who works with DDI-CDI.
+#
+# How DDI-CDI says it:
+#   - The run is an Activity with Steps (Step is a subclass of Activity); a Sequence (a kind of
+#     ControlLogic) orders them through SequencePositions.
+#   - A Step receives and produces Parameters; an InformationFlowDefinition wires one Step's
+#     output Parameter to the next Step's input Parameter. Each Parameter is bound to the actual
+#     entity through a Reference.
+#   - What an Activity used and produced is also given directly (Activity-entityUsed /
+#     Activity-entityProduced), again as Reference structures holding a URI.
+#   - A ProcessingAgent performs an Activity; the analyst is an Individual and the software and
+#     spectrophotometer are Machines, each also typed ProcessingAgent.
+#   - Activity-standardModelMapping points each Activity at the class it corresponds to in
+#     another model, here prov:Activity.
+#
+# References carry a URI as a literal (Reference-uri), not an RDF link, so merging this graph with
+# the PROV master does not join the entities by itself: the step IRIs are shared, the entity links
+# are not.
+
+@prefix cdi:  <http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/> .
+@prefix ex:   <https://example.org/cdif-prov/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# --- The run, its steps and their order -----------------------------------------------------
+
+ex:concentrationRun a cdi:Activity ;
+    cdi:Activity-name [ a cdi:ObjectName ; cdi:ObjectName-name "Concentration determination run" ] ;
+    cdi:Activity-description "Determine analyte concentration from absorbance, with uncertainty and validation." ;
+    cdi:Activity-standardModelMapping [ a cdi:Reference ; cdi:Reference-uri "http://www.w3.org/ns/prov#Activity"^^xsd:anyURI ] ;
+    cdi:Activity_has_Step ex:waterSampling01, ex:absorbanceMeasurement, ex:blankCorrection,
+                          ex:calibrationDerivation, ex:uncertaintyAssessment, ex:validation ;
+    cdi:Activity_hasInternal_ControlLogic ex:runSequence .
+
+ex:runSequence a cdi:Sequence ;
+    cdi:ControlLogic-name [ a cdi:ObjectName ; cdi:ObjectName-name "Run order" ] ;
+    cdi:Sequence_has_SequencePosition
+        [ a cdi:SequencePosition ; cdi:SequencePosition-value 1 ; cdi:SequencePosition_indexes_Activity ex:waterSampling01 ] ,
+        [ a cdi:SequencePosition ; cdi:SequencePosition-value 2 ; cdi:SequencePosition_indexes_Activity ex:absorbanceMeasurement ] ,
+        [ a cdi:SequencePosition ; cdi:SequencePosition-value 3 ; cdi:SequencePosition_indexes_Activity ex:blankCorrection ] ,
+        [ a cdi:SequencePosition ; cdi:SequencePosition-value 4 ; cdi:SequencePosition_indexes_Activity ex:calibrationDerivation ] ,
+        [ a cdi:SequencePosition ; cdi:SequencePosition-value 5 ; cdi:SequencePosition_indexes_Activity ex:uncertaintyAssessment ] ,
+        [ a cdi:SequencePosition ; cdi:SequencePosition-value 6 ; cdi:SequencePosition_indexes_Activity ex:validation ] ;
+    # data flow: each output Parameter feeds the next step's input Parameter
+    cdi:ControlLogic_has_InformationFlowDefinition
+        [ a cdi:InformationFlowDefinition ; cdi:InformationFlowDefinition_from_Parameter ex:p-sample-out ;        cdi:InformationFlowDefinition_to_Parameter ex:p-sample-in ] ,
+        [ a cdi:InformationFlowDefinition ; cdi:InformationFlowDefinition_from_Parameter ex:p-absorbance-out ;    cdi:InformationFlowDefinition_to_Parameter ex:p-absorbance-in ] ,
+        [ a cdi:InformationFlowDefinition ; cdi:InformationFlowDefinition_from_Parameter ex:p-corrected-out ;     cdi:InformationFlowDefinition_to_Parameter ex:p-corrected-in ] ,
+        [ a cdi:InformationFlowDefinition ; cdi:InformationFlowDefinition_from_Parameter ex:p-concentration-out ; cdi:InformationFlowDefinition_to_Parameter ex:p-concentration-in-unc ] ,
+        [ a cdi:InformationFlowDefinition ; cdi:InformationFlowDefinition_from_Parameter ex:p-concentration-out ; cdi:InformationFlowDefinition_to_Parameter ex:p-concentration-in-val ] ,
+        [ a cdi:InformationFlowDefinition ; cdi:InformationFlowDefinition_from_Parameter ex:p-uncertainty-out ;   cdi:InformationFlowDefinition_to_Parameter ex:p-uncertainty-in ] .
+
+# --- Steps ----------------------------------------------------------------------------------
+
+ex:waterSampling01 a cdi:Step ;
+    cdi:Activity-name [ a cdi:ObjectName ; cdi:ObjectName-name "Water sampling" ] ;
+    cdi:Activity-entityUsed     [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/riverReach01"^^xsd:anyURI ] ;
+    cdi:Activity-entityProduced [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/waterSample01"^^xsd:anyURI ] ;
+    cdi:Step_produces_Parameter ex:p-sample-out .
+
+ex:absorbanceMeasurement a cdi:Step ;
+    cdi:Activity-name [ a cdi:ObjectName ; cdi:ObjectName-name "Absorbance measurement" ] ;
+    cdi:Activity-description "Absorbance measurement in a 1 cm cuvette with a colour-forming reagent. Procedure: https://example.org/cdif-prov/video/absorbance-procedure.mp4" ;
+    cdi:Activity-entityUsed [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/waterSample01"^^xsd:anyURI ] ,
+                            [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/colourReagent01"^^xsd:anyURI ] ,
+                            [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/cuvette01"^^xsd:anyURI ] ;
+    cdi:Activity-entityProduced [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/absorbanceSource"^^xsd:anyURI ] ;
+    cdi:Step_receives_Parameter ex:p-sample-in ;
+    cdi:Step_produces_Parameter ex:p-absorbance-out .
+
+ex:blankCorrection a cdi:Step ;
+    cdi:Activity-name [ a cdi:ObjectName ; cdi:ObjectName-name "Blank correction" ] ;
+    cdi:Activity-entityUsed [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/absorbanceSource"^^xsd:anyURI ] ,
+                            [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/blankCorrectionSpec"^^xsd:anyURI ] ;
+    cdi:Activity-entityProduced [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/correctedAbsorbance"^^xsd:anyURI ] ;
+    cdi:Step_receives_Parameter ex:p-absorbance-in ;
+    cdi:Step_produces_Parameter ex:p-corrected-out .
+
+ex:calibrationDerivation a cdi:Step ;
+    cdi:Activity-name [ a cdi:ObjectName ; cdi:ObjectName-name "Calibration-based derivation" ] ;
+    cdi:Activity-entityUsed [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/correctedAbsorbance"^^xsd:anyURI ] ,
+                            [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/calibrationRelationship"^^xsd:anyURI ] ;
+    cdi:Activity-entityProduced [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentration"^^xsd:anyURI ] ;
+    cdi:Step_receives_Parameter ex:p-corrected-in ;
+    cdi:Step_produces_Parameter ex:p-concentration-out .
+
+ex:uncertaintyAssessment a cdi:Step ;
+    cdi:Activity-name [ a cdi:ObjectName ; cdi:ObjectName-name "Uncertainty assessment" ] ;
+    cdi:Activity-entityUsed [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentration"^^xsd:anyURI ] ,
+                            [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/uncertaintySpec"^^xsd:anyURI ] ;
+    cdi:Activity-entityProduced [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentrationUncertainty"^^xsd:anyURI ] ;
+    cdi:Step_receives_Parameter ex:p-concentration-in-unc ;
+    cdi:Step_produces_Parameter ex:p-uncertainty-out .
+
+ex:validation a cdi:Step ;
+    cdi:Activity-name [ a cdi:ObjectName ; cdi:ObjectName-name "Validation" ] ;
+    cdi:Activity-entityUsed [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentration"^^xsd:anyURI ] ,
+                            [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentrationUncertainty"^^xsd:anyURI ] ,
+                            [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/validationCriterion"^^xsd:anyURI ] ;
+    cdi:Activity-entityProduced [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/validationResult"^^xsd:anyURI ] ;
+    cdi:Step_receives_Parameter ex:p-concentration-in-val, ex:p-uncertainty-in .
+
+# --- Parameters, each bound to the entity it carried in this run ----------------------------
+
+ex:p-sample-out           a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/waterSample01"^^xsd:anyURI ] .
+ex:p-sample-in            a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/waterSample01"^^xsd:anyURI ] .
+ex:p-absorbance-out       a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/absorbanceSource"^^xsd:anyURI ] .
+ex:p-absorbance-in        a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/absorbanceSource"^^xsd:anyURI ] .
+ex:p-corrected-out        a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/correctedAbsorbance"^^xsd:anyURI ] .
+ex:p-corrected-in         a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/correctedAbsorbance"^^xsd:anyURI ] .
+ex:p-concentration-out    a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentration"^^xsd:anyURI ] .
+ex:p-concentration-in-unc a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentration"^^xsd:anyURI ] .
+ex:p-concentration-in-val a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentration"^^xsd:anyURI ] .
+ex:p-uncertainty-out      a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentrationUncertainty"^^xsd:anyURI ] .
+ex:p-uncertainty-in       a cdi:Parameter ; cdi:Parameter-entityBound [ a cdi:Reference ; cdi:Reference-uri "https://example.org/cdif-prov/concentrationUncertainty"^^xsd:anyURI ] .
+
+# --- Agents ---------------------------------------------------------------------------------
+
+ex:analyst01 a cdi:Individual, cdi:ProcessingAgent ;
+    cdi:Individual-individualName [ a cdi:IndividualName ;
+        cdi:IndividualName-firstGiven "Ana" ; cdi:IndividualName-lastFamily "Lima" ; cdi:IndividualName-prefix "Dr" ] ;
+    cdi:ProcessingAgent_performs_Activity ex:concentrationRun, ex:waterSampling01, ex:absorbanceMeasurement ;
+    cdi:ProcessingAgent_operatesOn_ProductionEnvironment ex:laboratoryEnvironment .
+
+ex:spectrophotometer01 a cdi:Machine, cdi:ProcessingAgent ;
+    cdi:Machine-name [ a cdi:ObjectName ; cdi:ObjectName-name "UV-Vis spectrophotometer" ] ;
+    cdi:ProcessingAgent_performs_Activity ex:absorbanceMeasurement ;
+    cdi:ProcessingAgent_operatesOn_ProductionEnvironment ex:laboratoryEnvironment .
+
+ex:analysisSoftware a cdi:Machine, cdi:ProcessingAgent ;
+    cdi:Machine-name [ a cdi:ObjectName ; cdi:ObjectName-name "Analysis software" ] ;
+    cdi:ProcessingAgent_performs_Activity ex:blankCorrection, ex:calibrationDerivation, ex:uncertaintyAssessment, ex:validation .
+
+ex:laboratoryEnvironment a cdi:ProductionEnvironment ;
+    cdi:ProductionEnvironment-name [ a cdi:ObjectName ; cdi:ObjectName-name "Analytical laboratory" ] .
+
+ex:laboratory01 a cdi:Organization ;
+    cdi:Organization-organizationName [ a cdi:OrganizationName ; cdi:ObjectName-name "Analytical laboratory" ] .

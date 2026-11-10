@@ -1,0 +1,151 @@
+# ProvONE view of examples/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
+# "quantitative" scenario, extended with sampling and the absorbance measurement).
+#
+# ProvONE (http://purl.dataone.org/provone/2015/01/15/ontology#, DataONE) extends PROV-O for
+# scientific workflows. Prospectively, a Workflow is a Program made of sub-Programs whose Ports
+# are wired together by Channels. Retrospectively, each Execution of a Program records which data
+# passed through which Port, by adding provone:hadInPort / provone:hadOutPort to the ordinary
+# qualified Usage and Generation.
+#
+# The run reuses the master's IRIs, so merging with the master joins them. ProvONE has no lab
+# vocabulary: the sampling and measuring steps are Programs like any other, and the instrument,
+# reagent and cuvette are just inputs arriving on ports.
+
+@prefix provone: <http://purl.dataone.org/provone/2015/01/15/ontology#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix ex:      <https://example.org/cdif-prov/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Prospective: the workflow as programs, ports and channels ------------------------------
+
+ex:concentrationWorkflow a provone:Workflow ;
+    rdfs:label "Concentration determination workflow" ;
+    provone:hasSubProgram ex:samplingProgram, ex:absorbanceProgram,
+                          ex:blankCorrectionProgram, ex:calibrationProgram,
+                          ex:uncertaintyProgram, ex:validationProgram ;
+    provone:hasInPort ex:wfFeatureIn ;
+    provone:hasOutPort ex:wfValidationOut .
+
+ex:samplingProgram a provone:Program ;
+    rdfs:label "Water sampling" ;
+    provone:hasInPort ex:smFeatureIn ;
+    provone:hasOutPort ex:smSampleOut .
+
+ex:absorbanceProgram a provone:Program ;
+    rdfs:label "Absorbance measurement" ;
+    provone:hasInPort ex:abSampleIn, ex:abInstrumentIn, ex:abReagentIn, ex:abToolIn ;
+    provone:hasOutPort ex:abAbsorbanceOut .
+
+ex:blankCorrectionProgram a provone:Program ;
+    rdfs:label "Blank correction" ;
+    provone:hasInPort ex:bcAbsorbanceIn, ex:bcSpecIn ;
+    provone:hasOutPort ex:bcCorrectedOut .
+
+ex:calibrationProgram a provone:Program ;
+    rdfs:label "Calibration-based derivation" ;
+    provone:hasInPort ex:calCorrectedIn, ex:calRelationshipIn ;
+    provone:hasOutPort ex:calConcentrationOut .
+
+ex:uncertaintyProgram a provone:Program ;
+    rdfs:label "Uncertainty assessment" ;
+    provone:hasInPort ex:uncConcentrationIn, ex:uncSpecIn ;
+    provone:hasOutPort ex:uncUncertaintyOut .
+
+ex:validationProgram a provone:Program ;
+    rdfs:label "Validation" ;
+    provone:hasInPort ex:valConcentrationIn, ex:valUncertaintyIn, ex:valCriterionIn ;
+    provone:hasOutPort ex:valResultOut .
+
+ex:wfFeatureIn a provone:Port .        ex:wfValidationOut a provone:Port .
+ex:smFeatureIn a provone:Port .        ex:smSampleOut a provone:Port .
+ex:abSampleIn a provone:Port .         ex:abAbsorbanceOut a provone:Port .
+ex:abReagentIn a provone:Port .        ex:abToolIn a provone:Port .
+ex:bcAbsorbanceIn a provone:Port .     ex:bcCorrectedOut a provone:Port .
+ex:calCorrectedIn a provone:Port .     ex:calConcentrationOut a provone:Port .
+ex:uncConcentrationIn a provone:Port . ex:uncUncertaintyOut a provone:Port .
+ex:valConcentrationIn a provone:Port . ex:valUncertaintyIn a provone:Port . ex:valResultOut a provone:Port .
+
+# Method and instrument inputs are ports with a default parameter: the plan names what a run uses
+# unless told otherwise.
+ex:abInstrumentIn    a provone:Port ; provone:hasDefaultParam ex:spectrophotometer01 .
+ex:bcSpecIn          a provone:Port ; provone:hasDefaultParam ex:blankCorrectionSpec .
+ex:calRelationshipIn a provone:Port ; provone:hasDefaultParam ex:calibrationRelationship .
+ex:uncSpecIn         a provone:Port ; provone:hasDefaultParam ex:uncertaintySpec .
+ex:valCriterionIn    a provone:Port ; provone:hasDefaultParam ex:validationCriterion .
+
+# Channels: a port connects to a channel; ports on the same channel are wired together. This is
+# the data flow, stated before any run.
+ex:chFeature       a provone:Channel . ex:wfFeatureIn provone:connectsTo ex:chFeature .          ex:smFeatureIn provone:connectsTo ex:chFeature .
+ex:chSample        a provone:Channel . ex:smSampleOut provone:connectsTo ex:chSample .          ex:abSampleIn provone:connectsTo ex:chSample .
+ex:chAbsorbance    a provone:Channel . ex:abAbsorbanceOut provone:connectsTo ex:chAbsorbance .  ex:bcAbsorbanceIn provone:connectsTo ex:chAbsorbance .
+ex:chCorrected     a provone:Channel . ex:bcCorrectedOut provone:connectsTo ex:chCorrected .    ex:calCorrectedIn provone:connectsTo ex:chCorrected .
+ex:chConcentration a provone:Channel . ex:calConcentrationOut provone:connectsTo ex:chConcentration .
+                                       ex:uncConcentrationIn provone:connectsTo ex:chConcentration .
+                                       ex:valConcentrationIn provone:connectsTo ex:chConcentration .
+ex:chUncertainty   a provone:Channel . ex:uncUncertaintyOut provone:connectsTo ex:chUncertainty . ex:valUncertaintyIn provone:connectsTo ex:chUncertainty .
+ex:chValidation    a provone:Channel . ex:valResultOut provone:connectsTo ex:chValidation .      ex:wfValidationOut provone:connectsTo ex:chValidation .
+
+# --- Retrospective: executions of those programs --------------------------------------------
+
+ex:analyst01 a provone:User .
+
+ex:concentrationRun a provone:Execution ;
+    prov:qualifiedAssociation [ a prov:Association ;
+        prov:agent ex:analyst01 ; prov:hadPlan ex:concentrationWorkflow ] .
+
+ex:waterSampling01 a provone:Execution ;
+    provone:wasPartOf ex:concentrationRun ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analyst01 ; prov:hadPlan ex:samplingProgram ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:riverReach01 ; provone:hadInPort ex:smFeatureIn ] .
+
+ex:absorbanceMeasurement a provone:Execution ;
+    provone:wasPartOf ex:concentrationRun ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analyst01 ; prov:hadPlan ex:absorbanceProgram ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:waterSample01 ;       provone:hadInPort ex:abSampleIn ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:spectrophotometer01 ; provone:hadInPort ex:abInstrumentIn ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:colourReagent01 ;     provone:hadInPort ex:abReagentIn ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:cuvette01 ;           provone:hadInPort ex:abToolIn ] .
+
+ex:blankCorrection a provone:Execution ;
+    provone:wasPartOf ex:concentrationRun ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analysisSoftware ; prov:hadPlan ex:blankCorrectionProgram ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:absorbanceSource ;    provone:hadInPort ex:bcAbsorbanceIn ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:blankCorrectionSpec ; provone:hadInPort ex:bcSpecIn ] .
+
+ex:calibrationDerivation a provone:Execution ;
+    provone:wasPartOf ex:concentrationRun ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analysisSoftware ; prov:hadPlan ex:calibrationProgram ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:correctedAbsorbance ;     provone:hadInPort ex:calCorrectedIn ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:calibrationRelationship ; provone:hadInPort ex:calRelationshipIn ] .
+
+ex:uncertaintyAssessment a provone:Execution ;
+    provone:wasPartOf ex:concentrationRun ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analysisSoftware ; prov:hadPlan ex:uncertaintyProgram ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:concentration ;   provone:hadInPort ex:uncConcentrationIn ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:uncertaintySpec ; provone:hadInPort ex:uncSpecIn ] .
+
+ex:validation a provone:Execution ;
+    provone:wasPartOf ex:concentrationRun ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analysisSoftware ; prov:hadPlan ex:validationProgram ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:concentration ;            provone:hadInPort ex:valConcentrationIn ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:concentrationUncertainty ; provone:hadInPort ex:valUncertaintyIn ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:validationCriterion ;      provone:hadInPort ex:valCriterionIn ] .
+
+# The data that flowed, with the output port each item left by.
+ex:waterSample01 a provone:Data ;
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:waterSampling01 ; provone:hadOutPort ex:smSampleOut ;
+                               prov:atTime "2026-11-04T08:15:00Z"^^xsd:dateTime ] .
+ex:absorbanceSource a provone:Data ;
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:absorbanceMeasurement ; provone:hadOutPort ex:abAbsorbanceOut ;
+                               prov:atTime "2026-11-05T10:19:00Z"^^xsd:dateTime ] .
+ex:correctedAbsorbance a provone:Data ;
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:blankCorrection ; provone:hadOutPort ex:bcCorrectedOut ;
+                               prov:atTime "2026-11-05T10:21:04Z"^^xsd:dateTime ] .
+ex:concentration a provone:Data ;
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:calibrationDerivation ; provone:hadOutPort ex:calConcentrationOut ;
+                               prov:atTime "2026-11-05T10:23:18Z"^^xsd:dateTime ] .
+ex:concentrationUncertainty a provone:Data ;
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:uncertaintyAssessment ; provone:hadOutPort ex:uncUncertaintyOut ] .
+ex:validationResult a provone:Data ;
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:validation ; provone:hadOutPort ex:valResultOut ] .
