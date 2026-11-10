@@ -3,7 +3,7 @@
 # GENERATED FILE -- DO NOT EDIT.
 # Synced from CDIF/validation/tools/FrameAndValidate.py (the normative source).
 # Edit there, then run:  python tools/sync_frameandvalidate.py --apply
-# src-sha256: 49d2420d7c9a8a9417c4894fae8676f5fd4df8ea2641e03cfe0c6e4e454cf0f5
+# src-sha256: ccc4e6ca1bde206fa0fcfeca5d882f67b74ba687cf5a456f6bcd49a79c974373
 # <<< CDIF-SYNC GENERATED <<<
 
 """
@@ -316,8 +316,11 @@ STRUCTURE_ROOT_TYPES = frozenset({
 # it. Framing with @embed:@always inlines the whole target; these get collapsed
 # back to a bare {@id} because the full node is retained at its own slot (or is
 # an external resource) and the tightened schemas type these slots as {@id}-only
-# references. The collapse runs on EVERY doc type (see remove_nulls_and_normalize),
-# not just bare-structure docs -- cdif:qualifies also appears in dataset-rooted
+# references. collapse_reference_slots checks that premise per node: a copy is
+# collapsed only when a copy of the same @id with the same properties survives
+# elsewhere, and is otherwise left inline for the schema to judge. The collapse
+# runs on EVERY doc type (last step of frame_cdif_document), not just
+# bare-structure docs -- cdif:qualifies also appears in dataset-rooted
 # data-description docs, and schema:about (manifest part -> documented file) /
 # schema:result (activity -> produced entity) are reference slots on manifest /
 # provenance / dataset docs.
@@ -362,15 +365,50 @@ REFERENCE_ONLY_KEYS = (
 STRUCTURE_ARRAY_KEYS = ('cdif:name', 'cdif:qualifies', 'cdif:semantic')
 
 
-def _collapse_to_id_ref(value):
-    """Reduce an embedded node (a dict carrying @id plus other keys) to a bare
-    {@id} reference. Recurses into lists; leaves inline objects without @id (e.g.
-    an anonymous role) and plain strings untouched."""
-    if isinstance(value, list):
-        return [_collapse_to_id_ref(v) for v in value]
-    if isinstance(value, dict) and '@id' in value and len(value) > 1:
-        return {'@id': value['@id']}
-    return value
+def collapse_reference_slots(tree, keys=REFERENCE_ONLY_KEYS):
+    """Reduce framing-embedded nodes under reference-only `keys` to a bare
+    {@id} -- but only where that is non-lossy: some copy of the same @id that
+    survives elsewhere in `tree` carries at least the same properties.
+    Otherwise the inline node is kept, so its description reaches the schema.
+
+    The premise that the target "is defined elsewhere" does not always hold. An
+    activity's schema:result is very often the ONLY place its output is
+    described (name, @type, encodingFormat); collapsing it unconditionally threw
+    those triples away before validation, and the record passed while its
+    outputs were never checked. A node kept inline here counts as surviving, so
+    a later reference-slot copy of the same @id collapses against it, and the
+    reference slots inside it are judged the same way. Inline objects without
+    @id and plain strings are left untouched. Mutates and returns `tree`."""
+    kept = {}        # @id -> key sets of the copies that survive
+    queue = []       # (container, index-or-key, node) under a reference slot
+
+    def scan(o):
+        if isinstance(o, list):
+            for x in o:
+                scan(x)
+        elif isinstance(o, dict):
+            if '@id' in o and len(o) > 1:
+                kept.setdefault(o['@id'], []).append(set(o))
+            for k, v in o.items():
+                if k not in keys:
+                    scan(v)
+                    continue
+                slots = ([(v, i, x) for i, x in enumerate(v)]
+                         if isinstance(v, list) else [(o, k, v)])
+                for container, slot, node in slots:
+                    if isinstance(node, dict) and '@id' in node and len(node) > 1:
+                        queue.append((container, slot, node))
+                    else:
+                        scan(node)
+
+    scan(tree)
+    while queue:
+        container, slot, node = queue.pop(0)
+        if any(ks >= set(node) for ks in kept.get(node['@id'], ())):
+            container[slot] = {'@id': node['@id']}
+        else:
+            scan(node)
+    return tree
 
 
 def _is_structure_rooted(doc):
@@ -386,17 +424,15 @@ def _is_structure_rooted(doc):
 
 
 def normalize_bare_structure(obj):
-    """Recursive normalizations for bare DataStructure documents: collapse
-    framing-inlined component references (cdif:qualifies / cdi:refersTo) back to
-    bare {@id}, and wrap single-valued STRUCTURE_ARRAY_KEYS into arrays."""
+    """Recursive normalizations for bare DataStructure documents: wrap
+    single-valued STRUCTURE_ARRAY_KEYS into arrays. (Framing-inlined component
+    references are collapsed for every doc type by collapse_reference_slots.)"""
     if isinstance(obj, list):
         return [normalize_bare_structure(x) for x in obj]
     if isinstance(obj, dict):
         out = {}
         for k, v in obj.items():
             v = normalize_bare_structure(v)
-            if k in REFERENCE_ONLY_KEYS:
-                v = _collapse_to_id_ref(v)
             if k in STRUCTURE_ARRAY_KEYS and not isinstance(v, list):
                 v = [v]
             out[k] = v
@@ -633,13 +669,6 @@ def remove_nulls_and_normalize(obj, parent_key=None):
             if new_key == 'schema:identifier' and is_bare_id_reference(new_value):
                 new_value = new_value['@id']
 
-            # Collapse framing-embedded references back to a bare {@id} for
-            # reference-only slots (the tightened schemas type these as {@id};
-            # framing with @embed:@always inlines the whole target). Ungated --
-            # runs on every doc type, before the array wrap below.
-            if new_key in REFERENCE_ONLY_KEYS:
-                new_value = _collapse_to_id_ref(new_value)
-
             # Wrap in array if schema expects array and value is not already an array
             if new_key in ARRAY_PROPERTIES and not isinstance(new_value, list):
                 new_value = [new_value]
@@ -716,13 +745,16 @@ def remove_nulls_and_normalize(obj, parent_key=None):
                 result['schema:contributor'] = inner[0]
 
         # schema:alternateName: array on variableMeasured and spatialCoverage items,
-        # string on Person/Organization
+        # on an instrument and on its schema:hasPart components (typed schema:Thing,
+        # which separates them from a manifest's parts), string on Person/Organization
         is_var_or_place = ('cdi:InstanceVariable' in type_list or
                            'schema:PropertyValue' in type_list and parent_key == 'schema:variableMeasured' or
                            'schema:Place' in type_list)
+        is_instrument_or_part = (parent_key == 'schema:instrument' or
+                                 parent_key == 'schema:hasPart' and 'schema:Thing' in type_list)
         alt = result.get('schema:alternateName')
         if alt is not None:
-            if is_var_or_place and not isinstance(alt, list):
+            if (is_var_or_place or is_instrument_or_part) and not isinstance(alt, list):
                 result['schema:alternateName'] = [alt]
 
         # schema:identifier: single object/string on Person/Organization agents
@@ -768,6 +800,103 @@ def frame_cdif_document(doc_path, frame_path=None):
     return frame_cdif(doc, frame, verbose=True)
 
 
+# Canonical prefix for each CDIF-standard namespace IRI. A record may alias any
+# of these under a different prefix (e.g. `dct` instead of `dcterms` for Dublin
+# Core Terms, or `sdo` for schema.org). The framed-tree JSON Schemas and the
+# conformsTo extraction in ConformanceValidate match LITERAL prefixed keys, so an
+# alias like `dct:conformsTo` reads as a missing `dcterms:conformsTo` even though
+# the RDF is identical -- and SHACL, which works on expanded IRIs, passes it,
+# making the mismatch look like absent data. canonicalize_cdif_prefixes() rewrites
+# such aliases to the canonical prefix up front so the pipeline is agnostic to
+# which alias the source used. This map mirrors the prefixes declared in
+# CDIF-frame-2026.jsonld / CDIF-context-2026.jsonld. Keys are EXACT IRIs: an
+# `https://schema.org/` (note https) is a DIFFERENT namespace than the canonical
+# `http://schema.org/` and is intentionally left for the SOSO namespace-variant
+# lint, not silently rewritten here. Extension prefixes the map does not list
+# (cr:, rai:, wd:, ...) pass through untouched.
+CANONICAL_PREFIX_BY_IRI = {
+    "http://schema.org/": "schema",
+    "http://purl.org/dc/terms/": "dcterms",
+    "http://www.w3.org/ns/dcat#": "dcat",
+    "http://www.w3.org/ns/prov#": "prov",
+    "http://www.w3.org/ns/dqv#": "dqv",
+    "http://www.opengis.net/ont/geosparql#": "geosparql",
+    "http://www.opengis.net/ont/sf#": "sf",
+    "http://spdx.org/rdf/terms#": "spdx",
+    "http://www.w3.org/2006/time#": "time",
+    "http://www.w3.org/2004/02/skos/core#": "skos",
+    "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/": "cdi",
+    "https://w3id.org/cdif/": "cdif",
+    "http://www.w3.org/ns/csvw#": "csvw",
+    "https://w3id.org/cdif/xas/": "xas",
+    "https://manual.nexusformat.org/classes/": "nxs",
+    "https://ada.astromat.org/metadata/": "ada",
+}
+
+
+def canonicalize_cdif_prefixes(doc):
+    """Return `doc` with CDIF-standard namespace aliases rewritten to their
+    canonical prefixes (see CANONICAL_PREFIX_BY_IRI), so a record that used e.g.
+    `dct:` where the schemas expect `dcterms:` validates identically.
+
+    Rewrites prefixed object KEYS and the CURIE values of `@type` and `@id`;
+    full-IRI values (`{"@id": "https://..."}`) and literal strings are left
+    alone. The top-level `@context` is updated so the canonical prefix maps the
+    namespace and the redundant alias is dropped. Only an inline dict top-level
+    `@context` is introspected; a remote/list context, or a nested `@context`,
+    is left unchanged. The input document is not modified.
+    """
+    if not isinstance(doc, dict):
+        return doc
+    ctx = doc.get("@context")
+    if not isinstance(ctx, dict):
+        return doc
+
+    rename = {}
+    for alias, iri in ctx.items():
+        if isinstance(alias, str) and not alias.startswith("@") and isinstance(iri, str):
+            canon = CANONICAL_PREFIX_BY_IRI.get(iri)
+            if canon is not None and alias != canon:
+                rename[alias] = canon
+    if not rename:
+        return doc
+
+    def swap(curie):
+        if isinstance(curie, str):
+            prefix, sep, rest = curie.partition(":")
+            if sep and prefix in rename:
+                return f"{rename[prefix]}:{rest}"
+        return curie
+
+    def fix_ctx(c):
+        c = dict(c)
+        for alias, canon in rename.items():
+            iri = c.pop(alias, None)
+            if iri is not None:
+                c.setdefault(canon, iri)
+        return c
+
+    def walk(node, is_root=False):
+        if isinstance(node, dict):
+            out = {}
+            for k, v in node.items():
+                key = k if (isinstance(k, str) and k.startswith("@")) else swap(k)
+                if k == "@context":
+                    out[key] = fix_ctx(v) if (is_root and isinstance(v, dict)) else v
+                elif k == "@type":
+                    out[key] = [swap(x) for x in v] if isinstance(v, list) else swap(v)
+                elif k == "@id":
+                    out[key] = swap(v)
+                else:
+                    out[key] = walk(v)
+            return out
+        if isinstance(node, list):
+            return [walk(x) for x in node]
+        return node
+
+    return walk(doc, is_root=True)
+
+
 def frame_cdif(doc, frame=None, verbose=False):
     """Frame an in-memory CDIF JSON-LD document and normalize it into the form
     the StructuredSchemas validate against. `frame` is a frame object, or None
@@ -776,6 +905,10 @@ def frame_cdif(doc, frame=None, verbose=False):
     through this function too, so both tools validate the same normalized form.
     """
     doc = copy.deepcopy(doc)
+    # Normalize namespace aliases to the canonical CDIF prefixes (e.g. dct: ->
+    # dcterms:) before framing, so the compacted output uses the prefixes the
+    # StructuredSchemas require as literal keys regardless of the source's aliases.
+    doc = canonicalize_cdif_prefixes(doc)
     custom_frame = frame is not None
     frame = copy.deepcopy(frame) if custom_frame else FRAME_TEMPLATE
     say = print if verbose else (lambda *a, **k: None)
@@ -836,6 +969,11 @@ def frame_cdif(doc, frame=None, verbose=False):
         result = normalize_bare_structure(result)
     else:
         result = _normalize_structure_subtrees(result)
+
+    # Step 7: collapse framing-embedded copies in reference-only slots back to a
+    # bare {@id} where the node's description survives elsewhere. Last, so the
+    # "survives elsewhere" test sees the document exactly as it will be validated.
+    result = collapse_reference_slots(result)
 
     return result
 
