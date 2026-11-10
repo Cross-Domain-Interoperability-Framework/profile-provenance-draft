@@ -205,7 +205,7 @@ cost of skipping the qualified pattern for this scenario: *who and what played w
 20. A Workflow Run Crate (not Process Run) adds a `ComputationalWorkflow` and `HowToStep`s.
 21. `Activity-description` text, or `Step-script` for executable code; no plan class.
 22. `actionProcess` is a `schema:HowTo`: `url` for the video, `prepTime`, `performTime`, `estimatedCost`.
-23. The run's `schema:HowTo` lists ordered `schema:step`s with `schema:position`, but a step is only a name: nothing links it to the activity that carried it out. (Steps as the only record of the run, the HowTo/step form, was retired in this repo; see [../archive/](../archive/).)
+23. The run's `schema:HowTo` lists ordered `schema:step`s with `schema:position`, and each activity points to the step it carried out with P-Plan's `p:correspondsToStep` (the steps are also typed `p:Step`); schema.org has no Action → HowToStep property (`schema:actionProcess` takes a whole HowTo), so the link is borrowed from P-Plan. It runs from the run to the plan, so the plan stays reusable: both absorbance activities, the failed attempt and the repeat, point to the same step. (Steps as the only record of the run, the HowTo/step form, was retired in this repo; see [../archive/](../archive/).)
 24. Programs and their channels; the order follows from the wiring, not a sequence.
 25. Steps share the master's IRIs; entities do not: `Reference-uri` is a literal, so a graph merge does not connect them.
 
@@ -269,7 +269,7 @@ except the failed attempt; the schema itself requires none of them.
 ## What this suggests
 
 * **Qualified PROV-O is the most expressive serialization**, and the only one that keeps who and what played which part without inventing keys. Plain PROV-O and Process Run Crate lose exactly that.
-* **cdifProv covers the Jules Verne features best** (person, status, procedure details, result about the sample, instrument as a typed thing), but its plan steps are not linked to the activities, there is no part-of, the tool role is weak, and the draft's quality and acquisition-mode provisions have no slot.
+* **cdifProv covers the Jules Verne features best** (person, status, procedure details, result about the sample, instrument as a typed thing), but it links activities to plan steps only by borrowing P-Plan's `p:correspondsToStep`, there is no part-of, the tool role is weak, and the draft's quality and acquisition-mode provisions have no slot.
 * **The overlays answer different questions and combine.** P-Plan or ProvONE adds the plan and wiring that every retrospective form lacks; SOSA adds what was measured (feature, sample, property, sensor) that none of the others can say. Each needs PROV for the rest.
 * **DDI-CDI** is strong on structure (steps, sequence, information flow) and weak on the run (no times, roles or status). It needs review by someone who uses it before any conclusion.
 

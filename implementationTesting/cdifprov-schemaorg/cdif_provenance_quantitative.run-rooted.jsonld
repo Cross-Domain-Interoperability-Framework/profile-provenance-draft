@@ -6,6 +6,7 @@
     "dcat": "http://www.w3.org/ns/dcat#",
     "bios": "https://bioschemas.org/",
     "at": "https://w3id.org/cdif/provenance/activityType/",
+    "p": "http://purl.org/net/p-plan#",
     "ex": "https://example.org/cdif-prov/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema:latitude": {"@type": "xsd:double"},
@@ -68,37 +69,65 @@
     "schema:description": "Laboratory method for a dissolved analyte in surface water by colorimetric absorbance, calibrated against certified standards.",
     "schema:step": [
       {
-        "@type": "schema:HowToStep",
+        "@id": "ex:step-sampling",
+        "@type": [
+          "schema:HowToStep",
+          "p:Step"
+        ],
         "schema:name": "Water sampling",
         "schema:position": "1"
       },
       {
-        "@type": "schema:HowToStep",
+        "@id": "ex:step-calibration",
+        "@type": [
+          "schema:HowToStep",
+          "p:Step"
+        ],
         "schema:name": "Instrument calibration",
         "schema:position": "2"
       },
       {
-        "@type": "schema:HowToStep",
+        "@id": "ex:step-absorbance",
+        "@type": [
+          "schema:HowToStep",
+          "p:Step"
+        ],
         "schema:name": "Absorbance measurement",
         "schema:position": "3"
       },
       {
-        "@type": "schema:HowToStep",
+        "@id": "ex:step-blankCorrection",
+        "@type": [
+          "schema:HowToStep",
+          "p:Step"
+        ],
         "schema:name": "Blank correction",
         "schema:position": "4"
       },
       {
-        "@type": "schema:HowToStep",
+        "@id": "ex:step-derivation",
+        "@type": [
+          "schema:HowToStep",
+          "p:Step"
+        ],
         "schema:name": "Calibration-based derivation",
         "schema:position": "5"
       },
       {
-        "@type": "schema:HowToStep",
+        "@id": "ex:step-uncertainty",
+        "@type": [
+          "schema:HowToStep",
+          "p:Step"
+        ],
         "schema:name": "Uncertainty assessment",
         "schema:position": "6"
       },
       {
-        "@type": "schema:HowToStep",
+        "@id": "ex:step-validation",
+        "@type": [
+          "schema:HowToStep",
+          "p:Step"
+        ],
         "schema:name": "Validation",
         "schema:position": "7"
       }
@@ -185,10 +214,62 @@
           }
         ],
         "schema:result": {"@id": "ex:validationResult"},
+        "p:correspondsToStep": {"@id": "ex:step-validation"},
         "schema:object": [
           {"@id": "ex:concentration"},
           {"@id": "ex:concentrationUncertainty"}
         ],
+        "bios:computationalTool": {"@id": "ex:analysisSoftware"}
+      },
+      {
+        "@id": "ex:blankCorrection",
+        "@type": [
+          "prov:Activity",
+          "schema:Action"
+        ],
+        "schema:name": "Blank correction",
+        "schema:description": "Reagent-blank absorbance subtracted from the sample absorbance.",
+        "schema:additionalType": {"@id": "at:dataProcessing"},
+        "schema:startTime": "2026-11-05T10:21:00Z",
+        "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+        "schema:agent": {
+          "@type": "schema:Role",
+          "schema:agent": {"@id": "ex:analyst01"},
+          "schema:roleName": {
+            "@type": "schema:DefinedTerm",
+            "schema:name": "Researcher",
+            "schema:termCode": "Researcher",
+            "schema:inDefinedTermSet": "https://schema.datacite.org/meta/kernel-4/include/datacite-contributorType-v4.xsd"
+          }
+        },
+        "schema:actionProcess": {
+          "@id": "ex:blankCorrectionSpec",
+          "@type": "schema:HowTo",
+          "schema:name": "Reagent-blank subtraction",
+          "schema:description": "Corrected absorbance = sample absorbance - mean of duplicate reagent-blank absorbances."
+        },
+        "prov:used": [
+          {
+            "@id": "ex:absorbanceSource",
+            "@type": "schema:CreativeWork",
+            "schema:name": "Absorbance data",
+            "schema:description": "Raw absorbance readings of the sample and the reagent blank.",
+            "schema:about": {"@id": "ex:waterSample01"},
+            "schema:url": "https://example.org/cdif-prov/data/absorbance.csv",
+            "schema:encodingFormat": "text/csv"
+          },
+          {"@id": "ex:analysisSoftware"}
+        ],
+        "schema:result": {
+          "@id": "ex:correctedAbsorbance",
+          "@type": "schema:CreativeWork",
+          "schema:name": "Blank-corrected absorbance",
+          "schema:url": "https://example.org/cdif-prov/data/corrected-absorbance.csv",
+          "schema:encodingFormat": "text/csv"
+        },
+        "p:correspondsToStep": {"@id": "ex:step-blankCorrection"},
+        "schema:endTime": "2026-11-05T10:21:04Z",
+        "schema:object": {"@id": "ex:absorbanceSource"},
         "bios:computationalTool": {"@id": "ex:analysisSoftware"}
       },
       {
@@ -218,6 +299,7 @@
           "schema:name": "River reach the water was taken from"
         },
         "schema:result": {"@id": "ex:waterSample01"},
+        "p:correspondsToStep": {"@id": "ex:step-sampling"},
         "schema:endTime": "2026-11-04T08:15:00Z",
         "schema:location": {
           "@type": "schema:Place",
@@ -333,6 +415,7 @@
           "schema:url": "https://example.org/cdif-prov/data/calibration-curve.csv",
           "schema:encodingFormat": "text/csv"
         },
+        "p:correspondsToStep": {"@id": "ex:step-calibration"},
         "schema:endTime": "2026-11-05T10:05:00Z",
         "schema:object": {"@id": "ex:calibrationStandards01"}
       },
@@ -348,6 +431,7 @@
         "schema:actionStatus": "http://schema.org/FailedActionStatus",
         "schema:agent": {"@id": "ex:analyst01"},
         "prov:used": {"@id": "ex:waterSample01"},
+        "p:correspondsToStep": {"@id": "ex:step-absorbance"},
         "schema:endTime": "2026-11-05T10:13:00Z",
         "schema:error": "Air bubble in the cuvette gave an unstable reading; the reading was rejected and the measurement repeated."
       },
@@ -428,15 +512,8 @@
           {"@id": "ex:cuvette01"},
           {"@id": "ex:colourReagent01"}
         ],
-        "schema:result": {
-          "@id": "ex:absorbanceSource",
-          "@type": "schema:CreativeWork",
-          "schema:name": "Absorbance data",
-          "schema:description": "Raw absorbance readings of the sample and the reagent blank.",
-          "schema:about": {"@id": "ex:waterSample01"},
-          "schema:url": "https://example.org/cdif-prov/data/absorbance.csv",
-          "schema:encodingFormat": "text/csv"
-        },
+        "schema:result": {"@id": "ex:absorbanceSource"},
+        "p:correspondsToStep": {"@id": "ex:step-absorbance"},
         "schema:endTime": "2026-11-05T10:19:00Z",
         "schema:location": {
           "@type": "schema:Place",
@@ -477,48 +554,6 @@
         }
       },
       {
-        "@id": "ex:blankCorrection",
-        "@type": [
-          "prov:Activity",
-          "schema:Action"
-        ],
-        "schema:name": "Blank correction",
-        "schema:description": "Reagent-blank absorbance subtracted from the sample absorbance.",
-        "schema:additionalType": {"@id": "at:dataProcessing"},
-        "schema:startTime": "2026-11-05T10:21:00Z",
-        "schema:actionStatus": "http://schema.org/CompletedActionStatus",
-        "schema:agent": {
-          "@type": "schema:Role",
-          "schema:agent": {"@id": "ex:analyst01"},
-          "schema:roleName": {
-            "@type": "schema:DefinedTerm",
-            "schema:name": "Researcher",
-            "schema:termCode": "Researcher",
-            "schema:inDefinedTermSet": "https://schema.datacite.org/meta/kernel-4/include/datacite-contributorType-v4.xsd"
-          }
-        },
-        "schema:actionProcess": {
-          "@id": "ex:blankCorrectionSpec",
-          "@type": "schema:HowTo",
-          "schema:name": "Reagent-blank subtraction",
-          "schema:description": "Corrected absorbance = sample absorbance - mean of duplicate reagent-blank absorbances."
-        },
-        "prov:used": [
-          {"@id": "ex:absorbanceSource"},
-          {"@id": "ex:analysisSoftware"}
-        ],
-        "schema:result": {
-          "@id": "ex:correctedAbsorbance",
-          "@type": "schema:CreativeWork",
-          "schema:name": "Blank-corrected absorbance",
-          "schema:url": "https://example.org/cdif-prov/data/corrected-absorbance.csv",
-          "schema:encodingFormat": "text/csv"
-        },
-        "schema:endTime": "2026-11-05T10:21:04Z",
-        "schema:object": {"@id": "ex:absorbanceSource"},
-        "bios:computationalTool": {"@id": "ex:analysisSoftware"}
-      },
-      {
         "@id": "ex:calibrationDerivation",
         "@type": [
           "prov:Activity",
@@ -552,6 +587,7 @@
           {"@id": "ex:correctedAbsorbance"}
         ],
         "schema:result": {"@id": "ex:concentration"},
+        "p:correspondsToStep": {"@id": "ex:step-derivation"},
         "schema:endTime": "2026-11-05T10:23:18Z",
         "schema:object": [
           {"@id": "ex:calibrationCurve"},
@@ -623,6 +659,7 @@
           {"@id": "ex:analysisSoftware"}
         ],
         "schema:result": {"@id": "ex:concentrationUncertainty"},
+        "p:correspondsToStep": {"@id": "ex:step-uncertainty"},
         "schema:object": {"@id": "ex:concentration"},
         "schema:additionalProperty": {
           "@type": "schema:PropertyValue",
