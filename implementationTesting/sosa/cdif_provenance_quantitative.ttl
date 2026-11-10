@@ -1,4 +1,4 @@
-# SOSA/SSN view of examples/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
+# SOSA/SSN view of implementationTesting/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
 # "quantitative" scenario, extended with sampling and the absorbance measurement).
 #
 # SOSA (http://www.w3.org/ns/sosa/) describes observation, sampling and actuation: an act that

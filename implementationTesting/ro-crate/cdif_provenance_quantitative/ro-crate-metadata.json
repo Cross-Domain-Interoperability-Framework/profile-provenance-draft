@@ -11,7 +11,7 @@
       "@id": "./",
       "@type": "Dataset",
       "name": "Concentration determination of the analyte in water sample 01",
-      "description": "Process Run Crate rendering of examples/prov-o-qualified/cdif_provenance_quantitative.ttl, the Dagstuhl quantitative scenario extended with illustrative sampling, instrument, reagent, tool and analyst. See examples/APPROACHES.md.",
+      "description": "Process Run Crate rendering of implementationTesting/prov-o-qualified/cdif_provenance_quantitative.ttl, the Dagstuhl quantitative scenario extended with illustrative sampling, instrument, reagent, tool and analyst. See implementationTesting/APPROACHES.md.",
       "datePublished": "2026-11-09",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
       "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.5"},

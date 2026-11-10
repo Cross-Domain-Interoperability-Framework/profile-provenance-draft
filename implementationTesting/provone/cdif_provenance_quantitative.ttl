@@ -1,4 +1,4 @@
-# ProvONE view of examples/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
+# ProvONE view of implementationTesting/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
 # "quantitative" scenario, extended with sampling and the absorbance measurement).
 #
 # ProvONE (http://purl.dataone.org/provone/2015/01/15/ontology#, DataONE) extends PROV-O for
