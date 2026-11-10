@@ -96,7 +96,6 @@ tree-shaped JSON-LD copy beside its source:
 |PROV-O, plain relations|[prov-o-unqualified/cdif\_provenance\_quantitative.jsonld](prov-o-unqualified/cdif_provenance_quantitative.jsonld)|3: `ex:validationResult`, plus the two plans, cut off once `hadPlan` is dropped|
 |RO-Crate|[ro-crate/cdif\_provenance\_quantitative.jsonld](ro-crate/cdif_provenance_quantitative.jsonld)|1: the crate's root `schema:Dataset` (`./`), with the metadata descriptor nested under `@reverse`|
 |DDI-CDI|[ddi-cdi/cdif\_provenance\_quantitative.jsonld](ddi-cdi/cdif_provenance_quantitative.jsonld)|4: the agents (`ProcessingAgent\_performs\_Activity` points from agent to activity)|
-|DDI-CDI, rooted on the run|[ddi-cdi/cdif\_provenance\_quantitative.run-rooted.jsonld](ddi-cdi/cdif_provenance_quantitative.run-rooted.jsonld)|1: `ex:concentrationRun` (`--root ex:concentrationRun`). Its steps nest under `cdi:Activity\_has\_Step`; each agent sits under the first activity it performs, with `@reverse`; the laboratory, which nothing in the process model links to (note 11), is in `@included`|
 |P-Plan|[p-plan/cdif\_provenance\_quantitative.jsonld](p-plan/cdif_provenance_quantitative.jsonld)|20: each activity and entity of the run, with its step or variable, and the plan, nested inside|
 |ProvONE|[provone/cdif\_provenance\_quantitative.jsonld](provone/cdif_provenance_quantitative.jsonld)|1|
 |SOSA/SSN|[sosa/cdif\_provenance\_quantitative.jsonld](sosa/cdif_provenance_quantitative.jsonld)|3: the three observations and the sampling|
@@ -118,6 +117,30 @@ the PROV-O graph the master already gives.
 * **cdifProv is already a tree.**
 * **The plain-relations Turtle declares schema.org as `schema1:`** (an artefact of how it was
 generated); its JSON-LD uses `schema:`.
+
+### Rooted on the run
+
+Where a source has the overall run, `ex:concentrationRun`, a second tree is rooted on it
+(`python tools/rdfToJsonLdTree.py SRC OUT --root ex:concentrationRun`). What hangs directly under
+the run shows how each approach ties a step to it:
+
+|approach|run-rooted tree|under the run|
+|---|---|---|
+|PROV-O, qualified|[prov-o-qualified/cdif\_provenance\_quantitative.run-rooted.jsonld](prov-o-qualified/cdif_provenance_quantitative.run-rooted.jsonld)|5 steps, by `@reverse dcterms:isPartOf` (the sampling is not part of the run; it is reached through the sample)|
+|PROV-O, plain relations|[prov-o-unqualified/cdif\_provenance\_quantitative.run-rooted.jsonld](prov-o-unqualified/cdif_provenance_quantitative.run-rooted.jsonld)|the same 5 steps; the two plans no longer linked by `hadPlan` are in `@included`|
+|cdifProv|[cdifprov-schemaorg/cdif\_provenance\_quantitative.run-rooted.jsonld](cdifprov-schemaorg/cdif_provenance_quantitative.run-rooted.jsonld)|no steps: nothing links a step to the run. The run's `schema:result` is the Dataset, and the other activities hang from the Dataset's `prov:wasGeneratedBy`|
+|DDI-CDI|[ddi-cdi/cdif\_provenance\_quantitative.run-rooted.jsonld](ddi-cdi/cdif_provenance_quantitative.run-rooted.jsonld)|6 steps, forward, by `cdi:Activity\_has\_Step`; the analyst by `@reverse cdi:ProcessingAgent\_performs\_Activity`; the laboratory, which nothing links to (note 11), in `@included`|
+|ProvONE|[provone/cdif\_provenance\_quantitative.run-rooted.jsonld](provone/cdif_provenance_quantitative.run-rooted.jsonld)|6 steps, by `@reverse provone:wasPartOf`; `ex:validationResult`, whose only link is a qualified generation (entity → blank node → activity), in `@included`|
+
+Not possible for **P-Plan** and **SOSA/SSN** (overlays that do not contain the run; P-Plan names it
+only in a comment), **RO-Crate** (a Process Run Crate has no overall action: the root Dataset
+`mentions` the six actions) or **PROV-JSON** (not JSON-LD).
+
+A node that points *at* the run (a step that is part of it, an agent that performs it) is placed
+directly under the run with `@reverse`; any other node that points into the tree goes under the
+nearest node it points at; anything unconnected goes in `@included`. Each file is isomorphic to its
+source under rdflib and pyld (`xsd:double` values compared by value: pyld writes them in canonical
+E-notation).
 
 ## The matrix
 

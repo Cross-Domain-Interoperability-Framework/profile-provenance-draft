@@ -15,7 +15,8 @@ Usage:
 Layout:
 - The root is the --root node, else the schema:Dataset when there is one. A node not reached from it
   that points into the tree (an RO-Crate metadata descriptor's schema:about, a DDI-CDI agent's
-  ProcessingAgent_performs_Activity) is nested with @reverse under the first node it points at, and
+  ProcessingAgent_performs_Activity) is nested with @reverse under the node nearest the root that it
+  points at, and
   anything still unconnected goes in the root's @included, so the root is the one top-level object.
   Otherwise roots are the named nodes nothing else points at, largest tree first, in @graph when
   there are several.
@@ -49,8 +50,9 @@ KNOWN = {'schema': 'http://schema.org/', 'prov': 'http://www.w3.org/ns/prov#', '
          'ex': 'https://example.org/cdif-prov/', 'bios': 'https://bioschemas.org/'}
 if is_ttl:
     PFX = dict(re.findall(r'^@prefix\s+(\w*):\s*<([^>]+)>', text, re.M))
-else:
-    PFX = {}
+else:                                   # a JSON-LD source's own prefixes, when its @context is inline
+    ctx0 = json.loads(text).get('@context')
+    PFX = {k: v for k, v in ctx0.items() if isinstance(v, str) and not k.startswith('@')} if isinstance(ctx0, dict) else {}
 for k, v in KNOWN.items():              # a known namespace keeps its usual prefix (not e.g. schema1)
     for k2 in [k2 for k2, v2 in PFX.items() if v2 == v and k2 != k]: del PFX[k2]
     if k not in PFX: PFX[k] = v
@@ -94,13 +96,14 @@ coerce = {p: next(iter(ts))[1] for p, ts in lit_types.items()
           if len(ts) == 1 and next(iter(ts))[0] == 'dt' and next(iter(ts))[1] not in (None, XSD.string)}
 
 done, bn_ids, desc = set(), {}, {}      # desc: node -> the dict that describes it in full
+reserved = set()                        # nodes to be placed under the root with @reverse; a reference until then
 def val(o, p):
     if isinstance(o, Literal):
         if o.language: return {'@value': str(o), '@language': o.language}
         if o.datatype in (None, XSD.string): return str(o)
         if coerce.get(p) == o.datatype: return str(o)
         return {'@value': str(o), '@type': qq(o.datatype)}
-    if o in done:
+    if o in done or o in reserved:
         return {'@id': bn_ids[o] if isinstance(o, BNode) else qq(o)}
     if isinstance(o, BNode) or o in named: return node(o)
     return {'@id': qq(o)}
@@ -121,8 +124,10 @@ def node(s, skip=None):                 # skip: a (predicate, object) to leave o
 # The root is the node named by --root, else a schema:Dataset (CDIF records are rooted on the Dataset).
 # A node that is not reached from it but points into the tree (an RO-Crate metadata descriptor's
 # schema:about, a DDI-CDI agent's ProcessingAgent_performs_Activity) is nested with @reverse under the
-# first node it points at. Anything still unconnected goes in the root's @included, so the root stays
-# the one top-level object.
+# node nearest the root that it points at. Nodes that point at the root itself (a DDI-CDI run's agent,
+# PROV steps that are dcterms:isPartOf the run) are reserved and placed directly under it, so the forward
+# walk cannot bury them deeper in the tree. Anything still unconnected goes in the root's @included, so
+# the root stays the one top-level object.
 DATASET = URIRef('http://schema.org/Dataset')
 def expand(t):
     pre, _, local = t.partition(':')
@@ -135,12 +140,21 @@ else:
     main = datasets[0] if datasets else None
 trees = []
 if main is not None:
+    targets = set(g.objects(main))
+    direct = sorted({(s, p) for s, p in g.subject_predicates(main)
+                     if s in named and s != main and s not in targets}, key=lambda sp: first_pos(sp[0]))
+    reserved.update(s for s, _ in direct)
     tree = node(main)
+    for s, p in direct:
+        reserved.discard(s)
+        if s in done: continue
+        rev = tree.setdefault('@reverse', {}); k = qq(p); child = node(s, skip=(p, main))
+        rev[k] = child if k not in rev else (rev[k] if isinstance(rev[k], list) else [rev[k]]) + [child]
     while True:
         cands = [(first_pos(s), s, p, o) for s, p, o in g if s in named and s not in done
                  and p != RDF.type and o in desc]
         if not cands: break
-        _, s, p, o = min(cands, key=lambda c: (c[0], list(desc).index(c[3])))
+        _, s, p, o = min(cands, key=lambda c: (list(desc).index(c[3]), c[0]))   # nearest the root first
         rev = desc[o].setdefault('@reverse', {}); k = qq(p); child = node(s, skip=(p, o))
         rev[k] = child if k not in rev else (rev[k] if isinstance(rev[k], list) else [rev[k]]) + [child]
     rest = [node(r) for r in sorted((x for x in named if x not in done), key=first_pos) if r not in done]
@@ -164,7 +178,18 @@ from pyld import jsonld
 opts = {'format': 'application/n-quads'}
 if a.base: opts['base'] = a.base
 p = rdflib.Graph().parse(data=jsonld.to_rdf(json.loads(s), opts), format='nt')
-ok = rdflib.compare.isomorphic(g, r) and rdflib.compare.isomorphic(g, p)
+# pyld writes xsd:double / xsd:float in canonical E-notation ("46.95" -> "4.695E1"), so those compare by
+# value; every other literal (e.g. a 'Z' timestamp) must match exactly as written.
+FLOATS = (XSD.double, XSD.float)
+def by_value(gr):
+    out = rdflib.Graph()
+    for s_, p_, o_ in gr:
+        out.add((s_, p_, Literal(repr(float(o_)), datatype=o_.datatype)
+                 if isinstance(o_, Literal) and o_.datatype in FLOATS else o_))
+    return out
+G, R, P = by_value(g), by_value(r), by_value(p)
+iso_r, iso_p = rdflib.compare.isomorphic(G, R), rdflib.compare.isomorphic(G, P)
+ok = iso_r and iso_p
 print(f'{a.out}: {len(trees)} root(s) | triples src {len(g)} rdflib {len(r)} pyld {len(p)} | isomorphic rdflib',
-      rdflib.compare.isomorphic(g, r), 'pyld', rdflib.compare.isomorphic(g, p))
+      iso_r, 'pyld', iso_p)
 sys.exit(0 if ok else 1)
