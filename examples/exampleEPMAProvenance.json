@@ -43,6 +43,9 @@
       "schema:name": "Sample preparation for EPMA",
       "schema:additionalType": [
         {
+          "@id": "schema:CreateAction"
+        },
+        {
           "@id": "bios:LabProcess"
         }
       ],
@@ -115,6 +118,9 @@
       "@id": "#EPMAAnalysis",
       "schema:name": "EPMA major element analysis of olivine",
       "schema:additionalType": [
+        {
+          "@id": "schema:CreateAction"
+        },
         {
           "@id": "bios:LabProcess"
         }
@@ -216,6 +222,9 @@
       "schema:result": [
         {
           "@id": "#OlivineCompositions",
+          "@type": [
+            "schema:Thing"
+          ],
           "schema:name": "Quantitative olivine WDS analyses",
           "schema:description": "142 point analyses of olivine major and minor element oxide concentrations (wt%) with detection limits and analytical totals."
         }
@@ -273,6 +282,11 @@
       ],
       "@id": "#DataReduction",
       "schema:name": "Data reduction and filtering",
+      "schema:additionalType": [
+        {
+          "@id": "schema:CreateAction"
+        }
+      ],
       "schema:description": "Analyses filtered for quality: rejected points with analytical totals outside 98.5–101.0 wt% or with anomalous stoichiometry. Forsterite content (Fo) calculated from Mg/(Mg+Fe) atomic ratio. Final dataset exported as CSV.",
       "schema:actionProcess": {
         "@type": [
