@@ -9,9 +9,9 @@
 # documentation, times and cost, and the action status. They are plausible, not real.
 #
 # Written in PROV-O with qualified relations, the most expressive PROV form; every other file in
-# examples/<approach>/ is derived from this one. Where PROV-O has no term, schema.org or Dublin
+# implementationTesting/<approach>/ is derived from this one. Where PROV-O has no term, schema.org or Dublin
 # Core annotates the PROV node (schema:actionStatus, schema:about, schema:prepTime, ...), and the
-# comparison matrix (examples/APPROACHES.md) counts that as "not native".
+# comparison matrix (implementationTesting/APPROACHES.md) counts that as "not native".
 
 @prefix prov:    <http://www.w3.org/ns/prov#> .
 @prefix ex:      <https://example.org/cdif-prov/> .

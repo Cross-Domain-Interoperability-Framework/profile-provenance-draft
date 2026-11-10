@@ -1,4 +1,4 @@
-# DDI-CDI 1.0 view of examples/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
+# DDI-CDI 1.0 view of implementationTesting/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
 # quantitative scenario, extended). DRAFT: written from the DDI-CDI 1.0 ontology
 # (docs.ddialliance.org/DDI-CDI/1.0/model/encoding/ontology/), every term and every
 # domain/range checked against it, but not yet reviewed by anyone who works with DDI-CDI.

@@ -3,7 +3,7 @@
 The same data-generation story is written out in each provenance approach CDIF is weighing, so they
 can be compared feature by feature. The story is the 2026 Dagstuhl "quantitative" scenario
 (absorbance → blank correction → calibration → uncertainty → validation), extended with the
-features the ODIS Jules Verne example ([ODIS\_provExampleJulesVerne.json](ODIS_provExampleJulesVerne.json))
+features the ODIS Jules Verne example ([ODIS\_provExampleJulesVerne.json](../examples/ODIS_provExampleJulesVerne.json))
 exercises: a sample and what it was taken from, a person with names and an affiliation, an
 instrument, a consumed reagent, a tool, a location, an action status, and a procedure with a
 documentation link, prep and perform times and a cost.
