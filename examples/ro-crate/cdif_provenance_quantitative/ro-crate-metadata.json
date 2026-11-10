@@ -1,0 +1,149 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {"@id": "./"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Concentration determination of the analyte in water sample 01",
+      "description": "Process Run Crate rendering of examples/prov-o-qualified/cdif_provenance_quantitative.ttl, the Dagstuhl quantitative scenario extended with illustrative sampling, instrument, reagent, tool and analyst. See examples/APPROACHES.md.",
+      "datePublished": "2026-11-09",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.5"},
+      "hasPart": [
+        {"@id": "https://example.org/cdif-prov/data/absorbance.csv"},
+        {"@id": "https://example.org/cdif-prov/data/corrected-absorbance.csv"},
+        {"@id": "https://example.org/cdif-prov/data/concentration.csv"},
+        {"@id": "https://example.org/cdif-prov/data/uncertainty.csv"},
+        {"@id": "https://example.org/cdif-prov/data/validation-result.csv"}
+      ],
+      "mentions": [
+        {"@id": "https://example.org/cdif-prov/waterSampling01"},
+        {"@id": "https://example.org/cdif-prov/absorbanceMeasurement"},
+        {"@id": "https://example.org/cdif-prov/blankCorrection"},
+        {"@id": "https://example.org/cdif-prov/calibrationDerivation"},
+        {"@id": "https://example.org/cdif-prov/uncertaintyAssessment"},
+        {"@id": "https://example.org/cdif-prov/validation"}
+      ]
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.5",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.5"
+    },
+
+    {
+      "@id": "https://example.org/cdif-prov/waterSampling01",
+      "@type": "CreateAction",
+      "name": "Water sampling",
+      "startTime": "2026-11-04T08:10:00+00:00",
+      "endTime": "2026-11-04T08:15:00+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
+      "object": {"@id": "https://example.org/cdif-prov/riverReach01"},
+      "result": {"@id": "https://example.org/cdif-prov/waterSample01"}
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurement",
+      "@type": "CreateAction",
+      "name": "Absorbance measurement",
+      "startTime": "2026-11-05T10:18:00+00:00",
+      "endTime": "2026-11-05T10:19:00+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "location": {"@id": "https://example.org/cdif-prov/laboratory01"},
+      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
+      "instrument": [
+        {"@id": "https://example.org/cdif-prov/spectrophotometer01"},
+        {"@id": "https://example.org/cdif-prov/cuvette01"}
+      ],
+      "object": [
+        {"@id": "https://example.org/cdif-prov/waterSample01"},
+        {"@id": "https://example.org/cdif-prov/colourReagent01"}
+      ],
+      "result": {"@id": "https://example.org/cdif-prov/data/absorbance.csv"}
+    },
+    {
+      "@id": "https://example.org/cdif-prov/blankCorrection",
+      "@type": "CreateAction",
+      "name": "Blank correction",
+      "startTime": "2026-11-05T10:21:00+00:00",
+      "endTime": "2026-11-05T10:21:04+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
+      "instrument": {"@id": "https://example.org/cdif-prov/analysisSoftware"},
+      "object": [
+        {"@id": "https://example.org/cdif-prov/data/absorbance.csv"},
+        {"@id": "https://example.org/cdif-prov/blankCorrectionSpec"}
+      ],
+      "result": {"@id": "https://example.org/cdif-prov/data/corrected-absorbance.csv"}
+    },
+    {
+      "@id": "https://example.org/cdif-prov/calibrationDerivation",
+      "@type": "CreateAction",
+      "name": "Calibration-based derivation",
+      "startTime": "2026-11-05T10:23:14+00:00",
+      "endTime": "2026-11-05T10:23:18+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
+      "instrument": {"@id": "https://example.org/cdif-prov/analysisSoftware"},
+      "object": [
+        {"@id": "https://example.org/cdif-prov/data/corrected-absorbance.csv"},
+        {"@id": "https://example.org/cdif-prov/calibrationRelationship"}
+      ],
+      "result": {"@id": "https://example.org/cdif-prov/data/concentration.csv"}
+    },
+    {
+      "@id": "https://example.org/cdif-prov/uncertaintyAssessment",
+      "@type": "CreateAction",
+      "name": "Uncertainty assessment",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
+      "instrument": {"@id": "https://example.org/cdif-prov/analysisSoftware"},
+      "object": [
+        {"@id": "https://example.org/cdif-prov/data/concentration.csv"},
+        {"@id": "https://example.org/cdif-prov/uncertaintySpec"}
+      ],
+      "result": {"@id": "https://example.org/cdif-prov/data/uncertainty.csv"}
+    },
+    {
+      "@id": "https://example.org/cdif-prov/validation",
+      "@type": "CreateAction",
+      "name": "Validation",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
+      "instrument": {"@id": "https://example.org/cdif-prov/analysisSoftware"},
+      "object": [
+        {"@id": "https://example.org/cdif-prov/data/concentration.csv"},
+        {"@id": "https://example.org/cdif-prov/data/uncertainty.csv"},
+        {"@id": "https://example.org/cdif-prov/validationCriterion"}
+      ],
+      "result": {"@id": "https://example.org/cdif-prov/data/validation-result.csv"}
+    },
+
+    {"@id": "https://example.org/cdif-prov/data/absorbance.csv", "@type": "File", "name": "Absorbance data", "encodingFormat": "text/csv", "about": {"@id": "https://example.org/cdif-prov/waterSample01"}},
+    {"@id": "https://example.org/cdif-prov/data/corrected-absorbance.csv", "@type": "File", "name": "Blank-corrected absorbance", "encodingFormat": "text/csv"},
+    {"@id": "https://example.org/cdif-prov/data/concentration.csv", "@type": "File", "name": "Analyte concentration", "encodingFormat": "text/csv", "about": {"@id": "https://example.org/cdif-prov/waterSample01"}},
+    {"@id": "https://example.org/cdif-prov/data/uncertainty.csv", "@type": "File", "name": "Concentration uncertainty", "encodingFormat": "text/csv"},
+    {"@id": "https://example.org/cdif-prov/data/validation-result.csv", "@type": "File", "name": "Validation result", "encodingFormat": "text/csv"},
+
+    {"@id": "https://example.org/cdif-prov/riverReach01", "@type": "Place", "name": "River reach the water was taken from"},
+    {"@id": "https://example.org/cdif-prov/waterSample01", "@type": "Thing", "name": "Filtered water sample"},
+    {"@id": "https://example.org/cdif-prov/colourReagent01", "@type": "Thing", "name": "Colour-forming reagent, 2 mL"},
+    {"@id": "https://example.org/cdif-prov/spectrophotometer01", "@type": "IndividualProduct", "name": "UV-Vis spectrophotometer"},
+    {"@id": "https://example.org/cdif-prov/cuvette01", "@type": "IndividualProduct", "name": "1 cm quartz cuvette"},
+    {"@id": "https://example.org/cdif-prov/analysisSoftware", "@type": "SoftwareApplication", "name": "Analysis software"},
+    {"@id": "https://example.org/cdif-prov/blankCorrectionSpec", "@type": "CreativeWork", "name": "Blank-correction method"},
+    {"@id": "https://example.org/cdif-prov/calibrationRelationship", "@type": "CreativeWork", "name": "Calibration relationship"},
+    {"@id": "https://example.org/cdif-prov/uncertaintySpec", "@type": "CreativeWork", "name": "Uncertainty method"},
+    {"@id": "https://example.org/cdif-prov/validationCriterion", "@type": "CreativeWork", "name": "Validation criterion"},
+    {"@id": "https://example.org/cdif-prov/analyst01", "@type": "Person", "name": "Ana Lima", "givenName": "Ana", "familyName": "Lima", "honorificPrefix": "Dr", "affiliation": {"@id": "https://example.org/cdif-prov/laboratory01"}},
+    {"@id": "https://example.org/cdif-prov/laboratory01", "@type": "Organization", "name": "Analytical laboratory"},
+    {"@id": "https://creativecommons.org/licenses/by/4.0/", "@type": "CreativeWork", "name": "CC BY 4.0"}
+  ]
+}

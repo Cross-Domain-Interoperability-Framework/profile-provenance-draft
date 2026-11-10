@@ -1,0 +1,152 @@
+# MASTER for the provenance-approach comparison: the Dagstuhl "quantitative" scenario
+# (cdif_provenance_quantitative.ttl, 2026 Dagstuhl week), extended so that it exercises the
+# features of the ODIS Jules Verne example (examples/ODIS_provExampleJulesVerne.json).
+#
+# Everything from the Dagstuhl source is kept as written, with the same IRIs. Every node or
+# statement marked "# + illustrative" is an ADDITION invented to exercise a feature: the
+# sampling, the sample and what it was taken from, the acquisition measurement, the instrument,
+# reagent and cuvette, the laboratory, the analyst, the overall run and its plan, the procedure's
+# documentation, times and cost, and the action status. They are plausible, not real.
+#
+# Written in PROV-O with qualified relations, the most expressive PROV form; every other file in
+# examples/<approach>/ is derived from this one. Where PROV-O has no term, schema.org or Dublin
+# Core annotates the PROV node (schema:actionStatus, schema:about, schema:prepTime, ...), and the
+# comparison matrix (examples/APPROACHES.md) counts that as "not native".
+
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix ex:      <https://example.org/cdif-prov/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Agents ---------------------------------------------------------------------------------
+
+ex:analysisSoftware a prov:SoftwareAgent .
+
+ex:analyst01 a prov:Person ;                                               # + illustrative
+    schema:givenName "Ana" ; schema:familyName "Lima" ; schema:honorificPrefix "Dr" ;
+    prov:actedOnBehalfOf ex:laboratory01 .
+
+ex:laboratory01 a prov:Organization, prov:Location ;                      # + illustrative
+    rdfs:label "Analytical laboratory" .
+
+# Roles. The Dagstuhl source uses its five roles without typing them; prov:hadRole's range is
+# prov:Role, so they are declared here (the first five), with the roles the additions use.
+ex:InputData a prov:Role . ex:ProcessingSpecificationRole a prov:Role . ex:ProcessingAgent a prov:Role .
+ex:DerivationSpecificationRole a prov:Role . ex:DerivationAgent a prov:Role .
+ex:SampledFeature a prov:Role . ex:Sampler a prov:Role . ex:MeasuredSample a prov:Role .     # + illustrative
+ex:Instrument a prov:Role . ex:Reagent a prov:Role . ex:Tool a prov:Role .                   # + illustrative
+ex:Operator a prov:Role . ex:ResponsibleAnalyst a prov:Role .                                # + illustrative
+
+# --- What was sampled, and sampling ---------------------------------------------------------
+
+ex:riverReach01 a prov:Entity ;                                           # + illustrative
+    rdfs:label "River reach the water was taken from" .
+
+ex:waterSampling01 a prov:Activity ;                                      # + illustrative
+    prov:startedAtTime "2026-11-04T08:10:00Z"^^xsd:dateTime ;
+    prov:endedAtTime "2026-11-04T08:15:00Z"^^xsd:dateTime ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:riverReach01 ; prov:hadRole ex:SampledFeature ] ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analyst01 ; prov:hadRole ex:Sampler ] .
+
+ex:waterSample01 a prov:Entity ;                                          # + illustrative
+    rdfs:label "Filtered water sample" ;
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:waterSampling01 ;
+                               prov:atTime "2026-11-04T08:15:00Z"^^xsd:dateTime ] ;
+    prov:qualifiedDerivation [ a prov:Derivation ; prov:entity ex:riverReach01 ; prov:hadActivity ex:waterSampling01 ] .
+
+# --- Acquisition: measuring absorbance ------------------------------------------------------
+
+ex:spectrophotometer01 a prov:Entity ;                                    # + illustrative
+    rdfs:label "UV-Vis spectrophotometer" .
+ex:colourReagent01 a prov:Entity ;                                        # + illustrative
+    rdfs:label "Colour-forming reagent, 2 mL" .
+ex:cuvette01 a prov:Entity ;                                              # + illustrative
+    rdfs:label "1 cm quartz cuvette" .
+
+ex:absorbanceProcedure a prov:Entity, prov:Plan ;                         # + illustrative
+    rdfs:label "Absorbance measurement in a 1 cm cuvette" ;
+    schema:prepTime "PT20M" ; schema:performTime "PT5M" ;
+    schema:estimatedCost "12 USD" ;
+    rdfs:seeAlso <https://example.org/cdif-prov/video/absorbance-procedure.mp4> .
+
+ex:absorbanceMeasurement a prov:Activity ;                                # + illustrative
+    prov:startedAtTime "2026-11-05T10:18:00Z"^^xsd:dateTime ;
+    prov:endedAtTime "2026-11-05T10:19:00Z"^^xsd:dateTime ;
+    prov:atLocation ex:laboratory01 ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    dcterms:isPartOf ex:concentrationRun ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:waterSample01 ;       prov:hadRole ex:MeasuredSample ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:spectrophotometer01 ; prov:hadRole ex:Instrument ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:colourReagent01 ;     prov:hadRole ex:Reagent ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:cuvette01 ;           prov:hadRole ex:Tool ] ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analyst01 ; prov:hadRole ex:Operator ;
+                                prov:hadPlan ex:absorbanceProcedure ] .
+
+# The reagent is used up by the measurement.
+ex:colourReagent01 prov:qualifiedInvalidation [ a prov:Invalidation ;           # + illustrative
+    prov:activity ex:absorbanceMeasurement ; prov:atTime "2026-11-05T10:19:00Z"^^xsd:dateTime ] .
+
+# Dagstuhl source: ex:absorbanceSource a prov:Entity, ex:SourceData, ex:AcquiredData .
+ex:absorbanceSource a prov:Entity, ex:SourceData, ex:AcquiredData ;
+    schema:about ex:waterSample01 ;                                       # + illustrative
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:absorbanceMeasurement ;   # + illustrative
+                               prov:atTime "2026-11-05T10:19:00Z"^^xsd:dateTime ] .
+
+# --- The overall run and its plan ---------------------------------------------------------- # + illustrative
+
+ex:concentrationDeterminationPlan a prov:Entity, prov:Plan ;
+    rdfs:label "Determine analyte concentration from absorbance, with uncertainty and validation" .
+
+ex:concentrationRun a prov:Activity ;
+    prov:startedAtTime "2026-11-05T10:18:00Z"^^xsd:dateTime ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analyst01 ; prov:hadRole ex:ResponsibleAnalyst ;
+                                prov:hadPlan ex:concentrationDeterminationPlan ] .
+
+# --- Dagstuhl source, unchanged except dcterms:isPartOf and schema:about ------------------
+
+ex:blankCorrectionSpec a prov:Entity, prov:Plan, ex:ProcessingSpecification .
+ex:calibrationRelationship a prov:Entity, prov:Plan, ex:DerivationSpecification .
+ex:uncertaintySpec a prov:Entity, prov:Plan, ex:UncertaintySpecification .
+ex:validationCriterion a prov:Entity, ex:ValidationCriterion .
+
+ex:blankCorrection a prov:Activity, ex:Processing, ex:Correction ;
+    prov:startedAtTime "2026-11-05T10:21:00Z"^^xsd:dateTime ;
+    prov:endedAtTime "2026-11-05T10:21:04Z"^^xsd:dateTime ;
+    dcterms:isPartOf ex:concentrationRun ;                                # + illustrative
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:absorbanceSource ; prov:hadRole ex:InputData ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:blankCorrectionSpec ; prov:hadRole ex:ProcessingSpecificationRole ] ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analysisSoftware ; prov:hadRole ex:ProcessingAgent ; prov:hadPlan ex:blankCorrectionSpec ] .
+
+ex:correctedAbsorbance a prov:Entity, ex:ProcessedData ;
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:blankCorrection ; prov:atTime "2026-11-05T10:21:04Z"^^xsd:dateTime ] ;
+    prov:qualifiedDerivation [ a prov:Derivation ; prov:entity ex:absorbanceSource ; prov:hadActivity ex:blankCorrection ] .
+
+ex:calibrationDerivation a prov:Activity, ex:Derivation, ex:CalibrationBasedDerivation ;
+    prov:startedAtTime "2026-11-05T10:23:14Z"^^xsd:dateTime ;
+    prov:endedAtTime "2026-11-05T10:23:18Z"^^xsd:dateTime ;
+    dcterms:isPartOf ex:concentrationRun ;                                # + illustrative
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:correctedAbsorbance ; prov:hadRole ex:InputData ] ;
+    prov:qualifiedUsage [ a prov:Usage ; prov:entity ex:calibrationRelationship ; prov:hadRole ex:DerivationSpecificationRole ] ;
+    prov:qualifiedAssociation [ a prov:Association ; prov:agent ex:analysisSoftware ; prov:hadRole ex:DerivationAgent ; prov:hadPlan ex:calibrationRelationship ] .
+
+ex:concentration a prov:Entity, ex:DerivedData, ex:DerivedQuantity ;
+    schema:about ex:waterSample01 ;                                       # + illustrative
+    prov:qualifiedGeneration [ a prov:Generation ; prov:activity ex:calibrationDerivation ; prov:atTime "2026-11-05T10:23:18Z"^^xsd:dateTime ] ;
+    prov:qualifiedDerivation [ a prov:Derivation ; prov:entity ex:correctedAbsorbance ; prov:hadActivity ex:calibrationDerivation ] .
+
+ex:uncertaintyAssessment a prov:Activity, ex:Assessment, ex:UncertaintyAssessment ;
+    dcterms:isPartOf ex:concentrationRun ;                                # + illustrative
+    prov:used ex:concentration, ex:uncertaintySpec ;
+    prov:wasAssociatedWith ex:analysisSoftware .
+ex:concentrationUncertainty a prov:Entity, ex:UncertaintyObject ;
+    prov:wasGeneratedBy ex:uncertaintyAssessment ; prov:wasDerivedFrom ex:concentration .
+
+ex:validation a prov:Activity, ex:Assessment, ex:Validation ;
+    dcterms:isPartOf ex:concentrationRun ;                                # + illustrative
+    prov:used ex:concentration, ex:concentrationUncertainty, ex:validationCriterion ;
+    prov:wasAssociatedWith ex:analysisSoftware .
+ex:validationResult a prov:Entity, ex:ValidationObject ;
+    prov:wasGeneratedBy ex:validation ; prov:wasDerivedFrom ex:concentration .

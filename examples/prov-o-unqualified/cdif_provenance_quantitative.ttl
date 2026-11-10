@@ -1,0 +1,157 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/cdif-prov/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:absorbanceProcedure a prov:Entity,
+        prov:Plan ;
+    rdfs:label "Absorbance measurement in a 1 cm cuvette" ;
+    schema1:estimatedCost "12 USD" ;
+    schema1:performTime "PT5M" ;
+    schema1:prepTime "PT20M" ;
+    rdfs:seeAlso <https://example.org/cdif-prov/video/absorbance-procedure.mp4> .
+
+ex:concentrationDeterminationPlan a prov:Entity,
+        prov:Plan ;
+    rdfs:label "Determine analyte concentration from absorbance, with uncertainty and validation" .
+
+ex:validationResult a prov:Entity,
+        ex:ValidationObject ;
+    prov:wasDerivedFrom ex:concentration ;
+    prov:wasGeneratedBy ex:validation .
+
+ex:blankCorrection a prov:Activity,
+        ex:Correction,
+        ex:Processing ;
+    dcterms:isPartOf ex:concentrationRun ;
+    prov:endedAtTime "2026-11-05T10:21:04Z"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:21:00Z"^^xsd:dateTime ;
+    prov:used ex:absorbanceSource,
+        ex:blankCorrectionSpec ;
+    prov:wasAssociatedWith ex:analysisSoftware .
+
+ex:blankCorrectionSpec a prov:Entity,
+        prov:Plan,
+        ex:ProcessingSpecification .
+
+ex:calibrationDerivation a prov:Activity,
+        ex:CalibrationBasedDerivation,
+        ex:Derivation ;
+    dcterms:isPartOf ex:concentrationRun ;
+    prov:endedAtTime "2026-11-05T10:23:18Z"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:23:14Z"^^xsd:dateTime ;
+    prov:used ex:calibrationRelationship,
+        ex:correctedAbsorbance ;
+    prov:wasAssociatedWith ex:analysisSoftware .
+
+ex:calibrationRelationship a prov:Entity,
+        prov:Plan,
+        ex:DerivationSpecification .
+
+ex:colourReagent01 a prov:Entity ;
+    rdfs:label "Colour-forming reagent, 2 mL" ;
+    prov:invalidatedAtTime "2026-11-05T10:19:00Z"^^xsd:dateTime ;
+    prov:wasInvalidatedBy ex:absorbanceMeasurement .
+
+ex:concentrationUncertainty a prov:Entity,
+        ex:UncertaintyObject ;
+    prov:wasDerivedFrom ex:concentration ;
+    prov:wasGeneratedBy ex:uncertaintyAssessment .
+
+ex:cuvette01 a prov:Entity ;
+    rdfs:label "1 cm quartz cuvette" .
+
+ex:spectrophotometer01 a prov:Entity ;
+    rdfs:label "UV-Vis spectrophotometer" .
+
+ex:uncertaintyAssessment a prov:Activity,
+        ex:Assessment,
+        ex:UncertaintyAssessment ;
+    dcterms:isPartOf ex:concentrationRun ;
+    prov:used ex:concentration,
+        ex:uncertaintySpec ;
+    prov:wasAssociatedWith ex:analysisSoftware .
+
+ex:uncertaintySpec a prov:Entity,
+        prov:Plan,
+        ex:UncertaintySpecification .
+
+ex:validation a prov:Activity,
+        ex:Assessment,
+        ex:Validation ;
+    dcterms:isPartOf ex:concentrationRun ;
+    prov:used ex:concentration,
+        ex:concentrationUncertainty,
+        ex:validationCriterion ;
+    prov:wasAssociatedWith ex:analysisSoftware .
+
+ex:validationCriterion a prov:Entity,
+        ex:ValidationCriterion .
+
+ex:waterSampling01 a prov:Activity ;
+    prov:endedAtTime "2026-11-04T08:15:00Z"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-04T08:10:00Z"^^xsd:dateTime ;
+    prov:used ex:riverReach01 ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:absorbanceMeasurement a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    prov:atLocation ex:laboratory01 ;
+    prov:endedAtTime "2026-11-05T10:19:00Z"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:18:00Z"^^xsd:dateTime ;
+    prov:used ex:colourReagent01,
+        ex:cuvette01,
+        ex:spectrophotometer01,
+        ex:waterSample01 ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:absorbanceSource a prov:Entity,
+        ex:AcquiredData,
+        ex:SourceData ;
+    schema1:about ex:waterSample01 ;
+    prov:generatedAtTime "2026-11-05T10:19:00Z"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:absorbanceMeasurement .
+
+ex:correctedAbsorbance a prov:Entity,
+        ex:ProcessedData ;
+    prov:generatedAtTime "2026-11-05T10:21:04Z"^^xsd:dateTime ;
+    prov:wasDerivedFrom ex:absorbanceSource ;
+    prov:wasGeneratedBy ex:blankCorrection .
+
+ex:laboratory01 a prov:Location,
+        prov:Organization ;
+    rdfs:label "Analytical laboratory" .
+
+ex:riverReach01 a prov:Entity ;
+    rdfs:label "River reach the water was taken from" .
+
+ex:analyst01 a prov:Person ;
+    schema1:familyName "Lima" ;
+    schema1:givenName "Ana" ;
+    schema1:honorificPrefix "Dr" ;
+    prov:actedOnBehalfOf ex:laboratory01 .
+
+ex:waterSample01 a prov:Entity ;
+    rdfs:label "Filtered water sample" ;
+    prov:generatedAtTime "2026-11-04T08:15:00Z"^^xsd:dateTime ;
+    prov:wasDerivedFrom ex:riverReach01 ;
+    prov:wasGeneratedBy ex:waterSampling01 .
+
+ex:analysisSoftware a prov:SoftwareAgent .
+
+ex:concentration a prov:Entity,
+        ex:DerivedData,
+        ex:DerivedQuantity ;
+    schema1:about ex:waterSample01 ;
+    prov:generatedAtTime "2026-11-05T10:23:18Z"^^xsd:dateTime ;
+    prov:wasDerivedFrom ex:correctedAbsorbance ;
+    prov:wasGeneratedBy ex:calibrationDerivation .
+
+ex:concentrationRun a prov:Activity ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    prov:startedAtTime "2026-11-05T10:18:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith ex:analyst01 .
+

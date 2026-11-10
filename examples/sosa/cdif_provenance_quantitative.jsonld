@@ -1,0 +1,107 @@
+{
+  "@context": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "time": "http://www.w3.org/2006/time#",
+    "ex": "https://example.org/cdif-prov/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sosa:resultTime": {"@type": "xsd:dateTime"},
+    "time:inXSDDateTimeStamp": {"@type": "xsd:dateTimeStamp"}
+  },
+  "@graph": [
+    {
+      "@id": "ex:absorbanceMeasurement",
+      "@type": "sosa:Observation",
+      "sosa:hasFeatureOfInterest": {
+        "@id": "ex:waterSample01",
+        "@type": "sosa:Sample",
+        "sosa:isSampleOf": {
+          "@id": "ex:riverReach01",
+          "@type": "sosa:FeatureOfInterest"
+        }
+      },
+      "sosa:hasResult": {
+        "@id": "ex:absorbanceSource",
+        "@type": "sosa:Result"
+      },
+      "sosa:resultTime": "2026-11-05T10:19:00Z",
+      "sosa:observedProperty": {
+        "@id": "ex:absorbance",
+        "@type": "sosa:ObservableProperty",
+        "rdfs:label": "Absorbance at the analyte's wavelength"
+      },
+      "sosa:madeBySensor": {
+        "@id": "ex:spectrophotometer01",
+        "@type": "sosa:Sensor",
+        "sosa:observes": {"@id": "ex:absorbance"},
+        "sosa:isHostedBy": {
+          "@id": "ex:laboratory01",
+          "@type": "sosa:Platform"
+        }
+      },
+      "sosa:usedProcedure": {
+        "@id": "ex:absorbanceProcedure",
+        "@type": "sosa:Procedure"
+      },
+      "sosa:phenomenonTime": {
+        "@type": "time:Interval",
+        "time:hasBeginning": {
+          "@type": "time:Instant",
+          "time:inXSDDateTimeStamp": "2026-11-05T10:18:00Z"
+        },
+        "time:hasEnd": {
+          "@type": "time:Instant",
+          "time:inXSDDateTimeStamp": "2026-11-05T10:19:00Z"
+        }
+      }
+    },
+    {
+      "@id": "ex:calibrationDerivation",
+      "@type": "sosa:Observation",
+      "sosa:hasFeatureOfInterest": {"@id": "ex:waterSample01"},
+      "sosa:hasResult": {
+        "@id": "ex:concentration",
+        "@type": "sosa:Result"
+      },
+      "sosa:resultTime": "2026-11-05T10:23:18Z",
+      "sosa:observedProperty": {
+        "@id": "ex:analyteConcentration",
+        "@type": "sosa:ObservableProperty",
+        "rdfs:label": "Mass concentration of the analyte"
+      },
+      "sosa:madeBySensor": {
+        "@id": "ex:analysisSoftware",
+        "@type": "sosa:Sensor",
+        "sosa:observes": {"@id": "ex:analyteConcentration"}
+      },
+      "sosa:usedProcedure": {
+        "@id": "ex:calibrationRelationship",
+        "@type": "sosa:Procedure",
+        "ssn:hasInput": {
+          "@id": "ex:absorbanceInput",
+          "@type": "ssn:Input",
+          "rdfs:label": "corrected absorbance"
+        },
+        "ssn:hasOutput": {
+          "@id": "ex:concentrationOutput",
+          "@type": "ssn:Output",
+          "rdfs:label": "analyte concentration"
+        }
+      },
+      "prov:used": {"@id": "ex:correctedAbsorbance"}
+    },
+    {
+      "@id": "ex:waterSampling01",
+      "@type": "sosa:Sampling",
+      "sosa:hasFeatureOfInterest": {"@id": "ex:riverReach01"},
+      "sosa:madeBySampler": {
+        "@id": "ex:analyst01",
+        "@type": "sosa:Sampler"
+      },
+      "sosa:hasResult": {"@id": "ex:waterSample01"},
+      "sosa:resultTime": "2026-11-04T08:15:00Z"
+    }
+  ]
+}

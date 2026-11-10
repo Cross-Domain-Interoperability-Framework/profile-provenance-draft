@@ -1,0 +1,96 @@
+# SOSA/SSN view of examples/prov-o-qualified/cdif_provenance_quantitative.ttl (the Dagstuhl
+# "quantitative" scenario, extended with sampling and the absorbance measurement).
+#
+# SOSA (http://www.w3.org/ns/sosa/) describes observation, sampling and actuation: an act that
+# estimates the value of a PROPERTY of a FEATURE OF INTEREST, made by a sensor following a
+# procedure, giving a result. It is about measuring the world, not about data flow; a derived
+# value is modelled as another observation of another property, whose "sensor" is the software
+# (SOSA allows a sensor to be a computational method). The non-normative SOSA-PROV alignment
+# (SSN spec section 6.5) makes Observation and Sampling prov:Activity, Sensor and Sampler a
+# prov:Agent, Procedure a prov:Plan, and Sample/Result prov:Entity, so PROV links sit alongside.
+#
+# IRIs are the master's. The only things this file adds that the master lacks are what SOSA itself
+# needs: the two observed properties and the phenomenon interval.
+
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn:  <http://www.w3.org/ns/ssn/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix ex:   <https://example.org/cdif-prov/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- What was sampled, and the sample -------------------------------------------------------
+
+ex:riverReach01 a sosa:FeatureOfInterest .
+
+ex:analyst01 a sosa:Sampler .                  # SOSA allows a human sampler
+
+ex:waterSampling01 a sosa:Sampling ;
+    sosa:hasFeatureOfInterest ex:riverReach01 ;
+    sosa:madeBySampler ex:analyst01 ;
+    sosa:hasResult ex:waterSample01 ;
+    sosa:resultTime "2026-11-04T08:15:00Z"^^xsd:dateTime .
+
+ex:waterSample01 a sosa:Sample ;
+    sosa:isSampleOf ex:riverReach01 .
+
+# --- Observed properties and the instrument ------------------------------------------------
+
+ex:absorbance a sosa:ObservableProperty ; rdfs:label "Absorbance at the analyte's wavelength" .
+ex:analyteConcentration a sosa:ObservableProperty ; rdfs:label "Mass concentration of the analyte" .
+
+ex:spectrophotometer01 a sosa:Sensor ;
+    sosa:observes ex:absorbance ;
+    sosa:isHostedBy ex:laboratory01 .
+
+ex:laboratory01 a sosa:Platform .
+
+# Software counts as a sensor of a derived property.
+ex:analysisSoftware a sosa:Sensor ;
+    sosa:observes ex:analyteConcentration .
+
+# --- Acquisition: the absorbance measurement ------------------------------------------------
+
+ex:absorbanceProcedure a sosa:Procedure .
+
+ex:absorbanceMeasurement a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:waterSample01 ;
+    sosa:observedProperty ex:absorbance ;
+    sosa:madeBySensor ex:spectrophotometer01 ;
+    sosa:usedProcedure ex:absorbanceProcedure ;
+    sosa:phenomenonTime [ a time:Interval ;
+        time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp "2026-11-05T10:18:00Z"^^xsd:dateTimeStamp ] ;
+        time:hasEnd       [ a time:Instant ; time:inXSDDateTimeStamp "2026-11-05T10:19:00Z"^^xsd:dateTimeStamp ] ] ;
+    sosa:resultTime "2026-11-05T10:19:00Z"^^xsd:dateTime ;
+    sosa:hasResult ex:absorbanceSource .
+
+ex:absorbanceSource a sosa:Result .
+
+# --- Derivation: concentration as an observation of a second property ----------------------
+# The procedure is the master's calibration relationship. ssn:hasInput / ssn:hasOutput say what
+# the procedure takes and gives, in the abstract.
+
+ex:calibrationRelationship a sosa:Procedure ;
+    ssn:hasInput ex:absorbanceInput ;
+    ssn:hasOutput ex:concentrationOutput .
+ex:absorbanceInput a ssn:Input ; rdfs:label "corrected absorbance" .
+ex:concentrationOutput a ssn:Output ; rdfs:label "analyte concentration" .
+
+ex:calibrationDerivation a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:waterSample01 ;
+    sosa:observedProperty ex:analyteConcentration ;
+    sosa:madeBySensor ex:analysisSoftware ;
+    sosa:usedProcedure ex:calibrationRelationship ;
+    sosa:resultTime "2026-11-05T10:23:18Z"^^xsd:dateTime ;
+    sosa:hasResult ex:concentration ;
+    # SOSA has no term for the data an observation consumed; PROV says it.
+    prov:used ex:correctedAbsorbance .
+
+ex:concentration a sosa:Result .
+
+# Not modelled in SOSA: the reagent and cuvette (an observation has no slot for consumables or
+# tools), the analyst as operator of the measurement, blank correction, uncertainty assessment
+# and validation. They act on data or support the measurement rather than observe a property, so
+# they stay PROV in the master. (SSN's System Capabilities module can give a SENSOR's accuracy,
+# not one result's uncertainty.)

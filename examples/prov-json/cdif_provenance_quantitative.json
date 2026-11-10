@@ -1,0 +1,481 @@
+{
+  "prefix": {
+    "ex": "https://example.org/cdif-prov/",
+    "schema": "http://schema.org/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/"
+  },
+  "entity": {
+    "ex:riverReach01": {
+      "prov:label": "River reach the water was taken from"
+    },
+    "ex:waterSample01": {
+      "prov:label": "Filtered water sample"
+    },
+    "ex:spectrophotometer01": {
+      "prov:label": "UV-Vis spectrophotometer"
+    },
+    "ex:colourReagent01": {
+      "prov:label": "Colour-forming reagent, 2 mL"
+    },
+    "ex:cuvette01": {
+      "prov:label": "1 cm quartz cuvette"
+    },
+    "ex:absorbanceProcedure": {
+      "prov:type": {
+        "$": "prov:Plan",
+        "type": "xsd:QName"
+      },
+      "schema:prepTime": "PT20M",
+      "schema:performTime": "PT5M",
+      "schema:estimatedCost": "12 USD",
+      "rdfs:seeAlso": {
+        "$": "ex:video/absorbance-procedure.mp4",
+        "type": "xsd:QName"
+      },
+      "prov:label": "Absorbance measurement in a 1 cm cuvette"
+    },
+    "ex:absorbanceSource": {
+      "prov:type": [
+        {
+          "$": "ex:SourceData",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:AcquiredData",
+          "type": "xsd:QName"
+        }
+      ],
+      "schema:about": {
+        "$": "ex:waterSample01",
+        "type": "xsd:QName"
+      }
+    },
+    "ex:concentrationDeterminationPlan": {
+      "prov:type": {
+        "$": "prov:Plan",
+        "type": "xsd:QName"
+      },
+      "prov:label": "Determine analyte concentration from absorbance, with uncertainty and validation"
+    },
+    "ex:blankCorrectionSpec": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:ProcessingSpecification",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "ex:calibrationRelationship": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:DerivationSpecification",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "ex:uncertaintySpec": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:UncertaintySpecification",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "ex:validationCriterion": {
+      "prov:type": {
+        "$": "ex:ValidationCriterion",
+        "type": "xsd:QName"
+      }
+    },
+    "ex:correctedAbsorbance": {
+      "prov:type": {
+        "$": "ex:ProcessedData",
+        "type": "xsd:QName"
+      }
+    },
+    "ex:concentration": {
+      "prov:type": [
+        {
+          "$": "ex:DerivedData",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:DerivedQuantity",
+          "type": "xsd:QName"
+        }
+      ],
+      "schema:about": {
+        "$": "ex:waterSample01",
+        "type": "xsd:QName"
+      }
+    },
+    "ex:concentrationUncertainty": {
+      "prov:type": {
+        "$": "ex:UncertaintyObject",
+        "type": "xsd:QName"
+      }
+    },
+    "ex:validationResult": {
+      "prov:type": {
+        "$": "ex:ValidationObject",
+        "type": "xsd:QName"
+      }
+    }
+  },
+  "activity": {
+    "ex:waterSampling01": {
+      "prov:startTime": "2026-11-04T08:10:00Z",
+      "prov:endTime": "2026-11-04T08:15:00Z"
+    },
+    "ex:absorbanceMeasurement": {
+      "prov:location": {
+        "$": "ex:laboratory01",
+        "type": "xsd:QName"
+      },
+      "dcterms:isPartOf": {
+        "$": "ex:concentrationRun",
+        "type": "xsd:QName"
+      },
+      "schema:actionStatus": {
+        "$": "schema:CompletedActionStatus",
+        "type": "xsd:QName"
+      },
+      "prov:startTime": "2026-11-05T10:18:00Z",
+      "prov:endTime": "2026-11-05T10:19:00Z"
+    },
+    "ex:concentrationRun": {
+      "schema:actionStatus": {
+        "$": "schema:CompletedActionStatus",
+        "type": "xsd:QName"
+      },
+      "prov:startTime": "2026-11-05T10:18:00Z"
+    },
+    "ex:blankCorrection": {
+      "prov:type": [
+        {
+          "$": "ex:Processing",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:Correction",
+          "type": "xsd:QName"
+        }
+      ],
+      "dcterms:isPartOf": {
+        "$": "ex:concentrationRun",
+        "type": "xsd:QName"
+      },
+      "prov:endTime": "2026-11-05T10:21:04Z",
+      "prov:startTime": "2026-11-05T10:21:00Z"
+    },
+    "ex:calibrationDerivation": {
+      "prov:type": [
+        {
+          "$": "ex:Derivation",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:CalibrationBasedDerivation",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:startTime": "2026-11-05T10:23:14Z",
+      "dcterms:isPartOf": {
+        "$": "ex:concentrationRun",
+        "type": "xsd:QName"
+      },
+      "prov:endTime": "2026-11-05T10:23:18Z"
+    },
+    "ex:uncertaintyAssessment": {
+      "prov:type": [
+        {
+          "$": "ex:Assessment",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:UncertaintyAssessment",
+          "type": "xsd:QName"
+        }
+      ],
+      "dcterms:isPartOf": {
+        "$": "ex:concentrationRun",
+        "type": "xsd:QName"
+      }
+    },
+    "ex:validation": {
+      "prov:type": [
+        {
+          "$": "ex:Assessment",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:Validation",
+          "type": "xsd:QName"
+        }
+      ],
+      "dcterms:isPartOf": {
+        "$": "ex:concentrationRun",
+        "type": "xsd:QName"
+      }
+    }
+  },
+  "agent": {
+    "ex:analysisSoftware": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "xsd:QName"
+      }
+    },
+    "ex:analyst01": {
+      "prov:type": {
+        "$": "prov:Person",
+        "type": "xsd:QName"
+      },
+      "schema:givenName": "Ana",
+      "schema:familyName": "Lima",
+      "schema:honorificPrefix": "Dr"
+    },
+    "ex:laboratory01": {
+      "prov:type": [
+        {
+          "$": "prov:Location",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "prov:Organization",
+          "type": "xsd:QName"
+        }
+      ],
+      "rdfs:label": "Analytical laboratory"
+    }
+  },
+  "wasAssociatedWith": {
+    "_:id1": {
+      "prov:activity": "ex:validation",
+      "prov:agent": "ex:analysisSoftware"
+    },
+    "_:id10": {
+      "prov:activity": "ex:uncertaintyAssessment",
+      "prov:agent": "ex:analysisSoftware"
+    },
+    "_:id22": {
+      "prov:activity": "ex:waterSampling01",
+      "prov:agent": "ex:analyst01",
+      "prov:role": {
+        "$": "ex:Sampler",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id23": {
+      "prov:activity": "ex:absorbanceMeasurement",
+      "prov:agent": "ex:analyst01",
+      "prov:plan": "ex:absorbanceProcedure",
+      "prov:role": {
+        "$": "ex:Operator",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id24": {
+      "prov:activity": "ex:concentrationRun",
+      "prov:agent": "ex:analyst01",
+      "prov:plan": "ex:concentrationDeterminationPlan",
+      "prov:role": {
+        "$": "ex:ResponsibleAnalyst",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id25": {
+      "prov:activity": "ex:blankCorrection",
+      "prov:agent": "ex:analysisSoftware",
+      "prov:plan": "ex:blankCorrectionSpec",
+      "prov:role": {
+        "$": "ex:ProcessingAgent",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id26": {
+      "prov:activity": "ex:calibrationDerivation",
+      "prov:agent": "ex:analysisSoftware",
+      "prov:role": {
+        "$": "ex:DerivationAgent",
+        "type": "xsd:QName"
+      },
+      "prov:plan": "ex:calibrationRelationship"
+    }
+  },
+  "wasGeneratedBy": {
+    "_:id2": {
+      "prov:entity": "ex:concentrationUncertainty",
+      "prov:activity": "ex:uncertaintyAssessment"
+    },
+    "_:id9": {
+      "prov:entity": "ex:validationResult",
+      "prov:activity": "ex:validation"
+    },
+    "_:id27": {
+      "prov:entity": "ex:waterSample01",
+      "prov:activity": "ex:waterSampling01",
+      "prov:time": "2026-11-04T08:15:00Z"
+    },
+    "_:id28": {
+      "prov:entity": "ex:absorbanceSource",
+      "prov:activity": "ex:absorbanceMeasurement",
+      "prov:time": "2026-11-05T10:19:00Z"
+    },
+    "_:id29": {
+      "prov:entity": "ex:correctedAbsorbance",
+      "prov:activity": "ex:blankCorrection",
+      "prov:time": "2026-11-05T10:21:04Z"
+    },
+    "_:id30": {
+      "prov:entity": "ex:concentration",
+      "prov:activity": "ex:calibrationDerivation",
+      "prov:time": "2026-11-05T10:23:18Z"
+    }
+  },
+  "actedOnBehalfOf": {
+    "_:id3": {
+      "prov:delegate": "ex:analyst01",
+      "prov:responsible": "ex:laboratory01"
+    }
+  },
+  "used": {
+    "_:id4": {
+      "prov:activity": "ex:validation",
+      "prov:entity": "ex:concentrationUncertainty"
+    },
+    "_:id6": {
+      "prov:activity": "ex:validation",
+      "prov:entity": "ex:validationCriterion"
+    },
+    "_:id7": {
+      "prov:activity": "ex:uncertaintyAssessment",
+      "prov:entity": "ex:concentration"
+    },
+    "_:id11": {
+      "prov:activity": "ex:validation",
+      "prov:entity": "ex:concentration"
+    },
+    "_:id12": {
+      "prov:activity": "ex:uncertaintyAssessment",
+      "prov:entity": "ex:uncertaintySpec"
+    },
+    "_:id13": {
+      "prov:activity": "ex:waterSampling01",
+      "prov:entity": "ex:riverReach01",
+      "prov:role": {
+        "$": "ex:SampledFeature",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id14": {
+      "prov:activity": "ex:absorbanceMeasurement",
+      "prov:entity": "ex:waterSample01",
+      "prov:role": {
+        "$": "ex:MeasuredSample",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id15": {
+      "prov:activity": "ex:absorbanceMeasurement",
+      "prov:entity": "ex:spectrophotometer01",
+      "prov:role": {
+        "$": "ex:Instrument",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id16": {
+      "prov:activity": "ex:absorbanceMeasurement",
+      "prov:entity": "ex:colourReagent01",
+      "prov:role": {
+        "$": "ex:Reagent",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id17": {
+      "prov:activity": "ex:absorbanceMeasurement",
+      "prov:entity": "ex:cuvette01",
+      "prov:role": {
+        "$": "ex:Tool",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id18": {
+      "prov:activity": "ex:blankCorrection",
+      "prov:entity": "ex:absorbanceSource",
+      "prov:role": {
+        "$": "ex:InputData",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id19": {
+      "prov:activity": "ex:blankCorrection",
+      "prov:entity": "ex:blankCorrectionSpec",
+      "prov:role": {
+        "$": "ex:ProcessingSpecificationRole",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id20": {
+      "prov:activity": "ex:calibrationDerivation",
+      "prov:entity": "ex:correctedAbsorbance",
+      "prov:role": {
+        "$": "ex:InputData",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id21": {
+      "prov:activity": "ex:calibrationDerivation",
+      "prov:entity": "ex:calibrationRelationship",
+      "prov:role": {
+        "$": "ex:DerivationSpecificationRole",
+        "type": "xsd:QName"
+      }
+    }
+  },
+  "wasDerivedFrom": {
+    "_:id5": {
+      "prov:generatedEntity": "ex:concentrationUncertainty",
+      "prov:usedEntity": "ex:concentration"
+    },
+    "_:id8": {
+      "prov:generatedEntity": "ex:validationResult",
+      "prov:usedEntity": "ex:concentration"
+    },
+    "_:id31": {
+      "prov:generatedEntity": "ex:waterSample01",
+      "prov:usedEntity": "ex:riverReach01",
+      "prov:activity": "ex:waterSampling01"
+    },
+    "_:id32": {
+      "prov:generatedEntity": "ex:correctedAbsorbance",
+      "prov:activity": "ex:blankCorrection",
+      "prov:usedEntity": "ex:absorbanceSource"
+    },
+    "_:id33": {
+      "prov:generatedEntity": "ex:concentration",
+      "prov:usedEntity": "ex:correctedAbsorbance",
+      "prov:activity": "ex:calibrationDerivation"
+    }
+  },
+  "wasInvalidatedBy": {
+    "_:id34": {
+      "prov:entity": "ex:colourReagent01",
+      "prov:activity": "ex:absorbanceMeasurement",
+      "prov:time": "2026-11-05T10:19:00Z"
+    }
+  }
+}
