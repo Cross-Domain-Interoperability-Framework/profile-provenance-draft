@@ -195,8 +195,15 @@ def _resolve_and_inline(ref, index, inlined):
 
 
 def _inline_generic_from_entity(entity):
-    """Generic fallback: include @id, name, description."""
-    node = {}
+    """Generic fallback: include @type, @id, name, description.
+
+    The crate's types are kept (bare RO-Crate names are schema.org terms), defaulting to
+    schema:Thing: an untyped inline node matches no branch of the profile's schema:object /
+    schema:result, so an intermediate output such as #PreparedSample failed validation
+    wherever framing embedded it.
+    """
+    types = sorted(_get_types(entity))
+    node = {"@type": [t if ":" in t else f"schema:{t}" for t in types] or ["schema:Thing"]}
     if entity.get("@id"):
         node["@id"] = entity["@id"]
     name = _get_prop(entity, "name", "schema:name")

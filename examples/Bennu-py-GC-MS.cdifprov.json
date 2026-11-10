@@ -50,6 +50,11 @@
         "schema:name": "Pyrolysis Oven",
         "schema:description": "Pyrolysis front-end interface coupled to the GC-MS system. Flash heats samples at 10°C/ms to target temperatures up to 1300°C. For this analysis, target temperature was approximately 600°C."
       },
+      "prov:used": [
+        {
+          "@id": "#OREX-803003-0"
+        }
+      ],
       "schema:object": [
         {
           "@type": [
@@ -63,6 +68,9 @@
       "schema:result": [
         {
           "@id": "#PreparedSample",
+          "@type": [
+            "schema:Thing"
+          ],
           "schema:name": "Prepared sample in quartz tube",
           "schema:description": "~1 mg Bennu aggregate loaded and weighed in quartz tube, ready for pyrolysis."
         }
@@ -89,6 +97,11 @@
       "schema:instrument": {
         "@id": "#PyrolysisOven"
       },
+      "prov:used": [
+        {
+          "@id": "#PreparedSample"
+        }
+      ],
       "schema:object": [
         {
           "@id": "#PreparedSample"
@@ -97,6 +110,9 @@
       "schema:result": [
         {
           "@id": "#PyrolysisProducts",
+          "@type": [
+            "schema:Thing"
+          ],
           "schema:name": "Pyrolysis volatiles in helium carrier stream",
           "schema:description": "Thermally extracted volatiles from flash pyrolysis of Bennu sample, carried in helium through heated transfer line at 300°C to GC inlet."
         }
@@ -129,6 +145,9 @@
               "schema:description": "GC fitted with Rtx-5ms (5% diphenyl / 95% dimethyl polysiloxane) fused silica capillary column, 30 m × 0.250 mm × 0.50 µm film thickness, with 5 m × 0.250 mm guard column. Front inlet operated in split mode (10:1 ratio, 15.0 mL/min split flow) at 300°C. Helium carrier gas at 1.500 mL/min constant flow. Oven program: 40°C (hold) → 300°C (~3.5°C/min) → 300°C (hold). Total run time 87.79 minutes."
             }
           ]
+        },
+        {
+          "@id": "#PyrolysisProducts"
         }
       ],
       "schema:object": [
@@ -139,6 +158,9 @@
       "schema:result": [
         {
           "@id": "#SeparatedEluent",
+          "@type": [
+            "schema:Thing"
+          ],
           "schema:name": "Chromatographically separated eluent",
           "schema:description": "Time-resolved stream of separated compounds eluting from the GC column into the mass spectrometer."
         }
@@ -172,6 +194,9 @@
               "schema:url": "https://www.thermofisher.com/"
             }
           ]
+        },
+        {
+          "@id": "#SeparatedEluent"
         }
       ],
       "schema:object": [
@@ -207,6 +232,11 @@
       "schema:instrument": {
         "@id": "#TSQ_MassSpectrometer"
       },
+      "prov:used": [
+        {
+          "@id": "#SeparatedEluent"
+        }
+      ],
       "schema:object": [
         {
           "@id": "#SeparatedEluent"
