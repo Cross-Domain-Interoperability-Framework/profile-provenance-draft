@@ -16,7 +16,7 @@
     "ex:ValidationObject"
   ],
   "prov:wasGeneratedBy": {
-    "@id": "ex:validation333",
+    "@id": "ex:validation",
     "@type": [
       "prov:Activity",
       "ex:Assessment",
