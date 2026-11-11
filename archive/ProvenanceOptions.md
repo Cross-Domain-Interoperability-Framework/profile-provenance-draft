@@ -36,7 +36,7 @@ see also activityStream https://www.w3.org/TR/activitystreams-core/
 | provActivity | [provActivitySchema.json](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks/blob/main/_sources/provProperties/provActivity/provActivitySchema.json) | [exampleProvActivity.json](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks/blob/main/_sources/provProperties/provActivity/exampleProvActivity.json) |
 | ddicdiActivity | [ddicdiActivitySchema.json](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks/blob/main/_sources/ddiProperties/ddicdiActivity/ddicdiActivitySchema.json) | [exampleDdicdiActivity.json](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks/blob/main/_sources/ddiProperties/ddicdiActivity/exampleDdicdiActivity.json) |
 
-WRROC conversion examples (Galaxy workflow RO-Crates from [Zenodo record 13842780](https://zenodo.org/records/13842780) and Bennu py-GC-MS analytical workflow) are available in the [prov-context-quality/Examples](./examples/) folder.
+WRROC conversion examples (Galaxy workflow RO-Crates from [Zenodo record 13842780](https://zenodo.org/records/13842780) and Bennu py-GC-MS analytical workflow) are available in the [prov-context-quality/Examples](../examples/) folder.
 
 ## 2. CDIF Building Block Design
 
@@ -143,7 +143,7 @@ Actual parameter values used during execution: temperature (600°C), ramp rate (
 
 ### 4.3 Bennu py-GC-MS Example
 
-The [Bennu-py-GC-MSarc](./examples/ROCRATE/Bennu-py-GC-MSarc-ro-crate-metadata.json) example demonstrates the ARC profile for a multi-step analytical workflow: pyrolysis-GC-MS/MS analysis of asteroid sample OREX-803003-0 from the OSIRIS-REx mission. The workflow chains five activities:
+The [Bennu-py-GC-MSarc](../examples/ROCRATE/Bennu-py-GC-MSarc-ro-crate-metadata.json) example demonstrates the ARC profile for a multi-step analytical workflow: pyrolysis-GC-MS/MS analysis of asteroid sample OREX-803003-0 from the OSIRIS-REx mission. The workflow chains five activities:
 
 1. **Sample Preparation** → quartz tube loading, mass measurement
 2. **Flash Pyrolysis** → 600°C at 10°C/ms ramp rate, He carrier gas
@@ -153,7 +153,7 @@ The [Bennu-py-GC-MSarc](./examples/ROCRATE/Bennu-py-GC-MSarc-ro-crate-metadata.j
 
 Each step carries rich `parameterValue` arrays with actual instrument settings. Equipment (`DefinedTerm` entities: pyrolysis oven, gas chromatograph, TSQ triple-quad mass spectrometer) is declared on the protocol and referenced by steps.
 
-The [converted cdifProvActivity output](./examples/Bennu-py-GC-MSarc.cdifprov.json) demonstrates how all ARC concepts map cleanly to cdifProvActivity vocabulary.
+The [converted cdifProvActivity output](../examples/Bennu-py-GC-MSarc.cdifprov.json) demonstrates how all ARC concepts map cleanly to cdifProvActivity vocabulary.
 
 ## 5. Mapping WRROC/ARC to cdifProvActivity
 
@@ -221,7 +221,7 @@ RO-Crate flat @graph:          cdifProvActivity nested @graph:
 
 Six Galaxy workflow RO-Crates from [Zenodo record 13842780](https://zenodo.org/records/13842780) have been converted, demonstrating computational workflow provenance (FeS2 analysis, Pt3Sn catalyst, Au colloids, LaMnO3 catalytic behaviour, EXAFS fitting, Diphosphine workflow). The Bennu py-GC-MS example demonstrates both standard WRROC and ARC profile conversion for laboratory analytical workflows.
 
-All examples are in the [Examples](./examples/) folder with `.rocrate.json` (source) and `.cdifprov.json` (converted) pairs.
+All examples are in the [Examples](../examples/) folder with `.rocrate.json` (source) and `.cdifprov.json` (converted) pairs.
 
 ## 6. Representing Multi-Step Provenance
 
@@ -403,7 +403,7 @@ The ARC profile's core concepts map directly to cdifProvActivity:
 
 ### 9.2 What the Bennu Example Demonstrates
 
-The Bennu py-GC-MS/MS analysis ([standard](./examples/Bennu-py-GC-MS.cdifprov.json) and [ARC](./examples/Bennu-py-GC-MSarc.cdifprov.json) versions) demonstrates:
+The Bennu py-GC-MS/MS analysis ([standard](../examples/Bennu-py-GC-MS.cdifprov.json) and [ARC](../examples/Bennu-py-GC-MSarc.cdifprov.json) versions) demonstrates:
 
 1. **Multi-step analytical chain**: Five activities linked through their inputs and outputs, capturing the complete analytical pathway from sample preparation through mass spectrometric detection.
 

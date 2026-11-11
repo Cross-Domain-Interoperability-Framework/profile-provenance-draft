@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-25
 **Status:** Draft for review.  October 2026 Update: Building Blocks, External Profiles and PROV-JSONLD
-**Based on:** [ProvenanceOptions.md](ProvenanceOptions.md) (2026-03-11), which is left unchanged. This document carries that comparison forward. The changes are listed in [§15](#15-changes-from-provenanceoptionsmd).
+**Based on:** [ProvenanceOptions.md](../archive/ProvenanceOptions.md) (2026-03-11), which is left unchanged. This document carries that comparison forward. The changes are listed in [§15](#15-changes-from-provenanceoptionsmd).
 
 ## 1\. Overview
 
@@ -43,7 +43,7 @@ PROV-JSONLD is not an application profile like the RO-Crate profiles. It is a JS
 |ddicdiActivity *(archived)*|[ddicdiActivitySchema.json](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks/blob/main/archive/ddiProperties/ddicdiActivity/ddicdiActivitySchema.json)|[exampleDdicdiActivity.json](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks/blob/main/archive/ddiProperties/ddicdiActivity/exampleDdicdiActivity.json)|
 |PROV-JSONLD|[schema.json](https://openprovenance.org/prov-jsonld/schema.json) (JSON Schema draft-07)|[context.jsonld](https://openprovenance.org/prov-jsonld/context.jsonld)|
 
-WRROC conversion examples (Galaxy workflow RO-Crates from [Zenodo record 13842780](https://zenodo.org/records/13842780) and Bennu py-GC-MS analytical workflow) are available in the [prov-context-quality/Examples](./examples/) folder.
+WRROC conversion examples (Galaxy workflow RO-Crates from [Zenodo record 13842780](https://zenodo.org/records/13842780) and Bennu py-GC-MS analytical workflow) are available in the [prov-context-quality/Examples](../examples/) folder.
 
 ## 2\. CDIF Building Block Design
 
@@ -171,7 +171,7 @@ Actual parameter values used during execution: temperature (600°C), ramp rate (
 
 ### 4.3 Bennu py-GC-MS Example
 
-The [Bennu-py-GC-MSarc](./examples/ROCRATE/Bennu-py-GC-MSarc-ro-crate-metadata.json) example demonstrates the ARC profile for a multi-step analytical workflow: pyrolysis-GC-MS/MS analysis of asteroid sample OREX-803003-0 from the OSIRIS-REx mission. The workflow chains five activities:
+The [Bennu-py-GC-MSarc](../examples/ROCRATE/Bennu-py-GC-MSarc-ro-crate-metadata.json) example demonstrates the ARC profile for a multi-step analytical workflow: pyrolysis-GC-MS/MS analysis of asteroid sample OREX-803003-0 from the OSIRIS-REx mission. The workflow chains five activities:
 
 1. **Sample Preparation** → quartz tube loading, mass measurement
 2. **Flash Pyrolysis** → 600°C at 10°C/ms ramp rate, He carrier gas
@@ -181,11 +181,11 @@ The [Bennu-py-GC-MSarc](./examples/ROCRATE/Bennu-py-GC-MSarc-ro-crate-metadata.j
 
 Each step carries rich `parameterValue` arrays with actual instrument settings. Equipment (`DefinedTerm` entities: pyrolysis oven, gas chromatograph, TSQ triple-quad mass spectrometer) is declared on the protocol and referenced by steps.
 
-The [converted cdifProvActivity output](./examples/Bennu-py-GC-MSarc.cdifprov.json) demonstrates how all ARC concepts map cleanly to cdifProvActivity vocabulary.
+The [converted cdifProvActivity output](../examples/Bennu-py-GC-MSarc.cdifprov.json) demonstrates how all ARC concepts map cleanly to cdifProvActivity vocabulary.
 
 ## 5\. Mapping WRROC/ARC to cdifProvActivity
 
-A converter tool ([tools/WRROCToCdifProv.py](tools/WRROCToCdifProv.py) in this repository; also in the [packaging](https://github.com/Cross-Domain-Interoperability-Framework/packaging/tree/main/tools) repository) transforms WRROC and ARC RO-Crate files into cdifProvActivity-compatible `@graph` documents. Two Galaxy-specific converters, [archive/tools/galaxyROCrateToCDIF.py](archive/tools/galaxyROCrateToCDIF.py) (archived) and [tools/galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py), produce the HowTo/step form and the one-Action-per-step form respectively ([§6](#6-representing-multi-step-provenance)).
+A converter tool ([tools/WRROCToCdifProv.py](../tools/WRROCToCdifProv.py) in this repository; also in the [packaging](https://github.com/Cross-Domain-Interoperability-Framework/packaging/tree/main/tools) repository) transforms WRROC and ARC RO-Crate files into cdifProvActivity-compatible `@graph` documents. Two Galaxy-specific converters, [archive/tools/galaxyROCrateToCDIF.py](../archive/tools/galaxyROCrateToCDIF.py) (archived) and [tools/galaxyROCrateToCDIFActions.py](../tools/galaxyROCrateToCDIFActions.py), produce the HowTo/step form and the one-Action-per-step form respectively ([§6](#6-representing-multi-step-provenance)).
 
 ### 5.1 Property Mapping
 
@@ -250,7 +250,7 @@ RO-Crate flat @graph:          cdifProvActivity nested @graph:
 
 Six Galaxy workflow RO-Crates from [Zenodo record 13842780](https://zenodo.org/records/13842780) have been converted, demonstrating computational workflow provenance (FeS2 analysis, Pt3Sn catalyst, Au colloids, LaMnO3 catalytic behaviour, EXAFS fitting, Diphosphine workflow). The Bennu py-GC-MS example demonstrates both standard WRROC and ARC profile conversion for laboratory analytical workflows.
 
-All examples are in the [examples](./examples/) folder. Source RO-Crates are in [examples/ROCRATE](./examples/ROCRATE/), and the converted documents are the `.cdifprov.json` (HowTo/step form) and `.actions.cdifprov.json` (one Action per step) files beside them.
+All examples are in the [examples](../examples/) folder. Source RO-Crates are in [examples/ROCRATE](../examples/ROCRATE/), and the converted documents are the `.cdifprov.json` (HowTo/step form) and `.actions.cdifprov.json` (one Action per step) files beside them.
 
 ## 6\. Representing Multi-Step Provenance
 
@@ -336,7 +336,7 @@ Both approaches are valid cdifProvActivity. The choice depends on the level of d
 * **Use Option B** (HowTo steps) when the methodology is the primary concern and step-level execution detail is not needed — e.g., describing a standard operating procedure without per-step timestamps or parameter values.
 * **Combine both**: Use Option A for the retrospective provenance (what was done) and include `schema:actionProcess` on each activity pointing to the protocol/methodology (how it should be done). This is what the ARC profile naturally produces — `LabProcess` activities with `executesLabProtocol` → `LabProtocol`.
 
-The Galaxy examples were first produced in both forms for side-by-side comparison. Option A was kept, because it lets techniques, agents, inputs and outputs attach to the step that used or produced them: `galaxyROCrateToCDIFActions.py` produces it, and in its output a step's inputs are its `schema:object` (an upstream step's `schema:result`, or a workflow input), which is what orders the steps. The Option B converter, `galaxyROCrateToCDIF.py`, and its outputs are in [archive/](archive/).
+The Galaxy examples were first produced in both forms for side-by-side comparison. Option A was kept, because it lets techniques, agents, inputs and outputs attach to the step that used or produced them: `galaxyROCrateToCDIFActions.py` produces it, and in its output a step's inputs are its `schema:object` (an upstream step's `schema:result`, or a workflow input), which is what orders the steps. The Option B converter, `galaxyROCrateToCDIF.py`, and its outputs are in [archive/](../archive/).
 
 The geochemistry profile ([§12](#12-a-domain-profile-built-on-cdifprovactivity-geochemistry-ada)) takes the "combine both" route one step further. The procedure is a separately published **plan** carrying the HowTo steps, and the analysis record is an activity that references that plan.
 
@@ -450,7 +450,7 @@ The ARC profile's core concepts map directly to cdifProvActivity:
 
 ### 9.2 What the Bennu Example Demonstrates
 
-The Bennu py-GC-MS/MS analysis ([standard](./examples/Bennu-py-GC-MS.cdifprov.json) and [ARC](./examples/Bennu-py-GC-MSarc.cdifprov.json) versions) demonstrates:
+The Bennu py-GC-MS/MS analysis ([standard](../examples/Bennu-py-GC-MS.cdifprov.json) and [ARC](../examples/Bennu-py-GC-MSarc.cdifprov.json) versions) demonstrates:
 
 1. **Multi-step analytical chain**: Five activities linked through their inputs and outputs, capturing the complete analytical pathway from sample preparation through mass spectrometric detection.
 2. **Rich parameterization**: Each step carries actual instrument settings as `schema:additionalProperty` PropertyValue objects — pyrolysis temperature (600°C), GC column dimensions (30m × 0.250mm × 0.50µm), MS scan range (m/z 50–500), number of targeted MRM compounds (38). These are preserved losslessly in the cdifProvActivity output.
@@ -501,7 +501,7 @@ The generic [instrument](https://github.com/Cross-Domain-Interoperability-Framew
 
 ### SHACL validation
 
-cdifProvActivity, provActivity and the archived ddicdiActivity each have a companion `rules.shacl` file, with SHACL validation shapes at three severity levels: Violation (required), Warning (recommended) and Info (optional). This repository publishes the merged shapes for the CDIF Provenance profile as [provenanceRules.shacl](provenanceRules.shacl).
+cdifProvActivity, provActivity and the archived ddicdiActivity each have a companion `rules.shacl` file, with SHACL validation shapes at three severity levels: Violation (required), Warning (recommended) and Info (optional). This repository publishes the merged shapes for the CDIF Provenance profile as [provenanceRules.shacl](../provenanceRules.shacl).
 
 ## 12\. A Domain Profile Built on cdifProvActivity: Geochemistry (ADA)
 
@@ -612,7 +612,7 @@ ex:run1 a prov:Activity ;
 |-|-|-|
 |**A. Note only**|Cite PROV-JSONLD; change nothing|Leaves item 1 above unaddressed|
 |**B. Export**|A converter from cdifProvActivity to PROV-JSONLD, so CDIF provenance can be handed to PROV tooling (ProvToolbox, PROV validators)|Lossy by design: descriptive content is reduced to references and flat attributes|
-|**C. Align provActivity**|Give the PROV-O-first block the qualified forms (`prov:qualifiedUsage` with `prov:hadRole`, `prov:qualifiedAssociation` with `prov:hadPlan`), using PROV-JSONLD's shapes as the reference|provActivity currently has no qualified association ([agents.md §3.2](agents.md)); new schema work|
+|**C. Align provActivity**|Give the PROV-O-first block the qualified forms (`prov:qualifiedUsage` with `prov:hadRole`, `prov:qualifiedAssociation` with `prov:hadPlan`), using PROV-JSONLD's shapes as the reference|provActivity currently has no qualified association ([agents.md §3.2](../agents.md)); new schema work|
 |**D. Give the wrapper a PROV reading**|Document the mapping from each role key to a `prov:qualifiedUsage` / `prov:hadRole` (and from `ada:tappDefinition` / `schema:actionProcess` to `prov:hadPlan`), and publish it as a SPARQL CONSTRUCT or SHACL rule a consumer can run|Small; keeps every existing record valid|
 |**E. Adopt PROV-JSONLD as CDIF's serialization**|Replace the nested activity form|Not recommended: a Member Submission with no endorsement, a closed schema that cannot carry schema.org descriptions, and loss of the search-engine-readable `schema:Action`|
 
@@ -633,7 +633,7 @@ ex:run1 a prov:Activity ;
 
 ## 15\. Changes from ProvenanceOptions.md
 
-What this document changes relative to [ProvenanceOptions.md](ProvenanceOptions.md), checked against metadataBuildingBlocks `main` at `31b890a802` and geochemBuildingBlocks `main` on 2026-10-25:
+What this document changes relative to [ProvenanceOptions.md](../archive/ProvenanceOptions.md), checked against metadataBuildingBlocks `main` at `31b890a802` and geochemBuildingBlocks `main` on 2026-10-25:
 
 * ddicdiActivity marked archived (moved to `archive/ddiProperties/` on 2026-10-05); links repointed.
 * §2 and §11: the five `prov:used` item shapes, including role-keyed wrappers and the generic profile-defined wrapper (#52, 2026-10-22); the sealed objectReference; the base requiring only `@type`; array `@type` throughout.
@@ -682,7 +682,7 @@ What this document changes relative to [ProvenanceOptions.md](ProvenanceOptions.
 
 ### Tools
 
-* [WRROCToCdifProv.py](tools/WRROCToCdifProv.py) — WRROC/ARC to cdifProvActivity converter
-* [galaxyROCrateToCDIF.py](archive/tools/galaxyROCrateToCDIF.py) (archived) / [galaxyROCrateToCDIFActions.py](tools/galaxyROCrateToCDIFActions.py) — Galaxy RO-Crate to cdifProvActivity, HowTo/step and multi-activity forms
+* [WRROCToCdifProv.py](../tools/WRROCToCdifProv.py) — WRROC/ARC to cdifProvActivity converter
+* [galaxyROCrateToCDIF.py](../archive/tools/galaxyROCrateToCDIF.py) (archived) / [galaxyROCrateToCDIFActions.py](../tools/galaxyROCrateToCDIFActions.py) — Galaxy RO-Crate to cdifProvActivity, HowTo/step and multi-activity forms
 * [ROCrateToCDIF.py](https://github.com/Cross-Domain-Interoperability-Framework/packaging/tree/main/tools/ROCrateToCDIF.py) — RO-Crate to full CDIF metadata converter
 

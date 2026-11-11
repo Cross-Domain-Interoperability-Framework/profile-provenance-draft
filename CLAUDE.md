@@ -29,12 +29,19 @@ Most of the root is NOT authored here. Edit the source, never the copy:
 | `vocabularies/activityTypes.ttl`, `vocabularies/activityType/*.{jsonld,ttl}` | `vocabularies/activityTypes.jsonld` | `python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld`, committed with the source change; CI (`vocabulary-pages.yml`) fails a PR whose copies are stale |
 | `vocabularies/docs/` | `vocabularies/activityTypes.ttl` | the iSamples `vocab2mdCacheV2.py` markdown writer plus Quarto, run and committed by `vocabulary-pages.yml` on push to `main`; never by hand |
 
-Authored here: `cdifProvenance-frame.jsonld`, the converters in `tools/`, `ODIS_provExampleJulesVerne.json`,
-the docs (`README.md`, `ProvenanceOptions.md`, `agents.md`, `PROV_Classes.ttl`), and
-`vocabularies/activityTypes.jsonld`, the activity-type vocabulary for workflow steps. Validate a change to it
+Authored here:
+
+- `cdifProvenance-frame.jsonld`;
+- the converters in `tools/`;
+- `examples/ODIS_provExampleJulesVerne.json`, and the PROV-O examples `examples/cdif_provenance_*.jsonld`;
+- the docs: `README.md` and `agents.md` at the root, and in `docs/` the current vocabulary comparison
+  (`docs/ProvenanceOptions-2026-10.md`), design proposals (`docs/PROPOSAL_*.md`) and the Word source
+  documents. The superseded 2026-03 comparison is `archive/ProvenanceOptions.md`;
+- `vocabularies/PROV_Classes.ttl`, the Dagstuhl provenance classes;
+- `vocabularies/activityTypes.jsonld`, the activity-type vocabulary for workflow steps. Validate a change to it
 against the CDIF concept-scheme profile: `profile-conceptscheme`'s `FrameAndValidate.py -v` plus pyshacl
 with its `conceptSchemeRules.shacl`. Keep each `skos:exactMatch`/`skos:broadMatch` pointing at a class that
-exists in `PROV_Classes.ttl`, and each concept's IRI local name equal to its `skos:notation` (the w3id rules
+exists in `vocabularies/PROV_Classes.ttl`, and each concept's IRI local name equal to its `skos:notation` (the w3id rules
 map the last IRI segment straight onto `vocabularies/activityType/<name>.*`; the build fails otherwise).
 `CDIFProvenanceImplementationGuide.md` is an auto-generated draft from the StructuredSchema.
 Note `agents.md` here is a design analysis of *provenance agents*, not an agent-instructions file.
@@ -108,5 +115,5 @@ part of "the tests" over `examples/`.
 - Bare reference slots are sealed `{@id}` objects (`additionalProperties: false`, `required: ['@id']`).
 - Agents: `schema:agent` for the primary agent, `schema:participant` for the rest, `schema:Role`
   (AgentInRole) for qualified roles; software that runs steps is a `bios:computationalTool`, not an
-  agent. Rationale in `agents.md`; the full vocabulary comparison is `ProvenanceOptions.md`.
+  agent. Rationale in `agents.md`; the full vocabulary comparison is `docs/ProvenanceOptions-2026-10.md`.
 - Bioschemas terms use the `bios:` prefix (`https://bioschemas.org/`).
