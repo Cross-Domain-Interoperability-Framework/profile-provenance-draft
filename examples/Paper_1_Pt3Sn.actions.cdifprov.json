@@ -42,34 +42,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:46:03.039565",
       "schema:endTime": "2024-10-14T16:46:03.039568",
-      "prov:used": [
-        {
-          "bios:computationalTool": {
-            "@type": [
-              "schema:SoftwareApplication"
-            ],
-            "schema:name": "Galaxy workflow engine",
-            "schema:version": "24.1"
-          }
-        },
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:additionalType": [
-                {
-                  "@id": "bios:ComputationalWorkflow"
-                }
-              ],
-              "schema:name": "Paper 1: XANES, LCF, EXAFS",
-              "@id": "workflows/bf972370cf6dfa23.gxwf.yml"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -236,6 +208,36 @@
           "@id": "#Sn3Pt%20Pt%20Calibration-pv",
           "schema:name": "Sn3Pt Pt Calibration"
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
+          "schema:name": "Galaxy workflow engine",
+          "schema:version": "24.1",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "bios:ComputationalWorkflow"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ],
+          "schema:name": "Paper 1: XANES, LCF, EXAFS",
+          "@id": "workflows/bf972370cf6dfa23.gxwf.yml"
+        }
       ]
     },
     {
@@ -248,21 +250,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:46.220005",
       "schema:endTime": "2024-10-14T16:47:57.053179",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -319,6 +306,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -331,21 +334,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:46.326585",
       "schema:endTime": "2024-10-14T16:47:56.007141",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -402,6 +390,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -414,21 +418,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:46.441993",
       "schema:endTime": "2024-10-14T16:47:59.267649",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -486,6 +475,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -498,21 +503,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:46.553223",
       "schema:endTime": "2024-10-14T16:47:59.312173",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -570,6 +560,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -582,21 +588,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:46.664215",
       "schema:endTime": "2024-10-14T16:48:00.882046",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -654,6 +645,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -666,21 +673,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:46.777298",
       "schema:endTime": "2024-10-14T16:47:55.880658",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -738,6 +730,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -750,21 +758,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:46.930596",
       "schema:endTime": "2024-10-14T16:48:00.828245",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -818,6 +811,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -830,21 +839,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:47.090291",
       "schema:endTime": "2024-10-14T16:48:00.933633",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -898,6 +892,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -910,21 +920,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:47.252704",
       "schema:endTime": "2024-10-14T16:48:08.027215",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -978,6 +973,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -990,21 +1001,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:47.393183",
       "schema:endTime": "2024-10-14T16:48:09.055214",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_athena",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1058,6 +1054,22 @@
             "rebin": 0
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_athena",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1070,21 +1082,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:47.499667",
       "schema:endTime": "2024-10-14T16:48:10.104907",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_feff",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1125,6 +1122,22 @@
             "radius": 3
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_feff",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1137,21 +1150,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:47.597194",
       "schema:endTime": "2024-10-14T16:48:03.832203",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_feff",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1192,6 +1190,22 @@
             "radius": 3
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_feff",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1204,21 +1218,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:47.709081",
       "schema:endTime": "2024-10-14T16:48:07.051566",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_feff",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1259,6 +1258,22 @@
             "radius": 3
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_feff",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1271,21 +1286,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:47.823783",
       "schema:endTime": "2024-10-14T16:48:07.817207",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_feff",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1326,6 +1326,22 @@
             "radius": 3
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_feff",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1338,21 +1354,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:47.983788",
       "schema:endTime": "2024-10-14T16:48:10.192689",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_lcf",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1443,6 +1444,22 @@
           "schema:name": "x_limit_min",
           "schema:value": 29190
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_lcf",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1455,21 +1472,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:48.161925",
       "schema:endTime": "2024-10-14T16:48:10.215560",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_lcf",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1560,6 +1562,22 @@
           "schema:name": "x_limit_min",
           "schema:value": 29190
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_lcf",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1572,21 +1590,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:48.324376",
       "schema:endTime": "2024-10-14T16:48:13.330578",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_lcf",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1677,6 +1680,22 @@
           "schema:name": "x_limit_min",
           "schema:value": 29190
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_lcf",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1689,21 +1708,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:48.464044",
       "schema:endTime": "2024-10-14T16:48:12.615747",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_lcf",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1794,6 +1798,22 @@
           "schema:name": "x_limit_min",
           "schema:value": 29190
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_lcf",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1806,21 +1826,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:48.664617",
       "schema:endTime": "2024-10-14T16:48:12.860339",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_plot",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -1909,6 +1914,22 @@
             "x_limit_min": 29190
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_plot",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1921,21 +1942,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:48.845649",
       "schema:endTime": "2024-10-14T16:48:07.773240",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_lcf",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -2026,6 +2032,22 @@
           "schema:name": "x_limit_min",
           "schema:value": 29190
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_lcf",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2038,21 +2060,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:48.965574",
       "schema:endTime": "2024-10-14T16:48:09.800340",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_lcf",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -2143,6 +2150,22 @@
           "schema:name": "x_limit_min",
           "schema:value": 29190
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_lcf",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2155,21 +2178,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:49.130416",
       "schema:endTime": "2024-10-14T16:48:18.349692",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_plot",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -2242,6 +2250,22 @@
             "x_limit_min": 11550
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_plot",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2254,21 +2278,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:49.323891",
       "schema:endTime": "2024-10-14T16:48:15.343934",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_select_paths",
-              "schema:version": "0.9.80+galaxy0",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.80+galaxy0"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -2566,6 +2575,22 @@
             }
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_select_paths",
+          "schema:version": "0.9.80+galaxy0",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.80+galaxy0",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2578,21 +2603,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:49.469422",
       "schema:endTime": "2024-10-14T16:48:48.455963",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_artemis",
-              "schema:version": "0.9.80+galaxy1",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -2691,6 +2701,22 @@
             "window": "hanning"
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_artemis",
+          "schema:version": "0.9.80+galaxy1",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2703,21 +2729,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:49.604062",
       "schema:endTime": "2024-10-14T16:48:31.080319",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_artemis",
-              "schema:version": "0.9.80+galaxy1",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -2816,6 +2827,22 @@
             "window": "hanning"
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_artemis",
+          "schema:version": "0.9.80+galaxy1",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2828,21 +2855,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:49.744382",
       "schema:endTime": "2024-10-14T16:48:29.229657",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_artemis",
-              "schema:version": "0.9.80+galaxy1",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -2941,6 +2953,22 @@
             "window": "hanning"
           }
         }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_artemis",
+          "schema:version": "0.9.80+galaxy1",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2953,21 +2981,6 @@
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:startTime": "2024-10-14T16:47:49.877459",
       "schema:endTime": "2024-10-14T16:48:29.255189",
-      "prov:used": [
-        {
-          "bios:computationalTool": [
-            {
-              "@type": [
-                "schema:SoftwareApplication",
-                "prov:Entity"
-              ],
-              "schema:name": "larch_artemis",
-              "schema:version": "0.9.80+galaxy1",
-              "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1"
-            }
-          ]
-        }
-      ],
       "schema:object": [
         {
           "@type": [
@@ -3065,6 +3078,22 @@
             "rmin": 0,
             "window": "hanning"
           }
+        }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:name": "larch_artemis",
+          "schema:version": "0.9.80+galaxy1",
+          "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
         }
       ]
     }

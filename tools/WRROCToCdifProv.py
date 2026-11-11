@@ -34,6 +34,8 @@ import json
 import argparse
 import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from usedResources import migrate as migrate_used_resources  # noqa: E402
 
 
 # CDIF output context
@@ -799,8 +801,13 @@ def _build_activity_node(action, index, inlined):
 
     # Instrument — inline
     # For ARC, instrument often points to the LabProtocol (same as
-    # executesLabProtocol). If actionProcess already captured it, just ref.
-    instruments = _ensure_list(action.get("instrument"))
+    # executesLabProtocol). That is the plan, already recorded as
+    # schema:actionProcess, not something the activity used as an instrument,
+    # and a schema:instrument item must be an instrument, software or reagent
+    # (CDIF #81), so it is skipped here.
+    protocol_ids = {r.get("@id") for r in _ensure_list(protocol_ref) if isinstance(r, dict)}
+    instruments = [i for i in _ensure_list(action.get("instrument"))
+                   if not (isinstance(i, dict) and i.get("@id") in protocol_ids)]
     if instruments:
         inlined_insts = []
         for inst_ref in instruments:
@@ -933,6 +940,8 @@ Examples:
             doc = json.load(f)
 
         result = convert_wrroc_to_cdifprov(doc, verbose=args.verbose)
+        # Last step: what each activity used goes in schema:instrument / schema:object (CDIF #81).
+        migrate_used_resources(result)
 
         if args.output:
             with open(args.output, "w", encoding="utf-8") as f:

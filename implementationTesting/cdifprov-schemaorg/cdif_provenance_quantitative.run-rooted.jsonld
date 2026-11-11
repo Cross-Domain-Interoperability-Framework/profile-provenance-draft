@@ -4,7 +4,6 @@
     "prov": "http://www.w3.org/ns/prov#",
     "dcterms": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
-    "bios": "https://bioschemas.org/",
     "at": "https://w3id.org/cdif/provenance/activityType/",
     "p": "http://purl.org/net/p-plan#",
     "ex": "https://example.org/cdif-prov/",
@@ -133,15 +132,6 @@
       }
     ]
   },
-  "prov:used": {
-    "@id": "ex:waterSample01",
-    "@type": [
-      "prov:Entity",
-      "schema:Thing"
-    ],
-    "schema:name": "Filtered water sample",
-    "schema:description": "500 mL surface water, filtered at 0.45 µm, kept at 4 °C until analysis."
-  },
   "schema:result": {
     "@id": "ex:validationResult",
     "@type": "schema:Dataset",
@@ -164,6 +154,18 @@
         ],
         "schema:name": "Validation",
         "schema:description": "Concentration and its uncertainty checked against the acceptance criterion for the method.",
+        "schema:instrument": {
+          "@id": "ex:analysisSoftware",
+          "@type": [
+            "prov:Entity",
+            "schema:SoftwareApplication"
+          ],
+          "schema:name": "Analysis software",
+          "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q7397"},
+          "schema:identifier": "https://example.org/cdif-prov/software/analysis/2.4.1",
+          "schema:url": "https://example.org/cdif-prov/software/analysis",
+          "schema:softwareVersion": "2.4.1"
+        },
         "schema:additionalType": {"@id": "at:qualityControl"},
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
         "schema:agent": {
@@ -176,26 +178,25 @@
             "schema:inDefinedTermSet": "https://schema.datacite.org/meta/kernel-4/include/datacite-contributorType-v4.xsd"
           }
         },
-        "prov:used": [
+        "schema:result": {"@id": "ex:validationResult"},
+        "schema:object": [
           {
             "@id": "ex:concentration",
             "@type": "schema:CreativeWork",
             "schema:name": "Analyte concentration",
-            "schema:about": {"@id": "ex:waterSample01"},
+            "schema:about": {
+              "@id": "ex:waterSample01",
+              "@type": [
+                "prov:Entity",
+                "schema:Thing"
+              ],
+              "schema:name": "Filtered water sample",
+              "schema:description": "500 mL surface water, filtered at 0.45 µm, kept at 4 °C until analysis."
+            },
             "schema:url": "https://example.org/cdif-prov/data/concentration.csv",
             "schema:encodingFormat": "text/csv"
           },
-          {
-            "@id": "ex:analysisSoftware",
-            "@type": [
-              "prov:Entity",
-              "schema:SoftwareApplication"
-            ],
-            "schema:name": "Analysis software",
-            "schema:identifier": "https://example.org/cdif-prov/software/analysis/2.4.1",
-            "schema:url": "https://example.org/cdif-prov/software/analysis",
-            "schema:softwareVersion": "2.4.1"
-          },
+          {"@id": "ex:analysisSoftware"},
           {
             "@id": "ex:concentrationUncertainty",
             "@type": "schema:CreativeWork",
@@ -213,13 +214,7 @@
             "schema:url": "https://example.org/cdif-prov/methods/acceptance-criterion"
           }
         ],
-        "schema:result": {"@id": "ex:validationResult"},
-        "p:correspondsToStep": {"@id": "ex:step-validation"},
-        "schema:object": [
-          {"@id": "ex:concentration"},
-          {"@id": "ex:concentrationUncertainty"}
-        ],
-        "bios:computationalTool": {"@id": "ex:analysisSoftware"}
+        "p:correspondsToStep": {"@id": "ex:step-validation"}
       },
       {
         "@id": "ex:blankCorrection",
@@ -229,6 +224,7 @@
         ],
         "schema:name": "Blank correction",
         "schema:description": "Reagent-blank absorbance subtracted from the sample absorbance.",
+        "schema:instrument": {"@id": "ex:analysisSoftware"},
         "schema:additionalType": {"@id": "at:dataProcessing"},
         "schema:startTime": "2026-11-05T10:21:00Z",
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
@@ -248,7 +244,14 @@
           "schema:name": "Reagent-blank subtraction",
           "schema:description": "Corrected absorbance = sample absorbance - mean of duplicate reagent-blank absorbances."
         },
-        "prov:used": [
+        "schema:result": {
+          "@id": "ex:correctedAbsorbance",
+          "@type": "schema:CreativeWork",
+          "schema:name": "Blank-corrected absorbance",
+          "schema:url": "https://example.org/cdif-prov/data/corrected-absorbance.csv",
+          "schema:encodingFormat": "text/csv"
+        },
+        "schema:object": [
           {
             "@id": "ex:absorbanceSource",
             "@type": "schema:CreativeWork",
@@ -260,17 +263,8 @@
           },
           {"@id": "ex:analysisSoftware"}
         ],
-        "schema:result": {
-          "@id": "ex:correctedAbsorbance",
-          "@type": "schema:CreativeWork",
-          "schema:name": "Blank-corrected absorbance",
-          "schema:url": "https://example.org/cdif-prov/data/corrected-absorbance.csv",
-          "schema:encodingFormat": "text/csv"
-        },
         "p:correspondsToStep": {"@id": "ex:step-blankCorrection"},
-        "schema:endTime": "2026-11-05T10:21:04Z",
-        "schema:object": {"@id": "ex:absorbanceSource"},
-        "bios:computationalTool": {"@id": "ex:analysisSoftware"}
+        "schema:endTime": "2026-11-05T10:21:04Z"
       },
       {
         "@id": "ex:waterSampling01",
@@ -293,12 +287,12 @@
             "schema:inDefinedTermSet": "https://schema.datacite.org/meta/kernel-4/include/datacite-contributorType-v4.xsd"
           }
         },
-        "prov:used": {
+        "schema:result": {"@id": "ex:waterSample01"},
+        "schema:object": {
           "@id": "ex:riverReach01",
           "@type": "schema:Place",
           "schema:name": "River reach the water was taken from"
         },
-        "schema:result": {"@id": "ex:waterSample01"},
         "p:correspondsToStep": {"@id": "ex:step-sampling"},
         "schema:endTime": "2026-11-04T08:15:00Z",
         "schema:location": {
@@ -310,8 +304,7 @@
             "schema:latitude": "46.95",
             "schema:longitude": "7.45"
           }
-        },
-        "schema:object": {"@id": "ex:riverReach01"}
+        }
       },
       {
         "@id": "ex:instrumentCalibration01",
@@ -321,75 +314,80 @@
         ],
         "schema:name": "Instrument calibration",
         "schema:description": "Absorbance of five certified standards measured to fit the response line used to convert sample absorbance to concentration.",
-        "schema:instrument": {
-          "@id": "ex:spectrophotometer01",
-          "@type": [
-            "schema:Thing",
-            "schema:Product"
-          ],
-          "schema:name": "UV-Vis spectrophotometer",
-          "schema:description": "Double-beam UV-Vis spectrophotometer, 190-1100 nm.",
-          "schema:identifier": {
-            "@type": "schema:PropertyValue",
-            "schema:propertyID": "manufacturer serial number",
-            "schema:value": "SN-000123"
-          },
-          "schema:manufacturer": {
-            "@type": "schema:Organization",
-            "schema:name": "Example Instruments Ltd"
-          },
-          "schema:category": {
-            "@type": "schema:DefinedTerm",
-            "schema:name": "UV-Vis spectrophotometer"
-          },
-          "schema:model": {
-            "@type": "schema:ProductModel",
-            "schema:name": "SP-1000"
-          },
-          "schema:owner": {"@id": "ex:laboratory01"},
-          "schema:additionalProperty": [
-            {
+        "schema:instrument": [
+          {
+            "@id": "ex:spectrophotometer01",
+            "@type": [
+              "schema:Thing",
+              "schema:Product"
+            ],
+            "schema:name": "UV-Vis spectrophotometer",
+            "schema:description": "Double-beam UV-Vis spectrophotometer, 190-1100 nm.",
+            "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"},
+            "schema:identifier": {
               "@type": "schema:PropertyValue",
-              "schema:name": "Spectral bandwidth",
-              "schema:value": {
-                "@value": "2",
-                "@type": "xsd:integer"
+              "schema:propertyID": "manufacturer serial number",
+              "schema:value": "SN-000123"
+            },
+            "schema:manufacturer": {
+              "@type": "schema:Organization",
+              "schema:name": "Example Instruments Ltd"
+            },
+            "schema:category": {
+              "@type": "schema:DefinedTerm",
+              "schema:name": "UV-Vis spectrophotometer"
+            },
+            "schema:model": {
+              "@type": "schema:ProductModel",
+              "schema:name": "SP-1000"
+            },
+            "schema:owner": {"@id": "ex:laboratory01"},
+            "schema:additionalProperty": [
+              {
+                "@type": "schema:PropertyValue",
+                "schema:name": "Spectral bandwidth",
+                "schema:value": {
+                  "@value": "2",
+                  "@type": "xsd:integer"
+                },
+                "schema:unitText": "nm"
               },
-              "schema:unitText": "nm"
-            },
-            {
-              "@type": "schema:PropertyValue",
-              "schema:name": "Measurement wavelength",
-              "schema:value": {
-                "@value": "540",
-                "@type": "xsd:integer"
+              {
+                "@type": "schema:PropertyValue",
+                "schema:name": "Measurement wavelength",
+                "schema:value": {
+                  "@value": "540",
+                  "@type": "xsd:integer"
+                },
+                "schema:unitText": "nm"
+              }
+            ],
+            "schema:hasPart": [
+              {
+                "@type": "schema:Thing",
+                "schema:name": "Deuterium and tungsten lamps"
               },
-              "schema:unitText": "nm"
-            }
-          ],
-          "schema:hasPart": [
-            {
-              "@type": "schema:Thing",
-              "schema:name": "Deuterium and tungsten lamps"
-            },
-            {
-              "@type": "schema:Thing",
-              "schema:name": "Grating monochromator"
-            },
-            {
-              "@type": "schema:Thing",
-              "schema:name": "Silicon photodiode detector"
-            }
-          ]
-        },
-        "bios:reagent": {
-          "@id": "ex:calibrationStandards01",
-          "@type": [
-            "prov:Entity",
-            "schema:Thing"
-          ],
-          "schema:name": "Certified calibration standards, 0-2 mg/L, lot CS-0042"
-        },
+              {
+                "@type": "schema:Thing",
+                "schema:name": "Grating monochromator"
+              },
+              {
+                "@type": "schema:Thing",
+                "schema:name": "Silicon photodiode detector"
+              }
+            ]
+          },
+          {
+            "@id": "ex:calibrationStandards01",
+            "@type": [
+              "prov:Entity",
+              "schema:Thing",
+              "schema:ChemicalSubstance"
+            ],
+            "schema:name": "Certified calibration standards, 0-2 mg/L, lot CS-0042",
+            "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q2356542"}
+          }
+        ],
         "schema:additionalType": {"@id": "at:instrumentCalibration"},
         "schema:startTime": "2026-11-05T09:40:00Z",
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
@@ -403,10 +401,6 @@
             "schema:inDefinedTermSet": "https://schema.datacite.org/meta/kernel-4/include/datacite-contributorType-v4.xsd"
           }
         },
-        "prov:used": [
-          {"@id": "ex:spectrophotometer01"},
-          {"@id": "ex:calibrationStandards01"}
-        ],
         "schema:result": {
           "@id": "ex:calibrationCurve",
           "@type": "schema:CreativeWork",
@@ -415,9 +409,12 @@
           "schema:url": "https://example.org/cdif-prov/data/calibration-curve.csv",
           "schema:encodingFormat": "text/csv"
         },
+        "schema:object": [
+          {"@id": "ex:spectrophotometer01"},
+          {"@id": "ex:calibrationStandards01"}
+        ],
         "p:correspondsToStep": {"@id": "ex:step-calibration"},
-        "schema:endTime": "2026-11-05T10:05:00Z",
-        "schema:object": {"@id": "ex:calibrationStandards01"}
+        "schema:endTime": "2026-11-05T10:05:00Z"
       },
       {
         "@id": "ex:absorbanceMeasurementAttempt01",
@@ -430,7 +427,7 @@
         "schema:startTime": "2026-11-05T10:12:00Z",
         "schema:actionStatus": "http://schema.org/FailedActionStatus",
         "schema:agent": {"@id": "ex:analyst01"},
-        "prov:used": {"@id": "ex:waterSample01"},
+        "schema:object": {"@id": "ex:waterSample01"},
         "p:correspondsToStep": {"@id": "ex:step-absorbance"},
         "schema:endTime": "2026-11-05T10:13:00Z",
         "schema:error": "Air bubble in the cuvette gave an unstable reading; the reading was rejected and the measurement repeated."
@@ -449,19 +446,23 @@
             "@id": "ex:cuvette01",
             "@type": [
               "prov:Entity",
-              "schema:Thing"
+              "schema:Thing",
+              "schema:Product"
             ],
-            "schema:name": "1 cm quartz cuvette"
+            "schema:name": "1 cm quartz cuvette",
+            "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"}
+          },
+          {
+            "@id": "ex:colourReagent01",
+            "@type": [
+              "prov:Entity",
+              "schema:Thing",
+              "schema:ChemicalSubstance"
+            ],
+            "schema:name": "Colour-forming reagent, 2 mL",
+            "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q2356542"}
           }
         ],
-        "bios:reagent": {
-          "@id": "ex:colourReagent01",
-          "@type": [
-            "prov:Entity",
-            "schema:Thing"
-          ],
-          "schema:name": "Colour-forming reagent, 2 mL"
-        },
         "schema:additionalType": {"@id": "at:dataAcquisition"},
         "schema:identifier": "MEAS-2026-11-05-002",
         "schema:startTime": "2026-11-05T10:18:00Z",
@@ -506,13 +507,13 @@
           "schema:performTime": "PT5M",
           "schema:estimatedCost": "12 USD"
         },
-        "prov:used": [
+        "schema:result": {"@id": "ex:absorbanceSource"},
+        "schema:object": [
           {"@id": "ex:waterSample01"},
           {"@id": "ex:spectrophotometer01"},
           {"@id": "ex:cuvette01"},
           {"@id": "ex:colourReagent01"}
         ],
-        "schema:result": {"@id": "ex:absorbanceSource"},
         "p:correspondsToStep": {"@id": "ex:step-absorbance"},
         "schema:endTime": "2026-11-05T10:19:00Z",
         "schema:location": {
@@ -526,7 +527,6 @@
             "schema:longitude": "7.44"
           }
         },
-        "schema:object": {"@id": "ex:waterSample01"},
         "schema:additionalProperty": [
           {
             "@type": "schema:PropertyValue",
@@ -561,6 +561,7 @@
         ],
         "schema:name": "Calibration-based derivation",
         "schema:description": "Concentration computed from corrected absorbance with the calibration curve.",
+        "schema:instrument": {"@id": "ex:analysisSoftware"},
         "schema:additionalType": {"@id": "at:deriving"},
         "schema:startTime": "2026-11-05T10:23:14Z",
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
@@ -581,18 +582,14 @@
           "schema:description": "Concentration = (corrected absorbance - intercept) / slope, using the least-squares calibration line. Assumes a linear response over 0-2 mg/L.",
           "schema:url": "https://example.org/cdif-prov/methods/linear-calibration"
         },
-        "prov:used": [
+        "schema:result": {"@id": "ex:concentration"},
+        "schema:object": [
           {"@id": "ex:calibrationCurve"},
           {"@id": "ex:analysisSoftware"},
           {"@id": "ex:correctedAbsorbance"}
         ],
-        "schema:result": {"@id": "ex:concentration"},
         "p:correspondsToStep": {"@id": "ex:step-derivation"},
         "schema:endTime": "2026-11-05T10:23:18Z",
-        "schema:object": [
-          {"@id": "ex:calibrationCurve"},
-          {"@id": "ex:correctedAbsorbance"}
-        ],
         "schema:additionalProperty": [
           {
             "@type": "schema:PropertyValue",
@@ -625,8 +622,7 @@
             "schema:name": "Treatment of values below the limit of detection",
             "schema:value": "Reported as '<0.02'; no value substituted."
           }
-        ],
-        "bios:computationalTool": {"@id": "ex:analysisSoftware"}
+        ]
       },
       {
         "@id": "ex:uncertaintyAssessment",
@@ -636,6 +632,7 @@
         ],
         "schema:name": "Uncertainty assessment",
         "schema:description": "Combined standard uncertainty of the concentration from calibration, repeatability and volume contributions.",
+        "schema:instrument": {"@id": "ex:analysisSoftware"},
         "schema:additionalType": {"@id": "at:analysing"},
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
         "schema:agent": {
@@ -654,13 +651,12 @@
           "schema:name": "GUM uncertainty budget",
           "schema:description": "Uncertainty components combined in quadrature; expanded uncertainty with coverage factor k=2."
         },
-        "prov:used": [
+        "schema:result": {"@id": "ex:concentrationUncertainty"},
+        "schema:object": [
           {"@id": "ex:concentration"},
           {"@id": "ex:analysisSoftware"}
         ],
-        "schema:result": {"@id": "ex:concentrationUncertainty"},
         "p:correspondsToStep": {"@id": "ex:step-uncertainty"},
-        "schema:object": {"@id": "ex:concentration"},
         "schema:additionalProperty": {
           "@type": "schema:PropertyValue",
           "schema:name": "Coverage factor",
@@ -668,9 +664,9 @@
             "@value": "2",
             "@type": "xsd:integer"
           }
-        },
-        "bios:computationalTool": {"@id": "ex:analysisSoftware"}
+        }
       }
     ]
-  }
+  },
+  "schema:object": {"@id": "ex:waterSample01"}
 }
