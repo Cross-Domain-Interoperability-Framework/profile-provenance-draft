@@ -1,0 +1,150 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "ada": "https://ada.astromat.org/metadata/",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "bios": "https://bioschemas.org/",
+    "ex": "https://example.org/"
+  },
+  "@id": "ex:analysis/RP-123",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "ICP-MS trace elements, RP-123 ((iii) qualified hadPlan)",
+  "schema:description": "Synthetic analysis-tier record: TAPP-link candidate (iii) qualified hadPlan. The run links to its TAPP and documents the values it gave the plan's editable parameters.",
+  "prov:wasGeneratedBy": [
+    {
+      "@id": "ex:analysis/RP-123/run",
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:name": "ICP-MS analysis of RP-123",
+      "schema:startTime": "2026-03-05T09:00:00Z",
+      "schema:endTime": "2026-03-05T11:30:00Z",
+      "schema:instrument": [
+        {
+          "@id": "ex:instrument/icpms-01",
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Example quadrupole ICP-MS",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/wiki/Q3099911"
+            }
+          ]
+        },
+        {
+          "@id": "ex:software/reduction-2.1",
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
+          "schema:name": "Example reduction software",
+          "schema:softwareVersion": "2.1",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/wiki/Q7397"
+            }
+          ]
+        },
+        {
+          "@id": "ex:reagent/BHVO-2",
+          "@type": [
+            "schema:DefinedTerm"
+          ],
+          "schema:name": "BHVO-2",
+          "schema:termCode": "BHVO-2",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/wiki/Q2356542"
+            }
+          ]
+        }
+      ],
+      "schema:object": [
+        {
+          "@id": "ex:sample/RP-123"
+        }
+      ],
+      "prov:qualifiedAssociation": [
+        {
+          "@type": [
+            "prov:Association"
+          ],
+          "prov:hadPlan": {
+            "@id": "ex:tapp/icpms-demo-v1"
+          }
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "ex:analysis/RP-123/procedure",
+        "@type": [
+          "schema:HowTo"
+        ],
+        "schema:name": "Procedure as run for RP-123",
+        "schema:step": [
+          {
+            "@id": "ex:analysis/RP-123/procedure/tuning",
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:name": "Instrument tuning",
+            "schema:position": 1,
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:propertyID": [
+                  {
+                    "@id": "ex:tapp/icpms-demo-v1/param/rfPower"
+                  }
+                ],
+                "schema:name": "RF Power",
+                "schema:value": 1500,
+                "schema:unitText": "W"
+              }
+            ]
+          },
+          {
+            "@id": "ex:analysis/RP-123/procedure/acquisition",
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:name": "Data acquisition",
+            "schema:position": 2,
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:propertyID": [
+                  {
+                    "@id": "ex:tapp/icpms-demo-v1/param/dwellTime"
+                  }
+                ],
+                "schema:name": "Dwell time",
+                "schema:value": 20,
+                "schema:unitText": "ms"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:propertyID": [
+                  {
+                    "@id": "ex:tapp/icpms-demo-v1/param/replicates"
+                  }
+                ],
+                "schema:name": "Number of replicates",
+                "schema:value": 5
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

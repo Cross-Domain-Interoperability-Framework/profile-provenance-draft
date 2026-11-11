@@ -1,0 +1,100 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "ada": "https://ada.astromat.org/metadata/",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "bios": "https://bioschemas.org/",
+    "ex": "https://example.org/"
+  },
+  "@id": "ex:tapp/icpms-demo-v1",
+  "@type": [
+    "prov:Plan",
+    "cdi:Activity",
+    "schema:Action",
+    "ada:TAPPDefinition",
+    "bios:LabProtocol",
+    "schema:HowTo"
+  ],
+  "schema:name": "Synthetic solution ICP-MS trace-element TAPP, v1",
+  "schema:description": "Synthetic plan for the TAPP-link comparison. Each step declares its parameters as PropertyValueSpecifications; readonlyValue false marks the ones an analysis may set.",
+  "schema:actionProcess": {
+    "@id": "ex:tapp/icpms-demo-v1/workflow",
+    "@type": [
+      "schema:HowTo"
+    ],
+    "schema:name": "Solution ICP-MS workflow",
+    "schema:step": [
+      {
+        "@id": "ex:tapp/icpms-demo-v1/step/tuning",
+        "@type": [
+          "cdi:Activity",
+          "schema:Action",
+          "schema:HowToStep"
+        ],
+        "schema:name": "Instrument tuning",
+        "schema:position": 1,
+        "schema:additionalProperty": [
+          {
+            "@id": "ex:tapp/icpms-demo-v1/param/rfPower",
+            "@type": [
+              "schema:PropertyValueSpecification"
+            ],
+            "schema:name": "RF Power",
+            "schema:valueName": "rfPower",
+            "schema:readonlyValue": false,
+            "schema:valueRequired": true,
+            "schema:defaultValue": 1550,
+            "schema:unitText": "W"
+          },
+          {
+            "@id": "ex:tapp/icpms-demo-v1/param/plasmaMode",
+            "@type": [
+              "schema:PropertyValueSpecification"
+            ],
+            "schema:name": "Plasma mode",
+            "schema:valueName": "plasmaMode",
+            "schema:readonlyValue": true,
+            "schema:valueRequired": true,
+            "schema:defaultValue": "hot"
+          }
+        ]
+      },
+      {
+        "@id": "ex:tapp/icpms-demo-v1/step/acquisition",
+        "@type": [
+          "cdi:Activity",
+          "schema:Action",
+          "schema:HowToStep"
+        ],
+        "schema:name": "Data acquisition",
+        "schema:position": 2,
+        "schema:additionalProperty": [
+          {
+            "@id": "ex:tapp/icpms-demo-v1/param/dwellTime",
+            "@type": [
+              "schema:PropertyValueSpecification"
+            ],
+            "schema:name": "Dwell time",
+            "schema:valueName": "dwellTime",
+            "schema:readonlyValue": false,
+            "schema:valueRequired": true,
+            "schema:defaultValue": 10,
+            "schema:unitText": "ms"
+          },
+          {
+            "@id": "ex:tapp/icpms-demo-v1/param/replicates",
+            "@type": [
+              "schema:PropertyValueSpecification"
+            ],
+            "schema:name": "Number of replicates",
+            "schema:valueName": "replicates",
+            "schema:readonlyValue": false,
+            "schema:valueRequired": true,
+            "schema:defaultValue": 3
+          }
+        ]
+      }
+    ]
+  }
+}
