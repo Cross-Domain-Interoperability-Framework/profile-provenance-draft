@@ -38,6 +38,8 @@ import zipfile
 import os
 from pathlib import Path
 from collections import OrderedDict, defaultdict
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from usedResources import migrate as migrate_used_resources  # noqa: E402
 
 try:
     import yaml
@@ -1105,6 +1107,8 @@ Examples:
 
     try:
         result = convert_galaxy_crate_actions(args.input, verbose=args.verbose)
+        # Last step: what each activity used goes in schema:instrument / schema:object (CDIF #81).
+        migrate_used_resources(result)
 
         if args.output:
             with open(args.output, "w", encoding="utf-8") as f:

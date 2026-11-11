@@ -689,26 +689,6 @@
         ],
         "schema:measurementMethod": "Pyrolysis-GC-MS/MS"
       },
-      "schema:instrument": {
-        "@id": "#PyGCMS_Protocol"
-      },
-      "prov:used": [
-        {
-          "@type": [
-            "prov:Entity",
-            "schema:Thing"
-          ],
-          "schema:additionalType": [
-            {
-              "@id": "bios:Sample"
-            }
-          ],
-          "@id": "#OREX-803003-0",
-          "schema:name": "Bennu asteroid sample OREX-803003-0",
-          "schema:description": "Approximately 1 mg aggregate of material from asteroid Bennu, collected by the OSIRIS-REx Touch-and-Go Sample Acquisition Mechanism (TAGSAM).",
-          "schema:identifier": "OREX-803003-0"
-        }
-      ],
       "schema:result": [
         {
           "@type": [
@@ -791,7 +771,24 @@
         "@id": "#NASA_GSFC",
         "schema:name": "NASA Goddard Space Flight Center",
         "schema:url": "https://www.nasa.gov/goddard"
-      }
+      },
+      "schema:object": [
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "bios:Sample"
+            }
+          ],
+          "@id": "#OREX-803003-0",
+          "schema:name": "Bennu asteroid sample OREX-803003-0",
+          "schema:description": "Approximately 1 mg aggregate of material from asteroid Bennu, collected by the OSIRIS-REx Touch-and-Go Sample Acquisition Mechanism (TAGSAM).",
+          "schema:identifier": "OREX-803003-0"
+        }
+      ]
     },
     {
       "@type": [
@@ -814,14 +811,6 @@
       "schema:actionProcess": {
         "@id": "#SamplePrep_Protocol"
       },
-      "schema:instrument": {
-        "@id": "#SamplePrep_Protocol"
-      },
-      "prov:used": [
-        {
-          "@id": "#OREX-803003-0"
-        }
-      ],
       "schema:result": [
         {
           "@type": [
@@ -877,7 +866,12 @@
       ],
       "schema:agent": {
         "@id": "#NASA_GSFC"
-      }
+      },
+      "schema:object": [
+        {
+          "@id": "#OREX-803003-0"
+        }
+      ]
     },
     {
       "@type": [
@@ -900,14 +894,6 @@
       "schema:actionProcess": {
         "@id": "#Pyrolysis_Protocol"
       },
-      "schema:instrument": {
-        "@id": "#Pyrolysis_Protocol"
-      },
-      "prov:used": [
-        {
-          "@id": "#PreparedSample"
-        }
-      ],
       "schema:result": [
         {
           "@type": [
@@ -989,7 +975,12 @@
       ],
       "schema:agent": {
         "@id": "#NASA_GSFC"
-      }
+      },
+      "schema:object": [
+        {
+          "@id": "#PreparedSample"
+        }
+      ]
     },
     {
       "@type": [
@@ -1012,14 +1003,6 @@
       "schema:actionProcess": {
         "@id": "#GCSeparation_Protocol"
       },
-      "schema:instrument": {
-        "@id": "#GCSeparation_Protocol"
-      },
-      "prov:used": [
-        {
-          "@id": "#PyrolysisProducts"
-        }
-      ],
       "schema:result": [
         {
           "@type": [
@@ -1135,7 +1118,12 @@
       ],
       "schema:agent": {
         "@id": "#NASA_GSFC"
-      }
+      },
+      "schema:object": [
+        {
+          "@id": "#PyrolysisProducts"
+        }
+      ]
     },
     {
       "@type": [
@@ -1158,14 +1146,6 @@
       "schema:actionProcess": {
         "@id": "#MSDetection_Protocol"
       },
-      "schema:instrument": {
-        "@id": "#MSDetection_Protocol"
-      },
-      "prov:used": [
-        {
-          "@id": "#SeparatedEluent"
-        }
-      ],
       "schema:result": [
         {
           "@id": "20231121_002_OREX-803003-0.cdf"
@@ -1263,7 +1243,12 @@
       ],
       "schema:agent": {
         "@id": "#NASA_GSFC"
-      }
+      },
+      "schema:object": [
+        {
+          "@id": "#SeparatedEluent"
+        }
+      ]
     }
   ]
 }

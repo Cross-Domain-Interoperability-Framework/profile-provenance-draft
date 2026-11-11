@@ -57,34 +57,35 @@
           "schema:email": "m.garcia@example.org"
         }
       },
-      "prov:used": [
+      "schema:startTime": "2025-01-10T00:00:00Z",
+      "schema:endTime": "2025-03-20T00:00:00Z",
+      "schema:actionStatus": "schema:CompletedActionStatus",
+      "schema:instrument": [
         {
-          "schema:instrument": [
+          "@type": [
+            "schema:Product",
+            "schema:Thing",
+            "schema:SoftwareApplication"
+          ],
+          "schema:name": "SeisUnix",
+          "schema:version": "44R27",
+          "schema:url": "https://wiki.seismic-unix.org/",
+          "schema:category": [
             {
               "@type": [
-                "schema:Product",
-                "schema:Thing",
-                "schema:SoftwareApplication"
+                "schema:DefinedTerm"
               ],
-              "schema:name": "SeisUnix",
-              "schema:version": "44R27",
-              "schema:url": "https://wiki.seismic-unix.org/",
-              "schema:category": [
-                {
-                  "@type": [
-                    "schema:DefinedTerm"
-                  ],
-                  "schema:name": "Seismic processing software",
-                  "schema:termCode": "seismic-processing"
-                }
-              ]
+              "schema:name": "Seismic processing software",
+              "schema:termCode": "seismic-processing"
+            }
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
             }
           ]
         }
-      ],
-      "schema:startTime": "2025-01-10T00:00:00Z",
-      "schema:endTime": "2025-03-20T00:00:00Z",
-      "schema:actionStatus": "schema:CompletedActionStatus"
+      ]
     }
   ]
 }

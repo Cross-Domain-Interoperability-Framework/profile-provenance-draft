@@ -97,8 +97,8 @@ violation counts unchanged).
   FrameAndValidate's `REFERENCE_ONLY_KEYS` collapses to `{@id}` (validation repo).
 
 The Galaxy converter must also keep `OrganizeAction` (the Galaxy engine run) OUT of
-`prov:wasGeneratedBy`; it is recorded as a `bios:computationalTool` role entry instead. See the
-README changelog for the evidence.
+`prov:wasGeneratedBy`; its engine is recorded as a software `schema:instrument` item on the workflow
+execution instead. See the README changelog for the evidence.
 
 ## archive/
 
@@ -109,9 +109,20 @@ part of "the tests" over `examples/`.
 
 ## Modelling conventions the converters and examples follow
 
-- `prov:used` holds role-keyed wrappers (`schema:instrument`, `bios:computationalTool`,
-  `bios:reagent`) alongside string / `{@id}` / inline `prov:Entity`; profiles pin a wrapper's shape
-  with a constraint-only `if/then`, never a narrowed `anyOf`.
+- What an activity used goes in `schema:instrument` (instruments, software and reagents) and
+  `schema:object` (inputs), not in `prov:used`; CDIF no longer accepts role-keyed `prov:used`
+  wrappers (metadataBuildingBlocks #81, design in `docs/PROPOSAL_2026-11-11_activity_used_resources.md`).
+  A `schema:instrument` item is an `{@id}` or carries exactly one Wikidata kind term in
+  `schema:additionalType`, as the entity IRI: `https://www.wikidata.org/entity/Q3099911`
+  (instrument, `@type` ∋ `schema:Product`), `…/Q7397` (software, `schema:SoftwareApplication`) or
+  `…/Q2356542` (reagent: `schema:DefinedTerm`, `schema:Product` or `schema:ChemicalSubstance`).
+  An activity needs at least one of `schema:instrument`, `schema:object`, `schema:actionProcess`.
+  The plan is `schema:actionProcess` `{@id}`; an inline HowTo links it with `schema:isBasedOn`.
+  Both converters end with `tools/usedResources.py`'s `migrate()`, which also migrates an existing
+  document in place (`python tools/usedResources.py <file>…`).
+- FrameAndValidate's conformance detection reads SHACL from `../metadataBuildingBlocks/_sources`
+  when that checkout exists. A stale checkout reports false "DECLARED BUT NOT DETECTED" results;
+  pull it, or set `CDIF_BB_DIR` to an up-to-date `_sources`.
 - Bare reference slots are sealed `{@id}` objects (`additionalProperties: false`, `required: ['@id']`).
 - Agents: `schema:agent` for the primary agent, `schema:participant` for the rest, `schema:Role`
   (AgentInRole) for qualified roles; software that runs steps is a `bios:computationalTool`, not an

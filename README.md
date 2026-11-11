@@ -120,6 +120,14 @@ synced from the CDIF **metadataBuildingBlocks** source (see
   role-keyed wrappers (`schema:instrument` / `bios:computationalTool` / `prov:reagent`)
   alongside string / `{@id}` / inline `prov:Entity`; profiles pin a wrapper's shape via
   a constraint-only `if/then` (never a narrowed `anyOf`).
+- **What an activity used: `schema:instrument` / `schema:object` (2026-11)** — CDIF
+  no longer accepts role-keyed `prov:used` wrappers (metadataBuildingBlocks #81, #82).
+  Instruments, software and reagents are `schema:instrument` items, each with a Wikidata
+  kind term (entity IRI) in `schema:additionalType`; inputs are `schema:object`; the plan
+  is `schema:actionProcess`. Both converters end with `tools/usedResources.py`, which
+  migrated the Galaxy, Bennu and implementation-testing examples; the ARC converter no
+  longer puts the lab protocol in `schema:instrument` (it is the `actionProcess`). See
+  [docs/PROPOSAL_2026-11-11_activity_used_resources.md](docs/PROPOSAL_2026-11-11_activity_used_resources.md).
 - **`skos:notation` → single string** at concept level (consistent with the codelist
   single-notation design).
 - **`FrameAndValidate.py`** (normative, drift-checked against
@@ -141,8 +149,9 @@ synced from the CDIF **metadataBuildingBlocks** source (see
     `CreateAction` every time and the `OrganizeAction` never. It is also the one
     action with no `object` and no `result` to map, so the `cdifProvActivity`
     `prov:used` Violation was reporting the mis-mapping rather than a missing value.
-    The engine is preserved as a `bios:computationalTool` role entry on the workflow
-    execution, where it is true.
+    The engine is preserved as a software item on the workflow execution, where it is
+    true (a `bios:computationalTool` role entry until 2026-11; now a `schema:instrument`
+    item, see below).
   - `@id` values carried IRI-illegal characters through from the crate — 170 spaces
     and 31 pipes across 96 distinct `@id`s in 6 files, e.g. `#input-Sn Foil`. See
     the note below; now percent-encoded.
