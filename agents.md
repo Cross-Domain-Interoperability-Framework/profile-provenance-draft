@@ -110,7 +110,7 @@ ddicdiProv uses a fundamentally different pattern: the agent-activity relationsh
 
 ## 4. Agents in the Dagstuhl Workshop PROV Classes
 
-The [PROV_Classes.ttl](PROV_Classes.ttl) file captures a proposed provenance ontology discussed at the Dagstuhl Workshop (November 2025). Its agent model departs from the approach used in other CDIF vocabularies and raises important implementation questions.
+The [PROV_Classes.ttl](vocabularies/PROV_Classes.ttl) file captures a proposed provenance ontology discussed at the Dagstuhl Workshop (November 2025). Its agent model departs from the approach used in other CDIF vocabularies and raises important implementation questions.
 
 ### 4.1 The Proposed Approach
 
@@ -231,7 +231,7 @@ If the Dagstuhl PROV activity classes (Sampling, Observing/Measuring, Creating, 
 - [schema.org Person](https://schema.org/Person), [Organization](https://schema.org/Organization), [Role](https://schema.org/Role)
 - [schema.org agent property](https://schema.org/agent) — on Action
 - [DDI-CDI 1.0 Specification](https://ddialliance.org/Specification/DDI-CDI/1.0/) — ProcessingAgent
-- [PROV_Classes.ttl](PROV_Classes.ttl) — Dagstuhl Workshop provenance classes (November 2025)
+- [PROV_Classes.ttl](vocabularies/PROV_Classes.ttl) — Dagstuhl Workshop provenance classes (November 2025)
 - [ODIS Architecture: Common Provenance Cases](https://github.com/iodepo/odis-arch/blob/414-update-provenance-recommendations/book/thematics/provenance/common-provenance-cases.md)
 - [Workflow Run RO-Crate](https://www.researchobject.org/workflow-run-crate/)
 - [ARC WR RO-Crate Profile](https://github.com/nfdi4plants/arc-wr-ro-crate-profile)
