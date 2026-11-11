@@ -186,6 +186,18 @@ both. Options:
   …}}`. This is the correct PROV form, and it is what the PROV-O and ProvONE approaches in
   `implementationTesting/` already use. It costs one typed node, and it is not schema.org.
 
+**When a run has both a plan and an inline procedure (decided 2026-11-11):**
+
+- `schema:actionProcess` is the inline `HowTo`.
+- That HowTo links the plan with `schema:isBasedOn` → `{@id}`. `isBasedOn` is a CreativeWork property,
+  and HowTo is a CreativeWork, so this is valid schema.org.
+- In the schema.org implementation this is preferred over the qualified association in (C), which
+  stays the form for the PROV-O implementation. This is option (i) from §8, applied to CDIF generally.
+  See [tapp-link-candidates/analysis-i-isBasedOn.json](tapp-link-candidates/analysis-i-isBasedOn.json).
+- One query finds the plan in both cases:
+  `prov:wasGeneratedBy/schema:actionProcess/schema:isBasedOn?`.
+- cdifProvActivity's `HowTo` definition gains `schema:isBasedOn`, a sealed `objectReference`, for now.
+
 `prov:hadPlan` directly on the activity is ruled out: its PROV-O domain is `prov:Association`, so an
 RDFS reasoner would type the activity as an Association.
 
@@ -280,7 +292,9 @@ core. The revert therefore has to come *after* the wrappers are migrated out of 
   - remove its `prov:used` pin;
   - add the `schema:instrument` kinds from §4.3;
   - document in `schema:actionProcess` that the `objectReference` form is the link to the plan the
-    activity followed, and the inline `HowTo` is the procedure as performed (§4.4, option A).
+    activity followed, and the inline `HowTo` is the procedure as performed (§4.4, option A);
+  - add `schema:isBasedOn` (a sealed `objectReference`) to its `HowTo` definition, for a run that
+    has both a plan and an inline procedure (§4.4).
 
   A `prov:used` the record carries is accepted when it passes the core shape (strings and `@id`
   references), and is checked by nothing more. cdifProvActivity does not close it off after migration
