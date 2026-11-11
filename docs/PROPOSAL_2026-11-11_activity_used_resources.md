@@ -552,10 +552,13 @@ Two geochem-only issues:
   - *Counted 2026-11-11:*
     - examples: 253 TAPP nodes and 570 TAPP steps;
     - method_registry: all 511 TAPPs and 1,041 steps.
-  - **Open:** 455 more `cdi:Activity` nodes in the examples are *outside* any TAPP. These are mainly
-    the run-procedure steps under a run's `schema:actionProcess`, which geochemBaseProfile's own
-    `WorkflowStep` requires to carry `cdi:Activity`; the example added in geochemBuildingBlocks#273
-    is one of them. For consistency they would drop it too, but this decision covered only the TAPP.
+  - **The run-procedure steps drop it too (decided 2026-11-11).** 455 more `cdi:Activity` nodes in
+    the examples are outside any TAPP. These are mainly the steps under a run's
+    `schema:actionProcess`, which geochemBaseProfile's own `WorkflowStep` requires to carry
+    `cdi:Activity`. That `WorkflowStep` becomes `schema:Action` and `schema:HowToStep` (`minItems`
+    2), the same as a TAPP step, so plan steps and run steps are typed alike.
+  - The example added in geochemBuildingBlocks#273 has five such steps. It keeps `cdi:Activity`
+    until the schema changes, because the current schema still requires it.
 - The geochem instrument's inline `schema:hasPart` component requires both `schema:Product` and
   `schema:Thing`; relax it as in §4.1.
 - Migrate by script, then regenerate:
