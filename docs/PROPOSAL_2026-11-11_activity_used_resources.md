@@ -464,8 +464,10 @@ Two geochem-only issues:
 
 - **Range: the TAPP gets the `schema:HowTo` type (decided 2026-11-11).** `schema:actionProcess` ranges
   over `schema:HowTo`, so `tappDefinition`'s `@type` gains a required `schema:HowTo`, alongside
-  `prov:Plan`, `cdi:Activity`, `schema:Action`, `ada:TAPPDefinition` and `bios:LabProtocol`.
-  - This means changing the `minItems` (5 → 6) and the `allOf contains` list.
+  `prov:Plan`, `schema:Action`, `ada:TAPPDefinition` and `bios:LabProtocol`. `cdi:Activity` is
+  dropped; see "Other geochem changes" below.
+  - This means changing the `allOf contains` list. `minItems` stays 5, since one type is added and
+    one removed.
   - The TAPPs in method_registry, and the TAPP examples, then need the type added; they are migrated
     before the schema requires it.
   - The TAPP keeps its own `schema:actionProcess` workflow `HowTo`. A node that is both an Action and a
@@ -535,6 +537,25 @@ Two geochem-only issues:
     computational tools and 6 reagents at the plan level, and 4 tools and 48 reagents on steps. The
     TAPPs in method_registry need the same migration; geochemBaseProfile's comments cite
     `bios:reagent` in 72 of 500 stored TAPP plans.
+- **Drop `cdi:Activity` from the TAPP and its steps; keep `schema:Action` for now (decided
+  2026-11-11).**
+  - *Why:* no TAPP or step carries any DDI-CDI process property (no step links, parameters, sequence
+    or names), so the type promises structure a DDI-CDI consumer will not find. In our DDI-CDI test
+    example, `cdi:Activity` is also the class of the *run*, which is a different thing from a plan. If
+    DDI-CDI alignment is wanted later, it belongs in a proper DDI-CDI serialisation.
+  - *Schema:* the TAPP `@type` becomes `prov:Plan`, `schema:Action`, `ada:TAPPDefinition`,
+    `bios:LabProtocol` and `schema:HowTo` (`minItems` 5, with `schema:HowTo` added and `cdi:Activity`
+    removed). `WorkflowStep` becomes `schema:Action` and `schema:HowToStep` (`minItems` 2).
+  - *Also touches:* `tools/build_tapp_examples.py`, `tools/build_laicpms_examples.py`,
+    `tools/_tapp_lib.py`, `tools/schema_path_example_emitter.py`, `docs/counterexamples.json` and
+    `docs/SCHEMA_PATH_GRAMMAR.md`. All of them emit or mention `cdi:Activity`.
+  - *Counted 2026-11-11:*
+    - examples: 253 TAPP nodes and 570 TAPP steps;
+    - method_registry: all 511 TAPPs and 1,041 steps.
+  - **Open:** 455 more `cdi:Activity` nodes in the examples are *outside* any TAPP. These are mainly
+    the run-procedure steps under a run's `schema:actionProcess`, which geochemBaseProfile's own
+    `WorkflowStep` requires to carry `cdi:Activity`; the example added in geochemBuildingBlocks#273
+    is one of them. For consistency they would drop it too, but this decision covered only the TAPP.
 - The geochem instrument's inline `schema:hasPart` component requires both `schema:Product` and
   `schema:Thing`; relax it as in §4.1.
 - Migrate by script, then regenerate:
