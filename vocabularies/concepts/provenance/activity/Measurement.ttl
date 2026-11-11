@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Measurement a skos:Concept ;
+    skos:definition "An activity which results in a quantitative value describing some characteristic of the object of interest."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Measurement" ;
+    skos:prefLabel "Measurement"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

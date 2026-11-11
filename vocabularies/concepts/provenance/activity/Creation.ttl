@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Creation a skos:Concept ;
+    skos:definition "An activity through which an entity is brought into existence. Serves as a superclass for other more expressive classes that create entities, such as authoring."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Creation" ;
+    skos:prefLabel "Creation"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

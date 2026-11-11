@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:dataCleaning a skos:Concept ;
+    dcterms:isReplacedBy cdifact:DataCleaning ;
+    owl:deprecated true ;
     skos:broader at:dataTransforming ;
     skos:definition "A data transformation during which erroneous, duplicated, or corrupted data is removed from a volume of data."@en ;
     skos:exactMatch dag:DataCleaning ;

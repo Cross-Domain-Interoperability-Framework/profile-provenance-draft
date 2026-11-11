@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:analysing a skos:Concept ;
+    dcterms:isReplacedBy cdifact:Analysis ;
+    owl:deprecated true ;
     skos:definition "An activity during which one or more entities are studied by examining their constituent parts and the interrelationships between those parts in order to increase one's knowledge about those entities."@en ;
     skos:exactMatch dag:Analyzing ;
     skos:example "The calculation of column means and their standard deviations in a table."@en ;

@@ -6,7 +6,10 @@
     "dag": "http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/",
     "at": "https://w3id.org/cdif/provenance/activityType/",
     "skos:broadMatch": {"@type": "@id"},
-    "skos:exactMatch": {"@type": "@id"}
+    "skos:exactMatch": {"@type": "@id"},
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "geochemvoc": "https://w3id.org/geochem/vocabulary/"
   },
   "@id": "at:dataCleaning",
   "@type": ["skos:Concept"],
@@ -16,5 +19,7 @@
   "skos:example": {"@value": "For example, data cleaning can include removing impossible combinations of values from the raw data collected for a register of births, marriages, divorces, and deaths.", "@language": "en"},
   "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
   "skos:broader": [{"@id": "at:dataTransforming"}],
-  "skos:exactMatch": ["dag:DataCleaning"]
+  "skos:exactMatch": ["dag:DataCleaning"],
+  "owl:deprecated": true,
+  "dcterms:isReplacedBy": [{"@id": "cdifact:DataCleaning"}]
 }

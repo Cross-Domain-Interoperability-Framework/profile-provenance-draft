@@ -1,9 +1,16 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:observingMeasuring a skos:Concept ;
+    dcterms:isReplacedBy cdifact:Measurement,
+        cdifact:Observation ;
+    owl:deprecated true ;
     skos:definition "An activity during which an entity gathers data or information about another entity or itself. Measuring is observing during which reference standards or similar entities are used for the quantitative comparison of properties."@en ;
     skos:exactMatch dag:Observing_Measuring ;
     skos:example "For example, observation of features of an event; quantification of property; identification and description of qualitiative features of a phenomenon."@en ;

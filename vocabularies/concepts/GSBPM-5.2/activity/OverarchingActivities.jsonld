@@ -1,0 +1,44 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "Concept": "skos:Concept",
+    "ConceptScheme": "skos:ConceptScheme",
+    "prefLabel": "skos:prefLabel",
+    "altLabel": "skos:altLabel",
+    "definition": "skos:definition",
+    "broader": {"@id": "skos:broader", "@type": "@id"},
+    "narrower": {"@id": "skos:narrower", "@type": "@id"},
+    "inScheme": {"@id": "skos:inScheme", "@type": "@id"},
+    "notation": "skos:notation",
+    "hasTopConcept": {"@id": "skos:hasTopConcept", "@type": "@id"},
+    "note": "skos:note",
+    "dc": "http://purl.org/dc/terms/",
+    "references": {"@id": "dc:references", "@type": "@id"},
+    "exactMatch": {"@id": "skos:exactMatch", "@type": "@id"},
+    "closeMatch": {"@id": "skos:closeMatch", "@type": "@id"},
+    "relatedMatch": {"@id": "skos:relatedMatch", "@type": "@id"},
+    "broadMatch": {"@id": "skos:broadMatch", "@type": "@id"},
+    "narrowMatch": {"@id": "skos:narrowMatch", "@type": "@id"},
+    "topConceptOf": {"@id": "skos:topConceptOf", "@type": "@id"}
+  },
+  "@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+  "@type": "skos:Concept",
+  "prefLabel": {"@value": "Overarching Activities", "@language": "en"},
+  "definition": {"@value": "The GSBPM recognises several overarching activities that apply throughout the production phases, and across statistical business processes. For example, quality is monitored and checked at various stages of the production. Management of data and metadata is done throughout the process, not at a certain sub-process only. While the production process involves different units and expertise in the organisation at different stages, it is important that these overarching activities are conducted in a consistent manner in accordance with organisation-wide standards and policies, and with close coordination with a central unit.", "@language": "en"},
+  "narrower": [
+    "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/QualityManagement",
+    "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/MetadataManagement",
+    "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataManagement",
+    "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/ProcessDataManagement",
+    "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/KnowledgeManagement",
+    "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataSupplierManagement"
+  ],
+  "exactMatch": "http://unece.org/OverarchingActivities",
+  "references": [
+    "https://unece.org/statistics/documents/2019/01/standards/gamso-v12",
+    "https://unece.github.io/GSIM-2.0/"
+  ],
+  "inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+  "topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+  "notation": "OverarchingActivities"
+}

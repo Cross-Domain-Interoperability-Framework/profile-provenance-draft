@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Count a skos:Concept ;
+    skos:definition "An activity which results in an enumeration of some aspect of a population or its members."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Count" ;
+    skos:prefLabel "Count"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

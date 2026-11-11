@@ -1,14 +1,23 @@
-# Publish the activity-type vocabulary.
+# Publish the provenance activity vocabularies.
 #
-# vocabularies/activityTypes.jsonld is the only file anyone edits. From it:
-#   - tools/buildVocabularyFiles.py writes activityTypes.ttl and one .jsonld/.ttl per
-#     concept under vocabularies/activityType/. Those are committed with the change, and
-#     the `check` job fails a PR whose generated files are stale.
+# Two sources, each the only file anyone edits for its vocabulary:
+#   - vocabularies/CDIF_Activities.json: the CDIF provenance activity vocabulary,
+#     https://w3id.org/cdif/concepts/provenance/activity/ (plus seven GSBPM 5.2 concepts,
+#     https://w3id.org/cdif/concepts/GSBPM-5.2/activity/). Concept files go under
+#     vocabularies/concepts/, mirroring the IRI path.
+#   - vocabularies/activityTypes.jsonld: the DEPRECATED v0.1 activity types,
+#     https://w3id.org/cdif/provenance/activityType/. Kept so its IRIs still resolve; each
+#     concept points to its replacement. Concept files go under vocabularies/activityType/.
+# For each:
+#   - tools/buildVocabularyFiles.py writes the whole-scheme .ttl beside the source and one
+#     .jsonld/.ttl per concept. Those are committed with the change, and the `check` job
+#     fails a PR whose generated files are stale.
 #   - the iSamples vocabulary tooling (isamplesorg/vocabularies, vocab2mdCacheV2.py) writes
-#     Quarto markdown from activityTypes.ttl and Quarto renders it to HTML. The `render` job
+#     Quarto markdown from the .ttl and Quarto renders it to HTML. The `render` job
 #     commits that to vocabularies/docs/ on main, because GitHub Pages serves
 #     main as it is; on a PR it only renders, and uploads the pages as an artifact.
-# w3id.org/cdif/provenance/activityType[/<concept>] redirects into these files by
+# w3id.org/cdif/concepts/provenance/activity[/<concept>], cdif/concepts/GSBPM-5.2/activity/
+# <concept> and cdif/provenance/activityType[/<concept>] redirect into these files by
 # content negotiation (HTML, Turtle, JSON-LD).
 #
 # Why not the iSamples GitHub Action itself: at 43af182 its loader always purges the SQLite
@@ -28,6 +37,7 @@ on:
     branches: [main]
     paths:
       - 'vocabularies/activityTypes.jsonld'
+      - 'vocabularies/CDIF_Activities.json'
       - 'tools/buildVocabularyFiles.py'
       - '.github/workflows/vocabulary-pages.yml'
   workflow_dispatch:
@@ -42,7 +52,9 @@ jobs:
           python-version: '3.12'
       - run: pip install rdflib
       - name: Generated vocabulary files are up to date
-        run: python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld --check
+        run: |
+          python tools/buildVocabularyFiles.py vocabularies/CDIF_Activities.json --check
+          python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld --check
 
   render:
     needs: check
@@ -69,21 +81,30 @@ jobs:
       - name: Write Quarto markdown with the iSamples vocab2md writer
         run: |
           mkdir -p vocabularies/docs
-          python - > vocabularies/docs/activityTypes.md <<'EOF'
+          write_md() {  # <scheme .ttl> <scheme IRI> <output .md>
+            python - "$1" "$2" > "$3" <<'EOF'
           import logging, sys, rdflib
           sys.path.insert(0, '.isamples/tools')
           import vocab2mdCacheV2 as v
           logging.disable(logging.CRITICAL)
           g = rdflib.Graph()
-          g.parse('vocabularies/activityTypes.ttl', format='turtle')
-          for line in v.describeVocabulary(g, rdflib.URIRef('https://w3id.org/cdif/provenance/activityType')):
+          g.parse(sys.argv[1], format='turtle')
+          for line in v.describeVocabulary(g, rdflib.URIRef(sys.argv[2])):
               print(line)
           EOF
+          }
+          write_md vocabularies/CDIF_Activities.ttl https://w3id.org/cdif/concepts/provenance/activity/conceptScheme vocabularies/docs/CDIF_Activities.md
+          write_md vocabularies/activityTypes.ttl https://w3id.org/cdif/provenance/activityType vocabularies/docs/activityTypes.md
+          grep -q '^# \*\*Concept scheme:\*\* Concepts for CDIF Provenance Activities' vocabularies/docs/CDIF_Activities.md
           grep -q '^# \*\*Concept scheme:\*\* CDIF provenance activity types' vocabularies/docs/activityTypes.md
       - name: Render HTML
-        run: quarto render vocabularies/docs/activityTypes.md -t html
+        run: |
+          quarto render vocabularies/docs/CDIF_Activities.md -t html
+          quarto render vocabularies/docs/activityTypes.md -t html
       - name: Add case-preserving concept anchors
-        run: python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld --anchors vocabularies/docs/activityTypes.html
+        run: |
+          python tools/buildVocabularyFiles.py vocabularies/CDIF_Activities.json --anchors vocabularies/docs/CDIF_Activities.html
+          python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld --anchors vocabularies/docs/activityTypes.html
       - name: Upload the rendered pages
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
@@ -97,5 +118,5 @@ jobs:
           git config user.email "41898183+github-actions[bot]@users.noreply.github.com"
           git add vocabularies/docs
           if git diff --cached --quiet; then echo "rendered pages unchanged"; exit 0; fi
-          git commit -m "Render activity-type vocabulary pages"
+          git commit -m "Render provenance activity vocabulary pages"
           git push

@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Derivation a skos:Concept ;
+    skos:definition "A process through which a new data entity (dataset or variable) is created from parts or all of pre-existing data entities."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Derivation" ;
+    skos:prefLabel "Derivation"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

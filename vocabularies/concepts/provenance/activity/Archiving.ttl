@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Archiving a skos:Concept ;
+    skos:definition "An activity through which an entity is transferred to a facility charged with its long-term (generally >10 years) preservation."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Archiving" ;
+    skos:prefLabel "Archiving"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:archiving a skos:Concept ;
+    dcterms:isReplacedBy cdifact:Archiving ;
+    owl:deprecated true ;
     skos:definition "An activity during which an entity is transferred to a facility charged with its long-term (generally >10 years) preservation."@en ;
     skos:exactMatch dag:Archiving ;
     skos:example "Depositing a digital object in a trusted data archive guaranteeing preservation for a defined period generally at least 10 years, ideally more."@en ;

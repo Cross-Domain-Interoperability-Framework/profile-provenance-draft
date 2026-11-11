@@ -26,8 +26,9 @@ Most of the root is NOT authored here. Edit the source, never the copy:
 | `examples/exampleCdifProvenance.json`, `examples/exampleEPMAProvenance.json` | mBB block's `example*.json` | same sync |
 | `FrameAndValidate.py` | `Cross-Domain-Interoperability-Framework/validation` `tools/FrameAndValidate.py` | `python tools/sync_frameandvalidate.py --apply` in that repo. Carries a DO-NOT-EDIT banner; CI (`check-frameandvalidate.yml`) fails on any body drift from the normative copy |
 | `examples/*.cdifprov.json` (Galaxy `*.actions.*`, Bennu) | `examples/ROCRATE/*` | the converters in `tools/` — fix the converter and regenerate, not the output |
-| `vocabularies/activityTypes.ttl`, `vocabularies/activityType/*.{jsonld,ttl}` | `vocabularies/activityTypes.jsonld` | `python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld`, committed with the source change; CI (`vocabulary-pages.yml`) fails a PR whose copies are stale |
-| `vocabularies/docs/` | `vocabularies/activityTypes.ttl` | the iSamples `vocab2mdCacheV2.py` markdown writer plus Quarto, run and committed by `vocabulary-pages.yml` on push to `main`; never by hand |
+| `vocabularies/CDIF_Activities.ttl`, `vocabularies/concepts/**/*.{jsonld,ttl}` | `vocabularies/CDIF_Activities.json` (the CDIF provenance activity vocabulary) | `python tools/buildVocabularyFiles.py vocabularies/CDIF_Activities.json`, committed with the source change; CI (`vocabulary-pages.yml`) fails a PR whose copies are stale |
+| `vocabularies/activityTypes.ttl`, `vocabularies/activityType/*.{jsonld,ttl}` | `vocabularies/activityTypes.jsonld` (deprecated v0.1) | `python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld`, committed with the source change; CI (`vocabulary-pages.yml`) fails a PR whose copies are stale |
+| `vocabularies/docs/` | `vocabularies/CDIF_Activities.ttl`, `vocabularies/activityTypes.ttl` | the iSamples `vocab2mdCacheV2.py` markdown writer plus Quarto, run and committed by `vocabulary-pages.yml` on push to `main`; never by hand |
 
 Authored here:
 
@@ -38,11 +39,20 @@ Authored here:
   (`docs/ProvenanceOptions-2026-10.md`), design proposals (`docs/PROPOSAL_*.md`) and the Word source
   documents. The superseded 2026-03 comparison is `archive/ProvenanceOptions.md`;
 - `vocabularies/PROV_Classes.ttl`, the Dagstuhl provenance classes;
-- `vocabularies/activityTypes.jsonld`, the activity-type vocabulary for workflow steps. Validate a change to it
-against the CDIF concept-scheme profile: `profile-conceptscheme`'s `FrameAndValidate.py -v` plus pyshacl
-with its `conceptSchemeRules.shacl`. Keep each `skos:exactMatch`/`skos:broadMatch` pointing at a class that
-exists in `vocabularies/PROV_Classes.ttl`, and each concept's IRI local name equal to its `skos:notation` (the w3id rules
-map the last IRI segment straight onto `vocabularies/activityType/<name>.*`; the build fails otherwise).
+- `vocabularies/CDIF_Activities.json`, the CDIF provenance activity vocabulary
+  (`https://w3id.org/cdif/concepts/provenance/activity/`, plus seven GSBPM 5.2 concepts under
+  `https://w3id.org/cdif/concepts/GSBPM-5.2/activity/`). It is generated outside this repo
+  (`fix_cdif_activities.py`, from the CDIF_Activities draft), with `skos:notation` added here: keep
+  each concept's notation equal to its IRI's last segment, which the build checks and the w3id rules
+  map onto `vocabularies/concepts/<IRI path>.*`. It does NOT yet pass the concept-scheme profile's
+  JSON Schema (it uses term aliases such as `prefLabel`, not `skos:prefLabel`); SHACL passes;
+- `vocabularies/activityTypes.jsonld`, the DEPRECATED v0.1 activity types
+  (`https://w3id.org/cdif/provenance/activityType/`), kept so its IRIs resolve. Every concept is
+  `owl:deprecated` with `dcterms:isReplacedBy` its CDIF replacement, or the geochemistry concept
+  (`https://w3id.org/geochem/vocabulary/<name>`, in geochemBuildingBlocks `vocabularies/`) for the
+  eight ADA laboratory steps; four have no replacement and `extracting` has only `skos:relatedMatch`.
+  Validate a change to either against the CDIF concept-scheme profile: `profile-conceptscheme`'s
+  `FrameAndValidate.py -v` plus pyshacl with its `conceptSchemeRules.shacl`.
 `CDIFProvenanceImplementationGuide.md` is an auto-generated draft from the StructuredSchema.
 Note `agents.md` here is a design analysis of *provenance agents*, not an agent-instructions file.
 

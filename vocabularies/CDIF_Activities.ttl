@@ -1,10 +1,10 @@
-@prefix act: <https://w3id.org/cdif/concepts/provenance/activity/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix gsbpm: <https://w3id.org/cdif/concepts/GSBPM-5.2/activity/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 gsbpm:DataManagement a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:broader gsbpm:OverarchingActivities ;
     skos:definition """Data management is essential as data are produced within many of the activities in the statistical business process and are the key outputs. The main goal of data management is to ensure that data are appropriately used and usable throughout their lifecycle. Managing data throughout their lifecycle covers activities such as planning and evaluation of data management processes as well as establishing and implementing processes related to collection, organisation, use, protection, preservation and disposal of the data.
  How data are managed will be closely linked to the use of the data, which in turn is linked to the statistical business process where the data are created. Both data and the processes in which they are created must be well defined in order to ensure proper data management.
@@ -17,11 +17,12 @@ gsbpm:DataManagement a skos:Concept ;
  - Safeguarding data against technological change, physical media degradation, data corruption; - Performing data integrity checks (e.g. periodic checks providing assurance about the accuracy and consistency of data over its entire lifecycle);
  - Performing disposition activities once the retention period of the data is expired."""@en ;
     skos:exactMatch <http://unece.org/DataManagement> ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataManagement" ;
     skos:prefLabel "Data Management"@en .
 
 gsbpm:DataSupplierManagement a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:broader gsbpm:OverarchingActivities ;
     skos:definition """The Data Supplier Management overarching activity within GSBPM refers to the management of data suppliers that takes place within the scope of the production process. Activities related to management of data suppliers at the corporate level should be considered in the framework of the GAMSO, such as in its Manage Data Suppliers activity under Corporate Support.
  Building on GAMSO's corporate support activity Manage Data Suppliers, which emphasises managing data suppliers, such as ensuring compliance with agreements, this overarching activity within GSBPM extends to technical-level engagement with data suppliers, including those supplying registers.
@@ -31,41 +32,45 @@ gsbpm:DataSupplierManagement a skos:Concept ;
  - Requesting additional information in case of unexpected changes in the data received.
  - Cross-process burden management, profiling and management of contact information (e.g. within registers)."""@en ;
     skos:exactMatch <http://unece.org/DataSupplierManagement> ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataSupplierManagement" ;
     skos:prefLabel "Data Supplier Management"@en .
 
 gsbpm:KnowledgeManagement a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:broader gsbpm:OverarchingActivities ;
     skos:definition """The Knowledge Management overarching activity refers to the management of knowledge specific to the production process. Activities related to knowledge management at the corporate level should be considered in the framework of the GAMSO, such as GAMSO’s Manage Information and Knowledge, under its Corporate Support area.
  This Knowledge Management overarching activity within GSBPM refers specifically to the updating of documentation for the production process (e.g. handbooks, manuals, guidance notes already created within sub-process 3.7 (Finalise production systems)) based on knowledge about it. Managing knowledge in a systematic way using such documentation allows it to inform and improve the production process. It can be taken into account when developing training for those who produce statistics, and can also inform evaluation of the production process.
  Knowledge can be derived from a diverse array of sources, including the experience obtained from each of the individuals involved in the process, which may relate to the code of algorithms, software programmes and scripts used along the statistical lifecycle, good practices, or lessons learned. Reference metadata, analysis of paradata, incidents, process logs, data anomalies, and other subproducts of the statistical process execution, while not knowledge in themselves, can all lead to useful knowledge about the production process which can be documented in order to be passed on to others."""@en ;
     skos:exactMatch <http://unece.org/KnowledgeManagement> ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "KnowledgeManagement" ;
     skos:prefLabel "Knowledge Management"@en .
 
 gsbpm:MetadataManagement a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:broader gsbpm:OverarchingActivities ;
     skos:definition """Metadata has an important role and must be managed at an operational level within the statistical production process, in accordance with relevant corporate policies and standards. When aspects of metadata management are considered at corporate or strategic level (e.g. there are metadata systems that impact large parts of the production system), it should be considered in the framework of the GAMSO.
  46. Good metadata management is essential for the efficient operation of statistical business processes. Metadata are present in every phase, either created, updated or carried forward from a previous phase or reused from another business process. In the context of this model, the emphasis of the overarching activity of metadata management is on the design/creation/revision, updating, use, and archiving of statistical metadata, though metadata on the different sub-processes themselves are also of interest, including as an input for quality management. The key challenge is to ensure that these metadata are captured as early as possible, and stored and transferred from phase to phase alongside the data they refer to. Metadata management strategy and systems are therefore vital to the operation of this model, and these can be facilitated by the GSIM.
  47. The GSIM supports a consistent approach to metadata, facilitating the primary role for metadata, that is, that metadata should uniquely and formally define the content and links between information classes and processes in the statistical information system."""@en ;
     skos:exactMatch <http://unece.org/MetadataManagement> ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "MetadataManagement" ;
     skos:prefLabel "Metadata Management"@en .
 
 gsbpm:ProcessDataManagement a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:broader gsbpm:OverarchingActivities ;
     skos:definition """The Process Data Management overarching activity within GSBPM refers to the management of process data that takes place within the scope of the production process. Activities related to management of process data at the corporate level should be considered in the framework of the GAMSO.
  This overarching activity includes activities of registering, systematising, and using data arising from carrying out the statistical business process. This could include, for example, paradata logs resulting from the execution of code, as well as information arising from fieldwork. (Process metadata, or data about the process by which the data were collected.) This data is not quality information in itself, as it may be very detailed (such as the length of time taken by a single field worker to conduct a single interview), but it could possibly be used to derive quality information (such as total or average time for conducting interviews).
  Such process data can be reviewed to evaluate how the statistical business process is carried out, for example to optimise its efficiency, or to detect possible problems that have occurred and reveal their cause. Process data could also be used to detect and understand patterns in the data used to produce statistics."""@en ;
     skos:exactMatch <http://unece.org/ProcessDataManagement> ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "ProcessDataManagement" ;
     skos:prefLabel "Process Data Management"@en .
 
 gsbpm:QualityManagement a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:broader gsbpm:OverarchingActivities ;
     skos:definition """The quality management overarching activity of GSBPM refers specifically to the management of product and process quality that takes place within the scope of the production process.
  More broadly, the concept of quality concerns organisations, products, sources and processes. Quality at an institutional level (e.g. adoption of a Quality Policy or Quality Assurance Framework) or in areas that are not directly related to the production (e.g., quality of new employee onboarding programme) is considered in the GAMSO.
@@ -88,270 +93,305 @@ gsbpm:QualityManagement a skos:Concept ;
  - Internal or external auditing on the process.
  Quality indicators support a process-oriented quality management. A suggested list of quality indicators for phases and sub-processes of the GSBPM as well as for the overarching quality and Metadata Management processes can be found at the Quality Indicators for the GSBPM – for Statistics derived from Surveys and Administrative Data Sources9. Among others, they can be used as a checklist to identify gaps and/or duplication of work in the organisation."""@en ;
     skos:exactMatch <http://unece.org/QualityManagement> ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "QualityManagement" ;
     skos:prefLabel "Quality Management"@en .
 
-act:Access a skos:Concept ;
+cdifact:Access a skos:Concept ;
     skos:definition "An activity during which an agent realises its rights and abilities to interact with a disseminating agency to obtain an entity."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Access" ;
     skos:prefLabel "Access"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Aggregation a skos:Concept ;
+cdifact:Aggregation a skos:Concept ;
     skos:definition "An activity during which multiple entities are gathered together and assembled into a whole based on a defined set of criteria."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Aggregation" ;
     skos:prefLabel "Aggregation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Analysis a skos:Concept ;
+cdifact:Analysis a skos:Concept ;
     skos:definition "An activity during which one or more entities are studied by examining their constituent parts and the interrelationships between those parts in order to increase the user's knowledge about those entities."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Analysis" ;
     skos:prefLabel "Analysis"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Archiving a skos:Concept ;
+cdifact:Archiving a skos:Concept ;
     skos:definition "An activity through which an entity is transferred to a facility charged with its long-term (generally >10 years) preservation."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Archiving" ;
     skos:prefLabel "Archiving"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Calibration a skos:Concept ;
+cdifact:Calibration a skos:Concept ;
     skos:definition "An activity during which measurement data produced by a (physical) instrument (like a sensor) or similar entity are compared to a reference dataset or other material with known accuracy in order to establish, verify, or document the accuracy of the instrument."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Calibration" ;
     skos:prefLabel "Calibration"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Cataloguing a skos:Concept ;
+cdifact:Cataloguing a skos:Concept ;
     skos:definition "An activity during which the existence of an entity is added to a systematic list."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Cataloguing" ;
     skos:prefLabel "Cataloguing"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Configuration a skos:Concept ;
+cdifact:Configuration a skos:Concept ;
     skos:definition "An activity during which an entity (e.g. a system resource) is modified to grant it desirable properties or dispose it to desirable behaviour (for example by adjusting parameters)."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Configuration" ;
     skos:prefLabel "Configuration"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Count a skos:Concept ;
+cdifact:Count a skos:Concept ;
     skos:definition "An activity which results in an enumeration of some aspect of a population or its members."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Count" ;
     skos:prefLabel "Count"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Creation a skos:Concept ;
+cdifact:Creation a skos:Concept ;
     skos:definition "An activity through which an entity is brought into existence. Serves as a superclass for other more expressive classes that create entities, such as authoring."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Creation" ;
     skos:prefLabel "Creation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DataAdjustmentAndNormalization a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/csda> ;
+cdifact:DataAdjustmentAndNormalization a skos:Concept ;
+    dc:references <https://unece.org/statistics/csda> ;
     skos:definition "Perform seasonal and other statistical adjustments to data values to improve accuracy and align data values to a notionally common scale or a probability distribution to make datasets comparable."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataAdjustmentAndNormalization" ;
     skos:prefLabel "Data Adjustment and Normalization"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DataAndMetadataMappings a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/csda> ;
+cdifact:DataAndMetadataMappings a skos:Concept ;
+    dc:references <https://unece.org/statistics/csda> ;
     skos:definition "Provide correspondences between units, variables and their representations for data integration and alignment."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataAndMetadataMappings" ;
     skos:prefLabel "Data and Metadata Mappings"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DataClassificationAndCoding a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+cdifact:DataClassificationAndCoding a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:closeMatch <http://unece.org/5.2-ClassifyAndCode> ;
     skos:definition "Assign codes to textual descriptions according to pre-determined classification schemes."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataClassificationAndCoding" ;
     skos:prefLabel "Data Classification and Coding"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DataCleaning a skos:Concept ;
-    skos:broader act:DataTransformation ;
+cdifact:DataCleaning a skos:Concept ;
+    skos:broader cdifact:DataTransformation ;
     skos:definition "A data transformation during which erroneous, duplicated, or corrupted data is edited or removed from a volume of data."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataCleaning" ;
     skos:prefLabel "Data Cleaning"@en .
 
-act:DataExtraction a skos:Concept ;
+cdifact:DataExtraction a skos:Concept ;
     skos:definition "An activity through which a part of data is selected and isolated according to some criteria and for a specific purpose."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataExtraction" ;
     skos:prefLabel "Data Extraction"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DataHarmonisation a skos:Concept ;
+cdifact:DataHarmonisation a skos:Concept ;
     skos:definition "An (ex post) activity through which data are transformed to regularise their properties, allowing meaningful collective treatment."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataHarmonisation" ;
     skos:prefLabel "Data Harmonisation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DataIntegration a skos:Concept ;
+cdifact:DataIntegration a skos:Concept ;
     skos:definition "An activity through which multiple data sources are combined into a coherent whole."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataIntegration" ;
     skos:prefLabel "Data Integration"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DataValidation a skos:Concept ;
+cdifact:DataValidation a skos:Concept ;
     skos:definition "An activity during which data is evaluated in relation to some specification or criteria, usually assessing its soundness, justifiability, or appropriateness for a specified purpose."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataValidation" ;
     skos:prefLabel "Data Validation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Derivation a skos:Concept ;
+cdifact:Derivation a skos:Concept ;
     skos:definition "A process through which a new data entity (dataset or variable) is created from parts or all of pre-existing data entities."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Derivation" ;
     skos:prefLabel "Derivation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DigitalPreservation a skos:Concept ;
+cdifact:DigitalPreservation a skos:Concept ;
     skos:definition "Series of managed activities necessary to ensure continued access to digital materials for as long as necessary that ensures materials are accessible, understandable, and valuable to designated communities."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DigitalPreservation" ;
     skos:prefLabel "Digital Preservation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DisclosureControl a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+cdifact:DisclosureControl a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:closeMatch <http://unece.org/6.4-ApplyDisclosureControl> ;
     skos:definition "Ensures that the data (and metadata) to be disseminated or internally stored for future use do not breach the appropriate rules on confidentiality according to either organisational policies and rules, or to the process-specific methodology used."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DisclosureControl" ;
     skos:prefLabel "Disclosure Control"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:ExperimentalDesign a skos:Concept ;
+cdifact:ExperimentalDesign a skos:Concept ;
     skos:definition "The systematic planning of an experiment, including the selection and allocation of experimental units, treatments, controls, and measurement procedures, to evaluate causal relationships while minimizing bias and controlling variability."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "ExperimentalDesign" ;
     skos:prefLabel "Experimental Design"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:FormatStandardization a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/csda> ;
+cdifact:FormatStandardization a skos:Concept ;
+    dc:references <https://unece.org/statistics/csda> ;
     skos:definition "Modify physical representations and data types to conform to standards and to best support interoperability."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "FormatStandardization" ;
     skos:prefLabel "Format Standardization"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Measurement a skos:Concept ;
+cdifact:Measurement a skos:Concept ;
     skos:definition "An activity which results in a quantitative value describing some characteristic of the object of interest."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Measurement" ;
     skos:prefLabel "Measurement"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Observation a skos:Concept ;
+cdifact:Observation a skos:Concept ;
     skos:definition "An activity which results in a record describing the object of interest."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Observation" ;
     skos:prefLabel "Observation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:OutputInterpretationAndExplanation a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+cdifact:OutputInterpretationAndExplanation a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:closeMatch <http://unece.org/6.3-InterpretAndExplainOutputs> ;
     skos:definition "Examination and analysis of statistical outputs to identify and explain patterns, trends, relationships, differences, and unexpected results."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "OutputInterpretationAndExplanation" ;
     skos:prefLabel "Output Interpretation and Explanation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:QualityControlData a skos:Concept ;
-    skos:broader act:QualityControl ;
+cdifact:QualityControlData a skos:Concept ;
+    skos:broader cdifact:QualityControl ;
     skos:definition "An activity through which a data entity's compliance to a set of defined criteria is assessed, resulting in acceptance, rejection or modification of that entity in a set of further activities."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "QualityControlData" ;
     skos:prefLabel "Quality Control (Data)"@en .
 
-act:QualityControlMetadata a skos:Concept ;
-    skos:broader act:QualityControl ;
+cdifact:QualityControlMetadata a skos:Concept ;
+    skos:broader cdifact:QualityControl ;
     skos:definition "An activity through which an entity's metadata compliance to a set of defined criteria is assessed, resulting in acceptance, rejection or modification of that entity in a set of further activities."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "QualityControlMetadata" ;
     skos:prefLabel "Quality Control (Metadata)"@en .
 
-act:SampleExtraction a skos:Concept ;
+cdifact:SampleExtraction a skos:Concept ;
     skos:definition "An activity through which a physical sample is collected from the environment, from a (museum or other) collection, aliquoted from a stock (solution) or otherwise sampled for analysis."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "SampleExtraction" ;
     skos:prefLabel "Extraction (Sample)"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Sampling a skos:Concept ;
+cdifact:Sampling a skos:Concept ;
     skos:definition "An activity through which a portion of an entity is used to represent the whole, for some purpose."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Sampling" ;
     skos:prefLabel "Sampling"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:VariableAndUnitDerivation a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+cdifact:VariableAndUnitDerivation a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:closeMatch <http://unece.org/5.5-DeriveNewVariablesAndUnits> ;
     skos:definition "Derives variables and units that are not explicitly provided in the collection, but are needed to deliver the required outputs."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "VariableAndUnitDerivation" ;
     skos:prefLabel "Variable and Unit Derivation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:Weighting a skos:Concept ;
-    dcterms:references <https://unece.org/statistics/gsbpm-v5.2> ;
+cdifact:Weighting a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
     skos:closeMatch <http://unece.org/5.6-CalculateWeights> ;
     skos:definition "Creates weights for unit data records according to a methodology."@en ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Weighting" ;
     skos:prefLabel "Weighting"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:DataTransformation a skos:Concept ;
+cdifact:DataTransformation a skos:Concept ;
     skos:definition "An activity through which data is modified."@en ;
-    skos:inScheme act:conceptScheme ;
-    skos:narrower act:DataCleaning ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:narrower cdifact:DataCleaning ;
+    skos:notation "DataTransformation" ;
     skos:prefLabel "Data Transformation"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:QualityControl a skos:Concept ;
+cdifact:QualityControl a skos:Concept ;
     skos:definition "An activity through which an entity's compliance to a set of defined criteria is assessed, resulting in acceptance or rejection of that entity in a set of further activities."@en ;
-    skos:inScheme act:conceptScheme ;
-    skos:narrower act:QualityControlData,
-        act:QualityControlMetadata ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:narrower cdifact:QualityControlData,
+        cdifact:QualityControlMetadata ;
+    skos:notation "QualityControl" ;
     skos:prefLabel "Quality Control"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
 gsbpm:OverarchingActivities a skos:Concept ;
-    dcterms:references <https://unece.github.io/GSIM-2.0/>,
+    dc:references <https://unece.github.io/GSIM-2.0/>,
         <https://unece.org/statistics/documents/2019/01/standards/gamso-v12> ;
     skos:definition "The GSBPM recognises several overarching activities that apply throughout the production phases, and across statistical business processes. For example, quality is monitored and checked at various stages of the production. Management of data and metadata is done throughout the process, not at a certain sub-process only. While the production process involves different units and expertise in the organisation at different stages, it is important that these overarching activities are conducted in a consistent manner in accordance with organisation-wide standards and policies, and with close coordination with a central unit."@en ;
     skos:exactMatch <http://unece.org/OverarchingActivities> ;
-    skos:inScheme act:conceptScheme ;
+    skos:inScheme cdifact:conceptScheme ;
     skos:narrower gsbpm:DataManagement,
         gsbpm:DataSupplierManagement,
         gsbpm:KnowledgeManagement,
         gsbpm:MetadataManagement,
         gsbpm:ProcessDataManagement,
         gsbpm:QualityManagement ;
+    skos:notation "OverarchingActivities" ;
     skos:prefLabel "Overarching Activities"@en ;
-    skos:topConceptOf act:conceptScheme .
+    skos:topConceptOf cdifact:conceptScheme .
 
-act:conceptScheme a skos:ConceptScheme ;
+cdifact:conceptScheme a skos:ConceptScheme ;
     skos:definition "This is a list of activities related to the description of provenance for data and related resources used for research, intended to be sufficiently generic to support use across domain and infrastructure boundaries."@en ;
     skos:hasTopConcept gsbpm:OverarchingActivities,
-        act:Access,
-        act:Aggregation,
-        act:Analysis,
-        act:Archiving,
-        act:Calibration,
-        act:Cataloguing,
-        act:Configuration,
-        act:Count,
-        act:Creation,
-        act:DataAdjustmentAndNormalization,
-        act:DataAndMetadataMappings,
-        act:DataClassificationAndCoding,
-        act:DataExtraction,
-        act:DataHarmonisation,
-        act:DataIntegration,
-        act:DataTransformation,
-        act:DataValidation,
-        act:Derivation,
-        act:DigitalPreservation,
-        act:DisclosureControl,
-        act:ExperimentalDesign,
-        act:FormatStandardization,
-        act:Measurement,
-        act:Observation,
-        act:OutputInterpretationAndExplanation,
-        act:QualityControl,
-        act:SampleExtraction,
-        act:Sampling,
-        act:VariableAndUnitDerivation,
-        act:Weighting ;
+        cdifact:Access,
+        cdifact:Aggregation,
+        cdifact:Analysis,
+        cdifact:Archiving,
+        cdifact:Calibration,
+        cdifact:Cataloguing,
+        cdifact:Configuration,
+        cdifact:Count,
+        cdifact:Creation,
+        cdifact:DataAdjustmentAndNormalization,
+        cdifact:DataAndMetadataMappings,
+        cdifact:DataClassificationAndCoding,
+        cdifact:DataExtraction,
+        cdifact:DataHarmonisation,
+        cdifact:DataIntegration,
+        cdifact:DataTransformation,
+        cdifact:DataValidation,
+        cdifact:Derivation,
+        cdifact:DigitalPreservation,
+        cdifact:DisclosureControl,
+        cdifact:ExperimentalDesign,
+        cdifact:FormatStandardization,
+        cdifact:Measurement,
+        cdifact:Observation,
+        cdifact:OutputInterpretationAndExplanation,
+        cdifact:QualityControl,
+        cdifact:SampleExtraction,
+        cdifact:Sampling,
+        cdifact:VariableAndUnitDerivation,
+        cdifact:Weighting ;
     skos:prefLabel "Concepts for CDIF Provenance Activities"@en .
 

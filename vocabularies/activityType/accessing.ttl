@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:accessing a skos:Concept ;
+    dcterms:isReplacedBy cdifact:Access ;
+    owl:deprecated true ;
     skos:definition "An activity during which an agent realises its rights and abilities to approach and interact with an entity."@en ;
     skos:exactMatch dag:Accessing ;
     skos:example "Accessing data through services in a data enclave to perform secure analysis;"@en ;

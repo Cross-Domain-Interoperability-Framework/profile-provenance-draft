@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:DataHarmonisation a skos:Concept ;
+    skos:definition "An (ex post) activity through which data are transformed to regularise their properties, allowing meaningful collective treatment."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataHarmonisation" ;
+    skos:prefLabel "Data Harmonisation"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

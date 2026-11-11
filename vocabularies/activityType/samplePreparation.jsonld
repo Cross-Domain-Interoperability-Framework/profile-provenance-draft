@@ -6,7 +6,10 @@
     "dag": "http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/",
     "at": "https://w3id.org/cdif/provenance/activityType/",
     "skos:broadMatch": {"@type": "@id"},
-    "skos:exactMatch": {"@type": "@id"}
+    "skos:exactMatch": {"@type": "@id"},
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "geochemvoc": "https://w3id.org/geochem/vocabulary/"
   },
   "@id": "at:samplePreparation",
   "@type": ["skos:Concept"],
@@ -19,5 +22,7 @@
     {"@id": "at:sampleDigestion"},
     {"@id": "at:ionMilling"}
   ],
-  "skos:broadMatch": ["dag:IntentionalConditioning"]
+  "skos:broadMatch": ["dag:IntentionalConditioning"],
+  "owl:deprecated": true,
+  "dcterms:isReplacedBy": [{"@id": "geochemvoc:samplePreparation"}]
 }

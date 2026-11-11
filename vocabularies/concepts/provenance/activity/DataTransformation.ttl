@@ -1,0 +1,11 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:DataTransformation a skos:Concept ;
+    skos:definition "An activity through which data is modified."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:narrower cdifact:DataCleaning ;
+    skos:notation "DataTransformation" ;
+    skos:prefLabel "Data Transformation"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

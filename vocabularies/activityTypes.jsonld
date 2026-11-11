@@ -6,7 +6,10 @@
     "dag": "http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/",
     "at": "https://w3id.org/cdif/provenance/activityType/",
     "skos:broadMatch": {"@type": "@id"},
-    "skos:exactMatch": {"@type": "@id"}
+    "skos:exactMatch": {"@type": "@id"},
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "geochemvoc": "https://w3id.org/geochem/vocabulary/"
   },
   "@id": "https://w3id.org/cdif/provenance/activityType",
   "@type": ["skos:ConceptScheme"],
@@ -15,6 +18,7 @@
   "schema:version": "0.2",
   "dcterms:modified": "2026-10-27",
   "skos:editorialNote": [
+    {"@value": "DEPRECATED 2026-11-11. Superseded by the CDIF provenance activity vocabulary, https://w3id.org/cdif/concepts/provenance/activity/conceptScheme. Each concept here is owl:deprecated: the generic ones point to their replacement with dcterms:isReplacedBy; the ADA laboratory steps moved to the geochemistry activity vocabulary, https://w3id.org/geochem/vocabulary/activityTypes; four have no replacement, and extracting has only related concepts. These IRIs stay resolvable.", "@language": "en"},
     {"@value": "Draft, 2026-10-27. Two layers. The top layer is every activity class on the Activity sheet of the ProvWork2025 spreadsheet (23 classes; definitions and examples from the sheet, with its spelling slips fixed as PROV_Classes.ttl fixes them). Data cleaning and Deriving sit under Data transforming and Creating because their sheet definitions say so ('A data transformation during which...', 'A creation process during which...'); the rest are top concepts.", "@language": "en"},
     {"@value": "The narrower layer is the laboratory steps actually used in the 500 TAPP plans in the ADA method registry (Sample preparation 320, Data processing 264, Data acquisition 147, Quality control 86, Instrument calibration 83, Ion milling 39, Sample digestion 30, and seven technique-specific variants used by 1 to 4 plans each). Each sits under the general activity it specialises; the sheet's Geochemistry column supports Sample preparation under Conditioning (intentional) ('crushing, milling; dissolution, leaching, extraction'), Data acquisition under Observing / measuring and Data processing under Data transforming.", "@language": "en"},
     {"@value": "The Dagstuhl class URIs (dag: prefix) are taken from PROV_Classes.ttl in this repository; the sheet has labels but no URIs. That namespace is a draft and may not resolve. Each top-layer concept is a skos:exactMatch to its class; the ADA-derived concepts carry skos:broadMatch to the class of the concept they sit under. Concepts the workshop marked as tentative (a question mark on the label, or 'potential new categories, components of other classes, or folded into context') say so in their own editorial note; revisit them, and the ADA concepts under them, when the workshop settles them.", "@language": "en"},
@@ -30,7 +34,9 @@
       "skos:example": {"@value": "Accessing data through services in a data enclave to perform secure analysis;", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Accessing"]
+      "skos:exactMatch": ["dag:Accessing"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:Access"}]
     },
     {
       "@id": "at:aggregating",
@@ -42,7 +48,9 @@
       "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Aggregating"]
+      "skos:exactMatch": ["dag:Aggregating"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:Aggregation"}]
     },
     {
       "@id": "at:analysing",
@@ -53,7 +61,9 @@
       "skos:example": {"@value": "The calculation of column means and their standard deviations in a table.", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Analyzing"]
+      "skos:exactMatch": ["dag:Analyzing"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:Analysis"}]
     },
     {
       "@id": "at:archiving",
@@ -64,7 +74,9 @@
       "skos:example": {"@value": "Depositing a digital object in a trusted data archive guaranteeing preservation for a defined period generally at least 10 years, ideally more.", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Archiving"]
+      "skos:exactMatch": ["dag:Archiving"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:Archiving"}]
     },
     {
       "@id": "at:calibrating",
@@ -87,9 +99,13 @@
           "skos:scopeNote": {"@value": "Covers technique-specific steps such as 'Laser calibration' and 'Laser ablation calibration'.", "@language": "en"},
           "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
           "skos:broader": [{"@id": "at:calibrating"}],
-          "skos:broadMatch": ["dag:Calibrating"]
+          "skos:broadMatch": ["dag:Calibrating"],
+          "owl:deprecated": true,
+          "dcterms:isReplacedBy": [{"@id": "geochemvoc:instrumentCalibration"}]
         }
-      ]
+      ],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:Calibration"}]
     },
     {
       "@id": "at:cataloguing",
@@ -100,7 +116,9 @@
       "skos:example": {"@value": "Adding metadata about a dataset into the GBIF catalogue of assets; Cataloguing JSON-LD documents embedded in HTML pages via a sitemap.txt file;", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Cataloguing"]
+      "skos:exactMatch": ["dag:Cataloguing"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:Cataloguing"}]
     },
     {
       "@id": "at:intentionalConditioning",
@@ -130,7 +148,9 @@
               "skos:definition": {"@value": "Sample preparation that dissolves a solid sample, typically in acid, to produce a solution for analysis.", "@language": "en"},
               "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
               "skos:broader": [{"@id": "at:samplePreparation"}],
-              "skos:broadMatch": ["dag:IntentionalConditioning"]
+              "skos:broadMatch": ["dag:IntentionalConditioning"],
+              "owl:deprecated": true,
+              "dcterms:isReplacedBy": [{"@id": "geochemvoc:sampleDigestion"}]
             },
             {
               "@id": "at:ionMilling",
@@ -140,12 +160,18 @@
               "skos:definition": {"@value": "Sample preparation that thins or shapes a sample by sputtering it with an ion beam, for example to make an electron-transparent section.", "@language": "en"},
               "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
               "skos:broader": [{"@id": "at:samplePreparation"}],
-              "skos:broadMatch": ["dag:IntentionalConditioning"]
+              "skos:broadMatch": ["dag:IntentionalConditioning"],
+              "owl:deprecated": true,
+              "dcterms:isReplacedBy": [{"@id": "geochemvoc:ionMilling"}]
             }
           ],
-          "skos:broadMatch": ["dag:IntentionalConditioning"]
+          "skos:broadMatch": ["dag:IntentionalConditioning"],
+          "owl:deprecated": true,
+          "dcterms:isReplacedBy": [{"@id": "geochemvoc:samplePreparation"}]
         }
-      ]
+      ],
+      "owl:deprecated": true,
+      "skos:editorialNote": [{"@value": "Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart.", "@language": "en"}]
     },
     {
       "@id": "at:passiveConditioning",
@@ -156,7 +182,9 @@
       "skos:example": {"@value": "For example, a train crash, radiation leak, meteor hitting earth, environmental exposure to chemicals (for biomonitoring), parade or cultural event, volcano eruption", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:PassiveConditioning"]
+      "skos:exactMatch": ["dag:PassiveConditioning"],
+      "owl:deprecated": true,
+      "skos:editorialNote": [{"@value": "Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart.", "@language": "en"}]
     },
     {
       "@id": "at:configuring",
@@ -179,9 +207,13 @@
           "skos:scopeNote": {"@value": "Distinct from instrument calibration, which compares the response with standards of known value. Covers technique-specific steps such as 'ICP-MS tuning and optimization'.", "@language": "en"},
           "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
           "skos:broader": [{"@id": "at:configuring"}],
-          "skos:broadMatch": ["dag:Configuring"]
+          "skos:broadMatch": ["dag:Configuring"],
+          "owl:deprecated": true,
+          "dcterms:isReplacedBy": [{"@id": "geochemvoc:instrumentTuning"}]
         }
-      ]
+      ],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:Configuration"}]
     },
     {
       "@id": "at:consuming",
@@ -191,7 +223,9 @@
       "skos:definition": {"@value": "An activity during which an agent acquires and uses an entity.", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Consuming"]
+      "skos:exactMatch": ["dag:Consuming"],
+      "owl:deprecated": true,
+      "skos:editorialNote": [{"@value": "Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart.", "@language": "en"}]
     },
     {
       "@id": "at:creating",
@@ -213,9 +247,13 @@
           "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
           "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
           "skos:broader": [{"@id": "at:creating"}],
-          "skos:exactMatch": ["dag:Deriving"]
+          "skos:exactMatch": ["dag:Deriving"],
+          "owl:deprecated": true,
+          "dcterms:isReplacedBy": [{"@id": "cdifact:Derivation"}]
         }
-      ]
+      ],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:Creation"}]
     },
     {
       "@id": "at:dataTransforming",
@@ -236,7 +274,9 @@
           "skos:example": {"@value": "For example, data cleaning can include removing impossible combinations of values from the raw data collected for a register of births, marriages, divorces, and deaths.", "@language": "en"},
           "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
           "skos:broader": [{"@id": "at:dataTransforming"}],
-          "skos:exactMatch": ["dag:DataCleaning"]
+          "skos:exactMatch": ["dag:DataCleaning"],
+          "owl:deprecated": true,
+          "dcterms:isReplacedBy": [{"@id": "cdifact:DataCleaning"}]
         },
         {
           "@id": "at:dataProcessing",
@@ -247,9 +287,13 @@
           "skos:definition": {"@value": "An activity that transforms acquired data into reported results, for example background and blank correction, drift correction, matrix correction, applying a calibration, or converting units.", "@language": "en"},
           "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
           "skos:broader": [{"@id": "at:dataTransforming"}],
-          "skos:broadMatch": ["dag:DataTransforming"]
+          "skos:broadMatch": ["dag:DataTransforming"],
+          "owl:deprecated": true,
+          "dcterms:isReplacedBy": [{"@id": "geochemvoc:dataProcessing"}]
         }
-      ]
+      ],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:DataTransformation"}]
     },
     {
       "@id": "at:dataValidating",
@@ -260,7 +304,9 @@
       "skos:example": {"@value": "Checking whether a model prediction is wtihin the Domain of Applicability of the model Confirming that a measured value is over the limit of quantification / Limit of detectionC", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:DataValidating"]
+      "skos:exactMatch": ["dag:DataValidating"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:DataValidation"}]
     },
     {
       "@id": "at:extracting",
@@ -271,7 +317,13 @@
       "skos:example": {"@value": "Includes retreival or all or part of a dataset; Extraction of data from an archive (in the ETL sense); the extraction of a specimen from a collection;", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Extracting"]
+      "skos:exactMatch": ["dag:Extracting"],
+      "owl:deprecated": true,
+      "skos:relatedMatch": [
+        {"@id": "cdifact:DataExtraction"},
+        {"@id": "cdifact:SampleExtraction"}
+      ],
+      "skos:editorialNote": [{"@value": "Deprecated 2026-11-11 with no replacement: no concept in the CDIF provenance activity vocabulary means moving an entity to a new location. Data Extraction and Extraction (Sample) are related, not equivalent.", "@language": "en"}]
     },
     {
       "@id": "at:harmonising",
@@ -283,7 +335,9 @@
       "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Harmonizing"]
+      "skos:exactMatch": ["dag:Harmonizing"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:DataHarmonisation"}]
     },
     {
       "@id": "at:integrating",
@@ -295,7 +349,9 @@
       "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Integrating"]
+      "skos:exactMatch": ["dag:Integrating"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:DataIntegration"}]
     },
     {
       "@id": "at:observingMeasuring",
@@ -317,8 +373,15 @@
           "skos:scopeNote": {"@value": "Covers technique-specific steps such as 'Laser ablation data acquisition' and 'WDS data acquisition'.", "@language": "en"},
           "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
           "skos:broader": [{"@id": "at:observingMeasuring"}],
-          "skos:broadMatch": ["dag:Observing_Measuring"]
+          "skos:broadMatch": ["dag:Observing_Measuring"],
+          "owl:deprecated": true,
+          "dcterms:isReplacedBy": [{"@id": "geochemvoc:dataAcquisition"}]
         }
+      ],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [
+        {"@id": "cdifact:Observation"},
+        {"@id": "cdifact:Measurement"}
       ]
     },
     {
@@ -330,7 +393,9 @@
       "skos:example": {"@value": "Includes digital preservation actions such as file format transformation, e.g. converting data in a proprietary format to a generic non-proprietary, and more preservation ready format to maximise fidelity over time and accessibility and usefulness in the future. Also includes the preservation of physical samples for future use.", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Preserving"]
+      "skos:exactMatch": ["dag:Preserving"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:DigitalPreservation"}]
     },
     {
       "@id": "at:provisioning",
@@ -341,7 +406,9 @@
       "skos:example": {"@value": "The provisioning of a report to a reviewer; the targeted supply of data to a specific user community. The release of a dataset via a public registry; The public release of a report;", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Provisioning"]
+      "skos:exactMatch": ["dag:Provisioning"],
+      "owl:deprecated": true,
+      "skos:editorialNote": [{"@value": "Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart.", "@language": "en"}]
     },
     {
       "@id": "at:qualityControlling",
@@ -362,9 +429,13 @@
           "skos:definition": {"@value": "An activity that assesses data or a process against defined criteria, for example measuring secondary standards, checking precision and accuracy, or flagging anomalous values.", "@language": "en"},
           "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
           "skos:broader": [{"@id": "at:qualityControlling"}],
-          "skos:broadMatch": ["dag:QualityControlling"]
+          "skos:broadMatch": ["dag:QualityControlling"],
+          "owl:deprecated": true,
+          "dcterms:isReplacedBy": [{"@id": "geochemvoc:qualityControl"}]
         }
-      ]
+      ],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:QualityControl"}]
     },
     {
       "@id": "at:sampling",
@@ -375,7 +446,11 @@
       "skos:example": {"@value": "The extraction of a tissue sample from a plant; The selection of participants from a registry; the acquisition of a sediment core from the deep sea;", "@language": "en"},
       "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
       "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-      "skos:exactMatch": ["dag:Sampling"]
+      "skos:exactMatch": ["dag:Sampling"],
+      "owl:deprecated": true,
+      "dcterms:isReplacedBy": [{"@id": "cdifact:Sampling"}]
     }
-  ]
+  ],
+  "owl:deprecated": true,
+  "dcterms:isReplacedBy": {"@id": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"}
 }

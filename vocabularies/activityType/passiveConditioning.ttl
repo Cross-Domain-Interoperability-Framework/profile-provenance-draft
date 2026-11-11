@@ -1,10 +1,14 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:passiveConditioning a skos:Concept ;
+    owl:deprecated true ;
     skos:definition "A non-intentional process in which the state of an entity is changed, such that it impacts or precipitates a planned and subsequent activity."@en ;
+    skos:editorialNote "Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart."@en ;
     skos:exactMatch dag:PassiveConditioning ;
     skos:example "For example, a train crash, radiation leak, meteor hitting earth, environmental exposure to chemicals (for biomonitoring), parade or cultural event, volcano eruption"@en ;
     skos:inScheme cdifprov:activityType ;

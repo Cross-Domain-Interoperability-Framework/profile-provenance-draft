@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "Concept": "skos:Concept",
+    "ConceptScheme": "skos:ConceptScheme",
+    "prefLabel": "skos:prefLabel",
+    "altLabel": "skos:altLabel",
+    "definition": "skos:definition",
+    "broader": {"@id": "skos:broader", "@type": "@id"},
+    "narrower": {"@id": "skos:narrower", "@type": "@id"},
+    "inScheme": {"@id": "skos:inScheme", "@type": "@id"},
+    "notation": "skos:notation",
+    "hasTopConcept": {"@id": "skos:hasTopConcept", "@type": "@id"},
+    "note": "skos:note",
+    "dc": "http://purl.org/dc/terms/",
+    "references": {"@id": "dc:references", "@type": "@id"},
+    "exactMatch": {"@id": "skos:exactMatch", "@type": "@id"},
+    "closeMatch": {"@id": "skos:closeMatch", "@type": "@id"},
+    "relatedMatch": {"@id": "skos:relatedMatch", "@type": "@id"},
+    "broadMatch": {"@id": "skos:broadMatch", "@type": "@id"},
+    "narrowMatch": {"@id": "skos:narrowMatch", "@type": "@id"},
+    "topConceptOf": {"@id": "skos:topConceptOf", "@type": "@id"}
+  },
+  "@id": "https://w3id.org/cdif/concepts/provenance/activity/DataAdjustmentAndNormalization",
+  "@type": "skos:Concept",
+  "prefLabel": {"@value": "Data Adjustment and Normalization", "@language": "en"},
+  "definition": {"@value": "Perform seasonal and other statistical adjustments to data values to improve accuracy and align data values to a notionally common scale or a probability distribution to make datasets comparable.", "@language": "en"},
+  "references": "https://unece.org/statistics/csda",
+  "inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+  "topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+  "notation": "DataAdjustmentAndNormalization"
+}

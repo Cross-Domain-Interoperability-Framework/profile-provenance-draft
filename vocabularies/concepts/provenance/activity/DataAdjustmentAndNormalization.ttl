@@ -1,0 +1,12 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:DataAdjustmentAndNormalization a skos:Concept ;
+    dc:references <https://unece.org/statistics/csda> ;
+    skos:definition "Perform seasonal and other statistical adjustments to data values to improve accuracy and align data values to a notionally common scale or a probability distribution to make datasets comparable."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataAdjustmentAndNormalization" ;
+    skos:prefLabel "Data Adjustment and Normalization"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

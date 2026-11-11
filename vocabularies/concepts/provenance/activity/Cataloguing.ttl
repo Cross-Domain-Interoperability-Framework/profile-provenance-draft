@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Cataloguing a skos:Concept ;
+    skos:definition "An activity during which the existence of an entity is added to a systematic list."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Cataloguing" ;
+    skos:prefLabel "Cataloguing"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

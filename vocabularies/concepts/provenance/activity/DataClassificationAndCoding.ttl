@@ -1,0 +1,13 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:DataClassificationAndCoding a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    skos:closeMatch <http://unece.org/5.2-ClassifyAndCode> ;
+    skos:definition "Assign codes to textual descriptions according to pre-determined classification schemes."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataClassificationAndCoding" ;
+    skos:prefLabel "Data Classification and Coding"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

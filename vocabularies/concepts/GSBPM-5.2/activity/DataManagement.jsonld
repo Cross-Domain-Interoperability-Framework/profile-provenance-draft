@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "Concept": "skos:Concept",
+    "ConceptScheme": "skos:ConceptScheme",
+    "prefLabel": "skos:prefLabel",
+    "altLabel": "skos:altLabel",
+    "definition": "skos:definition",
+    "broader": {"@id": "skos:broader", "@type": "@id"},
+    "narrower": {"@id": "skos:narrower", "@type": "@id"},
+    "inScheme": {"@id": "skos:inScheme", "@type": "@id"},
+    "notation": "skos:notation",
+    "hasTopConcept": {"@id": "skos:hasTopConcept", "@type": "@id"},
+    "note": "skos:note",
+    "dc": "http://purl.org/dc/terms/",
+    "references": {"@id": "dc:references", "@type": "@id"},
+    "exactMatch": {"@id": "skos:exactMatch", "@type": "@id"},
+    "closeMatch": {"@id": "skos:closeMatch", "@type": "@id"},
+    "relatedMatch": {"@id": "skos:relatedMatch", "@type": "@id"},
+    "broadMatch": {"@id": "skos:broadMatch", "@type": "@id"},
+    "narrowMatch": {"@id": "skos:narrowMatch", "@type": "@id"},
+    "topConceptOf": {"@id": "skos:topConceptOf", "@type": "@id"}
+  },
+  "@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataManagement",
+  "@type": "skos:Concept",
+  "prefLabel": {"@value": "Data Management", "@language": "en"},
+  "definition": {"@value": "Data management is essential as data are produced within many of the activities in the statistical business process and are the key outputs. The main goal of data management is to ensure that data are appropriately used and usable throughout their lifecycle. Managing data throughout their lifecycle covers activities such as planning and evaluation of data management processes as well as establishing and implementing processes related to collection, organisation, use, protection, preservation and disposal of the data.\n How data are managed will be closely linked to the use of the data, which in turn is linked to the statistical business process where the data are created. Both data and the processes in which they are created must be well defined in order to ensure proper data management.\n Examples of data management activities include:\n - Designing data structures and associated data sets, and the provenance and flow of data through the statistical business process;\n - Identifying database (repositories) to store the data and administration of the database;\n - Documenting the data (e.g. registering and inventorying data, classifying data according to content, retention or other required classification);\n - Determining retention periods of data and archiving;\n - Securing data against unauthorised access and use;\n - Safeguarding data against technological change, physical media degradation, data corruption; - Performing data integrity checks (e.g. periodic checks providing assurance about the accuracy and consistency of data over its entire lifecycle);\n - Performing disposition activities once the retention period of the data is expired.", "@language": "en"},
+  "broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+  "exactMatch": "http://unece.org/DataManagement",
+  "references": "https://unece.org/statistics/gsbpm-v5.2",
+  "inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+  "notation": "DataManagement"
+}

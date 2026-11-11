@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:sampling a skos:Concept ;
+    dcterms:isReplacedBy cdifact:Sampling ;
+    owl:deprecated true ;
     skos:definition "An activity in which a portion or part of an entity is extracted from or identified within a whole."@en ;
     skos:exactMatch dag:Sampling ;
     skos:example "The extraction of a tissue sample from a plant; The selection of participants from a registry; the acquisition of a sediment core from the deep sea;"@en ;

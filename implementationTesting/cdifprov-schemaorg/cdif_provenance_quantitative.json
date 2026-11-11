@@ -5,7 +5,7 @@
     "dcterms": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
     "bios": "https://bioschemas.org/",
-    "at": "https://w3id.org/cdif/provenance/activityType/",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
     "p": "http://purl.org/net/p-plan#",
     "ex": "https://example.org/cdif-prov/"
   },
@@ -43,7 +43,7 @@
       ],
       "schema:additionalType": [
         {
-          "@id": "at:analysing"
+          "@id": "cdifact:Analysis"
         }
       ],
       "schema:name": "Concentration determination run",
@@ -195,7 +195,7 @@
       ],
       "schema:additionalType": [
         {
-          "@id": "at:sampling"
+          "@id": "cdifact:Sampling"
         }
       ],
       "p:correspondsToStep": {
@@ -263,7 +263,7 @@
       ],
       "schema:additionalType": [
         {
-          "@id": "at:instrumentCalibration"
+          "@id": "cdifact:Calibration"
         }
       ],
       "p:correspondsToStep": {
@@ -415,7 +415,7 @@
       ],
       "schema:additionalType": [
         {
-          "@id": "at:dataAcquisition"
+          "@id": "cdifact:Measurement"
         }
       ],
       "p:correspondsToStep": {
@@ -443,7 +443,7 @@
       ],
       "schema:additionalType": [
         {
-          "@id": "at:dataAcquisition"
+          "@id": "cdifact:Measurement"
         }
       ],
       "p:correspondsToStep": {
@@ -624,7 +624,7 @@
       ],
       "schema:additionalType": [
         {
-          "@id": "at:dataProcessing"
+          "@id": "cdifact:DataTransformation"
         }
       ],
       "p:correspondsToStep": {
@@ -703,7 +703,7 @@
       ],
       "schema:additionalType": [
         {
-          "@id": "at:deriving"
+          "@id": "cdifact:Derivation"
         }
       ],
       "p:correspondsToStep": {
@@ -808,7 +808,7 @@
       ],
       "schema:additionalType": [
         {
-          "@id": "at:analysing"
+          "@id": "cdifact:Analysis"
         }
       ],
       "p:correspondsToStep": {
@@ -881,7 +881,7 @@
       ],
       "schema:additionalType": [
         {
-          "@id": "at:qualityControl"
+          "@id": "cdifact:QualityControl"
         }
       ],
       "p:correspondsToStep": {

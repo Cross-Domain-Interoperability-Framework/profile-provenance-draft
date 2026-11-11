@@ -1,0 +1,12 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:FormatStandardization a skos:Concept ;
+    dc:references <https://unece.org/statistics/csda> ;
+    skos:definition "Modify physical representations and data types to conform to standards and to best support interoperability."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "FormatStandardization" ;
+    skos:prefLabel "Format Standardization"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

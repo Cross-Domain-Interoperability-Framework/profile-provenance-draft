@@ -1,0 +1,13 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:VariableAndUnitDerivation a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    skos:closeMatch <http://unece.org/5.5-DeriveNewVariablesAndUnits> ;
+    skos:definition "Derives variables and units that are not explicitly provided in the collection, but are needed to deliver the required outputs."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "VariableAndUnitDerivation" ;
+    skos:prefLabel "Variable and Unit Derivation"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

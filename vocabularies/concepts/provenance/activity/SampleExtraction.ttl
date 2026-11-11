@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:SampleExtraction a skos:Concept ;
+    skos:definition "An activity through which a physical sample is collected from the environment, from a (museum or other) collection, aliquoted from a stock (solution) or otherwise sampled for analysis."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "SampleExtraction" ;
+    skos:prefLabel "Extraction (Sample)"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+
