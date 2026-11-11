@@ -34,7 +34,6 @@
      {
         "prov:entity": {"@id": "ex:processedData01"},
         "prov:hadRole": {"@id": "ex:InputData"}
-        ]
       }
     ],
     "prov:qualifiedAssociation": {
@@ -83,8 +82,4 @@
         "prov:entity": {"@id": "ex:sourceData01"},
         "prov:hadActivity": {"@id": "ex:processing01"}
       }
-    }
-    }
-
-  
 }
