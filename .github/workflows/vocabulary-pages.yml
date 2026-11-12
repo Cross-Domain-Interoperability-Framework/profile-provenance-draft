@@ -12,8 +12,9 @@
 #   - tools/buildVocabularyFiles.py writes the whole-scheme .ttl beside the source and one
 #     .jsonld/.ttl per concept. Those are committed with the change, and the `check` job
 #     fails a PR whose generated files are stale.
-#   - the iSamples vocabulary tooling (isamplesorg/vocabularies, vocab2mdCacheV2.py) writes
-#     Quarto markdown from the .ttl and Quarto renders it to HTML. The `render` job
+#   - the iSamples vocabulary tooling (isamplesorg/vocabularyTemplate, vocab2mdCacheV2.py)
+#     writes Quarto markdown from the .ttl, including each term's owl:deprecated,
+#     dcterms:isReplacedBy and skos:editorialNote, and Quarto renders it to HTML. The `render` job
 #     commits that to vocabularies/docs/ on main, because GitHub Pages serves
 #     main as it is; on a PR it only renders, and uploads the pages as an artifact.
 # w3id.org/cdif/concepts/provenance/activity[/<concept>], cdif/concepts/GSBPM-5.2/activity/
@@ -66,10 +67,11 @@ jobs:
       - name: Check out the iSamples vocabulary tooling
         uses: actions/checkout@v4
         with:
-          repository: isamplesorg/vocabularies
-          # isamplesorg/vocabularies PR #40: its requirements pin setuptools<81, which
+          repository: isamplesorg/vocabularyTemplate
+          # isamplesorg/vocabularyTemplate PR #4 (merged): the markdown writer reports deprecation,
+          # replacements and editorial notes. Its requirements pin setuptools<81, which
           # rdflib-sqlalchemy (imported by vocab2mdCacheV2) needs on Python 3.12.
-          ref: 43af182f656ab09ffb3dce958bdccb5d640c89d2
+          ref: 411716c5367a71420b04c107427ae310c0e5a4ee
           path: .isamples
       - uses: actions/setup-python@v5
         with:
