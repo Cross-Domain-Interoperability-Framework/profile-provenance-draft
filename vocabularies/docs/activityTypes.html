@@ -108,6 +108,15 @@ ul.task-list li input[type="checkbox"] {
 <p>Vocabulary last modified: 2026-10-27</p>
 <p>subtitle: Kinds of activity in a research, laboratory or data workflow. A workflow step (schema:step, or a prov:Activity in a multi-activity chain) is typed with one of these concepts through schema:additionalType, while its schema:name stays free to say what the step specifically did. Each concept is mapped to the provenance activity classes proposed at the Dagstuhl workshop (PROV_Classes.ttl).</p>
 <p>Namespace: <a href="https://w3id.org/cdif/provenance/activityType"><code>https://w3id.org/cdif/provenance/activityType</code></a></p>
+<ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"><code>cdifact:conceptScheme</code></a></li>
+<li><strong>Editorial note:</strong> DEPRECATED 2026-11-11. Superseded by the CDIF provenance activity vocabulary, https://w3id.org/cdif/concepts/provenance/activity/conceptScheme. Each concept here is owl:deprecated: the generic ones point to their replacement with dcterms:isReplacedBy; the ADA laboratory steps moved to the geochemistry activity vocabulary, https://w3id.org/geochem/vocabulary/activityTypes; four have no replacement, and extracting has only related concepts. These IRIs stay resolvable.</li>
+<li><strong>Editorial note:</strong> Draft, 2026-10-27. Two layers. The top layer is every activity class on the Activity sheet of the ProvWork2025 spreadsheet (23 classes; definitions and examples from the sheet, with its spelling slips fixed as PROV_Classes.ttl fixes them). Data cleaning and Deriving sit under Data transforming and Creating because their sheet definitions say so (‘A data transformation during which…’, ‘A creation process during which…’); the rest are top concepts.</li>
+<li><strong>Editorial note:</strong> The Dagstuhl class URIs (dag: prefix) are taken from PROV_Classes.ttl in this repository; the sheet has labels but no URIs. That namespace is a draft and may not resolve. Each top-layer concept is a skos:exactMatch to its class; the ADA-derived concepts carry skos:broadMatch to the class of the concept they sit under. Concepts the workshop marked as tentative (a question mark on the label, or ‘potential new categories, components of other classes, or folded into context’) say so in their own editorial note; revisit them, and the ADA concepts under them, when the workshop settles them.</li>
+<li><strong>Editorial note:</strong> The https://w3id.org/cdif/provenance/activityType identifiers do not resolve yet; they need a w3id.org redirect.</li>
+<li><strong>Editorial note:</strong> The narrower layer is the laboratory steps actually used in the 500 TAPP plans in the ADA method registry (Sample preparation 320, Data processing 264, Data acquisition 147, Quality control 86, Instrument calibration 83, Ion milling 39, Sample digestion 30, and seven technique-specific variants used by 1 to 4 plans each). Each sits under the general activity it specialises; the sheet’s Geochemistry column supports Sample preparation under Conditioning (intentional) (‘crushing, milling; dissolution, leaching, extraction’), Data acquisition under Observing / measuring and Data processing under Data transforming.</li>
+</ul>
 <p><strong>History</strong></p>
 <ul>
 <li><p><a href="#accessing">Accessing</a></p></li>
@@ -163,6 +172,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="accessing" class="level2" data-number="1.1">
 <h2 data-number="1.1" data-anchor-id="accessing"><span class="header-section-number">1.1</span> Accessing</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Access"><code>cdifact:Access</code></a></li>
 <li>An activity during which an agent realises its rights and abilities to approach and interact with an entity.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/accessing</li>
 </ul>
@@ -171,6 +182,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="aggregating" class="level2" data-number="1.2">
 <h2 data-number="1.2" data-anchor-id="aggregating"><span class="header-section-number">1.2</span> Aggregating</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Aggregation"><code>cdifact:Aggregation</code></a></li>
+<li><strong>Editorial note:</strong> Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.</li>
 <li>An activity during which multiple entities are gathered together and assembled into a whole based on a defined set of criteria.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/aggregating</li>
 </ul>
@@ -179,6 +193,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="analysing" class="level2" data-number="1.3">
 <h2 data-number="1.3" data-anchor-id="analysing"><span class="header-section-number">1.3</span> Analysing</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Analysis"><code>cdifact:Analysis</code></a></li>
 <li>An activity during which one or more entities are studied by examining their constituent parts and the interrelationships between those parts in order to increase one’s knowledge about those entities.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/analysing</li>
 </ul>
@@ -187,6 +203,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="archiving" class="level2" data-number="1.4">
 <h2 data-number="1.4" data-anchor-id="archiving"><span class="header-section-number">1.4</span> Archiving</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Archiving"><code>cdifact:Archiving</code></a></li>
 <li>An activity during which an entity is transferred to a facility charged with its long-term (generally &gt;10 years) preservation.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/archiving</li>
 </ul>
@@ -195,6 +213,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="cataloguing" class="level2" data-number="1.5">
 <h2 data-number="1.5" data-anchor-id="cataloguing"><span class="header-section-number">1.5</span> Cataloguing</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Cataloguing"><code>cdifact:Cataloguing</code></a></li>
 <li>An activity during which the existence of an entity is described in a systematic list.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/cataloguing</li>
 </ul>
@@ -203,6 +223,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="consuming" class="level2" data-number="1.6">
 <h2 data-number="1.6" data-anchor-id="consuming"><span class="header-section-number">1.6</span> Consuming</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Editorial note:</strong> Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart.</li>
 <li>An activity during which an agent acquires and uses an entity.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/consuming</li>
 </ul>
@@ -211,6 +233,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-validating" class="level2" data-number="1.7">
 <h2 data-number="1.7" data-anchor-id="data-validating"><span class="header-section-number">1.7</span> Data validating</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/DataValidation"><code>cdifact:DataValidation</code></a></li>
 <li>An activity during which a volume of data is evaluated in relation to some specification or criteria, usually assessing its soundness, justifiability, or appropriateness for a given purpose.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/dataValidating</li>
 </ul>
@@ -219,6 +243,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="extracting" class="level2" data-number="1.8">
 <h2 data-number="1.8" data-anchor-id="extracting"><span class="header-section-number">1.8</span> Extracting</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Editorial note:</strong> Deprecated 2026-11-11 with no replacement: no concept in the CDIF provenance activity vocabulary means moving an entity to a new location. Data Extraction and Extraction (Sample) are related, not equivalent.</li>
 <li>An activity during which an entity is moved to a new location.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/extracting</li>
 </ul>
@@ -227,6 +253,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="harmonising" class="level2" data-number="1.9">
 <h2 data-number="1.9" data-anchor-id="harmonising"><span class="header-section-number">1.9</span> Harmonising</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/DataHarmonisation"><code>cdifact:DataHarmonisation</code></a></li>
+<li><strong>Editorial note:</strong> Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.</li>
 <li>An activity during which a set of entities are transformed to regularise their properties, allowing meaningful collective treatment.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/harmonising</li>
 </ul>
@@ -235,6 +264,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="integrating" class="level2" data-number="1.10">
 <h2 data-number="1.10" data-anchor-id="integrating"><span class="header-section-number">1.10</span> Integrating</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/DataIntegration"><code>cdifact:DataIntegration</code></a></li>
+<li><strong>Editorial note:</strong> Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.</li>
 <li>An activity during which multiple entities are unified into a coherent whole, often losing their distinctiveness.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/integrating</li>
 </ul>
@@ -243,6 +275,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="conditioning-passive" class="level2" data-number="1.11">
 <h2 data-number="1.11" data-anchor-id="conditioning-passive"><span class="header-section-number">1.11</span> Conditioning (passive)</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Editorial note:</strong> Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart.</li>
 <li>A non-intentional process in which the state of an entity is changed, such that it impacts or precipitates a planned and subsequent activity.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/passiveConditioning</li>
 </ul>
@@ -251,6 +285,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="preserving" class="level2" data-number="1.12">
 <h2 data-number="1.12" data-anchor-id="preserving"><span class="header-section-number">1.12</span> Preserving</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/DigitalPreservation"><code>cdifact:DigitalPreservation</code></a></li>
 <li>An activity during which an entity is modified to stabilise its make-up and properties, facilitating future use.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/preserving</li>
 </ul>
@@ -259,6 +295,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="provisioning" class="level2" data-number="1.13">
 <h2 data-number="1.13" data-anchor-id="provisioning"><span class="header-section-number">1.13</span> Provisioning</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Editorial note:</strong> Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart.</li>
 <li>An activity during which an agent supplies an entity to other agents.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/provisioning</li>
 </ul>
@@ -267,6 +305,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="sampling" class="level2" data-number="1.14">
 <h2 data-number="1.14" data-anchor-id="sampling"><span class="header-section-number">1.14</span> Sampling</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Sampling"><code>cdifact:Sampling</code></a></li>
 <li>An activity in which a portion or part of an entity is extracted from or identified within a whole.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/sampling</li>
 </ul>
@@ -275,6 +315,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="calibrating" class="level2" data-number="1.15">
 <h2 data-number="1.15" data-anchor-id="calibrating"><span class="header-section-number">1.15</span> Calibrating</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Calibration"><code>cdifact:Calibration</code></a></li>
+<li><strong>Editorial note:</strong> Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.</li>
 <li>An activity during which measurement data produced by an entity are compared to a reference dataset with known accuracy in order to establish, verify, or document the accuracy of the entity.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/calibrating</li>
 </ul>
@@ -282,6 +325,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="instrument-calibration" class="level3" data-number="1.15.1">
 <h3 data-number="1.15.1" data-anchor-id="instrument-calibration"><span class="header-section-number">1.15.1</span> Instrument calibration</h3>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/geochem/vocabulary/instrumentCalibration"><code>geochemvoc:instrumentCalibration</code></a></li>
 <li>Child of: <a href="#calibrating"><code>calibrating</code></a></li>
 <li>An activity that measures reference materials or standards of known value to establish the relationship between the instrument’s response and the quantity being measured.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/instrumentCalibration</li>
@@ -292,6 +337,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="configuring" class="level2" data-number="1.16">
 <h2 data-number="1.16" data-anchor-id="configuring"><span class="header-section-number">1.16</span> Configuring</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Configuration"><code>cdifact:Configuration</code></a></li>
+<li><strong>Editorial note:</strong> Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.</li>
 <li>An activity during which an entity is modified to grant it desirable properties or dispose it to desirable behaviour.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/configuring</li>
 </ul>
@@ -299,6 +347,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="instrument-tuning" class="level3" data-number="1.16.1">
 <h3 data-number="1.16.1" data-anchor-id="instrument-tuning"><span class="header-section-number">1.16.1</span> Instrument tuning</h3>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/geochem/vocabulary/instrumentTuning"><code>geochemvoc:instrumentTuning</code></a></li>
 <li>Child of: <a href="#configuring"><code>configuring</code></a></li>
 <li>An activity that adjusts instrument settings to optimise performance for a measurement, judged by the instrument’s response rather than against reference materials of known value.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/instrumentTuning</li>
@@ -309,6 +359,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="creating" class="level2" data-number="1.17">
 <h2 data-number="1.17" data-anchor-id="creating"><span class="header-section-number">1.17</span> Creating</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Creation"><code>cdifact:Creation</code></a></li>
 <li>An activity through which an entity is brought into existence. Serves as a superclass for other more expressive classes that create entities, such as authoring.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/creating</li>
 </ul>
@@ -316,6 +368,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="deriving" class="level3" data-number="1.17.1">
 <h3 data-number="1.17.1" data-anchor-id="deriving"><span class="header-section-number">1.17.1</span> Deriving</h3>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Derivation"><code>cdifact:Derivation</code></a></li>
+<li><strong>Editorial note:</strong> Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.</li>
 <li>Child of: <a href="#creating"><code>creating</code></a></li>
 <li>A creation process during which a new entity arises from parts or all of pre-existing entities.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/deriving</li>
@@ -326,6 +381,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="conditioning-intentional" class="level2" data-number="1.18">
 <h2 data-number="1.18" data-anchor-id="conditioning-intentional"><span class="header-section-number">1.18</span> Conditioning (intentional)</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Editorial note:</strong> Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart.</li>
 <li>An activity in which the state of an entity is intentionally changed by an agent, in preparation for a specified and subsequent activity.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/intentionalConditioning</li>
 </ul>
@@ -333,6 +390,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="sample-preparation" class="level3" data-number="1.18.1">
 <h3 data-number="1.18.1" data-anchor-id="sample-preparation"><span class="header-section-number">1.18.1</span> Sample preparation</h3>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/geochem/vocabulary/samplePreparation"><code>geochemvoc:samplePreparation</code></a></li>
 <li>Child of: <a href="#intentionalConditioning"><code>intentionalConditioning</code></a></li>
 <li>An activity that changes the physical or chemical state of a sample to make it suitable for measurement, for example cutting, mounting, polishing, coating, crushing, sieving or dissolving it.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/samplePreparation</li>
@@ -341,6 +400,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="ion-milling" class="level4" data-number="1.18.1.1">
 <h4 data-number="1.18.1.1" data-anchor-id="ion-milling"><span class="header-section-number">1.18.1.1</span> Ion milling</h4>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/geochem/vocabulary/ionMilling"><code>geochemvoc:ionMilling</code></a></li>
 <li>Child of: <a href="#samplePreparation"><code>samplePreparation</code></a></li>
 <li>Sample preparation that thins or shapes a sample by sputtering it with an ion beam, for example to make an electron-transparent section.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/ionMilling</li>
@@ -350,6 +411,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="sample-digestion" class="level4" data-number="1.18.1.2">
 <h4 data-number="1.18.1.2" data-anchor-id="sample-digestion"><span class="header-section-number">1.18.1.2</span> Sample digestion</h4>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/geochem/vocabulary/sampleDigestion"><code>geochemvoc:sampleDigestion</code></a></li>
 <li>Child of: <a href="#samplePreparation"><code>samplePreparation</code></a></li>
 <li>Sample preparation that dissolves a solid sample, typically in acid, to produce a solution for analysis.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/sampleDigestion</li>
@@ -361,6 +424,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="observing-measuring" class="level2" data-number="1.19">
 <h2 data-number="1.19" data-anchor-id="observing-measuring"><span class="header-section-number">1.19</span> Observing / measuring</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Measurement"><code>cdifact:Measurement</code></a></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/Observation"><code>cdifact:Observation</code></a></li>
 <li>An activity during which an entity gathers data or information about another entity or itself. Measuring is observing during which reference standards or similar entities are used for the quantitative comparison of properties.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/observingMeasuring</li>
 </ul>
@@ -368,6 +434,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-acquisition" class="level3" data-number="1.19.1">
 <h3 data-number="1.19.1" data-anchor-id="data-acquisition"><span class="header-section-number">1.19.1</span> Data acquisition</h3>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/geochem/vocabulary/dataAcquisition"><code>geochemvoc:dataAcquisition</code></a></li>
 <li>Child of: <a href="#observingMeasuring"><code>observingMeasuring</code></a></li>
 <li>An activity in which an instrument or observer measures or observes the object of study and records the result as data.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/dataAcquisition</li>
@@ -378,6 +446,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="quality-controlling" class="level2" data-number="1.20">
 <h2 data-number="1.20" data-anchor-id="quality-controlling"><span class="header-section-number">1.20</span> Quality controlling</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/QualityControl"><code>cdifact:QualityControl</code></a></li>
+<li><strong>Editorial note:</strong> Tentative in ProvWork2025: the workshop label carries a question mark.</li>
 <li>An activity during which an entity’s compliance to a set of defined criteria is assessed, resulting in acceptance or rejection of that entity in a set of further activities.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/qualityControlling</li>
 </ul>
@@ -385,6 +456,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="quality-control" class="level3" data-number="1.20.1">
 <h3 data-number="1.20.1" data-anchor-id="quality-control"><span class="header-section-number">1.20.1</span> Quality control</h3>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/geochem/vocabulary/qualityControl"><code>geochemvoc:qualityControl</code></a></li>
 <li>Child of: <a href="#qualityControlling"><code>qualityControlling</code></a></li>
 <li>An activity that assesses data or a process against defined criteria, for example measuring secondary standards, checking precision and accuracy, or flagging anomalous values.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/qualityControl</li>
@@ -395,6 +468,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-transforming" class="level2" data-number="1.21">
 <h2 data-number="1.21" data-anchor-id="data-transforming"><span class="header-section-number">1.21</span> Data transforming</h2>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/DataTransformation"><code>cdifact:DataTransformation</code></a></li>
 <li>An activity during which a volume of data is modified.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/dataTransforming</li>
 </ul>
@@ -402,6 +477,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-cleaning" class="level3" data-number="1.21.1">
 <h3 data-number="1.21.1" data-anchor-id="data-cleaning"><span class="header-section-number">1.21.1</span> Data cleaning</h3>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/cdif/concepts/provenance/activity/DataCleaning"><code>cdifact:DataCleaning</code></a></li>
 <li>Child of: <a href="#dataTransforming"><code>dataTransforming</code></a></li>
 <li>A data transformation during which erroneous, duplicated, or corrupted data is removed from a volume of data.</li>
 <li>Concept URI: https://w3id.org/cdif/provenance/activityType/dataCleaning</li>
@@ -411,6 +488,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-processing" class="level3" data-number="1.21.2">
 <h3 data-number="1.21.2" data-anchor-id="data-processing"><span class="header-section-number">1.21.2</span> Data processing</h3>
 <ul>
+<li><strong>Deprecated.</strong></li>
+<li><strong>Replaced by:</strong> <a href="https://w3id.org/geochem/vocabulary/dataProcessing"><code>geochemvoc:dataProcessing</code></a></li>
 <li>Child of: <a href="#dataTransforming"><code>dataTransforming</code></a></li>
 <li>An activity that transforms acquired data into reported results, for example background and blank correction, drift correction, matrix correction, applying a calibration, or converting units.</li>
 <li><strong>Alternate labels:</strong> Data reduction</li>
