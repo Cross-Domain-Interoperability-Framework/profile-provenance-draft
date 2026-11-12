@@ -1,0 +1,679 @@
+---
+comment: | 
+  WARNING: This file is generated. Any edits will be lost!
+format:
+  html:
+    ascii: true
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    anchor-sections: false
+    number-depth: 8
+execute:
+  echo: false
+---
+
+[]{#ConceptsforCDIFProvenanceActivities}
+
+# **Concept scheme:** Concepts for CDIF Provenance Activities
+
+no modified date
+
+subtitle: 
+  This is a list of activities related to the description of provenance for data and related resources used for research, intended to be sufficiently generic to support use across domain and infrastructure boundaries.
+
+Namespace: 
+[`https://w3id.org/cdif/concepts/provenance/activity/conceptScheme`](https://w3id.org/cdif/concepts/provenance/activity/conceptScheme)
+
+**History**
+
+
+- [Access](#access)
+
+- [Aggregation](#aggregation)
+
+- [Analysis](#analysis)
+
+- [Archiving](#archiving)
+
+- [Calibration](#calibration)
+
+- [Cataloguing](#cataloguing)
+
+- [Configuration](#configuration)
+
+- [Count](#count)
+
+- [Creation](#creation)
+
+- [Data Adjustment and Normalization](#dataadjustmentandnormalization)
+
+- [Data and Metadata Mappings](#dataandmetadatamappings)
+
+- [Data Classification and Coding](#dataclassificationandcoding)
+
+- [Data Extraction](#dataextraction)
+
+- [Data Harmonisation](#dataharmonisation)
+
+- [Data Integration](#dataintegration)
+
+- [Data Validation](#datavalidation)
+
+- [Derivation](#derivation)
+
+- [Digital Preservation](#digitalpreservation)
+
+- [Disclosure Control](#disclosurecontrol)
+
+- [Experimental Design](#experimentaldesign)
+
+- [Format Standardization](#formatstandardization)
+
+- [Measurement](#measurement)
+
+- [Observation](#observation)
+
+- [Output Interpretation and Explanation](#outputinterpretationandexplanation)
+
+- [Extraction (Sample)](#sampleextraction)
+
+- [Sampling](#sampling)
+
+- [Variable and Unit Derivation](#variableandunitderivation)
+
+- [Weighting](#weighting)
+
+- [Data Transformation](#datatransformation)
+    - [Data Cleaning](#datacleaning)
+
+- [Quality Control](#qualitycontrol)
+    - [Quality Control (Data)](#qualitycontroldata)
+    - [Quality Control (Metadata)](#qualitycontrolmetadata)
+
+- [Overarching Activities](#overarchingactivities)
+    - [Data Management](#datamanagement)
+    - [Data Supplier Management](#datasuppliermanagement)
+    - [Knowledge Management](#knowledgemanagement)
+    - [Metadata Management](#metadatamanagement)
+    - [Process Data Management](#processdatamanagement)
+    - [Quality Management](#qualitymanagement)
+
+**Concepts**
+
+[]{#access}
+
+##  Access
+- An activity during which an agent realises its rights and abilities
+to interact with a disseminating agency to obtain an entity.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Access
+
+
+
+[]{#aggregation}
+
+##  Aggregation
+- An activity during which multiple entities are gathered together and
+assembled into a whole based on a defined set of criteria.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Aggregation
+
+
+
+[]{#analysis}
+
+##  Analysis
+- An activity during which one or more entities are studied by
+examining their constituent parts and the interrelationships between
+those parts in order to increase the user's knowledge about those
+entities.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Analysis
+
+
+
+[]{#archiving}
+
+##  Archiving
+- An activity through which an entity is transferred to a facility
+charged with its long-term (generally >10 years) preservation.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Archiving
+
+
+
+[]{#calibration}
+
+##  Calibration
+- An activity during which measurement data produced by a (physical)
+instrument (like a sensor) or similar entity are compared to a
+reference dataset or other material with known accuracy in order to
+establish, verify, or document the accuracy of the instrument.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Calibration
+
+
+
+[]{#cataloguing}
+
+##  Cataloguing
+- An activity during which the existence of an entity is added to a
+systematic list.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Cataloguing
+
+
+
+[]{#configuration}
+
+##  Configuration
+- An activity during which an entity (e.g. a system resource) is
+modified to grant it desirable properties or dispose it to desirable
+behaviour (for example by adjusting parameters).
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Configuration
+
+
+
+[]{#count}
+
+##  Count
+- An activity which results in an enumeration of some aspect of a
+population or its members.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Count
+
+
+
+[]{#creation}
+
+##  Creation
+- An activity through which an entity is brought into existence.
+Serves as a superclass for other more expressive classes that create
+entities, such as authoring.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Creation
+
+
+
+[]{#dataadjustmentandnormalization}
+
+##  Data Adjustment and Normalization
+- Perform seasonal and other statistical adjustments to data values to
+improve accuracy and align data values to a notionally common scale or
+a probability distribution to make datasets comparable.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataAdjustmentAndNormalization
+
+
+
+[]{#dataandmetadatamappings}
+
+##  Data and Metadata Mappings
+- Provide correspondences between units, variables and their
+representations for data integration and alignment.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataAndMetadataMappings
+
+
+
+[]{#dataclassificationandcoding}
+
+##  Data Classification and Coding
+- Assign codes to textual descriptions according to pre-determined
+classification schemes.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataClassificationAndCoding
+
+
+
+[]{#dataextraction}
+
+##  Data Extraction
+- An activity through which a part of data is selected and isolated
+according to some criteria and for a specific purpose.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataExtraction
+
+
+
+[]{#dataharmonisation}
+
+##  Data Harmonisation
+- An (ex post) activity through which data are transformed to
+regularise their properties, allowing meaningful collective treatment.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataHarmonisation
+
+
+
+[]{#dataintegration}
+
+##  Data Integration
+- An activity through which multiple data sources are combined into a
+coherent whole.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataIntegration
+
+
+
+[]{#datavalidation}
+
+##  Data Validation
+- An activity during which data is evaluated in relation to some
+specification or criteria, usually assessing its soundness,
+justifiability, or appropriateness for a specified purpose.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataValidation
+
+
+
+[]{#derivation}
+
+##  Derivation
+- A process through which a new data entity (dataset or variable) is
+created from parts or all of pre-existing data entities.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Derivation
+
+
+
+[]{#digitalpreservation}
+
+##  Digital Preservation
+- Series of managed activities necessary to ensure continued access to
+digital materials for as long as necessary that ensures materials are
+accessible, understandable, and valuable to designated communities.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DigitalPreservation
+
+
+
+[]{#disclosurecontrol}
+
+##  Disclosure Control
+- Ensures that the data (and metadata) to be disseminated or
+internally stored for future use do not breach the appropriate rules
+on confidentiality according to either organisational policies and
+rules, or to the process-specific methodology used.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DisclosureControl
+
+
+
+[]{#experimentaldesign}
+
+##  Experimental Design
+- The systematic planning of an experiment, including the selection
+and allocation of experimental units, treatments, controls, and
+measurement procedures, to evaluate causal relationships while
+minimizing bias and controlling variability.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/ExperimentalDesign
+
+
+
+[]{#formatstandardization}
+
+##  Format Standardization
+- Modify physical representations and data types to conform to
+standards and to best support interoperability.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/FormatStandardization
+
+
+
+[]{#measurement}
+
+##  Measurement
+- An activity which results in a quantitative value describing some
+characteristic of the object of interest.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Measurement
+
+
+
+[]{#observation}
+
+##  Observation
+- An activity which results in a record describing the object of
+interest.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Observation
+
+
+
+[]{#outputinterpretationandexplanation}
+
+##  Output Interpretation and Explanation
+- Examination and analysis of statistical outputs to identify and
+explain patterns, trends, relationships, differences, and unexpected
+results.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/OutputInterpretationAndExplanation
+
+
+
+[]{#sampleextraction}
+
+##  Extraction (Sample)
+- An activity through which a physical sample is collected from the
+environment, from a (museum or other) collection, aliquoted from a
+stock (solution) or otherwise sampled for analysis.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/SampleExtraction
+
+
+
+[]{#sampling}
+
+##  Sampling
+- An activity through which a portion of an entity is used to
+represent the whole, for some purpose.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Sampling
+
+
+
+[]{#variableandunitderivation}
+
+##  Variable and Unit Derivation
+- Derives variables and units that are not explicitly provided in the
+collection, but are needed to deliver the required outputs.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/VariableAndUnitDerivation
+
+
+
+[]{#weighting}
+
+##  Weighting
+- Creates weights for unit data records according to a methodology.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Weighting
+
+
+
+[]{#datatransformation}
+
+##  Data Transformation
+- An activity through which data is modified.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataTransformation
+
+
+[]{#datacleaning}
+
+###  Data Cleaning
+- Child of:
+ [`DataTransformation`](#DataTransformation)
+- A data transformation during which erroneous, duplicated, or
+corrupted data is edited or removed from a volume of data.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataCleaning
+
+
+
+[]{#qualitycontrol}
+
+##  Quality Control
+- An activity through which an entity's compliance to a set of defined
+criteria is assessed, resulting in acceptance or rejection of that
+entity in a set of further activities.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/QualityControl
+
+
+[]{#qualitycontroldata}
+
+###  Quality Control (Data)
+- Child of:
+ [`QualityControl`](#QualityControl)
+- An activity through which a data entity's compliance to a set of
+defined criteria is assessed, resulting in acceptance, rejection or
+modification of that entity in a set of further activities.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/QualityControlData
+
+
+[]{#qualitycontrolmetadata}
+
+###  Quality Control (Metadata)
+- Child of:
+ [`QualityControl`](#QualityControl)
+- An activity through which an entity's metadata compliance to a set
+of defined criteria is assessed, resulting in acceptance, rejection or
+modification of that entity in a set of further activities.
+- Concept URI: https://w3id.org/cdif/concepts/provenance/activity/QualityControlMetadata
+
+
+
+[]{#overarchingactivities}
+
+##  Overarching Activities
+- The GSBPM recognises several overarching activities that apply
+throughout the production phases, and across statistical business
+processes. For example, quality is monitored and checked at various
+stages of the production. Management of data and metadata is done
+throughout the process, not at a certain sub-process only. While the
+production process involves different units and expertise in the
+organisation at different stages, it is important that these
+overarching activities are conducted in a consistent manner in
+accordance with organisation-wide standards and policies, and with
+close coordination with a central unit.
+- Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities
+
+
+[]{#datamanagement}
+
+###  Data Management
+- Child of:
+ [`OverarchingActivities`](#OverarchingActivities)
+- Data management is essential as data are produced within many of the
+activities in the statistical business process and are the key
+outputs. The main goal of data management is to ensure that data are
+appropriately used and usable throughout their lifecycle. Managing
+data throughout their lifecycle covers activities such as planning and
+evaluation of data management processes as well as establishing and
+implementing processes related to collection, organisation, use,
+protection, preservation and disposal of the data.  How data are
+managed will be closely linked to the use of the data, which in turn
+is linked to the statistical business process where the data are
+created. Both data and the processes in which they are created must be
+well defined in order to ensure proper data management.  Examples of
+data management activities include:  - Designing data structures and
+associated data sets, and the provenance and flow of data through the
+statistical business process;  - Identifying database (repositories)
+to store the data and administration of the database;  - Documenting
+the data (e.g. registering and inventorying data, classifying data
+according to content, retention or other required classification);  -
+Determining retention periods of data and archiving;  - Securing data
+against unauthorised access and use;  - Safeguarding data against
+technological change, physical media degradation, data corruption; -
+Performing data integrity checks (e.g. periodic checks providing
+assurance about the accuracy and consistency of data over its entire
+lifecycle);  - Performing disposition activities once the retention
+period of the data is expired.
+- Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataManagement
+
+
+[]{#datasuppliermanagement}
+
+###  Data Supplier Management
+- Child of:
+ [`OverarchingActivities`](#OverarchingActivities)
+- The Data Supplier Management overarching activity within GSBPM
+refers to the management of data suppliers that takes place within the
+scope of the production process. Activities related to management of
+data suppliers at the corporate level should be considered in the
+framework of the GAMSO, such as in its Manage Data Suppliers activity
+under Corporate Support.  Building on GAMSO's corporate support
+activity Manage Data Suppliers, which emphasises managing data
+suppliers, such as ensuring compliance with agreements, this
+overarching activity within GSBPM extends to technical-level
+engagement with data suppliers, including those supplying registers.
+This overarching activity can include:  - Requiring specific
+information about the input data when metadata and/or documentation
+are scarce;  - Asking for assistance from the data supplier to
+overcome technical or operational issues; and/or  - Requesting
+additional information in case of unexpected changes in the data
+received.  - Cross-process burden management, profiling and management
+of contact information (e.g. within registers).
+- Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataSupplierManagement
+
+
+[]{#knowledgemanagement}
+
+###  Knowledge Management
+- Child of:
+ [`OverarchingActivities`](#OverarchingActivities)
+- The Knowledge Management overarching activity refers to the
+management of knowledge specific to the production process. Activities
+related to knowledge management at the corporate level should be
+considered in the framework of the GAMSO, such as GAMSO’s Manage
+Information and Knowledge, under its Corporate Support area.  This
+Knowledge Management overarching activity within GSBPM refers
+specifically to the updating of documentation for the production
+process (e.g. handbooks, manuals, guidance notes already created
+within sub-process 3.7 (Finalise production systems)) based on
+knowledge about it. Managing knowledge in a systematic way using such
+documentation allows it to inform and improve the production process.
+It can be taken into account when developing training for those who
+produce statistics, and can also inform evaluation of the production
+process.  Knowledge can be derived from a diverse array of sources,
+including the experience obtained from each of the individuals
+involved in the process, which may relate to the code of algorithms,
+software programmes and scripts used along the statistical lifecycle,
+good practices, or lessons learned. Reference metadata, analysis of
+paradata, incidents, process logs, data anomalies, and other
+subproducts of the statistical process execution, while not knowledge
+in themselves, can all lead to useful knowledge about the production
+process which can be documented in order to be passed on to others.
+- Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/KnowledgeManagement
+
+
+[]{#metadatamanagement}
+
+###  Metadata Management
+- Child of:
+ [`OverarchingActivities`](#OverarchingActivities)
+- Metadata has an important role and must be managed at an operational
+level within the statistical production process, in accordance with
+relevant corporate policies and standards. When aspects of metadata
+management are considered at corporate or strategic level (e.g. there
+are metadata systems that impact large parts of the production
+system), it should be considered in the framework of the GAMSO.  46.
+Good metadata management is essential for the efficient operation of
+statistical business processes. Metadata are present in every phase,
+either created, updated or carried forward from a previous phase or
+reused from another business process. In the context of this model,
+the emphasis of the overarching activity of metadata management is on
+the design/creation/revision, updating, use, and archiving of
+statistical metadata, though metadata on the different sub-processes
+themselves are also of interest, including as an input for quality
+management. The key challenge is to ensure that these metadata are
+captured as early as possible, and stored and transferred from phase
+to phase alongside the data they refer to. Metadata management
+strategy and systems are therefore vital to the operation of this
+model, and these can be facilitated by the GSIM.  47. The GSIM
+supports a consistent approach to metadata, facilitating the primary
+role for metadata, that is, that metadata should uniquely and formally
+define the content and links between information classes and processes
+in the statistical information system.
+- Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/MetadataManagement
+
+
+[]{#processdatamanagement}
+
+###  Process Data Management
+- Child of:
+ [`OverarchingActivities`](#OverarchingActivities)
+- The Process Data Management overarching activity within GSBPM refers
+to the management of process data that takes place within the scope of
+the production process. Activities related to management of process
+data at the corporate level should be considered in the framework of
+the GAMSO.  This overarching activity includes activities of
+registering, systematising, and using data arising from carrying out
+the statistical business process. This could include, for example,
+paradata logs resulting from the execution of code, as well as
+information arising from fieldwork. (Process metadata, or data about
+the process by which the data were collected.) This data is not
+quality information in itself, as it may be very detailed (such as the
+length of time taken by a single field worker to conduct a single
+interview), but it could possibly be used to derive quality
+information (such as total or average time for conducting interviews).
+Such process data can be reviewed to evaluate how the statistical
+business process is carried out, for example to optimise its
+efficiency, or to detect possible problems that have occurred and
+reveal their cause. Process data could also be used to detect and
+understand patterns in the data used to produce statistics.
+- Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/ProcessDataManagement
+
+
+[]{#qualitymanagement}
+
+###  Quality Management
+- Child of:
+ [`OverarchingActivities`](#OverarchingActivities)
+- The quality management overarching activity of GSBPM refers
+specifically to the management of product and process quality that
+takes place within the scope of the production process.  More broadly,
+the concept of quality concerns organisations, products, sources and
+processes. Quality at an institutional level (e.g. adoption of a
+Quality Policy or Quality Assurance Framework) or in areas that are
+not directly related to the production (e.g., quality of new employee
+onboarding programme) is considered in the GAMSO.  The main goal of
+quality management within the statistical business process is to
+understand and manage the quality of the statistical sources,
+processes and products. There is general agreement among statistical
+organisations that quality should be defined according to the ISO
+9000-2015 standard: 'The degree to which a set of inherent
+characteristics of an object fulfils requirements'.(ISO 9000:2015,
+Quality management systems - Fundamentals and vocabulary.
+International Organization for Standardization) Thus, quality is a
+complex and multi-faceted concept, usually defined in terms of several
+quality dimensions. The dimensions of quality that are considered most
+important depend on user perspectives, needs and priorities, which
+vary between processes and across groups of users.  In order to
+improve quality, quality management should be present throughout the
+business process model. It is closely linked to the Evaluate phase,
+however, quality management has both a deeper and broader scope. As
+well as evaluating iterations of a process, it is also necessary to
+evaluate separate phases and sub-processes, ideally each time they are
+applied, but at least according to an agreed schedule. (A suggested
+list of quality indicators for the GSBPM which can be used as a
+reference or a checklist to identify gaps and/or duplication of work
+in the organisation can be found at the Quality Indicators for the
+GSBPM – for Statistics derived from Surveys and Administrative Data
+Sources (https://statswiki.unece.org/display/GSBPM/Quality+Indicators)
+sub-processes to prevent and monitor errors and sources of risks.
+These should be documented, and can be used for quality reporting.)
+Metadata generated by the different sub-processes themselves are also
+of interest as an input for process quality management. These
+evaluations can apply within a specific process, or across several
+processes that use common components.  In addition, a fundamental role
+in quality management is played by the set of quality control actions
+that should be implemented within the sub-processes to prevent and
+monitor errors and sources of risks. These should be documented, and
+can be used for quality reporting.  Within an organisation, quality
+management will usually refer to a specific quality framework, and may
+therefore take different forms and deliver different results within
+different organisations. The current multiplicity of quality
+frameworks enhances the importance of the benchmarking and peer review
+approaches to evaluation, and whilst these approaches are unlikely to
+be feasible for every iteration of every part of every statistical
+business process, they should be used in a systematic way according to
+a pre-determined schedule that allows for the review of all main parts
+of the process within a specified time period. (A suitable global
+framework is the National Quality Assurance Framework developed by a
+global expert group under the United Nations Statistical Commission
+(https://unstats.un.org/unsd/methodology/dataquality/un-nqaf-
+manual/).)  Broadening the field of application of the quality
+management overarching activity, evaluation of groups of statistical
+business processes can also be considered, in order to identify
+potential duplication or gaps.  All evaluations result in feedback,
+which should be used to improve the relevant process, phase or sub-
+process, creating a quality loop that reinforces the approach to
+continuous improvements and organisational learning. The Quality loop
+has four main stages:  • Plan: The Plan stage refers mainly to the
+first three phases of GSBPM. Selecting a quality framework or
+designing one must be part of the design of the production process, to
+have the means of producing information needed to manage quality of
+the process and of the statistical products;  - Run: When running the
+process, care must be taken to compile data and metadata for quality
+management, with updated data and metadata coming from performing each
+phase of GSBPM;  - Evaluate: Assessment of quality indicators must be
+made throughout the process to make any needed correction on time.
+During the Evaluate phase, a summary and analysis of the quality
+information gathered together with any change made during the process
+will generate conclusions about any improvements that may be needed;
+- Improve: In response to the quality assessment, any needed
+improvements to the process can be applied, and then reflected during
+the Plan stage of the cycle.  Examples of quality management
+activities include:  - Assessing risks and implementing risk
+treatments to ensure fit-for-purpose quality;  - Setting quality
+criteria to be used in the process;  - Setting process quality targets
+and monitoring compliance;  - Seeking and analysing user feedback;  -
+Reviewing operations and documenting lessons learned;  - Examining
+process metadata and quality indicators;  - Internal or external
+auditing on the process.  Quality indicators support a process-
+oriented quality management. A suggested list of quality indicators
+for phases and sub-processes of the GSBPM as well as for the
+overarching quality and Metadata Management processes can be found at
+the Quality Indicators for the GSBPM – for Statistics derived from
+Surveys and Administrative Data Sources9. Among others, they can be
+used as a checklist to identify gaps and/or duplication of work in the
+organisation.
+- Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/QualityManagement
+
+
+

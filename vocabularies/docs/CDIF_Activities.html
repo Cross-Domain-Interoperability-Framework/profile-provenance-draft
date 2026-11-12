@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.43">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cdif_activities</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="CDIF_Activities_files/libs/clipboard/clipboard.min.js"></script>
+<script src="CDIF_Activities_files/libs/quarto-html/quarto.js"></script>
+<script src="CDIF_Activities_files/libs/quarto-html/popper.min.js"></script>
+<script src="CDIF_Activities_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="CDIF_Activities_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="CDIF_Activities_files/libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="CDIF_Activities_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="CDIF_Activities_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="CDIF_Activities_files/libs/bootstrap/bootstrap-cb5c1f3f3e82328bdf377f4b8d96a2fb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#concept-scheme-concepts-for-cdif-provenance-activities" id="toc-concept-scheme-concepts-for-cdif-provenance-activities" class="nav-link active" data-scroll-target="#concept-scheme-concepts-for-cdif-provenance-activities"><span class="header-section-number">1</span> <strong>Concept scheme:</strong> Concepts for CDIF Provenance Activities</a>
+  <ul>
+  <li><a href="#access" id="toc-access" class="nav-link" data-scroll-target="#access"><span class="header-section-number">1.1</span> Access</a></li>
+  <li><a href="#aggregation" id="toc-aggregation" class="nav-link" data-scroll-target="#aggregation"><span class="header-section-number">1.2</span> Aggregation</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">1.3</span> Analysis</a></li>
+  <li><a href="#archiving" id="toc-archiving" class="nav-link" data-scroll-target="#archiving"><span class="header-section-number">1.4</span> Archiving</a></li>
+  <li><a href="#calibration" id="toc-calibration" class="nav-link" data-scroll-target="#calibration"><span class="header-section-number">1.5</span> Calibration</a></li>
+  <li><a href="#cataloguing" id="toc-cataloguing" class="nav-link" data-scroll-target="#cataloguing"><span class="header-section-number">1.6</span> Cataloguing</a></li>
+  <li><a href="#configuration" id="toc-configuration" class="nav-link" data-scroll-target="#configuration"><span class="header-section-number">1.7</span> Configuration</a></li>
+  <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count"><span class="header-section-number">1.8</span> Count</a></li>
+  <li><a href="#creation" id="toc-creation" class="nav-link" data-scroll-target="#creation"><span class="header-section-number">1.9</span> Creation</a></li>
+  <li><a href="#data-adjustment-and-normalization" id="toc-data-adjustment-and-normalization" class="nav-link" data-scroll-target="#data-adjustment-and-normalization"><span class="header-section-number">1.10</span> Data Adjustment and Normalization</a></li>
+  <li><a href="#data-and-metadata-mappings" id="toc-data-and-metadata-mappings" class="nav-link" data-scroll-target="#data-and-metadata-mappings"><span class="header-section-number">1.11</span> Data and Metadata Mappings</a></li>
+  <li><a href="#data-classification-and-coding" id="toc-data-classification-and-coding" class="nav-link" data-scroll-target="#data-classification-and-coding"><span class="header-section-number">1.12</span> Data Classification and Coding</a></li>
+  <li><a href="#data-extraction" id="toc-data-extraction" class="nav-link" data-scroll-target="#data-extraction"><span class="header-section-number">1.13</span> Data Extraction</a></li>
+  <li><a href="#data-harmonisation" id="toc-data-harmonisation" class="nav-link" data-scroll-target="#data-harmonisation"><span class="header-section-number">1.14</span> Data Harmonisation</a></li>
+  <li><a href="#data-integration" id="toc-data-integration" class="nav-link" data-scroll-target="#data-integration"><span class="header-section-number">1.15</span> Data Integration</a></li>
+  <li><a href="#data-validation" id="toc-data-validation" class="nav-link" data-scroll-target="#data-validation"><span class="header-section-number">1.16</span> Data Validation</a></li>
+  <li><a href="#derivation" id="toc-derivation" class="nav-link" data-scroll-target="#derivation"><span class="header-section-number">1.17</span> Derivation</a></li>
+  <li><a href="#digital-preservation" id="toc-digital-preservation" class="nav-link" data-scroll-target="#digital-preservation"><span class="header-section-number">1.18</span> Digital Preservation</a></li>
+  <li><a href="#disclosure-control" id="toc-disclosure-control" class="nav-link" data-scroll-target="#disclosure-control"><span class="header-section-number">1.19</span> Disclosure Control</a></li>
+  <li><a href="#experimental-design" id="toc-experimental-design" class="nav-link" data-scroll-target="#experimental-design"><span class="header-section-number">1.20</span> Experimental Design</a></li>
+  <li><a href="#format-standardization" id="toc-format-standardization" class="nav-link" data-scroll-target="#format-standardization"><span class="header-section-number">1.21</span> Format Standardization</a></li>
+  <li><a href="#measurement" id="toc-measurement" class="nav-link" data-scroll-target="#measurement"><span class="header-section-number">1.22</span> Measurement</a></li>
+  <li><a href="#observation" id="toc-observation" class="nav-link" data-scroll-target="#observation"><span class="header-section-number">1.23</span> Observation</a></li>
+  <li><a href="#output-interpretation-and-explanation" id="toc-output-interpretation-and-explanation" class="nav-link" data-scroll-target="#output-interpretation-and-explanation"><span class="header-section-number">1.24</span> Output Interpretation and Explanation</a></li>
+  <li><a href="#extraction-sample" id="toc-extraction-sample" class="nav-link" data-scroll-target="#extraction-sample"><span class="header-section-number">1.25</span> Extraction (Sample)</a></li>
+  <li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"><span class="header-section-number">1.26</span> Sampling</a></li>
+  <li><a href="#variable-and-unit-derivation" id="toc-variable-and-unit-derivation" class="nav-link" data-scroll-target="#variable-and-unit-derivation"><span class="header-section-number">1.27</span> Variable and Unit Derivation</a></li>
+  <li><a href="#weighting" id="toc-weighting" class="nav-link" data-scroll-target="#weighting"><span class="header-section-number">1.28</span> Weighting</a></li>
+  <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation"><span class="header-section-number">1.29</span> Data Transformation</a>
+  <ul class="collapse">
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning"><span class="header-section-number">1.29.1</span> Data Cleaning</a></li>
+  </ul></li>
+  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control"><span class="header-section-number">1.30</span> Quality Control</a>
+  <ul class="collapse">
+  <li><a href="#quality-control-data" id="toc-quality-control-data" class="nav-link" data-scroll-target="#quality-control-data"><span class="header-section-number">1.30.1</span> Quality Control (Data)</a></li>
+  <li><a href="#quality-control-metadata" id="toc-quality-control-metadata" class="nav-link" data-scroll-target="#quality-control-metadata"><span class="header-section-number">1.30.2</span> Quality Control (Metadata)</a></li>
+  </ul></li>
+  <li><a href="#overarching-activities" id="toc-overarching-activities" class="nav-link" data-scroll-target="#overarching-activities"><span class="header-section-number">1.31</span> Overarching Activities</a>
+  <ul class="collapse">
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="header-section-number">1.31.1</span> Data Management</a></li>
+  <li><a href="#data-supplier-management" id="toc-data-supplier-management" class="nav-link" data-scroll-target="#data-supplier-management"><span class="header-section-number">1.31.2</span> Data Supplier Management</a></li>
+  <li><a href="#knowledge-management" id="toc-knowledge-management" class="nav-link" data-scroll-target="#knowledge-management"><span class="header-section-number">1.31.3</span> Knowledge Management</a></li>
+  <li><a href="#metadata-management" id="toc-metadata-management" class="nav-link" data-scroll-target="#metadata-management"><span class="header-section-number">1.31.4</span> Metadata Management</a></li>
+  <li><a href="#process-data-management" id="toc-process-data-management" class="nav-link" data-scroll-target="#process-data-management"><span class="header-section-number">1.31.5</span> Process Data Management</a></li>
+  <li><a href="#quality-management" id="toc-quality-management" class="nav-link" data-scroll-target="#quality-management"><span class="header-section-number">1.31.6</span> Quality Management</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+
+
+
+<p><span id="ConceptsforCDIFProvenanceActivities"></span></p>
+<section id="concept-scheme-concepts-for-cdif-provenance-activities" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <strong>Concept scheme:</strong> Concepts for CDIF Provenance Activities</h1>
+<p>no modified date</p>
+<p>subtitle: This is a list of activities related to the description of provenance for data and related resources used for research, intended to be sufficiently generic to support use across domain and infrastructure boundaries.</p>
+<p>Namespace: <a href="https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"><code>https://w3id.org/cdif/concepts/provenance/activity/conceptScheme</code></a></p>
+<p><strong>History</strong></p>
+<ul>
+<li><p><a href="#access">Access</a></p></li>
+<li><p><a href="#aggregation">Aggregation</a></p></li>
+<li><p><a href="#analysis">Analysis</a></p></li>
+<li><p><a href="#archiving">Archiving</a></p></li>
+<li><p><a href="#calibration">Calibration</a></p></li>
+<li><p><a href="#cataloguing">Cataloguing</a></p></li>
+<li><p><a href="#configuration">Configuration</a></p></li>
+<li><p><a href="#count">Count</a></p></li>
+<li><p><a href="#creation">Creation</a></p></li>
+<li><p><a href="#dataadjustmentandnormalization">Data Adjustment and Normalization</a></p></li>
+<li><p><a href="#dataandmetadatamappings">Data and Metadata Mappings</a></p></li>
+<li><p><a href="#dataclassificationandcoding">Data Classification and Coding</a></p></li>
+<li><p><a href="#dataextraction">Data Extraction</a></p></li>
+<li><p><a href="#dataharmonisation">Data Harmonisation</a></p></li>
+<li><p><a href="#dataintegration">Data Integration</a></p></li>
+<li><p><a href="#datavalidation">Data Validation</a></p></li>
+<li><p><a href="#derivation">Derivation</a></p></li>
+<li><p><a href="#digitalpreservation">Digital Preservation</a></p></li>
+<li><p><a href="#disclosurecontrol">Disclosure Control</a></p></li>
+<li><p><a href="#experimentaldesign">Experimental Design</a></p></li>
+<li><p><a href="#formatstandardization">Format Standardization</a></p></li>
+<li><p><a href="#measurement">Measurement</a></p></li>
+<li><p><a href="#observation">Observation</a></p></li>
+<li><p><a href="#outputinterpretationandexplanation">Output Interpretation and Explanation</a></p></li>
+<li><p><a href="#sampleextraction">Extraction (Sample)</a></p></li>
+<li><p><a href="#sampling">Sampling</a></p></li>
+<li><p><a href="#variableandunitderivation">Variable and Unit Derivation</a></p></li>
+<li><p><a href="#weighting">Weighting</a></p></li>
+<li><p><a href="#datatransformation">Data Transformation</a></p>
+<ul>
+<li><a href="#datacleaning">Data Cleaning</a></li>
+</ul></li>
+<li><p><a href="#qualitycontrol">Quality Control</a></p>
+<ul>
+<li><a href="#qualitycontroldata">Quality Control (Data)</a></li>
+<li><a href="#qualitycontrolmetadata">Quality Control (Metadata)</a></li>
+</ul></li>
+<li><p><a href="#overarchingactivities">Overarching Activities</a></p>
+<ul>
+<li><a href="#datamanagement">Data Management</a></li>
+<li><a href="#datasuppliermanagement">Data Supplier Management</a></li>
+<li><a href="#knowledgemanagement">Knowledge Management</a></li>
+<li><a href="#metadatamanagement">Metadata Management</a></li>
+<li><a href="#processdatamanagement">Process Data Management</a></li>
+<li><a href="#qualitymanagement">Quality Management</a></li>
+</ul></li>
+</ul>
+<p><strong>Concepts</strong></p>
+<p><span id="access"></span><span id="Access"></span></p>
+<section id="access" class="level2" data-number="1.1">
+<h2 data-number="1.1" data-anchor-id="access"><span class="header-section-number">1.1</span> Access</h2>
+<ul>
+<li>An activity during which an agent realises its rights and abilities to interact with a disseminating agency to obtain an entity.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Access</li>
+</ul>
+<p><span id="aggregation"></span><span id="Aggregation"></span></p>
+</section>
+<section id="aggregation" class="level2" data-number="1.2">
+<h2 data-number="1.2" data-anchor-id="aggregation"><span class="header-section-number">1.2</span> Aggregation</h2>
+<ul>
+<li>An activity during which multiple entities are gathered together and assembled into a whole based on a defined set of criteria.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Aggregation</li>
+</ul>
+<p><span id="analysis"></span><span id="Analysis"></span></p>
+</section>
+<section id="analysis" class="level2" data-number="1.3">
+<h2 data-number="1.3" data-anchor-id="analysis"><span class="header-section-number">1.3</span> Analysis</h2>
+<ul>
+<li>An activity during which one or more entities are studied by examining their constituent parts and the interrelationships between those parts in order to increase the user’s knowledge about those entities.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Analysis</li>
+</ul>
+<p><span id="archiving"></span><span id="Archiving"></span></p>
+</section>
+<section id="archiving" class="level2" data-number="1.4">
+<h2 data-number="1.4" data-anchor-id="archiving"><span class="header-section-number">1.4</span> Archiving</h2>
+<ul>
+<li>An activity through which an entity is transferred to a facility charged with its long-term (generally &gt;10 years) preservation.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Archiving</li>
+</ul>
+<p><span id="calibration"></span><span id="Calibration"></span></p>
+</section>
+<section id="calibration" class="level2" data-number="1.5">
+<h2 data-number="1.5" data-anchor-id="calibration"><span class="header-section-number">1.5</span> Calibration</h2>
+<ul>
+<li>An activity during which measurement data produced by a (physical) instrument (like a sensor) or similar entity are compared to a reference dataset or other material with known accuracy in order to establish, verify, or document the accuracy of the instrument.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Calibration</li>
+</ul>
+<p><span id="cataloguing"></span><span id="Cataloguing"></span></p>
+</section>
+<section id="cataloguing" class="level2" data-number="1.6">
+<h2 data-number="1.6" data-anchor-id="cataloguing"><span class="header-section-number">1.6</span> Cataloguing</h2>
+<ul>
+<li>An activity during which the existence of an entity is added to a systematic list.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Cataloguing</li>
+</ul>
+<p><span id="configuration"></span><span id="Configuration"></span></p>
+</section>
+<section id="configuration" class="level2" data-number="1.7">
+<h2 data-number="1.7" data-anchor-id="configuration"><span class="header-section-number">1.7</span> Configuration</h2>
+<ul>
+<li>An activity during which an entity (e.g.&nbsp;a system resource) is modified to grant it desirable properties or dispose it to desirable behaviour (for example by adjusting parameters).</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Configuration</li>
+</ul>
+<p><span id="count"></span><span id="Count"></span></p>
+</section>
+<section id="count" class="level2" data-number="1.8">
+<h2 data-number="1.8" data-anchor-id="count"><span class="header-section-number">1.8</span> Count</h2>
+<ul>
+<li>An activity which results in an enumeration of some aspect of a population or its members.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Count</li>
+</ul>
+<p><span id="creation"></span><span id="Creation"></span></p>
+</section>
+<section id="creation" class="level2" data-number="1.9">
+<h2 data-number="1.9" data-anchor-id="creation"><span class="header-section-number">1.9</span> Creation</h2>
+<ul>
+<li>An activity through which an entity is brought into existence. Serves as a superclass for other more expressive classes that create entities, such as authoring.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Creation</li>
+</ul>
+<p><span id="dataadjustmentandnormalization"></span><span id="DataAdjustmentAndNormalization"></span></p>
+</section>
+<section id="data-adjustment-and-normalization" class="level2" data-number="1.10">
+<h2 data-number="1.10" data-anchor-id="data-adjustment-and-normalization"><span class="header-section-number">1.10</span> Data Adjustment and Normalization</h2>
+<ul>
+<li>Perform seasonal and other statistical adjustments to data values to improve accuracy and align data values to a notionally common scale or a probability distribution to make datasets comparable.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataAdjustmentAndNormalization</li>
+</ul>
+<p><span id="dataandmetadatamappings"></span><span id="DataAndMetadataMappings"></span></p>
+</section>
+<section id="data-and-metadata-mappings" class="level2" data-number="1.11">
+<h2 data-number="1.11" data-anchor-id="data-and-metadata-mappings"><span class="header-section-number">1.11</span> Data and Metadata Mappings</h2>
+<ul>
+<li>Provide correspondences between units, variables and their representations for data integration and alignment.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataAndMetadataMappings</li>
+</ul>
+<p><span id="dataclassificationandcoding"></span><span id="DataClassificationAndCoding"></span></p>
+</section>
+<section id="data-classification-and-coding" class="level2" data-number="1.12">
+<h2 data-number="1.12" data-anchor-id="data-classification-and-coding"><span class="header-section-number">1.12</span> Data Classification and Coding</h2>
+<ul>
+<li>Assign codes to textual descriptions according to pre-determined classification schemes.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataClassificationAndCoding</li>
+</ul>
+<p><span id="dataextraction"></span><span id="DataExtraction"></span></p>
+</section>
+<section id="data-extraction" class="level2" data-number="1.13">
+<h2 data-number="1.13" data-anchor-id="data-extraction"><span class="header-section-number">1.13</span> Data Extraction</h2>
+<ul>
+<li>An activity through which a part of data is selected and isolated according to some criteria and for a specific purpose.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataExtraction</li>
+</ul>
+<p><span id="dataharmonisation"></span><span id="DataHarmonisation"></span></p>
+</section>
+<section id="data-harmonisation" class="level2" data-number="1.14">
+<h2 data-number="1.14" data-anchor-id="data-harmonisation"><span class="header-section-number">1.14</span> Data Harmonisation</h2>
+<ul>
+<li>An (ex post) activity through which data are transformed to regularise their properties, allowing meaningful collective treatment.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataHarmonisation</li>
+</ul>
+<p><span id="dataintegration"></span><span id="DataIntegration"></span></p>
+</section>
+<section id="data-integration" class="level2" data-number="1.15">
+<h2 data-number="1.15" data-anchor-id="data-integration"><span class="header-section-number">1.15</span> Data Integration</h2>
+<ul>
+<li>An activity through which multiple data sources are combined into a coherent whole.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataIntegration</li>
+</ul>
+<p><span id="datavalidation"></span><span id="DataValidation"></span></p>
+</section>
+<section id="data-validation" class="level2" data-number="1.16">
+<h2 data-number="1.16" data-anchor-id="data-validation"><span class="header-section-number">1.16</span> Data Validation</h2>
+<ul>
+<li>An activity during which data is evaluated in relation to some specification or criteria, usually assessing its soundness, justifiability, or appropriateness for a specified purpose.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataValidation</li>
+</ul>
+<p><span id="derivation"></span><span id="Derivation"></span></p>
+</section>
+<section id="derivation" class="level2" data-number="1.17">
+<h2 data-number="1.17" data-anchor-id="derivation"><span class="header-section-number">1.17</span> Derivation</h2>
+<ul>
+<li>A process through which a new data entity (dataset or variable) is created from parts or all of pre-existing data entities.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Derivation</li>
+</ul>
+<p><span id="digitalpreservation"></span><span id="DigitalPreservation"></span></p>
+</section>
+<section id="digital-preservation" class="level2" data-number="1.18">
+<h2 data-number="1.18" data-anchor-id="digital-preservation"><span class="header-section-number">1.18</span> Digital Preservation</h2>
+<ul>
+<li>Series of managed activities necessary to ensure continued access to digital materials for as long as necessary that ensures materials are accessible, understandable, and valuable to designated communities.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DigitalPreservation</li>
+</ul>
+<p><span id="disclosurecontrol"></span><span id="DisclosureControl"></span></p>
+</section>
+<section id="disclosure-control" class="level2" data-number="1.19">
+<h2 data-number="1.19" data-anchor-id="disclosure-control"><span class="header-section-number">1.19</span> Disclosure Control</h2>
+<ul>
+<li>Ensures that the data (and metadata) to be disseminated or internally stored for future use do not breach the appropriate rules on confidentiality according to either organisational policies and rules, or to the process-specific methodology used.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DisclosureControl</li>
+</ul>
+<p><span id="experimentaldesign"></span><span id="ExperimentalDesign"></span></p>
+</section>
+<section id="experimental-design" class="level2" data-number="1.20">
+<h2 data-number="1.20" data-anchor-id="experimental-design"><span class="header-section-number">1.20</span> Experimental Design</h2>
+<ul>
+<li>The systematic planning of an experiment, including the selection and allocation of experimental units, treatments, controls, and measurement procedures, to evaluate causal relationships while minimizing bias and controlling variability.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/ExperimentalDesign</li>
+</ul>
+<p><span id="formatstandardization"></span><span id="FormatStandardization"></span></p>
+</section>
+<section id="format-standardization" class="level2" data-number="1.21">
+<h2 data-number="1.21" data-anchor-id="format-standardization"><span class="header-section-number">1.21</span> Format Standardization</h2>
+<ul>
+<li>Modify physical representations and data types to conform to standards and to best support interoperability.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/FormatStandardization</li>
+</ul>
+<p><span id="measurement"></span><span id="Measurement"></span></p>
+</section>
+<section id="measurement" class="level2" data-number="1.22">
+<h2 data-number="1.22" data-anchor-id="measurement"><span class="header-section-number">1.22</span> Measurement</h2>
+<ul>
+<li>An activity which results in a quantitative value describing some characteristic of the object of interest.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Measurement</li>
+</ul>
+<p><span id="observation"></span><span id="Observation"></span></p>
+</section>
+<section id="observation" class="level2" data-number="1.23">
+<h2 data-number="1.23" data-anchor-id="observation"><span class="header-section-number">1.23</span> Observation</h2>
+<ul>
+<li>An activity which results in a record describing the object of interest.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Observation</li>
+</ul>
+<p><span id="outputinterpretationandexplanation"></span><span id="OutputInterpretationAndExplanation"></span></p>
+</section>
+<section id="output-interpretation-and-explanation" class="level2" data-number="1.24">
+<h2 data-number="1.24" data-anchor-id="output-interpretation-and-explanation"><span class="header-section-number">1.24</span> Output Interpretation and Explanation</h2>
+<ul>
+<li>Examination and analysis of statistical outputs to identify and explain patterns, trends, relationships, differences, and unexpected results.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/OutputInterpretationAndExplanation</li>
+</ul>
+<p><span id="sampleextraction"></span><span id="SampleExtraction"></span></p>
+</section>
+<section id="extraction-sample" class="level2" data-number="1.25">
+<h2 data-number="1.25" data-anchor-id="extraction-sample"><span class="header-section-number">1.25</span> Extraction (Sample)</h2>
+<ul>
+<li>An activity through which a physical sample is collected from the environment, from a (museum or other) collection, aliquoted from a stock (solution) or otherwise sampled for analysis.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/SampleExtraction</li>
+</ul>
+<p><span id="sampling"></span><span id="Sampling"></span></p>
+</section>
+<section id="sampling" class="level2" data-number="1.26">
+<h2 data-number="1.26" data-anchor-id="sampling"><span class="header-section-number">1.26</span> Sampling</h2>
+<ul>
+<li>An activity through which a portion of an entity is used to represent the whole, for some purpose.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Sampling</li>
+</ul>
+<p><span id="variableandunitderivation"></span><span id="VariableAndUnitDerivation"></span></p>
+</section>
+<section id="variable-and-unit-derivation" class="level2" data-number="1.27">
+<h2 data-number="1.27" data-anchor-id="variable-and-unit-derivation"><span class="header-section-number">1.27</span> Variable and Unit Derivation</h2>
+<ul>
+<li>Derives variables and units that are not explicitly provided in the collection, but are needed to deliver the required outputs.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/VariableAndUnitDerivation</li>
+</ul>
+<p><span id="weighting"></span><span id="Weighting"></span></p>
+</section>
+<section id="weighting" class="level2" data-number="1.28">
+<h2 data-number="1.28" data-anchor-id="weighting"><span class="header-section-number">1.28</span> Weighting</h2>
+<ul>
+<li>Creates weights for unit data records according to a methodology.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/Weighting</li>
+</ul>
+<p><span id="datatransformation"></span><span id="DataTransformation"></span></p>
+</section>
+<section id="data-transformation" class="level2" data-number="1.29">
+<h2 data-number="1.29" data-anchor-id="data-transformation"><span class="header-section-number">1.29</span> Data Transformation</h2>
+<ul>
+<li>An activity through which data is modified.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataTransformation</li>
+</ul>
+<p><span id="datacleaning"></span><span id="DataCleaning"></span></p>
+<section id="data-cleaning" class="level3" data-number="1.29.1">
+<h3 data-number="1.29.1" data-anchor-id="data-cleaning"><span class="header-section-number">1.29.1</span> Data Cleaning</h3>
+<ul>
+<li>Child of: <a href="#DataTransformation"><code>DataTransformation</code></a></li>
+<li>A data transformation during which erroneous, duplicated, or corrupted data is edited or removed from a volume of data.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/DataCleaning</li>
+</ul>
+<p><span id="qualitycontrol"></span><span id="QualityControl"></span></p>
+</section>
+</section>
+<section id="quality-control" class="level2" data-number="1.30">
+<h2 data-number="1.30" data-anchor-id="quality-control"><span class="header-section-number">1.30</span> Quality Control</h2>
+<ul>
+<li>An activity through which an entity’s compliance to a set of defined criteria is assessed, resulting in acceptance or rejection of that entity in a set of further activities.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/QualityControl</li>
+</ul>
+<p><span id="qualitycontroldata"></span><span id="QualityControlData"></span></p>
+<section id="quality-control-data" class="level3" data-number="1.30.1">
+<h3 data-number="1.30.1" data-anchor-id="quality-control-data"><span class="header-section-number">1.30.1</span> Quality Control (Data)</h3>
+<ul>
+<li>Child of: <a href="#QualityControl"><code>QualityControl</code></a></li>
+<li>An activity through which a data entity’s compliance to a set of defined criteria is assessed, resulting in acceptance, rejection or modification of that entity in a set of further activities.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/QualityControlData</li>
+</ul>
+<p><span id="qualitycontrolmetadata"></span><span id="QualityControlMetadata"></span></p>
+</section>
+<section id="quality-control-metadata" class="level3" data-number="1.30.2">
+<h3 data-number="1.30.2" data-anchor-id="quality-control-metadata"><span class="header-section-number">1.30.2</span> Quality Control (Metadata)</h3>
+<ul>
+<li>Child of: <a href="#QualityControl"><code>QualityControl</code></a></li>
+<li>An activity through which an entity’s metadata compliance to a set of defined criteria is assessed, resulting in acceptance, rejection or modification of that entity in a set of further activities.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/provenance/activity/QualityControlMetadata</li>
+</ul>
+<p><span id="overarchingactivities"></span><span id="OverarchingActivities"></span></p>
+</section>
+</section>
+<section id="overarching-activities" class="level2" data-number="1.31">
+<h2 data-number="1.31" data-anchor-id="overarching-activities"><span class="header-section-number">1.31</span> Overarching Activities</h2>
+<ul>
+<li>The GSBPM recognises several overarching activities that apply throughout the production phases, and across statistical business processes. For example, quality is monitored and checked at various stages of the production. Management of data and metadata is done throughout the process, not at a certain sub-process only. While the production process involves different units and expertise in the organisation at different stages, it is important that these overarching activities are conducted in a consistent manner in accordance with organisation-wide standards and policies, and with close coordination with a central unit.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities</li>
+</ul>
+<p><span id="datamanagement"></span><span id="DataManagement"></span></p>
+<section id="data-management" class="level3" data-number="1.31.1">
+<h3 data-number="1.31.1" data-anchor-id="data-management"><span class="header-section-number">1.31.1</span> Data Management</h3>
+<ul>
+<li>Child of: <a href="#OverarchingActivities"><code>OverarchingActivities</code></a></li>
+<li>Data management is essential as data are produced within many of the activities in the statistical business process and are the key outputs. The main goal of data management is to ensure that data are appropriately used and usable throughout their lifecycle. Managing data throughout their lifecycle covers activities such as planning and evaluation of data management processes as well as establishing and implementing processes related to collection, organisation, use, protection, preservation and disposal of the data. How data are managed will be closely linked to the use of the data, which in turn is linked to the statistical business process where the data are created. Both data and the processes in which they are created must be well defined in order to ensure proper data management. Examples of data management activities include: - Designing data structures and associated data sets, and the provenance and flow of data through the statistical business process; - Identifying database (repositories) to store the data and administration of the database; - Documenting the data (e.g.&nbsp;registering and inventorying data, classifying data according to content, retention or other required classification); - Determining retention periods of data and archiving; - Securing data against unauthorised access and use; - Safeguarding data against technological change, physical media degradation, data corruption; - Performing data integrity checks (e.g.&nbsp;periodic checks providing assurance about the accuracy and consistency of data over its entire lifecycle); - Performing disposition activities once the retention period of the data is expired.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataManagement</li>
+</ul>
+<p><span id="datasuppliermanagement"></span><span id="DataSupplierManagement"></span></p>
+</section>
+<section id="data-supplier-management" class="level3" data-number="1.31.2">
+<h3 data-number="1.31.2" data-anchor-id="data-supplier-management"><span class="header-section-number">1.31.2</span> Data Supplier Management</h3>
+<ul>
+<li>Child of: <a href="#OverarchingActivities"><code>OverarchingActivities</code></a></li>
+<li>The Data Supplier Management overarching activity within GSBPM refers to the management of data suppliers that takes place within the scope of the production process. Activities related to management of data suppliers at the corporate level should be considered in the framework of the GAMSO, such as in its Manage Data Suppliers activity under Corporate Support. Building on GAMSO’s corporate support activity Manage Data Suppliers, which emphasises managing data suppliers, such as ensuring compliance with agreements, this overarching activity within GSBPM extends to technical-level engagement with data suppliers, including those supplying registers. This overarching activity can include: - Requiring specific information about the input data when metadata and/or documentation are scarce; - Asking for assistance from the data supplier to overcome technical or operational issues; and/or - Requesting additional information in case of unexpected changes in the data received. - Cross-process burden management, profiling and management of contact information (e.g.&nbsp;within registers).</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataSupplierManagement</li>
+</ul>
+<p><span id="knowledgemanagement"></span><span id="KnowledgeManagement"></span></p>
+</section>
+<section id="knowledge-management" class="level3" data-number="1.31.3">
+<h3 data-number="1.31.3" data-anchor-id="knowledge-management"><span class="header-section-number">1.31.3</span> Knowledge Management</h3>
+<ul>
+<li>Child of: <a href="#OverarchingActivities"><code>OverarchingActivities</code></a></li>
+<li>The Knowledge Management overarching activity refers to the management of knowledge specific to the production process. Activities related to knowledge management at the corporate level should be considered in the framework of the GAMSO, such as GAMSO’s Manage Information and Knowledge, under its Corporate Support area. This Knowledge Management overarching activity within GSBPM refers specifically to the updating of documentation for the production process (e.g.&nbsp;handbooks, manuals, guidance notes already created within sub-process 3.7 (Finalise production systems)) based on knowledge about it. Managing knowledge in a systematic way using such documentation allows it to inform and improve the production process. It can be taken into account when developing training for those who produce statistics, and can also inform evaluation of the production process. Knowledge can be derived from a diverse array of sources, including the experience obtained from each of the individuals involved in the process, which may relate to the code of algorithms, software programmes and scripts used along the statistical lifecycle, good practices, or lessons learned. Reference metadata, analysis of paradata, incidents, process logs, data anomalies, and other subproducts of the statistical process execution, while not knowledge in themselves, can all lead to useful knowledge about the production process which can be documented in order to be passed on to others.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/KnowledgeManagement</li>
+</ul>
+<p><span id="metadatamanagement"></span><span id="MetadataManagement"></span></p>
+</section>
+<section id="metadata-management" class="level3" data-number="1.31.4">
+<h3 data-number="1.31.4" data-anchor-id="metadata-management"><span class="header-section-number">1.31.4</span> Metadata Management</h3>
+<ul>
+<li>Child of: <a href="#OverarchingActivities"><code>OverarchingActivities</code></a></li>
+<li>Metadata has an important role and must be managed at an operational level within the statistical production process, in accordance with relevant corporate policies and standards. When aspects of metadata management are considered at corporate or strategic level (e.g.&nbsp;there are metadata systems that impact large parts of the production system), it should be considered in the framework of the GAMSO. 46. Good metadata management is essential for the efficient operation of statistical business processes. Metadata are present in every phase, either created, updated or carried forward from a previous phase or reused from another business process. In the context of this model, the emphasis of the overarching activity of metadata management is on the design/creation/revision, updating, use, and archiving of statistical metadata, though metadata on the different sub-processes themselves are also of interest, including as an input for quality management. The key challenge is to ensure that these metadata are captured as early as possible, and stored and transferred from phase to phase alongside the data they refer to. Metadata management strategy and systems are therefore vital to the operation of this model, and these can be facilitated by the GSIM. 47. The GSIM supports a consistent approach to metadata, facilitating the primary role for metadata, that is, that metadata should uniquely and formally define the content and links between information classes and processes in the statistical information system.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/MetadataManagement</li>
+</ul>
+<p><span id="processdatamanagement"></span><span id="ProcessDataManagement"></span></p>
+</section>
+<section id="process-data-management" class="level3" data-number="1.31.5">
+<h3 data-number="1.31.5" data-anchor-id="process-data-management"><span class="header-section-number">1.31.5</span> Process Data Management</h3>
+<ul>
+<li>Child of: <a href="#OverarchingActivities"><code>OverarchingActivities</code></a></li>
+<li>The Process Data Management overarching activity within GSBPM refers to the management of process data that takes place within the scope of the production process. Activities related to management of process data at the corporate level should be considered in the framework of the GAMSO. This overarching activity includes activities of registering, systematising, and using data arising from carrying out the statistical business process. This could include, for example, paradata logs resulting from the execution of code, as well as information arising from fieldwork. (Process metadata, or data about the process by which the data were collected.) This data is not quality information in itself, as it may be very detailed (such as the length of time taken by a single field worker to conduct a single interview), but it could possibly be used to derive quality information (such as total or average time for conducting interviews). Such process data can be reviewed to evaluate how the statistical business process is carried out, for example to optimise its efficiency, or to detect possible problems that have occurred and reveal their cause. Process data could also be used to detect and understand patterns in the data used to produce statistics.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/ProcessDataManagement</li>
+</ul>
+<p><span id="qualitymanagement"></span><span id="QualityManagement"></span></p>
+</section>
+<section id="quality-management" class="level3" data-number="1.31.6">
+<h3 data-number="1.31.6" data-anchor-id="quality-management"><span class="header-section-number">1.31.6</span> Quality Management</h3>
+<ul>
+<li>Child of: <a href="#OverarchingActivities"><code>OverarchingActivities</code></a></li>
+<li>The quality management overarching activity of GSBPM refers specifically to the management of product and process quality that takes place within the scope of the production process. More broadly, the concept of quality concerns organisations, products, sources and processes. Quality at an institutional level (e.g.&nbsp;adoption of a Quality Policy or Quality Assurance Framework) or in areas that are not directly related to the production (e.g., quality of new employee onboarding programme) is considered in the GAMSO. The main goal of quality management within the statistical business process is to understand and manage the quality of the statistical sources, processes and products. There is general agreement among statistical organisations that quality should be defined according to the ISO 9000-2015 standard: ‘The degree to which a set of inherent characteristics of an object fulfils requirements’.(ISO 9000:2015, Quality management systems - Fundamentals and vocabulary. International Organization for Standardization) Thus, quality is a complex and multi-faceted concept, usually defined in terms of several quality dimensions. The dimensions of quality that are considered most important depend on user perspectives, needs and priorities, which vary between processes and across groups of users. In order to improve quality, quality management should be present throughout the business process model. It is closely linked to the Evaluate phase, however, quality management has both a deeper and broader scope. As well as evaluating iterations of a process, it is also necessary to evaluate separate phases and sub-processes, ideally each time they are applied, but at least according to an agreed schedule. (A suggested list of quality indicators for the GSBPM which can be used as a reference or a checklist to identify gaps and/or duplication of work in the organisation can be found at the Quality Indicators for the GSBPM – for Statistics derived from Surveys and Administrative Data Sources (https://statswiki.unece.org/display/GSBPM/Quality+Indicators) sub-processes to prevent and monitor errors and sources of risks. These should be documented, and can be used for quality reporting.) Metadata generated by the different sub-processes themselves are also of interest as an input for process quality management. These evaluations can apply within a specific process, or across several processes that use common components. In addition, a fundamental role in quality management is played by the set of quality control actions that should be implemented within the sub-processes to prevent and monitor errors and sources of risks. These should be documented, and can be used for quality reporting. Within an organisation, quality management will usually refer to a specific quality framework, and may therefore take different forms and deliver different results within different organisations. The current multiplicity of quality frameworks enhances the importance of the benchmarking and peer review approaches to evaluation, and whilst these approaches are unlikely to be feasible for every iteration of every part of every statistical business process, they should be used in a systematic way according to a pre-determined schedule that allows for the review of all main parts of the process within a specified time period. (A suitable global framework is the National Quality Assurance Framework developed by a global expert group under the United Nations Statistical Commission (https://unstats.un.org/unsd/methodology/dataquality/un-nqaf- manual/).) Broadening the field of application of the quality management overarching activity, evaluation of groups of statistical business processes can also be considered, in order to identify potential duplication or gaps. All evaluations result in feedback, which should be used to improve the relevant process, phase or sub- process, creating a quality loop that reinforces the approach to continuous improvements and organisational learning. The Quality loop has four main stages: • Plan: The Plan stage refers mainly to the first three phases of GSBPM. Selecting a quality framework or designing one must be part of the design of the production process, to have the means of producing information needed to manage quality of the process and of the statistical products; - Run: When running the process, care must be taken to compile data and metadata for quality management, with updated data and metadata coming from performing each phase of GSBPM; - Evaluate: Assessment of quality indicators must be made throughout the process to make any needed correction on time. During the Evaluate phase, a summary and analysis of the quality information gathered together with any change made during the process will generate conclusions about any improvements that may be needed;</li>
+<li>Improve: In response to the quality assessment, any needed improvements to the process can be applied, and then reflected during the Plan stage of the cycle. Examples of quality management activities include: - Assessing risks and implementing risk treatments to ensure fit-for-purpose quality; - Setting quality criteria to be used in the process; - Setting process quality targets and monitoring compliance; - Seeking and analysing user feedback; - Reviewing operations and documenting lessons learned; - Examining process metadata and quality indicators; - Internal or external auditing on the process. Quality indicators support a process- oriented quality management. A suggested list of quality indicators for phases and sub-processes of the GSBPM as well as for the overarching quality and Metadata Management processes can be found at the Quality Indicators for the GSBPM – for Statistics derived from Surveys and Administrative Data Sources9. Among others, they can be used as a checklist to identify gaps and/or duplication of work in the organisation.</li>
+<li>Concept URI: https://w3id.org/cdif/concepts/GSBPM-5.2/activity/QualityManagement</li>
+</ul>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
