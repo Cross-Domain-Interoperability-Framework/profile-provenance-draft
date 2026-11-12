@@ -1,0 +1,476 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "ex": "https://example.org/cdif-prov/"
+  },
+  "@id": "ex:concentrationDataset",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Concentration determination of the analyte in water sample 01",
+  "schema:description": "CDIF rendering of the Process Run Crate in ro-crate/cdif_provenance_quantitative/ro-crate-metadata.json, the Dagstuhl quantitative scenario. The crate's root Dataset is the package; each CSV it lists becomes its own part Dataset (schema:hasPart), with the CSV as that part's distribution, and the crate's CreateActions become each part's prov:wasGeneratedBy. An action's schema:object is the water sample or the distributions of the predecessor datasets. The parts carry little metadata of their own: the name is the CSV file name, other text is the CDIF sentinel 'missing'.",
+  "schema:identifier": "https://example.org/cdif-prov/concentrationDataset",
+  "schema:url": "https://example.org/cdif-prov/concentrationDataset",
+  "schema:dateModified": "2026-11-09",
+  "schema:datePublished": "2026-11-09",
+  "schema:license": [
+    "https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "schema:hasPart": [
+    {
+      "@id": "ex:dataset/absorbance",
+      "@type": [
+        "schema:Dataset"
+      ],
+      "schema:name": "absorbance",
+      "schema:description": "missing",
+      "prov:wasGeneratedBy": [
+        {
+          "@id": "ex:absorbanceMeasurement",
+          "@type": [
+            "schema:Action",
+            "schema:CreateAction",
+            "prov:Activity"
+          ],
+          "schema:name": "Absorbance measurement",
+          "schema:additionalType": [
+            {
+              "@id": "cdifact:Measurement"
+            }
+          ],
+          "schema:startTime": "2026-11-05T10:18:00+00:00",
+          "schema:endTime": "2026-11-05T10:19:00+00:00",
+          "schema:location": {
+            "@type": [
+              "schema:Place"
+            ],
+            "schema:name": "Analytical laboratory"
+          },
+          "schema:agent": {
+            "@id": "ex:analyst01",
+            "@type": [
+              "schema:Person"
+            ],
+            "schema:name": "Ana Lima",
+            "schema:givenName": "Ana",
+            "schema:familyName": "Lima",
+            "schema:honorificPrefix": "Dr",
+            "schema:affiliation": {
+              "@id": "ex:laboratory01",
+              "@type": [
+                "schema:Organization"
+              ],
+              "schema:name": "Analytical laboratory"
+            },
+            "schema:contactPoint": {
+              "@type": [
+                "schema:ContactPoint"
+              ],
+              "schema:email": "missing@example.org"
+            }
+          },
+          "schema:instrument": [
+            {
+              "@id": "ex:spectrophotometer01",
+              "@type": [
+                "schema:Product"
+              ],
+              "schema:name": "UV-Vis spectrophotometer",
+              "schema:additionalType": [
+                {
+                  "@id": "https://www.wikidata.org/entity/Q3099911"
+                }
+              ]
+            },
+            {
+              "@id": "ex:cuvette01",
+              "@type": [
+                "schema:Product"
+              ],
+              "schema:name": "1 cm quartz cuvette",
+              "schema:additionalType": [
+                {
+                  "@id": "https://www.wikidata.org/entity/Q3099911"
+                }
+              ]
+            },
+            {
+              "@id": "ex:colourReagent01",
+              "@type": [
+                "schema:ChemicalSubstance"
+              ],
+              "schema:name": "Colour-forming reagent, 2 mL",
+              "schema:additionalType": [
+                {
+                  "@id": "https://www.wikidata.org/entity/Q2356542"
+                }
+              ]
+            }
+          ],
+          "schema:object": [
+            {
+              "@id": "ex:waterSample01",
+              "@type": [
+                "schema:Thing"
+              ],
+              "schema:name": "Filtered water sample",
+              "prov:wasGeneratedBy": [
+                {
+                  "@id": "ex:waterSampling01",
+                  "@type": [
+                    "schema:Action",
+                    "schema:CreateAction",
+                    "prov:Activity"
+                  ],
+                  "schema:name": "Water sampling",
+                  "schema:additionalType": [
+                    {
+                      "@id": "cdifact:Sampling"
+                    }
+                  ],
+                  "schema:startTime": "2026-11-04T08:10:00+00:00",
+                  "schema:endTime": "2026-11-04T08:15:00+00:00",
+                  "schema:agent": {
+                    "@id": "ex:analyst01"
+                  },
+                  "schema:object": [
+                    {
+                      "@id": "ex:riverReach01",
+                      "@type": [
+                        "schema:Place"
+                      ],
+                      "schema:name": "River reach the water was taken from"
+                    }
+                  ],
+                  "schema:result": [
+                    {
+                      "@id": "ex:waterSample01"
+                    }
+                  ],
+                  "schema:actionStatus": "schema:CompletedActionStatus"
+                }
+              ]
+            }
+          ],
+          "schema:result": [
+            {
+              "@id": "ex:data/absorbance.csv"
+            }
+          ],
+          "schema:actionStatus": "schema:CompletedActionStatus"
+        }
+      ],
+      "schema:distribution": [
+        {
+          "@id": "ex:data/absorbance.csv",
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:name": "absorbance.csv",
+          "schema:contentUrl": "https://example.org/cdif-prov/data/absorbance.csv",
+          "schema:encodingFormat": [
+            "text/csv"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "ex:dataset/corrected-absorbance",
+      "@type": [
+        "schema:Dataset"
+      ],
+      "schema:name": "corrected-absorbance",
+      "schema:description": "missing",
+      "prov:wasGeneratedBy": [
+        {
+          "@id": "ex:blankCorrection",
+          "@type": [
+            "schema:Action",
+            "schema:CreateAction",
+            "prov:Activity"
+          ],
+          "schema:name": "Blank correction",
+          "schema:additionalType": [
+            {
+              "@id": "cdifact:DataTransformation"
+            }
+          ],
+          "schema:startTime": "2026-11-05T10:21:00+00:00",
+          "schema:endTime": "2026-11-05T10:21:04+00:00",
+          "schema:agent": {
+            "@id": "ex:analyst01"
+          },
+          "schema:instrument": [
+            {
+              "@id": "ex:analysisSoftware",
+              "@type": [
+                "schema:SoftwareApplication"
+              ],
+              "schema:name": "Analysis software",
+              "schema:additionalType": [
+                {
+                  "@id": "https://www.wikidata.org/entity/Q7397"
+                }
+              ]
+            }
+          ],
+          "schema:actionProcess": {
+            "@id": "ex:blankCorrectionSpec",
+            "@type": [
+              "schema:HowTo"
+            ],
+            "schema:name": "Blank-correction method"
+          },
+          "schema:object": [
+            {
+              "@id": "ex:data/absorbance.csv"
+            }
+          ],
+          "schema:result": [
+            {
+              "@id": "ex:data/corrected-absorbance.csv"
+            }
+          ],
+          "schema:actionStatus": "schema:CompletedActionStatus"
+        }
+      ],
+      "schema:distribution": [
+        {
+          "@id": "ex:data/corrected-absorbance.csv",
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:name": "corrected-absorbance.csv",
+          "schema:contentUrl": "https://example.org/cdif-prov/data/corrected-absorbance.csv",
+          "schema:encodingFormat": [
+            "text/csv"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "ex:dataset/concentration",
+      "@type": [
+        "schema:Dataset"
+      ],
+      "schema:name": "concentration",
+      "schema:description": "missing",
+      "prov:wasGeneratedBy": [
+        {
+          "@id": "ex:calibrationDerivation",
+          "@type": [
+            "schema:Action",
+            "schema:CreateAction",
+            "prov:Activity"
+          ],
+          "schema:name": "Calibration-based derivation",
+          "schema:additionalType": [
+            {
+              "@id": "cdifact:Derivation"
+            }
+          ],
+          "schema:startTime": "2026-11-05T10:23:14+00:00",
+          "schema:endTime": "2026-11-05T10:23:18+00:00",
+          "schema:agent": {
+            "@id": "ex:analyst01"
+          },
+          "schema:instrument": [
+            {
+              "@id": "ex:analysisSoftware"
+            }
+          ],
+          "schema:actionProcess": {
+            "@id": "ex:calibrationRelationship",
+            "@type": [
+              "schema:HowTo"
+            ],
+            "schema:name": "Calibration relationship"
+          },
+          "schema:object": [
+            {
+              "@id": "ex:data/corrected-absorbance.csv"
+            }
+          ],
+          "schema:result": [
+            {
+              "@id": "ex:data/concentration.csv"
+            }
+          ],
+          "schema:actionStatus": "schema:CompletedActionStatus"
+        }
+      ],
+      "schema:distribution": [
+        {
+          "@id": "ex:data/concentration.csv",
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:name": "concentration.csv",
+          "schema:contentUrl": "https://example.org/cdif-prov/data/concentration.csv",
+          "schema:encodingFormat": [
+            "text/csv"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "ex:dataset/uncertainty",
+      "@type": [
+        "schema:Dataset"
+      ],
+      "schema:name": "uncertainty",
+      "schema:description": "missing",
+      "prov:wasGeneratedBy": [
+        {
+          "@id": "ex:uncertaintyAssessment",
+          "@type": [
+            "schema:Action",
+            "schema:CreateAction",
+            "prov:Activity"
+          ],
+          "schema:name": "Uncertainty assessment",
+          "schema:additionalType": [
+            {
+              "@id": "cdifact:Analysis"
+            }
+          ],
+          "schema:agent": {
+            "@id": "ex:analyst01"
+          },
+          "schema:instrument": [
+            {
+              "@id": "ex:analysisSoftware"
+            }
+          ],
+          "schema:actionProcess": {
+            "@id": "ex:uncertaintySpec",
+            "@type": [
+              "schema:HowTo"
+            ],
+            "schema:name": "Uncertainty method"
+          },
+          "schema:object": [
+            {
+              "@id": "ex:data/concentration.csv"
+            }
+          ],
+          "schema:result": [
+            {
+              "@id": "ex:data/uncertainty.csv"
+            }
+          ],
+          "schema:actionStatus": "schema:CompletedActionStatus"
+        }
+      ],
+      "schema:distribution": [
+        {
+          "@id": "ex:data/uncertainty.csv",
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:name": "uncertainty.csv",
+          "schema:contentUrl": "https://example.org/cdif-prov/data/uncertainty.csv",
+          "schema:encodingFormat": [
+            "text/csv"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "ex:dataset/validation-result",
+      "@type": [
+        "schema:Dataset"
+      ],
+      "schema:name": "validation-result",
+      "schema:description": "missing",
+      "prov:wasGeneratedBy": [
+        {
+          "@id": "ex:validation",
+          "@type": [
+            "schema:Action",
+            "schema:CreateAction",
+            "prov:Activity"
+          ],
+          "schema:name": "Validation",
+          "schema:additionalType": [
+            {
+              "@id": "cdifact:DataValidation"
+            }
+          ],
+          "schema:agent": {
+            "@id": "ex:analyst01"
+          },
+          "schema:instrument": [
+            {
+              "@id": "ex:analysisSoftware"
+            }
+          ],
+          "schema:actionProcess": {
+            "@id": "ex:validationCriterion",
+            "@type": [
+              "schema:HowTo"
+            ],
+            "schema:name": "Validation criterion"
+          },
+          "schema:object": [
+            {
+              "@id": "ex:data/concentration.csv"
+            },
+            {
+              "@id": "ex:data/uncertainty.csv"
+            }
+          ],
+          "schema:result": [
+            {
+              "@id": "ex:data/validation-result.csv"
+            }
+          ],
+          "schema:actionStatus": "schema:CompletedActionStatus"
+        }
+      ],
+      "schema:distribution": [
+        {
+          "@id": "ex:data/validation-result.csv",
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:name": "validation-result.csv",
+          "schema:contentUrl": "https://example.org/cdif-prov/data/validation-result.csv",
+          "schema:encodingFormat": [
+            "text/csv"
+          ]
+        }
+      ]
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "ex:concentrationDataset/metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "ex:concentrationDataset"
+    },
+    "schema:dateModified": "2026-11-11",
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/manifest/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/1.1"
+      }
+    ]
+  }
+}
