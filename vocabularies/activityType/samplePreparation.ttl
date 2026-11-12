@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geochemvoc: <https://w3id.org/geochem/vocabulary/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:samplePreparation a skos:Concept ;
+    dcterms:isReplacedBy geochemvoc:samplePreparation ;
+    owl:deprecated true ;
     skos:broadMatch dag:IntentionalConditioning ;
     skos:broader at:intentionalConditioning ;
     skos:definition "An activity that changes the physical or chemical state of a sample to make it suitable for measurement, for example cutting, mounting, polishing, coating, crushing, sieving or dissolving it."@en ;

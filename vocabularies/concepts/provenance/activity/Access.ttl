@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Access a skos:Concept ;
+    skos:definition "An activity during which an agent realises its rights and abilities to interact with a disseminating agency to obtain an entity."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Access" ;
+    skos:prefLabel "Access"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:cataloguing a skos:Concept ;
+    dcterms:isReplacedBy cdifact:Cataloguing ;
+    owl:deprecated true ;
     skos:definition "An activity during which the existence of an entity is described in a systematic list."@en ;
     skos:exactMatch dag:Cataloguing ;
     skos:example "Adding metadata about a dataset into the GBIF catalogue of assets; Cataloguing JSON-LD documents embedded in HTML pages via a sitemap.txt file;"@en ;

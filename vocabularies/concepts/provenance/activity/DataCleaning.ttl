@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:DataCleaning a skos:Concept ;
+    skos:broader cdifact:DataTransformation ;
+    skos:definition "A data transformation during which erroneous, duplicated, or corrupted data is edited or removed from a volume of data."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataCleaning" ;
+    skos:prefLabel "Data Cleaning"@en .
+

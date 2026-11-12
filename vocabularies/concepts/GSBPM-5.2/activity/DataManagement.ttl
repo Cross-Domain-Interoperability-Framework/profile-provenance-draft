@@ -1,0 +1,23 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix gsbpm: <https://w3id.org/cdif/concepts/GSBPM-5.2/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+gsbpm:DataManagement a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    skos:broader gsbpm:OverarchingActivities ;
+    skos:definition """Data management is essential as data are produced within many of the activities in the statistical business process and are the key outputs. The main goal of data management is to ensure that data are appropriately used and usable throughout their lifecycle. Managing data throughout their lifecycle covers activities such as planning and evaluation of data management processes as well as establishing and implementing processes related to collection, organisation, use, protection, preservation and disposal of the data.
+ How data are managed will be closely linked to the use of the data, which in turn is linked to the statistical business process where the data are created. Both data and the processes in which they are created must be well defined in order to ensure proper data management.
+ Examples of data management activities include:
+ - Designing data structures and associated data sets, and the provenance and flow of data through the statistical business process;
+ - Identifying database (repositories) to store the data and administration of the database;
+ - Documenting the data (e.g. registering and inventorying data, classifying data according to content, retention or other required classification);
+ - Determining retention periods of data and archiving;
+ - Securing data against unauthorised access and use;
+ - Safeguarding data against technological change, physical media degradation, data corruption; - Performing data integrity checks (e.g. periodic checks providing assurance about the accuracy and consistency of data over its entire lifecycle);
+ - Performing disposition activities once the retention period of the data is expired."""@en ;
+    skos:exactMatch <http://unece.org/DataManagement> ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataManagement" ;
+    skos:prefLabel "Data Management"@en .
+

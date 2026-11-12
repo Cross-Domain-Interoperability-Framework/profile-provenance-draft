@@ -6,7 +6,10 @@
     "dag": "http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/",
     "at": "https://w3id.org/cdif/provenance/activityType/",
     "skos:broadMatch": {"@type": "@id"},
-    "skos:exactMatch": {"@type": "@id"}
+    "skos:exactMatch": {"@type": "@id"},
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "geochemvoc": "https://w3id.org/geochem/vocabulary/"
   },
   "@id": "at:passiveConditioning",
   "@type": ["skos:Concept"],
@@ -16,5 +19,7 @@
   "skos:example": {"@value": "For example, a train crash, radiation leak, meteor hitting earth, environmental exposure to chemicals (for biomonitoring), parade or cultural event, volcano eruption", "@language": "en"},
   "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
   "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-  "skos:exactMatch": ["dag:PassiveConditioning"]
+  "skos:exactMatch": ["dag:PassiveConditioning"],
+  "owl:deprecated": true,
+  "skos:editorialNote": [{"@value": "Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart.", "@language": "en"}]
 }

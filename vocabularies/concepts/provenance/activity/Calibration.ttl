@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Calibration a skos:Concept ;
+    skos:definition "An activity during which measurement data produced by a (physical) instrument (like a sensor) or similar entity are compared to a reference dataset or other material with known accuracy in order to establish, verify, or document the accuracy of the instrument."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Calibration" ;
+    skos:prefLabel "Calibration"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

@@ -1,0 +1,12 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:DataAndMetadataMappings a skos:Concept ;
+    dc:references <https://unece.org/statistics/csda> ;
+    skos:definition "Provide correspondences between units, variables and their representations for data integration and alignment."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataAndMetadataMappings" ;
+    skos:prefLabel "Data and Metadata Mappings"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

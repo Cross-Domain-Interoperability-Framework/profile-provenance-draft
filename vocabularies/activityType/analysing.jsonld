@@ -6,7 +6,10 @@
     "dag": "http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/",
     "at": "https://w3id.org/cdif/provenance/activityType/",
     "skos:broadMatch": {"@type": "@id"},
-    "skos:exactMatch": {"@type": "@id"}
+    "skos:exactMatch": {"@type": "@id"},
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "geochemvoc": "https://w3id.org/geochem/vocabulary/"
   },
   "@id": "at:analysing",
   "@type": ["skos:Concept"],
@@ -16,5 +19,7 @@
   "skos:example": {"@value": "The calculation of column means and their standard deviations in a table.", "@language": "en"},
   "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
   "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-  "skos:exactMatch": ["dag:Analyzing"]
+  "skos:exactMatch": ["dag:Analyzing"],
+  "owl:deprecated": true,
+  "dcterms:isReplacedBy": [{"@id": "cdifact:Analysis"}]
 }

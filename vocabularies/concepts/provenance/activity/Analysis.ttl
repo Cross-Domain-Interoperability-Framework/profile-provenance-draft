@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Analysis a skos:Concept ;
+    skos:definition "An activity during which one or more entities are studied by examining their constituent parts and the interrelationships between those parts in order to increase the user's knowledge about those entities."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Analysis" ;
+    skos:prefLabel "Analysis"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

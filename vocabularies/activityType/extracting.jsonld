@@ -6,7 +6,10 @@
     "dag": "http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/",
     "at": "https://w3id.org/cdif/provenance/activityType/",
     "skos:broadMatch": {"@type": "@id"},
-    "skos:exactMatch": {"@type": "@id"}
+    "skos:exactMatch": {"@type": "@id"},
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "geochemvoc": "https://w3id.org/geochem/vocabulary/"
   },
   "@id": "at:extracting",
   "@type": ["skos:Concept"],
@@ -16,5 +19,11 @@
   "skos:example": {"@value": "Includes retreival or all or part of a dataset; Extraction of data from an archive (in the ETL sense); the extraction of a specimen from a collection;", "@language": "en"},
   "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
   "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
-  "skos:exactMatch": ["dag:Extracting"]
+  "skos:exactMatch": ["dag:Extracting"],
+  "owl:deprecated": true,
+  "skos:relatedMatch": [
+    {"@id": "cdifact:DataExtraction"},
+    {"@id": "cdifact:SampleExtraction"}
+  ],
+  "skos:editorialNote": [{"@value": "Deprecated 2026-11-11 with no replacement: no concept in the CDIF provenance activity vocabulary means moving an entity to a new location. Data Extraction and Extraction (Sample) are related, not equivalent.", "@language": "en"}]
 }

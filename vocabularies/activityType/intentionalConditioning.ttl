@@ -1,10 +1,14 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:intentionalConditioning a skos:Concept ;
+    owl:deprecated true ;
     skos:definition "An activity in which the state of an entity is intentionally changed by an agent, in preparation for a specified and subsequent activity."@en ;
+    skos:editorialNote "Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart."@en ;
     skos:exactMatch dag:IntentionalConditioning ;
     skos:example "For example, the exposure of an experimental unit to radiation, the treatment of a patient with a drug, culturing organisms and acclimating them to the test conditions, dosing in a toxicology study or clinical trial, Transformation of the surface of nanomaterial in a specific environment,"@en ;
     skos:inScheme cdifprov:activityType ;

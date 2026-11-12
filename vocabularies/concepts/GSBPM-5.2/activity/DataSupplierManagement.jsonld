@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "Concept": "skos:Concept",
+    "ConceptScheme": "skos:ConceptScheme",
+    "prefLabel": "skos:prefLabel",
+    "altLabel": "skos:altLabel",
+    "definition": "skos:definition",
+    "broader": {"@id": "skos:broader", "@type": "@id"},
+    "narrower": {"@id": "skos:narrower", "@type": "@id"},
+    "inScheme": {"@id": "skos:inScheme", "@type": "@id"},
+    "notation": "skos:notation",
+    "hasTopConcept": {"@id": "skos:hasTopConcept", "@type": "@id"},
+    "note": "skos:note",
+    "dc": "http://purl.org/dc/terms/",
+    "references": {"@id": "dc:references", "@type": "@id"},
+    "exactMatch": {"@id": "skos:exactMatch", "@type": "@id"},
+    "closeMatch": {"@id": "skos:closeMatch", "@type": "@id"},
+    "relatedMatch": {"@id": "skos:relatedMatch", "@type": "@id"},
+    "broadMatch": {"@id": "skos:broadMatch", "@type": "@id"},
+    "narrowMatch": {"@id": "skos:narrowMatch", "@type": "@id"},
+    "topConceptOf": {"@id": "skos:topConceptOf", "@type": "@id"}
+  },
+  "@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataSupplierManagement",
+  "@type": "skos:Concept",
+  "prefLabel": {"@value": "Data Supplier Management", "@language": "en"},
+  "definition": {"@value": "The Data Supplier Management overarching activity within GSBPM refers to the management of data suppliers that takes place within the scope of the production process. Activities related to management of data suppliers at the corporate level should be considered in the framework of the GAMSO, such as in its Manage Data Suppliers activity under Corporate Support.\n Building on GAMSO's corporate support activity Manage Data Suppliers, which emphasises managing data suppliers, such as ensuring compliance with agreements, this overarching activity within GSBPM extends to technical-level engagement with data suppliers, including those supplying registers.\n This overarching activity can include:\n - Requiring specific information about the input data when metadata and/or documentation are scarce;\n - Asking for assistance from the data supplier to overcome technical or operational issues; and/or\n - Requesting additional information in case of unexpected changes in the data received.\n - Cross-process burden management, profiling and management of contact information (e.g. within registers).", "@language": "en"},
+  "broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+  "exactMatch": "http://unece.org/DataSupplierManagement",
+  "references": "https://unece.org/statistics/gsbpm-v5.2",
+  "inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+  "notation": "DataSupplierManagement"
+}

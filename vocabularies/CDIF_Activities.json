@@ -125,7 +125,8 @@
 				"https://unece.github.io/GSIM-2.0/"
 			],
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "OverarchingActivities"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/QualityManagement",
@@ -141,7 +142,8 @@
 			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
 			"exactMatch": "http://unece.org/QualityManagement",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
-			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "QualityManagement"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/MetadataManagement",
@@ -157,7 +159,8 @@
 			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
 			"exactMatch": "http://unece.org/MetadataManagement",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
-			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "MetadataManagement"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataManagement",
@@ -173,7 +176,8 @@
 			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
 			"exactMatch": "http://unece.org/DataManagement",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
-			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataManagement"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/ProcessDataManagement",
@@ -189,7 +193,8 @@
 			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
 			"exactMatch": "http://unece.org/ProcessDataManagement",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
-			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "ProcessDataManagement"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/KnowledgeManagement",
@@ -205,7 +210,8 @@
 			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
 			"exactMatch": "http://unece.org/KnowledgeManagement",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
-			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "KnowledgeManagement"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/DataSupplierManagement",
@@ -221,7 +227,8 @@
 			"broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
 			"exactMatch": "http://unece.org/DataSupplierManagement",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
-			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataSupplierManagement"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Access",
@@ -235,7 +242,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Access"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Aggregation",
@@ -249,7 +257,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Aggregation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Analysis",
@@ -263,7 +272,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Analysis"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Archiving",
@@ -277,7 +287,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Archiving"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Calibration",
@@ -291,7 +302,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Calibration"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Cataloguing",
@@ -305,7 +317,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Cataloguing"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Configuration",
@@ -319,7 +332,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Configuration"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Creation",
@@ -333,7 +347,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Creation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataCleaning",
@@ -347,7 +362,8 @@
 				"@language": "en"
 			},
 			"broader": "https://w3id.org/cdif/concepts/provenance/activity/DataTransformation",
-			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataCleaning"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataTransformation",
@@ -364,7 +380,8 @@
 				"https://w3id.org/cdif/concepts/provenance/activity/DataCleaning"
 			],
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataTransformation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataValidation",
@@ -378,7 +395,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataValidation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Derivation",
@@ -392,7 +410,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Derivation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataExtraction",
@@ -406,7 +425,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataExtraction"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/SampleExtraction",
@@ -420,7 +440,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "SampleExtraction"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataHarmonisation",
@@ -434,7 +455,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataHarmonisation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataIntegration",
@@ -448,7 +470,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataIntegration"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Observation",
@@ -462,7 +485,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Observation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Measurement",
@@ -476,7 +500,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Measurement"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Count",
@@ -490,7 +515,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Count"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DigitalPreservation",
@@ -504,7 +530,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DigitalPreservation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/QualityControl",
@@ -522,7 +549,8 @@
 				"https://w3id.org/cdif/concepts/provenance/activity/QualityControlMetadata"
 			],
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "QualityControl"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/QualityControlData",
@@ -536,7 +564,8 @@
 				"@language": "en"
 			},
 			"broader": "https://w3id.org/cdif/concepts/provenance/activity/QualityControl",
-			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "QualityControlData"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/QualityControlMetadata",
@@ -550,7 +579,8 @@
 				"@language": "en"
 			},
 			"broader": "https://w3id.org/cdif/concepts/provenance/activity/QualityControl",
-			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "QualityControlMetadata"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Sampling",
@@ -564,7 +594,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Sampling"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/ExperimentalDesign",
@@ -578,7 +609,8 @@
 				"@language": "en"
 			},
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "ExperimentalDesign"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataClassificationAndCoding",
@@ -594,7 +626,8 @@
 			"closeMatch": "http://unece.org/5.2-ClassifyAndCode",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataClassificationAndCoding"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/VariableAndUnitDerivation",
@@ -610,7 +643,8 @@
 			"closeMatch": "http://unece.org/5.5-DeriveNewVariablesAndUnits",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "VariableAndUnitDerivation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/Weighting",
@@ -626,7 +660,8 @@
 			"closeMatch": "http://unece.org/5.6-CalculateWeights",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "Weighting"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DisclosureControl",
@@ -642,7 +677,8 @@
 			"closeMatch": "http://unece.org/6.4-ApplyDisclosureControl",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DisclosureControl"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/OutputInterpretationAndExplanation",
@@ -658,7 +694,8 @@
 			"closeMatch": "http://unece.org/6.3-InterpretAndExplainOutputs",
 			"references": "https://unece.org/statistics/gsbpm-v5.2",
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "OutputInterpretationAndExplanation"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/FormatStandardization",
@@ -673,7 +710,8 @@
 			},
 			"references": "https://unece.org/statistics/csda",
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "FormatStandardization"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataAdjustmentAndNormalization",
@@ -688,7 +726,8 @@
 			},
 			"references": "https://unece.org/statistics/csda",
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataAdjustmentAndNormalization"
 		},
 		{
 			"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataAndMetadataMappings",
@@ -703,7 +742,8 @@
 			},
 			"references": "https://unece.org/statistics/csda",
 			"inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
-			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme"
+			"topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+			"notation": "DataAndMetadataMappings"
 		}
 	]
 }

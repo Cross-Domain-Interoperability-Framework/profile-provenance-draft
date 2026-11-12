@@ -2,14 +2,26 @@
 """
 Build the published files for a SKOS vocabulary from its JSON-LD source.
 
-The JSON-LD file is the only file anyone edits. From it this writes:
+The JSON-LD file is the only file anyone edits. Two source layouts are accepted:
+  - a nested tree (activityTypes.jsonld, the deprecated v0.1 vocabulary): the scheme
+    is the root object and concepts hang from skos:hasTopConcept / skos:narrower, with
+    CURIE @ids;
+  - a flat @graph (CDIF_Activities.json, the CDIF provenance activity vocabulary): one
+    node per concept or scheme, with full-IRI @ids, in more than one namespace
+    (https://w3id.org/cdif/concepts/provenance/activity/ and
+    https://w3id.org/cdif/concepts/GSBPM-5.2/activity/).
+
+From it this writes:
   - <name>.ttl beside it: the whole scheme in Turtle. This is the input the
     iSamples vocabulary action (isamplesorg/vocabularies) renders to HTML, and
     what w3id serves for the scheme IRI on a text/turtle request.
-  - <conceptDir>/<localName>.jsonld and .ttl: one file per concept, holding that
-    concept's own statements, with its broader/narrower concepts and its scheme
-    as {"@id"} references. w3id serves these for a concept IRI, so each IRI
-    dereferences to its own skos:Concept rather than to the whole scheme.
+  - one .jsonld and .ttl file per concept, holding that concept's own statements,
+    with its broader/narrower concepts and its scheme as {"@id"} references. w3id
+    serves these for a concept IRI, so each IRI dereferences to its own skos:Concept
+    rather than to the whole scheme. Nested tree: <folder>/<scheme's last
+    segment>/<localName>.*. Flat graph: <folder>/concepts/<IRI path after
+    https://w3id.org/cdif/concepts/>.*, e.g.
+    vocabularies/concepts/provenance/activity/Sampling.jsonld.
 
 The concept's local name (the part of its IRI after the scheme namespace) must
 equal its skos:notation; the build fails otherwise, because the w3id rules map
@@ -26,6 +38,7 @@ Usage:
     python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld
     python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld --check
     python tools/buildVocabularyFiles.py vocabularies/activityTypes.jsonld --anchors vocabularies/docs/activityTypes.html
+    python tools/buildVocabularyFiles.py vocabularies/CDIF_Activities.json [--check]
 """
 
 import argparse
@@ -40,7 +53,12 @@ import rdflib
 # The concept files sit in a folder named after the scheme IRI's last segment,
 # matching the IRIs: https://w3id.org/cdif/provenance/activityType/<localName>.
 # The extra prefix lets the iSamples action name the scheme as a CURIE.
-EXTRA_PREFIXES = {"cdifprov": "https://w3id.org/cdif/provenance/"}
+EXTRA_PREFIXES = {"cdifprov": "https://w3id.org/cdif/provenance/",
+                  "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+                  "gsbpm": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/"}
+
+# Flat-graph concept files mirror the IRI path below this root.
+CONCEPTS_ROOT = "https://w3id.org/cdif/concepts/"
 
 
 def dump_jsonld(x, ind=0):
@@ -79,9 +97,39 @@ def concepts(nodes):
         yield from concepts(c.get('skos:narrower', []))
 
 
-def build(source):
+def graph_concepts(doc):
+    """The concept nodes of a flat @graph source."""
+    return [n for n in doc['@graph'] if n.get('@type') in ('skos:Concept', 'Concept')]
+
+
+def build_flat(source, doc, concept_dir=None):
+    """concept_dir, when given, holds every concept file flat (<concept_dir>/<localName>.*),
+    for a vocabulary outside https://w3id.org/cdif/concepts/ such as the geochemistry
+    activity types (https://w3id.org/geochem/vocabulary/<localName>)."""
+    folder, name = os.path.split(source)
+    ctx = doc['@context']
+    out = {os.path.join(folder, os.path.splitext(name)[0] + '.ttl'): to_turtle(doc)}
+    root = concept_dir or os.path.join(folder, 'concepts')
+    for c in graph_concepts(doc):
+        iri = c['@id']
+        local = iri.rstrip('/').rsplit('/', 1)[1]
+        notation = c.get('skos:notation') or c.get('notation')
+        if local != notation or not (concept_dir or iri.startswith(CONCEPTS_ROOT)):
+            sys.exit(f"{iri}: its local name must equal skos:notation ({notation!r}), "
+                     f"and without --concept-dir it must lie under {CONCEPTS_ROOT}")
+        base = (os.path.join(root, local) if concept_dir
+                else os.path.join(root, *iri[len(CONCEPTS_ROOT):].split('/')))
+        node = {'@context': ctx, **c}
+        out[base + '.jsonld'] = dump_jsonld(node) + '\n'
+        out[base + '.ttl'] = to_turtle(node)
+    return out, root
+
+
+def build(source, concept_dir=None):
     """Return {relative path: file text} for every generated file."""
     doc = json.load(open(source, encoding='utf-8'))
+    if '@graph' in doc:
+        return build_flat(source, doc, concept_dir)
     ctx = doc['@context']
     scheme = doc['@id']
     folder, name = os.path.split(source)
@@ -106,8 +154,9 @@ def build(source):
 def add_anchors(source, html_path):
     doc = json.load(open(source, encoding='utf-8'))
     html = open(html_path, encoding='utf-8').read()
-    for c in concepts(doc['skos:hasTopConcept']):
-        local = c['skos:notation']
+    nodes = graph_concepts(doc) if '@graph' in doc else concepts(doc['skos:hasTopConcept'])
+    for c in nodes:
+        local = c.get('skos:notation') or c.get('notation')
         if local == local.lower() or f'id="{local}"' in html:
             continue
         html, n = re.subn(f'(<span id="{local.lower()}"></span>)', rf'\1<span id="{local}"></span>', html, count=1)
@@ -121,14 +170,18 @@ def main():
     ap.add_argument('source', help='the vocabulary JSON-LD file')
     ap.add_argument('--check', action='store_true', help='fail if the generated files are not up to date')
     ap.add_argument('--anchors', metavar='HTML', help='add case-preserving concept anchors to the rendered HTML')
+    ap.add_argument('--concept-dir', metavar='DIR',
+                    help='flat @graph only: write every concept file to DIR/<localName>.* '
+                         '(needed for a vocabulary outside https://w3id.org/cdif/concepts/)')
     a = ap.parse_args()
 
     if a.anchors:
         add_anchors(a.source, a.anchors)
         return 0
 
-    files, concept_dir = build(a.source)
-    existing = {os.path.join(concept_dir, f) for f in os.listdir(concept_dir)} if os.path.isdir(concept_dir) else set()
+    files, concept_dir = build(a.source, a.concept_dir)
+    existing = ({os.path.join(d, f) for d, _, fs in os.walk(concept_dir) for f in fs}
+                if os.path.isdir(concept_dir) else set())
     stale = sorted(existing - set(files))
     changed = [p for p, text in files.items()
                if not os.path.exists(p) or open(p, encoding='utf-8').read() != text]
@@ -143,8 +196,8 @@ def main():
         print(f'{len(files)} generated files up to date')
         return 0
 
-    os.makedirs(concept_dir, exist_ok=True)
     for p in changed:
+        os.makedirs(os.path.dirname(p), exist_ok=True)
         open(p, 'w', encoding='utf-8', newline='\n').write(files[p])
     for p in stale:
         os.remove(p)

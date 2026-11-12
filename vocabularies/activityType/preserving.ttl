@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:preserving a skos:Concept ;
+    dcterms:isReplacedBy cdifact:DigitalPreservation ;
+    owl:deprecated true ;
     skos:definition "An activity during which an entity is modified to stabilise its make-up and properties, facilitating future use."@en ;
     skos:exactMatch dag:Preserving ;
     skos:example "Includes digital preservation actions such as file format transformation, e.g. converting data in a proprietary format to a generic non-proprietary, and more preservation ready format to maximise fidelity over time and accessibility and usefulness in the future. Also includes the preservation of physical samples for future use."@en ;

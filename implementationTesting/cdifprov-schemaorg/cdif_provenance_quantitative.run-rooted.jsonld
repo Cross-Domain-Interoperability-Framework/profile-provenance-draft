@@ -4,7 +4,7 @@
     "prov": "http://www.w3.org/ns/prov#",
     "dcterms": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
-    "at": "https://w3id.org/cdif/provenance/activityType/",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
     "p": "http://purl.org/net/p-plan#",
     "ex": "https://example.org/cdif-prov/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -19,7 +19,7 @@
   ],
   "schema:name": "Concentration determination run",
   "schema:description": "Whole analysis of water sample 01: sampling, instrument calibration, absorbance measurement, blank correction, derivation of concentration from the calibration, uncertainty assessment and validation against the acceptance criterion.",
-  "schema:additionalType": {"@id": "at:analysing"},
+  "schema:additionalType": {"@id": "cdifact:Analysis"},
   "schema:identifier": {
     "@type": "schema:PropertyValue",
     "schema:propertyID": "laboratory run number",
@@ -166,7 +166,7 @@
           "schema:url": "https://example.org/cdif-prov/software/analysis",
           "schema:softwareVersion": "2.4.1"
         },
-        "schema:additionalType": {"@id": "at:qualityControl"},
+        "schema:additionalType": {"@id": "cdifact:QualityControl"},
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
         "schema:agent": {
           "@type": "schema:Role",
@@ -225,7 +225,7 @@
         "schema:name": "Blank correction",
         "schema:description": "Reagent-blank absorbance subtracted from the sample absorbance.",
         "schema:instrument": {"@id": "ex:analysisSoftware"},
-        "schema:additionalType": {"@id": "at:dataProcessing"},
+        "schema:additionalType": {"@id": "cdifact:DataTransformation"},
         "schema:startTime": "2026-11-05T10:21:00Z",
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
         "schema:agent": {
@@ -274,7 +274,7 @@
         ],
         "schema:name": "Water sampling",
         "schema:description": "Grab sample of surface water from the river reach, filtered on site.",
-        "schema:additionalType": {"@id": "at:sampling"},
+        "schema:additionalType": {"@id": "cdifact:Sampling"},
         "schema:startTime": "2026-11-04T08:10:00Z",
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
         "schema:agent": {
@@ -388,7 +388,7 @@
             "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q2356542"}
           }
         ],
-        "schema:additionalType": {"@id": "at:instrumentCalibration"},
+        "schema:additionalType": {"@id": "cdifact:Calibration"},
         "schema:startTime": "2026-11-05T09:40:00Z",
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
         "schema:agent": {
@@ -423,7 +423,7 @@
           "schema:Action"
         ],
         "schema:name": "Absorbance measurement, first attempt",
-        "schema:additionalType": {"@id": "at:dataAcquisition"},
+        "schema:additionalType": {"@id": "cdifact:Measurement"},
         "schema:startTime": "2026-11-05T10:12:00Z",
         "schema:actionStatus": "http://schema.org/FailedActionStatus",
         "schema:agent": {"@id": "ex:analyst01"},
@@ -463,7 +463,7 @@
             "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q2356542"}
           }
         ],
-        "schema:additionalType": {"@id": "at:dataAcquisition"},
+        "schema:additionalType": {"@id": "cdifact:Measurement"},
         "schema:identifier": "MEAS-2026-11-05-002",
         "schema:startTime": "2026-11-05T10:18:00Z",
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
@@ -562,7 +562,7 @@
         "schema:name": "Calibration-based derivation",
         "schema:description": "Concentration computed from corrected absorbance with the calibration curve.",
         "schema:instrument": {"@id": "ex:analysisSoftware"},
-        "schema:additionalType": {"@id": "at:deriving"},
+        "schema:additionalType": {"@id": "cdifact:Derivation"},
         "schema:startTime": "2026-11-05T10:23:14Z",
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
         "schema:agent": {
@@ -633,7 +633,7 @@
         "schema:name": "Uncertainty assessment",
         "schema:description": "Combined standard uncertainty of the concentration from calibration, repeatability and volume contributions.",
         "schema:instrument": {"@id": "ex:analysisSoftware"},
-        "schema:additionalType": {"@id": "at:analysing"},
+        "schema:additionalType": {"@id": "cdifact:Analysis"},
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
         "schema:agent": {
           "@type": "schema:Role",

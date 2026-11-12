@@ -1,0 +1,13 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Weighting a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    skos:closeMatch <http://unece.org/5.6-CalculateWeights> ;
+    skos:definition "Creates weights for unit data records according to a methodology."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Weighting" ;
+    skos:prefLabel "Weighting"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

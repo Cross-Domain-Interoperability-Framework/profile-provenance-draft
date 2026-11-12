@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Configuration a skos:Concept ;
+    skos:definition "An activity during which an entity (e.g. a system resource) is modified to grant it desirable properties or dispose it to desirable behaviour (for example by adjusting parameters)."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Configuration" ;
+    skos:prefLabel "Configuration"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

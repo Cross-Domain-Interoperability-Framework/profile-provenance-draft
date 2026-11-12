@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "Concept": "skos:Concept",
+    "ConceptScheme": "skos:ConceptScheme",
+    "prefLabel": "skos:prefLabel",
+    "altLabel": "skos:altLabel",
+    "definition": "skos:definition",
+    "broader": {"@id": "skos:broader", "@type": "@id"},
+    "narrower": {"@id": "skos:narrower", "@type": "@id"},
+    "inScheme": {"@id": "skos:inScheme", "@type": "@id"},
+    "notation": "skos:notation",
+    "hasTopConcept": {"@id": "skos:hasTopConcept", "@type": "@id"},
+    "note": "skos:note",
+    "dc": "http://purl.org/dc/terms/",
+    "references": {"@id": "dc:references", "@type": "@id"},
+    "exactMatch": {"@id": "skos:exactMatch", "@type": "@id"},
+    "closeMatch": {"@id": "skos:closeMatch", "@type": "@id"},
+    "relatedMatch": {"@id": "skos:relatedMatch", "@type": "@id"},
+    "broadMatch": {"@id": "skos:broadMatch", "@type": "@id"},
+    "narrowMatch": {"@id": "skos:narrowMatch", "@type": "@id"},
+    "topConceptOf": {"@id": "skos:topConceptOf", "@type": "@id"}
+  },
+  "@id": "https://w3id.org/cdif/concepts/provenance/activity/QualityControl",
+  "@type": "skos:Concept",
+  "prefLabel": {"@value": "Quality Control", "@language": "en"},
+  "definition": {"@value": "An activity through which an entity's compliance to a set of defined criteria is assessed, resulting in acceptance or rejection of that entity in a set of further activities.", "@language": "en"},
+  "narrower": [
+    "https://w3id.org/cdif/concepts/provenance/activity/QualityControlData",
+    "https://w3id.org/cdif/concepts/provenance/activity/QualityControlMetadata"
+  ],
+  "inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+  "topConceptOf": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+  "notation": "QualityControl"
+}

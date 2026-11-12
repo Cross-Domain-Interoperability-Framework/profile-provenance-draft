@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:DigitalPreservation a skos:Concept ;
+    skos:definition "Series of managed activities necessary to ensure continued access to digital materials for as long as necessary that ensures materials are accessible, understandable, and valuable to designated communities."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DigitalPreservation" ;
+    skos:prefLabel "Digital Preservation"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

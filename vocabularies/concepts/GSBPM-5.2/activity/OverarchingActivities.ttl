@@ -1,0 +1,21 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix gsbpm: <https://w3id.org/cdif/concepts/GSBPM-5.2/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+gsbpm:OverarchingActivities a skos:Concept ;
+    dc:references <https://unece.github.io/GSIM-2.0/>,
+        <https://unece.org/statistics/documents/2019/01/standards/gamso-v12> ;
+    skos:definition "The GSBPM recognises several overarching activities that apply throughout the production phases, and across statistical business processes. For example, quality is monitored and checked at various stages of the production. Management of data and metadata is done throughout the process, not at a certain sub-process only. While the production process involves different units and expertise in the organisation at different stages, it is important that these overarching activities are conducted in a consistent manner in accordance with organisation-wide standards and policies, and with close coordination with a central unit."@en ;
+    skos:exactMatch <http://unece.org/OverarchingActivities> ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:narrower gsbpm:DataManagement,
+        gsbpm:DataSupplierManagement,
+        gsbpm:KnowledgeManagement,
+        gsbpm:MetadataManagement,
+        gsbpm:ProcessDataManagement,
+        gsbpm:QualityManagement ;
+    skos:notation "OverarchingActivities" ;
+    skos:prefLabel "Overarching Activities"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

@@ -1,14 +1,21 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:extracting a skos:Concept ;
+    owl:deprecated true ;
     skos:definition "An activity during which an entity is moved to a new location."@en ;
+    skos:editorialNote "Deprecated 2026-11-11 with no replacement: no concept in the CDIF provenance activity vocabulary means moving an entity to a new location. Data Extraction and Extraction (Sample) are related, not equivalent."@en ;
     skos:exactMatch dag:Extracting ;
     skos:example "Includes retreival or all or part of a dataset; Extraction of data from an archive (in the ETL sense); the extraction of a specimen from a collection;"@en ;
     skos:inScheme cdifprov:activityType ;
     skos:notation "extracting" ;
     skos:prefLabel "Extracting"@en ;
+    skos:relatedMatch cdifact:DataExtraction,
+        cdifact:SampleExtraction ;
     skos:topConceptOf cdifprov:activityType .
 

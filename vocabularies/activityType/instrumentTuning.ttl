@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geochemvoc: <https://w3id.org/geochem/vocabulary/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:instrumentTuning a skos:Concept ;
+    dcterms:isReplacedBy geochemvoc:instrumentTuning ;
+    owl:deprecated true ;
     skos:broadMatch dag:Configuring ;
     skos:broader at:configuring ;
     skos:definition "An activity that adjusts instrument settings to optimise performance for a measurement, judged by the instrument's response rather than against reference materials of known value."@en ;

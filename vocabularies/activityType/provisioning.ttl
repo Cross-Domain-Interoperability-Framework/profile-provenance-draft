@@ -1,10 +1,14 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:provisioning a skos:Concept ;
+    owl:deprecated true ;
     skos:definition "An activity during which an agent supplies an entity to other agents."@en ;
+    skos:editorialNote "Deprecated 2026-11-11 with no replacement: the CDIF provenance activity vocabulary has no counterpart."@en ;
     skos:exactMatch dag:Provisioning ;
     skos:example "The provisioning of a report to a reviewer; the targeted supply of data to a specific user community. The release of a dataset via a public registry; The public release of a report;"@en ;
     skos:inScheme cdifprov:activityType ;

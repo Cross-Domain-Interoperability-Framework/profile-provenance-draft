@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:QualityControlMetadata a skos:Concept ;
+    skos:broader cdifact:QualityControl ;
+    skos:definition "An activity through which an entity's metadata compliance to a set of defined criteria is assessed, resulting in acceptance, rejection or modification of that entity in a set of further activities."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "QualityControlMetadata" ;
+    skos:prefLabel "Quality Control (Metadata)"@en .
+

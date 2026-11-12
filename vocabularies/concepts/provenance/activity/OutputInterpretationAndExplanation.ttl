@@ -1,0 +1,13 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:OutputInterpretationAndExplanation a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    skos:closeMatch <http://unece.org/6.3-InterpretAndExplainOutputs> ;
+    skos:definition "Examination and analysis of statistical outputs to identify and explain patterns, trends, relationships, differences, and unexpected results."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "OutputInterpretationAndExplanation" ;
+    skos:prefLabel "Output Interpretation and Explanation"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

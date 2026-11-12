@@ -1,0 +1,20 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix gsbpm: <https://w3id.org/cdif/concepts/GSBPM-5.2/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+gsbpm:DataSupplierManagement a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    skos:broader gsbpm:OverarchingActivities ;
+    skos:definition """The Data Supplier Management overarching activity within GSBPM refers to the management of data suppliers that takes place within the scope of the production process. Activities related to management of data suppliers at the corporate level should be considered in the framework of the GAMSO, such as in its Manage Data Suppliers activity under Corporate Support.
+ Building on GAMSO's corporate support activity Manage Data Suppliers, which emphasises managing data suppliers, such as ensuring compliance with agreements, this overarching activity within GSBPM extends to technical-level engagement with data suppliers, including those supplying registers.
+ This overarching activity can include:
+ - Requiring specific information about the input data when metadata and/or documentation are scarce;
+ - Asking for assistance from the data supplier to overcome technical or operational issues; and/or
+ - Requesting additional information in case of unexpected changes in the data received.
+ - Cross-process burden management, profiling and management of contact information (e.g. within registers)."""@en ;
+    skos:exactMatch <http://unece.org/DataSupplierManagement> ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataSupplierManagement" ;
+    skos:prefLabel "Data Supplier Management"@en .
+

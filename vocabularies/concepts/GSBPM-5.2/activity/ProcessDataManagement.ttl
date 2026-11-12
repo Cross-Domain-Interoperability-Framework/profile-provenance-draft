@@ -1,0 +1,16 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix gsbpm: <https://w3id.org/cdif/concepts/GSBPM-5.2/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+gsbpm:ProcessDataManagement a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    skos:broader gsbpm:OverarchingActivities ;
+    skos:definition """The Process Data Management overarching activity within GSBPM refers to the management of process data that takes place within the scope of the production process. Activities related to management of process data at the corporate level should be considered in the framework of the GAMSO.
+ This overarching activity includes activities of registering, systematising, and using data arising from carrying out the statistical business process. This could include, for example, paradata logs resulting from the execution of code, as well as information arising from fieldwork. (Process metadata, or data about the process by which the data were collected.) This data is not quality information in itself, as it may be very detailed (such as the length of time taken by a single field worker to conduct a single interview), but it could possibly be used to derive quality information (such as total or average time for conducting interviews).
+ Such process data can be reviewed to evaluate how the statistical business process is carried out, for example to optimise its efficiency, or to detect possible problems that have occurred and reveal their cause. Process data could also be used to detect and understand patterns in the data used to produce statistics."""@en ;
+    skos:exactMatch <http://unece.org/ProcessDataManagement> ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "ProcessDataManagement" ;
+    skos:prefLabel "Process Data Management"@en .
+

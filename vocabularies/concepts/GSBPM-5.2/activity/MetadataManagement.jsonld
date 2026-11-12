@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "Concept": "skos:Concept",
+    "ConceptScheme": "skos:ConceptScheme",
+    "prefLabel": "skos:prefLabel",
+    "altLabel": "skos:altLabel",
+    "definition": "skos:definition",
+    "broader": {"@id": "skos:broader", "@type": "@id"},
+    "narrower": {"@id": "skos:narrower", "@type": "@id"},
+    "inScheme": {"@id": "skos:inScheme", "@type": "@id"},
+    "notation": "skos:notation",
+    "hasTopConcept": {"@id": "skos:hasTopConcept", "@type": "@id"},
+    "note": "skos:note",
+    "dc": "http://purl.org/dc/terms/",
+    "references": {"@id": "dc:references", "@type": "@id"},
+    "exactMatch": {"@id": "skos:exactMatch", "@type": "@id"},
+    "closeMatch": {"@id": "skos:closeMatch", "@type": "@id"},
+    "relatedMatch": {"@id": "skos:relatedMatch", "@type": "@id"},
+    "broadMatch": {"@id": "skos:broadMatch", "@type": "@id"},
+    "narrowMatch": {"@id": "skos:narrowMatch", "@type": "@id"},
+    "topConceptOf": {"@id": "skos:topConceptOf", "@type": "@id"}
+  },
+  "@id": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/MetadataManagement",
+  "@type": "skos:Concept",
+  "prefLabel": {"@value": "Metadata Management", "@language": "en"},
+  "definition": {"@value": "Metadata has an important role and must be managed at an operational level within the statistical production process, in accordance with relevant corporate policies and standards. When aspects of metadata management are considered at corporate or strategic level (e.g. there are metadata systems that impact large parts of the production system), it should be considered in the framework of the GAMSO.\n 46. Good metadata management is essential for the efficient operation of statistical business processes. Metadata are present in every phase, either created, updated or carried forward from a previous phase or reused from another business process. In the context of this model, the emphasis of the overarching activity of metadata management is on the design/creation/revision, updating, use, and archiving of statistical metadata, though metadata on the different sub-processes themselves are also of interest, including as an input for quality management. The key challenge is to ensure that these metadata are captured as early as possible, and stored and transferred from phase to phase alongside the data they refer to. Metadata management strategy and systems are therefore vital to the operation of this model, and these can be facilitated by the GSIM.\n 47. The GSIM supports a consistent approach to metadata, facilitating the primary role for metadata, that is, that metadata should uniquely and formally define the content and links between information classes and processes in the statistical information system.", "@language": "en"},
+  "broader": "https://w3id.org/cdif/concepts/GSBPM-5.2/activity/OverarchingActivities",
+  "exactMatch": "http://unece.org/MetadataManagement",
+  "references": "https://unece.org/statistics/gsbpm-v5.2",
+  "inScheme": "https://w3id.org/cdif/concepts/provenance/activity/conceptScheme",
+  "notation": "MetadataManagement"
+}

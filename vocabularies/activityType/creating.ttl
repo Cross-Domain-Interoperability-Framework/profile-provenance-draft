@@ -1,9 +1,15 @@
 @prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
 @prefix cdifprov: <https://w3id.org/cdif/provenance/> .
 @prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 at:creating a skos:Concept ;
+    dcterms:isReplacedBy cdifact:Creation ;
+    owl:deprecated true ;
     skos:definition "An activity through which an entity is brought into existence. Serves as a superclass for other more expressive classes that create entities, such as authoring."@en ;
     skos:exactMatch dag:Creating ;
     skos:example "The creation of a narrative document by an author; the creation of synthetic data. The creation of a dataset from a set of observations; the creation of a dataset summarising the stream of real-time data from a sensor;"@en ;

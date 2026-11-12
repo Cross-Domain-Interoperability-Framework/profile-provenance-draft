@@ -1,0 +1,13 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:DisclosureControl a skos:Concept ;
+    dc:references <https://unece.org/statistics/gsbpm-v5.2> ;
+    skos:closeMatch <http://unece.org/6.4-ApplyDisclosureControl> ;
+    skos:definition "Ensures that the data (and metadata) to be disseminated or internally stored for future use do not breach the appropriate rules on confidentiality according to either organisational policies and rules, or to the process-specific methodology used."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DisclosureControl" ;
+    skos:prefLabel "Disclosure Control"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

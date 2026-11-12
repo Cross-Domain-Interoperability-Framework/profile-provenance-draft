@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:ExperimentalDesign a skos:Concept ;
+    skos:definition "The systematic planning of an experiment, including the selection and allocation of experimental units, treatments, controls, and measurement procedures, to evaluate causal relationships while minimizing bias and controlling variability."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "ExperimentalDesign" ;
+    skos:prefLabel "Experimental Design"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

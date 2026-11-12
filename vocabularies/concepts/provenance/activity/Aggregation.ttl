@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:Aggregation a skos:Concept ;
+    skos:definition "An activity during which multiple entities are gathered together and assembled into a whole based on a defined set of criteria."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "Aggregation" ;
+    skos:prefLabel "Aggregation"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+

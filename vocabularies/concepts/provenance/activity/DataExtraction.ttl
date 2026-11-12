@@ -1,0 +1,10 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cdifact:DataExtraction a skos:Concept ;
+    skos:definition "An activity through which a part of data is selected and isolated according to some criteria and for a specific purpose."@en ;
+    skos:inScheme cdifact:conceptScheme ;
+    skos:notation "DataExtraction" ;
+    skos:prefLabel "Data Extraction"@en ;
+    skos:topConceptOf cdifact:conceptScheme .
+
