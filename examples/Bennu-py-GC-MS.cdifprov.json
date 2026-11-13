@@ -46,7 +46,7 @@
         {
           "@type": [
             "schema:Thing",
-            "schema:SoftwareApplication",
+            "schema:Product",
             "prov:Entity"
           ],
           "@id": "#PyrolysisOven",
@@ -54,7 +54,7 @@
           "schema:description": "Pyrolysis front-end interface coupled to the GC-MS system. Flash heats samples at 10°C/ms to target temperatures up to 1300°C. For this analysis, target temperature was approximately 600°C.",
           "schema:additionalType": [
             {
-              "@id": "https://www.wikidata.org/entity/Q7397"
+              "@id": "https://www.wikidata.org/entity/Q3099911"
             }
           ]
         }
@@ -137,7 +137,7 @@
         {
           "@type": [
             "schema:Thing",
-            "schema:SoftwareApplication",
+            "schema:Product",
             "prov:Entity"
           ],
           "@id": "#GasChromatograph",
@@ -145,7 +145,7 @@
           "schema:description": "GC fitted with Rtx-5ms (5% diphenyl / 95% dimethyl polysiloxane) fused silica capillary column, 30 m × 0.250 mm × 0.50 µm film thickness, with 5 m × 0.250 mm guard column. Front inlet operated in split mode (10:1 ratio, 15.0 mL/min split flow) at 300°C. Helium carrier gas at 1.500 mL/min constant flow. Oven program: 40°C (hold) → 300°C (~3.5°C/min) → 300°C (hold). Total run time 87.79 minutes.",
           "schema:additionalType": [
             {
-              "@id": "https://www.wikidata.org/entity/Q7397"
+              "@id": "https://www.wikidata.org/entity/Q3099911"
             }
           ]
         }
@@ -183,7 +183,7 @@
         {
           "@type": [
             "schema:Thing",
-            "schema:SoftwareApplication",
+            "schema:Product",
             "prov:Entity"
           ],
           "@id": "#TSQ_MassSpectrometer",
@@ -192,7 +192,7 @@
           "schema:url": "https://www.thermofisher.com/",
           "schema:additionalType": [
             {
-              "@id": "https://www.wikidata.org/entity/Q7397"
+              "@id": "https://www.wikidata.org/entity/Q3099911"
             }
           ]
         }
