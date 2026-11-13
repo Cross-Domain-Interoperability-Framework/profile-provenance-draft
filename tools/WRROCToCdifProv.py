@@ -35,7 +35,7 @@ import argparse
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from usedResources import migrate as migrate_used_resources  # noqa: E402
+from usedResources import add_kind, migrate as migrate_used_resources  # noqa: E402
 
 
 # CDIF output context
@@ -144,6 +144,9 @@ def _inline_entity(entity, index, inlined):
 
     if "SoftwareApplication" in types:
         return _inline_software(entity, index, inlined)
+
+    if "Product" in types:
+        return _inline_software(entity, index, inlined, "schema:Product")
 
     if "FormalParameter" in types:
         return _inline_parameter(entity, index, inlined)
@@ -261,7 +264,7 @@ def _inline_workflow(entity, index, inlined):
     if "ComputationalWorkflow" in types:
         add_types.append("bios:ComputationalWorkflow")
     if add_types:
-        node["schema:additionalType"] = add_types
+        node["schema:additionalType"] = [{"@id": t} for t in add_types]
 
     # Programming language — inline
     prog_lang = entity.get("programmingLanguage")
@@ -447,10 +450,10 @@ def _inline_lab_protocol(entity, index, inlined):
     return node
 
 
-def _inline_software(entity, index, inlined):
-    """Inline a SoftwareApplication."""
+def _inline_software(entity, index, inlined, schema_type="schema:SoftwareApplication"):
+    """Inline a SoftwareApplication, or a Product (a lab instrument) with the same properties."""
     node = {
-        "@type": ["schema:Thing", "schema:SoftwareApplication"],
+        "@type": ["schema:Thing", schema_type],
     }
 
     if entity.get("@id"):
@@ -551,7 +554,7 @@ def _inline_parameter(entity, index, inlined):
 
     # Preserve original type info
     add_type = entity.get("additionalType")
-    additional_types = ["bios:FormalParameter"]
+    additional_types = [{"@id": "bios:FormalParameter"}]
     if add_type:
         additional_types.append(add_type)
     node["schema:additionalType"] = additional_types
@@ -567,7 +570,7 @@ def _inline_sample(entity, index, inlined):
     """
     node = {
         "@type": ["schema:Thing"],
-        "schema:additionalType": ["bios:Sample"],
+        "schema:additionalType": [{"@id": "bios:Sample"}],
     }
 
     if entity.get("@id"):
@@ -708,7 +711,7 @@ def _map_parameter_values(param_values, index, inlined):
         if not isinstance(pv, dict):
             continue
 
-        prop = {"@type": "schema:PropertyValue"}
+        prop = {"@type": ["schema:PropertyValue"]}
 
         if pv.get("@id"):
             prop["@id"] = pv["@id"]
@@ -728,9 +731,9 @@ def _map_parameter_values(param_values, index, inlined):
         # propertyID links back to the FormalParameter definition
         prop_id = pv.get("propertyID")
         if isinstance(prop_id, dict) and "@id" in prop_id:
-            prop["schema:propertyID"] = prop_id["@id"]
+            prop["schema:propertyID"] = [prop_id["@id"]]
         elif prop_id:
-            prop["schema:propertyID"] = prop_id
+            prop["schema:propertyID"] = _ensure_list(prop_id)
 
         props.append(prop)
 
@@ -764,13 +767,13 @@ def _build_activity_node(action, index, inlined):
     if desc:
         activity["schema:description"] = desc
 
-    # Preserve all original action types (CreateAction, LabProcess, etc.)
-    # Bioschemas types get bios: prefix; schema.org types get schema: prefix
-    preserved_types = original_types.intersection(ACTION_TYPES)
+    # Preserve the Bioschemas action types (LabProcess) as {"@id"} references.
+    # schema.org action types (CreateAction etc.) are not repeated: the activity
+    # is already typed schema:Action, and nothing reads them back.
+    preserved_types = original_types.intersection(ACTION_TYPES & BIOSCHEMAS_TYPES)
     if preserved_types:
         activity["schema:additionalType"] = [
-            f"bios:{t}" if t in BIOSCHEMAS_TYPES else f"schema:{t}"
-            for t in sorted(preserved_types)
+            {"@id": f"bios:{t}"} for t in sorted(preserved_types)
         ]
 
     # actionStatus — normalize full URI to prefixed form
@@ -796,6 +799,12 @@ def _build_activity_node(action, index, inlined):
     if protocol_ref:
         resolved = _resolve_and_inline(protocol_ref, index, inlined)
         if resolved:
+            # schema:actionProcess takes a schema:HowTo or an {@id}; a protocol
+            # that is also a ComputationalWorkflow is inlined by the workflow
+            # mapper, which does not type it HowTo.
+            if isinstance(resolved, dict) and "@type" in resolved \
+                    and "schema:HowTo" not in resolved["@type"]:
+                resolved["@type"] = ["schema:HowTo"] + resolved["@type"]
             activity["bios:executesLabProtocol"] = resolved
             activity["schema:actionProcess"] = resolved
 
@@ -812,23 +821,31 @@ def _build_activity_node(action, index, inlined):
         inlined_insts = []
         for inst_ref in instruments:
             resolved = _resolve_and_inline(inst_ref, index, inlined)
+            if isinstance(resolved, str):
+                resolved = {"@id": resolved}
             if resolved:
-                inlined_insts.append(resolved)
-        if len(inlined_insts) == 1:
-            activity["schema:instrument"] = inlined_insts[0]
-        elif inlined_insts:
+                # An item described in place carries exactly one Wikidata kind
+                # term (CDIF #81); an {@id} reference is left as it is.
+                if set(resolved) - {"@id"} and "prov:Entity" not in resolved.get("@type", []):
+                    resolved["@type"] = resolved.get("@type", []) + ["prov:Entity"]
+                inlined_insts.append(add_kind(resolved))
+        if inlined_insts:
             activity["schema:instrument"] = inlined_insts
 
-    # Inputs (object) → prov:used — inline
+    # Inputs (object) → schema:object — inline. No prov:used: CDIF records an
+    # activity's inputs with schema:object.
     objects = _ensure_list(action.get("object"))
     if objects:
-        used_items = []
+        input_items = []
         for obj_ref in objects:
             resolved = _resolve_and_inline(obj_ref, index, inlined)
             if resolved:
-                used_items.append(resolved)
-        if used_items:
-            activity["prov:used"] = used_items
+                if isinstance(resolved, dict) and set(resolved) - {"@id"} \
+                        and "prov:Entity" not in resolved.get("@type", []):
+                    resolved["@type"] = ["prov:Entity"] + resolved.get("@type", [])
+                input_items.append(resolved)
+        if input_items:
+            activity["schema:object"] = input_items
 
     # Outputs (result) → schema:result — inline
     results = _ensure_list(action.get("result"))
@@ -857,10 +874,11 @@ def _build_activity_node(action, index, inlined):
             resolved = _resolve_and_inline(ag_ref, index, inlined)
             if resolved:
                 agent_items.append(resolved)
-        if len(agent_items) == 1:
+        # schema:agent takes one agent; any others are schema:participant.
+        if agent_items:
             activity["schema:agent"] = agent_items[0]
-        elif agent_items:
-            activity["schema:agent"] = agent_items
+        if len(agent_items) > 1:
+            activity["schema:participant"] = agent_items[1:]
 
     # Error
     error = _get_prop(action, "error", "schema:error")

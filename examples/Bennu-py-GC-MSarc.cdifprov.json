@@ -50,6 +50,7 @@
       "schema:endTime": "2023-11-21T23:59:59Z",
       "bios:executesLabProtocol": {
         "@type": [
+          "schema:HowTo",
           "schema:Thing",
           "schema:SoftwareApplication"
         ],
@@ -689,6 +690,23 @@
         ],
         "schema:measurementMethod": "Pyrolysis-GC-MS/MS"
       },
+      "schema:object": [
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "bios:Sample"
+            }
+          ],
+          "@id": "#OREX-803003-0",
+          "schema:name": "Bennu asteroid sample OREX-803003-0",
+          "schema:description": "Approximately 1 mg aggregate of material from asteroid Bennu, collected by the OSIRIS-REx Touch-and-Go Sample Acquisition Mechanism (TAGSAM).",
+          "schema:identifier": "OREX-803003-0"
+        }
+      ],
       "schema:result": [
         {
           "@type": [
@@ -702,28 +720,40 @@
       ],
       "bios:parameterValue": [
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_sampleMass",
           "schema:name": "Sample mass",
           "schema:value": "~1",
           "schema:unitText": "mg",
-          "schema:propertyID": "#param_sampleMass"
+          "schema:propertyID": [
+            "#param_sampleMass"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_pyrolysisTemp",
           "schema:name": "Pyrolysis target temperature",
           "schema:value": 600,
           "schema:unitText": "°C",
-          "schema:propertyID": "#param_pyrolysisTemp"
+          "schema:propertyID": [
+            "#param_pyrolysisTemp"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_pyrolysisRate",
           "schema:name": "Pyrolysis heating rate",
           "schema:value": 10,
           "schema:unitText": "°C/ms",
-          "schema:propertyID": "#param_pyrolysisRate"
+          "schema:propertyID": [
+            "#param_pyrolysisRate"
+          ]
         }
       ],
       "schema:additionalProperty": [
@@ -771,24 +801,7 @@
         "@id": "#NASA_GSFC",
         "schema:name": "NASA Goddard Space Flight Center",
         "schema:url": "https://www.nasa.gov/goddard"
-      },
-      "schema:object": [
-        {
-          "@type": [
-            "prov:Entity",
-            "schema:Thing"
-          ],
-          "schema:additionalType": [
-            {
-              "@id": "bios:Sample"
-            }
-          ],
-          "@id": "#OREX-803003-0",
-          "schema:name": "Bennu asteroid sample OREX-803003-0",
-          "schema:description": "Approximately 1 mg aggregate of material from asteroid Bennu, collected by the OSIRIS-REx Touch-and-Go Sample Acquisition Mechanism (TAGSAM).",
-          "schema:identifier": "OREX-803003-0"
-        }
-      ]
+      }
     },
     {
       "@type": [
@@ -811,6 +824,11 @@
       "schema:actionProcess": {
         "@id": "#SamplePrep_Protocol"
       },
+      "schema:object": [
+        {
+          "@id": "#OREX-803003-0"
+        }
+      ],
       "schema:result": [
         {
           "@type": [
@@ -828,15 +846,21 @@
       ],
       "bios:parameterValue": [
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_prep_mass",
           "schema:name": "Sample mass",
           "schema:value": "~1",
           "schema:unitText": "mg",
-          "schema:propertyID": "#param_sampleMass"
+          "schema:propertyID": [
+            "#param_sampleMass"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_prep_container",
           "schema:name": "Sample container",
           "schema:value": "quartz tube"
@@ -866,12 +890,7 @@
       ],
       "schema:agent": {
         "@id": "#NASA_GSFC"
-      },
-      "schema:object": [
-        {
-          "@id": "#OREX-803003-0"
-        }
-      ]
+      }
     },
     {
       "@type": [
@@ -894,6 +913,11 @@
       "schema:actionProcess": {
         "@id": "#Pyrolysis_Protocol"
       },
+      "schema:object": [
+        {
+          "@id": "#PreparedSample"
+        }
+      ],
       "schema:result": [
         {
           "@type": [
@@ -911,28 +935,40 @@
       ],
       "bios:parameterValue": [
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_pyro_temp",
           "schema:name": "Target temperature",
           "schema:value": 600,
           "schema:unitText": "°C",
-          "schema:propertyID": "#param_pyrolysisTemp"
+          "schema:propertyID": [
+            "#param_pyrolysisTemp"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_pyro_rate",
           "schema:name": "Heating rate",
           "schema:value": 10,
           "schema:unitText": "°C/ms",
-          "schema:propertyID": "#param_pyrolysisRate"
+          "schema:propertyID": [
+            "#param_pyrolysisRate"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_pyro_transferline",
           "schema:name": "Transfer line temperature",
           "schema:value": 300,
           "schema:unitText": "°C",
-          "schema:propertyID": "#param_transferLineTemp"
+          "schema:propertyID": [
+            "#param_transferLineTemp"
+          ]
         }
       ],
       "schema:additionalProperty": [
@@ -975,12 +1011,7 @@
       ],
       "schema:agent": {
         "@id": "#NASA_GSFC"
-      },
-      "schema:object": [
-        {
-          "@id": "#PreparedSample"
-        }
-      ]
+      }
     },
     {
       "@type": [
@@ -1003,6 +1034,11 @@
       "schema:actionProcess": {
         "@id": "#GCSeparation_Protocol"
       },
+      "schema:object": [
+        {
+          "@id": "#PyrolysisProducts"
+        }
+      ],
       "schema:result": [
         {
           "@type": [
@@ -1020,41 +1056,61 @@
       ],
       "bios:parameterValue": [
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_gc_column",
           "schema:name": "Column",
           "schema:value": "Rtx-5ms, 30 m × 0.250 mm × 0.50 µm + 5 m guard",
-          "schema:propertyID": "#param_columnType"
+          "schema:propertyID": [
+            "#param_columnType"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_gc_carrier",
           "schema:name": "Carrier gas flow",
           "schema:value": 1.5,
           "schema:unitText": "mL/min",
-          "schema:propertyID": "#param_carrierGasFlow"
+          "schema:propertyID": [
+            "#param_carrierGasFlow"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_gc_split",
           "schema:name": "Split ratio",
           "schema:value": "10:1",
-          "schema:propertyID": "#param_splitRatio"
+          "schema:propertyID": [
+            "#param_splitRatio"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_gc_inlet",
           "schema:name": "Inlet temperature",
           "schema:value": 300,
           "schema:unitText": "°C",
-          "schema:propertyID": "#param_inletTemp"
+          "schema:propertyID": [
+            "#param_inletTemp"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_gc_oven",
           "schema:name": "Oven program",
           "schema:value": "40°C (hold 5 min) → 300°C at ~3.5°C/min → 300°C (hold to 87.79 min)",
-          "schema:propertyID": "#param_ovenProgram"
+          "schema:propertyID": [
+            "#param_ovenProgram"
+          ]
         }
       ],
       "schema:additionalProperty": [
@@ -1118,12 +1174,7 @@
       ],
       "schema:agent": {
         "@id": "#NASA_GSFC"
-      },
-      "schema:object": [
-        {
-          "@id": "#PyrolysisProducts"
-        }
-      ]
+      }
     },
     {
       "@type": [
@@ -1146,6 +1197,11 @@
       "schema:actionProcess": {
         "@id": "#MSDetection_Protocol"
       },
+      "schema:object": [
+        {
+          "@id": "#SeparatedEluent"
+        }
+      ],
       "schema:result": [
         {
           "@id": "20231121_002_OREX-803003-0.cdf"
@@ -1153,35 +1209,51 @@
       ],
       "bios:parameterValue": [
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_ms_scanrange",
           "schema:name": "Full scan range",
           "schema:value": "m/z 50–500",
-          "schema:propertyID": "#param_scanRange"
+          "schema:propertyID": [
+            "#param_scanRange"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_ms_ionization",
           "schema:name": "Ionization mode",
           "schema:value": "Electron Ionization (EI), positive polarity",
-          "schema:propertyID": "#param_ionizationMode"
+          "schema:propertyID": [
+            "#param_ionizationMode"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_ms_mrm",
           "schema:name": "MRM target compounds",
           "schema:value": 38,
-          "schema:propertyID": "#param_mrmCompoundCount"
+          "schema:propertyID": [
+            "#param_mrmCompoundCount"
+          ]
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_ms_sourceTemp",
           "schema:name": "Ion source temperature",
           "schema:value": 300,
           "schema:unitText": "°C"
         },
         {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "@id": "#pv_ms_scantime",
           "schema:name": "Full scan time",
           "schema:value": 0.1,
@@ -1243,12 +1315,7 @@
       ],
       "schema:agent": {
         "@id": "#NASA_GSFC"
-      },
-      "schema:object": [
-        {
-          "@id": "#SeparatedEluent"
-        }
-      ]
+      }
     }
   ]
 }

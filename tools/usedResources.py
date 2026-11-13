@@ -7,7 +7,8 @@ accepts role-keyed prov:used wrappers ({"bios:computationalTool": [...]}, {"sche
 [...]}, {"bios:reagent": [...]}). For every node typed both schema:Action and prov:Activity:
 
 - a wrapper's values, and any bios:computationalTool / bios:reagent / bios:labEquipment placed
-  directly on the activity, become schema:instrument items;
+  directly on the activity, become schema:instrument items, as does a wrapper found in
+  schema:object;
 - every other prov:used value (an @id reference, an inline entity, a string) becomes a
   schema:object input, de-duplicated by @id;
 - prov:used is removed;
@@ -83,6 +84,15 @@ def migrate_activity(a):
             for x in _list(a.pop(role)):
                 instr.append(add_kind(x, role))
             changed.append(f'{role} -> schema:instrument')
+    # A wrapper can also have been carried into schema:object, when prov:used inputs moved there.
+    for i in list(obj):
+        roles = [k for k in ROLE_KIND if isinstance(i, dict) and k in i and '@type' not in i]
+        if roles:
+            obj.remove(i)
+            for r in roles:
+                for x in _list(i[r]):
+                    instr.append(add_kind(x, r))
+            changed.append('schema:object wrapper -> schema:instrument')
     for i in _list(a.pop('prov:used', [])):
         roles = [k for k in ROLE_KIND if isinstance(i, dict) and k in i and '@type' not in i]
         if roles:
@@ -103,6 +113,8 @@ def migrate_activity(a):
             changed.append('schema:instrument kind terms')
     if obj:
         a['schema:object'] = obj if (len(obj) > 1 or had_obj_list or 'schema:object' not in a) else obj[0]
+    elif 'schema:object' in a:
+        del a['schema:object']
     return changed
 
 
