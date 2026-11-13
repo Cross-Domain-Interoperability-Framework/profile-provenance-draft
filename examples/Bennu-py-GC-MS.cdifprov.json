@@ -46,14 +46,15 @@
         {
           "@type": [
             "schema:Thing",
-            "schema:Product"
+            "schema:SoftwareApplication",
+            "prov:Entity"
           ],
           "@id": "#PyrolysisOven",
           "schema:name": "Pyrolysis Oven",
           "schema:description": "Pyrolysis front-end interface coupled to the GC-MS system. Flash heats samples at 10°C/ms to target temperatures up to 1300°C. For this analysis, target temperature was approximately 600°C.",
           "schema:additionalType": [
             {
-              "@id": "https://www.wikidata.org/entity/Q3099911"
+              "@id": "https://www.wikidata.org/entity/Q7397"
             }
           ]
         }
@@ -61,6 +62,7 @@
       "schema:object": [
         {
           "@type": [
+            "prov:Entity",
             "schema:Thing"
           ],
           "@id": "#OREX-803003-0",
@@ -70,10 +72,10 @@
       ],
       "schema:result": [
         {
-          "@id": "#PreparedSample",
           "@type": [
             "schema:Thing"
           ],
+          "@id": "#PreparedSample",
           "schema:name": "Prepared sample in quartz tube",
           "schema:description": "~1 mg Bennu aggregate loaded and weighed in quartz tube, ready for pyrolysis."
         }
@@ -109,10 +111,10 @@
       ],
       "schema:result": [
         {
-          "@id": "#PyrolysisProducts",
           "@type": [
             "schema:Thing"
           ],
+          "@id": "#PyrolysisProducts",
           "schema:name": "Pyrolysis volatiles in helium carrier stream",
           "schema:description": "Thermally extracted volatiles from flash pyrolysis of Bennu sample, carried in helium through heated transfer line at 300°C to GC inlet."
         }
@@ -131,24 +133,6 @@
       "schema:description": "Pyrolysis products separated on an Rtx-5ms nonpolar fused silica capillary column (30 m × 0.250 mm × 0.50 µm, with 5 m guard). Split injection (10:1, 300°C inlet). Oven program: 40°C hold → ramp at ~3.5°C/min to 300°C → hold at 300°C. Total run 87.79 min. Helium carrier at 1.500 mL/min constant flow.",
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
-      "schema:object": [
-        {
-          "@id": "#PyrolysisProducts"
-        }
-      ],
-      "schema:result": [
-        {
-          "@id": "#SeparatedEluent",
-          "@type": [
-            "schema:Thing"
-          ],
-          "schema:name": "Chromatographically separated eluent",
-          "schema:description": "Time-resolved stream of separated compounds eluting from the GC column into the mass spectrometer."
-        }
-      ],
-      "schema:agent": {
-        "@id": "#NASA_GSFC"
-      },
       "schema:instrument": [
         {
           "@type": [
@@ -165,7 +149,25 @@
             }
           ]
         }
-      ]
+      ],
+      "schema:object": [
+        {
+          "@id": "#PyrolysisProducts"
+        }
+      ],
+      "schema:result": [
+        {
+          "@type": [
+            "schema:Thing"
+          ],
+          "@id": "#SeparatedEluent",
+          "schema:name": "Chromatographically separated eluent",
+          "schema:description": "Time-resolved stream of separated compounds eluting from the GC column into the mass spectrometer."
+        }
+      ],
+      "schema:agent": {
+        "@id": "#NASA_GSFC"
+      }
     },
     {
       "@type": [
@@ -177,6 +179,24 @@
       "schema:description": "Continuous full scan acquisition across m/z 50–500 in positive EI mode for the entire 87.79-minute run (scan time 0.100 s). Provides comprehensive mass spectral data for compound identification via fragmentation pattern matching against spectral libraries and comparison with analytical reference standards. Ion source and transfer line at 300°C.",
       "schema:actionStatus": "schema:CompletedActionStatus",
       "schema:endTime": "2023-11-21T00:00:00Z",
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:Thing",
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "@id": "#TSQ_MassSpectrometer",
+          "schema:name": "Thermo Scientific TSQ Triple-Quadrupole Mass Spectrometer",
+          "schema:description": "TSQ triple-quadrupole MS operated in electron ionization (EI) mode, positive polarity. MS transfer line 300°C, ion source 300°C. Detector gain 100,000. Operated in simultaneous full scan and timed SRM/MRM acquisition modes.",
+          "schema:url": "https://www.thermofisher.com/",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        }
+      ],
       "schema:object": [
         {
           "@id": "#SeparatedEluent"
@@ -195,25 +215,7 @@
       ],
       "schema:agent": {
         "@id": "#NASA_GSFC"
-      },
-      "schema:instrument": [
-        {
-          "@type": [
-            "schema:Thing",
-            "schema:SoftwareApplication",
-            "prov:Entity"
-          ],
-          "@id": "#TSQ_MassSpectrometer",
-          "schema:name": "Thermo Scientific TSQ Triple-Quadrupole Mass Spectrometer",
-          "schema:description": "TSQ triple-quadrupole MS operated in electron ionization (EI) mode, positive polarity. MS transfer line 300°C, ion source 300°C. Detector gain 100,000. Operated in simultaneous full scan and timed SRM/MRM acquisition modes.",
-          "schema:url": "https://www.thermofisher.com/",
-          "schema:additionalType": [
-            {
-              "@id": "https://www.wikidata.org/entity/Q7397"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "@type": [

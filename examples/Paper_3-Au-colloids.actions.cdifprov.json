@@ -51,15 +51,6 @@
           "@id": "datasets/Compiled_XAS_data_Colloid_and_TiO2_supported_Au.prj_1.prj",
           "schema:name": "Compiled_XAS_data_Colloid_and_TiO2_supported_Au.prj",
           "schema:encodingFormat": "text/plain"
-        },
-        {
-          "bios:computationalTool": {
-            "@type": [
-              "schema:SoftwareApplication"
-            ],
-            "schema:name": "Galaxy workflow engine",
-            "schema:version": "23.2"
-          }
         }
       ],
       "schema:instrument": [
@@ -78,6 +69,18 @@
           ],
           "schema:name": "Workflow constructed from history ''Extracting structural information of Au colloids at ultra-dilute concentrations: identification of growth during nanoparticle immobilization (paper-3''",
           "@id": "workflows/1a5c6ad02e8082a6.gxwf.yml"
+        },
+        {
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
+          "schema:name": "Galaxy workflow engine",
+          "schema:version": "23.2",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
         }
       ]
     },
