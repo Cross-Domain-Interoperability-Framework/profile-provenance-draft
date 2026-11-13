@@ -145,6 +145,9 @@ def _inline_entity(entity, index, inlined):
     if "SoftwareApplication" in types:
         return _inline_software(entity, index, inlined)
 
+    if "Product" in types:
+        return _inline_software(entity, index, inlined, "schema:Product")
+
     if "FormalParameter" in types:
         return _inline_parameter(entity, index, inlined)
 
@@ -447,10 +450,10 @@ def _inline_lab_protocol(entity, index, inlined):
     return node
 
 
-def _inline_software(entity, index, inlined):
-    """Inline a SoftwareApplication."""
+def _inline_software(entity, index, inlined, schema_type="schema:SoftwareApplication"):
+    """Inline a SoftwareApplication, or a Product (a lab instrument) with the same properties."""
     node = {
-        "@type": ["schema:Thing", "schema:SoftwareApplication"],
+        "@type": ["schema:Thing", schema_type],
     }
 
     if entity.get("@id"):
