@@ -168,8 +168,8 @@ cdifd:CDIFPersonShape a sh:NodeShape ;
 
 cdifd:CDIFProvenanceConformsToShape a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:hasValue <https://w3id.org/cdif/provenance/1.1> ;
-            sh:message "Metadata record must declare conformance to the CDIF provenance profile (https://w3id.org/cdif/provenance/1.1)" ;
+            sh:hasValue <https://w3id.org/cdif/provenance/2.0> ;
+            sh:message "Metadata record must declare conformance to the CDIF provenance profile (https://w3id.org/cdif/provenance/2.0)" ;
             sh:path dcterms:conformsTo ;
             sh:severity sh:Warning ] ;
     sh:target [ a sh:SPARQLTarget ;
@@ -228,13 +228,16 @@ cdifd:CDIFRelationShape a sh:NodeShape ;
     sh:targetClass dcat:Relationship .
 
 cdifd:CDIFRoleShape a sh:NodeShape ;
-    sh:message "The schema.org construct for assigining a role to a contributor nests a second schema:contributor node inside a schema:contributor node." ;
-    sh:property [ sh:description "https://cross-domain-interoperability-framework.github.io/cdifbook/metadata/schemaorgimplementation.html" ;
-            sh:message "a Role must be filled by a Person, Organization, or IRI reference to one" ;
-            sh:minCount 1 ;
-            sh:or ( [ sh:class schema:Person ] [ sh:class schema:Organization ] [ sh:nodeKind sh:IRI ] ) ;
-            sh:path schema:contributor ],
-        cdifd:roleNameProperty ;
+    sh:description "https://cross-domain-interoperability-framework.github.io/cdifbook/metadata/schemaorgimplementation.html" ;
+    sh:message "a Role must be filled by a Person, Organization, or IRI reference to one, under schema:contributor, schema:agent or schema:participant (the property the Role sits under)" ;
+    sh:or ( [ sh:property [ sh:minCount 1 ;
+                        sh:or ( [ sh:class schema:Person ] [ sh:class schema:Organization ] [ sh:nodeKind sh:IRI ] ) ;
+                        sh:path schema:contributor ] ] [ sh:property [ sh:minCount 1 ;
+                        sh:or ( [ sh:class schema:Person ] [ sh:class schema:Organization ] [ sh:nodeKind sh:IRI ] ) ;
+                        sh:path schema:agent ] ] [ sh:property [ sh:minCount 1 ;
+                        sh:or ( [ sh:class schema:Person ] [ sh:class schema:Organization ] [ sh:nodeKind sh:IRI ] ) ;
+                        sh:path schema:participant ] ] ) ;
+    sh:property cdifd:roleNameProperty ;
     sh:targetClass schema:Role .
 
 cdifd:CDIFadditionalPropertyShape a sh:NodeShape ;
@@ -296,8 +299,8 @@ cdifd:cdifProvActivityShape a sh:NodeShape ;
             sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class schema:Product ] [ sh:class schema:SoftwareApplication ] [ sh:class schema:DefinedTerm ] [ sh:class schema:ChemicalSubstance ] ) ;
             sh:path schema:instrument ;
             sh:severity sh:Info ],
-        [ sh:in ( "schema:CompletedActionStatus" "schema:ActiveActionStatus" "schema:PotentialActionStatus" "schema:FailedActionStatus" ) ;
-            sh:message "schema:actionStatus should be one of: schema:CompletedActionStatus, schema:ActiveActionStatus, schema:PotentialActionStatus, schema:FailedActionStatus" ;
+        [ sh:in ( "schema:CompletedActionStatus" "schema:ActiveActionStatus" "schema:PotentialActionStatus" "schema:FailedActionStatus" "http://schema.org/CompletedActionStatus" "http://schema.org/ActiveActionStatus" "http://schema.org/PotentialActionStatus" "http://schema.org/FailedActionStatus" "https://schema.org/CompletedActionStatus" "https://schema.org/ActiveActionStatus" "https://schema.org/PotentialActionStatus" "https://schema.org/FailedActionStatus" ) ;
+            sh:message "schema:actionStatus should be one of: schema:CompletedActionStatus, schema:ActiveActionStatus, schema:PotentialActionStatus, schema:FailedActionStatus, as the CURIE or the full http:// or https://schema.org/ IRI" ;
             sh:path schema:actionStatus ;
             sh:severity sh:Info ],
         [ sh:message "schema:actionProcess should be a HowTo, IRI reference, or descriptive string" ;
