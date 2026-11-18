@@ -1,0 +1,3141 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "bios": "https://bioschemas.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
+  "@id": "#dataset",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Paper 1 Pt3Sn",
+  "schema:dateModified": "2024-10-14",
+  "schema:subjectOf": {
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "@id": "#metadata",
+    "schema:about": {
+      "@id": "#dataset"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ]
+  },
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "@id": "#bdb469cd-b85a-4ca3-b220-a041f0172418",
+      "schema:name": "Paper 1: XANES, LCF, EXAFS",
+      "schema:actionStatus": "schema:CompletedActionStatus",
+      "schema:startTime": "2024-10-14T16:46:03.039565",
+      "schema:endTime": "2024-10-14T16:46:03.039568",
+      "schema:object": [
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:CreativeWorkSeries"
+          ],
+          "@id": "#dataset_collection-9118",
+          "schema:name": "Sn K edge H2 under H2",
+          "schema:description": "Collection of 4 items"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:CreativeWorkSeries"
+          ],
+          "@id": "#dataset_collection-9119",
+          "schema:name": "Sn K edge H2",
+          "schema:description": "Collection of 4 items"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:CreativeWorkSeries"
+          ],
+          "@id": "#dataset_collection-9120",
+          "schema:name": "Sn K edge Ar",
+          "schema:description": "Collection of 4 items"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:CreativeWorkSeries"
+          ],
+          "@id": "#dataset_collection-9121",
+          "schema:name": "Sn K edge Air",
+          "schema:description": "Collection of 3 items"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:CreativeWorkSeries"
+          ],
+          "@id": "#dataset_collection-9122",
+          "schema:name": "Pt L3 edge H2 under H2",
+          "schema:description": "Collection of 6 items"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:CreativeWorkSeries"
+          ],
+          "@id": "#dataset_collection-9123",
+          "schema:name": "Pt L3 edge H2",
+          "schema:description": "Collection of 8 items"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:CreativeWorkSeries"
+          ],
+          "@id": "#dataset_collection-9124",
+          "schema:name": "Pt L3 edge Ar",
+          "schema:description": "Collection of 6 items"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:CreativeWorkSeries"
+          ],
+          "@id": "#dataset_collection-9125",
+          "schema:name": "Pt L3 edge Air",
+          "schema:description": "Collection of 3 items"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "datasets/Sn_foil.prj_b9b199e627b0df6d.prj",
+          "schema:name": "Sn foil.prj",
+          "schema:encodingFormat": "text/plain"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "datasets/SnO2_0.9_2.6-13.5_gbkg.prj_48b3093bef30842b.prj",
+          "schema:name": "SnO2 0.9 2.6-13.5 gbkg.prj",
+          "schema:encodingFormat": "text/plain"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "datasets/1692395.cif_d28c7de7a4bf240d.cif",
+          "schema:name": "1692395.cif",
+          "schema:encodingFormat": "text/plain"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "datasets/1690711.cif_b3eebcf05996ed00.cif",
+          "schema:name": "1690711.cif",
+          "schema:encodingFormat": "text/plain"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "datasets/1680385.cif_d8d62840031974c8.cif",
+          "schema:name": "1680385.cif",
+          "schema:encodingFormat": "text/plain"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "#Sn%20foil%20Calibration-pv",
+          "schema:name": "Sn foil Calibration"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "#SnO2%20Calibration-pv",
+          "schema:name": "SnO2 Calibration"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "#Sn%20K%20edge%20under%20H2%20Calibration-pv",
+          "schema:name": "Sn K edge under H2 Calibration"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "#Sn3Pt%20Sn%20Calibration-pv",
+          "schema:name": "Sn3Pt Sn Calibration"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "#Pt%20L3%20edge%20under%20H2%20Calibration-pv",
+          "schema:name": "Pt L3 edge under H2 Calibration"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:MediaObject"
+          ],
+          "@id": "#Sn3Pt%20Pt%20Calibration-pv",
+          "schema:name": "Sn3Pt Pt Calibration"
+        }
+      ],
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
+          "schema:name": "Galaxy workflow engine",
+          "schema:version": "24.1",
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "schema:SoftwareApplication",
+            "prov:Entity"
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "bios:ComputationalWorkflow"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ],
+          "schema:name": "Paper 1: XANES, LCF, EXAFS",
+          "@id": "workflows/bf972370cf6dfa23.gxwf.yml"
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "#procedure-bdb469cd-b85a-4ca3-b220-a041f0172418",
+        "@type": [
+          "schema:HowTo"
+        ],
+        "schema:name": "Paper 1: XANES, LCF, EXAFS",
+        "schema:description": "The Galaxy workflow as it was run: its 27 steps, in invocation order, each an action with the inputs it used, what it produced, its parameters and the tool that ran it. It is based on the workflow's abstract CWL description.",
+        "schema:isBasedOn": {
+          "@id": "workflows/bf972370cf6dfa23.abstract.cwl"
+        },
+        "schema:step": [
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-1-Extract-Sn-Foil",
+            "schema:name": "Extract Sn Foil",
+            "schema:position": 1,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:46.220005",
+            "schema:endTime": "2024-10-14T16:47:57.053179",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn%20Foil",
+                "schema:name": "Sn Foil"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn%20foil%20Calibration",
+                "schema:name": "Sn foil Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
+                "schema:name": "Extract Sn Foil/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs.format",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "extract_group": {
+                    "@type": "schema:StructuredValue",
+                    "extract_group": "single",
+                    "group_name": "merge"
+                  },
+                  "format": "athena"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate": {
+                    "@type": "schema:StructuredValue",
+                    "calibrate": "true",
+                    "calibration_e0": 29200
+                  },
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-2-Extract-SnO2",
+            "schema:name": "Extract SnO2",
+            "schema:position": 2,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:46.326585",
+            "schema:endTime": "2024-10-14T16:47:56.007141",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-SnO2",
+                "schema:name": "SnO2"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-SnO2%20Calibration",
+                "schema:name": "SnO2 Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-2-Extract-SnO2/output-athena_project_file",
+                "schema:name": "Extract SnO2/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs.format",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "extract_group": {
+                    "@type": "schema:StructuredValue",
+                    "extract_group": "single",
+                    "group_name": "SnO2_0_9_2_6_13_5_0_8_1_0_with_theory"
+                  },
+                  "format": "athena"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate": {
+                    "@type": "schema:StructuredValue",
+                    "calibrate": "true",
+                    "calibration_e0": 29219.73
+                  },
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2",
+            "schema:name": "Merge Sn K edge H2 under H2",
+            "schema:position": 3,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:46.441993",
+            "schema:endTime": "2024-10-14T16:47:59.267649",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn%20K%20edge%20H2%20under%20H2",
+                "schema:name": "Sn K edge H2 under H2"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn%20K%20edge%20under%20H2%20Calibration",
+                "schema:name": "Sn K edge under H2 Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "format": {
+                    "@type": "schema:StructuredValue",
+                    "energy_column.energy_column": "auto",
+                    "format": "plaintext",
+                    "mu_column.mu_column": "auto"
+                  },
+                  "merge_inputs": "true"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate": {
+                    "@type": "schema:StructuredValue",
+                    "calibrate": "true",
+                    "calibration_e0": 29200
+                  },
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-4-Merge-Sn-K-edge-H2",
+            "schema:name": "Merge Sn K edge H2",
+            "schema:position": 4,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:46.553223",
+            "schema:endTime": "2024-10-14T16:47:59.312173",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn%20K%20edge%20H2",
+                "schema:name": "Sn K edge H2"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn3Pt%20Sn%20Calibration",
+                "schema:name": "Sn3Pt Sn Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "format": {
+                    "@type": "schema:StructuredValue",
+                    "energy_column.energy_column": "auto",
+                    "format": "plaintext",
+                    "mu_column.mu_column": "auto"
+                  },
+                  "merge_inputs": "true"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate": {
+                    "@type": "schema:StructuredValue",
+                    "calibrate": "true",
+                    "calibration_e0": 29204.5
+                  },
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-5-Merge-Sn-K-edge-Ar",
+            "schema:name": "Merge Sn K edge Ar",
+            "schema:position": 5,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:46.664215",
+            "schema:endTime": "2024-10-14T16:48:00.882046",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn%20K%20edge%20Ar",
+                "schema:name": "Sn K edge Ar"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn3Pt%20Sn%20Calibration",
+                "schema:name": "Sn3Pt Sn Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Ar/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "format": {
+                    "@type": "schema:StructuredValue",
+                    "energy_column.energy_column": "auto",
+                    "format": "plaintext",
+                    "mu_column.mu_column": "auto"
+                  },
+                  "merge_inputs": "true"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate": {
+                    "@type": "schema:StructuredValue",
+                    "calibrate": "true",
+                    "calibration_e0": 29204.5
+                  },
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-6-Merge-Sn-K-edge-Air",
+            "schema:name": "Merge Sn K edge Air",
+            "schema:position": 6,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:46.777298",
+            "schema:endTime": "2024-10-14T16:47:55.880658",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn%20K%20edge%20Air",
+                "schema:name": "Sn K edge Air"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn3Pt%20Sn%20Calibration",
+                "schema:name": "Sn3Pt Sn Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Air/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "format": {
+                    "@type": "schema:StructuredValue",
+                    "energy_column.energy_column": "auto",
+                    "format": "plaintext",
+                    "mu_column.mu_column": "auto"
+                  },
+                  "merge_inputs": "true"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate": {
+                    "@type": "schema:StructuredValue",
+                    "calibrate": "true",
+                    "calibration_e0": 29204.5
+                  },
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2",
+            "schema:name": "Merge Pt L3 edge H2 under H2",
+            "schema:position": 7,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:46.930596",
+            "schema:endTime": "2024-10-14T16:48:00.828245",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Pt%20L3%20edge%20H2%20under%20H2",
+                "schema:name": "Pt L3 edge H2 under H2"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Pt%20L3%20edge%20under%20H2%20Calibration",
+                "schema:name": "Pt L3 edge under H2 Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge H2 under H2/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "format": {
+                    "@type": "schema:StructuredValue",
+                    "energy_column.energy_column": "auto",
+                    "format": "plaintext",
+                    "mu_column.mu_column": "auto"
+                  },
+                  "merge_inputs": "true"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate.calibrate": "true",
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-8-Merge-Pt-L3-edge-H2",
+            "schema:name": "Merge Pt L3 edge H2",
+            "schema:position": 8,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:47.090291",
+            "schema:endTime": "2024-10-14T16:48:00.933633",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Pt%20L3%20edge%20H2",
+                "schema:name": "Pt L3 edge H2"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn3Pt%20Pt%20Calibration",
+                "schema:name": "Sn3Pt Pt Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-8-Merge-Pt-L3-edge-H2/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge H2/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "format": {
+                    "@type": "schema:StructuredValue",
+                    "energy_column.energy_column": "auto",
+                    "format": "plaintext",
+                    "mu_column.mu_column": "auto"
+                  },
+                  "merge_inputs": "true"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate.calibrate": "true",
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-9-Merge-Pt-L3-edge-Ar",
+            "schema:name": "Merge Pt L3 edge Ar",
+            "schema:position": 9,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:47.252704",
+            "schema:endTime": "2024-10-14T16:48:08.027215",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Pt%20L3%20edge%20Ar",
+                "schema:name": "Pt L3 edge Ar"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn3Pt%20Pt%20Calibration",
+                "schema:name": "Sn3Pt Pt Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-9-Merge-Pt-L3-edge-Ar/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge Ar/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "format": {
+                    "@type": "schema:StructuredValue",
+                    "energy_column.energy_column": "auto",
+                    "format": "plaintext",
+                    "mu_column.mu_column": "auto"
+                  },
+                  "merge_inputs": "true"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate.calibrate": "true",
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-10-Merge-Pt-L3-edge-Air",
+            "schema:name": "Merge Pt L3 edge Air",
+            "schema:position": 10,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:47.393183",
+            "schema:endTime": "2024-10-14T16:48:09.055214",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Pt%20L3%20edge%20Air",
+                "schema:name": "Pt L3 edge Air"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Sn3Pt%20Pt%20Calibration",
+                "schema:name": "Sn3Pt Pt Calibration"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-10-Merge-Pt-L3-edge-Air/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge Air/athena_project_file"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "merge_inputs",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "format": {
+                    "@type": "schema:StructuredValue",
+                    "energy_column.energy_column": "auto",
+                    "format": "plaintext",
+                    "mu_column.mu_column": "auto"
+                  },
+                  "merge_inputs": "true"
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "processing",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "calibrate.calibrate": "true",
+                  "rebin": 0
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_athena",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-11-Pt3Sn-FEFF:-Sn",
+            "schema:name": "Pt3Sn FEFF: Sn",
+            "schema:position": 11,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:47.499667",
+            "schema:endTime": "2024-10-14T16:48:10.104907",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Pt3Sn%20Cif",
+                "schema:name": "Pt3Sn Cif"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-11-Pt3Sn-FEFF:-Sn/output-feff_inp",
+                "schema:name": "Pt3Sn FEFF: Sn/feff_inp"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-11-Pt3Sn-FEFF:-Sn/output-out_csv",
+                "schema:name": "Pt3Sn FEFF: Sn/out_csv"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-11-Pt3Sn-FEFF:-Sn/output-out_dir",
+                "schema:name": "Pt3Sn FEFF: Sn/out_dir"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "format",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "absorbing_atom": 0,
+                  "format": "cif",
+                  "radius": 3
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_feff",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-12-Pt3Sn-FEFF:-Pt",
+            "schema:name": "Pt3Sn FEFF: Pt",
+            "schema:position": 12,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:47.597194",
+            "schema:endTime": "2024-10-14T16:48:03.832203",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-Pt3Sn%20Cif",
+                "schema:name": "Pt3Sn Cif"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-12-Pt3Sn-FEFF:-Pt/output-feff_inp",
+                "schema:name": "Pt3Sn FEFF: Pt/feff_inp"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-12-Pt3Sn-FEFF:-Pt/output-out_csv",
+                "schema:name": "Pt3Sn FEFF: Pt/out_csv"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-12-Pt3Sn-FEFF:-Pt/output-out_dir",
+                "schema:name": "Pt3Sn FEFF: Pt/out_dir"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "format",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "absorbing_atom": 1,
+                  "format": "cif",
+                  "radius": 3
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_feff",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-13-SnO2-FEFF",
+            "schema:name": "SnO2 FEFF",
+            "schema:position": 13,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:47.709081",
+            "schema:endTime": "2024-10-14T16:48:07.051566",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-SnO2%20Cif",
+                "schema:name": "SnO2 Cif"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-13-SnO2-FEFF/output-feff_inp",
+                "schema:name": "SnO2 FEFF/feff_inp"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-13-SnO2-FEFF/output-out_csv",
+                "schema:name": "SnO2 FEFF/out_csv"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-13-SnO2-FEFF/output-out_dir",
+                "schema:name": "SnO2 FEFF/out_dir"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "format",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "absorbing_atom": 0,
+                  "format": "cif",
+                  "radius": 3
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_feff",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-14-PtO2-FEFF",
+            "schema:name": "PtO2 FEFF",
+            "schema:position": 14,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:47.823783",
+            "schema:endTime": "2024-10-14T16:48:07.817207",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#input-PtO2%20Cif",
+                "schema:name": "PtO2 Cif"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-14-PtO2-FEFF/output-feff_inp",
+                "schema:name": "PtO2 FEFF/feff_inp"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-14-PtO2-FEFF/output-out_csv",
+                "schema:name": "PtO2 FEFF/out_csv"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-14-PtO2-FEFF/output-out_dir",
+                "schema:name": "PtO2 FEFF/out_dir"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "format",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "absorbing_atom": 0,
+                  "format": "cif",
+                  "radius": 3
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_feff",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-15-LCF:-Sn-Foil-/-SnO2,-H2",
+            "schema:name": "LCF: Sn Foil / SnO2, H2",
+            "schema:position": 15,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:47.983788",
+            "schema:endTime": "2024-10-14T16:48:10.192689",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
+                "schema:name": "Extract Sn Foil/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-2-Extract-SnO2/output-athena_project_file",
+                "schema:name": "Extract SnO2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2/athena_project_file"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-15-LCF:-Sn-Foil-/-SnO2,-H2/output-plot",
+                "schema:name": "LCF: Sn Foil / SnO2, H2/plot"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[0].label",
+                "schema:value": "Sn"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[1].label",
+                "schema:value": "SnO2"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_min",
+                "schema:value": 29190
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution.execution",
+                "schema:value": "parallel"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "label",
+                "schema:value": "H2"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_min",
+                "schema:value": 29190
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_lcf",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-16-LCF:-Pt3Sn-/-SnO2,-H2",
+            "schema:name": "LCF: Pt3Sn / SnO2, H2",
+            "schema:position": 16,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:48.161925",
+            "schema:endTime": "2024-10-14T16:48:10.215560",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-2-Extract-SnO2/output-athena_project_file",
+                "schema:name": "Extract SnO2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2/athena_project_file"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-16-LCF:-Pt3Sn-/-SnO2,-H2/output-plot",
+                "schema:name": "LCF: Pt3Sn / SnO2, H2/plot"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[0].label",
+                "schema:value": "Sn"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[1].label",
+                "schema:value": "SnO2"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_min",
+                "schema:value": 29190
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution.execution",
+                "schema:value": "parallel"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "label",
+                "schema:value": "H2"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_min",
+                "schema:value": 29190
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_lcf",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-17-LCF:-Sn-Foil-/-SnO2,-Ar",
+            "schema:name": "LCF: Sn Foil / SnO2, Ar",
+            "schema:position": 17,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:48.324376",
+            "schema:endTime": "2024-10-14T16:48:13.330578",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
+                "schema:name": "Extract Sn Foil/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-2-Extract-SnO2/output-athena_project_file",
+                "schema:name": "Extract SnO2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Ar/athena_project_file"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-17-LCF:-Sn-Foil-/-SnO2,-Ar/output-plot",
+                "schema:name": "LCF: Sn Foil / SnO2, Ar/plot"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[0].label",
+                "schema:value": "Sn"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[1].label",
+                "schema:value": "SnO2"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_min",
+                "schema:value": 29190
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution.execution",
+                "schema:value": "parallel"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "label",
+                "schema:value": "Ar"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_min",
+                "schema:value": 29190
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_lcf",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-18-LCF:-Pt3Sn-/-SnO2,-Ar",
+            "schema:name": "LCF: Pt3Sn / SnO2, Ar",
+            "schema:position": 18,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:48.464044",
+            "schema:endTime": "2024-10-14T16:48:12.615747",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-2-Extract-SnO2/output-athena_project_file",
+                "schema:name": "Extract SnO2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Ar/athena_project_file"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-18-LCF:-Pt3Sn-/-SnO2,-Ar/output-plot",
+                "schema:name": "LCF: Pt3Sn / SnO2, Ar/plot"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[0].label",
+                "schema:value": "Sn"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[1].label",
+                "schema:value": "SnO2"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_min",
+                "schema:value": 29190
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution.execution",
+                "schema:value": "parallel"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "label",
+                "schema:value": "Ar"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_min",
+                "schema:value": 29190
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_lcf",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-19-Sn-K-XANES-Plot",
+            "schema:name": "Sn K XANES Plot",
+            "schema:position": 19,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:48.664617",
+            "schema:endTime": "2024-10-14T16:48:12.860339",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
+                "schema:name": "Extract Sn Foil/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-2-Extract-SnO2/output-athena_project_file",
+                "schema:name": "Extract SnO2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Ar/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Air/athena_project_file"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-19-Sn-K-XANES-Plot/output-plot_collection%7C0_flat",
+                "schema:name": "Sn K XANES Plot/plot_collection|0_flat"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-19-Sn-K-XANES-Plot/output-plot_collection%7C1_dmude",
+                "schema:name": "Sn K XANES Plot/plot_collection|1_dmude"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "plots[0].variable",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "variable": "flat",
+                  "x_limit_max": 29450,
+                  "x_limit_min": 29150,
+                  "y_limit_min": 0
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "plots[1].variable",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "variable": "dmude",
+                  "x_limit_max": 29215,
+                  "x_limit_min": 29190
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_plot",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-20-LCF:-Sn-Foil-/-SnO2,-Air",
+            "schema:name": "LCF: Sn Foil / SnO2, Air",
+            "schema:position": 20,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:48.845649",
+            "schema:endTime": "2024-10-14T16:48:07.773240",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-1-Extract-Sn-Foil/output-athena_project_file",
+                "schema:name": "Extract Sn Foil/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-2-Extract-SnO2/output-athena_project_file",
+                "schema:name": "Extract SnO2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Air/athena_project_file"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-20-LCF:-Sn-Foil-/-SnO2,-Air/output-plot",
+                "schema:name": "LCF: Sn Foil / SnO2, Air/plot"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[0].label",
+                "schema:value": "Sn"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[1].label",
+                "schema:value": "SnO2"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_min",
+                "schema:value": 29190
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution.execution",
+                "schema:value": "parallel"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "label",
+                "schema:value": "Air"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_min",
+                "schema:value": 29190
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_lcf",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-21-LCF:-Pt3Sn-/-SnO2,-Air",
+            "schema:name": "LCF: Pt3Sn / SnO2, Air",
+            "schema:position": 21,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:48.965574",
+            "schema:endTime": "2024-10-14T16:48:09.800340",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-2-Extract-SnO2/output-athena_project_file",
+                "schema:name": "Extract SnO2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Air/athena_project_file"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-21-LCF:-Pt3Sn-/-SnO2,-Air/output-plot",
+                "schema:name": "LCF: Pt3Sn / SnO2, Air/plot"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[0].label",
+                "schema:value": "Sn"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "components[1].label",
+                "schema:value": "SnO2"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "energy_min",
+                "schema:value": 29190
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution.execution",
+                "schema:value": "parallel"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "label",
+                "schema:value": "Air"
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_max",
+                "schema:value": 29230
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "x_limit_min",
+                "schema:value": 29190
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_lcf",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_lcf/larch_lcf/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-22-Pt-L3-XANES-Plot",
+            "schema:name": "Pt L3 XANES Plot",
+            "schema:position": 22,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:49.130416",
+            "schema:endTime": "2024-10-14T16:48:18.349692",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge H2 under H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-8-Merge-Pt-L3-edge-H2/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-9-Merge-Pt-L3-edge-Ar/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge Ar/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-10-Merge-Pt-L3-edge-Air/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge Air/athena_project_file"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-22-Pt-L3-XANES-Plot/output-plot_collection%7C0_flat",
+                "schema:name": "Pt L3 XANES Plot/plot_collection|0_flat"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-22-Pt-L3-XANES-Plot/output-plot_collection%7C1_dmude",
+                "schema:name": "Pt L3 XANES Plot/plot_collection|1_dmude"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "plots[0].variable",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "variable": "flat",
+                  "x_limit_max": 11800,
+                  "x_limit_min": 11500,
+                  "y_limit_min": 0
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "plots[1].variable",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "variable": "dmude",
+                  "x_limit_max": 11575,
+                  "x_limit_min": 11550
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_plot",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-23-41",
+            "schema:name": "41",
+            "schema:position": 23,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:49.323891",
+            "schema:endTime": "2024-10-14T16:48:15.343934",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-14-PtO2-FEFF/output-out_dir",
+                "schema:name": "PtO2 FEFF/out_dir"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-13-SnO2-FEFF/output-out_csv",
+                "schema:name": "SnO2 FEFF/out_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-13-SnO2-FEFF/output-out_dir",
+                "schema:name": "SnO2 FEFF/out_dir"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-11-Pt3Sn-FEFF:-Sn/output-out_csv",
+                "schema:name": "Pt3Sn FEFF: Sn/out_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-14-PtO2-FEFF/output-out_csv",
+                "schema:name": "PtO2 FEFF/out_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-12-Pt3Sn-FEFF:-Pt/output-out_csv",
+                "schema:name": "Pt3Sn FEFF: Pt/out_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-12-Pt3Sn-FEFF:-Pt/output-out_dir",
+                "schema:name": "Pt3Sn FEFF: Pt/out_dir"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-11-Pt3Sn-FEFF:-Sn/output-out_dir",
+                "schema:name": "Pt3Sn FEFF: Sn/out_dir"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-23-41/output-gds_csv",
+                "schema:name": "41/gds_csv"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-23-41/output-merged_directories",
+                "schema:name": "41/merged_directories"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-23-41/output-sp_csv",
+                "schema:name": "41/sp_csv"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "feff_outputs[0]",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "label": "Sn",
+                  "selection": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0]": {
+                      "@type": "schema:StructuredValue",
+                      "degen": {
+                        "@type": "schema:StructuredValue",
+                        "value": 1,
+                        "vary": 1
+                      },
+                      "deltar": {
+                        "@type": "schema:StructuredValue",
+                        "name": "alpha_SnPtSn",
+                        "value": 0,
+                        "vary": 1
+                      },
+                      "e0": {
+                        "@type": "schema:StructuredValue",
+                        "value": 0,
+                        "vary": 1
+                      },
+                      "id": 1,
+                      "s02": {
+                        "@type": "schema:StructuredValue",
+                        "value": 1,
+                        "vary": 1
+                      },
+                      "sigma2": {
+                        "@type": "schema:StructuredValue",
+                        "name": "sigma2_SnPtSn",
+                        "value": 0.003,
+                        "vary": 1
+                      }
+                    },
+                    "selection": "manual"
+                  }
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "feff_outputs[1]",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "label": "Pt",
+                  "selection": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0]": {
+                      "@type": "schema:StructuredValue",
+                      "degen.vary": 1,
+                      "deltar": {
+                        "@type": "schema:StructuredValue",
+                        "expr": "alpha_SnPtSn",
+                        "name": "alpha_PtSnPt",
+                        "value": 0,
+                        "vary": 1
+                      },
+                      "e0": {
+                        "@type": "schema:StructuredValue",
+                        "value": 0,
+                        "vary": 1
+                      },
+                      "id": 1,
+                      "s02": {
+                        "@type": "schema:StructuredValue",
+                        "value": 1,
+                        "vary": 1
+                      },
+                      "sigma2": {
+                        "@type": "schema:StructuredValue",
+                        "expr": "sigma2_SnPtSn",
+                        "name": "sigma2_PtSnPt",
+                        "value": 0.003,
+                        "vary": 1
+                      }
+                    },
+                    "selection": "all"
+                  }
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "feff_outputs[2]",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "label": "SnO2",
+                  "selection": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0]": {
+                      "@type": "schema:StructuredValue",
+                      "degen": {
+                        "@type": "schema:StructuredValue",
+                        "value": 1,
+                        "vary": 1
+                      },
+                      "deltar": {
+                        "@type": "schema:StructuredValue",
+                        "value": 0,
+                        "vary": 1
+                      },
+                      "e0": {
+                        "@type": "schema:StructuredValue",
+                        "value": 0,
+                        "vary": 1
+                      },
+                      "id": 1,
+                      "s02": {
+                        "@type": "schema:StructuredValue",
+                        "value": 1,
+                        "vary": 1
+                      },
+                      "sigma2": {
+                        "@type": "schema:StructuredValue",
+                        "value": 0.003,
+                        "vary": 1
+                      }
+                    },
+                    "selection": "manual"
+                  }
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "feff_outputs[3]",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "label": "PtO2",
+                  "selection": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0]": {
+                      "@type": "schema:StructuredValue",
+                      "degen": {
+                        "@type": "schema:StructuredValue",
+                        "value": 1,
+                        "vary": 1
+                      },
+                      "deltar": {
+                        "@type": "schema:StructuredValue",
+                        "value": 0,
+                        "vary": 1
+                      },
+                      "e0": {
+                        "@type": "schema:StructuredValue",
+                        "value": 0,
+                        "vary": 1
+                      },
+                      "id": 1,
+                      "s02": {
+                        "@type": "schema:StructuredValue",
+                        "value": 1,
+                        "vary": 1
+                      },
+                      "sigma2": {
+                        "@type": "schema:StructuredValue",
+                        "value": 0.003,
+                        "vary": 1
+                      }
+                    },
+                    "selection": "manual"
+                  }
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "variables",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "degen": {
+                    "@type": "schema:StructuredValue",
+                    "is_common": 0,
+                    "value": 1,
+                    "vary": 1
+                  },
+                  "deltar": {
+                    "@type": "schema:StructuredValue",
+                    "is_common": 0,
+                    "value": 0,
+                    "vary": 1
+                  },
+                  "e0": {
+                    "@type": "schema:StructuredValue",
+                    "is_common": 1,
+                    "value": 0,
+                    "vary": 1
+                  },
+                  "s02": {
+                    "@type": "schema:StructuredValue",
+                    "is_common": 1,
+                    "value": 1,
+                    "vary": 0
+                  },
+                  "sigma2": {
+                    "@type": "schema:StructuredValue",
+                    "is_common": 0,
+                    "value": 0.003,
+                    "vary": 1
+                  }
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_select_paths",
+                "schema:version": "0.9.80+galaxy0",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.80+galaxy0",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-24-Artemis:-H2-under-H2",
+            "schema:name": "Artemis: H2 under H2",
+            "schema:position": 24,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:49.469422",
+            "schema:endTime": "2024-10-14T16:48:48.455963",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-7-Merge-Pt-L3-edge-H2-under-H2/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge H2 under H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-3-Merge-Sn-K-edge-H2-under-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2 under H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-sp_csv",
+                "schema:name": "41/sp_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-gds_csv",
+                "schema:name": "41/gds_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-merged_directories",
+                "schema:name": "41/merged_directories"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-24-Artemis:-H2-under-H2/output-chikr",
+                "schema:name": "Artemis: H2 under H2/chikr"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-24-Artemis:-H2-under-H2/output-fit_report",
+                "schema:name": "Artemis: H2 under H2/fit_report"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-24-Artemis:-H2-under-H2/output-rmr",
+                "schema:name": "Artemis: H2 under H2/rmr"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "execution": "simultaneous",
+                  "simultaneous[0]": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0].path_id": 2,
+                    "paths[1].path_id": 3,
+                    "paths[2].path_id": 5
+                  },
+                  "simultaneous[1]": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0].path_id": 1,
+                    "paths[1].path_id": 4
+                  }
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "fit_vars",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "dk": 1,
+                  "fitspace": "q",
+                  "kmax": 9,
+                  "kmin": 0,
+                  "kweight": 2,
+                  "rmax": 5,
+                  "rmin": 0,
+                  "window": "hanning"
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_artemis",
+                "schema:version": "0.9.80+galaxy1",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-25-Artemis:-H2",
+            "schema:name": "Artemis: H2",
+            "schema:position": 25,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:49.604062",
+            "schema:endTime": "2024-10-14T16:48:31.080319",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-8-Merge-Pt-L3-edge-H2/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-4-Merge-Sn-K-edge-H2/output-athena_project_file",
+                "schema:name": "Merge Sn K edge H2/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-sp_csv",
+                "schema:name": "41/sp_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-gds_csv",
+                "schema:name": "41/gds_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-merged_directories",
+                "schema:name": "41/merged_directories"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-25-Artemis:-H2/output-chikr",
+                "schema:name": "Artemis: H2/chikr"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-25-Artemis:-H2/output-fit_report",
+                "schema:name": "Artemis: H2/fit_report"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-25-Artemis:-H2/output-rmr",
+                "schema:name": "Artemis: H2/rmr"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "execution": "simultaneous",
+                  "simultaneous[0]": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0].path_id": 2,
+                    "paths[1].path_id": 3,
+                    "paths[2].path_id": 5
+                  },
+                  "simultaneous[1]": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0].path_id": 1,
+                    "paths[1].path_id": 4
+                  }
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "fit_vars",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "dk": 1,
+                  "fitspace": "q",
+                  "kmax": 9,
+                  "kmin": 0,
+                  "kweight": 2,
+                  "rmax": 5,
+                  "rmin": 0,
+                  "window": "hanning"
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_artemis",
+                "schema:version": "0.9.80+galaxy1",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-26-Artemis:-Ar",
+            "schema:name": "Artemis: Ar",
+            "schema:position": 26,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:49.744382",
+            "schema:endTime": "2024-10-14T16:48:29.229657",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-9-Merge-Pt-L3-edge-Ar/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge Ar/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-5-Merge-Sn-K-edge-Ar/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Ar/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-sp_csv",
+                "schema:name": "41/sp_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-gds_csv",
+                "schema:name": "41/gds_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-merged_directories",
+                "schema:name": "41/merged_directories"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-26-Artemis:-Ar/output-chikr",
+                "schema:name": "Artemis: Ar/chikr"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-26-Artemis:-Ar/output-fit_report",
+                "schema:name": "Artemis: Ar/fit_report"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-26-Artemis:-Ar/output-rmr",
+                "schema:name": "Artemis: Ar/rmr"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "execution": "simultaneous",
+                  "simultaneous[0]": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0].path_id": 2,
+                    "paths[1].path_id": 3,
+                    "paths[2].path_id": 5
+                  },
+                  "simultaneous[1]": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0].path_id": 1,
+                    "paths[1].path_id": 4
+                  }
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "fit_vars",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "dk": 1,
+                  "fitspace": "q",
+                  "kmax": 9,
+                  "kmin": 0,
+                  "kweight": 2,
+                  "rmax": 5,
+                  "rmin": 0,
+                  "window": "hanning"
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_artemis",
+                "schema:version": "0.9.80+galaxy1",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "schema:HowToStep",
+              "schema:Action"
+            ],
+            "@id": "#step-27-Artemis:-Air",
+            "schema:name": "Artemis: Air",
+            "schema:position": 27,
+            "schema:actionStatus": "schema:CompletedActionStatus",
+            "schema:startTime": "2024-10-14T16:47:49.877459",
+            "schema:endTime": "2024-10-14T16:48:29.255189",
+            "schema:object": [
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-10-Merge-Pt-L3-edge-Air/output-athena_project_file",
+                "schema:name": "Merge Pt L3 edge Air/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-6-Merge-Sn-K-edge-Air/output-athena_project_file",
+                "schema:name": "Merge Sn K edge Air/athena_project_file"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-sp_csv",
+                "schema:name": "41/sp_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-gds_csv",
+                "schema:name": "41/gds_csv"
+              },
+              {
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "@id": "#step-23-41/output-merged_directories",
+                "schema:name": "41/merged_directories"
+              }
+            ],
+            "schema:result": [
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-27-Artemis:-Air/output-chikr",
+                "schema:name": "Artemis: Air/chikr"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-27-Artemis:-Air/output-fit_report",
+                "schema:name": "Artemis: Air/fit_report"
+              },
+              {
+                "@type": "schema:Thing",
+                "@id": "#step-27-Artemis:-Air/output-rmr",
+                "schema:name": "Artemis: Air/rmr"
+              }
+            ],
+            "schema:additionalProperty": [
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "execution",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "execution": "simultaneous",
+                  "simultaneous[0]": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0].path_id": 2,
+                    "paths[1].path_id": 3,
+                    "paths[2].path_id": 5
+                  },
+                  "simultaneous[1]": {
+                    "@type": "schema:StructuredValue",
+                    "paths[0].path_id": 1,
+                    "paths[1].path_id": 4
+                  }
+                }
+              },
+              {
+                "@type": [
+                  "schema:PropertyValue"
+                ],
+                "schema:name": "fit_vars",
+                "schema:value": {
+                  "@type": "schema:StructuredValue",
+                  "dk": 1,
+                  "fitspace": "q",
+                  "kmax": 9,
+                  "kmin": 0,
+                  "kweight": 2,
+                  "rmax": 5,
+                  "rmin": 0,
+                  "window": "hanning"
+                }
+              }
+            ],
+            "schema:instrument": [
+              {
+                "@type": [
+                  "schema:SoftwareApplication",
+                  "prov:Entity"
+                ],
+                "schema:name": "larch_artemis",
+                "schema:version": "0.9.80+galaxy1",
+                "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.80+galaxy1",
+                "schema:additionalType": [
+                  {
+                    "@id": "https://www.wikidata.org/entity/Q7397"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
