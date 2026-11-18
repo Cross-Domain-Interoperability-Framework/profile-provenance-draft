@@ -6,11 +6,7 @@
     "dcat": "http://www.w3.org/ns/dcat#",
     "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
     "p": "http://purl.org/net/p-plan#",
-    "ex": "https://example.org/cdif-prov/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "schema:latitude": {"@type": "xsd:double"},
-    "schema:longitude": {"@type": "xsd:double"},
-    "schema:position": {"@type": "xsd:integer"}
+    "ex": "https://example.org/cdif-prov/"
   },
   "@id": "ex:concentrationRun",
   "@type": [
@@ -74,7 +70,7 @@
           "p:Step"
         ],
         "schema:name": "Water sampling",
-        "schema:position": "1"
+        "schema:position": 1
       },
       {
         "@id": "ex:step-calibration",
@@ -83,7 +79,7 @@
           "p:Step"
         ],
         "schema:name": "Instrument calibration",
-        "schema:position": "2"
+        "schema:position": 2
       },
       {
         "@id": "ex:step-absorbance",
@@ -92,7 +88,7 @@
           "p:Step"
         ],
         "schema:name": "Absorbance measurement",
-        "schema:position": "3"
+        "schema:position": 3
       },
       {
         "@id": "ex:step-blankCorrection",
@@ -101,7 +97,7 @@
           "p:Step"
         ],
         "schema:name": "Blank correction",
-        "schema:position": "4"
+        "schema:position": 4
       },
       {
         "@id": "ex:step-derivation",
@@ -110,7 +106,7 @@
           "p:Step"
         ],
         "schema:name": "Calibration-based derivation",
-        "schema:position": "5"
+        "schema:position": 5
       },
       {
         "@id": "ex:step-uncertainty",
@@ -119,7 +115,7 @@
           "p:Step"
         ],
         "schema:name": "Uncertainty assessment",
-        "schema:position": "6"
+        "schema:position": 6
       },
       {
         "@id": "ex:step-validation",
@@ -128,7 +124,7 @@
           "p:Step"
         ],
         "schema:name": "Validation",
-        "schema:position": "7"
+        "schema:position": 7
       }
     ]
   },
@@ -142,7 +138,7 @@
       "@type": "schema:Dataset",
       "schema:additionalType": {"@id": "dcat:CatalogRecord"},
       "schema:about": {"@id": "ex:validationResult"},
-      "dcterms:conformsTo": {"@id": "https://w3id.org/cdif/provenance/1.1"}
+      "dcterms:conformsTo": {"@id": "https://w3id.org/cdif/provenance/2.0"}
     },
     "prov:wasGeneratedBy": [
       {"@id": "ex:concentrationRun"},
@@ -301,8 +297,8 @@
           "schema:additionalType": "river bank sampling point",
           "schema:geo": {
             "@type": "schema:GeoCoordinates",
-            "schema:latitude": "46.95",
-            "schema:longitude": "7.45"
+            "schema:latitude": 46.95,
+            "schema:longitude": 7.45
           }
         }
       },
@@ -346,19 +342,13 @@
               {
                 "@type": "schema:PropertyValue",
                 "schema:name": "Spectral bandwidth",
-                "schema:value": {
-                  "@value": "2",
-                  "@type": "xsd:integer"
-                },
+                "schema:value": 2,
                 "schema:unitText": "nm"
               },
               {
                 "@type": "schema:PropertyValue",
                 "schema:name": "Measurement wavelength",
-                "schema:value": {
-                  "@value": "540",
-                  "@type": "xsd:integer"
-                },
+                "schema:value": 540,
                 "schema:unitText": "nm"
               }
             ],
@@ -488,19 +478,19 @@
               "@type": "schema:HowToStep",
               "schema:name": "Add reagent",
               "schema:description": "Add 2 mL colour reagent to 10 mL sample.",
-              "schema:position": "1"
+              "schema:position": 1
             },
             {
               "@type": "schema:HowToStep",
               "schema:name": "Develop colour",
               "schema:description": "Wait 10 minutes at room temperature.",
-              "schema:position": "2"
+              "schema:position": 2
             },
             {
               "@type": "schema:HowToStep",
               "schema:name": "Read absorbance",
               "schema:description": "Read at 540 nm in a 1 cm cuvette against the reagent blank.",
-              "schema:position": "3"
+              "schema:position": 3
             }
           ],
           "schema:prepTime": "PT20M",
@@ -523,27 +513,21 @@
           "schema:identifier": "LAB-B12",
           "schema:geo": {
             "@type": "schema:GeoCoordinates",
-            "schema:latitude": "46.95",
-            "schema:longitude": "7.44"
+            "schema:latitude": 46.95,
+            "schema:longitude": 7.44
           }
         },
         "schema:additionalProperty": [
           {
             "@type": "schema:PropertyValue",
             "schema:name": "Cuvette path length",
-            "schema:value": {
-              "@value": "1",
-              "@type": "xsd:integer"
-            },
+            "schema:value": 1,
             "schema:unitText": "cm"
           },
           {
             "@type": "schema:PropertyValue",
             "schema:name": "Colour development time",
-            "schema:value": {
-              "@value": "10",
-              "@type": "xsd:integer"
-            },
+            "schema:value": 10,
             "schema:unitText": "min"
           }
         ],
@@ -594,27 +578,18 @@
           {
             "@type": "schema:PropertyValue",
             "schema:name": "Calibration slope",
-            "schema:value": {
-              "@value": "0.412",
-              "@type": "xsd:double"
-            },
+            "schema:value": 0.412,
             "schema:unitText": "L/mg"
           },
           {
             "@type": "schema:PropertyValue",
             "schema:name": "Calibration intercept",
-            "schema:value": {
-              "@value": "0.003",
-              "@type": "xsd:double"
-            }
+            "schema:value": 0.003
           },
           {
             "@type": "schema:PropertyValue",
             "schema:name": "Limit of detection",
-            "schema:value": {
-              "@value": "0.02",
-              "@type": "xsd:double"
-            },
+            "schema:value": 0.02,
             "schema:unitText": "mg/L"
           },
           {
@@ -660,10 +635,7 @@
         "schema:additionalProperty": {
           "@type": "schema:PropertyValue",
           "schema:name": "Coverage factor",
-          "schema:value": {
-            "@value": "2",
-            "@type": "xsd:integer"
-          }
+          "schema:value": 2
         }
       }
     ]

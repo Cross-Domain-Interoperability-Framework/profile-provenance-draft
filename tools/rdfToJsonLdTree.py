@@ -24,8 +24,11 @@ Layout:
   Blank nodes are nested; one gets an @id only if it is referenced more than once.
 - Prefixes come from the source (Turtle @prefix lines, plus common namespaces under their usual
   prefixes). Properties appear in the order they first occur in the source.
-- Literals keep their exact datatype: a datatype used uniformly by one property is coerced in
-  @context, otherwise the value is written {"@value", "@type"}.
+- Literals keep their exact datatype. An xsd:integer, xsd:double or xsd:boolean is written as a
+  JSON number or boolean, which JSON-LD reads back as that datatype (a JSON Schema checking
+  `type: integer` or `number` rejects {"@value", "@type"}); an integer is native only when its
+  lexical form is canonical, so it reads back exactly. Any other datatype used uniformly by one
+  property is coerced in @context, otherwise the value is written {"@value", "@type"}.
 
 The output is checked: rdflib and pyld must both read it back as a graph isomorphic to the source;
 the script exits 1 if either does not.
@@ -92,8 +95,18 @@ lit_types = defaultdict(set)
 for s, p, o in g:
     if isinstance(o, Literal):
         lit_types[p].add(('lang', o.language) if o.language else ('dt', o.datatype))
+def native(o):                          # the JSON number / boolean for a literal, or None
+    t, lex = o.datatype, str(o)
+    if t == XSD.integer and re.fullmatch(r'-?(0|[1-9][0-9]*)', lex): return int(lex)
+    if t == XSD.double:
+        try: return float(lex)
+        except ValueError: return None
+    if t == XSD.boolean and lex in ('true', 'false'): return lex == 'true'
+    return None
+native_ok = {p for p in lit_types if all(native(o) is not None for o in g.objects(None, p) if isinstance(o, Literal))}
 coerce = {p: next(iter(ts))[1] for p, ts in lit_types.items()
-          if len(ts) == 1 and next(iter(ts))[0] == 'dt' and next(iter(ts))[1] not in (None, XSD.string)}
+          if len(ts) == 1 and next(iter(ts))[0] == 'dt' and next(iter(ts))[1] not in (None, XSD.string)
+          and p not in native_ok}
 
 done, bn_ids, desc = set(), {}, {}      # desc: node -> the dict that describes it in full
 reserved = set()                        # nodes to be placed under the root with @reverse; a reference until then
@@ -101,6 +114,7 @@ def val(o, p):
     if isinstance(o, Literal):
         if o.language: return {'@value': str(o), '@language': o.language}
         if o.datatype in (None, XSD.string): return str(o)
+        if native(o) is not None: return native(o)
         if coerce.get(p) == o.datatype: return str(o)
         return {'@value': str(o), '@type': qq(o.datatype)}
     if o in done or o in reserved:
