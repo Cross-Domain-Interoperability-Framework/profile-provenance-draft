@@ -35,6 +35,9 @@ Authored here:
 - `cdifProvenance-frame.jsonld`;
 - the converters in `tools/`;
 - `examples/ODIS_provExampleJulesVerne.json`, and the PROV-O examples `examples/cdif_provenance_*.jsonld`;
+- `examples/Paper_1_Pt3Sn.steps.cdifprov.json`: Paper_1's Galaxy run as one activity whose `schema:actionProcess`
+  HowTo has its 27 steps typed `schema:HowToStep` + `schema:Action`, built once from
+  `Paper_1_Pt3Sn.actions.cdifprov.json` (same inputs, results, parameters and tools). No converter writes this form;
 - the docs: `README.md` and `agents.md` at the root, and in `docs/` the current vocabulary comparison
   (`docs/ProvenanceOptions-2026-10.md`), design proposals (`docs/PROPOSAL_*.md`) and the Word source
   documents. The superseded 2026-03 comparison is `archive/ProvenanceOptions.md`;
