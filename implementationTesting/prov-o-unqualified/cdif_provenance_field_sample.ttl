@@ -1,0 +1,152 @@
+@prefix bios: <https://bioschemas.org/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/cdif-prov/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://registry.onegeochemistry.org/methods/jeol-8530f-olivine-v1> a prov:Entity,
+        prov:Plan .
+
+ex:EPMAAnalysis a prov:Activity,
+        bios:LabProcess,
+        cdifact:Measurement ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Beam current" ;
+            schema1:propertyID "beam current" ;
+            schema1:unitText "nA" ;
+            schema1:value 20 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Number of analyses" ;
+            schema1:propertyID "number of analyses" ;
+            schema1:value 142 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Matrix correction model" ;
+            schema1:propertyID "matrix correction model" ;
+            schema1:value "ZAF (LINEMU MACs)" ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Beam diameter" ;
+            schema1:propertyID "beam diameter" ;
+            schema1:value "focused (~1 µm)" ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Accelerating voltage" ;
+            schema1:propertyID "accelerating voltage" ;
+            schema1:unitText "kV" ;
+            schema1:value 15 ] ;
+    schema1:description "Quantitative WDS electron microprobe analysis of olivine for major and minor elements, at 15 kV and 20 nA: 142 point analyses of oxide concentrations (wt%), with detection limits and analytical totals." ;
+    schema1:name "EPMA major element analysis of olivine" ;
+    prov:atLocation [ a schema1:Place,
+                prov:Location ;
+            schema1:name "Electron Microprobe Laboratory, Department of Earth Sciences, Example University" ] ;
+    prov:endedAtTime "2024-06-10T17:30:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2024-06-10T08:00:00+00:00"^^xsd:dateTime ;
+    prov:used ex:jeolJXA8530F,
+        ex:polishedMountA,
+        ex:probeForEPMA ;
+    prov:wasAssociatedWith ex:chenWei .
+
+ex:EPMASamplePreparation a prov:Activity,
+        bios:LabProcess ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Olivine grains from drill core KI81-1 were mounted in epoxy, ground, polished, and carbon coated for electron microprobe analysis." ;
+    schema1:name "Sample preparation for EPMA" ;
+    prov:endedAtTime "2024-06-03T00:00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2024-06-01T00:00:00"^^xsd:dateTime ;
+    prov:used ex:KI81-1,
+        ex:dentonDV502A ;
+    prov:wasAssociatedWith ex:chenWei .
+
+ex:KI81-1 a schema1:Thing,
+        prov:Entity ;
+    schema1:additionalType bios:Sample ;
+    schema1:description "Drill core from the Kilauea Iki lava lake." ;
+    schema1:identifier "KI81-1" ;
+    schema1:name "Drill core KI81-1" ;
+    prov:wasGeneratedBy ex:KI81Drilling .
+
+ex:KI81Drilling a prov:Activity,
+        cdifact:Sampling ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Core drilled through the crust of the Kilauea Iki lava lake (the 1959 eruption's ponded lava), recovering a vertical section of the lake's olivine-bearing basalt, in 1981." ;
+    schema1:name "Drilling of core KI81-1, Kilauea Iki lava lake" ;
+    prov:atLocation [ a schema1:Place,
+                prov:Location ;
+            schema1:geo [ a schema1:GeoCoordinates ;
+                    schema1:latitude 1.9414e+01 ;
+                    schema1:longitude -1.55249e+02 ] ;
+            schema1:name "Kilauea Iki lava lake, Hawaii" ] ;
+    prov:used ex:kilaueaIkiLavaLake ;
+    prov:wasAssociatedWith ex:USGS .
+
+ex:USGS a schema1:Organization,
+        prov:Organization ;
+    schema1:name "U.S. Geological Survey" ;
+    schema1:url "https://www.usgs.gov/" .
+
+ex:dentonDV502A a schema1:Product,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema1:description "Used to coat the polished mounts with carbon." ;
+    schema1:name "Denton DV-502A vacuum evaporator" .
+
+ex:jeolJXA8530F a schema1:Product,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema1:manufacturer [ a schema1:Organization ;
+            schema1:name "JEOL" ] ;
+    schema1:model [ a schema1:ProductModel ;
+            schema1:name "JXA-8530F Plus" ] ;
+    schema1:name "JEOL JXA-8530F Plus field emission electron microprobe" .
+
+ex:kilaueaIkiLavaLake a schema1:Place,
+        prov:Entity ;
+    schema1:description "The lava lake ponded in Kilauea Iki crater by the 1959 eruption." ;
+    schema1:name "Kilauea Iki lava lake" .
+
+ex:olivineKilaueaIki a schema1:Dataset,
+        prov:Entity ;
+    schema1:dateModified "2024-08-15" ;
+    schema1:description "EPMA major and minor element compositions of olivine from Kilauea Iki drill core KI81-1. The field-sample scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/exampleEPMAProvenance.json." ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID <https://registry.identifiers.org/registry/doi> ;
+            schema1:url "https://doi.org/10.1234/olivine-kilauea-2024" ;
+            schema1:value "doi:10.1234/olivine-kilauea-2024" ] ;
+    schema1:name "Olivine major element compositions, Kilauea Iki lava lake" ;
+    schema1:subjectOf ex:olivineKilaueaIki-record ;
+    prov:generatedAtTime "2024-06-10T17:30:00+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:EPMAAnalysis .
+
+ex:olivineKilaueaIki-record a schema1:Dataset ;
+    dcterms:conformsTo <https://w3id.org/cdif/core/2.0>,
+        <https://w3id.org/cdif/provenance/2.0> ;
+    schema1:about ex:olivineKilaueaIki ;
+    schema1:additionalType dcat:CatalogRecord .
+
+ex:polishedMountA a schema1:Thing,
+        prov:Entity ;
+    schema1:additionalType bios:Sample ;
+    schema1:description "Hand-picked olivine grains (Fo85-88) from KI81-1 in a 1-inch epoxy round." ;
+    schema1:name "Polished and carbon-coated epoxy mount A" ;
+    prov:generatedAtTime "2024-06-03T00:00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:EPMASamplePreparation .
+
+ex:probeForEPMA a schema1:SoftwareApplication,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q7397> ;
+    schema1:description "Used for the ZAF matrix correction and quantification." ;
+    schema1:name "Probe for EPMA" ;
+    schema1:version "13.0.6" .
+
+ex:chenWei a schema1:Person,
+        prov:Person ;
+    schema1:contactPoint [ a schema1:ContactPoint ;
+            schema1:email "w.chen@example.org" ] ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID <https://registry.identifiers.org/registry/orcid> ;
+            schema1:url "https://orcid.org/0000-0002-5555-6666" ;
+            schema1:value "0000-0002-5555-6666" ] ;
+    schema1:name "Chen, Wei" .
+

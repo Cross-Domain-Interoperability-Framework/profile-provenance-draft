@@ -1,0 +1,238 @@
+{
+  "@context": {
+    "bios": "https://bioschemas.org/",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "ex": "https://example.org/cdif-prov/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "http://schema.org/",
+    "prov:endedAtTime": {"@type": "xsd:dateTime"},
+    "prov:generatedAtTime": {"@type": "xsd:dateTime"},
+    "prov:startedAtTime": {"@type": "xsd:dateTime"}
+  },
+  "@id": "ex:olivineKilaueaIki-record",
+  "@type": "schema:Dataset",
+  "dcterms:conformsTo": [
+    {"@id": "https://w3id.org/cdif/core/2.0"},
+    {"@id": "https://w3id.org/cdif/provenance/2.0"}
+  ],
+  "schema:about": {
+    "@id": "ex:olivineKilaueaIki",
+    "@type": [
+      "prov:Entity",
+      "schema:Dataset"
+    ],
+    "prov:wasGeneratedBy": {
+      "@id": "ex:EPMAAnalysis",
+      "@type": [
+        "prov:Activity",
+        "bios:LabProcess",
+        "cdifact:Measurement"
+      ],
+      "prov:atLocation": {
+        "@type": [
+          "prov:Location",
+          "schema:Place"
+        ],
+        "schema:name": "Electron Microprobe Laboratory, Department of Earth Sciences, Example University"
+      },
+      "prov:endedAtTime": "2024-06-10T17:30:00+00:00",
+      "prov:startedAtTime": "2024-06-10T08:00:00+00:00",
+      "prov:used": [
+        {
+          "@id": "ex:jeolJXA8530F",
+          "@type": [
+            "prov:Entity",
+            "schema:Product"
+          ],
+          "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"},
+          "schema:manufacturer": {
+            "@type": "schema:Organization",
+            "schema:name": "JEOL"
+          },
+          "schema:model": {
+            "@type": "schema:ProductModel",
+            "schema:name": "JXA-8530F Plus"
+          },
+          "schema:name": "JEOL JXA-8530F Plus field emission electron microprobe"
+        },
+        {
+          "@id": "ex:polishedMountA",
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "prov:wasGeneratedBy": {
+            "@id": "ex:EPMASamplePreparation",
+            "@type": [
+              "prov:Activity",
+              "bios:LabProcess"
+            ],
+            "prov:endedAtTime": "2024-06-03T00:00:00",
+            "prov:startedAtTime": "2024-06-01T00:00:00",
+            "prov:used": [
+              {
+                "@id": "ex:KI81-1",
+                "@type": [
+                  "prov:Entity",
+                  "schema:Thing"
+                ],
+                "prov:wasGeneratedBy": {
+                  "@id": "ex:KI81Drilling",
+                  "@type": [
+                    "prov:Activity",
+                    "cdifact:Sampling"
+                  ],
+                  "prov:atLocation": {
+                    "@type": [
+                      "prov:Location",
+                      "schema:Place"
+                    ],
+                    "schema:geo": {
+                      "@type": "schema:GeoCoordinates",
+                      "schema:latitude": 19.414,
+                      "schema:longitude": -155.249
+                    },
+                    "schema:name": "Kilauea Iki lava lake, Hawaii"
+                  },
+                  "prov:used": {
+                    "@id": "ex:kilaueaIkiLavaLake",
+                    "@type": [
+                      "prov:Entity",
+                      "schema:Place"
+                    ],
+                    "schema:description": "The lava lake ponded in Kilauea Iki crater by the 1959 eruption.",
+                    "schema:name": "Kilauea Iki lava lake"
+                  },
+                  "prov:wasAssociatedWith": {
+                    "@id": "ex:USGS",
+                    "@type": [
+                      "prov:Organization",
+                      "schema:Organization"
+                    ],
+                    "schema:name": "U.S. Geological Survey",
+                    "schema:url": "https://www.usgs.gov/"
+                  },
+                  "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+                  "schema:description": "Core drilled through the crust of the Kilauea Iki lava lake (the 1959 eruption's ponded lava), recovering a vertical section of the lake's olivine-bearing basalt, in 1981.",
+                  "schema:name": "Drilling of core KI81-1, Kilauea Iki lava lake"
+                },
+                "schema:additionalType": {"@id": "bios:Sample"},
+                "schema:description": "Drill core from the Kilauea Iki lava lake.",
+                "schema:identifier": "KI81-1",
+                "schema:name": "Drill core KI81-1"
+              },
+              {
+                "@id": "ex:dentonDV502A",
+                "@type": [
+                  "prov:Entity",
+                  "schema:Product"
+                ],
+                "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"},
+                "schema:description": "Used to coat the polished mounts with carbon.",
+                "schema:name": "Denton DV-502A vacuum evaporator"
+              }
+            ],
+            "prov:wasAssociatedWith": {
+              "@id": "ex:chenWei",
+              "@type": [
+                "prov:Person",
+                "schema:Person"
+              ],
+              "schema:contactPoint": {
+                "@type": "schema:ContactPoint",
+                "schema:email": "w.chen@example.org"
+              },
+              "schema:identifier": {
+                "@type": "schema:PropertyValue",
+                "schema:propertyID": {"@id": "https://registry.identifiers.org/registry/orcid"},
+                "schema:url": "https://orcid.org/0000-0002-5555-6666",
+                "schema:value": "0000-0002-5555-6666"
+              },
+              "schema:name": "Chen, Wei"
+            },
+            "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+            "schema:description": "Olivine grains from drill core KI81-1 were mounted in epoxy, ground, polished, and carbon coated for electron microprobe analysis.",
+            "schema:name": "Sample preparation for EPMA"
+          },
+          "prov:generatedAtTime": "2024-06-03T00:00:00",
+          "schema:additionalType": {"@id": "bios:Sample"},
+          "schema:description": "Hand-picked olivine grains (Fo85-88) from KI81-1 in a 1-inch epoxy round.",
+          "schema:name": "Polished and carbon-coated epoxy mount A"
+        },
+        {
+          "@id": "ex:probeForEPMA",
+          "@type": [
+            "prov:Entity",
+            "schema:SoftwareApplication"
+          ],
+          "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q7397"},
+          "schema:description": "Used for the ZAF matrix correction and quantification.",
+          "schema:name": "Probe for EPMA",
+          "schema:version": "13.0.6"
+        }
+      ],
+      "prov:wasAssociatedWith": {"@id": "ex:chenWei"},
+      "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+      "schema:additionalProperty": [
+        {
+          "@type": "schema:PropertyValue",
+          "schema:name": "Beam current",
+          "schema:propertyID": "beam current",
+          "schema:unitText": "nA",
+          "schema:value": 20
+        },
+        {
+          "@type": "schema:PropertyValue",
+          "schema:name": "Number of analyses",
+          "schema:propertyID": "number of analyses",
+          "schema:value": 142
+        },
+        {
+          "@type": "schema:PropertyValue",
+          "schema:name": "Matrix correction model",
+          "schema:propertyID": "matrix correction model",
+          "schema:value": "ZAF (LINEMU MACs)"
+        },
+        {
+          "@type": "schema:PropertyValue",
+          "schema:name": "Beam diameter",
+          "schema:propertyID": "beam diameter",
+          "schema:value": "focused (~1 µm)"
+        },
+        {
+          "@type": "schema:PropertyValue",
+          "schema:name": "Accelerating voltage",
+          "schema:propertyID": "accelerating voltage",
+          "schema:unitText": "kV",
+          "schema:value": 15
+        }
+      ],
+      "schema:description": "Quantitative WDS electron microprobe analysis of olivine for major and minor elements, at 15 kV and 20 nA: 142 point analyses of oxide concentrations (wt%), with detection limits and analytical totals.",
+      "schema:name": "EPMA major element analysis of olivine"
+    },
+    "prov:generatedAtTime": "2024-06-10T17:30:00+00:00",
+    "schema:dateModified": "2024-08-15",
+    "schema:description": "EPMA major and minor element compositions of olivine from Kilauea Iki drill core KI81-1. The field-sample scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/exampleEPMAProvenance.json.",
+    "schema:identifier": {
+      "@type": "schema:PropertyValue",
+      "schema:propertyID": {"@id": "https://registry.identifiers.org/registry/doi"},
+      "schema:url": "https://doi.org/10.1234/olivine-kilauea-2024",
+      "schema:value": "doi:10.1234/olivine-kilauea-2024"
+    },
+    "schema:name": "Olivine major element compositions, Kilauea Iki lava lake",
+    "schema:subjectOf": {"@id": "ex:olivineKilaueaIki-record"}
+  },
+  "schema:additionalType": {"@id": "dcat:CatalogRecord"},
+  "@included": [
+    {
+      "@id": "https://registry.onegeochemistry.org/methods/jeol-8530f-olivine-v1",
+      "@type": [
+        "prov:Entity",
+        "prov:Plan"
+      ]
+    }
+  ]
+}
