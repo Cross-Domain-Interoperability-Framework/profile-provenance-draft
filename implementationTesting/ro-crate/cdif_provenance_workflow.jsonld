@@ -225,6 +225,19 @@
       "schema:name": "chikr_FeS2",
       "schema:description": "Fit in k and R space.",
       "schema:encodingFormat": "image/png"
+    },
+    {
+      "@id": "ex:fes2FitResults",
+      "@type": "schema:Dataset",
+      "schema:name": "EXAFS fit of FeS2 (pyrite) at room temperature",
+      "schema:description": "Results of fitting the room-temperature Fe K-edge EXAFS of FeS2 with Larch in Galaxy: the fit report and the fit plots. The computational-workflow scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on the Galaxy run in examples/FeS2-Analysis.actions.cdifprov.json.",
+      "schema:hasPart": [
+        {"@id": "ex:fit_report_FeS2.feffit"},
+        {"@id": "ex:rmr_FeS2.png"},
+        {"@id": "ex:chikr_FeS2.png"}
+      ],
+      "schema:identifier": {"@id": "https://doi.org/10.0000/example-fes2-exafs"},
+      "schema:dateModified": "2024-10-23"
     }
   ],
   "schema:mentions": [
@@ -250,7 +263,8 @@
       "schema:result": [
         {"@id": "ex:fit_report_FeS2.feffit"},
         {"@id": "ex:rmr_FeS2.png"},
-        {"@id": "ex:chikr_FeS2.png"}
+        {"@id": "ex:chikr_FeS2.png"},
+        {"@id": "ex:fes2FitResults"}
       ],
       "@reverse": {
         "schema:result": {
