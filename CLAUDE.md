@@ -80,6 +80,11 @@ python tools/galaxyROCrateToCDIFActions.py <crate.zip|dir> -o examples/<name>.ac
 
 # Any RDF (Turtle, flattened JSON-LD) -> compacted tree JSON-LD; exits 1 unless the output is isomorphic
 python tools/rdfToJsonLdTree.py <src.ttl|src.json> <out.jsonld> [--base <iri>] [--root <iri>]
+
+# cdifProv -> PROV-O, qualified or plain relations (the mapping is implementationTesting/MAPPING.md);
+# --unqualify turns a qualified PROV-O Turtle into plain relations
+python tools/cdifProvToProvO.py <cdifProv.json> <out.ttl> [--unqualified]
+python tools/cdifProvToProvO.py --unqualify <qualified.ttl> <out.ttl>
 ```
 
 There is no test suite; "the tests" are FrameAndValidate `-v` plus pyshacl over every file in
