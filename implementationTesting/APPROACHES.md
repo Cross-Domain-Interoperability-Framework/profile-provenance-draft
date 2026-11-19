@@ -13,7 +13,7 @@ in the master. The values are plausible, not real.
 
 **More scenarios.** This page is the first of a set, each written in cdifProv and mapped to PROV-O
 (qualified and plain) and an RO-Crate, so that between them they cover the cdifProvenance schema:
-[a computational workflow run](SCENARIO_workflow.md) is the second, and [a minimal record](SCENARIO_minimal.md) the third. [MAPPING.md](MAPPING.md) is the
+[a computational workflow run](SCENARIO_workflow.md) is the second, and [a minimal record](SCENARIO_minimal.md) the third, and [a laboratory protocol with sub-protocols](SCENARIO_lab_protocol.md) the fourth. [MAPPING.md](MAPPING.md) is the
 construct-by-construct table the scenarios share.
 
 ## The scenario
