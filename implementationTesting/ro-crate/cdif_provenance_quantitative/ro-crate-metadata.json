@@ -1,149 +1,797 @@
 {
-  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "actionProcess": {
+        "@id": "http://schema.org/actionProcess",
+        "@type": "@id"
+      }
+    }
+  ],
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "about": {"@id": "./"},
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
     },
     {
       "@id": "./",
       "@type": "Dataset",
-      "name": "Concentration determination of the analyte in water sample 01",
-      "description": "Process Run Crate rendering of implementationTesting/prov-o-qualified/cdif_provenance_quantitative.ttl, the Dagstuhl quantitative scenario extended with illustrative sampling, instrument, reagent, tool and analyst. See implementationTesting/APPROACHES.md.",
-      "datePublished": "2026-11-09",
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
-      "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.5"},
-      "hasPart": [
-        {"@id": "https://example.org/cdif-prov/data/absorbance.csv"},
-        {"@id": "https://example.org/cdif-prov/data/corrected-absorbance.csv"},
-        {"@id": "https://example.org/cdif-prov/data/concentration.csv"},
-        {"@id": "https://example.org/cdif-prov/data/uncertainty.csv"},
-        {"@id": "https://example.org/cdif-prov/data/validation-result.csv"}
-      ],
+      "name": "Validation of the analyte concentration in water sample 01",
+      "description": "RO-Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_quantitative.json, the lab-measurement (Dagstuhl quantitative) scenario. See implementationTesting/APPROACHES.md.",
+      "datePublished": "2026-11-19",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "hasPart": {
+        "@id": "https://example.org/cdif-prov/validationResult"
+      },
       "mentions": [
-        {"@id": "https://example.org/cdif-prov/waterSampling01"},
-        {"@id": "https://example.org/cdif-prov/absorbanceMeasurement"},
-        {"@id": "https://example.org/cdif-prov/blankCorrection"},
-        {"@id": "https://example.org/cdif-prov/calibrationDerivation"},
-        {"@id": "https://example.org/cdif-prov/uncertaintyAssessment"},
-        {"@id": "https://example.org/cdif-prov/validation"}
+        {
+          "@id": "https://example.org/cdif-prov/waterSampling01"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/concentrationRun"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/instrumentCalibration01"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/absorbanceMeasurementAttempt01"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/absorbanceMeasurement"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/blankCorrection"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/calibrationDerivation"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/uncertaintyAssessment"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/validation"
+        }
       ]
     },
     {
-      "@id": "https://w3id.org/ro/wfrun/process/0.5",
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
       "@type": "CreativeWork",
-      "name": "Process Run Crate",
-      "version": "0.5"
+      "name": "CC BY 4.0"
     },
-
+    {
+      "@id": "https://example.org/cdif-prov/validationResult",
+      "@type": "Dataset",
+      "name": "Validation of the analyte concentration in water sample 01",
+      "description": "cdifProv (schema.org) rendering of implementationTesting/prov-o-qualified/cdif_provenance_quantitative.ttl, the Dagstuhl quantitative scenario extended with illustrative sampling, instrument, reagent, tool and analyst. This file goes further than the master to exercise every slot the cdifProvenance schema offers: activity types from the CDIF activityType vocabulary, identifiers and descriptions, a full instrument description, software version, located places, procedures with steps and constants, vocabulary roles, an instrument calibration activity and a failed measurement attempt. Every fact beyond the Dagstuhl source is illustrative. See implementationTesting/APPROACHES.md for what this form keeps and loses."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/waterSampling01-location-geo",
+      "@type": "GeoCoordinates",
+      "latitude": 46.95,
+      "longitude": 7.45
+    },
+    {
+      "@id": "https://example.org/cdif-prov/waterSampling01-location",
+      "@type": "Place",
+      "name": "Sampling point on the river reach",
+      "additionalType": "river bank sampling point",
+      "geo": {
+        "@id": "https://example.org/cdif-prov/waterSampling01-location-geo"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/riverReach01",
+      "@type": "Place",
+      "name": "River reach the water was taken from"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/waterSample01",
+      "@type": "Thing",
+      "name": "Filtered water sample",
+      "description": "500 mL surface water, filtered at 0.45 µm, kept at 4 °C until analysis."
+    },
     {
       "@id": "https://example.org/cdif-prov/waterSampling01",
       "@type": "CreateAction",
+      "additionalType": {
+        "@id": "https://w3id.org/cdif/concepts/provenance/activity/Sampling"
+      },
       "name": "Water sampling",
+      "description": "Grab sample of surface water from the river reach, filtered on site.",
       "startTime": "2026-11-04T08:10:00+00:00",
       "endTime": "2026-11-04T08:15:00+00:00",
       "actionStatus": "http://schema.org/CompletedActionStatus",
-      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
-      "object": {"@id": "https://example.org/cdif-prov/riverReach01"},
-      "result": {"@id": "https://example.org/cdif-prov/waterSample01"}
+      "location": {
+        "@id": "https://example.org/cdif-prov/waterSampling01-location"
+      },
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst01"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/riverReach01"
+      },
+      "result": {
+        "@id": "https://example.org/cdif-prov/waterSample01"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/concentrationRun-identifier",
+      "@type": "PropertyValue",
+      "propertyID": "laboratory run number",
+      "value": "RUN-2026-11-05-01"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/laboratory01-identifier",
+      "@type": "PropertyValue",
+      "propertyID": "laboratory accreditation number",
+      "value": "ACC-0000"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/laboratory01",
+      "@type": "Organization",
+      "name": "Analytical laboratory",
+      "identifier": {
+        "@id": "https://example.org/cdif-prov/laboratory01-identifier"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/analyst01-contactPoint",
+      "@type": "ContactPoint",
+      "email": "ana.lima@example.org"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/analyst01",
+      "@type": "Person",
+      "name": "Ana Lima",
+      "givenName": "Ana",
+      "familyName": "Lima",
+      "honorificPrefix": "Dr",
+      "description": "Analytical chemist; trained and authorised for the laboratory's UV-Vis absorbance method (illustrative qualification: there is no structured slot for qualifications or training).",
+      "identifier": {
+        "@id": "https://orcid.org/0000-0000-0000-0000"
+      },
+      "affiliation": {
+        "@id": "https://example.org/cdif-prov/laboratory01"
+      },
+      "contactPoint": {
+        "@id": "https://example.org/cdif-prov/analyst01-contactPoint"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/calibrationStandards01",
+      "@type": [
+        "Thing",
+        "ChemicalSubstance"
+      ],
+      "name": "Certified calibration standards, 0-2 mg/L, lot CS-0042"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01-identifier",
+      "@type": "PropertyValue",
+      "propertyID": "manufacturer serial number",
+      "value": "SN-000123"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01-category-1",
+      "@type": "DefinedTerm",
+      "name": "UV-Vis spectrophotometer"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01-manufacturer",
+      "@type": "Organization",
+      "name": "Example Instruments Ltd"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01-model",
+      "@type": "ProductModel",
+      "name": "SP-1000"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01-additionalProperty-1",
+      "@type": "PropertyValue",
+      "name": "Spectral bandwidth",
+      "value": 2,
+      "unitText": "nm",
+      "propertyID": "spectral bandwidth"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01-additionalProperty-2",
+      "@type": "PropertyValue",
+      "name": "Measurement wavelength",
+      "value": 540,
+      "unitText": "nm",
+      "propertyID": "measurement wavelength"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01-hasPart-1",
+      "@type": "Thing",
+      "name": "Deuterium and tungsten lamps"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01-hasPart-2",
+      "@type": "Thing",
+      "name": "Grating monochromator"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01-hasPart-3",
+      "@type": "Thing",
+      "name": "Silicon photodiode detector"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/spectrophotometer01",
+      "@type": [
+        "Product",
+        "Thing"
+      ],
+      "name": "UV-Vis spectrophotometer",
+      "description": "Double-beam UV-Vis spectrophotometer, 190-1100 nm.",
+      "identifier": {
+        "@id": "https://example.org/cdif-prov/spectrophotometer01-identifier"
+      },
+      "category": {
+        "@id": "https://example.org/cdif-prov/spectrophotometer01-category-1"
+      },
+      "manufacturer": {
+        "@id": "https://example.org/cdif-prov/spectrophotometer01-manufacturer"
+      },
+      "model": {
+        "@id": "https://example.org/cdif-prov/spectrophotometer01-model"
+      },
+      "owner": {
+        "@id": "https://example.org/cdif-prov/laboratory01"
+      },
+      "additionalProperty": [
+        {
+          "@id": "https://example.org/cdif-prov/spectrophotometer01-additionalProperty-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/spectrophotometer01-additionalProperty-2"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "https://example.org/cdif-prov/spectrophotometer01-hasPart-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/spectrophotometer01-hasPart-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/spectrophotometer01-hasPart-3"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/calibrationCurve",
+      "@type": "CreativeWork",
+      "name": "Calibration curve",
+      "description": "Linear fit of absorbance against standard concentration.",
+      "url": "https://example.org/cdif-prov/data/calibration-curve.csv",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/instrumentCalibration01",
+      "@type": [
+        "HowToStep",
+        "CreateAction"
+      ],
+      "position": "1",
+      "name": "Instrument calibration",
+      "description": "Absorbance of five certified standards measured to fit the response line used to convert sample absorbance to concentration.",
+      "startTime": "2026-11-05T09:40:00+00:00",
+      "endTime": "2026-11-05T10:05:00+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst01"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/spectrophotometer01"
+      },
+      "result": {
+        "@id": "https://example.org/cdif-prov/calibrationCurve"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/calibrationStandards01"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurementAttempt01",
+      "@type": [
+        "HowToStep",
+        "CreateAction"
+      ],
+      "position": "2",
+      "name": "Absorbance measurement, first attempt",
+      "startTime": "2026-11-05T10:12:00+00:00",
+      "endTime": "2026-11-05T10:13:00+00:00",
+      "actionStatus": "http://schema.org/FailedActionStatus",
+      "error": "Air bubble in the cuvette gave an unstable reading; the reading was rejected and the measurement repeated.",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst01"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/waterSample01"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurement-location-geo",
+      "@type": "GeoCoordinates",
+      "latitude": 46.95,
+      "longitude": 7.44
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurement-location",
+      "@type": "Place",
+      "name": "Analytical laboratory, room B12",
+      "additionalType": "analytical laboratory",
+      "identifier": "LAB-B12",
+      "geo": {
+        "@id": "https://example.org/cdif-prov/absorbanceMeasurement-location-geo"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurementProcedure-step-1",
+      "@type": "HowToStep",
+      "position": "1",
+      "name": "Add reagent",
+      "description": "Add 2 mL colour reagent to 10 mL sample."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurementProcedure-step-2",
+      "@type": "HowToStep",
+      "position": "2",
+      "name": "Develop colour",
+      "description": "Wait 10 minutes at room temperature."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurementProcedure-step-3",
+      "@type": "HowToStep",
+      "position": "3",
+      "name": "Read absorbance",
+      "description": "Read at 540 nm in a 1 cm cuvette against the reagent blank."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurementProcedure",
+      "@type": "HowTo",
+      "name": "Absorbance measurement in a 1 cm cuvette",
+      "description": "Mix 10 mL of sample with 2 mL of colour reagent, wait 10 minutes for colour development, read absorbance at 540 nm.",
+      "url": "https://example.org/cdif-prov/video/absorbance-procedure.mp4",
+      "prepTime": "PT20M",
+      "performTime": "PT5M",
+      "estimatedCost": "12 USD",
+      "step": [
+        {
+          "@id": "https://example.org/cdif-prov/absorbanceMeasurementProcedure-step-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/absorbanceMeasurementProcedure-step-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/absorbanceMeasurementProcedure-step-3"
+        }
+      ],
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/absorbanceProcedure"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurement-additionalProperty-1",
+      "@type": "PropertyValue",
+      "name": "Cuvette path length",
+      "value": 1,
+      "unitText": "cm",
+      "propertyID": "cuvette path length"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceMeasurement-additionalProperty-2",
+      "@type": "PropertyValue",
+      "name": "Colour development time",
+      "value": 10,
+      "unitText": "min",
+      "propertyID": "colour development time"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/colourReagent01",
+      "@type": [
+        "Thing",
+        "ChemicalSubstance"
+      ],
+      "name": "Colour-forming reagent, 2 mL"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/cuvette01",
+      "@type": [
+        "Thing",
+        "Product"
+      ],
+      "name": "1 cm quartz cuvette"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceSource",
+      "@type": "CreativeWork",
+      "name": "Absorbance data",
+      "description": "Raw absorbance readings of the sample and the reagent blank.",
+      "url": "https://example.org/cdif-prov/data/absorbance.csv",
+      "encodingFormat": "text/csv",
+      "about": {
+        "@id": "https://example.org/cdif-prov/waterSample01"
+      }
     },
     {
       "@id": "https://example.org/cdif-prov/absorbanceMeasurement",
-      "@type": "CreateAction",
+      "@type": [
+        "HowToStep",
+        "CreateAction"
+      ],
+      "position": "3",
       "name": "Absorbance measurement",
+      "description": "Colour reagent added to an aliquot of the sample; absorbance read at 540 nm against a reagent blank.",
+      "identifier": "MEAS-2026-11-05-002",
       "startTime": "2026-11-05T10:18:00+00:00",
       "endTime": "2026-11-05T10:19:00+00:00",
       "actionStatus": "http://schema.org/CompletedActionStatus",
-      "location": {"@id": "https://example.org/cdif-prov/laboratory01"},
-      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
+      "location": {
+        "@id": "https://example.org/cdif-prov/absorbanceMeasurement-location"
+      },
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst01"
+      },
+      "participant": {
+        "@id": "https://example.org/cdif-prov/laboratory01"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/absorbanceMeasurementProcedure"
+      },
+      "additionalProperty": [
+        {
+          "@id": "https://example.org/cdif-prov/absorbanceMeasurement-additionalProperty-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/absorbanceMeasurement-additionalProperty-2"
+        }
+      ],
       "instrument": [
-        {"@id": "https://example.org/cdif-prov/spectrophotometer01"},
-        {"@id": "https://example.org/cdif-prov/cuvette01"}
+        {
+          "@id": "https://example.org/cdif-prov/spectrophotometer01"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/cuvette01"
+        }
       ],
       "object": [
-        {"@id": "https://example.org/cdif-prov/waterSample01"},
-        {"@id": "https://example.org/cdif-prov/colourReagent01"}
+        {
+          "@id": "https://example.org/cdif-prov/waterSample01"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/colourReagent01"
+        }
       ],
-      "result": {"@id": "https://example.org/cdif-prov/data/absorbance.csv"}
+      "result": {
+        "@id": "https://example.org/cdif-prov/absorbanceSource"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/blankCorrectionProcedure",
+      "@type": "HowTo",
+      "name": "Reagent-blank subtraction",
+      "description": "Corrected absorbance = sample absorbance - mean of duplicate reagent-blank absorbances.",
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/blankCorrectionSpec"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/correctedAbsorbance",
+      "@type": "CreativeWork",
+      "name": "Blank-corrected absorbance",
+      "url": "https://example.org/cdif-prov/data/corrected-absorbance.csv",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/analysisSoftware",
+      "@type": "SoftwareApplication",
+      "name": "Analysis software",
+      "softwareVersion": "2.4.1",
+      "identifier": "https://example.org/cdif-prov/software/analysis/2.4.1",
+      "url": "https://example.org/cdif-prov/software/analysis"
     },
     {
       "@id": "https://example.org/cdif-prov/blankCorrection",
-      "@type": "CreateAction",
+      "@type": [
+        "HowToStep",
+        "CreateAction"
+      ],
+      "position": "4",
       "name": "Blank correction",
+      "description": "Reagent-blank absorbance subtracted from the sample absorbance.",
       "startTime": "2026-11-05T10:21:00+00:00",
       "endTime": "2026-11-05T10:21:04+00:00",
       "actionStatus": "http://schema.org/CompletedActionStatus",
-      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
-      "instrument": {"@id": "https://example.org/cdif-prov/analysisSoftware"},
-      "object": [
-        {"@id": "https://example.org/cdif-prov/data/absorbance.csv"},
-        {"@id": "https://example.org/cdif-prov/blankCorrectionSpec"}
-      ],
-      "result": {"@id": "https://example.org/cdif-prov/data/corrected-absorbance.csv"}
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst01"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/blankCorrectionProcedure"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/absorbanceSource"
+      },
+      "result": {
+        "@id": "https://example.org/cdif-prov/correctedAbsorbance"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/analysisSoftware"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/calibrationDerivationProcedure",
+      "@type": "HowTo",
+      "name": "Linear calibration (Beer-Lambert)",
+      "description": "Concentration = (corrected absorbance - intercept) / slope, using the least-squares calibration line. Assumes a linear response over 0-2 mg/L.",
+      "url": "https://example.org/cdif-prov/methods/linear-calibration",
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/calibrationRelationship"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/calibrationDerivation-additionalProperty-1",
+      "@type": "PropertyValue",
+      "name": "Calibration slope",
+      "value": 0.412,
+      "unitText": "L/mg",
+      "propertyID": "calibration slope"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/calibrationDerivation-additionalProperty-2",
+      "@type": "PropertyValue",
+      "name": "Calibration intercept",
+      "value": 0.003,
+      "propertyID": "calibration intercept"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/calibrationDerivation-additionalProperty-3",
+      "@type": "PropertyValue",
+      "name": "Limit of detection",
+      "value": 0.02,
+      "unitText": "mg/L",
+      "propertyID": "limit of detection"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/calibrationDerivation-additionalProperty-4",
+      "@type": "PropertyValue",
+      "name": "Treatment of values below the limit of detection",
+      "value": "Reported as '<0.02'; no value substituted.",
+      "propertyID": "treatment of values below the limit of detection"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/concentration",
+      "@type": "CreativeWork",
+      "name": "Analyte concentration",
+      "url": "https://example.org/cdif-prov/data/concentration.csv",
+      "encodingFormat": "text/csv",
+      "about": {
+        "@id": "https://example.org/cdif-prov/waterSample01"
+      }
     },
     {
       "@id": "https://example.org/cdif-prov/calibrationDerivation",
-      "@type": "CreateAction",
+      "@type": [
+        "HowToStep",
+        "CreateAction"
+      ],
+      "position": "5",
       "name": "Calibration-based derivation",
+      "description": "Concentration computed from corrected absorbance with the calibration curve.",
       "startTime": "2026-11-05T10:23:14+00:00",
       "endTime": "2026-11-05T10:23:18+00:00",
       "actionStatus": "http://schema.org/CompletedActionStatus",
-      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
-      "instrument": {"@id": "https://example.org/cdif-prov/analysisSoftware"},
-      "object": [
-        {"@id": "https://example.org/cdif-prov/data/corrected-absorbance.csv"},
-        {"@id": "https://example.org/cdif-prov/calibrationRelationship"}
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst01"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/calibrationDerivationProcedure"
+      },
+      "additionalProperty": [
+        {
+          "@id": "https://example.org/cdif-prov/calibrationDerivation-additionalProperty-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/calibrationDerivation-additionalProperty-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/calibrationDerivation-additionalProperty-3"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/calibrationDerivation-additionalProperty-4"
+        }
       ],
-      "result": {"@id": "https://example.org/cdif-prov/data/concentration.csv"}
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/correctedAbsorbance"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/calibrationCurve"
+        }
+      ],
+      "result": {
+        "@id": "https://example.org/cdif-prov/concentration"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/analysisSoftware"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/uncertaintyAssessmentProcedure",
+      "@type": "HowTo",
+      "name": "GUM uncertainty budget",
+      "description": "Uncertainty components combined in quadrature; expanded uncertainty with coverage factor k=2.",
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/uncertaintySpec"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/uncertaintyAssessment-additionalProperty-1",
+      "@type": "PropertyValue",
+      "name": "Coverage factor",
+      "value": 2,
+      "propertyID": "coverage factor"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/concentrationUncertainty",
+      "@type": "CreativeWork",
+      "name": "Concentration uncertainty",
+      "url": "https://example.org/cdif-prov/data/uncertainty.csv",
+      "encodingFormat": "text/csv"
     },
     {
       "@id": "https://example.org/cdif-prov/uncertaintyAssessment",
-      "@type": "CreateAction",
-      "name": "Uncertainty assessment",
-      "actionStatus": "http://schema.org/CompletedActionStatus",
-      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
-      "instrument": {"@id": "https://example.org/cdif-prov/analysisSoftware"},
-      "object": [
-        {"@id": "https://example.org/cdif-prov/data/concentration.csv"},
-        {"@id": "https://example.org/cdif-prov/uncertaintySpec"}
+      "@type": [
+        "HowToStep",
+        "CreateAction"
       ],
-      "result": {"@id": "https://example.org/cdif-prov/data/uncertainty.csv"}
+      "position": "6",
+      "name": "Uncertainty assessment",
+      "description": "Combined standard uncertainty of the concentration from calibration, repeatability and volume contributions.",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst01"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/uncertaintyAssessmentProcedure"
+      },
+      "additionalProperty": {
+        "@id": "https://example.org/cdif-prov/uncertaintyAssessment-additionalProperty-1"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/concentration"
+      },
+      "result": {
+        "@id": "https://example.org/cdif-prov/concentrationUncertainty"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/analysisSoftware"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/validationCriterion",
+      "@type": "CreativeWork",
+      "name": "Acceptance criterion: relative expanded uncertainty at most 10 %",
+      "url": "https://example.org/cdif-prov/methods/acceptance-criterion"
     },
     {
       "@id": "https://example.org/cdif-prov/validation",
-      "@type": "CreateAction",
-      "name": "Validation",
-      "actionStatus": "http://schema.org/CompletedActionStatus",
-      "agent": {"@id": "https://example.org/cdif-prov/analyst01"},
-      "instrument": {"@id": "https://example.org/cdif-prov/analysisSoftware"},
-      "object": [
-        {"@id": "https://example.org/cdif-prov/data/concentration.csv"},
-        {"@id": "https://example.org/cdif-prov/data/uncertainty.csv"},
-        {"@id": "https://example.org/cdif-prov/validationCriterion"}
+      "@type": [
+        "HowToStep",
+        "CreateAction"
       ],
-      "result": {"@id": "https://example.org/cdif-prov/data/validation-result.csv"}
+      "position": "7",
+      "name": "Validation",
+      "description": "Concentration and its uncertainty checked against the acceptance criterion for the method.",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst01"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/concentration"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/concentrationUncertainty"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/validationCriterion"
+        }
+      ],
+      "result": {
+        "@id": "https://example.org/cdif-prov/validationResult"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/analysisSoftware"
+      }
     },
-
-    {"@id": "https://example.org/cdif-prov/data/absorbance.csv", "@type": "File", "name": "Absorbance data", "encodingFormat": "text/csv", "about": {"@id": "https://example.org/cdif-prov/waterSample01"}},
-    {"@id": "https://example.org/cdif-prov/data/corrected-absorbance.csv", "@type": "File", "name": "Blank-corrected absorbance", "encodingFormat": "text/csv"},
-    {"@id": "https://example.org/cdif-prov/data/concentration.csv", "@type": "File", "name": "Analyte concentration", "encodingFormat": "text/csv", "about": {"@id": "https://example.org/cdif-prov/waterSample01"}},
-    {"@id": "https://example.org/cdif-prov/data/uncertainty.csv", "@type": "File", "name": "Concentration uncertainty", "encodingFormat": "text/csv"},
-    {"@id": "https://example.org/cdif-prov/data/validation-result.csv", "@type": "File", "name": "Validation result", "encodingFormat": "text/csv"},
-
-    {"@id": "https://example.org/cdif-prov/riverReach01", "@type": "Place", "name": "River reach the water was taken from"},
-    {"@id": "https://example.org/cdif-prov/waterSample01", "@type": "Thing", "name": "Filtered water sample"},
-    {"@id": "https://example.org/cdif-prov/colourReagent01", "@type": "Thing", "name": "Colour-forming reagent, 2 mL"},
-    {"@id": "https://example.org/cdif-prov/spectrophotometer01", "@type": "IndividualProduct", "name": "UV-Vis spectrophotometer"},
-    {"@id": "https://example.org/cdif-prov/cuvette01", "@type": "IndividualProduct", "name": "1 cm quartz cuvette"},
-    {"@id": "https://example.org/cdif-prov/analysisSoftware", "@type": "SoftwareApplication", "name": "Analysis software"},
-    {"@id": "https://example.org/cdif-prov/blankCorrectionSpec", "@type": "CreativeWork", "name": "Blank-correction method"},
-    {"@id": "https://example.org/cdif-prov/calibrationRelationship", "@type": "CreativeWork", "name": "Calibration relationship"},
-    {"@id": "https://example.org/cdif-prov/uncertaintySpec", "@type": "CreativeWork", "name": "Uncertainty method"},
-    {"@id": "https://example.org/cdif-prov/validationCriterion", "@type": "CreativeWork", "name": "Validation criterion"},
-    {"@id": "https://example.org/cdif-prov/analyst01", "@type": "Person", "name": "Ana Lima", "givenName": "Ana", "familyName": "Lima", "honorificPrefix": "Dr", "affiliation": {"@id": "https://example.org/cdif-prov/laboratory01"}},
-    {"@id": "https://example.org/cdif-prov/laboratory01", "@type": "Organization", "name": "Analytical laboratory"},
-    {"@id": "https://creativecommons.org/licenses/by/4.0/", "@type": "CreativeWork", "name": "CC BY 4.0"}
+    {
+      "@id": "https://example.org/cdif-prov/concentrationRunProcedure",
+      "@type": "HowTo",
+      "name": "Determine analyte concentration from absorbance, with uncertainty and validation, as performed",
+      "description": "Laboratory method for a dissolved analyte in surface water by colorimetric absorbance, calibrated against certified standards.",
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/concentrationDeterminationPlan"
+      },
+      "step": [
+        {
+          "@id": "https://example.org/cdif-prov/instrumentCalibration01"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/absorbanceMeasurementAttempt01"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/absorbanceMeasurement"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/blankCorrection"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/calibrationDerivation"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/uncertaintyAssessment"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/validation"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/concentrationRun",
+      "@type": "CreateAction",
+      "additionalType": {
+        "@id": "https://w3id.org/cdif/concepts/provenance/activity/Analysis"
+      },
+      "name": "Concentration determination run",
+      "description": "Analysis of water sample 01: instrument calibration, absorbance measurement (a failed attempt and its repeat), blank correction, derivation of concentration from the calibration, uncertainty assessment and validation against the acceptance criterion.",
+      "identifier": {
+        "@id": "https://example.org/cdif-prov/concentrationRun-identifier"
+      },
+      "startTime": "2026-11-05T09:40:00+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst01"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/concentrationRunProcedure"
+      },
+      "result": {
+        "@id": "https://example.org/cdif-prov/validationResult"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/waterSample01"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/absorbanceProcedure",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/blankCorrectionSpec",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/calibrationRelationship",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/uncertaintySpec",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/concentrationDeterminationPlan",
+      "@type": "HowTo"
+    }
   ]
 }
