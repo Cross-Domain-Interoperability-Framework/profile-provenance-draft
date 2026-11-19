@@ -80,6 +80,18 @@
       "mentions": [
         {
           "@id": "https://example.org/cdif-prov/fes2Run"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step3"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4"
         }
       ]
     },
@@ -205,28 +217,32 @@
       "@type": "SoftwareApplication",
       "name": "larch_athena",
       "version": "0.9.75+galaxy0",
-      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.75+galaxy0"
+      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.75+galaxy0",
+      "url": "https://toolshed.g2.bx.psu.edu/view/muon-spectroscopy-computational-project/larch_athena"
     },
     {
       "@id": "https://example.org/cdif-prov/larchFeff",
       "@type": "SoftwareApplication",
       "name": "larch_feff",
       "version": "0.9.75+galaxy0",
-      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.75+galaxy0"
+      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.75+galaxy0",
+      "url": "https://toolshed.g2.bx.psu.edu/view/muon-spectroscopy-computational-project/larch_feff"
     },
     {
       "@id": "https://example.org/cdif-prov/larchSelectPaths",
       "@type": "SoftwareApplication",
       "name": "larch_select_paths",
       "version": "0.9.75+galaxy0",
-      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.75+galaxy0"
+      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.75+galaxy0",
+      "url": "https://toolshed.g2.bx.psu.edu/view/muon-spectroscopy-computational-project/larch_select_paths"
     },
     {
       "@id": "https://example.org/cdif-prov/larchArtemis",
       "@type": "SoftwareApplication",
       "name": "larch_artemis",
       "version": "0.9.75+galaxy0",
-      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.75+galaxy0"
+      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.75+galaxy0",
+      "url": "https://toolshed.g2.bx.psu.edu/view/muon-spectroscopy-computational-project/larch_artemis"
     },
     {
       "@id": "https://example.org/cdif-prov/galaxyEngine",
@@ -246,11 +262,9 @@
       "@type": "CreateAction",
       "name": "FeS2 Analysis",
       "description": "One invocation of the Galaxy workflow FeS2 Analysis: normalize the measured spectrum, compute and select scattering paths from the crystal structure, and fit them to the spectrum.",
-      "startTime": "2024-10-23T14:09:38.754317",
-      "endTime": "2024-10-23T14:10:18.969215",
-      "actionStatus": {
-        "@id": "http://schema.org/CompletedActionStatus"
-      },
+      "startTime": "2024-10-23T14:09:38.754+00:00",
+      "endTime": "2024-10-23T14:10:18.969+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
       "agent": {
         "@id": "https://example.org/cdif-prov/analyst02"
       },
@@ -281,8 +295,8 @@
       "@id": "https://example.org/cdif-prov/fes2EngineRun",
       "@type": "OrganizeAction",
       "name": "Run of the Galaxy workflow engine",
-      "startTime": "2024-10-23T14:09:38.754317",
-      "endTime": "2024-10-23T14:10:18.969215",
+      "startTime": "2024-10-23T14:09:38.754+00:00",
+      "endTime": "2024-10-23T14:10:18.969+00:00",
       "agent": {
         "@id": "https://example.org/cdif-prov/analyst02"
       },
@@ -375,10 +389,11 @@
       "@id": "https://example.org/cdif-prov/fes2Step1",
       "@type": "CreateAction",
       "name": "Normalize the absorption spectrum (Larch Athena)",
-      "startTime": "2024-10-23T14:09:56.823447",
-      "endTime": "2024-10-23T14:10:04.994552",
-      "actionStatus": {
-        "@id": "http://schema.org/CompletedActionStatus"
+      "startTime": "2024-10-23T14:09:56.823+00:00",
+      "endTime": "2024-10-23T14:10:04.994+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst02"
       },
       "instrument": {
         "@id": "https://example.org/cdif-prov/larchAthena"
@@ -455,10 +470,11 @@
       "@id": "https://example.org/cdif-prov/fes2Step2",
       "@type": "CreateAction",
       "name": "Compute scattering paths from the structure (Larch FEFF)",
-      "startTime": "2024-10-23T14:09:56.910615",
-      "endTime": "2024-10-23T14:10:05.023876",
-      "actionStatus": {
-        "@id": "http://schema.org/CompletedActionStatus"
+      "startTime": "2024-10-23T14:09:56.910+00:00",
+      "endTime": "2024-10-23T14:10:05.023+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst02"
       },
       "instrument": {
         "@id": "https://example.org/cdif-prov/larchFeff"
@@ -477,11 +493,9 @@
           "@id": "https://example.org/cdif-prov/fes2Step2/parameter-3"
         }
       ],
-      "result": [
-        {
-          "@id": "https://example.org/cdif-prov/fes2FeffPaths"
-        }
-      ]
+      "result": {
+        "@id": "https://example.org/cdif-prov/fes2FeffPaths"
+      }
     },
     {
       "@id": "https://example.org/cdif-prov/fes2Step3-control",
@@ -543,10 +557,11 @@
       "@id": "https://example.org/cdif-prov/fes2Step3",
       "@type": "CreateAction",
       "name": "Select the paths to fit (Larch select paths)",
-      "startTime": "2024-10-23T14:09:57.007640",
-      "endTime": "2024-10-23T14:10:09.006182",
-      "actionStatus": {
-        "@id": "http://schema.org/CompletedActionStatus"
+      "startTime": "2024-10-23T14:09:57.007+00:00",
+      "endTime": "2024-10-23T14:10:09.006+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst02"
       },
       "instrument": {
         "@id": "https://example.org/cdif-prov/larchSelectPaths"
@@ -666,10 +681,11 @@
       "@id": "https://example.org/cdif-prov/fes2Step4",
       "@type": "CreateAction",
       "name": "Fit the paths to the spectrum (Larch Artemis)",
-      "startTime": "2024-10-23T14:09:57.141933",
-      "endTime": "2024-10-23T14:10:18.969215",
-      "actionStatus": {
-        "@id": "http://schema.org/CompletedActionStatus"
+      "startTime": "2024-10-23T14:09:57.141+00:00",
+      "endTime": "2024-10-23T14:10:18.969+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst02"
       },
       "instrument": {
         "@id": "https://example.org/cdif-prov/larchArtemis"
