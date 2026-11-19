@@ -1,0 +1,801 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "EXAFS fit of FeS2 (pyrite) at room temperature",
+      "description": "Provenance Run Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_workflow.json, the computational-workflow scenario. See implementationTesting/APPROACHES.md.",
+      "datePublished": "2026-11-18",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.5"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.5"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/provenance/0.5"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "mainEntity": {
+        "@id": "https://example.org/cdif-prov/fes2Workflow"
+      },
+      "hasPart": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2Workflow"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2_rt01_mar02.xmu"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/1564889.cif"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/FeS2_athena.prj"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/FeS2_plot.png"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2FeffPaths"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2_gds.gds"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2_sp.sp"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fit_report_FeS2.feffit"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/rmr_FeS2.png"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/chikr_FeS2.png"
+        }
+      ],
+      "mentions": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2Run"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.5",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.5"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.5",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.5"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/provenance/0.5",
+      "@type": "CreativeWork",
+      "name": "Provenance Run Crate",
+      "version": "0.5"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0"
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "name": "CC BY 4.0"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Workflow",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow",
+        "HowTo"
+      ],
+      "name": "FeS2 Analysis",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      },
+      "hasPart": [
+        {
+          "@id": "https://example.org/cdif-prov/larchAthena"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/larchFeff"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/larchSelectPaths"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/larchArtemis"
+        }
+      ],
+      "step": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1-definition"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step2-definition"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step3-definition"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4-definition"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1-definition",
+      "@type": "HowToStep",
+      "position": "1",
+      "name": "Normalize the absorption spectrum (Larch Athena)",
+      "workExample": {
+        "@id": "https://example.org/cdif-prov/larchAthena"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step2-definition",
+      "@type": "HowToStep",
+      "position": "2",
+      "name": "Compute scattering paths from the structure (Larch FEFF)",
+      "workExample": {
+        "@id": "https://example.org/cdif-prov/larchFeff"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step3-definition",
+      "@type": "HowToStep",
+      "position": "3",
+      "name": "Select the paths to fit (Larch select paths)",
+      "workExample": {
+        "@id": "https://example.org/cdif-prov/larchSelectPaths"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4-definition",
+      "@type": "HowToStep",
+      "position": "4",
+      "name": "Fit the paths to the spectrum (Larch Artemis)",
+      "workExample": {
+        "@id": "https://example.org/cdif-prov/larchArtemis"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/larchAthena",
+      "@type": "SoftwareApplication",
+      "name": "larch_athena",
+      "version": "0.9.75+galaxy0",
+      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.75+galaxy0"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/larchFeff",
+      "@type": "SoftwareApplication",
+      "name": "larch_feff",
+      "version": "0.9.75+galaxy0",
+      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.75+galaxy0"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/larchSelectPaths",
+      "@type": "SoftwareApplication",
+      "name": "larch_select_paths",
+      "version": "0.9.75+galaxy0",
+      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.75+galaxy0"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/larchArtemis",
+      "@type": "SoftwareApplication",
+      "name": "larch_artemis",
+      "version": "0.9.75+galaxy0",
+      "identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.75+galaxy0"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/galaxyEngine",
+      "@type": "SoftwareApplication",
+      "name": "Galaxy workflow engine",
+      "version": "24.1",
+      "url": "https://galaxyproject.org/"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/analyst02",
+      "@type": "Person",
+      "name": "Sam Rivera",
+      "identifier": "https://orcid.org/0000-0000-0000-0002"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Run",
+      "@type": "CreateAction",
+      "name": "FeS2 Analysis",
+      "description": "One invocation of the Galaxy workflow FeS2 Analysis: normalize the measured spectrum, compute and select scattering paths from the crystal structure, and fit them to the spectrum.",
+      "startTime": "2024-10-23T14:09:38.754317",
+      "endTime": "2024-10-23T14:10:18.969215",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst02"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/fes2Workflow"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2_rt01_mar02.xmu"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/1564889.cif"
+        }
+      ],
+      "result": [
+        {
+          "@id": "https://example.org/cdif-prov/fit_report_FeS2.feffit"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/rmr_FeS2.png"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/chikr_FeS2.png"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2EngineRun",
+      "@type": "OrganizeAction",
+      "name": "Run of the Galaxy workflow engine",
+      "startTime": "2024-10-23T14:09:38.754317",
+      "endTime": "2024-10-23T14:10:18.969215",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/analyst02"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/galaxyEngine"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1-control"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step2-control"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step3-control"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4-control"
+        }
+      ],
+      "result": {
+        "@id": "https://example.org/cdif-prov/fes2Run"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1-control",
+      "@type": "ControlAction",
+      "name": "Orchestrate Normalize the absorption spectrum (Larch Athena)",
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/fes2Step1-definition"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/fes2Step1"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1/parameter-1",
+      "@type": "PropertyValue",
+      "name": "input format",
+      "propertyID": "merge_inputs.format.format",
+      "value": "plaintext"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1/parameter-2",
+      "@type": "PropertyValue",
+      "name": "pre-edge range start",
+      "propertyID": "processing.pre_edge.pre1",
+      "value": -117,
+      "unitText": "eV"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1/parameter-3",
+      "@type": "PropertyValue",
+      "name": "pre-edge range end",
+      "propertyID": "processing.pre_edge.pre2",
+      "value": -30,
+      "unitText": "eV"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1/parameter-4",
+      "@type": "PropertyValue",
+      "name": "normalization range start",
+      "propertyID": "processing.pre_edge.norm1",
+      "value": 150,
+      "unitText": "eV"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1/parameter-5",
+      "@type": "PropertyValue",
+      "name": "normalization range end",
+      "propertyID": "processing.pre_edge.norm2",
+      "value": 850,
+      "unitText": "eV"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1/parameter-6",
+      "@type": "PropertyValue",
+      "name": "normalization polynomial order",
+      "propertyID": "processing.pre_edge.nnorm",
+      "value": 3
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1/parameter-7",
+      "@type": "PropertyValue",
+      "name": "rebin",
+      "propertyID": "processing.rebin",
+      "value": 0
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step1",
+      "@type": "CreateAction",
+      "name": "Normalize the absorption spectrum (Larch Athena)",
+      "startTime": "2024-10-23T14:09:56.823447",
+      "endTime": "2024-10-23T14:10:04.994552",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/larchAthena"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2_rt01_mar02.xmu"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1/parameter-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1/parameter-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1/parameter-3"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1/parameter-4"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1/parameter-5"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1/parameter-6"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step1/parameter-7"
+        }
+      ],
+      "result": [
+        {
+          "@id": "https://example.org/cdif-prov/FeS2_athena.prj"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/FeS2_plot.png"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step2-control",
+      "@type": "ControlAction",
+      "name": "Orchestrate Compute scattering paths from the structure (Larch FEFF)",
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/fes2Step2-definition"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/fes2Step2"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step2/parameter-1",
+      "@type": "PropertyValue",
+      "name": "input format",
+      "propertyID": "format.format",
+      "value": "cif"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step2/parameter-2",
+      "@type": "PropertyValue",
+      "name": "absorbing atom index",
+      "propertyID": "format.absorbing_atom",
+      "value": 0
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step2/parameter-3",
+      "@type": "PropertyValue",
+      "name": "cluster radius",
+      "propertyID": "format.radius",
+      "value": 4,
+      "unitText": "Å"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step2",
+      "@type": "CreateAction",
+      "name": "Compute scattering paths from the structure (Larch FEFF)",
+      "startTime": "2024-10-23T14:09:56.910615",
+      "endTime": "2024-10-23T14:10:05.023876",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/larchFeff"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/1564889.cif"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step2/parameter-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step2/parameter-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step2/parameter-3"
+        }
+      ],
+      "result": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2FeffPaths"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step3-control",
+      "@type": "ControlAction",
+      "name": "Orchestrate Select the paths to fit (Larch select paths)",
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/fes2Step3-definition"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/fes2Step3"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step3/parameter-1",
+      "@type": "PropertyValue",
+      "name": "selection",
+      "propertyID": "feff_outputs[0].selection.selection",
+      "value": "manual"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step3/parameter-2",
+      "@type": "PropertyValue",
+      "name": "paths selected",
+      "propertyID": "feff_outputs[0].selection.paths",
+      "value": 3
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step3/parameter-3",
+      "@type": "PropertyValue",
+      "name": "initial S02",
+      "propertyID": "feff_outputs[0].selection.paths[*].s02.value",
+      "value": 1
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step3/parameter-4",
+      "@type": "PropertyValue",
+      "name": "initial E0",
+      "propertyID": "feff_outputs[0].selection.paths[*].e0.value",
+      "value": 0,
+      "unitText": "eV"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step3/parameter-5",
+      "@type": "PropertyValue",
+      "name": "initial deltaR",
+      "propertyID": "feff_outputs[0].selection.paths[*].deltar.value",
+      "value": 0,
+      "unitText": "Å"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step3/parameter-6",
+      "@type": "PropertyValue",
+      "name": "initial sigma2",
+      "propertyID": "feff_outputs[0].selection.paths[*].sigma2.value",
+      "value": 0.003,
+      "unitText": "Å²"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step3",
+      "@type": "CreateAction",
+      "name": "Select the paths to fit (Larch select paths)",
+      "startTime": "2024-10-23T14:09:57.007640",
+      "endTime": "2024-10-23T14:10:09.006182",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/larchSelectPaths"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2FeffPaths"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step3/parameter-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step3/parameter-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step3/parameter-3"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step3/parameter-4"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step3/parameter-5"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step3/parameter-6"
+        }
+      ],
+      "result": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2_gds.gds"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2_sp.sp"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4-control",
+      "@type": "ControlAction",
+      "name": "Orchestrate Fit the paths to the spectrum (Larch Artemis)",
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/fes2Step4-definition"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/fes2Step4"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4/parameter-1",
+      "@type": "PropertyValue",
+      "name": "fit space",
+      "propertyID": "fit_vars.fitspace",
+      "value": "r"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4/parameter-2",
+      "@type": "PropertyValue",
+      "name": "k range start",
+      "propertyID": "fit_vars.kmin",
+      "value": 0,
+      "unitText": "Å⁻¹"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4/parameter-3",
+      "@type": "PropertyValue",
+      "name": "k range end",
+      "propertyID": "fit_vars.kmax",
+      "value": 20,
+      "unitText": "Å⁻¹"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4/parameter-4",
+      "@type": "PropertyValue",
+      "name": "k weight",
+      "propertyID": "fit_vars.kweight",
+      "value": 2
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4/parameter-5",
+      "@type": "PropertyValue",
+      "name": "window",
+      "propertyID": "fit_vars.window",
+      "value": "kaiser"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4/parameter-6",
+      "@type": "PropertyValue",
+      "name": "window width dk",
+      "propertyID": "fit_vars.dk",
+      "value": 4,
+      "unitText": "Å⁻¹"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4/parameter-7",
+      "@type": "PropertyValue",
+      "name": "R range start",
+      "propertyID": "fit_vars.rmin",
+      "value": 0,
+      "unitText": "Å"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4/parameter-8",
+      "@type": "PropertyValue",
+      "name": "R range end",
+      "propertyID": "fit_vars.rmax",
+      "value": 10,
+      "unitText": "Å"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4/parameter-9",
+      "@type": "PropertyValue",
+      "name": "execution",
+      "propertyID": "execution.execution",
+      "value": "parallel"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2Step4",
+      "@type": "CreateAction",
+      "name": "Fit the paths to the spectrum (Larch Artemis)",
+      "startTime": "2024-10-23T14:09:57.141933",
+      "endTime": "2024-10-23T14:10:18.969215",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/larchArtemis"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/FeS2_athena.prj"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2FeffPaths"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2_gds.gds"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2_sp.sp"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4/parameter-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4/parameter-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4/parameter-3"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4/parameter-4"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4/parameter-5"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4/parameter-6"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4/parameter-7"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4/parameter-8"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2Step4/parameter-9"
+        }
+      ],
+      "result": [
+        {
+          "@id": "https://example.org/cdif-prov/fit_report_FeS2.feffit"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/rmr_FeS2.png"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/chikr_FeS2.png"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2_rt01_mar02.xmu",
+      "@type": "File",
+      "name": "fes2_rt01_mar02.xmu",
+      "encodingFormat": "text/plain",
+      "description": "Fe K-edge absorption spectrum of FeS2 at room temperature: energy and mu(E) columns."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/1564889.cif",
+      "@type": "File",
+      "name": "1564889.cif",
+      "encodingFormat": "chemical/x-cif",
+      "description": "Crystal structure of FeS2 (pyrite), used to compute the scattering paths."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/FeS2_athena.prj",
+      "@type": "File",
+      "name": "FeS2_athena",
+      "encodingFormat": "application/octet-stream",
+      "description": "Athena project with the normalized spectrum."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/FeS2_plot.png",
+      "@type": "File",
+      "name": "FeS2_plot",
+      "encodingFormat": "image/png",
+      "description": "Plot of the normalized spectrum."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2FeffPaths",
+      "@type": "File",
+      "name": "FEFF output",
+      "encodingFormat": "application/zip",
+      "description": "FEFF scattering-path calculation for Fe in FeS2."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2_gds.gds",
+      "@type": "File",
+      "name": "fes2_gds",
+      "encodingFormat": "text/csv",
+      "description": "Fit variables (guess, def, set) for the selected paths."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2_sp.sp",
+      "@type": "File",
+      "name": "fes2_sp",
+      "encodingFormat": "text/csv",
+      "description": "The selected scattering paths and their starting parameters."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fit_report_FeS2.feffit",
+      "@type": "File",
+      "name": "fit_report_FeS2",
+      "encodingFormat": "text/plain",
+      "description": "Fit report: fitted parameters, uncertainties and statistics."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/rmr_FeS2.png",
+      "@type": "File",
+      "name": "rmr_FeS2",
+      "encodingFormat": "image/png",
+      "description": "Fit in R space."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/chikr_FeS2.png",
+      "@type": "File",
+      "name": "chikr_FeS2",
+      "encodingFormat": "image/png",
+      "description": "Fit in k and R space."
+    }
+  ]
+}

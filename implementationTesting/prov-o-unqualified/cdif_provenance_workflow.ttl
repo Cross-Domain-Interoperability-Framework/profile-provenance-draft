@@ -1,0 +1,317 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/cdif-prov/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:FeS2_plot.png a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "Plot of the normalized spectrum." ;
+    schema1:encodingFormat "image/png" ;
+    schema1:name "FeS2_plot" ;
+    prov:generatedAtTime "2024-10-23T14:10:04.994552"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:fes2Step1 .
+
+ex:chikr_FeS2.png a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "Fit in k and R space." ;
+    schema1:encodingFormat "image/png" ;
+    schema1:name "chikr_FeS2" ;
+    prov:generatedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:fes2Step4 .
+
+ex:fes2Workflow a prov:Entity,
+        prov:Plan .
+
+ex:fit_report_FeS2.feffit a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "Fit report: fitted parameters, uncertainties and statistics." ;
+    schema1:encodingFormat "text/plain" ;
+    schema1:name "fit_report_FeS2" ;
+    prov:generatedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:fes2Step4 .
+
+ex:rmr_FeS2.png a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "Fit in R space." ;
+    schema1:encodingFormat "image/png" ;
+    schema1:name "rmr_FeS2" ;
+    prov:generatedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:fes2Step4 .
+
+ex:FeS2_athena.prj a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "Athena project with the normalized spectrum." ;
+    schema1:encodingFormat "application/octet-stream" ;
+    schema1:name "FeS2_athena" ;
+    prov:generatedAtTime "2024-10-23T14:10:04.994552"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:fes2Step1 .
+
+ex:analyst02 a schema1:Person,
+        prov:Person ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID <https://registry.identifiers.org/registry/orcid> ;
+            schema1:url "https://orcid.org/0000-0000-0000-0002" ;
+            schema1:value "0000-0000-0000-0002" ] ;
+    schema1:name "Sam Rivera" .
+
+ex:fes2FitResults a schema1:Dataset,
+        prov:Entity ;
+    schema1:dateModified "2024-10-23" ;
+    schema1:description "Results of fitting the room-temperature Fe K-edge EXAFS of FeS2 with Larch in Galaxy: the fit report and the fit plots. The computational-workflow scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on the Galaxy run in examples/FeS2-Analysis.actions.cdifprov.json." ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID <https://registry.identifiers.org/registry/doi> ;
+            schema1:url "https://doi.org/10.0000/example-fes2-exafs" ;
+            schema1:value "doi:10.0000/example-fes2-exafs" ] ;
+    schema1:name "EXAFS fit of FeS2 (pyrite) at room temperature" ;
+    schema1:subjectOf ex:fes2FitResults-record ;
+    prov:generatedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:fes2Run .
+
+ex:fes2FitResults-record a schema1:Dataset ;
+    dcterms:conformsTo <https://w3id.org/cdif/core/2.0>,
+        <https://w3id.org/cdif/provenance/2.0> ;
+    schema1:about ex:fes2FitResults ;
+    schema1:additionalType dcat:CatalogRecord .
+
+ex:fes2Step2 a prov:Activity ;
+    dcterms:isPartOf ex:fes2Run ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "absorbing atom index" ;
+            schema1:propertyID "format.absorbing_atom" ;
+            schema1:value 0 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "cluster radius" ;
+            schema1:propertyID "format.radius" ;
+            schema1:unitText "Å" ;
+            schema1:value 4 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "input format" ;
+            schema1:propertyID "format.format" ;
+            schema1:value "cif" ] ;
+    schema1:name "Compute scattering paths from the structure (Larch FEFF)" ;
+    schema1:position 2 ;
+    prov:endedAtTime "2024-10-23T14:10:05.023876"^^xsd:dateTime ;
+    prov:startedAtTime "2024-10-23T14:09:56.910615"^^xsd:dateTime ;
+    prov:used ex:1564889.cif,
+        ex:larchFeff .
+
+ex:fes2_gds.gds a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "Fit variables (guess, def, set) for the selected paths." ;
+    schema1:encodingFormat "text/csv" ;
+    schema1:name "fes2_gds" ;
+    prov:generatedAtTime "2024-10-23T14:10:09.006182"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:fes2Step3 .
+
+ex:fes2_sp.sp a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "The selected scattering paths and their starting parameters." ;
+    schema1:encodingFormat "text/csv" ;
+    schema1:name "fes2_sp" ;
+    prov:generatedAtTime "2024-10-23T14:10:09.006182"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:fes2Step3 .
+
+ex:galaxyEngine a schema1:SoftwareApplication,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q7397> ;
+    schema1:name "Galaxy workflow engine" ;
+    schema1:url "https://galaxyproject.org/" ;
+    schema1:version "24.1" .
+
+ex:larchArtemis a schema1:SoftwareApplication,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q7397> ;
+    schema1:identifier "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.75+galaxy0" ;
+    schema1:name "larch_artemis" ;
+    schema1:version "0.9.75+galaxy0" .
+
+ex:larchAthena a schema1:SoftwareApplication,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q7397> ;
+    schema1:identifier "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.75+galaxy0" ;
+    schema1:name "larch_athena" ;
+    schema1:version "0.9.75+galaxy0" .
+
+ex:larchFeff a schema1:SoftwareApplication,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q7397> ;
+    schema1:identifier "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.75+galaxy0" ;
+    schema1:name "larch_feff" ;
+    schema1:version "0.9.75+galaxy0" .
+
+ex:larchSelectPaths a schema1:SoftwareApplication,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q7397> ;
+    schema1:identifier "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.75+galaxy0" ;
+    schema1:name "larch_select_paths" ;
+    schema1:version "0.9.75+galaxy0" .
+
+ex:1564889.cif a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "Crystal structure of FeS2 (pyrite), used to compute the scattering paths." ;
+    schema1:encodingFormat "chemical/x-cif" ;
+    schema1:name "1564889.cif" .
+
+ex:fes2FeffPaths a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "FEFF scattering-path calculation for Fe in FeS2." ;
+    schema1:encodingFormat "application/zip" ;
+    schema1:name "FEFF output" ;
+    prov:generatedAtTime "2024-10-23T14:10:05.023876"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:fes2Step2 .
+
+ex:fes2Step1 a prov:Activity ;
+    dcterms:isPartOf ex:fes2Run ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "pre-edge range start" ;
+            schema1:propertyID "processing.pre_edge.pre1" ;
+            schema1:unitText "eV" ;
+            schema1:value -117 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "normalization polynomial order" ;
+            schema1:propertyID "processing.pre_edge.nnorm" ;
+            schema1:value 3 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "normalization range end" ;
+            schema1:propertyID "processing.pre_edge.norm2" ;
+            schema1:unitText "eV" ;
+            schema1:value 850 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "pre-edge range end" ;
+            schema1:propertyID "processing.pre_edge.pre2" ;
+            schema1:unitText "eV" ;
+            schema1:value -30 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "rebin" ;
+            schema1:propertyID "processing.rebin" ;
+            schema1:value 0 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "normalization range start" ;
+            schema1:propertyID "processing.pre_edge.norm1" ;
+            schema1:unitText "eV" ;
+            schema1:value 150 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "input format" ;
+            schema1:propertyID "merge_inputs.format.format" ;
+            schema1:value "plaintext" ] ;
+    schema1:name "Normalize the absorption spectrum (Larch Athena)" ;
+    schema1:position 1 ;
+    prov:endedAtTime "2024-10-23T14:10:04.994552"^^xsd:dateTime ;
+    prov:startedAtTime "2024-10-23T14:09:56.823447"^^xsd:dateTime ;
+    prov:used ex:fes2_rt01_mar02.xmu,
+        ex:larchAthena .
+
+ex:fes2Step3 a prov:Activity ;
+    dcterms:isPartOf ex:fes2Run ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "initial sigma2" ;
+            schema1:propertyID "feff_outputs[0].selection.paths[*].sigma2.value" ;
+            schema1:unitText "Å²" ;
+            schema1:value 3e-03 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "initial deltaR" ;
+            schema1:propertyID "feff_outputs[0].selection.paths[*].deltar.value" ;
+            schema1:unitText "Å" ;
+            schema1:value 0 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "initial S02" ;
+            schema1:propertyID "feff_outputs[0].selection.paths[*].s02.value" ;
+            schema1:value 1 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "selection" ;
+            schema1:propertyID "feff_outputs[0].selection.selection" ;
+            schema1:value "manual" ],
+        [ a schema1:PropertyValue ;
+            schema1:name "paths selected" ;
+            schema1:propertyID "feff_outputs[0].selection.paths" ;
+            schema1:value 3 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "initial E0" ;
+            schema1:propertyID "feff_outputs[0].selection.paths[*].e0.value" ;
+            schema1:unitText "eV" ;
+            schema1:value 0 ] ;
+    schema1:name "Select the paths to fit (Larch select paths)" ;
+    schema1:position 3 ;
+    prov:endedAtTime "2024-10-23T14:10:09.006182"^^xsd:dateTime ;
+    prov:startedAtTime "2024-10-23T14:09:57.007640"^^xsd:dateTime ;
+    prov:used ex:fes2FeffPaths,
+        ex:larchSelectPaths .
+
+ex:fes2_rt01_mar02.xmu a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "Fe K-edge absorption spectrum of FeS2 at room temperature: energy and mu(E) columns." ;
+    schema1:encodingFormat "text/plain" ;
+    schema1:name "fes2_rt01_mar02.xmu" .
+
+ex:fes2Step4 a prov:Activity ;
+    dcterms:isPartOf ex:fes2Run ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "k range start" ;
+            schema1:propertyID "fit_vars.kmin" ;
+            schema1:unitText "Å⁻¹" ;
+            schema1:value 0 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "k range end" ;
+            schema1:propertyID "fit_vars.kmax" ;
+            schema1:unitText "Å⁻¹" ;
+            schema1:value 20 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "execution" ;
+            schema1:propertyID "execution.execution" ;
+            schema1:value "parallel" ],
+        [ a schema1:PropertyValue ;
+            schema1:name "k weight" ;
+            schema1:propertyID "fit_vars.kweight" ;
+            schema1:value 2 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "R range start" ;
+            schema1:propertyID "fit_vars.rmin" ;
+            schema1:unitText "Å" ;
+            schema1:value 0 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "window" ;
+            schema1:propertyID "fit_vars.window" ;
+            schema1:value "kaiser" ],
+        [ a schema1:PropertyValue ;
+            schema1:name "window width dk" ;
+            schema1:propertyID "fit_vars.dk" ;
+            schema1:unitText "Å⁻¹" ;
+            schema1:value 4 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "R range end" ;
+            schema1:propertyID "fit_vars.rmax" ;
+            schema1:unitText "Å" ;
+            schema1:value 10 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "fit space" ;
+            schema1:propertyID "fit_vars.fitspace" ;
+            schema1:value "r" ] ;
+    schema1:name "Fit the paths to the spectrum (Larch Artemis)" ;
+    schema1:position 4 ;
+    prov:endedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
+    prov:startedAtTime "2024-10-23T14:09:57.141933"^^xsd:dateTime ;
+    prov:used ex:FeS2_athena.prj,
+        ex:fes2FeffPaths,
+        ex:fes2_gds.gds,
+        ex:fes2_sp.sp,
+        ex:larchArtemis .
+
+ex:fes2Run a prov:Activity,
+        cdifact:Analysis ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "One invocation of the Galaxy workflow FeS2 Analysis: normalize the measured spectrum, compute and select scattering paths from the crystal structure, and fit them to the spectrum." ;
+    schema1:name "FeS2 Analysis" ;
+    prov:endedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
+    prov:startedAtTime "2024-10-23T14:09:38.754317"^^xsd:dateTime ;
+    prov:used ex:1564889.cif,
+        ex:fes2_rt01_mar02.xmu,
+        ex:galaxyEngine ;
+    prov:wasAssociatedWith ex:analyst02 .
+

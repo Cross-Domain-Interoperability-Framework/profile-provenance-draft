@@ -1,0 +1,541 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "ex": "https://example.org/cdif-prov/",
+    "bios": "https://bioschemas.org/"
+  },
+  "@id": "./",
+  "@type": "schema:Dataset",
+  "dcterms:conformsTo": [
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "schema:CreativeWork",
+      "schema:name": "Workflow RO-Crate",
+      "schema:version": "1.0"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.5",
+      "@type": "schema:CreativeWork",
+      "schema:name": "Process Run Crate",
+      "schema:version": "0.5"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.5",
+      "@type": "schema:CreativeWork",
+      "schema:name": "Workflow Run Crate",
+      "schema:version": "0.5"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/provenance/0.5",
+      "@type": "schema:CreativeWork",
+      "schema:name": "Provenance Run Crate",
+      "schema:version": "0.5"
+    }
+  ],
+  "schema:name": "EXAFS fit of FeS2 (pyrite) at room temperature",
+  "schema:description": "Provenance Run Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_workflow.json, the computational-workflow scenario. See implementationTesting/APPROACHES.md.",
+  "schema:datePublished": "2026-11-18",
+  "schema:license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/",
+    "@type": "schema:CreativeWork",
+    "schema:name": "CC BY 4.0"
+  },
+  "schema:mainEntity": {
+    "@id": "ex:fes2Workflow",
+    "@type": [
+      "schema:SoftwareSourceCode",
+      "bios:ComputationalWorkflow",
+      "schema:HowTo",
+      "schema:MediaObject"
+    ],
+    "schema:name": "FeS2 Analysis",
+    "schema:hasPart": [
+      {
+        "@id": "ex:larchAthena",
+        "@type": "schema:SoftwareApplication",
+        "schema:name": "larch_athena",
+        "schema:version": "0.9.75+galaxy0",
+        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.75+galaxy0",
+        "@reverse": {
+          "schema:instrument": {
+            "@id": "ex:fes2Step1",
+            "@type": "schema:CreateAction",
+            "schema:name": "Normalize the absorption spectrum (Larch Athena)",
+            "schema:startTime": "2024-10-23T14:09:56.823447",
+            "schema:endTime": "2024-10-23T14:10:04.994552",
+            "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+            "schema:object": [
+              {"@id": "ex:fes2_rt01_mar02.xmu"},
+              {
+                "@id": "ex:fes2Step1/parameter-1",
+                "@type": "schema:PropertyValue",
+                "schema:name": "input format",
+                "schema:propertyID": "merge_inputs.format.format",
+                "schema:value": "plaintext"
+              },
+              {
+                "@id": "ex:fes2Step1/parameter-2",
+                "@type": "schema:PropertyValue",
+                "schema:name": "pre-edge range start",
+                "schema:propertyID": "processing.pre_edge.pre1",
+                "schema:value": -117,
+                "schema:unitText": "eV"
+              },
+              {
+                "@id": "ex:fes2Step1/parameter-3",
+                "@type": "schema:PropertyValue",
+                "schema:name": "pre-edge range end",
+                "schema:propertyID": "processing.pre_edge.pre2",
+                "schema:value": -30,
+                "schema:unitText": "eV"
+              },
+              {
+                "@id": "ex:fes2Step1/parameter-4",
+                "@type": "schema:PropertyValue",
+                "schema:name": "normalization range start",
+                "schema:propertyID": "processing.pre_edge.norm1",
+                "schema:value": 150,
+                "schema:unitText": "eV"
+              },
+              {
+                "@id": "ex:fes2Step1/parameter-5",
+                "@type": "schema:PropertyValue",
+                "schema:name": "normalization range end",
+                "schema:propertyID": "processing.pre_edge.norm2",
+                "schema:value": 850,
+                "schema:unitText": "eV"
+              },
+              {
+                "@id": "ex:fes2Step1/parameter-6",
+                "@type": "schema:PropertyValue",
+                "schema:name": "normalization polynomial order",
+                "schema:propertyID": "processing.pre_edge.nnorm",
+                "schema:value": 3
+              },
+              {
+                "@id": "ex:fes2Step1/parameter-7",
+                "@type": "schema:PropertyValue",
+                "schema:name": "rebin",
+                "schema:propertyID": "processing.rebin",
+                "schema:value": 0
+              }
+            ],
+            "schema:result": [
+              {"@id": "ex:FeS2_athena.prj"},
+              {"@id": "ex:FeS2_plot.png"}
+            ]
+          }
+        }
+      },
+      {
+        "@id": "ex:larchFeff",
+        "@type": "schema:SoftwareApplication",
+        "schema:name": "larch_feff",
+        "schema:version": "0.9.75+galaxy0",
+        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_feff/larch_feff/0.9.75+galaxy0",
+        "@reverse": {
+          "schema:instrument": {
+            "@id": "ex:fes2Step2",
+            "@type": "schema:CreateAction",
+            "schema:name": "Compute scattering paths from the structure (Larch FEFF)",
+            "schema:startTime": "2024-10-23T14:09:56.910615",
+            "schema:endTime": "2024-10-23T14:10:05.023876",
+            "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+            "schema:object": [
+              {"@id": "ex:1564889.cif"},
+              {
+                "@id": "ex:fes2Step2/parameter-1",
+                "@type": "schema:PropertyValue",
+                "schema:name": "input format",
+                "schema:propertyID": "format.format",
+                "schema:value": "cif"
+              },
+              {
+                "@id": "ex:fes2Step2/parameter-2",
+                "@type": "schema:PropertyValue",
+                "schema:name": "absorbing atom index",
+                "schema:propertyID": "format.absorbing_atom",
+                "schema:value": 0
+              },
+              {
+                "@id": "ex:fes2Step2/parameter-3",
+                "@type": "schema:PropertyValue",
+                "schema:name": "cluster radius",
+                "schema:propertyID": "format.radius",
+                "schema:value": 4,
+                "schema:unitText": "Å"
+              }
+            ],
+            "schema:result": {"@id": "ex:fes2FeffPaths"}
+          }
+        }
+      },
+      {
+        "@id": "ex:larchSelectPaths",
+        "@type": "schema:SoftwareApplication",
+        "schema:name": "larch_select_paths",
+        "schema:version": "0.9.75+galaxy0",
+        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_select_paths/larch_select_paths/0.9.75+galaxy0",
+        "@reverse": {
+          "schema:instrument": {
+            "@id": "ex:fes2Step3",
+            "@type": "schema:CreateAction",
+            "schema:name": "Select the paths to fit (Larch select paths)",
+            "schema:startTime": "2024-10-23T14:09:57.007640",
+            "schema:endTime": "2024-10-23T14:10:09.006182",
+            "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+            "schema:object": [
+              {"@id": "ex:fes2FeffPaths"},
+              {
+                "@id": "ex:fes2Step3/parameter-1",
+                "@type": "schema:PropertyValue",
+                "schema:name": "selection",
+                "schema:propertyID": "feff_outputs[0].selection.selection",
+                "schema:value": "manual"
+              },
+              {
+                "@id": "ex:fes2Step3/parameter-2",
+                "@type": "schema:PropertyValue",
+                "schema:name": "paths selected",
+                "schema:propertyID": "feff_outputs[0].selection.paths",
+                "schema:value": 3
+              },
+              {
+                "@id": "ex:fes2Step3/parameter-3",
+                "@type": "schema:PropertyValue",
+                "schema:name": "initial S02",
+                "schema:propertyID": "feff_outputs[0].selection.paths[*].s02.value",
+                "schema:value": 1
+              },
+              {
+                "@id": "ex:fes2Step3/parameter-4",
+                "@type": "schema:PropertyValue",
+                "schema:name": "initial E0",
+                "schema:propertyID": "feff_outputs[0].selection.paths[*].e0.value",
+                "schema:value": 0,
+                "schema:unitText": "eV"
+              },
+              {
+                "@id": "ex:fes2Step3/parameter-5",
+                "@type": "schema:PropertyValue",
+                "schema:name": "initial deltaR",
+                "schema:propertyID": "feff_outputs[0].selection.paths[*].deltar.value",
+                "schema:value": 0,
+                "schema:unitText": "Å"
+              },
+              {
+                "@id": "ex:fes2Step3/parameter-6",
+                "@type": "schema:PropertyValue",
+                "schema:name": "initial sigma2",
+                "schema:propertyID": "feff_outputs[0].selection.paths[*].sigma2.value",
+                "schema:value": 0.003,
+                "schema:unitText": "Å²"
+              }
+            ],
+            "schema:result": [
+              {"@id": "ex:fes2_gds.gds"},
+              {"@id": "ex:fes2_sp.sp"}
+            ]
+          }
+        }
+      },
+      {
+        "@id": "ex:larchArtemis",
+        "@type": "schema:SoftwareApplication",
+        "schema:name": "larch_artemis",
+        "schema:version": "0.9.75+galaxy0",
+        "schema:identifier": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_artemis/larch_artemis/0.9.75+galaxy0",
+        "@reverse": {
+          "schema:instrument": {
+            "@id": "ex:fes2Step4",
+            "@type": "schema:CreateAction",
+            "schema:name": "Fit the paths to the spectrum (Larch Artemis)",
+            "schema:startTime": "2024-10-23T14:09:57.141933",
+            "schema:endTime": "2024-10-23T14:10:18.969215",
+            "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+            "schema:object": [
+              {"@id": "ex:FeS2_athena.prj"},
+              {"@id": "ex:fes2FeffPaths"},
+              {"@id": "ex:fes2_gds.gds"},
+              {"@id": "ex:fes2_sp.sp"},
+              {
+                "@id": "ex:fes2Step4/parameter-1",
+                "@type": "schema:PropertyValue",
+                "schema:name": "fit space",
+                "schema:propertyID": "fit_vars.fitspace",
+                "schema:value": "r"
+              },
+              {
+                "@id": "ex:fes2Step4/parameter-2",
+                "@type": "schema:PropertyValue",
+                "schema:name": "k range start",
+                "schema:propertyID": "fit_vars.kmin",
+                "schema:value": 0,
+                "schema:unitText": "Å⁻¹"
+              },
+              {
+                "@id": "ex:fes2Step4/parameter-3",
+                "@type": "schema:PropertyValue",
+                "schema:name": "k range end",
+                "schema:propertyID": "fit_vars.kmax",
+                "schema:value": 20,
+                "schema:unitText": "Å⁻¹"
+              },
+              {
+                "@id": "ex:fes2Step4/parameter-4",
+                "@type": "schema:PropertyValue",
+                "schema:name": "k weight",
+                "schema:propertyID": "fit_vars.kweight",
+                "schema:value": 2
+              },
+              {
+                "@id": "ex:fes2Step4/parameter-5",
+                "@type": "schema:PropertyValue",
+                "schema:name": "window",
+                "schema:propertyID": "fit_vars.window",
+                "schema:value": "kaiser"
+              },
+              {
+                "@id": "ex:fes2Step4/parameter-6",
+                "@type": "schema:PropertyValue",
+                "schema:name": "window width dk",
+                "schema:propertyID": "fit_vars.dk",
+                "schema:value": 4,
+                "schema:unitText": "Å⁻¹"
+              },
+              {
+                "@id": "ex:fes2Step4/parameter-7",
+                "@type": "schema:PropertyValue",
+                "schema:name": "R range start",
+                "schema:propertyID": "fit_vars.rmin",
+                "schema:value": 0,
+                "schema:unitText": "Å"
+              },
+              {
+                "@id": "ex:fes2Step4/parameter-8",
+                "@type": "schema:PropertyValue",
+                "schema:name": "R range end",
+                "schema:propertyID": "fit_vars.rmax",
+                "schema:value": 10,
+                "schema:unitText": "Å"
+              },
+              {
+                "@id": "ex:fes2Step4/parameter-9",
+                "@type": "schema:PropertyValue",
+                "schema:name": "execution",
+                "schema:propertyID": "execution.execution",
+                "schema:value": "parallel"
+              }
+            ],
+            "schema:result": [
+              {"@id": "ex:fit_report_FeS2.feffit"},
+              {"@id": "ex:rmr_FeS2.png"},
+              {"@id": "ex:chikr_FeS2.png"}
+            ]
+          }
+        }
+      }
+    ],
+    "schema:programmingLanguage": {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
+      "@type": "schema:ComputerLanguage",
+      "schema:name": "Galaxy",
+      "schema:identifier": {"@id": "https://galaxyproject.org/"},
+      "schema:url": {"@id": "https://galaxyproject.org/"}
+    },
+    "schema:step": [
+      {
+        "@id": "ex:fes2Step1-definition",
+        "@type": "schema:HowToStep",
+        "schema:name": "Normalize the absorption spectrum (Larch Athena)",
+        "schema:position": "1",
+        "schema:workExample": {"@id": "ex:larchAthena"},
+        "@reverse": {
+          "schema:instrument": {
+            "@id": "ex:fes2Step1-control",
+            "@type": "schema:ControlAction",
+            "schema:name": "Orchestrate Normalize the absorption spectrum (Larch Athena)",
+            "schema:object": {"@id": "ex:fes2Step1"}
+          }
+        }
+      },
+      {
+        "@id": "ex:fes2Step2-definition",
+        "@type": "schema:HowToStep",
+        "schema:name": "Compute scattering paths from the structure (Larch FEFF)",
+        "schema:position": "2",
+        "schema:workExample": {"@id": "ex:larchFeff"},
+        "@reverse": {
+          "schema:instrument": {
+            "@id": "ex:fes2Step2-control",
+            "@type": "schema:ControlAction",
+            "schema:name": "Orchestrate Compute scattering paths from the structure (Larch FEFF)",
+            "schema:object": {"@id": "ex:fes2Step2"}
+          }
+        }
+      },
+      {
+        "@id": "ex:fes2Step3-definition",
+        "@type": "schema:HowToStep",
+        "schema:name": "Select the paths to fit (Larch select paths)",
+        "schema:position": "3",
+        "schema:workExample": {"@id": "ex:larchSelectPaths"},
+        "@reverse": {
+          "schema:instrument": {
+            "@id": "ex:fes2Step3-control",
+            "@type": "schema:ControlAction",
+            "schema:name": "Orchestrate Select the paths to fit (Larch select paths)",
+            "schema:object": {"@id": "ex:fes2Step3"}
+          }
+        }
+      },
+      {
+        "@id": "ex:fes2Step4-definition",
+        "@type": "schema:HowToStep",
+        "schema:name": "Fit the paths to the spectrum (Larch Artemis)",
+        "schema:position": "4",
+        "schema:workExample": {"@id": "ex:larchArtemis"},
+        "@reverse": {
+          "schema:instrument": {
+            "@id": "ex:fes2Step4-control",
+            "@type": "schema:ControlAction",
+            "schema:name": "Orchestrate Fit the paths to the spectrum (Larch Artemis)",
+            "schema:object": {"@id": "ex:fes2Step4"}
+          }
+        }
+      }
+    ]
+  },
+  "schema:hasPart": [
+    {"@id": "ex:fes2Workflow"},
+    {
+      "@id": "ex:fes2_rt01_mar02.xmu",
+      "@type": "schema:MediaObject",
+      "schema:name": "fes2_rt01_mar02.xmu",
+      "schema:description": "Fe K-edge absorption spectrum of FeS2 at room temperature: energy and mu(E) columns.",
+      "schema:encodingFormat": "text/plain"
+    },
+    {
+      "@id": "ex:1564889.cif",
+      "@type": "schema:MediaObject",
+      "schema:name": "1564889.cif",
+      "schema:description": "Crystal structure of FeS2 (pyrite), used to compute the scattering paths.",
+      "schema:encodingFormat": "chemical/x-cif"
+    },
+    {
+      "@id": "ex:FeS2_athena.prj",
+      "@type": "schema:MediaObject",
+      "schema:name": "FeS2_athena",
+      "schema:description": "Athena project with the normalized spectrum.",
+      "schema:encodingFormat": "application/octet-stream"
+    },
+    {
+      "@id": "ex:FeS2_plot.png",
+      "@type": "schema:MediaObject",
+      "schema:name": "FeS2_plot",
+      "schema:description": "Plot of the normalized spectrum.",
+      "schema:encodingFormat": "image/png"
+    },
+    {
+      "@id": "ex:fes2FeffPaths",
+      "@type": "schema:MediaObject",
+      "schema:name": "FEFF output",
+      "schema:description": "FEFF scattering-path calculation for Fe in FeS2.",
+      "schema:encodingFormat": "application/zip"
+    },
+    {
+      "@id": "ex:fes2_gds.gds",
+      "@type": "schema:MediaObject",
+      "schema:name": "fes2_gds",
+      "schema:description": "Fit variables (guess, def, set) for the selected paths.",
+      "schema:encodingFormat": "text/csv"
+    },
+    {
+      "@id": "ex:fes2_sp.sp",
+      "@type": "schema:MediaObject",
+      "schema:name": "fes2_sp",
+      "schema:description": "The selected scattering paths and their starting parameters.",
+      "schema:encodingFormat": "text/csv"
+    },
+    {
+      "@id": "ex:fit_report_FeS2.feffit",
+      "@type": "schema:MediaObject",
+      "schema:name": "fit_report_FeS2",
+      "schema:description": "Fit report: fitted parameters, uncertainties and statistics.",
+      "schema:encodingFormat": "text/plain"
+    },
+    {
+      "@id": "ex:rmr_FeS2.png",
+      "@type": "schema:MediaObject",
+      "schema:name": "rmr_FeS2",
+      "schema:description": "Fit in R space.",
+      "schema:encodingFormat": "image/png"
+    },
+    {
+      "@id": "ex:chikr_FeS2.png",
+      "@type": "schema:MediaObject",
+      "schema:name": "chikr_FeS2",
+      "schema:description": "Fit in k and R space.",
+      "schema:encodingFormat": "image/png"
+    }
+  ],
+  "schema:mentions": {
+    "@id": "ex:fes2Run",
+    "@type": "schema:CreateAction",
+    "schema:name": "FeS2 Analysis",
+    "schema:description": "One invocation of the Galaxy workflow FeS2 Analysis: normalize the measured spectrum, compute and select scattering paths from the crystal structure, and fit them to the spectrum.",
+    "schema:startTime": "2024-10-23T14:09:38.754317",
+    "schema:endTime": "2024-10-23T14:10:18.969215",
+    "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+    "schema:agent": {
+      "@id": "ex:analyst02",
+      "@type": "schema:Person",
+      "schema:name": "Sam Rivera",
+      "schema:identifier": "https://orcid.org/0000-0000-0000-0002"
+    },
+    "schema:instrument": {"@id": "ex:fes2Workflow"},
+    "schema:object": [
+      {"@id": "ex:fes2_rt01_mar02.xmu"},
+      {"@id": "ex:1564889.cif"}
+    ],
+    "schema:result": [
+      {"@id": "ex:fit_report_FeS2.feffit"},
+      {"@id": "ex:rmr_FeS2.png"},
+      {"@id": "ex:chikr_FeS2.png"}
+    ],
+    "@reverse": {
+      "schema:result": {
+        "@id": "ex:fes2EngineRun",
+        "@type": "schema:OrganizeAction",
+        "schema:name": "Run of the Galaxy workflow engine",
+        "schema:startTime": "2024-10-23T14:09:38.754317",
+        "schema:endTime": "2024-10-23T14:10:18.969215",
+        "schema:agent": {"@id": "ex:analyst02"},
+        "schema:instrument": {
+          "@id": "ex:galaxyEngine",
+          "@type": "schema:SoftwareApplication",
+          "schema:name": "Galaxy workflow engine",
+          "schema:version": "24.1",
+          "schema:url": "https://galaxyproject.org/"
+        },
+        "schema:object": [
+          {"@id": "ex:fes2Step1-control"},
+          {"@id": "ex:fes2Step2-control"},
+          {"@id": "ex:fes2Step3-control"},
+          {"@id": "ex:fes2Step4-control"}
+        ]
+      }
+    }
+  },
+  "@reverse": {
+    "schema:about": {
+      "@id": "ro-crate-metadata.json",
+      "@type": "schema:CreativeWork",
+      "dcterms:conformsTo": [
+        {"@id": "https://w3id.org/ro/crate/1.1"},
+        {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+      ]
+    }
+  }
+}
