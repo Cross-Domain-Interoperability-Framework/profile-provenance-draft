@@ -16,7 +16,8 @@ The mapping (implementationTesting/MAPPING.md has the table):
   procedure it is in, and keeps schema:position; the HowTo node itself has no PROV counterpart.
 - schema:agent and schema:participant become a prov:qualifiedAssociation. The plan (the HowTo's
   schema:isBasedOn, or an actionProcess that is only an {@id}) is that association's prov:hadPlan,
-  and a prov:Plan. A schema:Role agent puts its contributor / agent / participant in prov:agent and
+  and a prov:Plan. A step with a plan (its own actionProcess) and no agent of its own is associated
+  with its activity's agent, since a PROV-O association needs one. A schema:Role agent puts its contributor / agent / participant in prov:agent and
   its roleName in prov:hadRole (an IRI as it is; a DefinedTerm or string as a minted ex: role).
 - schema:object becomes a prov:qualifiedUsage with prov:hadRole ex:InputData; a schema:instrument
   item becomes one with ex:Instrument, ex:Software or ex:Reagent, from its Wikidata kind term.
@@ -122,7 +123,7 @@ class Mapper:
             self.o.add((q, PROV.hadPlan, plan)); self.o.add((plan, RDF.type, PROV.Plan))
             self.o.add((plan, RDF.type, PROV.Entity))
 
-    def activity(self, a, parent=None):
+    def activity(self, a, parent=None, inherited=()):
         g, o = self.g, self.o
         o.add((a, RDF.type, PROV.Activity))
         for t in g.objects(a, S.additionalType):
@@ -145,13 +146,18 @@ class Mapper:
         if proc is not None:
             if (proc, RDF.type, S.HowTo) in g:
                 plan = g.value(proc, S.isBasedOn)
-                for lst in g.objects(proc, S.step):
-                    steps.append(lst)
+                # only a step that is a schema:Action is an activity; a text-only HowToStep is lost
+                steps = [s for s in g.objects(proc, S.step) if (s, RDF.type, S.Action) in g]
             else:
                 plan = proc
-        for p in (S.agent, S.participant):
-            for ag in g.objects(a, p):
-                self.association(a, ag, plan if p == S.agent else None)
+        agents = list(g.objects(a, S.agent))
+        if not agents and plan is not None:
+            # a plan needs an agent in PROV-O: a step with none was carried out by its activity's agent
+            agents = list(inherited)
+        for ag in agents:
+            self.association(a, ag, plan)
+        for ag in g.objects(a, S.participant):
+            self.association(a, ag, None)
         for e in g.objects(a, S.object):
             self.usage(a, e, EX.InputData); self.entity(e)
         for i in g.objects(a, S.instrument):
@@ -164,7 +170,7 @@ class Mapper:
             if r not in by_step:
                 self.generation(r, a)
         for s in steps:
-            self.activity(s, parent=a)
+            self.activity(s, parent=a, inherited=agents or inherited)
 
     def run(self):
         g = self.g
