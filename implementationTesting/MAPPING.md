@@ -17,7 +17,7 @@ as their inputs.
 |---|---|---|---|---|
 | root `schema:Dataset` | `prov:Entity` | `prov:Entity` | a `Dataset` data entity with the same IRI, in the root's `hasPart`; the crate's root `./` is the crate, not the dataset | workflow, minimal |
 | root `prov:wasGeneratedBy` activity | `prov:qualifiedGeneration [prov:activity; prov:atTime` = activity end`]` | `prov:wasGeneratedBy` + `prov:generatedAtTime` | `CreateAction` in the root's `mentions`; the dataset is in its `result` | workflow, minimal |
-| several root `prov:wasGeneratedBy` activities, chained (one's `schema:result` is a later one's `schema:object`) | each a `prov:Activity`; only the last (whose results no listed activity takes as input) generates the root | same | each a `CreateAction` in the root's `mentions`; the dataset is the last one's `result` | field sample |
+| several root `prov:wasGeneratedBy` activities, chained (one's `schema:result` is a later one's `schema:object`) | each a `prov:Activity`; only the last (whose results no listed activity takes as input) generates the root | same | each a `CreateAction` in the root's `mentions`; the dataset is the last one's `result` | field sample; branching and joining, qualitative |
 | root `schema:subjectOf` catalog record | copied (no PROV term) | copied | `ro-crate-metadata.json` descriptor (not the same thing: it describes the crate file) | workflow |
 | activity `[prov:Activity, schema:Action]` | `prov:Activity` | `prov:Activity` | `CreateAction` | workflow |
 | `schema:additionalType` (activity vocabulary IRI) | `rdf:type` | `rdf:type` | `additionalType` (lab protocol); the workflow crate leaves it out | workflow, lab protocol |
@@ -45,10 +45,12 @@ as their inputs.
 | `schema:result` of the activity, when a step produced it | dropped: the step's generation stands (an entity has one generation) and the step is part of the activity | same | `result` of the run's `CreateAction` | workflow |
 | `schema:additionalProperty` (a parameter value) | copied, as a `schema:PropertyValue` (PROV has no parameters) | copied | a `PropertyValue` in the step `CreateAction`'s `object`; its `propertyID` names the protocol's formal parameter where there is one (lab protocol) | workflow, lab protocol |
 | names, descriptions, versions, identifiers, `encodingFormat` | copied | copied | the same schema.org terms | workflow |
+| an entity's `schema:additionalType` (a type IRI) | copied as `schema:additionalType`, not made an `rdf:type` (an activity's is) | copied | `additionalType` | qualitative |
+| `schema:additionalProperty` on a result (a quality value) | copied on the entity | copied | a `PropertyValue` entity in the result's `additionalProperty` | qualitative |
 
 ## What each form cannot say
 
-- **cdifProv:** a plan's own content. `schema:isBasedOn` is a reference only, so a protocol's
+- **cdifProv:** a plan's own content, or a plan that is also a used input with a role of its own; attribution of an entity to an agent. `schema:isBasedOn` is a reference only, so a protocol's
   equipment, formal parameters and sub-protocols can be named but not described. Derivation:
   there is no `prov:wasDerivedFrom`, so that a dataset comes from a sample follows only from a chain
   of inputs and outputs.

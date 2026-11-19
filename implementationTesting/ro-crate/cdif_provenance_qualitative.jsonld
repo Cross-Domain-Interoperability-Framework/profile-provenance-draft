@@ -1,0 +1,223 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "ex": "https://example.org/cdif-prov/"
+  },
+  "@id": "./",
+  "@type": "schema:Dataset",
+  "schema:name": "Validation of theme 01",
+  "schema:description": "RO-Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_qualitative.json, the qualitative-assessment scenario. See implementationTesting/APPROACHES.md.",
+  "schema:datePublished": "2026-11-19",
+  "schema:license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/",
+    "@type": "schema:CreativeWork",
+    "schema:name": "CC BY 4.0"
+  },
+  "schema:hasPart": {
+    "@id": "ex:themeValidationResult",
+    "@type": "schema:Dataset",
+    "schema:name": "Validation of theme 01",
+    "schema:description": "The outcome of validating theme 01, inferred from coded free-text responses: accepted. The qualitative-assessment scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/cdif_provenance_qualitative.jsonld."
+  },
+  "schema:mentions": [
+    {
+      "@id": "ex:textProcessing",
+      "@type": "schema:CreateAction",
+      "schema:actionProcess": {
+        "@id": "ex:processingGuide",
+        "@type": "schema:HowTo"
+      },
+      "schema:name": "Text processing",
+      "schema:description": "The submitted response was cleaned and split into segments, following the processing guide.",
+      "schema:additionalType": [
+        {"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataTransformation"},
+        {"@id": "ex:Processing"}
+      ],
+      "schema:startTime": "2026-11-05T09:00:00+00:00",
+      "schema:endTime": "2026-11-05T09:10:00+00:00",
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:agent": {
+        "@id": "ex:researcherA",
+        "@type": "schema:Person",
+        "schema:name": "Researcher A",
+        "schema:contactPoint": {
+          "@id": "ex:researcherA-contactPoint",
+          "@type": "schema:ContactPoint",
+          "schema:email": "researcher.a@example.org"
+        }
+      },
+      "schema:object": {
+        "@id": "ex:submittedResponse",
+        "@type": "schema:Thing",
+        "schema:name": "Submitted response",
+        "schema:description": "A free-text response submitted by a study participant.",
+        "schema:additionalType": [
+          {"@id": "ex:SourceData"},
+          {"@id": "ex:SubmittedData"}
+        ]
+      },
+      "schema:result": {
+        "@id": "ex:responseSegment",
+        "@type": "schema:Thing",
+        "schema:name": "Response segment",
+        "schema:description": "A segment of the submitted response, the unit of coding.",
+        "schema:additionalType": [
+          {"@id": "ex:ProcessedData"},
+          {"@id": "ex:ResponseSegment"}
+        ]
+      }
+    },
+    {
+      "@id": "ex:codingActivity",
+      "@type": "schema:CreateAction",
+      "schema:actionProcess": {
+        "@id": "ex:codingProcedure",
+        "@type": "schema:HowTo",
+        "schema:name": "Qualitative coding, as performed",
+        "schema:description": "Deductive coding of each segment against the codebook.",
+        "schema:step": [
+          {
+            "@id": "ex:codingProcedure-step-1",
+            "@type": "schema:HowToStep",
+            "schema:name": "Read the segment in the context of the whole response",
+            "schema:position": "1"
+          },
+          {
+            "@id": "ex:codingProcedure-step-2",
+            "@type": "schema:HowToStep",
+            "schema:name": "Assign every codebook code whose definition the segment meets",
+            "schema:position": "2"
+          },
+          {
+            "@id": "ex:codingProcedure-step-3",
+            "@type": "schema:HowToStep",
+            "schema:name": "Write a memo for each assignment that needed judgement",
+            "schema:position": "3"
+          }
+        ],
+        "schema:isBasedOn": {
+          "@id": "ex:codebookV2",
+          "@type": "schema:HowTo"
+        }
+      },
+      "schema:name": "Qualitative coding",
+      "schema:description": "Codes from version 2 of the codebook were assigned to the response segment.",
+      "schema:additionalType": [
+        {"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataClassificationAndCoding"},
+        {"@id": "ex:Derivation"},
+        {"@id": "ex:QualitativeCoding"}
+      ],
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:agent": {"@id": "ex:researcherA"},
+      "schema:object": {"@id": "ex:responseSegment"},
+      "schema:result": {
+        "@id": "ex:codeAssignment",
+        "@type": "schema:Thing",
+        "schema:name": "Code assignment",
+        "schema:description": "The codes assigned to the response segment, with the coder's memos.",
+        "schema:additionalType": [
+          {"@id": "ex:DerivedData"},
+          {"@id": "ex:CodeAssignment"}
+        ]
+      },
+      "schema:additionalProperty": {
+        "@id": "ex:codingActivity-additionalProperty-1",
+        "@type": "schema:PropertyValue",
+        "schema:name": "Coding unit",
+        "schema:propertyID": "coding unit",
+        "schema:value": "response segment"
+      }
+    },
+    {
+      "@id": "ex:themeDevelopment",
+      "@type": "schema:CreateAction",
+      "schema:actionProcess": {
+        "@id": "ex:analyticalFramework",
+        "@type": "schema:HowTo"
+      },
+      "schema:name": "Theme development",
+      "schema:description": "The code assignments were synthesized into a theme, following the analytical framework.",
+      "schema:additionalType": [
+        {"@id": "https://w3id.org/cdif/concepts/provenance/activity/Analysis"},
+        {"@id": "ex:Inference"},
+        {"@id": "ex:ThematicSynthesis"}
+      ],
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:agent": {"@id": "ex:researcherA"},
+      "schema:object": {"@id": "ex:codeAssignment"},
+      "schema:result": {
+        "@id": "ex:theme01",
+        "@type": "schema:Thing",
+        "schema:name": "Theme 01",
+        "schema:description": "A theme inferred from the code assignments.",
+        "schema:additionalType": [
+          {"@id": "ex:Theme"},
+          {"@id": "ex:Finding"}
+        ]
+      }
+    },
+    {
+      "@id": "ex:codingAssessment",
+      "@type": "schema:CreateAction",
+      "schema:name": "Coding uncertainty assessment",
+      "schema:description": "A second researcher coded the segment independently, and the two codings were compared.",
+      "schema:additionalType": [
+        {"@id": "https://w3id.org/cdif/concepts/provenance/activity/QualityControlData"},
+        {"@id": "ex:Assessment"},
+        {"@id": "ex:UncertaintyAssessment"}
+      ],
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:agent": {
+        "@id": "ex:researcherB",
+        "@type": "schema:Person",
+        "schema:name": "Researcher B",
+        "schema:contactPoint": {
+          "@id": "ex:researcherB-contactPoint",
+          "@type": "schema:ContactPoint",
+          "schema:email": "researcher.b@example.org"
+        }
+      },
+      "schema:object": {"@id": "ex:codeAssignment"},
+      "schema:result": {
+        "@id": "ex:codingUncertainty",
+        "@type": "schema:Thing",
+        "schema:name": "Coding uncertainty",
+        "schema:description": "Agreement between the first coding and an independent second coding.",
+        "schema:additionalType": {"@id": "ex:UncertaintyObject"},
+        "schema:additionalProperty": {
+          "@id": "ex:codingUncertainty-additionalProperty-1",
+          "@type": "schema:PropertyValue",
+          "schema:name": "Inter-coder agreement (Cohen's kappa)",
+          "schema:propertyID": "Cohen's kappa",
+          "schema:value": 0.78
+        }
+      }
+    },
+    {
+      "@id": "ex:themeValidation",
+      "@type": "schema:CreateAction",
+      "schema:name": "Theme validation",
+      "schema:description": "The theme was checked against the coded data, taking the coding uncertainty into account, and accepted.",
+      "schema:additionalType": [
+        {"@id": "ex:Validation"},
+        {"@id": "ex:Assessment"},
+        {"@id": "https://w3id.org/cdif/concepts/provenance/activity/DataValidation"}
+      ],
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:agent": {"@id": "ex:researcherB"},
+      "schema:object": [
+        {"@id": "ex:theme01"},
+        {"@id": "ex:codingUncertainty"}
+      ],
+      "schema:result": {"@id": "ex:themeValidationResult"}
+    }
+  ],
+  "@reverse": {
+    "schema:about": {
+      "@id": "ro-crate-metadata.json",
+      "@type": "schema:CreativeWork",
+      "dcterms:conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
+    }
+  }
+}
