@@ -11,6 +11,11 @@ documentation link, prep and perform times and a cost.
 **The extensions are invented.** Everything not in the Dagstuhl Turtle is marked `# + illustrative`
 in the master. The values are plausible, not real.
 
+**More scenarios.** This page is the first of a set, each written in cdifProv and mapped to PROV-O
+(qualified and plain) and an RO-Crate, so that between them they cover the cdifProvenance schema:
+[a computational workflow run](SCENARIO_workflow.md) is the second. [MAPPING.md](MAPPING.md) is the
+construct-by-construct table the scenarios share.
+
 ## The scenario
 
 The record describes how one number came to be: a validated concentration of a dissolved analyte
