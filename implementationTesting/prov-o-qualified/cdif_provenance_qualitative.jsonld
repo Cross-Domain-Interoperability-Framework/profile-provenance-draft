@@ -1,0 +1,293 @@
+{
+  "@context": {
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "ex": "https://example.org/cdif-prov/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov:atTime": {"@type": "xsd:dateTime"},
+    "prov:endedAtTime": {"@type": "xsd:dateTime"},
+    "prov:startedAtTime": {"@type": "xsd:dateTime"}
+  },
+  "@id": "ex:themeValidationResult",
+  "@type": [
+    "prov:Entity",
+    "schema:Dataset"
+  ],
+  "schema:name": "Validation of theme 01",
+  "schema:description": "The outcome of validating theme 01, inferred from coded free-text responses: accepted. The qualitative-assessment scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/cdif_provenance_qualitative.jsonld.",
+  "schema:additionalType": {"@id": "ex:ValidationObject"},
+  "prov:qualifiedGeneration": {
+    "@type": "prov:Generation",
+    "prov:activity": {
+      "@id": "ex:themeValidation",
+      "@type": [
+        "prov:Activity",
+        "ex:Assessment",
+        "ex:Validation",
+        "cdifact:DataValidation"
+      ],
+      "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+      "schema:name": "Theme validation",
+      "schema:description": "The theme was checked against the coded data, taking the coding uncertainty into account, and accepted.",
+      "prov:qualifiedAssociation": {
+        "@type": "prov:Association",
+        "prov:agent": {
+          "@id": "ex:researcherB",
+          "@type": [
+            "schema:Person",
+            "prov:Person"
+          ],
+          "schema:name": "Researcher B",
+          "schema:contactPoint": {
+            "@type": "schema:ContactPoint",
+            "schema:email": "researcher.b@example.org"
+          }
+        },
+        "prov:hadRole": {
+          "@id": "ex:Validator",
+          "@type": "prov:Role"
+        }
+      },
+      "prov:qualifiedUsage": [
+        {
+          "@type": "prov:Usage",
+          "prov:hadRole": {
+            "@id": "ex:InputData",
+            "@type": "prov:Role"
+          },
+          "prov:entity": {
+            "@id": "ex:codingUncertainty",
+            "@type": [
+              "prov:Entity",
+              "schema:Thing"
+            ],
+            "schema:additionalProperty": {
+              "@type": "schema:PropertyValue",
+              "schema:name": "Inter-coder agreement (Cohen's kappa)",
+              "schema:propertyID": "Cohen's kappa",
+              "schema:value": 0.78
+            },
+            "schema:name": "Coding uncertainty",
+            "schema:description": "Agreement between the first coding and an independent second coding.",
+            "schema:additionalType": {"@id": "ex:UncertaintyObject"},
+            "prov:qualifiedGeneration": {
+              "@type": "prov:Generation",
+              "prov:activity": {
+                "@id": "ex:codingAssessment",
+                "@type": [
+                  "prov:Activity",
+                  "ex:Assessment",
+                  "ex:UncertaintyAssessment",
+                  "cdifact:QualityControlData"
+                ],
+                "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+                "schema:name": "Coding uncertainty assessment",
+                "schema:description": "A second researcher coded the segment independently, and the two codings were compared.",
+                "prov:qualifiedAssociation": {
+                  "@type": "prov:Association",
+                  "prov:agent": {"@id": "ex:researcherB"},
+                  "prov:hadRole": {
+                    "@id": "ex:Assessor",
+                    "@type": "prov:Role"
+                  }
+                },
+                "prov:qualifiedUsage": {
+                  "@type": "prov:Usage",
+                  "prov:hadRole": {"@id": "ex:InputData"},
+                  "prov:entity": {
+                    "@id": "ex:codeAssignment",
+                    "@type": [
+                      "prov:Entity",
+                      "schema:Thing"
+                    ],
+                    "schema:name": "Code assignment",
+                    "schema:description": "The codes assigned to the response segment, with the coder's memos.",
+                    "schema:additionalType": [
+                      {"@id": "ex:CodeAssignment"},
+                      {"@id": "ex:DerivedData"}
+                    ],
+                    "prov:qualifiedGeneration": {
+                      "@type": "prov:Generation",
+                      "prov:activity": {
+                        "@id": "ex:codingActivity",
+                        "@type": [
+                          "prov:Activity",
+                          "ex:Derivation",
+                          "ex:QualitativeCoding",
+                          "cdifact:DataClassificationAndCoding"
+                        ],
+                        "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+                        "schema:additionalProperty": {
+                          "@type": "schema:PropertyValue",
+                          "schema:name": "Coding unit",
+                          "schema:propertyID": "coding unit",
+                          "schema:value": "response segment"
+                        },
+                        "schema:name": "Qualitative coding",
+                        "schema:description": "Codes from version 2 of the codebook were assigned to the response segment.",
+                        "prov:qualifiedAssociation": {
+                          "@type": "prov:Association",
+                          "prov:agent": {
+                            "@id": "ex:researcherA",
+                            "@type": [
+                              "schema:Person",
+                              "prov:Person"
+                            ],
+                            "schema:name": "Researcher A",
+                            "schema:contactPoint": {
+                              "@type": "schema:ContactPoint",
+                              "schema:email": "researcher.a@example.org"
+                            }
+                          },
+                          "prov:hadPlan": {
+                            "@id": "ex:codebookV2",
+                            "@type": [
+                              "prov:Entity",
+                              "prov:Plan"
+                            ]
+                          },
+                          "prov:hadRole": {
+                            "@id": "ex:Coder",
+                            "@type": "prov:Role"
+                          }
+                        },
+                        "prov:qualifiedUsage": {
+                          "@type": "prov:Usage",
+                          "prov:hadRole": {"@id": "ex:InputData"},
+                          "prov:entity": {
+                            "@id": "ex:responseSegment",
+                            "@type": [
+                              "prov:Entity",
+                              "schema:Thing"
+                            ],
+                            "schema:name": "Response segment",
+                            "schema:description": "A segment of the submitted response, the unit of coding.",
+                            "schema:additionalType": [
+                              {"@id": "ex:ProcessedData"},
+                              {"@id": "ex:ResponseSegment"}
+                            ],
+                            "prov:qualifiedGeneration": {
+                              "@type": "prov:Generation",
+                              "prov:activity": {
+                                "@id": "ex:textProcessing",
+                                "@type": [
+                                  "prov:Activity",
+                                  "ex:Processing",
+                                  "cdifact:DataTransformation"
+                                ],
+                                "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+                                "schema:name": "Text processing",
+                                "schema:description": "The submitted response was cleaned and split into segments, following the processing guide.",
+                                "prov:qualifiedAssociation": {
+                                  "@type": "prov:Association",
+                                  "prov:agent": {"@id": "ex:researcherA"},
+                                  "prov:hadPlan": {
+                                    "@id": "ex:processingGuide",
+                                    "@type": [
+                                      "prov:Entity",
+                                      "prov:Plan"
+                                    ]
+                                  },
+                                  "prov:hadRole": {
+                                    "@id": "ex:DataProcessor",
+                                    "@type": "prov:Role"
+                                  }
+                                },
+                                "prov:qualifiedUsage": {
+                                  "@type": "prov:Usage",
+                                  "prov:hadRole": {"@id": "ex:InputData"},
+                                  "prov:entity": {
+                                    "@id": "ex:submittedResponse",
+                                    "@type": [
+                                      "prov:Entity",
+                                      "schema:Thing"
+                                    ],
+                                    "schema:name": "Submitted response",
+                                    "schema:description": "A free-text response submitted by a study participant.",
+                                    "schema:additionalType": [
+                                      {"@id": "ex:SourceData"},
+                                      {"@id": "ex:SubmittedData"}
+                                    ]
+                                  }
+                                },
+                                "prov:endedAtTime": "2026-11-05T09:10:00+00:00",
+                                "prov:startedAtTime": "2026-11-05T09:00:00+00:00"
+                              },
+                              "prov:atTime": "2026-11-05T09:10:00+00:00"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "@type": "prov:Usage",
+          "prov:hadRole": {"@id": "ex:InputData"},
+          "prov:entity": {
+            "@id": "ex:theme01",
+            "@type": [
+              "prov:Entity",
+              "schema:Thing"
+            ],
+            "schema:name": "Theme 01",
+            "schema:description": "A theme inferred from the code assignments.",
+            "schema:additionalType": [
+              {"@id": "ex:Finding"},
+              {"@id": "ex:Theme"}
+            ],
+            "prov:qualifiedGeneration": {
+              "@type": "prov:Generation",
+              "prov:activity": {
+                "@id": "ex:themeDevelopment",
+                "@type": [
+                  "prov:Activity",
+                  "ex:Inference",
+                  "ex:ThematicSynthesis",
+                  "cdifact:Analysis"
+                ],
+                "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+                "schema:name": "Theme development",
+                "schema:description": "The code assignments were synthesized into a theme, following the analytical framework.",
+                "prov:qualifiedAssociation": {
+                  "@type": "prov:Association",
+                  "prov:agent": {"@id": "ex:researcherA"},
+                  "prov:hadPlan": {
+                    "@id": "ex:analyticalFramework",
+                    "@type": [
+                      "prov:Entity",
+                      "prov:Plan"
+                    ]
+                  },
+                  "prov:hadRole": {
+                    "@id": "ex:Analyst",
+                    "@type": "prov:Role"
+                  }
+                },
+                "prov:qualifiedUsage": {
+                  "@type": "prov:Usage",
+                  "prov:hadRole": {"@id": "ex:InputData"},
+                  "prov:entity": {"@id": "ex:codeAssignment"}
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "schema:subjectOf": {
+    "@id": "ex:themeValidationResult-record",
+    "@type": "schema:Dataset",
+    "schema:additionalType": {"@id": "dcat:CatalogRecord"},
+    "dcterms:conformsTo": {"@id": "https://w3id.org/cdif/provenance/2.0"},
+    "schema:about": {"@id": "ex:themeValidationResult"}
+  }
+}

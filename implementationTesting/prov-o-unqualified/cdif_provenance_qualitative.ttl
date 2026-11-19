@@ -1,0 +1,141 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/cdif-prov/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:analyticalFramework a prov:Entity,
+        prov:Plan .
+
+ex:codebookV2 a prov:Entity,
+        prov:Plan .
+
+ex:processingGuide a prov:Entity,
+        prov:Plan .
+
+ex:codingActivity a prov:Activity,
+        ex:Derivation,
+        ex:QualitativeCoding,
+        cdifact:DataClassificationAndCoding ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Coding unit" ;
+            schema1:propertyID "coding unit" ;
+            schema1:value "response segment" ] ;
+    schema1:description "Codes from version 2 of the codebook were assigned to the response segment." ;
+    schema1:name "Qualitative coding" ;
+    prov:used ex:responseSegment ;
+    prov:wasAssociatedWith ex:researcherA .
+
+ex:codingAssessment a prov:Activity,
+        ex:Assessment,
+        ex:UncertaintyAssessment,
+        cdifact:QualityControlData ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "A second researcher coded the segment independently, and the two codings were compared." ;
+    schema1:name "Coding uncertainty assessment" ;
+    prov:used ex:codeAssignment ;
+    prov:wasAssociatedWith ex:researcherB .
+
+ex:codingUncertainty a schema1:Thing,
+        prov:Entity ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Inter-coder agreement (Cohen's kappa)" ;
+            schema1:propertyID "Cohen's kappa" ;
+            schema1:value 7.8e-01 ] ;
+    schema1:additionalType ex:UncertaintyObject ;
+    schema1:description "Agreement between the first coding and an independent second coding." ;
+    schema1:name "Coding uncertainty" ;
+    prov:wasGeneratedBy ex:codingAssessment .
+
+ex:responseSegment a schema1:Thing,
+        prov:Entity ;
+    schema1:additionalType ex:ProcessedData,
+        ex:ResponseSegment ;
+    schema1:description "A segment of the submitted response, the unit of coding." ;
+    schema1:name "Response segment" ;
+    prov:generatedAtTime "2026-11-05T09:10:00+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:textProcessing .
+
+ex:submittedResponse a schema1:Thing,
+        prov:Entity ;
+    schema1:additionalType ex:SourceData,
+        ex:SubmittedData ;
+    schema1:description "A free-text response submitted by a study participant." ;
+    schema1:name "Submitted response" .
+
+ex:textProcessing a prov:Activity,
+        ex:Processing,
+        cdifact:DataTransformation ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "The submitted response was cleaned and split into segments, following the processing guide." ;
+    schema1:name "Text processing" ;
+    prov:endedAtTime "2026-11-05T09:10:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T09:00:00+00:00"^^xsd:dateTime ;
+    prov:used ex:submittedResponse ;
+    prov:wasAssociatedWith ex:researcherA .
+
+ex:theme01 a schema1:Thing,
+        prov:Entity ;
+    schema1:additionalType ex:Finding,
+        ex:Theme ;
+    schema1:description "A theme inferred from the code assignments." ;
+    schema1:name "Theme 01" ;
+    prov:wasGeneratedBy ex:themeDevelopment .
+
+ex:themeDevelopment a prov:Activity,
+        ex:Inference,
+        ex:ThematicSynthesis,
+        cdifact:Analysis ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "The code assignments were synthesized into a theme, following the analytical framework." ;
+    schema1:name "Theme development" ;
+    prov:used ex:codeAssignment ;
+    prov:wasAssociatedWith ex:researcherA .
+
+ex:themeValidation a prov:Activity,
+        ex:Assessment,
+        ex:Validation,
+        cdifact:DataValidation ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "The theme was checked against the coded data, taking the coding uncertainty into account, and accepted." ;
+    schema1:name "Theme validation" ;
+    prov:used ex:codingUncertainty,
+        ex:theme01 ;
+    prov:wasAssociatedWith ex:researcherB .
+
+ex:themeValidationResult a schema1:Dataset,
+        prov:Entity ;
+    schema1:additionalType ex:ValidationObject ;
+    schema1:description "The outcome of validating theme 01, inferred from coded free-text responses: accepted. The qualitative-assessment scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/cdif_provenance_qualitative.jsonld." ;
+    schema1:name "Validation of theme 01" ;
+    schema1:subjectOf ex:themeValidationResult-record ;
+    prov:wasGeneratedBy ex:themeValidation .
+
+ex:themeValidationResult-record a schema1:Dataset ;
+    dcterms:conformsTo <https://w3id.org/cdif/provenance/2.0> ;
+    schema1:about ex:themeValidationResult ;
+    schema1:additionalType dcat:CatalogRecord .
+
+ex:codeAssignment a schema1:Thing,
+        prov:Entity ;
+    schema1:additionalType ex:CodeAssignment,
+        ex:DerivedData ;
+    schema1:description "The codes assigned to the response segment, with the coder's memos." ;
+    schema1:name "Code assignment" ;
+    prov:wasGeneratedBy ex:codingActivity .
+
+ex:researcherB a schema1:Person,
+        prov:Person ;
+    schema1:contactPoint [ a schema1:ContactPoint ;
+            schema1:email "researcher.b@example.org" ] ;
+    schema1:name "Researcher B" .
+
+ex:researcherA a schema1:Person,
+        prov:Person ;
+    schema1:contactPoint [ a schema1:ContactPoint ;
+            schema1:email "researcher.a@example.org" ] ;
+    schema1:name "Researcher A" .
+
