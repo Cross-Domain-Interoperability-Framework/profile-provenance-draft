@@ -1,0 +1,124 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "actionProcess": {
+        "@id": "http://schema.org/actionProcess",
+        "@type": "@id"
+      }
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Processed seismic reflection data, line 07",
+      "description": "Process Run Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_minimal.json, the minimal scenario. See implementationTesting/APPROACHES.md.",
+      "datePublished": "2026-11-18",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/wfrun/process/0.5"
+      },
+      "hasPart": [
+        {
+          "@id": "https://example.org/cdif-prov/line07_raw.segy"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/line07Migrated"
+        }
+      ],
+      "mentions": {
+        "@id": "https://example.org/cdif-prov/line07Processing"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.5",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.5"
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "name": "CC BY 4.0"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/line07Processing",
+      "@type": "CreateAction",
+      "name": "Seismic data processing, line 07",
+      "description": "Raw shot gathers from line 07 were processed with a standard reflection flow: deconvolution, stacking and migration.",
+      "startTime": "2025-01-10T00:00:00+00:00",
+      "endTime": "2025-03-20T00:00:00+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/garciaMaria"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/seisUnix"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/line07_raw.segy"
+      },
+      "result": {
+        "@id": "https://example.org/cdif-prov/line07Migrated"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/reflectionProcessingFlow"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/reflectionProcessingFlow",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/seisUnix",
+      "@type": "SoftwareApplication",
+      "name": "Seismic Unix",
+      "version": "44R27",
+      "url": "https://wiki.seismic-unix.org/"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/garciaMaria",
+      "@type": "Person",
+      "name": "Garcia, Maria",
+      "identifier": {
+        "@id": "https://orcid.org/0000-0003-1234-5678"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "m.garcia@example.org"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/line07_raw.segy",
+      "@type": "File",
+      "name": "line07_raw.segy",
+      "encodingFormat": "application/octet-stream",
+      "description": "Raw shot gathers for line 07, SEG-Y revision 1."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/line07Migrated",
+      "@type": "Dataset",
+      "name": "Processed seismic reflection data, line 07",
+      "identifier": {
+        "@id": "https://doi.org/10.1234/seismic-2025"
+      },
+      "dateModified": "2025-06-15",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    }
+  ]
+}
