@@ -1,0 +1,177 @@
+@prefix bios: <https://bioschemas.org/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/cdif-prov/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:EPMAAnalysis a prov:Activity,
+        bios:LabProcess,
+        cdifact:Measurement ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:additionalProperty [ a schema:PropertyValue ;
+            schema:name "Matrix correction model" ;
+            schema:propertyID "matrix correction model" ;
+            schema:value "ZAF (LINEMU MACs)" ],
+        [ a schema:PropertyValue ;
+            schema:name "Beam diameter" ;
+            schema:propertyID "beam diameter" ;
+            schema:value "focused (~1 µm)" ],
+        [ a schema:PropertyValue ;
+            schema:name "Accelerating voltage" ;
+            schema:propertyID "accelerating voltage" ;
+            schema:unitText "kV" ;
+            schema:value 15 ],
+        [ a schema:PropertyValue ;
+            schema:name "Number of analyses" ;
+            schema:propertyID "number of analyses" ;
+            schema:value 142 ],
+        [ a schema:PropertyValue ;
+            schema:name "Beam current" ;
+            schema:propertyID "beam current" ;
+            schema:unitText "nA" ;
+            schema:value 20 ] ;
+    schema:description "Quantitative WDS electron microprobe analysis of olivine for major and minor elements, at 15 kV and 20 nA: 142 point analyses of oxide concentrations (wt%), with detection limits and analytical totals." ;
+    schema:name "EPMA major element analysis of olivine" ;
+    prov:atLocation [ a schema:Place,
+                prov:Location ;
+            schema:name "Electron Microprobe Laboratory, Department of Earth Sciences, Example University" ] ;
+    prov:endedAtTime "2024-06-10T17:30:00+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:chenWei ;
+            prov:hadPlan <https://registry.onegeochemistry.org/methods/jeol-8530f-olivine-v1> ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:probeForEPMA ;
+            prov:hadRole ex:Software ],
+        [ a prov:Usage ;
+            prov:entity ex:jeolJXA8530F ;
+            prov:hadRole ex:Instrument ],
+        [ a prov:Usage ;
+            prov:entity ex:polishedMountA ;
+            prov:hadRole ex:InputData ] ;
+    prov:startedAtTime "2024-06-10T08:00:00+00:00"^^xsd:dateTime .
+
+ex:EPMASamplePreparation a prov:Activity,
+        bios:LabProcess ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:description "Olivine grains from drill core KI81-1 were mounted in epoxy, ground, polished, and carbon coated for electron microprobe analysis." ;
+    schema:name "Sample preparation for EPMA" ;
+    prov:endedAtTime "2024-06-03T00:00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:chenWei ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:dentonDV502A ;
+            prov:hadRole ex:Instrument ],
+        [ a prov:Usage ;
+            prov:entity ex:KI81-1 ;
+            prov:hadRole ex:InputData ] ;
+    prov:startedAtTime "2024-06-01T00:00:00"^^xsd:dateTime .
+
+ex:KI81-1 a schema:Thing,
+        prov:Entity ;
+    schema:additionalType bios:Sample ;
+    schema:description "Drill core from the Kilauea Iki lava lake." ;
+    schema:identifier "KI81-1" ;
+    schema:name "Drill core KI81-1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:KI81Drilling ] .
+
+ex:KI81Drilling a prov:Activity,
+        cdifact:Sampling ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:description "Core drilled through the crust of the Kilauea Iki lava lake (the 1959 eruption's ponded lava), recovering a vertical section of the lake's olivine-bearing basalt, in 1981." ;
+    schema:name "Drilling of core KI81-1, Kilauea Iki lava lake" ;
+    prov:atLocation [ a schema:Place,
+                prov:Location ;
+            schema:geo [ a schema:GeoCoordinates ;
+                    schema:latitude 1.9414e+01 ;
+                    schema:longitude -1.55249e+02 ] ;
+            schema:name "Kilauea Iki lava lake, Hawaii" ] ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:USGS ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:kilaueaIkiLavaLake ;
+            prov:hadRole ex:InputData ] .
+
+ex:Software a prov:Role .
+
+ex:USGS a schema:Organization,
+        prov:Organization ;
+    schema:name "U.S. Geological Survey" ;
+    schema:url "https://www.usgs.gov/" .
+
+ex:dentonDV502A a schema:Product,
+        prov:Entity ;
+    schema:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema:description "Used to coat the polished mounts with carbon." ;
+    schema:name "Denton DV-502A vacuum evaporator" .
+
+ex:jeolJXA8530F a schema:Product,
+        prov:Entity ;
+    schema:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema:manufacturer [ a schema:Organization ;
+            schema:name "JEOL" ] ;
+    schema:model [ a schema:ProductModel ;
+            schema:name "JXA-8530F Plus" ] ;
+    schema:name "JEOL JXA-8530F Plus field emission electron microprobe" .
+
+ex:kilaueaIkiLavaLake a schema:Place,
+        prov:Entity ;
+    schema:description "The lava lake ponded in Kilauea Iki crater by the 1959 eruption." ;
+    schema:name "Kilauea Iki lava lake" .
+
+ex:olivineKilaueaIki a schema:Dataset,
+        prov:Entity ;
+    schema:dateModified "2024-08-15" ;
+    schema:description "EPMA major and minor element compositions of olivine from Kilauea Iki drill core KI81-1. The field-sample scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/exampleEPMAProvenance.json." ;
+    schema:identifier [ a schema:PropertyValue ;
+            schema:propertyID <https://registry.identifiers.org/registry/doi> ;
+            schema:url "https://doi.org/10.1234/olivine-kilauea-2024" ;
+            schema:value "doi:10.1234/olivine-kilauea-2024" ] ;
+    schema:name "Olivine major element compositions, Kilauea Iki lava lake" ;
+    schema:subjectOf ex:olivineKilaueaIki-record ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:EPMAAnalysis ;
+            prov:atTime "2024-06-10T17:30:00+00:00"^^xsd:dateTime ] .
+
+ex:olivineKilaueaIki-record a schema:Dataset ;
+    dcterms:conformsTo <https://w3id.org/cdif/core/2.0>,
+        <https://w3id.org/cdif/provenance/2.0> ;
+    schema:about ex:olivineKilaueaIki ;
+    schema:additionalType dcat:CatalogRecord .
+
+ex:polishedMountA a schema:Thing,
+        prov:Entity ;
+    schema:additionalType bios:Sample ;
+    schema:description "Hand-picked olivine grains (Fo85-88) from KI81-1 in a 1-inch epoxy round." ;
+    schema:name "Polished and carbon-coated epoxy mount A" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:EPMASamplePreparation ;
+            prov:atTime "2024-06-03T00:00:00"^^xsd:dateTime ] .
+
+ex:probeForEPMA a schema:SoftwareApplication,
+        prov:Entity ;
+    schema:additionalType <https://www.wikidata.org/entity/Q7397> ;
+    schema:description "Used for the ZAF matrix correction and quantification." ;
+    schema:name "Probe for EPMA" ;
+    schema:version "13.0.6" .
+
+<https://registry.onegeochemistry.org/methods/jeol-8530f-olivine-v1> a prov:Entity,
+        prov:Plan .
+
+ex:Instrument a prov:Role .
+
+ex:chenWei a schema:Person,
+        prov:Person ;
+    schema:contactPoint [ a schema:ContactPoint ;
+            schema:email "w.chen@example.org" ] ;
+    schema:identifier [ a schema:PropertyValue ;
+            schema:propertyID <https://registry.identifiers.org/registry/orcid> ;
+            schema:url "https://orcid.org/0000-0002-5555-6666" ;
+            schema:value "0000-0002-5555-6666" ] ;
+    schema:name "Chen, Wei" .
+
+ex:InputData a prov:Role .
+
