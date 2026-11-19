@@ -81,10 +81,6 @@ To meet the profile, the crate writes the times with `+00:00` in place of `Z`.
   the crate, not the dataset, so the dataset becomes a `Dataset` data entity in `hasPart` and the
   `result` of the `CreateAction`. It has to be in `hasPart`: as a contextual entity only, the crate
   fails a REQUIRED check.
-- **The two crates place the described dataset differently.**
-  - **This crate** keeps the dataset as an entity with its own IRI, so it joins with the cdifProv
-    and PROV-O files.
-  - **The workflow crate** uses the root `./` for the dataset and lists the result files, so its
-    dataset IRI (`ex:fes2FitResults`) does not appear.
-
-  One convention should be chosen for the remaining scenarios.
+- **The described dataset keeps its own IRI in every crate.** This scenario set the convention, and
+  the workflow crate now follows it: the root `./` is the crate, and the dataset is a `Dataset` data
+  entity with the cdifProv IRI, so each crate joins with its cdifProv and PROV-O files.

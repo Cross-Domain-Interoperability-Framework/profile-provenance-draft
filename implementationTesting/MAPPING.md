@@ -14,8 +14,8 @@ as their inputs.
 
 | cdifProv | PROV-O, qualified | PROV-O, plain | RO-Crate (Provenance Run Crate) | scenario |
 |---|---|---|---|---|
-| root `schema:Dataset` | `prov:Entity` | `prov:Entity` | a `Dataset` data entity with the same IRI, in the root's `hasPart` (minimal); the workflow crate instead lets the crate's root `./` stand for it | workflow, minimal |
-| root `prov:wasGeneratedBy` activity | `prov:qualifiedGeneration [prov:activity; prov:atTime` = activity end`]` | `prov:wasGeneratedBy` + `prov:generatedAtTime` | `CreateAction` in the root's `mentions`; the dataset is its `result` (minimal) | workflow, minimal |
+| root `schema:Dataset` | `prov:Entity` | `prov:Entity` | a `Dataset` data entity with the same IRI, in the root's `hasPart`; the crate's root `./` is the crate, not the dataset | workflow, minimal |
+| root `prov:wasGeneratedBy` activity | `prov:qualifiedGeneration [prov:activity; prov:atTime` = activity end`]` | `prov:wasGeneratedBy` + `prov:generatedAtTime` | `CreateAction` in the root's `mentions`; the dataset is in its `result` | workflow, minimal |
 | root `schema:subjectOf` catalog record | copied (no PROV term) | copied | `ro-crate-metadata.json` descriptor (not the same thing: it describes the crate file) | workflow |
 | activity `[prov:Activity, schema:Action]` | `prov:Activity` | `prov:Activity` | `CreateAction` | workflow |
 | `schema:additionalType` (activity vocabulary IRI) | `rdf:type` | `rdf:type` | not carried | workflow |

@@ -52,7 +52,7 @@ ends with the last step).
 | **cdifProv** (master) | [cdifprov-schemaorg/cdif\_provenance\_workflow.json](cdifprov-schemaorg/cdif_provenance_workflow.json) | hand-written: one activity whose `schema:actionProcess` HowTo has the four steps as `[schema:HowToStep, schema:Action]` | `FrameAndValidate.py -v` against cdifProvenance 2.0: passes; conformance consistent (core 2.0, provenance 2.0); 297 triples, all kept by framing; `provenanceRules.shacl` (advanced): 0 violations, 0 warnings, 1 info (the person has no contact point); key counts = triple counts |
 | **PROV-O, qualified** | [prov-o-qualified/cdif\_provenance\_workflow.ttl](prov-o-qualified/cdif_provenance_workflow.ttl), [.jsonld](prov-o-qualified/cdif_provenance_workflow.jsonld) | generated: `python tools/cdifProvToProvO.py <cdifProv> <out.ttl>` | 377 triples: 14 usages, 9 generations, 1 association with its plan, 4 steps `dcterms:isPartOf` the run; the tree is isomorphic under rdflib and pyld |
 | **PROV-O, plain** | [prov-o-unqualified/cdif\_provenance\_workflow.ttl](prov-o-unqualified/cdif_provenance_workflow.ttl), [.jsonld](prov-o-unqualified/cdif_provenance_workflow.jsonld) | generated: the same with `--unqualified` | 312 triples: 14 `prov:used`, 9 `prov:wasGeneratedBy` + `prov:generatedAtTime`, 1 `prov:wasAssociatedWith`. The tool's `--unqualify` reproduces the quantitative scenario's plain file exactly (isomorphic, 124 triples) |
-| **RO-Crate, Provenance Run Crate 0.5** | [ro-crate/cdif\_provenance\_workflow/ro-crate-metadata.json](ro-crate/cdif_provenance_workflow/ro-crate-metadata.json), [tree](ro-crate/cdif_provenance_workflow.jsonld) | written from the cdifProv file | 64 entities, no duplicate or dangling `@id`s within the crate; 366 triples; the tree is isomorphic. `rocrate-validator` 0.14.0, `-p provenance-run-crate-0.5 -m` (metadata only): every REQUIRED check passes; 12 RECOMMENDED checks fail, listed below |
+| **RO-Crate, Provenance Run Crate 0.5** | [ro-crate/cdif\_provenance\_workflow/ro-crate-metadata.json](ro-crate/cdif_provenance_workflow/ro-crate-metadata.json), [tree](ro-crate/cdif_provenance_workflow.jsonld) | written from the cdifProv file | 65 entities, no duplicate or dangling `@id`s within the crate; 376 triples; the tree is isomorphic. `rocrate-validator` 0.14.0, `-p provenance-run-crate-0.5 -m` (metadata only): every REQUIRED check passes; 13 RECOMMENDED checks fail, listed below |
 
 The RECOMMENDED checks the crate fails either need facts the cdifProv file does not hold, or come
 from its `example.org` IRIs. None was filled in with invented values:
@@ -63,8 +63,10 @@ from its `example.org` IRIs. None was filled in with invented values:
   - a `description` on each step;
   - the crate's `author` and `publisher`;
   - a `README.md`.
-- **From the `example.org` IRIs:** each data entity is web-based, so it is flagged as unavailable and
-  as lacking `contentSize` and `sdDatePublished` (11 entities each).
+- **From the `example.org` IRIs:** each data entity is web-based, so it is flagged as unavailable
+  (12 entities), and each file as lacking `contentSize` and `sdDatePublished` (11 files).
+- **A trailing `/` on the described dataset's IRI:** RO-Crate treats a `Dataset` data entity as a
+  directory, and recommends its IRI end in `/`. The IRI is kept, so the files can be loaded together.
 
 To meet the profile, the crate generator makes three changes to the cdifProv values:
 
@@ -73,6 +75,10 @@ To meet the profile, the crate generator makes three changes to the cdifProv val
 - **actionStatus:** it stays the string `http://schema.org/CompletedActionStatus`, which is what the
   profile's shape accepts.
 - **Arrays:** singleton arrays are written as single values.
+
+The described dataset (`ex:fes2FitResults`) keeps its own IRI, as in the minimal scenario: it is a
+`Dataset` data entity in the root's `hasPart`, with the three result files as its `hasPart`, and the
+run's `CreateAction` lists it in `result` with those files.
 
 The crate also adds three things the cdifProv file only implies:
 
