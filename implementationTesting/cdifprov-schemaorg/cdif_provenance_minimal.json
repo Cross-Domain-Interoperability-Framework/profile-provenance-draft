@@ -1,0 +1,124 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "ex": "https://example.org/cdif-prov/"
+  },
+  "@id": "ex:line07Migrated",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Processed seismic reflection data, line 07",
+  "schema:description": "Stacked and migrated seismic section for line 07. The minimal scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/exampleCdifProvenance.json.",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "doi:10.1234/seismic-2025",
+    "schema:url": "https://doi.org/10.1234/seismic-2025"
+  },
+  "schema:dateModified": "2025-06-15",
+  "schema:license": [
+    "https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "schema:subjectOf": {
+    "@id": "ex:line07Migrated-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "ex:line07Migrated"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ]
+  },
+  "prov:wasGeneratedBy": [
+    {
+      "@id": "ex:line07Processing",
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:additionalType": [
+        {
+          "@id": "cdifact:DataTransformation"
+        }
+      ],
+      "schema:name": "Seismic data processing, line 07",
+      "schema:description": "Raw shot gathers from line 07 were processed with a standard reflection flow: deconvolution, stacking and migration.",
+      "schema:startTime": "2025-01-10T00:00:00Z",
+      "schema:endTime": "2025-03-20T00:00:00Z",
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:agent": {
+        "@id": "ex:garciaMaria",
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Garcia, Maria",
+        "schema:identifier": {
+          "@type": [
+            "schema:PropertyValue"
+          ],
+          "schema:propertyID": {
+            "@id": "https://registry.identifiers.org/registry/orcid"
+          },
+          "schema:value": "0000-0003-1234-5678",
+          "schema:url": "https://orcid.org/0000-0003-1234-5678"
+        },
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "m.garcia@example.org"
+        }
+      },
+      "schema:instrument": [
+        {
+          "@id": "ex:seisUnix",
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ],
+          "schema:name": "Seismic Unix",
+          "schema:version": "44R27",
+          "schema:url": "https://wiki.seismic-unix.org/"
+        }
+      ],
+      "schema:object": [
+        {
+          "@id": "ex:line07_raw.segy",
+          "@type": [
+            "schema:MediaObject"
+          ],
+          "schema:name": "line07_raw.segy",
+          "schema:encodingFormat": "application/octet-stream",
+          "schema:description": "Raw shot gathers for line 07, SEG-Y revision 1."
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "ex:reflectionProcessingFlow"
+      }
+    }
+  ]
+}
