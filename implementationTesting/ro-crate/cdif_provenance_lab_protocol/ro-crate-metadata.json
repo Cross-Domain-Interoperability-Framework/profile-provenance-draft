@@ -1,0 +1,587 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "actionProcess": {
+        "@id": "http://schema.org/actionProcess",
+        "@type": "@id"
+      }
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Py-GC-MS/MS data for Bennu sample OREX-803003-0",
+      "description": "RO-Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_lab_protocol.json, the lab-protocol scenario. See implementationTesting/APPROACHES.md.",
+      "datePublished": "2026-11-19",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "hasPart": [
+        {
+          "@id": "https://example.org/cdif-prov/bennuPyGCMSData"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/20231121_002_OREX-803003-0.cdf"
+        }
+      ],
+      "mentions": [
+        {
+          "@id": "https://example.org/cdif-prov/bennuPyGCMSRun"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuSamplePrep"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuPyrolysis"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuGCSeparation"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuMSDetection"
+        }
+      ]
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "name": "CC BY 4.0"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPyGCMSData",
+      "@type": "Dataset",
+      "name": "Py-GC-MS/MS data for Bennu sample OREX-803003-0",
+      "description": "Raw pyrolysis-GC-MS/MS data (full scan and MRM) for OSIRIS-REx sample OREX-803003-0. The lab-protocol scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/Bennu-py-GC-MSarc.cdifprov.json.",
+      "dateModified": "2023-11-21",
+      "hasPart": {
+        "@id": "https://example.org/cdif-prov/20231121_002_OREX-803003-0.cdf"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/NASA_GSFC",
+      "@type": "Organization",
+      "name": "NASA Goddard Space Flight Center",
+      "url": "https://www.nasa.gov/goddard"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/OREX-803003-0",
+      "@type": "Thing",
+      "additionalType": {
+        "@id": "https://bioschemas.org/Sample"
+      },
+      "name": "Bennu asteroid sample OREX-803003-0",
+      "description": "About 1 mg aggregate of material from asteroid Bennu, collected by the OSIRIS-REx Touch-and-Go Sample Acquisition Mechanism (TAGSAM).",
+      "identifier": "OREX-803003-0"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPyGCMSRun",
+      "@type": "CreateAction",
+      "name": "Py-GC-MS/MS analysis of OREX-803003-0",
+      "description": "The py-GC-MS/MS analysis session for Bennu asteroid sample OREX-803003-0, session 20231121_GCMS_GSFC_OREX-803003-0_1.",
+      "additionalType": [
+        {
+          "@id": "https://w3id.org/cdif/concepts/provenance/activity/Measurement"
+        },
+        {
+          "@id": "https://bioschemas.org/LabProcess"
+        }
+      ],
+      "startTime": "2023-11-21T00:00:00+00:00",
+      "endTime": "2023-11-21T23:59:59+00:00",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/NASA_GSFC"
+      },
+      "object": {
+        "@id": "https://example.org/cdif-prov/OREX-803003-0"
+      },
+      "result": [
+        {
+          "@id": "https://example.org/cdif-prov/bennuPyGCMSData"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/20231121_002_OREX-803003-0.cdf"
+        }
+      ],
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/bennuPyGCMSProcedure"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPyGCMSProcedure",
+      "@type": "HowTo",
+      "name": "Py-GC-MS/MS analysis of OREX-803003-0, as performed",
+      "description": "Flash pyrolysis coupled to gas chromatography and tandem mass spectrometry, with simultaneous full scan and timed SRM/MRM acquisition targeting 38 organic compounds; instrument method Mojarro_88min_MRM_4_IOM+FullScan_10_1_Split_py. Each step follows one part of the protocol, and two record their own sub-steps.",
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/PyGCMS_Protocol"
+      },
+      "step": [
+        {
+          "@id": "https://example.org/cdif-prov/bennuSamplePrep"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuPyrolysis"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuGCSeparation"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuMSDetection"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/PyGCMS_Protocol",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuSamplePrepProcedure",
+      "@type": "HowTo",
+      "name": "Sample preparation, as performed",
+      "description": "Load and weigh the bulk solid sample inside a quartz tube, and place it into the pyrolysis oven.",
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/SamplePrep_Protocol"
+      },
+      "step": [
+        {
+          "@id": "https://example.org/cdif-prov/bennuSamplePrepProcedure-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuSamplePrepProcedure-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuSamplePrepProcedure-3"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/SamplePrep_Protocol",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuSamplePrepProcedure-1",
+      "@type": "HowToStep",
+      "position": "1",
+      "name": "Load about 1 mg of bulk aggregate into a quartz tube"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuSamplePrepProcedure-2",
+      "@type": "HowToStep",
+      "position": "2",
+      "name": "Weigh the sample in the tube"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuSamplePrepProcedure-3",
+      "@type": "HowToStep",
+      "position": "3",
+      "name": "Place the tube into the pyrolysis oven"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuSamplePrep/parameter-1",
+      "@type": "PropertyValue",
+      "name": "Sample mass",
+      "value": 1,
+      "unitText": "mg",
+      "propertyID": "https://example.org/cdif-prov/param_sampleMass"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/quartzTubes",
+      "@type": "Product",
+      "name": "Quartz sample tubes",
+      "description": "Quartz tubes used for loading and weighing solid samples for pyrolysis."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/pyrolysisOven",
+      "@type": "Product",
+      "name": "Pyrolysis oven",
+      "description": "Pyrolysis front-end interface coupled to the GC-MS. Flash heats at 10 °C/ms to temperatures up to 1300 °C."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPreparedSample",
+      "@type": "Thing",
+      "additionalType": {
+        "@id": "https://bioschemas.org/Sample"
+      },
+      "name": "Prepared sample in quartz tube",
+      "description": "About 1 mg of Bennu aggregate, loaded and weighed in a quartz tube, ready for pyrolysis."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuSamplePrep",
+      "@type": [
+        "HowToStep",
+        "CreateAction"
+      ],
+      "position": "1",
+      "name": "Load the sample into a quartz tube",
+      "description": "About 1 mg of bulk aggregate from the TAGSAM collection device was loaded and weighed inside a quartz tube, and the tube was placed into the pyrolysis oven interfaced with the GC-MS.",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/NASA_GSFC"
+      },
+      "instrument": [
+        {
+          "@id": "https://example.org/cdif-prov/quartzTubes"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/pyrolysisOven"
+        }
+      ],
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/OREX-803003-0"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuSamplePrep/parameter-1"
+        }
+      ],
+      "result": {
+        "@id": "https://example.org/cdif-prov/bennuPreparedSample"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/bennuSamplePrepProcedure"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPyrolysisProcedure",
+      "@type": "HowTo",
+      "name": "Flash pyrolysis, as performed",
+      "description": "Flash heat the prepared sample to the target temperature at a controlled rate; carry the volatiles in helium through the heated transfer line to the GC inlet.",
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/Pyrolysis_Protocol"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/Pyrolysis_Protocol",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPyrolysis/parameter-1",
+      "@type": "PropertyValue",
+      "name": "Target temperature",
+      "value": 600,
+      "unitText": "°C",
+      "propertyID": "https://example.org/cdif-prov/param_pyrolysisTemp"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPyrolysis/parameter-2",
+      "@type": "PropertyValue",
+      "name": "Heating rate",
+      "value": 10,
+      "unitText": "°C/ms",
+      "propertyID": "https://example.org/cdif-prov/param_pyrolysisRate"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPyrolysis/parameter-3",
+      "@type": "PropertyValue",
+      "name": "Transfer line temperature",
+      "value": 300,
+      "unitText": "°C",
+      "propertyID": "https://example.org/cdif-prov/param_transferLineTemp"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/helium",
+      "@type": "ChemicalSubstance",
+      "name": "Helium",
+      "description": "Carrier gas for the pyrolysis products and the GC."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPyrolysisProducts",
+      "@type": "Thing",
+      "additionalType": {
+        "@id": "https://bioschemas.org/Sample"
+      },
+      "name": "Pyrolysis volatiles in helium carrier stream",
+      "description": "Thermally extracted volatiles from flash pyrolysis, carried in helium through the heated transfer line at 300 °C to the GC inlet."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuPyrolysis",
+      "@type": [
+        "HowToStep",
+        "CreateAction"
+      ],
+      "position": "2",
+      "name": "Flash pyrolysis at about 600 °C",
+      "description": "Flash-heated at 10 °C/ms to about 600 °C. The volatiles were carried in helium through the heated transfer line (300 °C) to the GC inlet. Bulk samples may contain soluble organic matter, which produces thermal degradation products and rearrangements.",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/NASA_GSFC"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/pyrolysisOven"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/bennuPreparedSample"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/helium"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuPyrolysis/parameter-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuPyrolysis/parameter-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuPyrolysis/parameter-3"
+        }
+      ],
+      "result": {
+        "@id": "https://example.org/cdif-prov/bennuPyrolysisProducts"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/bennuPyrolysisProcedure"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuGCOvenProgram",
+      "@type": "HowTo",
+      "name": "GC oven program, as run",
+      "description": "Separate the pyrolysis products on a nonpolar fused silica capillary column with a temperature program from an initial hold, through a ramp, to a final hold.",
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/GCSeparation_Protocol"
+      },
+      "step": [
+        {
+          "@id": "https://example.org/cdif-prov/bennuGCOvenProgram-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuGCOvenProgram-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuGCOvenProgram-3"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/GCSeparation_Protocol",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuGCOvenProgram-1",
+      "@type": "HowToStep",
+      "position": "1",
+      "name": "Hold at 40 °C for 5 min"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuGCOvenProgram-2",
+      "@type": "HowToStep",
+      "position": "2",
+      "name": "Ramp to 300 °C at about 3.5 °C/min"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuGCOvenProgram-3",
+      "@type": "HowToStep",
+      "position": "3",
+      "name": "Hold at 300 °C until 87.79 min"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuGCSeparation/parameter-1",
+      "@type": "PropertyValue",
+      "name": "Column",
+      "value": "Rtx-5ms, 30 m × 0.250 mm × 0.50 µm + 5 m guard",
+      "propertyID": "https://example.org/cdif-prov/param_columnType"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuGCSeparation/parameter-2",
+      "@type": "PropertyValue",
+      "name": "Carrier gas flow",
+      "value": 1.5,
+      "unitText": "mL/min",
+      "propertyID": "https://example.org/cdif-prov/param_carrierGasFlow"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuGCSeparation/parameter-3",
+      "@type": "PropertyValue",
+      "name": "Split ratio",
+      "value": "10:1",
+      "propertyID": "https://example.org/cdif-prov/param_splitRatio"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuGCSeparation/parameter-4",
+      "@type": "PropertyValue",
+      "name": "Inlet temperature",
+      "value": 300,
+      "unitText": "°C",
+      "propertyID": "https://example.org/cdif-prov/param_inletTemp"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/gasChromatograph",
+      "@type": "Product",
+      "name": "Gas chromatograph with Rtx-5ms column",
+      "description": "GC with an Rtx-5ms (5% diphenyl / 95% dimethyl polysiloxane) fused silica capillary column, 30 m × 0.250 mm × 0.50 µm, with a 5 m × 0.250 mm guard column."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuSeparatedEluent",
+      "@type": "Thing",
+      "additionalType": {
+        "@id": "https://bioschemas.org/Sample"
+      },
+      "name": "Chromatographically separated eluent",
+      "description": "Time-resolved stream of separated compounds eluting from the GC column into the mass spectrometer."
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuGCSeparation",
+      "@type": [
+        "HowToStep",
+        "CreateAction"
+      ],
+      "position": "3",
+      "name": "GC separation on an Rtx-5ms column",
+      "description": "Chromatographic separation on an Rtx-5ms column (30 m × 0.250 mm × 0.50 µm, 5 m guard), with split injection 10:1 at 300 °C and helium carrier at 1.500 mL/min. Run time 87.79 min.",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/NASA_GSFC"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/gasChromatograph"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/bennuPyrolysisProducts"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/helium"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuGCSeparation/parameter-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuGCSeparation/parameter-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuGCSeparation/parameter-3"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuGCSeparation/parameter-4"
+        }
+      ],
+      "result": {
+        "@id": "https://example.org/cdif-prov/bennuSeparatedEluent"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/bennuGCOvenProgram"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuMSDetectionProcedure",
+      "@type": "HowTo",
+      "name": "Dual-mode MS detection, as performed",
+      "description": "Simultaneous full scan (m/z 50–500, EI positive) and timed SRM/MRM acquisition, monitoring 38 target compounds through 2–3 diagnostic precursor-to-product ion transitions each.",
+      "isBasedOn": {
+        "@id": "https://example.org/cdif-prov/MSDetection_Protocol"
+      }
+    },
+    {
+      "@id": "https://example.org/cdif-prov/MSDetection_Protocol",
+      "@type": "HowTo"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-1",
+      "@type": "PropertyValue",
+      "name": "Full scan range",
+      "value": "m/z 50–500",
+      "propertyID": "https://example.org/cdif-prov/param_scanRange"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-2",
+      "@type": "PropertyValue",
+      "name": "Ionization mode",
+      "value": "electron ionization (EI), positive polarity",
+      "propertyID": "https://example.org/cdif-prov/param_ionizationMode"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-3",
+      "@type": "PropertyValue",
+      "name": "MRM target compounds",
+      "value": 38,
+      "propertyID": "https://example.org/cdif-prov/param_mrmCompoundCount"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-4",
+      "@type": "PropertyValue",
+      "name": "Ion source temperature",
+      "value": 300,
+      "unitText": "°C",
+      "propertyID": "ion source temperature"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-5",
+      "@type": "PropertyValue",
+      "name": "Full scan time",
+      "value": 0.1,
+      "unitText": "s",
+      "propertyID": "full scan time"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/tsqMassSpectrometer",
+      "@type": "Product",
+      "name": "Thermo Scientific TSQ triple-quadrupole mass spectrometer",
+      "description": "TSQ triple-quadrupole MS, operated in EI mode, positive polarity, with simultaneous full scan and timed SRM/MRM.",
+      "serialNumber": "TSQ96CI2301004",
+      "url": "https://www.thermofisher.com/"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/20231121_002_OREX-803003-0.cdf",
+      "@type": "File",
+      "name": "20231121_002_OREX-803003-0.cdf",
+      "description": "Raw analytical data (full scan and MRM) in Common Data Format, from Chromeleon sequence 20231929_Bennu_01.seq.",
+      "encodingFormat": "application/x-netcdf"
+    },
+    {
+      "@id": "https://example.org/cdif-prov/bennuMSDetection",
+      "@type": [
+        "HowToStep",
+        "CreateAction"
+      ],
+      "position": "4",
+      "name": "Dual-mode MS detection (full scan and MRM)",
+      "description": "Simultaneous full scan (m/z 50–500, EI positive, 0.100 s scan time) and timed SRM/MRM (38 compounds, 2–3 transitions each). Ion source and transfer line at 300 °C; detector gain 100,000.",
+      "actionStatus": "http://schema.org/CompletedActionStatus",
+      "agent": {
+        "@id": "https://example.org/cdif-prov/NASA_GSFC"
+      },
+      "instrument": {
+        "@id": "https://example.org/cdif-prov/tsqMassSpectrometer"
+      },
+      "object": [
+        {
+          "@id": "https://example.org/cdif-prov/bennuSeparatedEluent"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-1"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-2"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-3"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-4"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/bennuMSDetection/parameter-5"
+        }
+      ],
+      "result": {
+        "@id": "https://example.org/cdif-prov/20231121_002_OREX-803003-0.cdf"
+      },
+      "actionProcess": {
+        "@id": "https://example.org/cdif-prov/bennuMSDetectionProcedure"
+      }
+    }
+  ]
+}

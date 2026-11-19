@@ -1,0 +1,269 @@
+@prefix bios: <https://bioschemas.org/> .
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/cdif-prov/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:20231121_002_OREX-803003-0.cdf a schema:MediaObject,
+        prov:Entity ;
+    schema:description "Raw analytical data (full scan and MRM) in Common Data Format, from Chromeleon sequence 20231929_Bennu_01.seq." ;
+    schema:encodingFormat "application/x-netcdf" ;
+    schema:name "20231121_002_OREX-803003-0.cdf" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:bennuMSDetection ] .
+
+ex:GCSeparation_Protocol a prov:Entity,
+        prov:Plan .
+
+ex:MSDetection_Protocol a prov:Entity,
+        prov:Plan .
+
+ex:PyGCMS_Protocol a prov:Entity,
+        prov:Plan .
+
+ex:Pyrolysis_Protocol a prov:Entity,
+        prov:Plan .
+
+ex:SamplePrep_Protocol a prov:Entity,
+        prov:Plan .
+
+ex:bennuGCSeparation a prov:Activity ;
+    dcterms:isPartOf ex:bennuPyGCMSRun ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:additionalProperty [ a schema:PropertyValue ;
+            schema:name "Inlet temperature" ;
+            schema:propertyID ex:param_inletTemp ;
+            schema:unitText "°C" ;
+            schema:value 300 ],
+        [ a schema:PropertyValue ;
+            schema:name "Column" ;
+            schema:propertyID ex:param_columnType ;
+            schema:value "Rtx-5ms, 30 m × 0.250 mm × 0.50 µm + 5 m guard" ],
+        [ a schema:PropertyValue ;
+            schema:name "Split ratio" ;
+            schema:propertyID ex:param_splitRatio ;
+            schema:value "10:1" ],
+        [ a schema:PropertyValue ;
+            schema:name "Carrier gas flow" ;
+            schema:propertyID ex:param_carrierGasFlow ;
+            schema:unitText "mL/min" ;
+            schema:value 1.5e+00 ] ;
+    schema:description "Chromatographic separation on an Rtx-5ms column (30 m × 0.250 mm × 0.50 µm, 5 m guard), with split injection 10:1 at 300 °C and helium carrier at 1.500 mL/min. Run time 87.79 min." ;
+    schema:name "GC separation on an Rtx-5ms column" ;
+    schema:position 3 ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:NASA_GSFC ;
+            prov:hadPlan ex:GCSeparation_Protocol ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:gasChromatograph ;
+            prov:hadRole ex:Instrument ],
+        [ a prov:Usage ;
+            prov:entity ex:bennuPyrolysisProducts ;
+            prov:hadRole ex:InputData ],
+        [ a prov:Usage ;
+            prov:entity ex:helium ;
+            prov:hadRole ex:Reagent ] .
+
+ex:bennuMSDetection a prov:Activity ;
+    dcterms:isPartOf ex:bennuPyGCMSRun ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:additionalProperty [ a schema:PropertyValue ;
+            schema:name "Full scan time" ;
+            schema:propertyID "full scan time" ;
+            schema:unitText "s" ;
+            schema:value 1e-01 ],
+        [ a schema:PropertyValue ;
+            schema:name "Ionization mode" ;
+            schema:propertyID ex:param_ionizationMode ;
+            schema:value "electron ionization (EI), positive polarity" ],
+        [ a schema:PropertyValue ;
+            schema:name "Full scan range" ;
+            schema:propertyID ex:param_scanRange ;
+            schema:value "m/z 50–500" ],
+        [ a schema:PropertyValue ;
+            schema:name "MRM target compounds" ;
+            schema:propertyID ex:param_mrmCompoundCount ;
+            schema:value 38 ],
+        [ a schema:PropertyValue ;
+            schema:name "Ion source temperature" ;
+            schema:propertyID "ion source temperature" ;
+            schema:unitText "°C" ;
+            schema:value 300 ] ;
+    schema:description "Simultaneous full scan (m/z 50–500, EI positive, 0.100 s scan time) and timed SRM/MRM (38 compounds, 2–3 transitions each). Ion source and transfer line at 300 °C; detector gain 100,000." ;
+    schema:name "Dual-mode MS detection (full scan and MRM)" ;
+    schema:position 4 ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:NASA_GSFC ;
+            prov:hadPlan ex:MSDetection_Protocol ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:tsqMassSpectrometer ;
+            prov:hadRole ex:Instrument ],
+        [ a prov:Usage ;
+            prov:entity ex:bennuSeparatedEluent ;
+            prov:hadRole ex:InputData ] .
+
+ex:bennuPreparedSample a schema:Thing,
+        prov:Entity ;
+    schema:additionalType bios:Sample ;
+    schema:description "About 1 mg of Bennu aggregate, loaded and weighed in a quartz tube, ready for pyrolysis." ;
+    schema:name "Prepared sample in quartz tube" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:bennuSamplePrep ] .
+
+ex:bennuPyGCMSData a schema:Dataset,
+        prov:Entity ;
+    schema:dateModified "2023-11-21" ;
+    schema:description "Raw pyrolysis-GC-MS/MS data (full scan and MRM) for OSIRIS-REx sample OREX-803003-0. The lab-protocol scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/Bennu-py-GC-MSarc.cdifprov.json." ;
+    schema:name "Py-GC-MS/MS data for Bennu sample OREX-803003-0" ;
+    schema:subjectOf ex:bennuPyGCMSData-record ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:bennuPyGCMSRun ;
+            prov:atTime "2023-11-21T23:59:59+00:00"^^xsd:dateTime ] .
+
+ex:bennuPyGCMSData-record a schema:Dataset ;
+    dcterms:conformsTo <https://w3id.org/cdif/provenance/2.0> ;
+    schema:about ex:bennuPyGCMSData ;
+    schema:additionalType dcat:CatalogRecord .
+
+ex:bennuPyrolysis a prov:Activity ;
+    dcterms:isPartOf ex:bennuPyGCMSRun ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:additionalProperty [ a schema:PropertyValue ;
+            schema:name "Target temperature" ;
+            schema:propertyID ex:param_pyrolysisTemp ;
+            schema:unitText "°C" ;
+            schema:value 600 ],
+        [ a schema:PropertyValue ;
+            schema:name "Transfer line temperature" ;
+            schema:propertyID ex:param_transferLineTemp ;
+            schema:unitText "°C" ;
+            schema:value 300 ],
+        [ a schema:PropertyValue ;
+            schema:name "Heating rate" ;
+            schema:propertyID ex:param_pyrolysisRate ;
+            schema:unitText "°C/ms" ;
+            schema:value 10 ] ;
+    schema:description "Flash-heated at 10 °C/ms to about 600 °C. The volatiles were carried in helium through the heated transfer line (300 °C) to the GC inlet. Bulk samples may contain soluble organic matter, which produces thermal degradation products and rearrangements." ;
+    schema:name "Flash pyrolysis at about 600 °C" ;
+    schema:position 2 ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:NASA_GSFC ;
+            prov:hadPlan ex:Pyrolysis_Protocol ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:helium ;
+            prov:hadRole ex:Reagent ],
+        [ a prov:Usage ;
+            prov:entity ex:pyrolysisOven ;
+            prov:hadRole ex:Instrument ],
+        [ a prov:Usage ;
+            prov:entity ex:bennuPreparedSample ;
+            prov:hadRole ex:InputData ] .
+
+ex:bennuPyrolysisProducts a schema:Thing,
+        prov:Entity ;
+    schema:additionalType bios:Sample ;
+    schema:description "Thermally extracted volatiles from flash pyrolysis, carried in helium through the heated transfer line at 300 °C to the GC inlet." ;
+    schema:name "Pyrolysis volatiles in helium carrier stream" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:bennuPyrolysis ] .
+
+ex:bennuSamplePrep a prov:Activity ;
+    dcterms:isPartOf ex:bennuPyGCMSRun ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:additionalProperty [ a schema:PropertyValue ;
+            schema:name "Sample mass" ;
+            schema:propertyID ex:param_sampleMass ;
+            schema:unitText "mg" ;
+            schema:value 1 ] ;
+    schema:description "About 1 mg of bulk aggregate from the TAGSAM collection device was loaded and weighed inside a quartz tube, and the tube was placed into the pyrolysis oven interfaced with the GC-MS." ;
+    schema:name "Load the sample into a quartz tube" ;
+    schema:position 1 ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:NASA_GSFC ;
+            prov:hadPlan ex:SamplePrep_Protocol ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:pyrolysisOven ;
+            prov:hadRole ex:Instrument ],
+        [ a prov:Usage ;
+            prov:entity ex:quartzTubes ;
+            prov:hadRole ex:Instrument ],
+        [ a prov:Usage ;
+            prov:entity ex:OREX-803003-0 ;
+            prov:hadRole ex:InputData ] .
+
+ex:bennuSeparatedEluent a schema:Thing,
+        prov:Entity ;
+    schema:additionalType bios:Sample ;
+    schema:description "Time-resolved stream of separated compounds eluting from the GC column into the mass spectrometer." ;
+    schema:name "Chromatographically separated eluent" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:bennuGCSeparation ] .
+
+ex:gasChromatograph a schema:Product,
+        prov:Entity ;
+    schema:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema:description "GC with an Rtx-5ms (5% diphenyl / 95% dimethyl polysiloxane) fused silica capillary column, 30 m × 0.250 mm × 0.50 µm, with a 5 m × 0.250 mm guard column." ;
+    schema:name "Gas chromatograph with Rtx-5ms column" .
+
+ex:quartzTubes a schema:Product,
+        prov:Entity ;
+    schema:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema:description "Quartz tubes used for loading and weighing solid samples for pyrolysis." ;
+    schema:name "Quartz sample tubes" .
+
+ex:tsqMassSpectrometer a schema:Product,
+        prov:Entity ;
+    schema:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema:description "TSQ triple-quadrupole MS, operated in EI mode, positive polarity, with simultaneous full scan and timed SRM/MRM." ;
+    schema:name "Thermo Scientific TSQ triple-quadrupole mass spectrometer" ;
+    schema:serialNumber "TSQ96CI2301004" ;
+    schema:url "https://www.thermofisher.com/" .
+
+ex:OREX-803003-0 a schema:Thing,
+        prov:Entity ;
+    schema:additionalType bios:Sample ;
+    schema:description "About 1 mg aggregate of material from asteroid Bennu, collected by the OSIRIS-REx Touch-and-Go Sample Acquisition Mechanism (TAGSAM)." ;
+    schema:identifier "OREX-803003-0" ;
+    schema:name "Bennu asteroid sample OREX-803003-0" .
+
+ex:Reagent a prov:Role .
+
+ex:helium a schema:ChemicalSubstance,
+        prov:Entity ;
+    schema:additionalType <https://www.wikidata.org/entity/Q2356542> ;
+    schema:description "Carrier gas for the pyrolysis products and the GC." ;
+    schema:name "Helium" .
+
+ex:pyrolysisOven a schema:Product,
+        prov:Entity ;
+    schema:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema:description "Pyrolysis front-end interface coupled to the GC-MS. Flash heats at 10 °C/ms to temperatures up to 1300 °C." ;
+    schema:name "Pyrolysis oven" .
+
+ex:InputData a prov:Role .
+
+ex:Instrument a prov:Role .
+
+ex:NASA_GSFC a schema:Organization,
+        prov:Organization ;
+    schema:name "NASA Goddard Space Flight Center" ;
+    schema:url "https://www.nasa.gov/goddard" .
+
+ex:bennuPyGCMSRun a prov:Activity,
+        bios:LabProcess,
+        cdifact:Measurement ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:description "The py-GC-MS/MS analysis session for Bennu asteroid sample OREX-803003-0, session 20231121_GCMS_GSFC_OREX-803003-0_1." ;
+    schema:name "Py-GC-MS/MS analysis of OREX-803003-0" ;
+    prov:endedAtTime "2023-11-21T23:59:59+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:NASA_GSFC ;
+            prov:hadPlan ex:PyGCMS_Protocol ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:OREX-803003-0 ;
+            prov:hadRole ex:InputData ] ;
+    prov:startedAtTime "2023-11-21T00:00:00+00:00"^^xsd:dateTime .
+
