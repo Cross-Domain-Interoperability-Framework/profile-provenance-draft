@@ -1,0 +1,330 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/cdif-prov/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:absorbanceMeasurementAttempt01 a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema1:actionStatus schema1:FailedActionStatus ;
+    schema1:error "Air bubble in the cuvette gave an unstable reading; the reading was rejected and the measurement repeated." ;
+    schema1:name "Absorbance measurement, first attempt" ;
+    schema1:position 2 ;
+    prov:endedAtTime "2026-11-05T10:13:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:12:00+00:00"^^xsd:dateTime ;
+    prov:used ex:waterSample01 ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:absorbanceProcedure a prov:Entity,
+        prov:Plan .
+
+ex:blankCorrectionSpec a prov:Entity,
+        prov:Plan .
+
+ex:calibrationRelationship a prov:Entity,
+        prov:Plan .
+
+ex:concentrationDeterminationPlan a prov:Entity,
+        prov:Plan .
+
+ex:uncertaintySpec a prov:Entity,
+        prov:Plan .
+
+ex:absorbanceMeasurement a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Colour development time" ;
+            schema1:propertyID "colour development time" ;
+            schema1:unitText "min" ;
+            schema1:value 10 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Cuvette path length" ;
+            schema1:propertyID "cuvette path length" ;
+            schema1:unitText "cm" ;
+            schema1:value 1 ] ;
+    schema1:description "Colour reagent added to an aliquot of the sample; absorbance read at 540 nm against a reagent blank." ;
+    schema1:identifier "MEAS-2026-11-05-002" ;
+    schema1:name "Absorbance measurement" ;
+    schema1:position 3 ;
+    prov:atLocation [ a schema1:Place,
+                prov:Location ;
+            schema1:additionalType "analytical laboratory" ;
+            schema1:geo [ a schema1:GeoCoordinates ;
+                    schema1:latitude 4.695e+01 ;
+                    schema1:longitude 7.44e+00 ] ;
+            schema1:identifier "LAB-B12" ;
+            schema1:name "Analytical laboratory, room B12" ] ;
+    prov:endedAtTime "2026-11-05T10:19:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:18:00+00:00"^^xsd:dateTime ;
+    prov:used ex:colourReagent01,
+        ex:cuvette01,
+        ex:spectrophotometer01,
+        ex:waterSample01 ;
+    prov:wasAssociatedWith ex:analyst01,
+        ex:laboratory01 .
+
+ex:absorbanceSource a schema1:CreativeWork,
+        prov:Entity ;
+    schema1:about ex:waterSample01 ;
+    schema1:description "Raw absorbance readings of the sample and the reagent blank." ;
+    schema1:encodingFormat "text/csv" ;
+    schema1:name "Absorbance data" ;
+    schema1:url "https://example.org/cdif-prov/data/absorbance.csv" ;
+    prov:generatedAtTime "2026-11-05T10:19:00+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:absorbanceMeasurement .
+
+ex:blankCorrection a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Reagent-blank absorbance subtracted from the sample absorbance." ;
+    schema1:name "Blank correction" ;
+    schema1:position 4 ;
+    prov:endedAtTime "2026-11-05T10:21:04+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:21:00+00:00"^^xsd:dateTime ;
+    prov:used ex:absorbanceSource,
+        ex:analysisSoftware ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:calibrationCurve a schema1:CreativeWork,
+        prov:Entity ;
+    schema1:description "Linear fit of absorbance against standard concentration." ;
+    schema1:encodingFormat "text/csv" ;
+    schema1:name "Calibration curve" ;
+    schema1:url "https://example.org/cdif-prov/data/calibration-curve.csv" ;
+    prov:generatedAtTime "2026-11-05T10:05:00+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:instrumentCalibration01 .
+
+ex:calibrationDerivation a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Calibration intercept" ;
+            schema1:propertyID "calibration intercept" ;
+            schema1:value 3e-03 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Calibration slope" ;
+            schema1:propertyID "calibration slope" ;
+            schema1:unitText "L/mg" ;
+            schema1:value 4.12e-01 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Limit of detection" ;
+            schema1:propertyID "limit of detection" ;
+            schema1:unitText "mg/L" ;
+            schema1:value 2e-02 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Treatment of values below the limit of detection" ;
+            schema1:propertyID "treatment of values below the limit of detection" ;
+            schema1:value "Reported as '<0.02'; no value substituted." ] ;
+    schema1:description "Concentration computed from corrected absorbance with the calibration curve." ;
+    schema1:name "Calibration-based derivation" ;
+    schema1:position 5 ;
+    prov:endedAtTime "2026-11-05T10:23:18+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:23:14+00:00"^^xsd:dateTime ;
+    prov:used ex:analysisSoftware,
+        ex:calibrationCurve,
+        ex:correctedAbsorbance ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:calibrationStandards01 a schema1:ChemicalSubstance,
+        schema1:Thing,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q2356542> ;
+    schema1:name "Certified calibration standards, 0-2 mg/L, lot CS-0042" .
+
+ex:colourReagent01 a schema1:ChemicalSubstance,
+        schema1:Thing,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q2356542> ;
+    schema1:name "Colour-forming reagent, 2 mL" .
+
+ex:concentrationUncertainty a schema1:CreativeWork,
+        prov:Entity ;
+    schema1:encodingFormat "text/csv" ;
+    schema1:name "Concentration uncertainty" ;
+    schema1:url "https://example.org/cdif-prov/data/uncertainty.csv" ;
+    prov:wasGeneratedBy ex:uncertaintyAssessment .
+
+ex:correctedAbsorbance a schema1:CreativeWork,
+        prov:Entity ;
+    schema1:encodingFormat "text/csv" ;
+    schema1:name "Blank-corrected absorbance" ;
+    schema1:url "https://example.org/cdif-prov/data/corrected-absorbance.csv" ;
+    prov:generatedAtTime "2026-11-05T10:21:04+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:blankCorrection .
+
+ex:cuvette01 a schema1:Product,
+        schema1:Thing,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema1:name "1 cm quartz cuvette" .
+
+ex:instrumentCalibration01 a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Absorbance of five certified standards measured to fit the response line used to convert sample absorbance to concentration." ;
+    schema1:name "Instrument calibration" ;
+    schema1:position 1 ;
+    prov:endedAtTime "2026-11-05T10:05:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T09:40:00+00:00"^^xsd:dateTime ;
+    prov:used ex:calibrationStandards01,
+        ex:spectrophotometer01 ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:riverReach01 a schema1:Place,
+        prov:Entity ;
+    schema1:name "River reach the water was taken from" .
+
+ex:uncertaintyAssessment a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Coverage factor" ;
+            schema1:propertyID "coverage factor" ;
+            schema1:value 2 ] ;
+    schema1:description "Combined standard uncertainty of the concentration from calibration, repeatability and volume contributions." ;
+    schema1:name "Uncertainty assessment" ;
+    schema1:position 6 ;
+    prov:used ex:analysisSoftware,
+        ex:concentration ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:validation a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Concentration and its uncertainty checked against the acceptance criterion for the method." ;
+    schema1:name "Validation" ;
+    schema1:position 7 ;
+    prov:used ex:analysisSoftware,
+        ex:concentration,
+        ex:concentrationUncertainty,
+        ex:validationCriterion ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:validationCriterion a schema1:CreativeWork,
+        prov:Entity ;
+    schema1:name "Acceptance criterion: relative expanded uncertainty at most 10 %" ;
+    schema1:url "https://example.org/cdif-prov/methods/acceptance-criterion" .
+
+ex:validationResult a schema1:Dataset,
+        prov:Entity ;
+    schema1:description "cdifProv (schema.org) rendering of implementationTesting/prov-o-qualified/cdif_provenance_quantitative.ttl, the Dagstuhl quantitative scenario extended with illustrative sampling, instrument, reagent, tool and analyst. This file goes further than the master to exercise every slot the cdifProvenance schema offers: activity types from the CDIF activityType vocabulary, identifiers and descriptions, a full instrument description, software version, located places, procedures with steps and constants, vocabulary roles, an instrument calibration activity and a failed measurement attempt. Every fact beyond the Dagstuhl source is illustrative. See implementationTesting/APPROACHES.md for what this form keeps and loses." ;
+    schema1:name "Validation of the analyte concentration in water sample 01" ;
+    schema1:subjectOf ex:validationResult-record ;
+    prov:wasGeneratedBy ex:validation .
+
+ex:validationResult-record a schema1:Dataset ;
+    dcterms:conformsTo <https://w3id.org/cdif/provenance/2.0> ;
+    schema1:about ex:validationResult ;
+    schema1:additionalType dcat:CatalogRecord .
+
+ex:waterSampling01 a prov:Activity,
+        cdifact:Sampling ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Grab sample of surface water from the river reach, filtered on site." ;
+    schema1:name "Water sampling" ;
+    prov:atLocation [ a schema1:Place,
+                prov:Location ;
+            schema1:additionalType "river bank sampling point" ;
+            schema1:geo [ a schema1:GeoCoordinates ;
+                    schema1:latitude 4.695e+01 ;
+                    schema1:longitude 7.45e+00 ] ;
+            schema1:name "Sampling point on the river reach" ] ;
+    prov:endedAtTime "2026-11-04T08:15:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-04T08:10:00+00:00"^^xsd:dateTime ;
+    prov:used ex:riverReach01 ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:concentration a schema1:CreativeWork,
+        prov:Entity ;
+    schema1:about ex:waterSample01 ;
+    schema1:encodingFormat "text/csv" ;
+    schema1:name "Analyte concentration" ;
+    schema1:url "https://example.org/cdif-prov/data/concentration.csv" ;
+    prov:generatedAtTime "2026-11-05T10:23:18+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:calibrationDerivation .
+
+ex:spectrophotometer01 a schema1:Product,
+        schema1:Thing,
+        prov:Entity ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Measurement wavelength" ;
+            schema1:propertyID "measurement wavelength" ;
+            schema1:unitText "nm" ;
+            schema1:value 540 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Spectral bandwidth" ;
+            schema1:propertyID "spectral bandwidth" ;
+            schema1:unitText "nm" ;
+            schema1:value 2 ] ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q3099911> ;
+    schema1:category [ a schema1:DefinedTerm ;
+            schema1:name "UV-Vis spectrophotometer" ] ;
+    schema1:description "Double-beam UV-Vis spectrophotometer, 190-1100 nm." ;
+    schema1:hasPart [ a schema1:Thing ;
+            schema1:name "Silicon photodiode detector" ],
+        [ a schema1:Thing ;
+            schema1:name "Deuterium and tungsten lamps" ],
+        [ a schema1:Thing ;
+            schema1:name "Grating monochromator" ] ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID "manufacturer serial number" ;
+            schema1:value "SN-000123" ] ;
+    schema1:manufacturer [ a schema1:Organization ;
+            schema1:name "Example Instruments Ltd" ] ;
+    schema1:model [ a schema1:ProductModel ;
+            schema1:name "SP-1000" ] ;
+    schema1:name "UV-Vis spectrophotometer" ;
+    schema1:owner ex:laboratory01 .
+
+ex:laboratory01 a schema1:Organization,
+        prov:Organization ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID "laboratory accreditation number" ;
+            schema1:value "ACC-0000" ] ;
+    schema1:name "Analytical laboratory" .
+
+ex:analysisSoftware a schema1:SoftwareApplication,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q7397> ;
+    schema1:identifier "https://example.org/cdif-prov/software/analysis/2.4.1" ;
+    schema1:name "Analysis software" ;
+    schema1:softwareVersion "2.4.1" ;
+    schema1:url "https://example.org/cdif-prov/software/analysis" .
+
+ex:waterSample01 a schema1:Thing,
+        prov:Entity ;
+    schema1:description "500 mL surface water, filtered at 0.45 µm, kept at 4 °C until analysis." ;
+    schema1:name "Filtered water sample" ;
+    prov:generatedAtTime "2026-11-04T08:15:00+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:waterSampling01 .
+
+ex:concentrationRun a prov:Activity,
+        cdifact:Analysis ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Analysis of water sample 01: instrument calibration, absorbance measurement (a failed attempt and its repeat), blank correction, derivation of concentration from the calibration, uncertainty assessment and validation against the acceptance criterion." ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID "laboratory run number" ;
+            schema1:value "RUN-2026-11-05-01" ] ;
+    schema1:name "Concentration determination run" ;
+    prov:startedAtTime "2026-11-05T09:40:00+00:00"^^xsd:dateTime ;
+    prov:used ex:waterSample01 ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:analyst01 a schema1:Person,
+        prov:Person ;
+    schema1:affiliation ex:laboratory01 ;
+    schema1:contactPoint [ a schema1:ContactPoint ;
+            schema1:email "ana.lima@example.org" ] ;
+    schema1:description "Analytical chemist; trained and authorised for the laboratory's UV-Vis absorbance method (illustrative qualification: there is no structured slot for qualifications or training)." ;
+    schema1:familyName "Lima" ;
+    schema1:givenName "Ana" ;
+    schema1:honorificPrefix "Dr" ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID <https://registry.identifiers.org/registry/orcid> ;
+            schema1:url "https://orcid.org/0000-0000-0000-0000" ;
+            schema1:value "0000-0000-0000-0000" ] ;
+    schema1:name "Ana Lima" .
+
