@@ -1,0 +1,65 @@
+@prefix cdifact: <https://w3id.org/cdif/concepts/provenance/activity/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/cdif-prov/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:reflectionProcessingFlow a prov:Entity,
+        prov:Plan .
+
+ex:garciaMaria a schema1:Person,
+        prov:Person ;
+    schema1:contactPoint [ a schema1:ContactPoint ;
+            schema1:email "m.garcia@example.org" ] ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID <https://registry.identifiers.org/registry/orcid> ;
+            schema1:url "https://orcid.org/0000-0003-1234-5678" ;
+            schema1:value "0000-0003-1234-5678" ] ;
+    schema1:name "Garcia, Maria" .
+
+ex:line07Migrated a schema1:Dataset,
+        prov:Entity ;
+    schema1:dateModified "2025-06-15" ;
+    schema1:description "Stacked and migrated seismic section for line 07. The minimal scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/exampleCdifProvenance.json." ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID <https://registry.identifiers.org/registry/doi> ;
+            schema1:url "https://doi.org/10.1234/seismic-2025" ;
+            schema1:value "doi:10.1234/seismic-2025" ] ;
+    schema1:license "https://creativecommons.org/licenses/by/4.0/" ;
+    schema1:name "Processed seismic reflection data, line 07" ;
+    schema1:subjectOf ex:line07Migrated-record ;
+    prov:generatedAtTime "2025-03-20T00:00:00+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:line07Processing .
+
+ex:line07Migrated-record a schema1:Dataset ;
+    dcterms:conformsTo <https://w3id.org/cdif/core/2.0>,
+        <https://w3id.org/cdif/provenance/2.0> ;
+    schema1:about ex:line07Migrated ;
+    schema1:additionalType dcat:CatalogRecord .
+
+ex:line07Processing a prov:Activity,
+        cdifact:DataTransformation ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Raw shot gathers from line 07 were processed with a standard reflection flow: deconvolution, stacking and migration." ;
+    schema1:name "Seismic data processing, line 07" ;
+    prov:endedAtTime "2025-03-20T00:00:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-01-10T00:00:00+00:00"^^xsd:dateTime ;
+    prov:used ex:line07_raw.segy,
+        ex:seisUnix ;
+    prov:wasAssociatedWith ex:garciaMaria .
+
+ex:line07_raw.segy a schema1:MediaObject,
+        prov:Entity ;
+    schema1:description "Raw shot gathers for line 07, SEG-Y revision 1." ;
+    schema1:encodingFormat "application/octet-stream" ;
+    schema1:name "line07_raw.segy" .
+
+ex:seisUnix a schema1:SoftwareApplication,
+        prov:Entity ;
+    schema1:additionalType <https://www.wikidata.org/entity/Q7397> ;
+    schema1:name "Seismic Unix" ;
+    schema1:url "https://wiki.seismic-unix.org/" ;
+    schema1:version "44R27" .
+

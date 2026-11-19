@@ -1,0 +1,120 @@
+{
+  "@context": {
+    "cdifact": "https://w3id.org/cdif/concepts/provenance/activity/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "ex": "https://example.org/cdif-prov/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov:atTime": {"@type": "xsd:dateTime"},
+    "prov:endedAtTime": {"@type": "xsd:dateTime"},
+    "prov:startedAtTime": {"@type": "xsd:dateTime"}
+  },
+  "@id": "ex:line07Migrated",
+  "@type": [
+    "schema:Dataset",
+    "prov:Entity"
+  ],
+  "schema:identifier": {
+    "@type": "schema:PropertyValue",
+    "schema:propertyID": {"@id": "https://registry.identifiers.org/registry/doi"},
+    "schema:url": "https://doi.org/10.1234/seismic-2025",
+    "schema:value": "doi:10.1234/seismic-2025"
+  },
+  "schema:name": "Processed seismic reflection data, line 07",
+  "schema:dateModified": "2025-06-15",
+  "schema:description": "Stacked and migrated seismic section for line 07. The minimal scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/exampleCdifProvenance.json.",
+  "schema:license": "https://creativecommons.org/licenses/by/4.0/",
+  "schema:subjectOf": {
+    "@id": "ex:line07Migrated-record",
+    "@type": "schema:Dataset",
+    "dcterms:conformsTo": [
+      {"@id": "https://w3id.org/cdif/core/2.0"},
+      {"@id": "https://w3id.org/cdif/provenance/2.0"}
+    ],
+    "schema:about": {"@id": "ex:line07Migrated"},
+    "schema:additionalType": {"@id": "dcat:CatalogRecord"}
+  },
+  "prov:qualifiedGeneration": {
+    "@type": "prov:Generation",
+    "prov:activity": {
+      "@id": "ex:line07Processing",
+      "@type": [
+        "prov:Activity",
+        "cdifact:DataTransformation"
+      ],
+      "schema:name": "Seismic data processing, line 07",
+      "schema:description": "Raw shot gathers from line 07 were processed with a standard reflection flow: deconvolution, stacking and migration.",
+      "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+      "prov:endedAtTime": "2025-03-20T00:00:00+00:00",
+      "prov:qualifiedAssociation": {
+        "@type": "prov:Association",
+        "prov:agent": {
+          "@id": "ex:garciaMaria",
+          "@type": [
+            "schema:Person",
+            "prov:Person"
+          ],
+          "schema:contactPoint": {
+            "@type": "schema:ContactPoint",
+            "schema:email": "m.garcia@example.org"
+          },
+          "schema:identifier": {
+            "@type": "schema:PropertyValue",
+            "schema:propertyID": {"@id": "https://registry.identifiers.org/registry/orcid"},
+            "schema:url": "https://orcid.org/0000-0003-1234-5678",
+            "schema:value": "0000-0003-1234-5678"
+          },
+          "schema:name": "Garcia, Maria"
+        },
+        "prov:hadPlan": {
+          "@id": "ex:reflectionProcessingFlow",
+          "@type": [
+            "prov:Entity",
+            "prov:Plan"
+          ]
+        }
+      },
+      "prov:qualifiedUsage": [
+        {
+          "@type": "prov:Usage",
+          "prov:entity": {
+            "@id": "ex:line07_raw.segy",
+            "@type": [
+              "prov:Entity",
+              "schema:MediaObject"
+            ],
+            "schema:name": "line07_raw.segy",
+            "schema:description": "Raw shot gathers for line 07, SEG-Y revision 1.",
+            "schema:encodingFormat": "application/octet-stream"
+          },
+          "prov:hadRole": {
+            "@id": "ex:InputData",
+            "@type": "prov:Role"
+          }
+        },
+        {
+          "@type": "prov:Usage",
+          "prov:entity": {
+            "@id": "ex:seisUnix",
+            "@type": [
+              "prov:Entity",
+              "schema:SoftwareApplication"
+            ],
+            "schema:url": "https://wiki.seismic-unix.org/",
+            "schema:name": "Seismic Unix",
+            "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q7397"},
+            "schema:version": "44R27"
+          },
+          "prov:hadRole": {
+            "@id": "ex:Software",
+            "@type": "prov:Role"
+          }
+        }
+      ],
+      "prov:startedAtTime": "2025-01-10T00:00:00+00:00"
+    },
+    "prov:atTime": "2025-03-20T00:00:00+00:00"
+  }
+}

@@ -75,6 +75,9 @@
         },
         {
           "@id": "https://example.org/cdif-prov/chikr_FeS2.png"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fes2FitResults"
         }
       ],
       "mentions": [
@@ -280,6 +283,30 @@
         }
       ],
       "result": [
+        {
+          "@id": "https://example.org/cdif-prov/fes2FitResults"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/fit_report_FeS2.feffit"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/rmr_FeS2.png"
+        },
+        {
+          "@id": "https://example.org/cdif-prov/chikr_FeS2.png"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/cdif-prov/fes2FitResults",
+      "@type": "Dataset",
+      "name": "EXAFS fit of FeS2 (pyrite) at room temperature",
+      "description": "Results of fitting the room-temperature Fe K-edge EXAFS of FeS2 with Larch in Galaxy: the fit report and the fit plots. The computational-workflow scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on the Galaxy run in examples/FeS2-Analysis.actions.cdifprov.json.",
+      "identifier": {
+        "@id": "https://doi.org/10.0000/example-fes2-exafs"
+      },
+      "dateModified": "2024-10-23",
+      "hasPart": [
         {
           "@id": "https://example.org/cdif-prov/fit_report_FeS2.feffit"
         },
