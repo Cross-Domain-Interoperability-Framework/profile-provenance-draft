@@ -5,7 +5,7 @@
     "ex": "https://example.org/cdif-prov/",
     "bios": "https://bioschemas.org/"
   },
-  "@id": "file:///C:/GithubC/CDIF/profile-provenance/",
+  "@id": "./",
   "@type": "schema:Dataset",
   "schema:name": "Py-GC-MS/MS data for Bennu sample OREX-803003-0",
   "schema:description": "RO-Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_lab_protocol.json, the lab-protocol scenario. See implementationTesting/APPROACHES.md.",
@@ -152,7 +152,7 @@
               {"@id": "ex:bennuPreparedSample"},
               {
                 "@id": "ex:helium",
-                "@type": "file:///C:/GithubC/CDIF/profile-provenance/ChemicalSubstance",
+                "@type": "ChemicalSubstance",
                 "schema:name": "Helium",
                 "schema:description": "Carrier gas for the pyrolysis products and the GC."
               },
@@ -380,7 +380,7 @@
   ],
   "@reverse": {
     "schema:about": {
-      "@id": "file:///C:/GithubC/CDIF/profile-provenance/ro-crate-metadata.json",
+      "@id": "ro-crate-metadata.json",
       "@type": "schema:CreativeWork",
       "dcterms:conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
     }
