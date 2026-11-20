@@ -8,186 +8,264 @@
     "prov:atTime": {"@type": "xsd:dateTime"}
   },
   "@id": "ex:concentrationRun",
-  "@type": "provone:Execution",
+  "@type": [
+    "provone:Execution"
+  ],
   "prov:qualifiedAssociation": {
-    "@type": "prov:Association",
+    "@type": [
+      "prov:Association"
+    ],
     "prov:agent": {
       "@id": "ex:analyst01",
-      "@type": "provone:User"
+      "@type": [
+        "provone:User"
+      ]
     },
     "prov:hadPlan": {
       "@id": "ex:concentrationWorkflow",
-      "@type": "provone:Workflow",
+      "@type": [
+        "provone:Workflow"
+      ],
       "rdfs:label": "Concentration determination workflow",
       "provone:hasSubProgram": [
         {
           "@id": "ex:samplingProgram",
-          "@type": "provone:Program",
+          "@type": [
+            "provone:Program"
+          ],
           "rdfs:label": "Water sampling",
           "provone:hasInPort": {
             "@id": "ex:smFeatureIn",
-            "@type": "provone:Port",
+            "@type": [
+              "provone:Port"
+            ],
             "provone:connectsTo": {
               "@id": "ex:chFeature",
-              "@type": "provone:Channel"
+              "@type": [
+                "provone:Channel"
+              ]
             }
           },
           "provone:hasOutPort": {
             "@id": "ex:smSampleOut",
-            "@type": "provone:Port",
+            "@type": [
+              "provone:Port"
+            ],
             "provone:connectsTo": {
               "@id": "ex:chSample",
-              "@type": "provone:Channel"
+              "@type": [
+                "provone:Channel"
+              ]
             }
           }
         },
         {
           "@id": "ex:absorbanceProgram",
-          "@type": "provone:Program",
+          "@type": [
+            "provone:Program"
+          ],
           "rdfs:label": "Absorbance measurement",
           "provone:hasInPort": [
             {
               "@id": "ex:abSampleIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:connectsTo": {"@id": "ex:chSample"}
             },
             {
               "@id": "ex:abInstrumentIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:hasDefaultParam": {"@id": "ex:spectrophotometer01"}
             },
             {
               "@id": "ex:abReagentIn",
-              "@type": "provone:Port"
+              "@type": [
+                "provone:Port"
+              ]
             },
             {
               "@id": "ex:abToolIn",
-              "@type": "provone:Port"
+              "@type": [
+                "provone:Port"
+              ]
             }
           ],
           "provone:hasOutPort": {
             "@id": "ex:abAbsorbanceOut",
-            "@type": "provone:Port",
+            "@type": [
+              "provone:Port"
+            ],
             "provone:connectsTo": {
               "@id": "ex:chAbsorbance",
-              "@type": "provone:Channel"
+              "@type": [
+                "provone:Channel"
+              ]
             }
           }
         },
         {
           "@id": "ex:blankCorrectionProgram",
-          "@type": "provone:Program",
+          "@type": [
+            "provone:Program"
+          ],
           "rdfs:label": "Blank correction",
           "provone:hasInPort": [
             {
               "@id": "ex:bcAbsorbanceIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:connectsTo": {"@id": "ex:chAbsorbance"}
             },
             {
               "@id": "ex:bcSpecIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:hasDefaultParam": {"@id": "ex:blankCorrectionSpec"}
             }
           ],
           "provone:hasOutPort": {
             "@id": "ex:bcCorrectedOut",
-            "@type": "provone:Port",
+            "@type": [
+              "provone:Port"
+            ],
             "provone:connectsTo": {
               "@id": "ex:chCorrected",
-              "@type": "provone:Channel"
+              "@type": [
+                "provone:Channel"
+              ]
             }
           }
         },
         {
           "@id": "ex:calibrationProgram",
-          "@type": "provone:Program",
+          "@type": [
+            "provone:Program"
+          ],
           "rdfs:label": "Calibration-based derivation",
           "provone:hasInPort": [
             {
               "@id": "ex:calCorrectedIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:connectsTo": {"@id": "ex:chCorrected"}
             },
             {
               "@id": "ex:calRelationshipIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:hasDefaultParam": {"@id": "ex:calibrationRelationship"}
             }
           ],
           "provone:hasOutPort": {
             "@id": "ex:calConcentrationOut",
-            "@type": "provone:Port",
+            "@type": [
+              "provone:Port"
+            ],
             "provone:connectsTo": {
               "@id": "ex:chConcentration",
-              "@type": "provone:Channel"
+              "@type": [
+                "provone:Channel"
+              ]
             }
           }
         },
         {
           "@id": "ex:uncertaintyProgram",
-          "@type": "provone:Program",
+          "@type": [
+            "provone:Program"
+          ],
           "rdfs:label": "Uncertainty assessment",
           "provone:hasInPort": [
             {
               "@id": "ex:uncConcentrationIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:connectsTo": {"@id": "ex:chConcentration"}
             },
             {
               "@id": "ex:uncSpecIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:hasDefaultParam": {"@id": "ex:uncertaintySpec"}
             }
           ],
           "provone:hasOutPort": {
             "@id": "ex:uncUncertaintyOut",
-            "@type": "provone:Port",
+            "@type": [
+              "provone:Port"
+            ],
             "provone:connectsTo": {
               "@id": "ex:chUncertainty",
-              "@type": "provone:Channel"
+              "@type": [
+                "provone:Channel"
+              ]
             }
           }
         },
         {
           "@id": "ex:validationProgram",
-          "@type": "provone:Program",
+          "@type": [
+            "provone:Program"
+          ],
           "rdfs:label": "Validation",
           "provone:hasInPort": [
             {
               "@id": "ex:valConcentrationIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:connectsTo": {"@id": "ex:chConcentration"}
             },
             {
               "@id": "ex:valUncertaintyIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:connectsTo": {"@id": "ex:chUncertainty"}
             },
             {
               "@id": "ex:valCriterionIn",
-              "@type": "provone:Port",
+              "@type": [
+                "provone:Port"
+              ],
               "provone:hasDefaultParam": {"@id": "ex:validationCriterion"}
             }
           ],
           "provone:hasOutPort": {
             "@id": "ex:valResultOut",
-            "@type": "provone:Port",
+            "@type": [
+              "provone:Port"
+            ],
             "provone:connectsTo": {
               "@id": "ex:chValidation",
-              "@type": "provone:Channel"
+              "@type": [
+                "provone:Channel"
+              ]
             }
           }
         }
       ],
       "provone:hasInPort": {
         "@id": "ex:wfFeatureIn",
-        "@type": "provone:Port",
+        "@type": [
+          "provone:Port"
+        ],
         "provone:connectsTo": {"@id": "ex:chFeature"}
       },
       "provone:hasOutPort": {
         "@id": "ex:wfValidationOut",
-        "@type": "provone:Port",
+        "@type": [
+          "provone:Port"
+        ],
         "provone:connectsTo": {"@id": "ex:chValidation"}
       }
     }
@@ -196,35 +274,51 @@
     "provone:wasPartOf": [
       {
         "@id": "ex:waterSampling01",
-        "@type": "provone:Execution",
+        "@type": [
+          "provone:Execution"
+        ],
         "prov:qualifiedAssociation": {
-          "@type": "prov:Association",
+          "@type": [
+            "prov:Association"
+          ],
           "prov:agent": {"@id": "ex:analyst01"},
           "prov:hadPlan": {"@id": "ex:samplingProgram"}
         },
         "prov:qualifiedUsage": {
-          "@type": "prov:Usage",
+          "@type": [
+            "prov:Usage"
+          ],
           "provone:hadInPort": {"@id": "ex:smFeatureIn"},
           "prov:entity": {"@id": "ex:riverReach01"}
         }
       },
       {
         "@id": "ex:absorbanceMeasurement",
-        "@type": "provone:Execution",
+        "@type": [
+          "provone:Execution"
+        ],
         "prov:qualifiedAssociation": {
-          "@type": "prov:Association",
+          "@type": [
+            "prov:Association"
+          ],
           "prov:agent": {"@id": "ex:analyst01"},
           "prov:hadPlan": {"@id": "ex:absorbanceProgram"}
         },
         "prov:qualifiedUsage": [
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:abSampleIn"},
             "prov:entity": {
               "@id": "ex:waterSample01",
-              "@type": "provone:Data",
+              "@type": [
+                "provone:Data"
+              ],
               "prov:qualifiedGeneration": {
-                "@type": "prov:Generation",
+                "@type": [
+                  "prov:Generation"
+                ],
                 "provone:hadOutPort": {"@id": "ex:smSampleOut"},
                 "prov:activity": {"@id": "ex:waterSampling01"},
                 "prov:atTime": "2026-11-04T08:15:00Z"
@@ -232,17 +326,23 @@
             }
           },
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:abInstrumentIn"},
             "prov:entity": {"@id": "ex:spectrophotometer01"}
           },
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:abReagentIn"},
             "prov:entity": {"@id": "ex:colourReagent01"}
           },
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:abToolIn"},
             "prov:entity": {"@id": "ex:cuvette01"}
           }
@@ -250,21 +350,31 @@
       },
       {
         "@id": "ex:blankCorrection",
-        "@type": "provone:Execution",
+        "@type": [
+          "provone:Execution"
+        ],
         "prov:qualifiedAssociation": {
-          "@type": "prov:Association",
+          "@type": [
+            "prov:Association"
+          ],
           "prov:agent": {"@id": "ex:analysisSoftware"},
           "prov:hadPlan": {"@id": "ex:blankCorrectionProgram"}
         },
         "prov:qualifiedUsage": [
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:bcAbsorbanceIn"},
             "prov:entity": {
               "@id": "ex:absorbanceSource",
-              "@type": "provone:Data",
+              "@type": [
+                "provone:Data"
+              ],
               "prov:qualifiedGeneration": {
-                "@type": "prov:Generation",
+                "@type": [
+                  "prov:Generation"
+                ],
                 "provone:hadOutPort": {"@id": "ex:abAbsorbanceOut"},
                 "prov:activity": {"@id": "ex:absorbanceMeasurement"},
                 "prov:atTime": "2026-11-05T10:19:00Z"
@@ -272,7 +382,9 @@
             }
           },
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:bcSpecIn"},
             "prov:entity": {"@id": "ex:blankCorrectionSpec"}
           }
@@ -280,21 +392,31 @@
       },
       {
         "@id": "ex:calibrationDerivation",
-        "@type": "provone:Execution",
+        "@type": [
+          "provone:Execution"
+        ],
         "prov:qualifiedAssociation": {
-          "@type": "prov:Association",
+          "@type": [
+            "prov:Association"
+          ],
           "prov:agent": {"@id": "ex:analysisSoftware"},
           "prov:hadPlan": {"@id": "ex:calibrationProgram"}
         },
         "prov:qualifiedUsage": [
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:calCorrectedIn"},
             "prov:entity": {
               "@id": "ex:correctedAbsorbance",
-              "@type": "provone:Data",
+              "@type": [
+                "provone:Data"
+              ],
               "prov:qualifiedGeneration": {
-                "@type": "prov:Generation",
+                "@type": [
+                  "prov:Generation"
+                ],
                 "provone:hadOutPort": {"@id": "ex:bcCorrectedOut"},
                 "prov:activity": {"@id": "ex:blankCorrection"},
                 "prov:atTime": "2026-11-05T10:21:04Z"
@@ -302,7 +424,9 @@
             }
           },
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:calRelationshipIn"},
             "prov:entity": {"@id": "ex:calibrationRelationship"}
           }
@@ -310,21 +434,31 @@
       },
       {
         "@id": "ex:uncertaintyAssessment",
-        "@type": "provone:Execution",
+        "@type": [
+          "provone:Execution"
+        ],
         "prov:qualifiedAssociation": {
-          "@type": "prov:Association",
+          "@type": [
+            "prov:Association"
+          ],
           "prov:agent": {"@id": "ex:analysisSoftware"},
           "prov:hadPlan": {"@id": "ex:uncertaintyProgram"}
         },
         "prov:qualifiedUsage": [
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:uncConcentrationIn"},
             "prov:entity": {
               "@id": "ex:concentration",
-              "@type": "provone:Data",
+              "@type": [
+                "provone:Data"
+              ],
               "prov:qualifiedGeneration": {
-                "@type": "prov:Generation",
+                "@type": [
+                  "prov:Generation"
+                ],
                 "provone:hadOutPort": {"@id": "ex:calConcentrationOut"},
                 "prov:activity": {"@id": "ex:calibrationDerivation"},
                 "prov:atTime": "2026-11-05T10:23:18Z"
@@ -332,7 +466,9 @@
             }
           },
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:uncSpecIn"},
             "prov:entity": {"@id": "ex:uncertaintySpec"}
           }
@@ -340,33 +476,47 @@
       },
       {
         "@id": "ex:validation",
-        "@type": "provone:Execution",
+        "@type": [
+          "provone:Execution"
+        ],
         "prov:qualifiedAssociation": {
-          "@type": "prov:Association",
+          "@type": [
+            "prov:Association"
+          ],
           "prov:agent": {"@id": "ex:analysisSoftware"},
           "prov:hadPlan": {"@id": "ex:validationProgram"}
         },
         "prov:qualifiedUsage": [
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:valConcentrationIn"},
             "prov:entity": {"@id": "ex:concentration"}
           },
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:valUncertaintyIn"},
             "prov:entity": {
               "@id": "ex:concentrationUncertainty",
-              "@type": "provone:Data",
+              "@type": [
+                "provone:Data"
+              ],
               "prov:qualifiedGeneration": {
-                "@type": "prov:Generation",
+                "@type": [
+                  "prov:Generation"
+                ],
                 "provone:hadOutPort": {"@id": "ex:uncUncertaintyOut"},
                 "prov:activity": {"@id": "ex:uncertaintyAssessment"}
               }
             }
           },
           {
-            "@type": "prov:Usage",
+            "@type": [
+              "prov:Usage"
+            ],
             "provone:hadInPort": {"@id": "ex:valCriterionIn"},
             "prov:entity": {"@id": "ex:validationCriterion"}
           }
@@ -377,9 +527,13 @@
   "@included": [
     {
       "@id": "ex:validationResult",
-      "@type": "provone:Data",
+      "@type": [
+        "provone:Data"
+      ],
       "prov:qualifiedGeneration": {
-        "@type": "prov:Generation",
+        "@type": [
+          "prov:Generation"
+        ],
         "provone:hadOutPort": {"@id": "ex:valResultOut"},
         "prov:activity": {"@id": "ex:validation"}
       }

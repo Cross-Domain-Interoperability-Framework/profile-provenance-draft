@@ -20,7 +20,9 @@
   "schema:description": "Raw pyrolysis-GC-MS/MS data (full scan and MRM) for OSIRIS-REx sample OREX-803003-0. The lab-protocol scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/Bennu-py-GC-MSarc.cdifprov.json.",
   "schema:name": "Py-GC-MS/MS data for Bennu sample OREX-803003-0",
   "prov:qualifiedGeneration": {
-    "@type": "prov:Generation",
+    "@type": [
+      "prov:Generation"
+    ],
     "prov:activity": {
       "@id": "ex:bennuPyGCMSRun",
       "@type": [
@@ -32,7 +34,9 @@
       "schema:name": "Py-GC-MS/MS analysis of OREX-803003-0",
       "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
       "prov:qualifiedAssociation": {
-        "@type": "prov:Association",
+        "@type": [
+          "prov:Association"
+        ],
         "prov:agent": {
           "@id": "ex:NASA_GSFC",
           "@type": [
@@ -51,7 +55,9 @@
         }
       },
       "prov:qualifiedUsage": {
-        "@type": "prov:Usage",
+        "@type": [
+          "prov:Usage"
+        ],
         "prov:entity": {
           "@id": "ex:OREX-803003-0",
           "@type": [
@@ -60,12 +66,16 @@
           ],
           "schema:description": "About 1 mg aggregate of material from asteroid Bennu, collected by the OSIRIS-REx Touch-and-Go Sample Acquisition Mechanism (TAGSAM).",
           "schema:name": "Bennu asteroid sample OREX-803003-0",
-          "schema:additionalType": {"@id": "bios:Sample"},
+          "schema:additionalType": [
+            {"@id": "bios:Sample"}
+          ],
           "schema:identifier": "OREX-803003-0"
         },
         "prov:hadRole": {
           "@id": "ex:InputData",
-          "@type": "prov:Role"
+          "@type": [
+            "prov:Role"
+          ]
         }
       },
       "prov:endedAtTime": "2023-11-21T23:59:59+00:00",
@@ -73,38 +83,50 @@
       "@reverse": {
         "dcterms:isPartOf": {
           "@id": "ex:bennuMSDetection",
-          "@type": "prov:Activity",
+          "@type": [
+            "prov:Activity"
+          ],
           "schema:description": "Simultaneous full scan (m/z 50–500, EI positive, 0.100 s scan time) and timed SRM/MRM (38 compounds, 2–3 transitions each). Ion source and transfer line at 300 °C; detector gain 100,000.",
           "schema:name": "Dual-mode MS detection (full scan and MRM)",
           "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
           "schema:additionalProperty": [
             {
-              "@type": "schema:PropertyValue",
+              "@type": [
+                "schema:PropertyValue"
+              ],
               "schema:name": "Full scan time",
               "schema:propertyID": "full scan time",
               "schema:unitText": "s",
               "schema:value": 0.1
             },
             {
-              "@type": "schema:PropertyValue",
+              "@type": [
+                "schema:PropertyValue"
+              ],
               "schema:name": "Ionization mode",
               "schema:propertyID": {"@id": "ex:param_ionizationMode"},
               "schema:value": "electron ionization (EI), positive polarity"
             },
             {
-              "@type": "schema:PropertyValue",
+              "@type": [
+                "schema:PropertyValue"
+              ],
               "schema:name": "Full scan range",
               "schema:propertyID": {"@id": "ex:param_scanRange"},
               "schema:value": "m/z 50–500"
             },
             {
-              "@type": "schema:PropertyValue",
+              "@type": [
+                "schema:PropertyValue"
+              ],
               "schema:name": "MRM target compounds",
               "schema:propertyID": {"@id": "ex:param_mrmCompoundCount"},
               "schema:value": 38
             },
             {
-              "@type": "schema:PropertyValue",
+              "@type": [
+                "schema:PropertyValue"
+              ],
               "schema:name": "Ion source temperature",
               "schema:propertyID": "ion source temperature",
               "schema:unitText": "°C",
@@ -113,7 +135,9 @@
           ],
           "schema:position": 4,
           "prov:qualifiedAssociation": {
-            "@type": "prov:Association",
+            "@type": [
+              "prov:Association"
+            ],
             "prov:agent": {"@id": "ex:NASA_GSFC"},
             "prov:hadPlan": {
               "@id": "ex:MSDetection_Protocol",
@@ -125,7 +149,9 @@
           },
           "prov:qualifiedUsage": [
             {
-              "@type": "prov:Usage",
+              "@type": [
+                "prov:Usage"
+              ],
               "prov:entity": {
                 "@id": "ex:tsqMassSpectrometer",
                 "@type": [
@@ -134,17 +160,23 @@
                 ],
                 "schema:description": "TSQ triple-quadrupole MS, operated in EI mode, positive polarity, with simultaneous full scan and timed SRM/MRM.",
                 "schema:name": "Thermo Scientific TSQ triple-quadrupole mass spectrometer",
-                "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"},
+                "schema:additionalType": [
+                  {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                ],
                 "schema:serialNumber": "TSQ96CI2301004",
                 "schema:url": "https://www.thermofisher.com/"
               },
               "prov:hadRole": {
                 "@id": "ex:Instrument",
-                "@type": "prov:Role"
+                "@type": [
+                  "prov:Role"
+                ]
               }
             },
             {
-              "@type": "prov:Usage",
+              "@type": [
+                "prov:Usage"
+              ],
               "prov:entity": {
                 "@id": "ex:bennuSeparatedEluent",
                 "@type": [
@@ -154,36 +186,48 @@
                 "schema:description": "Time-resolved stream of separated compounds eluting from the GC column into the mass spectrometer.",
                 "schema:name": "Chromatographically separated eluent",
                 "prov:qualifiedGeneration": {
-                  "@type": "prov:Generation",
+                  "@type": [
+                    "prov:Generation"
+                  ],
                   "prov:activity": {
                     "@id": "ex:bennuGCSeparation",
-                    "@type": "prov:Activity",
+                    "@type": [
+                      "prov:Activity"
+                    ],
                     "schema:description": "Chromatographic separation on an Rtx-5ms column (30 m × 0.250 mm × 0.50 µm, 5 m guard), with split injection 10:1 at 300 °C and helium carrier at 1.500 mL/min. Run time 87.79 min.",
                     "schema:name": "GC separation on an Rtx-5ms column",
                     "dcterms:isPartOf": {"@id": "ex:bennuPyGCMSRun"},
                     "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
                     "schema:additionalProperty": [
                       {
-                        "@type": "schema:PropertyValue",
+                        "@type": [
+                          "schema:PropertyValue"
+                        ],
                         "schema:name": "Inlet temperature",
                         "schema:propertyID": {"@id": "ex:param_inletTemp"},
                         "schema:unitText": "°C",
                         "schema:value": 300
                       },
                       {
-                        "@type": "schema:PropertyValue",
+                        "@type": [
+                          "schema:PropertyValue"
+                        ],
                         "schema:name": "Column",
                         "schema:propertyID": {"@id": "ex:param_columnType"},
                         "schema:value": "Rtx-5ms, 30 m × 0.250 mm × 0.50 µm + 5 m guard"
                       },
                       {
-                        "@type": "schema:PropertyValue",
+                        "@type": [
+                          "schema:PropertyValue"
+                        ],
                         "schema:name": "Split ratio",
                         "schema:propertyID": {"@id": "ex:param_splitRatio"},
                         "schema:value": "10:1"
                       },
                       {
-                        "@type": "schema:PropertyValue",
+                        "@type": [
+                          "schema:PropertyValue"
+                        ],
                         "schema:name": "Carrier gas flow",
                         "schema:propertyID": {"@id": "ex:param_carrierGasFlow"},
                         "schema:unitText": "mL/min",
@@ -192,7 +236,9 @@
                     ],
                     "schema:position": 3,
                     "prov:qualifiedAssociation": {
-                      "@type": "prov:Association",
+                      "@type": [
+                        "prov:Association"
+                      ],
                       "prov:agent": {"@id": "ex:NASA_GSFC"},
                       "prov:hadPlan": {
                         "@id": "ex:GCSeparation_Protocol",
@@ -204,7 +250,9 @@
                     },
                     "prov:qualifiedUsage": [
                       {
-                        "@type": "prov:Usage",
+                        "@type": [
+                          "prov:Usage"
+                        ],
                         "prov:entity": {
                           "@id": "ex:gasChromatograph",
                           "@type": [
@@ -213,12 +261,16 @@
                           ],
                           "schema:description": "GC with an Rtx-5ms (5% diphenyl / 95% dimethyl polysiloxane) fused silica capillary column, 30 m × 0.250 mm × 0.50 µm, with a 5 m × 0.250 mm guard column.",
                           "schema:name": "Gas chromatograph with Rtx-5ms column",
-                          "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                          "schema:additionalType": [
+                            {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                          ]
                         },
                         "prov:hadRole": {"@id": "ex:Instrument"}
                       },
                       {
-                        "@type": "prov:Usage",
+                        "@type": [
+                          "prov:Usage"
+                        ],
                         "prov:entity": {
                           "@id": "ex:bennuPyrolysisProducts",
                           "@type": [
@@ -228,31 +280,41 @@
                           "schema:description": "Thermally extracted volatiles from flash pyrolysis, carried in helium through the heated transfer line at 300 °C to the GC inlet.",
                           "schema:name": "Pyrolysis volatiles in helium carrier stream",
                           "prov:qualifiedGeneration": {
-                            "@type": "prov:Generation",
+                            "@type": [
+                              "prov:Generation"
+                            ],
                             "prov:activity": {
                               "@id": "ex:bennuPyrolysis",
-                              "@type": "prov:Activity",
+                              "@type": [
+                                "prov:Activity"
+                              ],
                               "schema:description": "Flash-heated at 10 °C/ms to about 600 °C. The volatiles were carried in helium through the heated transfer line (300 °C) to the GC inlet. Bulk samples may contain soluble organic matter, which produces thermal degradation products and rearrangements.",
                               "schema:name": "Flash pyrolysis at about 600 °C",
                               "dcterms:isPartOf": {"@id": "ex:bennuPyGCMSRun"},
                               "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
                               "schema:additionalProperty": [
                                 {
-                                  "@type": "schema:PropertyValue",
+                                  "@type": [
+                                    "schema:PropertyValue"
+                                  ],
                                   "schema:name": "Target temperature",
                                   "schema:propertyID": {"@id": "ex:param_pyrolysisTemp"},
                                   "schema:unitText": "°C",
                                   "schema:value": 600
                                 },
                                 {
-                                  "@type": "schema:PropertyValue",
+                                  "@type": [
+                                    "schema:PropertyValue"
+                                  ],
                                   "schema:name": "Transfer line temperature",
                                   "schema:propertyID": {"@id": "ex:param_transferLineTemp"},
                                   "schema:unitText": "°C",
                                   "schema:value": 300
                                 },
                                 {
-                                  "@type": "schema:PropertyValue",
+                                  "@type": [
+                                    "schema:PropertyValue"
+                                  ],
                                   "schema:name": "Heating rate",
                                   "schema:propertyID": {"@id": "ex:param_pyrolysisRate"},
                                   "schema:unitText": "°C/ms",
@@ -261,7 +323,9 @@
                               ],
                               "schema:position": 2,
                               "prov:qualifiedAssociation": {
-                                "@type": "prov:Association",
+                                "@type": [
+                                  "prov:Association"
+                                ],
                                 "prov:agent": {"@id": "ex:NASA_GSFC"},
                                 "prov:hadPlan": {
                                   "@id": "ex:Pyrolysis_Protocol",
@@ -273,7 +337,9 @@
                               },
                               "prov:qualifiedUsage": [
                                 {
-                                  "@type": "prov:Usage",
+                                  "@type": [
+                                    "prov:Usage"
+                                  ],
                                   "prov:entity": {
                                     "@id": "ex:helium",
                                     "@type": [
@@ -282,15 +348,21 @@
                                     ],
                                     "schema:description": "Carrier gas for the pyrolysis products and the GC.",
                                     "schema:name": "Helium",
-                                    "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q2356542"}
+                                    "schema:additionalType": [
+                                      {"@id": "https://www.wikidata.org/entity/Q2356542"}
+                                    ]
                                   },
                                   "prov:hadRole": {
                                     "@id": "ex:Reagent",
-                                    "@type": "prov:Role"
+                                    "@type": [
+                                      "prov:Role"
+                                    ]
                                   }
                                 },
                                 {
-                                  "@type": "prov:Usage",
+                                  "@type": [
+                                    "prov:Usage"
+                                  ],
                                   "prov:entity": {
                                     "@id": "ex:pyrolysisOven",
                                     "@type": [
@@ -299,12 +371,16 @@
                                     ],
                                     "schema:description": "Pyrolysis front-end interface coupled to the GC-MS. Flash heats at 10 °C/ms to temperatures up to 1300 °C.",
                                     "schema:name": "Pyrolysis oven",
-                                    "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                                    "schema:additionalType": [
+                                      {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                                    ]
                                   },
                                   "prov:hadRole": {"@id": "ex:Instrument"}
                                 },
                                 {
-                                  "@type": "prov:Usage",
+                                  "@type": [
+                                    "prov:Usage"
+                                  ],
                                   "prov:entity": {
                                     "@id": "ex:bennuPreparedSample",
                                     "@type": [
@@ -314,24 +390,34 @@
                                     "schema:description": "About 1 mg of Bennu aggregate, loaded and weighed in a quartz tube, ready for pyrolysis.",
                                     "schema:name": "Prepared sample in quartz tube",
                                     "prov:qualifiedGeneration": {
-                                      "@type": "prov:Generation",
+                                      "@type": [
+                                        "prov:Generation"
+                                      ],
                                       "prov:activity": {
                                         "@id": "ex:bennuSamplePrep",
-                                        "@type": "prov:Activity",
+                                        "@type": [
+                                          "prov:Activity"
+                                        ],
                                         "schema:description": "About 1 mg of bulk aggregate from the TAGSAM collection device was loaded and weighed inside a quartz tube, and the tube was placed into the pyrolysis oven interfaced with the GC-MS.",
                                         "schema:name": "Load the sample into a quartz tube",
                                         "dcterms:isPartOf": {"@id": "ex:bennuPyGCMSRun"},
                                         "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
-                                        "schema:additionalProperty": {
-                                          "@type": "schema:PropertyValue",
-                                          "schema:name": "Sample mass",
-                                          "schema:propertyID": {"@id": "ex:param_sampleMass"},
-                                          "schema:unitText": "mg",
-                                          "schema:value": 1
-                                        },
+                                        "schema:additionalProperty": [
+                                          {
+                                            "@type": [
+                                              "schema:PropertyValue"
+                                            ],
+                                            "schema:name": "Sample mass",
+                                            "schema:propertyID": {"@id": "ex:param_sampleMass"},
+                                            "schema:unitText": "mg",
+                                            "schema:value": 1
+                                          }
+                                        ],
                                         "schema:position": 1,
                                         "prov:qualifiedAssociation": {
-                                          "@type": "prov:Association",
+                                          "@type": [
+                                            "prov:Association"
+                                          ],
                                           "prov:agent": {"@id": "ex:NASA_GSFC"},
                                           "prov:hadPlan": {
                                             "@id": "ex:SamplePrep_Protocol",
@@ -343,12 +429,16 @@
                                         },
                                         "prov:qualifiedUsage": [
                                           {
-                                            "@type": "prov:Usage",
+                                            "@type": [
+                                              "prov:Usage"
+                                            ],
                                             "prov:entity": {"@id": "ex:pyrolysisOven"},
                                             "prov:hadRole": {"@id": "ex:Instrument"}
                                           },
                                           {
-                                            "@type": "prov:Usage",
+                                            "@type": [
+                                              "prov:Usage"
+                                            ],
                                             "prov:entity": {
                                               "@id": "ex:quartzTubes",
                                               "@type": [
@@ -357,38 +447,50 @@
                                               ],
                                               "schema:description": "Quartz tubes used for loading and weighing solid samples for pyrolysis.",
                                               "schema:name": "Quartz sample tubes",
-                                              "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                                              "schema:additionalType": [
+                                                {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                                              ]
                                             },
                                             "prov:hadRole": {"@id": "ex:Instrument"}
                                           },
                                           {
-                                            "@type": "prov:Usage",
+                                            "@type": [
+                                              "prov:Usage"
+                                            ],
                                             "prov:entity": {"@id": "ex:OREX-803003-0"},
                                             "prov:hadRole": {"@id": "ex:InputData"}
                                           }
                                         ]
                                       }
                                     },
-                                    "schema:additionalType": {"@id": "bios:Sample"}
+                                    "schema:additionalType": [
+                                      {"@id": "bios:Sample"}
+                                    ]
                                   },
                                   "prov:hadRole": {"@id": "ex:InputData"}
                                 }
                               ]
                             }
                           },
-                          "schema:additionalType": {"@id": "bios:Sample"}
+                          "schema:additionalType": [
+                            {"@id": "bios:Sample"}
+                          ]
                         },
                         "prov:hadRole": {"@id": "ex:InputData"}
                       },
                       {
-                        "@type": "prov:Usage",
+                        "@type": [
+                          "prov:Usage"
+                        ],
                         "prov:entity": {"@id": "ex:helium"},
                         "prov:hadRole": {"@id": "ex:Reagent"}
                       }
                     ]
                   }
                 },
-                "schema:additionalType": {"@id": "bios:Sample"}
+                "schema:additionalType": [
+                  {"@id": "bios:Sample"}
+                ]
               },
               "prov:hadRole": {"@id": "ex:InputData"}
             }
@@ -401,9 +503,15 @@
   "schema:dateModified": "2023-11-21",
   "schema:subjectOf": {
     "@id": "ex:bennuPyGCMSData-record",
-    "@type": "schema:Dataset",
-    "schema:additionalType": {"@id": "dcat:CatalogRecord"},
-    "dcterms:conformsTo": {"@id": "https://w3id.org/cdif/provenance/2.0"},
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {"@id": "dcat:CatalogRecord"}
+    ],
+    "dcterms:conformsTo": [
+      {"@id": "https://w3id.org/cdif/provenance/2.0"}
+    ],
     "schema:about": {"@id": "ex:bennuPyGCMSData"}
   },
   "@included": [
@@ -417,7 +525,9 @@
       "schema:encodingFormat": "application/x-netcdf",
       "schema:name": "20231121_002_OREX-803003-0.cdf",
       "prov:qualifiedGeneration": {
-        "@type": "prov:Generation",
+        "@type": [
+          "prov:Generation"
+        ],
         "prov:activity": {"@id": "ex:bennuMSDetection"}
       }
     }

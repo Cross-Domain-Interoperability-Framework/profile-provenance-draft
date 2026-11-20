@@ -19,10 +19,14 @@
   "schema:name": "Validation of the analyte concentration in water sample 01",
   "schema:description": "cdifProv (schema.org) rendering of implementationTesting/prov-o-qualified/cdif_provenance_quantitative.ttl, the Dagstuhl quantitative scenario extended with illustrative sampling, instrument, reagent, tool and analyst. This file goes further than the master to exercise every slot the cdifProvenance schema offers: activity types from the CDIF activityType vocabulary, identifiers and descriptions, a full instrument description, software version, located places, procedures with steps and constants, vocabulary roles, an instrument calibration activity and a failed measurement attempt. Every fact beyond the Dagstuhl source is illustrative. See implementationTesting/APPROACHES.md for what this form keeps and loses.",
   "prov:qualifiedGeneration": {
-    "@type": "prov:Generation",
+    "@type": [
+      "prov:Generation"
+    ],
     "prov:activity": {
       "@id": "ex:validation",
-      "@type": "prov:Activity",
+      "@type": [
+        "prov:Activity"
+      ],
       "dcterms:isPartOf": {
         "@id": "ex:concentrationRun",
         "@type": [
@@ -32,7 +36,9 @@
         "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
         "schema:name": "Concentration determination run",
         "prov:qualifiedAssociation": {
-          "@type": "prov:Association",
+          "@type": [
+            "prov:Association"
+          ],
           "prov:agent": {
             "@id": "ex:analyst01",
             "@type": [
@@ -42,7 +48,9 @@
             "schema:name": "Ana Lima",
             "schema:description": "Analytical chemist; trained and authorised for the laboratory's UV-Vis absorbance method (illustrative qualification: there is no structured slot for qualifications or training).",
             "schema:identifier": {
-              "@type": "schema:PropertyValue",
+              "@type": [
+                "schema:PropertyValue"
+              ],
               "schema:propertyID": {"@id": "https://registry.identifiers.org/registry/orcid"},
               "schema:value": "0000-0000-0000-0000",
               "schema:url": "https://orcid.org/0000-0000-0000-0000"
@@ -55,13 +63,17 @@
               ],
               "schema:name": "Analytical laboratory",
               "schema:identifier": {
-                "@type": "schema:PropertyValue",
+                "@type": [
+                  "schema:PropertyValue"
+                ],
                 "schema:propertyID": "laboratory accreditation number",
                 "schema:value": "ACC-0000"
               }
             },
             "schema:contactPoint": {
-              "@type": "schema:ContactPoint",
+              "@type": [
+                "schema:ContactPoint"
+              ],
               "schema:email": "ana.lima@example.org"
             },
             "schema:familyName": "Lima",
@@ -70,7 +82,9 @@
           },
           "prov:hadRole": {
             "@id": "ex:Supervisor",
-            "@type": "prov:Role"
+            "@type": [
+              "prov:Role"
+            ]
           },
           "prov:hadPlan": {
             "@id": "ex:concentrationDeterminationPlan",
@@ -81,7 +95,9 @@
           }
         },
         "prov:qualifiedUsage": {
-          "@type": "prov:Usage",
+          "@type": [
+            "prov:Usage"
+          ],
           "prov:entity": {
             "@id": "ex:waterSample01",
             "@type": [
@@ -91,7 +107,9 @@
             "schema:name": "Filtered water sample",
             "schema:description": "500 mL surface water, filtered at 0.45 µm, kept at 4 °C until analysis.",
             "prov:qualifiedGeneration": {
-              "@type": "prov:Generation",
+              "@type": [
+                "prov:Generation"
+              ],
               "prov:activity": {
                 "@id": "ex:waterSampling01",
                 "@type": [
@@ -102,15 +120,21 @@
                 "schema:name": "Water sampling",
                 "prov:endedAtTime": "2026-11-04T08:15:00+00:00",
                 "prov:qualifiedAssociation": {
-                  "@type": "prov:Association",
+                  "@type": [
+                    "prov:Association"
+                  ],
                   "prov:agent": {"@id": "ex:analyst01"},
                   "prov:hadRole": {
                     "@id": "ex:DataCollector",
-                    "@type": "prov:Role"
+                    "@type": [
+                      "prov:Role"
+                    ]
                   }
                 },
                 "prov:qualifiedUsage": {
-                  "@type": "prov:Usage",
+                  "@type": [
+                    "prov:Usage"
+                  ],
                   "prov:entity": {
                     "@id": "ex:riverReach01",
                     "@type": [
@@ -121,7 +145,9 @@
                   },
                   "prov:hadRole": {
                     "@id": "ex:InputData",
-                    "@type": "prov:Role"
+                    "@type": [
+                      "prov:Role"
+                    ]
                   }
                 },
                 "prov:startedAtTime": "2026-11-04T08:10:00+00:00",
@@ -132,9 +158,13 @@
                     "prov:Location"
                   ],
                   "schema:name": "Sampling point on the river reach",
-                  "schema:additionalType": "river bank sampling point",
+                  "schema:additionalType": [
+                    "river bank sampling point"
+                  ],
                   "schema:geo": {
-                    "@type": "schema:GeoCoordinates",
+                    "@type": [
+                      "schema:GeoCoordinates"
+                    ],
                     "schema:latitude": 46.95,
                     "schema:longitude": 7.45
                   }
@@ -148,25 +178,33 @@
         "prov:startedAtTime": "2026-11-05T09:40:00+00:00",
         "schema:description": "Analysis of water sample 01: instrument calibration, absorbance measurement (a failed attempt and its repeat), blank correction, derivation of concentration from the calibration, uncertainty assessment and validation against the acceptance criterion.",
         "schema:identifier": {
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "schema:propertyID": "laboratory run number",
           "schema:value": "RUN-2026-11-05-01"
         },
         "@reverse": {
           "dcterms:isPartOf": {
             "@id": "ex:absorbanceMeasurementAttempt01",
-            "@type": "prov:Activity",
+            "@type": [
+              "prov:Activity"
+            ],
             "schema:actionStatus": {"@id": "schema:FailedActionStatus"},
             "schema:error": "Air bubble in the cuvette gave an unstable reading; the reading was rejected and the measurement repeated.",
             "schema:name": "Absorbance measurement, first attempt",
             "schema:position": 2,
             "prov:endedAtTime": "2026-11-05T10:13:00+00:00",
             "prov:qualifiedAssociation": {
-              "@type": "prov:Association",
+              "@type": [
+                "prov:Association"
+              ],
               "prov:agent": {"@id": "ex:analyst01"}
             },
             "prov:qualifiedUsage": {
-              "@type": "prov:Usage",
+              "@type": [
+                "prov:Usage"
+              ],
               "prov:entity": {"@id": "ex:waterSample01"},
               "prov:hadRole": {"@id": "ex:InputData"}
             },
@@ -178,13 +216,17 @@
       "schema:name": "Validation",
       "schema:position": 7,
       "prov:qualifiedAssociation": {
-        "@type": "prov:Association",
+        "@type": [
+          "prov:Association"
+        ],
         "prov:agent": {"@id": "ex:analyst01"},
         "prov:hadRole": {"@id": "ex:Supervisor"}
       },
       "prov:qualifiedUsage": [
         {
-          "@type": "prov:Usage",
+          "@type": [
+            "prov:Usage"
+          ],
           "prov:entity": {
             "@id": "ex:concentration",
             "@type": [
@@ -196,21 +238,29 @@
             "schema:encodingFormat": "text/csv",
             "schema:url": "https://example.org/cdif-prov/data/concentration.csv",
             "prov:qualifiedGeneration": {
-              "@type": "prov:Generation",
+              "@type": [
+                "prov:Generation"
+              ],
               "prov:activity": {
                 "@id": "ex:calibrationDerivation",
-                "@type": "prov:Activity",
+                "@type": [
+                  "prov:Activity"
+                ],
                 "dcterms:isPartOf": {"@id": "ex:concentrationRun"},
                 "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
                 "schema:name": "Calibration-based derivation",
                 "schema:position": 5,
                 "prov:endedAtTime": "2026-11-05T10:23:18+00:00",
                 "prov:qualifiedAssociation": {
-                  "@type": "prov:Association",
+                  "@type": [
+                    "prov:Association"
+                  ],
                   "prov:agent": {"@id": "ex:analyst01"},
                   "prov:hadRole": {
                     "@id": "ex:Researcher",
-                    "@type": "prov:Role"
+                    "@type": [
+                      "prov:Role"
+                    ]
                   },
                   "prov:hadPlan": {
                     "@id": "ex:calibrationRelationship",
@@ -222,7 +272,9 @@
                 },
                 "prov:qualifiedUsage": [
                   {
-                    "@type": "prov:Usage",
+                    "@type": [
+                      "prov:Usage"
+                    ],
                     "prov:entity": {
                       "@id": "ex:correctedAbsorbance",
                       "@type": [
@@ -233,17 +285,23 @@
                       "schema:encodingFormat": "text/csv",
                       "schema:url": "https://example.org/cdif-prov/data/corrected-absorbance.csv",
                       "prov:qualifiedGeneration": {
-                        "@type": "prov:Generation",
+                        "@type": [
+                          "prov:Generation"
+                        ],
                         "prov:activity": {
                           "@id": "ex:blankCorrection",
-                          "@type": "prov:Activity",
+                          "@type": [
+                            "prov:Activity"
+                          ],
                           "dcterms:isPartOf": {"@id": "ex:concentrationRun"},
                           "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
                           "schema:name": "Blank correction",
                           "schema:position": 4,
                           "prov:endedAtTime": "2026-11-05T10:21:04+00:00",
                           "prov:qualifiedAssociation": {
-                            "@type": "prov:Association",
+                            "@type": [
+                              "prov:Association"
+                            ],
                             "prov:agent": {"@id": "ex:analyst01"},
                             "prov:hadRole": {"@id": "ex:Researcher"},
                             "prov:hadPlan": {
@@ -256,7 +314,9 @@
                           },
                           "prov:qualifiedUsage": [
                             {
-                              "@type": "prov:Usage",
+                              "@type": [
+                                "prov:Usage"
+                              ],
                               "prov:entity": {
                                 "@id": "ex:analysisSoftware",
                                 "@type": [
@@ -265,17 +325,23 @@
                                 ],
                                 "schema:name": "Analysis software",
                                 "schema:identifier": "https://example.org/cdif-prov/software/analysis/2.4.1",
-                                "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q7397"},
+                                "schema:additionalType": [
+                                  {"@id": "https://www.wikidata.org/entity/Q7397"}
+                                ],
                                 "schema:url": "https://example.org/cdif-prov/software/analysis",
                                 "schema:softwareVersion": "2.4.1"
                               },
                               "prov:hadRole": {
                                 "@id": "ex:Software",
-                                "@type": "prov:Role"
+                                "@type": [
+                                  "prov:Role"
+                                ]
                               }
                             },
                             {
-                              "@type": "prov:Usage",
+                              "@type": [
+                                "prov:Usage"
+                              ],
                               "prov:entity": {
                                 "@id": "ex:absorbanceSource",
                                 "@type": [
@@ -288,10 +354,14 @@
                                 "schema:encodingFormat": "text/csv",
                                 "schema:url": "https://example.org/cdif-prov/data/absorbance.csv",
                                 "prov:qualifiedGeneration": {
-                                  "@type": "prov:Generation",
+                                  "@type": [
+                                    "prov:Generation"
+                                  ],
                                   "prov:activity": {
                                     "@id": "ex:absorbanceMeasurement",
-                                    "@type": "prov:Activity",
+                                    "@type": [
+                                      "prov:Activity"
+                                    ],
                                     "dcterms:isPartOf": {"@id": "ex:concentrationRun"},
                                     "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
                                     "schema:name": "Absorbance measurement",
@@ -299,7 +369,9 @@
                                     "prov:endedAtTime": "2026-11-05T10:19:00+00:00",
                                     "prov:qualifiedAssociation": [
                                       {
-                                        "@type": "prov:Association",
+                                        "@type": [
+                                          "prov:Association"
+                                        ],
                                         "prov:agent": {"@id": "ex:analyst01"},
                                         "prov:hadRole": {"@id": "ex:DataCollector"},
                                         "prov:hadPlan": {
@@ -311,22 +383,30 @@
                                         }
                                       },
                                       {
-                                        "@type": "prov:Association",
+                                        "@type": [
+                                          "prov:Association"
+                                        ],
                                         "prov:agent": {"@id": "ex:laboratory01"},
                                         "prov:hadRole": {
                                           "@id": "ex:HostingInstitution",
-                                          "@type": "prov:Role"
+                                          "@type": [
+                                            "prov:Role"
+                                          ]
                                         }
                                       }
                                     ],
                                     "prov:qualifiedUsage": [
                                       {
-                                        "@type": "prov:Usage",
+                                        "@type": [
+                                          "prov:Usage"
+                                        ],
                                         "prov:entity": {"@id": "ex:waterSample01"},
                                         "prov:hadRole": {"@id": "ex:InputData"}
                                       },
                                       {
-                                        "@type": "prov:Usage",
+                                        "@type": [
+                                          "prov:Usage"
+                                        ],
                                         "prov:entity": {
                                           "@id": "ex:cuvette01",
                                           "@type": [
@@ -335,15 +415,21 @@
                                             "schema:Product"
                                           ],
                                           "schema:name": "1 cm quartz cuvette",
-                                          "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                                          "schema:additionalType": [
+                                            {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                                          ]
                                         },
                                         "prov:hadRole": {
                                           "@id": "ex:Instrument",
-                                          "@type": "prov:Role"
+                                          "@type": [
+                                            "prov:Role"
+                                          ]
                                         }
                                       },
                                       {
-                                        "@type": "prov:Usage",
+                                        "@type": [
+                                          "prov:Usage"
+                                        ],
                                         "prov:entity": {
                                           "@id": "ex:colourReagent01",
                                           "@type": [
@@ -352,15 +438,21 @@
                                             "schema:Thing"
                                           ],
                                           "schema:name": "Colour-forming reagent, 2 mL",
-                                          "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q2356542"}
+                                          "schema:additionalType": [
+                                            {"@id": "https://www.wikidata.org/entity/Q2356542"}
+                                          ]
                                         },
                                         "prov:hadRole": {
                                           "@id": "ex:Reagent",
-                                          "@type": "prov:Role"
+                                          "@type": [
+                                            "prov:Role"
+                                          ]
                                         }
                                       },
                                       {
-                                        "@type": "prov:Usage",
+                                        "@type": [
+                                          "prov:Usage"
+                                        ],
                                         "prov:entity": {
                                           "@id": "ex:spectrophotometer01",
                                           "@type": [
@@ -371,14 +463,18 @@
                                           "schema:name": "UV-Vis spectrophotometer",
                                           "schema:additionalProperty": [
                                             {
-                                              "@type": "schema:PropertyValue",
+                                              "@type": [
+                                                "schema:PropertyValue"
+                                              ],
                                               "schema:name": "Spectral bandwidth",
                                               "schema:propertyID": "spectral bandwidth",
                                               "schema:unitText": "nm",
                                               "schema:value": 2
                                             },
                                             {
-                                              "@type": "schema:PropertyValue",
+                                              "@type": [
+                                                "schema:PropertyValue"
+                                              ],
                                               "schema:name": "Measurement wavelength",
                                               "schema:propertyID": "measurement wavelength",
                                               "schema:unitText": "nm",
@@ -387,35 +483,53 @@
                                           ],
                                           "schema:description": "Double-beam UV-Vis spectrophotometer, 190-1100 nm.",
                                           "schema:identifier": {
-                                            "@type": "schema:PropertyValue",
+                                            "@type": [
+                                              "schema:PropertyValue"
+                                            ],
                                             "schema:propertyID": "manufacturer serial number",
                                             "schema:value": "SN-000123"
                                           },
-                                          "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q3099911"},
-                                          "schema:category": {
-                                            "@type": "schema:DefinedTerm",
-                                            "schema:name": "UV-Vis spectrophotometer"
-                                          },
+                                          "schema:additionalType": [
+                                            {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                                          ],
+                                          "schema:category": [
+                                            {
+                                              "@type": [
+                                                "schema:DefinedTerm"
+                                              ],
+                                              "schema:name": "UV-Vis spectrophotometer"
+                                            }
+                                          ],
                                           "schema:hasPart": [
                                             {
-                                              "@type": "schema:Thing",
+                                              "@type": [
+                                                "schema:Thing"
+                                              ],
                                               "schema:name": "Silicon photodiode detector"
                                             },
                                             {
-                                              "@type": "schema:Thing",
+                                              "@type": [
+                                                "schema:Thing"
+                                              ],
                                               "schema:name": "Grating monochromator"
                                             },
                                             {
-                                              "@type": "schema:Thing",
+                                              "@type": [
+                                                "schema:Thing"
+                                              ],
                                               "schema:name": "Deuterium and tungsten lamps"
                                             }
                                           ],
                                           "schema:manufacturer": {
-                                            "@type": "schema:Organization",
+                                            "@type": [
+                                              "schema:Organization"
+                                            ],
                                             "schema:name": "Example Instruments Ltd"
                                           },
                                           "schema:model": {
-                                            "@type": "schema:ProductModel",
+                                            "@type": [
+                                              "schema:ProductModel"
+                                            ],
                                             "schema:name": "SP-1000"
                                           },
                                           "schema:owner": {"@id": "ex:laboratory01"}
@@ -426,14 +540,18 @@
                                     "prov:startedAtTime": "2026-11-05T10:18:00+00:00",
                                     "schema:additionalProperty": [
                                       {
-                                        "@type": "schema:PropertyValue",
+                                        "@type": [
+                                          "schema:PropertyValue"
+                                        ],
                                         "schema:name": "Cuvette path length",
                                         "schema:propertyID": "cuvette path length",
                                         "schema:unitText": "cm",
                                         "schema:value": 1
                                       },
                                       {
-                                        "@type": "schema:PropertyValue",
+                                        "@type": [
+                                          "schema:PropertyValue"
+                                        ],
                                         "schema:name": "Colour development time",
                                         "schema:propertyID": "colour development time",
                                         "schema:unitText": "min",
@@ -449,9 +567,13 @@
                                       ],
                                       "schema:name": "Analytical laboratory, room B12",
                                       "schema:identifier": "LAB-B12",
-                                      "schema:additionalType": "analytical laboratory",
+                                      "schema:additionalType": [
+                                        "analytical laboratory"
+                                      ],
                                       "schema:geo": {
-                                        "@type": "schema:GeoCoordinates",
+                                        "@type": [
+                                          "schema:GeoCoordinates"
+                                        ],
                                         "schema:latitude": 46.95,
                                         "schema:longitude": 7.44
                                       }
@@ -472,12 +594,16 @@
                     "prov:hadRole": {"@id": "ex:InputData"}
                   },
                   {
-                    "@type": "prov:Usage",
+                    "@type": [
+                      "prov:Usage"
+                    ],
                     "prov:entity": {"@id": "ex:analysisSoftware"},
                     "prov:hadRole": {"@id": "ex:Software"}
                   },
                   {
-                    "@type": "prov:Usage",
+                    "@type": [
+                      "prov:Usage"
+                    ],
                     "prov:entity": {
                       "@id": "ex:calibrationCurve",
                       "@type": [
@@ -489,23 +615,31 @@
                       "schema:encodingFormat": "text/csv",
                       "schema:url": "https://example.org/cdif-prov/data/calibration-curve.csv",
                       "prov:qualifiedGeneration": {
-                        "@type": "prov:Generation",
+                        "@type": [
+                          "prov:Generation"
+                        ],
                         "prov:activity": {
                           "@id": "ex:instrumentCalibration01",
-                          "@type": "prov:Activity",
+                          "@type": [
+                            "prov:Activity"
+                          ],
                           "dcterms:isPartOf": {"@id": "ex:concentrationRun"},
                           "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
                           "schema:name": "Instrument calibration",
                           "schema:position": 1,
                           "prov:endedAtTime": "2026-11-05T10:05:00+00:00",
                           "prov:qualifiedAssociation": {
-                            "@type": "prov:Association",
+                            "@type": [
+                              "prov:Association"
+                            ],
                             "prov:agent": {"@id": "ex:analyst01"},
                             "prov:hadRole": {"@id": "ex:DataCollector"}
                           },
                           "prov:qualifiedUsage": [
                             {
-                              "@type": "prov:Usage",
+                              "@type": [
+                                "prov:Usage"
+                              ],
                               "prov:entity": {
                                 "@id": "ex:calibrationStandards01",
                                 "@type": [
@@ -514,12 +648,16 @@
                                   "schema:Thing"
                                 ],
                                 "schema:name": "Certified calibration standards, 0-2 mg/L, lot CS-0042",
-                                "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q2356542"}
+                                "schema:additionalType": [
+                                  {"@id": "https://www.wikidata.org/entity/Q2356542"}
+                                ]
                               },
                               "prov:hadRole": {"@id": "ex:Reagent"}
                             },
                             {
-                              "@type": "prov:Usage",
+                              "@type": [
+                                "prov:Usage"
+                              ],
                               "prov:entity": {"@id": "ex:spectrophotometer01"},
                               "prov:hadRole": {"@id": "ex:Instrument"}
                             }
@@ -536,26 +674,34 @@
                 "prov:startedAtTime": "2026-11-05T10:23:14+00:00",
                 "schema:additionalProperty": [
                   {
-                    "@type": "schema:PropertyValue",
+                    "@type": [
+                      "schema:PropertyValue"
+                    ],
                     "schema:name": "Calibration intercept",
                     "schema:propertyID": "calibration intercept",
                     "schema:value": 0.003
                   },
                   {
-                    "@type": "schema:PropertyValue",
+                    "@type": [
+                      "schema:PropertyValue"
+                    ],
                     "schema:name": "Limit of detection",
                     "schema:propertyID": "limit of detection",
                     "schema:unitText": "mg/L",
                     "schema:value": 0.02
                   },
                   {
-                    "@type": "schema:PropertyValue",
+                    "@type": [
+                      "schema:PropertyValue"
+                    ],
                     "schema:name": "Treatment of values below the limit of detection",
                     "schema:propertyID": "treatment of values below the limit of detection",
                     "schema:value": "Reported as '<0.02'; no value substituted."
                   },
                   {
-                    "@type": "schema:PropertyValue",
+                    "@type": [
+                      "schema:PropertyValue"
+                    ],
                     "schema:name": "Calibration slope",
                     "schema:propertyID": "calibration slope",
                     "schema:unitText": "L/mg",
@@ -570,7 +716,9 @@
           "prov:hadRole": {"@id": "ex:InputData"}
         },
         {
-          "@type": "prov:Usage",
+          "@type": [
+            "prov:Usage"
+          ],
           "prov:entity": {
             "@id": "ex:concentrationUncertainty",
             "@type": [
@@ -581,16 +729,22 @@
             "schema:encodingFormat": "text/csv",
             "schema:url": "https://example.org/cdif-prov/data/uncertainty.csv",
             "prov:qualifiedGeneration": {
-              "@type": "prov:Generation",
+              "@type": [
+                "prov:Generation"
+              ],
               "prov:activity": {
                 "@id": "ex:uncertaintyAssessment",
-                "@type": "prov:Activity",
+                "@type": [
+                  "prov:Activity"
+                ],
                 "dcterms:isPartOf": {"@id": "ex:concentrationRun"},
                 "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
                 "schema:name": "Uncertainty assessment",
                 "schema:position": 6,
                 "prov:qualifiedAssociation": {
-                  "@type": "prov:Association",
+                  "@type": [
+                    "prov:Association"
+                  ],
                   "prov:agent": {"@id": "ex:analyst01"},
                   "prov:hadRole": {"@id": "ex:Researcher"},
                   "prov:hadPlan": {
@@ -603,22 +757,30 @@
                 },
                 "prov:qualifiedUsage": [
                   {
-                    "@type": "prov:Usage",
+                    "@type": [
+                      "prov:Usage"
+                    ],
                     "prov:entity": {"@id": "ex:analysisSoftware"},
                     "prov:hadRole": {"@id": "ex:Software"}
                   },
                   {
-                    "@type": "prov:Usage",
+                    "@type": [
+                      "prov:Usage"
+                    ],
                     "prov:entity": {"@id": "ex:concentration"},
                     "prov:hadRole": {"@id": "ex:InputData"}
                   }
                 ],
-                "schema:additionalProperty": {
-                  "@type": "schema:PropertyValue",
-                  "schema:name": "Coverage factor",
-                  "schema:propertyID": "coverage factor",
-                  "schema:value": 2
-                },
+                "schema:additionalProperty": [
+                  {
+                    "@type": [
+                      "schema:PropertyValue"
+                    ],
+                    "schema:name": "Coverage factor",
+                    "schema:propertyID": "coverage factor",
+                    "schema:value": 2
+                  }
+                ],
                 "schema:description": "Combined standard uncertainty of the concentration from calibration, repeatability and volume contributions."
               }
             }
@@ -626,12 +788,16 @@
           "prov:hadRole": {"@id": "ex:InputData"}
         },
         {
-          "@type": "prov:Usage",
+          "@type": [
+            "prov:Usage"
+          ],
           "prov:entity": {"@id": "ex:analysisSoftware"},
           "prov:hadRole": {"@id": "ex:Software"}
         },
         {
-          "@type": "prov:Usage",
+          "@type": [
+            "prov:Usage"
+          ],
           "prov:entity": {
             "@id": "ex:validationCriterion",
             "@type": [
@@ -649,9 +815,15 @@
   },
   "schema:subjectOf": {
     "@id": "ex:validationResult-record",
-    "@type": "schema:Dataset",
-    "schema:additionalType": {"@id": "dcat:CatalogRecord"},
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {"@id": "dcat:CatalogRecord"}
+    ],
     "schema:about": {"@id": "ex:validationResult"},
-    "dcterms:conformsTo": {"@id": "https://w3id.org/cdif/provenance/2.0"}
+    "dcterms:conformsTo": [
+      {"@id": "https://w3id.org/cdif/provenance/2.0"}
+    ]
   }
 }

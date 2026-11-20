@@ -6,88 +6,122 @@
     "bios": "https://bioschemas.org/"
   },
   "@id": "./",
-  "@type": "schema:Dataset",
+  "@type": [
+    "schema:Dataset"
+  ],
   "schema:name": "Olivine major element compositions, Kilauea Iki lava lake",
   "schema:description": "RO-Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_field_sample.json, the field-sample scenario. See implementationTesting/APPROACHES.md.",
   "schema:datePublished": "2026-11-19",
   "schema:license": {
     "@id": "https://creativecommons.org/licenses/by/4.0/",
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "CC BY 4.0"
   },
-  "schema:hasPart": {
-    "@id": "ex:olivineKilaueaIki",
-    "@type": "schema:Dataset",
-    "schema:name": "Olivine major element compositions, Kilauea Iki lava lake",
-    "schema:description": "EPMA major and minor element compositions of olivine from Kilauea Iki drill core KI81-1. The field-sample scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/exampleEPMAProvenance.json.",
-    "schema:identifier": {"@id": "https://doi.org/10.1234/olivine-kilauea-2024"},
-    "schema:dateModified": "2024-08-15"
-  },
+  "schema:hasPart": [
+    {
+      "@id": "ex:olivineKilaueaIki",
+      "@type": [
+        "schema:Dataset"
+      ],
+      "schema:name": "Olivine major element compositions, Kilauea Iki lava lake",
+      "schema:description": "EPMA major and minor element compositions of olivine from Kilauea Iki drill core KI81-1. The field-sample scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/exampleEPMAProvenance.json.",
+      "schema:identifier": {"@id": "https://doi.org/10.1234/olivine-kilauea-2024"},
+      "schema:dateModified": "2024-08-15"
+    }
+  ],
   "schema:mentions": [
     {
       "@id": "ex:KI81Drilling",
-      "@type": "schema:CreateAction",
+      "@type": [
+        "schema:CreateAction"
+      ],
       "schema:name": "Drilling of core KI81-1, Kilauea Iki lava lake",
       "schema:description": "Core drilled through the crust of the Kilauea Iki lava lake (the 1959 eruption's ponded lava), recovering a vertical section of the lake's olivine-bearing basalt, in 1981.",
       "schema:location": {
         "@id": "ex:KI81Drilling-location",
-        "@type": "schema:Place",
+        "@type": [
+          "schema:Place"
+        ],
         "schema:name": "Kilauea Iki lava lake, Hawaii",
         "schema:geo": {
           "@id": "ex:KI81Drilling-location-geo",
-          "@type": "schema:GeoCoordinates",
+          "@type": [
+            "schema:GeoCoordinates"
+          ],
           "schema:latitude": 19.414,
           "schema:longitude": -155.249
         }
       },
-      "schema:additionalType": {"@id": "https://w3id.org/cdif/concepts/provenance/activity/Sampling"},
+      "schema:additionalType": [
+        {"@id": "https://w3id.org/cdif/concepts/provenance/activity/Sampling"}
+      ],
       "schema:actionStatus": "http://schema.org/CompletedActionStatus",
       "schema:agent": {
         "@id": "ex:USGS",
-        "@type": "schema:Organization",
+        "@type": [
+          "schema:Organization"
+        ],
         "schema:name": "U.S. Geological Survey",
         "schema:url": "https://www.usgs.gov/"
       },
       "schema:object": {
         "@id": "ex:kilaueaIkiLavaLake",
-        "@type": "schema:Place",
+        "@type": [
+          "schema:Place"
+        ],
         "schema:name": "Kilauea Iki lava lake",
         "schema:description": "The lava lake ponded in Kilauea Iki crater by the 1959 eruption."
       },
       "schema:result": {
         "@id": "ex:KI81-1",
-        "@type": "schema:Thing",
+        "@type": [
+          "schema:Thing"
+        ],
         "schema:name": "Drill core KI81-1",
         "schema:description": "Drill core from the Kilauea Iki lava lake.",
         "schema:identifier": "KI81-1",
-        "schema:additionalType": {"@id": "bios:Sample"}
+        "schema:additionalType": [
+          {"@id": "bios:Sample"}
+        ]
       }
     },
     {
       "@id": "ex:EPMASamplePreparation",
-      "@type": "schema:CreateAction",
+      "@type": [
+        "schema:CreateAction"
+      ],
       "schema:actionProcess": {
         "@id": "ex:EPMASamplePreparation-actionProcess",
-        "@type": "schema:HowTo",
+        "@type": [
+          "schema:HowTo"
+        ],
         "schema:name": "EPMA sample preparation protocol",
         "schema:step": [
           {
             "@id": "ex:EPMASamplePreparation-actionProcess-step-1",
-            "@type": "schema:HowToStep",
+            "@type": [
+              "schema:HowToStep"
+            ],
             "schema:name": "Grain mounting",
             "schema:description": "Selected olivine grains picked from crushed drill core and mounted in 1-inch epoxy rounds.",
             "schema:position": 1
           },
           {
             "@id": "ex:EPMASamplePreparation-actionProcess-step-2",
-            "@type": "schema:HowToStep",
+            "@type": [
+              "schema:HowToStep"
+            ],
             "schema:name": "Grinding and polishing",
             "schema:description": "Mounts ground with SiC paper (240–1200 grit) then polished with diamond suspension (6 µm, 3 µm, 1 µm) to a flat, scratch-free surface.",
             "schema:position": 2
           },
           {
             "@id": "ex:EPMASamplePreparation-actionProcess-step-3",
-            "@type": "schema:HowToStep",
+            "@type": [
+              "schema:HowToStep"
+            ],
             "schema:name": "Carbon coating",
             "schema:description": "Polished mounts coated with ~20 nm amorphous carbon using a Denton DV-502A vacuum evaporator for electrical conductivity.",
             "schema:position": 3
@@ -96,75 +130,103 @@
       },
       "schema:name": "Sample preparation for EPMA",
       "schema:description": "Olivine grains from drill core KI81-1 were mounted in epoxy, ground, polished, and carbon coated for electron microprobe analysis.",
-      "schema:additionalType": {"@id": "bios:LabProcess"},
+      "schema:additionalType": [
+        {"@id": "bios:LabProcess"}
+      ],
       "schema:actionStatus": "http://schema.org/CompletedActionStatus",
       "schema:agent": {
         "@id": "ex:chenWei",
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Chen, Wei",
         "schema:identifier": {"@id": "https://orcid.org/0000-0002-5555-6666"},
         "schema:contactPoint": {
           "@id": "ex:chenWei-contactPoint",
-          "@type": "schema:ContactPoint",
+          "@type": [
+            "schema:ContactPoint"
+          ],
           "schema:email": "w.chen@example.org"
         }
       },
       "schema:object": {"@id": "ex:KI81-1"},
       "schema:result": {
         "@id": "ex:polishedMountA",
-        "@type": "schema:Thing",
+        "@type": [
+          "schema:Thing"
+        ],
         "schema:name": "Polished and carbon-coated epoxy mount A",
         "schema:description": "Hand-picked olivine grains (Fo85-88) from KI81-1 in a 1-inch epoxy round.",
-        "schema:additionalType": {"@id": "bios:Sample"}
+        "schema:additionalType": [
+          {"@id": "bios:Sample"}
+        ]
       },
       "schema:startTime": "2024-06-01",
       "schema:endTime": "2024-06-03",
-      "schema:instrument": {
-        "@id": "ex:dentonDV502A",
-        "@type": "schema:Product",
-        "schema:name": "Denton DV-502A vacuum evaporator",
-        "schema:description": "Used to coat the polished mounts with carbon."
-      }
+      "schema:instrument": [
+        {
+          "@id": "ex:dentonDV502A",
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Denton DV-502A vacuum evaporator",
+          "schema:description": "Used to coat the polished mounts with carbon."
+        }
+      ]
     },
     {
       "@id": "ex:EPMAAnalysis",
-      "@type": "schema:CreateAction",
+      "@type": [
+        "schema:CreateAction"
+      ],
       "schema:actionProcess": {
         "@id": "ex:EPMAProcedure",
-        "@type": "schema:HowTo",
+        "@type": [
+          "schema:HowTo"
+        ],
         "schema:name": "JEOL-8530F WDS olivine major elements v1.0, as performed",
         "schema:step": [
           {
             "@id": "ex:EPMAProcedure-step-1",
-            "@type": "schema:HowToStep",
+            "@type": [
+              "schema:HowToStep"
+            ],
             "schema:name": "Instrument calibration",
             "schema:description": "Calibrate WDS spectrometers on primary standards: San Carlos olivine (SiO2, MgO, FeO), chromite NMNH 117075 (Cr2O3), rhodonite (MnO), Kakanui hornblende (CaO, TiO2), jadeite (Na2O, Al2O3), synthetic NiO (NiO). Verify calibration on secondary standard San Carlos olivine NMNH 111312/444.",
             "schema:position": 1
           },
           {
             "@id": "ex:EPMAProcedure-step-2",
-            "@type": "schema:HowToStep",
+            "@type": [
+              "schema:HowToStep"
+            ],
             "schema:name": "Beam condition setup",
             "schema:description": "Set accelerating voltage to 15 kV, beam current to 20 nA measured on Faraday cup, focused beam (~1 µm). Verify beam current stability within 0.5% over 5 minutes.",
             "schema:position": 2
           },
           {
             "@id": "ex:EPMAProcedure-step-3",
-            "@type": "schema:HowToStep",
+            "@type": [
+              "schema:HowToStep"
+            ],
             "schema:name": "WDS acquisition",
             "schema:description": "Acquire major elements simultaneously on 5 WDS spectrometers: Sp1 TAP (SiO2 Ka 30s, Al2O3 Ka 40s), Sp2 LiFH (FeO Ka 30s, MnO Ka 30s), Sp3 PETJ (CaO Ka 30s, TiO2 Ka 40s, Cr2O3 Ka 30s), Sp4 TAP (MgO Ka 30s), Sp5 LiF (NiO Ka 40s). Backgrounds measured on both sides of each peak.",
             "schema:position": 3
           },
           {
             "@id": "ex:EPMAProcedure-step-4",
-            "@type": "schema:HowToStep",
+            "@type": [
+              "schema:HowToStep"
+            ],
             "schema:name": "Matrix correction and quantification",
             "schema:description": "Apply ZAF matrix correction using Probe for EPMA v13.0.6 with LINEMU mass absorption coefficients. Report oxide weight percent with oxygen calculated by stoichiometry.",
             "schema:position": 4
           },
           {
             "@id": "ex:EPMAProcedure-step-5",
-            "@type": "schema:HowToStep",
+            "@type": [
+              "schema:HowToStep"
+            ],
             "schema:name": "Quality control",
             "schema:description": "Analyze San Carlos olivine NMNH 111312/444 as secondary standard at start, middle, and end of each session. Accept session if all major elements within 1% relative of accepted values. Monitor Faraday cup current every 30 minutes; recalibrate if drift exceeds 1%.",
             "schema:position": 5
@@ -172,14 +234,18 @@
         ],
         "schema:isBasedOn": {
           "@id": "https://registry.onegeochemistry.org/methods/jeol-8530f-olivine-v1",
-          "@type": "schema:HowTo"
+          "@type": [
+            "schema:HowTo"
+          ]
         }
       },
       "schema:name": "EPMA major element analysis of olivine",
       "schema:description": "Quantitative WDS electron microprobe analysis of olivine for major and minor elements, at 15 kV and 20 nA: 142 point analyses of oxide concentrations (wt%), with detection limits and analytical totals.",
       "schema:location": {
         "@id": "ex:EPMAAnalysis-location",
-        "@type": "schema:Place",
+        "@type": [
+          "schema:Place"
+        ],
         "schema:name": "Electron Microprobe Laboratory, Department of Earth Sciences, Example University"
       },
       "schema:additionalType": [
@@ -195,22 +261,30 @@
       "schema:instrument": [
         {
           "@id": "ex:jeolJXA8530F",
-          "@type": "schema:Product",
+          "@type": [
+            "schema:Product"
+          ],
           "schema:name": "JEOL JXA-8530F Plus field emission electron microprobe",
           "schema:manufacturer": {
             "@id": "ex:jeolJXA8530F-manufacturer",
-            "@type": "schema:Organization",
+            "@type": [
+              "schema:Organization"
+            ],
             "schema:name": "JEOL"
           },
           "schema:model": {
             "@id": "ex:jeolJXA8530F-model",
-            "@type": "schema:ProductModel",
+            "@type": [
+              "schema:ProductModel"
+            ],
             "schema:name": "JXA-8530F Plus"
           }
         },
         {
           "@id": "ex:probeForEPMA",
-          "@type": "schema:SoftwareApplication",
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
           "schema:name": "Probe for EPMA",
           "schema:description": "Used for the ZAF matrix correction and quantification.",
           "schema:version": "13.0.6"
@@ -219,7 +293,9 @@
       "schema:additionalProperty": [
         {
           "@id": "ex:EPMAAnalysis-additionalProperty-1",
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "schema:name": "Accelerating voltage",
           "schema:propertyID": "accelerating voltage",
           "schema:value": 15,
@@ -227,7 +303,9 @@
         },
         {
           "@id": "ex:EPMAAnalysis-additionalProperty-2",
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "schema:name": "Beam current",
           "schema:propertyID": "beam current",
           "schema:value": 20,
@@ -235,21 +313,27 @@
         },
         {
           "@id": "ex:EPMAAnalysis-additionalProperty-3",
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "schema:name": "Beam diameter",
           "schema:propertyID": "beam diameter",
           "schema:value": "focused (~1 µm)"
         },
         {
           "@id": "ex:EPMAAnalysis-additionalProperty-4",
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "schema:name": "Matrix correction model",
           "schema:propertyID": "matrix correction model",
           "schema:value": "ZAF (LINEMU MACs)"
         },
         {
           "@id": "ex:EPMAAnalysis-additionalProperty-5",
-          "@type": "schema:PropertyValue",
+          "@type": [
+            "schema:PropertyValue"
+          ],
           "schema:name": "Number of analyses",
           "schema:propertyID": "number of analyses",
           "schema:value": 142
@@ -260,8 +344,12 @@
   "@reverse": {
     "schema:about": {
       "@id": "ro-crate-metadata.json",
-      "@type": "schema:CreativeWork",
-      "dcterms:conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "dcterms:conformsTo": [
+        {"@id": "https://w3id.org/ro/crate/1.1"}
+      ]
     }
   }
 }
