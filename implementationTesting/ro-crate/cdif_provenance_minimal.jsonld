@@ -4,7 +4,7 @@
     "dcterms": "http://purl.org/dc/terms/",
     "ex": "https://example.org/cdif-prov/"
   },
-  "@id": "file:///C:/GithubC/CDIF/profile-provenance/",
+  "@id": "./",
   "@type": "schema:Dataset",
   "dcterms:conformsTo": {
     "@id": "https://w3id.org/ro/wfrun/process/0.5",
@@ -71,7 +71,7 @@
   },
   "@reverse": {
     "schema:about": {
-      "@id": "file:///C:/GithubC/CDIF/profile-provenance/ro-crate-metadata.json",
+      "@id": "ro-crate-metadata.json",
       "@type": "schema:CreativeWork",
       "dcterms:conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
     }

@@ -5,7 +5,7 @@
     "ex": "https://example.org/cdif-prov/",
     "bios": "https://bioschemas.org/"
   },
-  "@id": "file:///C:/GithubC/CDIF/profile-provenance/",
+  "@id": "./",
   "@type": "schema:Dataset",
   "schema:name": "Olivine major element compositions, Kilauea Iki lava lake",
   "schema:description": "RO-Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_field_sample.json, the field-sample scenario. See implementationTesting/APPROACHES.md.",
@@ -259,7 +259,7 @@
   ],
   "@reverse": {
     "schema:about": {
-      "@id": "file:///C:/GithubC/CDIF/profile-provenance/ro-crate-metadata.json",
+      "@id": "ro-crate-metadata.json",
       "@type": "schema:CreativeWork",
       "dcterms:conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
     }
