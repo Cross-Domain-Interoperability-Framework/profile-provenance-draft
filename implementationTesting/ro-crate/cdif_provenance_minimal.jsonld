@@ -5,32 +5,44 @@
     "ex": "https://example.org/cdif-prov/"
   },
   "@id": "./",
-  "@type": "schema:Dataset",
-  "dcterms:conformsTo": {
-    "@id": "https://w3id.org/ro/wfrun/process/0.5",
-    "@type": "schema:CreativeWork",
-    "schema:name": "Process Run Crate",
-    "schema:version": "0.5"
-  },
+  "@type": [
+    "schema:Dataset"
+  ],
+  "dcterms:conformsTo": [
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.5",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Process Run Crate",
+      "schema:version": "0.5"
+    }
+  ],
   "schema:name": "Processed seismic reflection data, line 07",
   "schema:description": "Process Run Crate rendering of implementationTesting/cdifprov-schemaorg/cdif_provenance_minimal.json, the minimal scenario. See implementationTesting/APPROACHES.md.",
   "schema:datePublished": "2026-11-18",
   "schema:license": {
     "@id": "https://creativecommons.org/licenses/by/4.0/",
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "CC BY 4.0"
   },
   "schema:hasPart": [
     {
       "@id": "ex:line07_raw.segy",
-      "@type": "schema:MediaObject",
+      "@type": [
+        "schema:MediaObject"
+      ],
       "schema:name": "line07_raw.segy",
       "schema:description": "Raw shot gathers for line 07, SEG-Y revision 1.",
       "schema:encodingFormat": "application/octet-stream"
     },
     {
       "@id": "ex:line07Migrated",
-      "@type": "schema:Dataset",
+      "@type": [
+        "schema:Dataset"
+      ],
       "schema:name": "Processed seismic reflection data, line 07",
       "schema:license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
       "schema:identifier": {"@id": "https://doi.org/10.1234/seismic-2025"},
@@ -39,10 +51,14 @@
   ],
   "schema:mentions": {
     "@id": "ex:line07Processing",
-    "@type": "schema:CreateAction",
+    "@type": [
+      "schema:CreateAction"
+    ],
     "schema:actionProcess": {
       "@id": "ex:reflectionProcessingFlow",
-      "@type": "schema:HowTo"
+      "@type": [
+        "schema:HowTo"
+      ]
     },
     "schema:name": "Seismic data processing, line 07",
     "schema:description": "Raw shot gathers from line 07 were processed with a standard reflection flow: deconvolution, stacking and migration.",
@@ -51,29 +67,41 @@
     "schema:actionStatus": "http://schema.org/CompletedActionStatus",
     "schema:agent": {
       "@id": "ex:garciaMaria",
-      "@type": "schema:Person",
+      "@type": [
+        "schema:Person"
+      ],
       "schema:name": "Garcia, Maria",
       "schema:identifier": {"@id": "https://orcid.org/0000-0003-1234-5678"},
       "schema:contactPoint": {
-        "@type": "schema:ContactPoint",
+        "@type": [
+          "schema:ContactPoint"
+        ],
         "schema:email": "m.garcia@example.org"
       }
     },
-    "schema:instrument": {
-      "@id": "ex:seisUnix",
-      "@type": "schema:SoftwareApplication",
-      "schema:name": "Seismic Unix",
-      "schema:version": "44R27",
-      "schema:url": "https://wiki.seismic-unix.org/"
-    },
+    "schema:instrument": [
+      {
+        "@id": "ex:seisUnix",
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "Seismic Unix",
+        "schema:version": "44R27",
+        "schema:url": "https://wiki.seismic-unix.org/"
+      }
+    ],
     "schema:object": {"@id": "ex:line07_raw.segy"},
     "schema:result": {"@id": "ex:line07Migrated"}
   },
   "@reverse": {
     "schema:about": {
       "@id": "ro-crate-metadata.json",
-      "@type": "schema:CreativeWork",
-      "dcterms:conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "dcterms:conformsTo": [
+        {"@id": "https://w3id.org/ro/crate/1.1"}
+      ]
     }
   }
 }

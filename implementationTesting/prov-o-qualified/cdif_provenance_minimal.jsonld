@@ -17,7 +17,9 @@
     "prov:Entity"
   ],
   "schema:identifier": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": {"@id": "https://registry.identifiers.org/registry/doi"},
     "schema:url": "https://doi.org/10.1234/seismic-2025",
     "schema:value": "doi:10.1234/seismic-2025"
@@ -28,16 +30,22 @@
   "schema:license": "https://creativecommons.org/licenses/by/4.0/",
   "schema:subjectOf": {
     "@id": "ex:line07Migrated-record",
-    "@type": "schema:Dataset",
+    "@type": [
+      "schema:Dataset"
+    ],
     "dcterms:conformsTo": [
       {"@id": "https://w3id.org/cdif/core/2.0"},
       {"@id": "https://w3id.org/cdif/provenance/2.0"}
     ],
     "schema:about": {"@id": "ex:line07Migrated"},
-    "schema:additionalType": {"@id": "dcat:CatalogRecord"}
+    "schema:additionalType": [
+      {"@id": "dcat:CatalogRecord"}
+    ]
   },
   "prov:qualifiedGeneration": {
-    "@type": "prov:Generation",
+    "@type": [
+      "prov:Generation"
+    ],
     "prov:activity": {
       "@id": "ex:line07Processing",
       "@type": [
@@ -49,7 +57,9 @@
       "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
       "prov:endedAtTime": "2025-03-20T00:00:00+00:00",
       "prov:qualifiedAssociation": {
-        "@type": "prov:Association",
+        "@type": [
+          "prov:Association"
+        ],
         "prov:agent": {
           "@id": "ex:garciaMaria",
           "@type": [
@@ -57,11 +67,15 @@
             "prov:Person"
           ],
           "schema:contactPoint": {
-            "@type": "schema:ContactPoint",
+            "@type": [
+              "schema:ContactPoint"
+            ],
             "schema:email": "m.garcia@example.org"
           },
           "schema:identifier": {
-            "@type": "schema:PropertyValue",
+            "@type": [
+              "schema:PropertyValue"
+            ],
             "schema:propertyID": {"@id": "https://registry.identifiers.org/registry/orcid"},
             "schema:url": "https://orcid.org/0000-0003-1234-5678",
             "schema:value": "0000-0003-1234-5678"
@@ -78,7 +92,9 @@
       },
       "prov:qualifiedUsage": [
         {
-          "@type": "prov:Usage",
+          "@type": [
+            "prov:Usage"
+          ],
           "prov:entity": {
             "@id": "ex:line07_raw.segy",
             "@type": [
@@ -91,11 +107,15 @@
           },
           "prov:hadRole": {
             "@id": "ex:InputData",
-            "@type": "prov:Role"
+            "@type": [
+              "prov:Role"
+            ]
           }
         },
         {
-          "@type": "prov:Usage",
+          "@type": [
+            "prov:Usage"
+          ],
           "prov:entity": {
             "@id": "ex:seisUnix",
             "@type": [
@@ -104,12 +124,16 @@
             ],
             "schema:url": "https://wiki.seismic-unix.org/",
             "schema:name": "Seismic Unix",
-            "schema:additionalType": {"@id": "https://www.wikidata.org/entity/Q7397"},
+            "schema:additionalType": [
+              {"@id": "https://www.wikidata.org/entity/Q7397"}
+            ],
             "schema:version": "44R27"
           },
           "prov:hadRole": {
             "@id": "ex:Software",
-            "@type": "prov:Role"
+            "@type": [
+              "prov:Role"
+            ]
           }
         }
       ],
