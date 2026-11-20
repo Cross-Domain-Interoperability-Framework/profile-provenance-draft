@@ -13,7 +13,8 @@ Usage:
     --root  IRI or CURIE of the node to root the tree on, overriding the Dataset rule.
 
 Layout:
-- The root is the --root node, else the schema:Dataset when there is one. A node not reached from it
+- The root is the --root node, else the schema:Dataset when there is one (not a catalog record, which
+  is a schema:Dataset too and nests under the dataset's schema:subjectOf). A node not reached from it
   that points into the tree (an RO-Crate metadata descriptor's schema:about, a DDI-CDI agent's
   ProcessingAgent_performs_Activity) is nested with @reverse under the node nearest the root that it
   points at, and
@@ -135,7 +136,8 @@ def node(s, skip=None):                 # skip: a (predicate, object) to leave o
         n[qq(p)] = vs[0] if len(vs) == 1 else vs
     return n
 
-# The root is the node named by --root, else a schema:Dataset (CDIF records are rooted on the Dataset).
+# The root is the node named by --root, else a schema:Dataset that is not a catalog record (CDIF records
+# are rooted on the described Dataset).
 # A node that is not reached from it but points into the tree (an RO-Crate metadata descriptor's
 # schema:about, a DDI-CDI agent's ProcessingAgent_performs_Activity) is nested with @reverse under the
 # node nearest the root that it points at. Nodes that point at the root itself (a DDI-CDI run's agent,
@@ -150,7 +152,14 @@ if a.root:
     main = expand(a.root)
     if main not in named: sys.exit(f'--root {a.root}: no such node in {a.src}')
 else:
-    datasets = sorted((n for n in named if (n, RDF.type, DATASET) in g), key=lambda r: -reach(r))
+    # A CDIF record's catalog record is also a schema:Dataset (additionalType dcat:CatalogRecord, with
+    # schema:about the described dataset), and it reaches everything through schema:about, so it can tie
+    # with or outrank the dataset. It is never the root: it nests under the dataset's schema:subjectOf.
+    RECORD = URIRef('http://www.w3.org/ns/dcat#CatalogRecord')
+    def is_record(n):
+        return (n, RDF.type, RECORD) in g or (n, URIRef('http://schema.org/additionalType'), RECORD) in g
+    datasets = sorted((n for n in named if (n, RDF.type, DATASET) in g and not is_record(n)),
+                      key=lambda r: -reach(r))
     main = datasets[0] if datasets else None
 trees = []
 if main is not None:
