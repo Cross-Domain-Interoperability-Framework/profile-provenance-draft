@@ -23,6 +23,9 @@ Layout:
   there are several.
 - A node is described in full where it is first reached and is an {"@id"} reference after that.
   Blank nodes are nested; one gets an @id only if it is referenced more than once.
+- @type is always an array, and so is every property the cdifProvenance schema types as an array
+  (schema:additionalType, schema:instrument, schema:step, dcterms:conformsTo, ...; ARRAY_PROPS), even
+  with one value, as CDIF records write them. Any other property with one value is written bare.
 - Prefixes come from the source (Turtle @prefix lines, plus common namespaces under their usual
   prefixes). Properties appear in the order they first occur in the source.
 - Literals keep their exact datatype. An xsd:integer, xsd:double or xsd:boolean is written as a
@@ -109,6 +112,15 @@ coerce = {p: next(iter(ts))[1] for p, ts in lit_types.items()
           if len(ts) == 1 and next(iter(ts))[0] == 'dt' and next(iter(ts))[1] not in (None, XSD.string)
           and p not in native_ok}
 
+# Properties the cdifProvenance schema types as arrays (cdifProvenanceStructuredSchema.json): written as
+# an array even with one value, as CDIF records write them. JSON-LD compaction would make a single value
+# a bare object. Properties that accept either form (schema:object, schema:result, ...) keep the bare one.
+_S, _P, _D = 'http://schema.org/', 'http://www.w3.org/ns/prov#', 'http://purl.org/dc/terms/'
+ARRAY_PROPS = {URIRef(u) for u in (
+    _S + 'additionalType', _S + 'additionalProperty', _S + 'category', _S + 'hasPart', _S + 'instrument',
+    _S + 'relatedLink', _S + 'sameAs', _S + 'step', _P + 'wasGeneratedBy', _P + 'used', _D + 'conformsTo',
+    'http://www.w3.org/2004/02/skos/core#broader', 'http://www.w3.org/2004/02/skos/core#narrower')}
+
 done, bn_ids, desc = set(), {}, {}      # desc: node -> the dict that describes it in full
 reserved = set()                        # nodes to be placed under the root with @reverse; a reference until then
 def val(o, p):
@@ -127,13 +139,13 @@ def node(s, skip=None):                 # skip: a (predicate, object) to leave o
     if isinstance(s, URIRef): n['@id'] = qq(s)
     elif incoming[s] > 1: bn_ids[s] = f'_:b{len(bn_ids)}'; n['@id'] = bn_ids[s]
     ts = sorted(g.objects(s, RDF.type), key=first_pos)
-    if ts: n['@type'] = qq(ts[0]) if len(ts) == 1 else [qq(t) for t in ts]
+    if ts: n['@type'] = [qq(t) for t in ts]         # CDIF: @type is always an array
     for p in sorted({p for p in g.predicates(s) if p != RDF.type}, key=lambda p: (first_pos(p), q(p))):
         objs = sorted(g.objects(s, p), key=lambda o: (first_pos(o) if not isinstance(o, (Literal, BNode)) else 0))
         objs = [o for o in objs if (p, o) != skip]
         if not objs: continue
         vs = [val(o, p) for o in objs]
-        n[qq(p)] = vs[0] if len(vs) == 1 else vs
+        n[qq(p)] = vs if len(vs) > 1 or p in ARRAY_PROPS else vs[0]
     return n
 
 # The root is the node named by --root, else a schema:Dataset that is not a catalog record (CDIF records
