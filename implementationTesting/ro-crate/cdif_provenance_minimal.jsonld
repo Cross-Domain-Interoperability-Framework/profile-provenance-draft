@@ -35,8 +35,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "line07_raw.segy",
-      "schema:description": "Raw shot gathers for line 07, SEG-Y revision 1.",
-      "schema:encodingFormat": "application/octet-stream"
+      "schema:encodingFormat": "application/octet-stream",
+      "schema:description": "Raw shot gathers for line 07, SEG-Y revision 1."
     },
     {
       "@id": "ex:line07Migrated",
@@ -44,9 +44,9 @@
         "schema:Dataset"
       ],
       "schema:name": "Processed seismic reflection data, line 07",
-      "schema:license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
       "schema:identifier": {"@id": "https://doi.org/10.1234/seismic-2025"},
-      "schema:dateModified": "2025-06-15"
+      "schema:dateModified": "2025-06-15",
+      "schema:license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
     }
   ],
   "schema:mentions": {
@@ -54,12 +54,6 @@
     "@type": [
       "schema:CreateAction"
     ],
-    "schema:actionProcess": {
-      "@id": "ex:reflectionProcessingFlow",
-      "@type": [
-        "schema:HowTo"
-      ]
-    },
     "schema:name": "Seismic data processing, line 07",
     "schema:description": "Raw shot gathers from line 07 were processed with a standard reflection flow: deconvolution, stacking and migration.",
     "schema:startTime": "2025-01-10T00:00:00+00:00",
@@ -91,7 +85,13 @@
       }
     ],
     "schema:object": {"@id": "ex:line07_raw.segy"},
-    "schema:result": {"@id": "ex:line07Migrated"}
+    "schema:result": {"@id": "ex:line07Migrated"},
+    "schema:actionProcess": {
+      "@id": "ex:reflectionProcessingFlow",
+      "@type": [
+        "schema:HowTo"
+      ]
+    }
   },
   "@reverse": {
     "schema:about": {
