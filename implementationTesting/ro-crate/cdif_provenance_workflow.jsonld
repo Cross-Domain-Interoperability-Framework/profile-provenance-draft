@@ -200,8 +200,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "fes2_rt01_mar02.xmu",
-      "schema:description": "Fe K-edge absorption spectrum of FeS2 at room temperature: energy and mu(E) columns.",
-      "schema:encodingFormat": "text/plain"
+      "schema:encodingFormat": "text/plain",
+      "schema:description": "Fe K-edge absorption spectrum of FeS2 at room temperature: energy and mu(E) columns."
     },
     {
       "@id": "ex:1564889.cif",
@@ -209,8 +209,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "1564889.cif",
-      "schema:description": "Crystal structure of FeS2 (pyrite), used to compute the scattering paths.",
-      "schema:encodingFormat": "chemical/x-cif"
+      "schema:encodingFormat": "chemical/x-cif",
+      "schema:description": "Crystal structure of FeS2 (pyrite), used to compute the scattering paths."
     },
     {
       "@id": "ex:FeS2_athena.prj",
@@ -218,8 +218,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "FeS2_athena",
-      "schema:description": "Athena project with the normalized spectrum.",
-      "schema:encodingFormat": "application/octet-stream"
+      "schema:encodingFormat": "application/octet-stream",
+      "schema:description": "Athena project with the normalized spectrum."
     },
     {
       "@id": "ex:FeS2_plot.png",
@@ -227,8 +227,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "FeS2_plot",
-      "schema:description": "Plot of the normalized spectrum.",
-      "schema:encodingFormat": "image/png"
+      "schema:encodingFormat": "image/png",
+      "schema:description": "Plot of the normalized spectrum."
     },
     {
       "@id": "ex:fes2FeffPaths",
@@ -236,8 +236,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "FEFF output",
-      "schema:description": "FEFF scattering-path calculation for Fe in FeS2.",
-      "schema:encodingFormat": "application/zip"
+      "schema:encodingFormat": "application/zip",
+      "schema:description": "FEFF scattering-path calculation for Fe in FeS2."
     },
     {
       "@id": "ex:fes2_gds.gds",
@@ -245,8 +245,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "fes2_gds",
-      "schema:description": "Fit variables (guess, def, set) for the selected paths.",
-      "schema:encodingFormat": "text/csv"
+      "schema:encodingFormat": "text/csv",
+      "schema:description": "Fit variables (guess, def, set) for the selected paths."
     },
     {
       "@id": "ex:fes2_sp.sp",
@@ -254,8 +254,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "fes2_sp",
-      "schema:description": "The selected scattering paths and their starting parameters.",
-      "schema:encodingFormat": "text/csv"
+      "schema:encodingFormat": "text/csv",
+      "schema:description": "The selected scattering paths and their starting parameters."
     },
     {
       "@id": "ex:fit_report_FeS2.feffit",
@@ -263,8 +263,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "fit_report_FeS2",
-      "schema:description": "Fit report: fitted parameters, uncertainties and statistics.",
-      "schema:encodingFormat": "text/plain"
+      "schema:encodingFormat": "text/plain",
+      "schema:description": "Fit report: fitted parameters, uncertainties and statistics."
     },
     {
       "@id": "ex:rmr_FeS2.png",
@@ -272,8 +272,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "rmr_FeS2",
-      "schema:description": "Fit in R space.",
-      "schema:encodingFormat": "image/png"
+      "schema:encodingFormat": "image/png",
+      "schema:description": "Fit in R space."
     },
     {
       "@id": "ex:chikr_FeS2.png",
@@ -281,8 +281,8 @@
         "schema:MediaObject"
       ],
       "schema:name": "chikr_FeS2",
-      "schema:description": "Fit in k and R space.",
-      "schema:encodingFormat": "image/png"
+      "schema:encodingFormat": "image/png",
+      "schema:description": "Fit in k and R space."
     },
     {
       "@id": "ex:fes2FitResults",
