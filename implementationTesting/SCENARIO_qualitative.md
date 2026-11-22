@@ -57,8 +57,9 @@ a PROV-O JSON-LD tree. These are that file's:
 - **The coding's HowTo steps and its coding-unit parameter.**
 - **The agreement value**, and that the validation accepted the theme.
 
-**Changed:** the entities are `schema:Thing`s, not `schema:CreativeWork`s. In the profile's SHACL,
-a `CreativeWork` must have a `schema:url`, and these intermediate results have none.
+**Changed:** the entities are `schema:Thing`s, not `schema:CreativeWork`s. The profile's SHACL
+warns when a `CreativeWork` has no `schema:url`, and these intermediate results have none. Until
+metadataBuildingBlocks#112 that was a Violation.
 
 ## Files
 
@@ -113,7 +114,8 @@ plans and agents, and these differences:
 - **A role from a vocabulary is optional.** The roles here are strings, and the tool mints `ex:`
   roles from them. A `schema:DefinedTerm` (as in the lab-measurement scenario) would carry a term
   set.
-- **The profile's SHACL requires a `schema:url` on every `schema:CreativeWork`.** The shape
-  (`cdifd:CDIFLabeledLinkShape`) is meant for labeled links, but it targets the class, so an
-  intermediate result typed `CreativeWork` with no URL is a violation. The results here are typed
-  `schema:Thing` to avoid it.
+- **The profile's SHACL asks for a `schema:url` on every `schema:CreativeWork`.** The shape
+  (`cdifd:CDIFLabeledLinkShape`) is meant for labeled links, but it targets the class, so it also
+  applies to an intermediate result typed `CreativeWork` with no URL. The results here were typed
+  `schema:Thing` because that was a Violation. Since metadataBuildingBlocks#112 it is a Warning, so
+  a `CreativeWork` without a URL now passes, with a warning.
