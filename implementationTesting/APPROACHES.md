@@ -108,7 +108,7 @@ tree-shaped JSON-LD copy beside its source:
 
 Each is generated from its source with [`tools/rdfToJsonLdTree.py`](../tools/rdfToJsonLdTree.py)
 (`python tools/rdfToJsonLdTree.py SRC OUT`; the RO-Crate also takes `--base http://rocrate.invalid/crate/`
-for its relative `@id`s), which checks that rdflib and pyld both read the output back as a graph
+for its relative `@id`s; each plain PROV-O tree takes `--order-like` its qualified counterpart, so the two list keys and values in the same order, a qualified relation standing for its plain form), which checks that rdflib and pyld both read the output back as a graph
 isomorphic to the source. The qualified master's copy predates it and was made the same way. A node is described in full where it is first reached and is an `{"@id"}` reference after that;
 the root is the `schema:Dataset` when there is one, as in CDIF records (anything pointing at it that is not otherwise reached is nested under it with `@reverse`); otherwise roots are the nodes nothing else points at, largest tree first, in `@graph` when there are several. Only the RO-Crate has a Dataset; the PROV-O master's root `ex:validationResult` is untyped as to schema.org.
 The number of roots is itself a comparison: the overlays point outward from the run's

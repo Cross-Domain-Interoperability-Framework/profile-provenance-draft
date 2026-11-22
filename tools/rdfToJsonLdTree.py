@@ -7,10 +7,15 @@ tree-shaped JSON-LD, so the provenance approaches in examples/ can be compared i
 CDIF's RDF implementations use.
 
 Usage:
-    python tools/rdfToJsonLdTree.py SRC OUT [--base IRI] [--root IRI]
+    python tools/rdfToJsonLdTree.py SRC OUT [--base IRI] [--root IRI] [--order-like REF.jsonld]
 
     --base  base IRI for relative @ids (e.g. an RO-Crate's "./"); they are written back relative.
     --root  IRI or CURIE of the node to root the tree on, overriding the Dataset rule.
+    --order-like  a tree of the same record (e.g. its qualified PROV-O form) whose key and value order
+            to follow, so the two read side by side. A qualified relation in REF stands for its plain
+            form (prov:qualifiedUsage's prov:entity for prov:used; a prov:qualifiedGeneration's prov:atTime
+            for prov:generatedAtTime). Keys and values REF does not have keep their place after the one
+            before them.
 
 Layout:
 - The root is the --root node, else the schema:Dataset when there is one (not a catalog record, which
@@ -47,6 +52,7 @@ rdflib.NORMALIZE_LITERALS = False
 ap = argparse.ArgumentParser()
 ap.add_argument('src'); ap.add_argument('out'); ap.add_argument('--base')
 ap.add_argument('--root', help='IRI or CURIE of the node to root the tree on (overrides the Dataset rule)')
+ap.add_argument('--order-like', help='a JSON-LD tree of the same record whose key and value order to follow')
 a = ap.parse_args()
 text = open(a.src, encoding='utf-8').read()
 is_ttl = a.src.endswith('.ttl')
@@ -121,9 +127,70 @@ ARRAY_PROPS = {URIRef(u) for u in (
     _S + 'relatedLink', _S + 'sameAs', _S + 'step', _P + 'wasGeneratedBy', _P + 'used', _D + 'conformsTo',
     'http://www.w3.org/2004/02/skos/core#broader', 'http://www.w3.org/2004/02/skos/core#narrower')}
 
+# --order-like: follow a reference tree's order. A qualified relation there stands for its plain form.
+QUAL = {'prov:qualified' + k: 'prov:' + v for k, v in (
+    ('Generation', 'wasGeneratedBy'), ('Usage', 'used'), ('Association', 'wasAssociatedWith'),
+    ('Attribution', 'wasAttributedTo'), ('Derivation', 'wasDerivedFrom'), ('Invalidation', 'wasInvalidatedBy'),
+    ('Communication', 'wasInformedBy'), ('Start', 'wasStartedBy'), ('End', 'wasEndedBy'),
+    ('Delegation', 'actedOnBehalfOf'), ('Influence', 'wasInfluencedBy'), ('Revision', 'wasRevisionOf'),
+    ('Quotation', 'wasQuotedFrom'), ('PrimarySource', 'hadPrimarySource'))}
+QUAL_TIME = {'prov:qualifiedGeneration': 'prov:generatedAtTime', 'prov:qualifiedInvalidation': 'prov:invalidatedAtTime'}
+def as_list(v): return v if isinstance(v, list) else [v]
+REF, REF_BY_ID = None, {}               # REF_BY_ID: @id -> the reference dict that describes it in full
+if a.order_like:
+    REF = json.load(open(a.order_like, encoding='utf-8'))
+    def index(x):
+        if isinstance(x, dict):
+            if '@id' in x and len(x) > len(REF_BY_ID.get(x['@id'], {})): REF_BY_ID[x['@id']] = x
+            for k, v in x.items():
+                if k != '@context': index(v)
+        elif isinstance(x, list):
+            for v in x: index(v)
+    index(REF)
+def ref_layout(ref):                    # the reference's keys in order, and its values for each key
+    keys, kids = [], {}
+    for k, v in ref.items():
+        if k.startswith('@'): continue
+        if k in QUAL:
+            infl = [x.get('prov:activity') or x.get('prov:entity') or x.get('prov:agent')
+                    for x in as_list(v) if isinstance(x, dict)]
+            ks = [(QUAL[k], [x for x in infl if x])]
+            if k in QUAL_TIME:
+                ks.append((QUAL_TIME[k], [x['prov:atTime'] for x in as_list(v) if isinstance(x, dict) and 'prov:atTime' in x]))
+        else:
+            ks = [(k, as_list(v))]
+        for k2, vs in ks:
+            if k2 not in kids: keys.append(k2); kids[k2] = vs
+    return keys, kids
+def follow(items, key_of, order):
+    """Stable reorder: an item whose key is in order goes by its index; any other stays after the item before it."""
+    out, last = [], -1
+    for i, it in enumerate(items):
+        k = key_of(it)
+        if k is not None and k in order: last = order.index(k); out.append(((last, 0, i), it))
+        else: out.append(((last, 1, i), it))
+    return [it for _, it in sorted(out, key=lambda x: x[0])]
+def scalar(v): return str(v['@value']) if isinstance(v, dict) and '@value' in v else (None if isinstance(v, dict) else str(v).lower() if isinstance(v, bool) else str(v))
+def match(objs, kids):                  # each object's place among the reference values, and its reference dict
+    pos, used = {}, set()
+    for o in objs:
+        if isinstance(o, URIRef):
+            hit = [i for i, k in enumerate(kids) if isinstance(k, dict) and k.get('@id') == q(o)]
+        elif isinstance(o, Literal):
+            hit = [i for i, k in enumerate(kids) if scalar(k) == str(o)]
+        else:                           # a blank node: the reference value sharing most of its literals
+            lits = {(q(p), str(v)) for p, v in g.predicate_objects(o) if isinstance(v, Literal)}
+            score = [(sum((kp, scalar(kv)) in lits for kp, vs in k.items() if not kp.startswith('@') for kv in as_list(vs)), i)
+                     for i, k in enumerate(kids) if isinstance(k, dict) and '@id' not in k and i not in used]
+            best = max(score, default=(0, None))
+            hit = [best[1]] if best[0] > 0 else []
+        hit = [i for i in hit if i not in used]
+        if hit: pos[o] = hit[0]; used.add(hit[0])
+    return follow(objs, pos.get, list(range(len(kids)))), {o: kids[i] for o, i in pos.items() if isinstance(kids[i], dict)}
+
 done, bn_ids, desc = set(), {}, {}      # desc: node -> the dict that describes it in full
 reserved = set()                        # nodes to be placed under the root with @reverse; a reference until then
-def val(o, p):
+def val(o, p, ref=None):
     if isinstance(o, Literal):
         if o.language: return {'@value': str(o), '@language': o.language}
         if o.datatype in (None, XSD.string): return str(o)
@@ -132,19 +199,24 @@ def val(o, p):
         return {'@value': str(o), '@type': qq(o.datatype)}
     if o in done or o in reserved:
         return {'@id': bn_ids[o] if isinstance(o, BNode) else qq(o)}
-    if isinstance(o, BNode) or o in named: return node(o)
+    if isinstance(o, BNode) or o in named: return node(o, ref=ref)
     return {'@id': qq(o)}
-def node(s, skip=None):                 # skip: a (predicate, object) to leave out, stated by @reverse instead
-    done.add(s); n = {}; desc[s] = n
-    if isinstance(s, URIRef): n['@id'] = qq(s)
+def node(s, skip=None, ref=None):       # skip: a (predicate, object) to leave out, stated by @reverse instead
+    done.add(s); n = {}; desc[s] = n    # ref: the --order-like dict describing s
+    if isinstance(s, URIRef): n['@id'] = qq(s); ref = REF_BY_ID.get(q(s), ref)
     elif incoming[s] > 1: bn_ids[s] = f'_:b{len(bn_ids)}'; n['@id'] = bn_ids[s]
     ts = sorted(g.objects(s, RDF.type), key=first_pos)
+    keys, kids = ref_layout(ref) if ref else ([], {})
+    if ref: ts = follow(ts, q, as_list(ref.get('@type', [])))
     if ts: n['@type'] = [qq(t) for t in ts]         # CDIF: @type is always an array
-    for p in sorted({p for p in g.predicates(s) if p != RDF.type}, key=lambda p: (first_pos(p), q(p))):
+    preds = sorted({p for p in g.predicates(s) if p != RDF.type}, key=lambda p: (first_pos(p), q(p)))
+    for p in follow(preds, q, keys):
         objs = sorted(g.objects(s, p), key=lambda o: (first_pos(o) if not isinstance(o, (Literal, BNode)) else 0))
         objs = [o for o in objs if (p, o) != skip]
         if not objs: continue
-        vs = [val(o, p) for o in objs]
+        refs = {}
+        if q(p) in kids: objs, refs = match(objs, kids[q(p)])
+        vs = [val(o, p, refs.get(o)) for o in objs]
         n[qq(p)] = vs if len(vs) > 1 or p in ARRAY_PROPS else vs[0]
     return n
 
@@ -203,6 +275,8 @@ while left:
 ctx = {k: PFX[k] for k in PFX if k in used_pfx or any(qq(dt).startswith(k + ':') for dt in coerce.values())}
 for p, dt in sorted(coerce.items(), key=lambda x: q(x[0])): ctx[qq(p)] = {'@type': qq(dt)}
 ctx = {k: PFX[k] for k in PFX if k in used_pfx} | {k: v for k, v in ctx.items() if k not in PFX}
+if REF and isinstance(REF.get('@context'), dict):
+    ctx = {k: ctx[k] for k in follow(list(ctx), lambda k: k, list(REF['@context']))}
 doc = {'@context': ctx, **trees[0]} if len(trees) == 1 else {'@context': ctx, '@graph': trees}
 s = json.dumps(doc, indent=2, ensure_ascii=False) + '\n'
 s = re.sub(r'\{\n\s*("@(?:id|type)": "[^"]+")\n\s*\}', r'{\1}', s)

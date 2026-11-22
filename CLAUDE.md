@@ -79,7 +79,8 @@ python tools/WRROCToCdifProv.py examples/ROCRATE/<crate>.json -o examples/<name>
 python tools/galaxyROCrateToCDIFActions.py <crate.zip|dir> -o examples/<name>.actions.cdifprov.json -v
 
 # Any RDF (Turtle, flattened JSON-LD) -> compacted tree JSON-LD; exits 1 unless the output is isomorphic
-python tools/rdfToJsonLdTree.py <src.ttl|src.json> <out.jsonld> [--base <iri>] [--root <iri>]
+python tools/rdfToJsonLdTree.py <src.ttl|src.json> <out.jsonld> [--base <iri>] [--root <iri>] [--order-like <ref.jsonld>]
+# a prov-o-unqualified tree is written --order-like its prov-o-qualified counterpart, so the pair reads side by side
 
 # cdifProv -> PROV-O, qualified or plain relations (the mapping is implementationTesting/MAPPING.md);
 # --unqualify turns a qualified PROV-O Turtle into plain relations
