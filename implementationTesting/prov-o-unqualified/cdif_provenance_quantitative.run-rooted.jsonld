@@ -1,11 +1,11 @@
 {
   "@context": {
-    "dcterms": "http://purl.org/dc/terms/",
-    "ex": "https://example.org/cdif-prov/",
     "prov": "http://www.w3.org/ns/prov#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ex": "https://example.org/cdif-prov/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "prov:endedAtTime": {"@type": "xsd:dateTime"},
     "prov:generatedAtTime": {"@type": "xsd:dateTime"},
     "prov:invalidatedAtTime": {"@type": "xsd:dateTime"},
@@ -15,25 +15,25 @@
   "@type": [
     "prov:Activity"
   ],
+  "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
   "prov:startedAtTime": "2026-11-05T10:18:00Z",
   "prov:wasAssociatedWith": {
     "@id": "ex:analyst01",
     "@type": [
       "prov:Person"
     ],
+    "schema:givenName": "Ana",
+    "schema:familyName": "Lima",
+    "schema:honorificPrefix": "Dr",
     "prov:actedOnBehalfOf": {
       "@id": "ex:laboratory01",
       "@type": [
-        "prov:Location",
-        "prov:Organization"
+        "prov:Organization",
+        "prov:Location"
       ],
       "rdfs:label": "Analytical laboratory"
-    },
-    "schema:familyName": "Lima",
-    "schema:givenName": "Ana",
-    "schema:honorificPrefix": "Dr"
+    }
   },
-  "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
   "@reverse": {
     "dcterms:isPartOf": [
       {
@@ -45,69 +45,76 @@
         ],
         "prov:used": [
           {
+            "@id": "ex:validationCriterion",
+            "@type": [
+              "prov:Entity",
+              "ex:ValidationCriterion"
+            ]
+          },
+          {
             "@id": "ex:concentration",
             "@type": [
               "prov:Entity",
               "ex:DerivedData",
               "ex:DerivedQuantity"
             ],
+            "schema:about": {
+              "@id": "ex:waterSample01",
+              "@type": [
+                "prov:Entity"
+              ],
+              "rdfs:label": "Filtered water sample",
+              "prov:wasGeneratedBy": [
+                {
+                  "@id": "ex:waterSampling01",
+                  "@type": [
+                    "prov:Activity"
+                  ],
+                  "prov:startedAtTime": "2026-11-04T08:10:00Z",
+                  "prov:endedAtTime": "2026-11-04T08:15:00Z",
+                  "prov:used": [
+                    {
+                      "@id": "ex:riverReach01",
+                      "@type": [
+                        "prov:Entity"
+                      ],
+                      "rdfs:label": "River reach the water was taken from"
+                    }
+                  ],
+                  "prov:wasAssociatedWith": {"@id": "ex:analyst01"}
+                }
+              ],
+              "prov:generatedAtTime": "2026-11-04T08:15:00Z",
+              "prov:wasDerivedFrom": {"@id": "ex:riverReach01"}
+            },
+            "prov:wasGeneratedBy": [
+              {"@id": "ex:calibrationDerivation"}
+            ],
+            "prov:generatedAtTime": "2026-11-05T10:23:18Z",
             "prov:wasDerivedFrom": {
               "@id": "ex:correctedAbsorbance",
               "@type": [
                 "prov:Entity",
                 "ex:ProcessedData"
               ],
+              "prov:wasGeneratedBy": [
+                {"@id": "ex:blankCorrection"}
+              ],
+              "prov:generatedAtTime": "2026-11-05T10:21:04Z",
               "prov:wasDerivedFrom": {
                 "@id": "ex:absorbanceSource",
                 "@type": [
                   "prov:Entity",
-                  "ex:AcquiredData",
-                  "ex:SourceData"
+                  "ex:SourceData",
+                  "ex:AcquiredData"
                 ],
+                "schema:about": {"@id": "ex:waterSample01"},
                 "prov:wasGeneratedBy": [
                   {"@id": "ex:absorbanceMeasurement"}
                 ],
-                "prov:generatedAtTime": "2026-11-05T10:19:00Z",
-                "schema:about": {
-                  "@id": "ex:waterSample01",
-                  "@type": [
-                    "prov:Entity"
-                  ],
-                  "rdfs:label": "Filtered water sample",
-                  "prov:wasDerivedFrom": {
-                    "@id": "ex:riverReach01",
-                    "@type": [
-                      "prov:Entity"
-                    ],
-                    "rdfs:label": "River reach the water was taken from"
-                  },
-                  "prov:wasGeneratedBy": [
-                    {
-                      "@id": "ex:waterSampling01",
-                      "@type": [
-                        "prov:Activity"
-                      ],
-                      "prov:endedAtTime": "2026-11-04T08:15:00Z",
-                      "prov:startedAtTime": "2026-11-04T08:10:00Z",
-                      "prov:used": [
-                        {"@id": "ex:riverReach01"}
-                      ],
-                      "prov:wasAssociatedWith": {"@id": "ex:analyst01"}
-                    }
-                  ],
-                  "prov:generatedAtTime": "2026-11-04T08:15:00Z"
-                }
-              },
-              "prov:wasGeneratedBy": [
-                {"@id": "ex:blankCorrection"}
-              ],
-              "prov:generatedAtTime": "2026-11-05T10:21:04Z"
-            },
-            "prov:wasGeneratedBy": [
-              {"@id": "ex:calibrationDerivation"}
-            ],
-            "prov:generatedAtTime": "2026-11-05T10:23:18Z",
-            "schema:about": {"@id": "ex:waterSample01"}
+                "prov:generatedAtTime": "2026-11-05T10:19:00Z"
+              }
+            }
           },
           {
             "@id": "ex:concentrationUncertainty",
@@ -115,17 +122,10 @@
               "prov:Entity",
               "ex:UncertaintyObject"
             ],
-            "prov:wasDerivedFrom": {"@id": "ex:concentration"},
             "prov:wasGeneratedBy": [
               {"@id": "ex:uncertaintyAssessment"}
-            ]
-          },
-          {
-            "@id": "ex:validationCriterion",
-            "@type": [
-              "prov:Entity",
-              "ex:ValidationCriterion"
-            ]
+            ],
+            "prov:wasDerivedFrom": {"@id": "ex:concentration"}
           }
         ],
         "prov:wasAssociatedWith": {
@@ -149,11 +149,11 @@
         "@id": "ex:blankCorrection",
         "@type": [
           "prov:Activity",
-          "ex:Correction",
-          "ex:Processing"
+          "ex:Processing",
+          "ex:Correction"
         ],
-        "prov:endedAtTime": "2026-11-05T10:21:04Z",
         "prov:startedAtTime": "2026-11-05T10:21:00Z",
+        "prov:endedAtTime": "2026-11-05T10:21:04Z",
         "prov:used": [
           {"@id": "ex:absorbanceSource"},
           {
@@ -171,12 +171,13 @@
         "@id": "ex:calibrationDerivation",
         "@type": [
           "prov:Activity",
-          "ex:CalibrationBasedDerivation",
-          "ex:Derivation"
+          "ex:Derivation",
+          "ex:CalibrationBasedDerivation"
         ],
-        "prov:endedAtTime": "2026-11-05T10:23:18Z",
         "prov:startedAtTime": "2026-11-05T10:23:14Z",
+        "prov:endedAtTime": "2026-11-05T10:23:18Z",
         "prov:used": [
+          {"@id": "ex:correctedAbsorbance"},
           {
             "@id": "ex:calibrationRelationship",
             "@type": [
@@ -184,8 +185,7 @@
               "prov:Plan",
               "ex:DerivationSpecification"
             ]
-          },
-          {"@id": "ex:correctedAbsorbance"}
+          }
         ],
         "prov:wasAssociatedWith": {"@id": "ex:analysisSoftware"}
       },
@@ -194,25 +194,11 @@
         "@type": [
           "prov:Activity"
         ],
-        "prov:endedAtTime": "2026-11-05T10:19:00Z",
+        "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
         "prov:startedAtTime": "2026-11-05T10:18:00Z",
+        "prov:endedAtTime": "2026-11-05T10:19:00Z",
         "prov:used": [
-          {
-            "@id": "ex:colourReagent01",
-            "@type": [
-              "prov:Entity"
-            ],
-            "rdfs:label": "Colour-forming reagent, 2 mL",
-            "prov:invalidatedAtTime": "2026-11-05T10:19:00Z",
-            "prov:wasInvalidatedBy": {"@id": "ex:absorbanceMeasurement"}
-          },
-          {
-            "@id": "ex:cuvette01",
-            "@type": [
-              "prov:Entity"
-            ],
-            "rdfs:label": "1 cm quartz cuvette"
-          },
+          {"@id": "ex:waterSample01"},
           {
             "@id": "ex:spectrophotometer01",
             "@type": [
@@ -220,11 +206,25 @@
             ],
             "rdfs:label": "UV-Vis spectrophotometer"
           },
-          {"@id": "ex:waterSample01"}
+          {
+            "@id": "ex:colourReagent01",
+            "@type": [
+              "prov:Entity"
+            ],
+            "rdfs:label": "Colour-forming reagent, 2 mL",
+            "prov:wasInvalidatedBy": {"@id": "ex:absorbanceMeasurement"},
+            "prov:invalidatedAtTime": "2026-11-05T10:19:00Z"
+          },
+          {
+            "@id": "ex:cuvette01",
+            "@type": [
+              "prov:Entity"
+            ],
+            "rdfs:label": "1 cm quartz cuvette"
+          }
         ],
         "prov:wasAssociatedWith": {"@id": "ex:analyst01"},
-        "prov:atLocation": {"@id": "ex:laboratory01"},
-        "schema:actionStatus": {"@id": "schema:CompletedActionStatus"}
+        "prov:atLocation": {"@id": "ex:laboratory01"}
       },
       {
         "@id": "ex:uncertaintyAssessment",
@@ -234,7 +234,6 @@
           "ex:UncertaintyAssessment"
         ],
         "prov:used": [
-          {"@id": "ex:concentration"},
           {
             "@id": "ex:uncertaintySpec",
             "@type": [
@@ -242,7 +241,8 @@
               "prov:Plan",
               "ex:UncertaintySpecification"
             ]
-          }
+          },
+          {"@id": "ex:concentration"}
         ],
         "prov:wasAssociatedWith": {"@id": "ex:analysisSoftware"}
       }
@@ -255,11 +255,11 @@
         "prov:Entity",
         "prov:Plan"
       ],
+      "schema:prepTime": "PT20M",
       "rdfs:label": "Absorbance measurement in a 1 cm cuvette",
-      "rdfs:seeAlso": {"@id": "ex:video/absorbance-procedure.mp4"},
-      "schema:estimatedCost": "12 USD",
       "schema:performTime": "PT5M",
-      "schema:prepTime": "PT20M"
+      "schema:estimatedCost": "12 USD",
+      "rdfs:seeAlso": {"@id": "ex:video/absorbance-procedure.mp4"}
     },
     {
       "@id": "ex:concentrationDeterminationPlan",

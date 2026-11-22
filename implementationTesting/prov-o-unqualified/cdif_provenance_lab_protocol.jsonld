@@ -6,8 +6,8 @@
     "dcterms": "http://purl.org/dc/terms/",
     "ex": "https://example.org/cdif-prov/",
     "prov": "http://www.w3.org/ns/prov#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "prov:endedAtTime": {"@type": "xsd:dateTime"},
     "prov:generatedAtTime": {"@type": "xsd:dateTime"},
     "prov:startedAtTime": {"@type": "xsd:dateTime"}
@@ -17,6 +17,8 @@
     "prov:Entity",
     "schema:Dataset"
   ],
+  "schema:description": "Raw pyrolysis-GC-MS/MS data (full scan and MRM) for OSIRIS-REx sample OREX-803003-0. The lab-protocol scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/Bennu-py-GC-MSarc.cdifprov.json.",
+  "schema:name": "Py-GC-MS/MS data for Bennu sample OREX-803003-0",
   "prov:wasGeneratedBy": [
     {
       "@id": "ex:bennuPyGCMSRun",
@@ -25,6 +27,18 @@
         "bios:LabProcess",
         "cdifact:Measurement"
       ],
+      "schema:description": "The py-GC-MS/MS analysis session for Bennu asteroid sample OREX-803003-0, session 20231121_GCMS_GSFC_OREX-803003-0_1.",
+      "schema:name": "Py-GC-MS/MS analysis of OREX-803003-0",
+      "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+      "prov:wasAssociatedWith": {
+        "@id": "ex:NASA_GSFC",
+        "@type": [
+          "schema:Organization",
+          "prov:Organization"
+        ],
+        "schema:name": "NASA Goddard Space Flight Center",
+        "schema:url": "https://www.nasa.gov/goddard"
+      },
       "prov:used": [
         {
           "@id": "ex:OREX-803003-0",
@@ -32,144 +46,183 @@
             "prov:Entity",
             "schema:Thing"
           ],
+          "schema:description": "About 1 mg aggregate of material from asteroid Bennu, collected by the OSIRIS-REx Touch-and-Go Sample Acquisition Mechanism (TAGSAM).",
+          "schema:name": "Bennu asteroid sample OREX-803003-0",
           "schema:additionalType": [
             {"@id": "bios:Sample"}
           ],
-          "schema:description": "About 1 mg aggregate of material from asteroid Bennu, collected by the OSIRIS-REx Touch-and-Go Sample Acquisition Mechanism (TAGSAM).",
-          "schema:identifier": "OREX-803003-0",
-          "schema:name": "Bennu asteroid sample OREX-803003-0"
+          "schema:identifier": "OREX-803003-0"
         }
       ],
-      "prov:wasAssociatedWith": {
-        "@id": "ex:NASA_GSFC",
-        "@type": [
-          "prov:Organization",
-          "schema:Organization"
-        ],
-        "schema:name": "NASA Goddard Space Flight Center",
-        "schema:url": "https://www.nasa.gov/goddard"
-      },
       "prov:endedAtTime": "2023-11-21T23:59:59+00:00",
       "prov:startedAtTime": "2023-11-21T00:00:00+00:00",
-      "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
-      "schema:description": "The py-GC-MS/MS analysis session for Bennu asteroid sample OREX-803003-0, session 20231121_GCMS_GSFC_OREX-803003-0_1.",
-      "schema:name": "Py-GC-MS/MS analysis of OREX-803003-0",
       "@reverse": {
         "dcterms:isPartOf": {
           "@id": "ex:bennuMSDetection",
           "@type": [
             "prov:Activity"
           ],
+          "schema:description": "Simultaneous full scan (m/z 50–500, EI positive, 0.100 s scan time) and timed SRM/MRM (38 compounds, 2–3 transitions each). Ion source and transfer line at 300 °C; detector gain 100,000.",
+          "schema:name": "Dual-mode MS detection (full scan and MRM)",
+          "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+          "schema:additionalProperty": [
+            {
+              "@type": [
+                "schema:PropertyValue"
+              ],
+              "schema:name": "Full scan time",
+              "schema:propertyID": "full scan time",
+              "schema:unitText": "s",
+              "schema:value": 0.1
+            },
+            {
+              "@type": [
+                "schema:PropertyValue"
+              ],
+              "schema:name": "Ionization mode",
+              "schema:propertyID": {"@id": "ex:param_ionizationMode"},
+              "schema:value": "electron ionization (EI), positive polarity"
+            },
+            {
+              "@type": [
+                "schema:PropertyValue"
+              ],
+              "schema:name": "Full scan range",
+              "schema:propertyID": {"@id": "ex:param_scanRange"},
+              "schema:value": "m/z 50–500"
+            },
+            {
+              "@type": [
+                "schema:PropertyValue"
+              ],
+              "schema:name": "MRM target compounds",
+              "schema:propertyID": {"@id": "ex:param_mrmCompoundCount"},
+              "schema:value": 38
+            },
+            {
+              "@type": [
+                "schema:PropertyValue"
+              ],
+              "schema:name": "Ion source temperature",
+              "schema:propertyID": "ion source temperature",
+              "schema:unitText": "°C",
+              "schema:value": 300
+            }
+          ],
+          "schema:position": 4,
+          "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
           "prov:used": [
+            {
+              "@id": "ex:tsqMassSpectrometer",
+              "@type": [
+                "prov:Entity",
+                "schema:Product"
+              ],
+              "schema:description": "TSQ triple-quadrupole MS, operated in EI mode, positive polarity, with simultaneous full scan and timed SRM/MRM.",
+              "schema:name": "Thermo Scientific TSQ triple-quadrupole mass spectrometer",
+              "schema:additionalType": [
+                {"@id": "https://www.wikidata.org/entity/Q3099911"}
+              ],
+              "schema:serialNumber": "TSQ96CI2301004",
+              "schema:url": "https://www.thermofisher.com/"
+            },
             {
               "@id": "ex:bennuSeparatedEluent",
               "@type": [
                 "prov:Entity",
                 "schema:Thing"
               ],
+              "schema:description": "Time-resolved stream of separated compounds eluting from the GC column into the mass spectrometer.",
+              "schema:name": "Chromatographically separated eluent",
               "prov:wasGeneratedBy": [
                 {
                   "@id": "ex:bennuGCSeparation",
                   "@type": [
                     "prov:Activity"
                   ],
+                  "schema:description": "Chromatographic separation on an Rtx-5ms column (30 m × 0.250 mm × 0.50 µm, 5 m guard), with split injection 10:1 at 300 °C and helium carrier at 1.500 mL/min. Run time 87.79 min.",
+                  "schema:name": "GC separation on an Rtx-5ms column",
                   "dcterms:isPartOf": {"@id": "ex:bennuPyGCMSRun"},
+                  "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+                  "schema:additionalProperty": [
+                    {
+                      "@type": [
+                        "schema:PropertyValue"
+                      ],
+                      "schema:name": "Inlet temperature",
+                      "schema:propertyID": {"@id": "ex:param_inletTemp"},
+                      "schema:unitText": "°C",
+                      "schema:value": 300
+                    },
+                    {
+                      "@type": [
+                        "schema:PropertyValue"
+                      ],
+                      "schema:name": "Column",
+                      "schema:propertyID": {"@id": "ex:param_columnType"},
+                      "schema:value": "Rtx-5ms, 30 m × 0.250 mm × 0.50 µm + 5 m guard"
+                    },
+                    {
+                      "@type": [
+                        "schema:PropertyValue"
+                      ],
+                      "schema:name": "Split ratio",
+                      "schema:propertyID": {"@id": "ex:param_splitRatio"},
+                      "schema:value": "10:1"
+                    },
+                    {
+                      "@type": [
+                        "schema:PropertyValue"
+                      ],
+                      "schema:name": "Carrier gas flow",
+                      "schema:propertyID": {"@id": "ex:param_carrierGasFlow"},
+                      "schema:unitText": "mL/min",
+                      "schema:value": 1.5
+                    }
+                  ],
+                  "schema:position": 3,
+                  "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
                   "prov:used": [
+                    {
+                      "@id": "ex:gasChromatograph",
+                      "@type": [
+                        "prov:Entity",
+                        "schema:Product"
+                      ],
+                      "schema:description": "GC with an Rtx-5ms (5% diphenyl / 95% dimethyl polysiloxane) fused silica capillary column, 30 m × 0.250 mm × 0.50 µm, with a 5 m × 0.250 mm guard column.",
+                      "schema:name": "Gas chromatograph with Rtx-5ms column",
+                      "schema:additionalType": [
+                        {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                      ]
+                    },
                     {
                       "@id": "ex:bennuPyrolysisProducts",
                       "@type": [
                         "prov:Entity",
                         "schema:Thing"
                       ],
+                      "schema:description": "Thermally extracted volatiles from flash pyrolysis, carried in helium through the heated transfer line at 300 °C to the GC inlet.",
+                      "schema:name": "Pyrolysis volatiles in helium carrier stream",
                       "prov:wasGeneratedBy": [
                         {
                           "@id": "ex:bennuPyrolysis",
                           "@type": [
                             "prov:Activity"
                           ],
+                          "schema:description": "Flash-heated at 10 °C/ms to about 600 °C. The volatiles were carried in helium through the heated transfer line (300 °C) to the GC inlet. Bulk samples may contain soluble organic matter, which produces thermal degradation products and rearrangements.",
+                          "schema:name": "Flash pyrolysis at about 600 °C",
                           "dcterms:isPartOf": {"@id": "ex:bennuPyGCMSRun"},
-                          "prov:used": [
-                            {
-                              "@id": "ex:helium",
-                              "@type": [
-                                "prov:Entity",
-                                "schema:ChemicalSubstance"
-                              ],
-                              "schema:additionalType": [
-                                {"@id": "https://www.wikidata.org/entity/Q2356542"}
-                              ],
-                              "schema:description": "Carrier gas for the pyrolysis products and the GC.",
-                              "schema:name": "Helium"
-                            },
-                            {
-                              "@id": "ex:bennuPreparedSample",
-                              "@type": [
-                                "prov:Entity",
-                                "schema:Thing"
-                              ],
-                              "prov:wasGeneratedBy": [
-                                {
-                                  "@id": "ex:bennuSamplePrep",
-                                  "@type": [
-                                    "prov:Activity"
-                                  ],
-                                  "dcterms:isPartOf": {"@id": "ex:bennuPyGCMSRun"},
-                                  "prov:used": [
-                                    {
-                                      "@id": "ex:pyrolysisOven",
-                                      "@type": [
-                                        "prov:Entity",
-                                        "schema:Product"
-                                      ],
-                                      "schema:additionalType": [
-                                        {"@id": "https://www.wikidata.org/entity/Q3099911"}
-                                      ],
-                                      "schema:description": "Pyrolysis front-end interface coupled to the GC-MS. Flash heats at 10 °C/ms to temperatures up to 1300 °C.",
-                                      "schema:name": "Pyrolysis oven"
-                                    },
-                                    {"@id": "ex:OREX-803003-0"},
-                                    {
-                                      "@id": "ex:quartzTubes",
-                                      "@type": [
-                                        "prov:Entity",
-                                        "schema:Product"
-                                      ],
-                                      "schema:additionalType": [
-                                        {"@id": "https://www.wikidata.org/entity/Q3099911"}
-                                      ],
-                                      "schema:description": "Quartz tubes used for loading and weighing solid samples for pyrolysis.",
-                                      "schema:name": "Quartz sample tubes"
-                                    }
-                                  ],
-                                  "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
-                                  "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
-                                  "schema:additionalProperty": [
-                                    {
-                                      "@type": [
-                                        "schema:PropertyValue"
-                                      ],
-                                      "schema:name": "Sample mass",
-                                      "schema:propertyID": {"@id": "ex:param_sampleMass"},
-                                      "schema:unitText": "mg",
-                                      "schema:value": 1
-                                    }
-                                  ],
-                                  "schema:description": "About 1 mg of bulk aggregate from the TAGSAM collection device was loaded and weighed inside a quartz tube, and the tube was placed into the pyrolysis oven interfaced with the GC-MS.",
-                                  "schema:name": "Load the sample into a quartz tube",
-                                  "schema:position": 1
-                                }
-                              ],
-                              "schema:additionalType": [
-                                {"@id": "bios:Sample"}
-                              ],
-                              "schema:description": "About 1 mg of Bennu aggregate, loaded and weighed in a quartz tube, ready for pyrolysis.",
-                              "schema:name": "Prepared sample in quartz tube"
-                            },
-                            {"@id": "ex:pyrolysisOven"}
-                          ],
-                          "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
                           "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
                           "schema:additionalProperty": [
+                            {
+                              "@type": [
+                                "schema:PropertyValue"
+                              ],
+                              "schema:name": "Target temperature",
+                              "schema:propertyID": {"@id": "ex:param_pyrolysisTemp"},
+                              "schema:unitText": "°C",
+                              "schema:value": 600
+                            },
                             {
                               "@type": [
                                 "schema:PropertyValue"
@@ -187,161 +240,110 @@
                               "schema:propertyID": {"@id": "ex:param_pyrolysisRate"},
                               "schema:unitText": "°C/ms",
                               "schema:value": 10
-                            },
-                            {
-                              "@type": [
-                                "schema:PropertyValue"
-                              ],
-                              "schema:name": "Target temperature",
-                              "schema:propertyID": {"@id": "ex:param_pyrolysisTemp"},
-                              "schema:unitText": "°C",
-                              "schema:value": 600
                             }
                           ],
-                          "schema:description": "Flash-heated at 10 °C/ms to about 600 °C. The volatiles were carried in helium through the heated transfer line (300 °C) to the GC inlet. Bulk samples may contain soluble organic matter, which produces thermal degradation products and rearrangements.",
-                          "schema:name": "Flash pyrolysis at about 600 °C",
-                          "schema:position": 2
+                          "schema:position": 2,
+                          "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
+                          "prov:used": [
+                            {
+                              "@id": "ex:helium",
+                              "@type": [
+                                "prov:Entity",
+                                "schema:ChemicalSubstance"
+                              ],
+                              "schema:description": "Carrier gas for the pyrolysis products and the GC.",
+                              "schema:name": "Helium",
+                              "schema:additionalType": [
+                                {"@id": "https://www.wikidata.org/entity/Q2356542"}
+                              ]
+                            },
+                            {
+                              "@id": "ex:pyrolysisOven",
+                              "@type": [
+                                "prov:Entity",
+                                "schema:Product"
+                              ],
+                              "schema:description": "Pyrolysis front-end interface coupled to the GC-MS. Flash heats at 10 °C/ms to temperatures up to 1300 °C.",
+                              "schema:name": "Pyrolysis oven",
+                              "schema:additionalType": [
+                                {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                              ]
+                            },
+                            {
+                              "@id": "ex:bennuPreparedSample",
+                              "@type": [
+                                "prov:Entity",
+                                "schema:Thing"
+                              ],
+                              "schema:description": "About 1 mg of Bennu aggregate, loaded and weighed in a quartz tube, ready for pyrolysis.",
+                              "schema:name": "Prepared sample in quartz tube",
+                              "prov:wasGeneratedBy": [
+                                {
+                                  "@id": "ex:bennuSamplePrep",
+                                  "@type": [
+                                    "prov:Activity"
+                                  ],
+                                  "schema:description": "About 1 mg of bulk aggregate from the TAGSAM collection device was loaded and weighed inside a quartz tube, and the tube was placed into the pyrolysis oven interfaced with the GC-MS.",
+                                  "schema:name": "Load the sample into a quartz tube",
+                                  "dcterms:isPartOf": {"@id": "ex:bennuPyGCMSRun"},
+                                  "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
+                                  "schema:additionalProperty": [
+                                    {
+                                      "@type": [
+                                        "schema:PropertyValue"
+                                      ],
+                                      "schema:name": "Sample mass",
+                                      "schema:propertyID": {"@id": "ex:param_sampleMass"},
+                                      "schema:unitText": "mg",
+                                      "schema:value": 1
+                                    }
+                                  ],
+                                  "schema:position": 1,
+                                  "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
+                                  "prov:used": [
+                                    {"@id": "ex:pyrolysisOven"},
+                                    {
+                                      "@id": "ex:quartzTubes",
+                                      "@type": [
+                                        "prov:Entity",
+                                        "schema:Product"
+                                      ],
+                                      "schema:description": "Quartz tubes used for loading and weighing solid samples for pyrolysis.",
+                                      "schema:name": "Quartz sample tubes",
+                                      "schema:additionalType": [
+                                        {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                                      ]
+                                    },
+                                    {"@id": "ex:OREX-803003-0"}
+                                  ]
+                                }
+                              ],
+                              "schema:additionalType": [
+                                {"@id": "bios:Sample"}
+                              ]
+                            }
+                          ]
                         }
                       ],
                       "schema:additionalType": [
                         {"@id": "bios:Sample"}
-                      ],
-                      "schema:description": "Thermally extracted volatiles from flash pyrolysis, carried in helium through the heated transfer line at 300 °C to the GC inlet.",
-                      "schema:name": "Pyrolysis volatiles in helium carrier stream"
-                    },
-                    {
-                      "@id": "ex:gasChromatograph",
-                      "@type": [
-                        "prov:Entity",
-                        "schema:Product"
-                      ],
-                      "schema:additionalType": [
-                        {"@id": "https://www.wikidata.org/entity/Q3099911"}
-                      ],
-                      "schema:description": "GC with an Rtx-5ms (5% diphenyl / 95% dimethyl polysiloxane) fused silica capillary column, 30 m × 0.250 mm × 0.50 µm, with a 5 m × 0.250 mm guard column.",
-                      "schema:name": "Gas chromatograph with Rtx-5ms column"
+                      ]
                     },
                     {"@id": "ex:helium"}
-                  ],
-                  "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
-                  "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
-                  "schema:additionalProperty": [
-                    {
-                      "@type": [
-                        "schema:PropertyValue"
-                      ],
-                      "schema:name": "Split ratio",
-                      "schema:propertyID": {"@id": "ex:param_splitRatio"},
-                      "schema:value": "10:1"
-                    },
-                    {
-                      "@type": [
-                        "schema:PropertyValue"
-                      ],
-                      "schema:name": "Carrier gas flow",
-                      "schema:propertyID": {"@id": "ex:param_carrierGasFlow"},
-                      "schema:unitText": "mL/min",
-                      "schema:value": 1.5
-                    },
-                    {
-                      "@type": [
-                        "schema:PropertyValue"
-                      ],
-                      "schema:name": "Column",
-                      "schema:propertyID": {"@id": "ex:param_columnType"},
-                      "schema:value": "Rtx-5ms, 30 m × 0.250 mm × 0.50 µm + 5 m guard"
-                    },
-                    {
-                      "@type": [
-                        "schema:PropertyValue"
-                      ],
-                      "schema:name": "Inlet temperature",
-                      "schema:propertyID": {"@id": "ex:param_inletTemp"},
-                      "schema:unitText": "°C",
-                      "schema:value": 300
-                    }
-                  ],
-                  "schema:description": "Chromatographic separation on an Rtx-5ms column (30 m × 0.250 mm × 0.50 µm, 5 m guard), with split injection 10:1 at 300 °C and helium carrier at 1.500 mL/min. Run time 87.79 min.",
-                  "schema:name": "GC separation on an Rtx-5ms column",
-                  "schema:position": 3
+                  ]
                 }
               ],
               "schema:additionalType": [
                 {"@id": "bios:Sample"}
-              ],
-              "schema:description": "Time-resolved stream of separated compounds eluting from the GC column into the mass spectrometer.",
-              "schema:name": "Chromatographically separated eluent"
-            },
-            {
-              "@id": "ex:tsqMassSpectrometer",
-              "@type": [
-                "prov:Entity",
-                "schema:Product"
-              ],
-              "schema:additionalType": [
-                {"@id": "https://www.wikidata.org/entity/Q3099911"}
-              ],
-              "schema:description": "TSQ triple-quadrupole MS, operated in EI mode, positive polarity, with simultaneous full scan and timed SRM/MRM.",
-              "schema:name": "Thermo Scientific TSQ triple-quadrupole mass spectrometer",
-              "schema:serialNumber": "TSQ96CI2301004",
-              "schema:url": "https://www.thermofisher.com/"
+              ]
             }
           ],
-          "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
-          "schema:actionStatus": {"@id": "schema:CompletedActionStatus"},
-          "schema:additionalProperty": [
-            {
-              "@type": [
-                "schema:PropertyValue"
-              ],
-              "schema:name": "MRM target compounds",
-              "schema:propertyID": {"@id": "ex:param_mrmCompoundCount"},
-              "schema:value": 38
-            },
-            {
-              "@type": [
-                "schema:PropertyValue"
-              ],
-              "schema:name": "Full scan range",
-              "schema:propertyID": {"@id": "ex:param_scanRange"},
-              "schema:value": "m/z 50–500"
-            },
-            {
-              "@type": [
-                "schema:PropertyValue"
-              ],
-              "schema:name": "Full scan time",
-              "schema:propertyID": "full scan time",
-              "schema:unitText": "s",
-              "schema:value": 0.1
-            },
-            {
-              "@type": [
-                "schema:PropertyValue"
-              ],
-              "schema:name": "Ion source temperature",
-              "schema:propertyID": "ion source temperature",
-              "schema:unitText": "°C",
-              "schema:value": 300
-            },
-            {
-              "@type": [
-                "schema:PropertyValue"
-              ],
-              "schema:name": "Ionization mode",
-              "schema:propertyID": {"@id": "ex:param_ionizationMode"},
-              "schema:value": "electron ionization (EI), positive polarity"
-            }
-          ],
-          "schema:description": "Simultaneous full scan (m/z 50–500, EI positive, 0.100 s scan time) and timed SRM/MRM (38 compounds, 2–3 transitions each). Ion source and transfer line at 300 °C; detector gain 100,000.",
-          "schema:name": "Dual-mode MS detection (full scan and MRM)",
-          "schema:position": 4,
           "@reverse": {
             "prov:wasGeneratedBy": {
               "@id": "ex:20231121_002_OREX-803003-0.cdf",
               "@type": [
-                "prov:Entity",
-                "schema:MediaObject"
+                "schema:MediaObject",
+                "prov:Entity"
               ],
               "schema:description": "Raw analytical data (full scan and MRM) in Common Data Format, from Chromeleon sequence 20231929_Bennu_01.seq.",
               "schema:encodingFormat": "application/x-netcdf",
@@ -354,20 +356,18 @@
   ],
   "prov:generatedAtTime": "2023-11-21T23:59:59+00:00",
   "schema:dateModified": "2023-11-21",
-  "schema:description": "Raw pyrolysis-GC-MS/MS data (full scan and MRM) for OSIRIS-REx sample OREX-803003-0. The lab-protocol scenario of the provenance-approach comparison (implementationTesting/APPROACHES.md), based on examples/Bennu-py-GC-MSarc.cdifprov.json.",
-  "schema:name": "Py-GC-MS/MS data for Bennu sample OREX-803003-0",
   "schema:subjectOf": {
     "@id": "ex:bennuPyGCMSData-record",
     "@type": [
       "schema:Dataset"
     ],
+    "schema:additionalType": [
+      {"@id": "dcat:CatalogRecord"}
+    ],
     "dcterms:conformsTo": [
       {"@id": "https://w3id.org/cdif/provenance/2.0"}
     ],
-    "schema:about": {"@id": "ex:bennuPyGCMSData"},
-    "schema:additionalType": [
-      {"@id": "dcat:CatalogRecord"}
-    ]
+    "schema:about": {"@id": "ex:bennuPyGCMSData"}
   },
   "@included": [
     {
