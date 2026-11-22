@@ -13,11 +13,27 @@ generated it, in `prov:wasGeneratedBy`. The activity names the entities it drew 
 and what it used to do so (`schema:instrument`); the steps of its procedure name the same entities
 as their inputs.
 
+A process with several stages can be recorded in two ways, which a record may combine:
+
+- **Chained activities:** several activities in `prov:wasGeneratedBy`, linked by `@id` (one's
+  `schema:result` is a later one's `schema:object`). The order follows from those links. This is
+  the field-sample scenario; the qualitative scenario's activities branch and join.
+- **One activity with steps:** the activity's `schema:actionProcess` is an inline HowTo whose
+  `schema:step`s are typed `[schema:HowToStep, schema:Action]` and ordered by `schema:position`.
+  This is the workflow and lab-protocol scenarios.
+  - A step is a `schema:Action`, not a `prov:Activity`. Only the activities in
+    `prov:wasGeneratedBy` must be `prov:Activity`. A step becomes one in PROV-O.
+
+The lab-measurement scenario combines them: two chained activities, the second with seven steps.
+In PROV-O both forms give one `prov:Activity` per stage. Chained activities stay separate, and
+only the last one generates the root. Steps are `dcterms:isPartOf` their activity, and the step
+that produced the root generates it.
+
 | cdifProv | PROV-O, qualified | PROV-O, plain | RO-Crate | scenario |
 |---|---|---|---|---|
 | root `schema:Dataset` | `prov:Entity` | `prov:Entity` | a `Dataset` data entity with the same IRI, in the root's `hasPart`; the crate's root `./` is the crate, not the dataset | workflow, minimal |
 | root `prov:wasGeneratedBy` activity | `prov:qualifiedGeneration [prov:activity; prov:atTime` = activity end`]` | `prov:wasGeneratedBy` + `prov:generatedAtTime` | `CreateAction` in the root's `mentions`; the dataset is in its `result` | workflow, minimal |
-| several root `prov:wasGeneratedBy` activities, chained (one's `schema:result` is a later one's `schema:object`) | each a `prov:Activity`; only the last (whose results no listed activity takes as input) generates the root | same | each a `CreateAction` in the root's `mentions`; the dataset is the last one's `result` | field sample; branching and joining, qualitative |
+| several root `prov:wasGeneratedBy` activities, chained (one's `schema:result` is a later one's `schema:object`); the alternative is one activity with steps (the HowTo step row) | each a `prov:Activity`; only the last (whose results no listed activity takes as input) generates the root | same | each a `CreateAction` in the root's `mentions`; the dataset is the last one's `result` | field sample, lab measurement; branching and joining, qualitative |
 | root `schema:subjectOf` catalog record | copied (no PROV term) | copied | `ro-crate-metadata.json` descriptor (not the same thing: it describes the crate file) | workflow |
 | activity `[prov:Activity, schema:Action]` | `prov:Activity` | `prov:Activity` | `CreateAction` | workflow |
 | `schema:additionalType` (activity vocabulary IRI) | `rdf:type` | `rdf:type` | `additionalType` (lab protocol); the workflow crate leaves it out | workflow, lab protocol |
@@ -32,7 +48,7 @@ as their inputs.
 | plan: HowTo `schema:isBasedOn` | `prov:hadPlan` on the agent's association; a `prov:Plan` | lost | the workflow: `instrument` of the run's `CreateAction`, and the root's `mainEntity` | workflow |
 | plan: an `{@id}` `schema:actionProcess` | `prov:hadPlan` on the agent's association; a `prov:Plan` with no other statements | lost | `actionProcess` on the `CreateAction`, a term the crate's `@context` adds (it is not in the RO-Crate 1.1 context); the plan is a contextual `HowTo` | minimal |
 | inline `schema:actionProcess` HowTo | no counterpart (its name and description are lost, and so are a procedure's `url`, `prepTime`, `performTime` and `estimatedCost`) | none | the workflow `ComputationalWorkflow`, also typed `HowTo` (workflow); a `HowTo` entity, the run's `actionProcess`, with `isBasedOn` the plan (lab protocol) | workflow, lab protocol |
-| HowTo step `[schema:HowToStep, schema:Action]` | `prov:Activity` + `dcterms:isPartOf` the activity; `schema:position` copied | same | workflow: a `HowToStep` of the workflow (`position`, `workExample` → its tool), a `ControlAction` (instrument → the step, object → the step's run) and a `CreateAction` (the step's run). Lab protocol: one entity typed `[HowToStep, CreateAction]` | workflow, lab protocol |
+| HowTo step `[schema:HowToStep, schema:Action]`, ordered by `schema:position`; a `schema:Action`, not a `prov:Activity` (the alternative to chained activities) | `prov:Activity` + `dcterms:isPartOf` the activity; `schema:position` copied | same | workflow: a `HowToStep` of the workflow (`position`, `workExample` → its tool), a `ControlAction` (instrument → the step, object → the step's run) and a `CreateAction` (the step's run). Lab protocol: one entity typed `[HowToStep, CreateAction]` | workflow, lab protocol |
 | a step's own `schema:actionProcess` HowTo (a sub-procedure) | its `schema:isBasedOn` is the step's `prov:hadPlan`; the HowTo itself has no counterpart. A step with no agent of its own is associated with its activity's agent | none (the plan is lost) | a `HowTo` entity, the step's `actionProcess` | lab protocol |
 | text-only `schema:HowToStep` (no `schema:Action`) | lost | lost | a `HowToStep` in its HowTo's `step` | lab protocol |
 | `schema:object` (an input) | `prov:qualifiedUsage [prov:entity; prov:hadRole ex:InputData]` | `prov:used` | `object` | workflow |
