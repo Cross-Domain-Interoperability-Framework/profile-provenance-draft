@@ -15,7 +15,8 @@ Usage:
             to follow, so the two read side by side. A qualified relation in REF stands for its plain
             form (prov:qualifiedUsage's prov:entity for prov:used; a prov:qualifiedGeneration's prov:atTime
             for prov:generatedAtTime). Keys and values REF does not have keep their place after the one
-            before them.
+            before them. A node REF leaves blank (an RO-Crate names its Places) is matched by its
+            literals.
 
 Layout:
 - The root is the --root node, else the schema:Dataset when there is one (not a catalog record, which
@@ -174,11 +175,14 @@ def scalar(v): return str(v['@value']) if isinstance(v, dict) and '@value' in v 
 def match(objs, kids):                  # each object's place among the reference values, and its reference dict
     pos, used = {}, set()
     for o in objs:
+        hit = []
         if isinstance(o, URIRef):
             hit = [i for i, k in enumerate(kids) if isinstance(k, dict) and k.get('@id') == q(o)]
         elif isinstance(o, Literal):
             hit = [i for i, k in enumerate(kids) if scalar(k) == str(o)]
-        else:                           # a blank node: the reference value sharing most of its literals
+        if not hit and not isinstance(o, Literal):
+            # a blank node, or a node the reference leaves blank (an RO-Crate names its Places and
+            # PropertyValues): the unnamed reference value sharing most of its literals
             lits = {(q(p), str(v)) for p, v in g.predicate_objects(o) if isinstance(v, Literal)}
             score = [(sum((kp, scalar(kv)) in lits for kp, vs in k.items() if not kp.startswith('@') for kv in as_list(vs)), i)
                      for i, k in enumerate(kids) if isinstance(k, dict) and '@id' not in k and i not in used]
