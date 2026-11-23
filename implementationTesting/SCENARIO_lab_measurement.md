@@ -127,5 +127,6 @@ association.
   `ex:Datacollector`; it is now `ex:DataCollector`.
 - **"Step is part of the run" is now expressible in cdifProv**, through the step form; the matrix in
   APPROACHES.md changes from ✘ to ✔. The cost is that a planned step done twice is two steps.
-- **A step cannot be typed.** As in the lab-protocol scenario, a step's `schema:additionalType` is
-  a string, so the steps lose the activity types that the separate activities had.
+- **A step cannot take an activity type.** As in the lab-protocol scenario, a step's
+  `schema:additionalType` takes strings only, not an activity-vocabulary IRI, so the steps lose the
+  activity types that the separate activities had.
