@@ -5,937 +5,850 @@
  -->
 <!-- Title: G Pages: 1 -->
 <svg
- viewBox="0.00 0.00 3247.00 1590.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1586)">
+ viewBox="0.00 0.00 3240.00 1194.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1190)">
 <title>G</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-1586 3242.5,-1586 3242.5,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1190 3235.75,-1190 3235.75,4 -4,4"/>
 <!-- n1 -->
 <g id="node1" class="node">
 <title>n1</title>
-<polygon fill="#ffffff" stroke="none" points="973.25,-1210 973.25,-1230 1073.5,-1230 1073.5,-1210 973.25,-1210"/>
-<text xml:space="preserve" text-anchor="start" x="977.25" y="-1217.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">dcat:CatalogRecord</text>
-<polygon fill="none" stroke="black" points="973.25,-1210 973.25,-1230 1073.5,-1230 1073.5,-1210 973.25,-1210"/>
+<polygon fill="#ffffff" stroke="none" points="973.25,-980 973.25,-1000 1073.5,-1000 1073.5,-980 973.25,-980"/>
+<text xml:space="preserve" text-anchor="start" x="977.25" y="-987.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">dcat:CatalogRecord</text>
+<polygon fill="none" stroke="black" points="973.25,-980 973.25,-1000 1073.5,-1000 1073.5,-980 973.25,-980"/>
 </g>
 <!-- n3 -->
 <g id="node2" class="node">
 <title>n3</title>
-<polygon fill="#9fb1fc" stroke="none" points="861.5,-994 861.5,-1104 1185.25,-1104 1185.25,-994 861.5,-994"/>
-<text xml:space="preserve" text-anchor="start" x="981.75" y="-1091.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:EPMAAnalysis</text>
-<text xml:space="preserve" text-anchor="start" x="907.88" y="-1073.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">bios:LabProcess, cdifact:Measurement, prov:Activity</text>
-<text xml:space="preserve" text-anchor="start" x="865.5" y="-1054.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:endedAtTime: 2024&#45;06&#45;10T17:30:00+00:00</text>
-<text xml:space="preserve" text-anchor="start" x="865.5" y="-1036.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:startedAtTime: 2024&#45;06&#45;10T08:00:00+00:00</text>
+<polygon fill="#9fb1fc" stroke="none" points="861.5,-764 861.5,-874 1185.25,-874 1185.25,-764 861.5,-764"/>
+<text xml:space="preserve" text-anchor="start" x="981.75" y="-861.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:EPMAAnalysis</text>
+<text xml:space="preserve" text-anchor="start" x="907.88" y="-843.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">bios:LabProcess, cdifact:Measurement, prov:Activity</text>
+<text xml:space="preserve" text-anchor="start" x="865.5" y="-824.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:endedAtTime: 2024&#45;06&#45;10T17:30:00+00:00</text>
+<text xml:space="preserve" text-anchor="start" x="865.5" y="-806.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:startedAtTime: 2024&#45;06&#45;10T08:00:00+00:00</text>
 <g id="a_node2_0"><a xlink:href="#" xlink:title="Quantitative WDS electron microprobe analysis of olivine for major and minor elements, at 15 kV and 20 nA: 142 point analyses of oxide concentrations (wt%), with detection limits and analytical totals.">
-<text xml:space="preserve" text-anchor="start" x="865.5" y="-1018.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Quantitative WDS electron microprobe analysis o…</text>
+<text xml:space="preserve" text-anchor="start" x="865.5" y="-788.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Quantitative WDS electron microprobe analysis o…</text>
 </a>
 </g>
-<text xml:space="preserve" text-anchor="start" x="865.5" y="-1000.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: EPMA major element analysis of olivine</text>
-<polygon fill="none" stroke="black" points="861.5,-994 861.5,-1104 1185.25,-1104 1185.25,-994 861.5,-994"/>
+<text xml:space="preserve" text-anchor="start" x="865.5" y="-770.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: EPMA major element analysis of olivine</text>
+<polygon fill="none" stroke="black" points="861.5,-764 861.5,-874 1185.25,-874 1185.25,-764 861.5,-764"/>
 </g>
 <!-- n28 -->
 <g id="node24" class="node">
 <title>n28</title>
-<polygon fill="#e8e8e8" stroke="none" points="1458.75,-1424 1458.75,-1444 1517,-1444 1517,-1424 1458.75,-1424"/>
-<text xml:space="preserve" text-anchor="start" x="1462.75" y="-1431.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
-<polygon fill="none" stroke="black" points="1458.75,-1424 1458.75,-1444 1517,-1444 1517,-1424 1458.75,-1424"/>
+<polygon fill="#e8e8e8" stroke="none" points="1452,-1028 1452,-1048 1510.25,-1048 1510.25,-1028 1452,-1028"/>
+<text xml:space="preserve" text-anchor="start" x="1456" y="-1035.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
+<polygon fill="none" stroke="black" points="1452,-1028 1452,-1048 1510.25,-1048 1510.25,-1028 1452,-1028"/>
 </g>
 <!-- n3&#45;&gt;n28 -->
-<g id="edge31" class="edge">
+<g id="edge26" class="edge">
 <title>n3&#45;&gt;n28</title>
-<path fill="none" stroke="#555555" d="M1175.93,-1103.98C1179.28,-1107.43 1182.4,-1111.1 1185.25,-1115 1220.78,-1163.59 1166.69,-1340.52 1207.25,-1385 1268.55,-1452.23 1386.85,-1447.98 1448.06,-1440.38"/>
-<polygon fill="#555555" stroke="#555555" points="1448.21,-1443.89 1457.66,-1439.09 1447.28,-1436.95 1448.21,-1443.89"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-1440.18" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
+<path fill="none" stroke="#555555" d="M1160.79,-873.97C1169.1,-877.62 1177.31,-881.32 1185.25,-885 1285.4,-931.41 1400.61,-993.94 1452.39,-1022.55"/>
+<polygon fill="#555555" stroke="#555555" points="1450.68,-1025.6 1461.13,-1027.39 1454.08,-1019.48 1450.68,-1025.6"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.62" y="-947.38" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
 </g>
 <!-- n32 -->
 <g id="node28" class="node">
 <title>n32</title>
-<polygon fill="#e8e8e8" stroke="none" points="1458.75,-751 1458.75,-771 1517,-771 1517,-751 1458.75,-751"/>
-<text xml:space="preserve" text-anchor="start" x="1462.75" y="-758.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
-<polygon fill="none" stroke="black" points="1458.75,-751 1458.75,-771 1517,-771 1517,-751 1458.75,-751"/>
+<polygon fill="#e8e8e8" stroke="none" points="1452,-890 1452,-910 1510.25,-910 1510.25,-890 1452,-890"/>
+<text xml:space="preserve" text-anchor="start" x="1456" y="-897.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
+<polygon fill="none" stroke="black" points="1452,-890 1452,-910 1510.25,-910 1510.25,-890 1452,-890"/>
 </g>
 <!-- n3&#45;&gt;n32 -->
-<g id="edge32" class="edge">
+<g id="edge27" class="edge">
 <title>n3&#45;&gt;n32</title>
-<path fill="none" stroke="#555555" d="M1174.67,-994.18C1178.44,-990.68 1181.98,-986.96 1185.25,-983 1216.6,-945.08 1180.33,-915.69 1207.25,-874.5 1246.34,-814.69 1272.31,-808.3 1338.75,-782 1373.82,-768.12 1416.77,-763.23 1447.37,-761.59"/>
-<polygon fill="#555555" stroke="#555555" points="1447.5,-765.09 1457.35,-761.17 1447.21,-758.1 1447.5,-765.09"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-876.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
+<path fill="none" stroke="#555555" d="M1185.06,-847.56C1276.69,-863.84 1384.25,-882.96 1440.79,-893.01"/>
+<polygon fill="#555555" stroke="#555555" points="1440.11,-896.44 1450.57,-894.75 1441.34,-889.55 1440.11,-896.44"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.62" y="-871.09" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
 </g>
 <!-- n36 -->
 <g id="node32" class="node">
 <title>n36</title>
-<polygon fill="#ffffff" stroke="none" points="1338.75,-1309 1338.75,-1347 1637,-1347 1637,-1309 1338.75,-1309"/>
-<text xml:space="preserve" text-anchor="start" x="1424.5" y="-1334.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Location, schema:Place</text>
+<polygon fill="#ffffff" stroke="none" points="1332,-822 1332,-860 1630.25,-860 1630.25,-822 1332,-822"/>
+<text xml:space="preserve" text-anchor="start" x="1417.75" y="-847.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Location, schema:Place</text>
 <g id="a_node32_1"><a xlink:href="#" xlink:title="Electron Microprobe Laboratory, Department of Earth Sciences, Example University">
-<text xml:space="preserve" text-anchor="start" x="1342.75" y="-1315.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Electron Microprobe Laboratory, Department of E…</text>
+<text xml:space="preserve" text-anchor="start" x="1336" y="-828.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Electron Microprobe Laboratory, Department of E…</text>
 </a>
 </g>
-<polygon fill="none" stroke="black" points="1338.75,-1309 1338.75,-1347 1637,-1347 1637,-1309 1338.75,-1309"/>
+<polygon fill="none" stroke="black" points="1332,-822 1332,-860 1630.25,-860 1630.25,-822 1332,-822"/>
 </g>
 <!-- n3&#45;&gt;n36 -->
-<g id="edge29" class="edge">
+<g id="edge24" class="edge">
 <title>n3&#45;&gt;n36</title>
-<path fill="none" stroke="#555555" d="M1174.49,-1103.97C1178.31,-1107.43 1181.91,-1111.1 1185.25,-1115 1212.59,-1146.93 1183.51,-1172.3 1207.25,-1207 1247.39,-1265.66 1273.36,-1270.15 1338.75,-1298 1345.48,-1300.87 1352.5,-1303.46 1359.67,-1305.82"/>
-<polygon fill="#555555" stroke="#555555" points="1358.23,-1309.04 1368.82,-1308.65 1360.3,-1302.35 1358.23,-1309.04"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-1289.41" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:atLocation</text>
+<path fill="none" stroke="#555555" d="M1185.06,-826.76C1229.14,-828.88 1276.91,-831.19 1320.92,-833.31"/>
+<polygon fill="#555555" stroke="#555555" points="1320.65,-836.81 1330.8,-833.79 1320.98,-829.81 1320.65,-836.81"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.62" y="-834.57" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:atLocation</text>
 </g>
 <!-- n39 -->
 <g id="node35" class="node">
 <title>n39</title>
-<polygon fill="#ffffff" stroke="none" points="1407,-1213 1407,-1287 1568.75,-1287 1568.75,-1213 1407,-1213"/>
-<text xml:space="preserve" text-anchor="start" x="1438.75" y="-1274.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
-<text xml:space="preserve" text-anchor="start" x="1411" y="-1255.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Beam diameter</text>
-<text xml:space="preserve" text-anchor="start" x="1411" y="-1237.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:propertyID: beam diameter</text>
-<text xml:space="preserve" text-anchor="start" x="1411" y="-1219.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: focused (~1 µm)</text>
-<polygon fill="none" stroke="black" points="1407,-1213 1407,-1287 1568.75,-1287 1568.75,-1213 1407,-1213"/>
+<polygon fill="#e8e8e8" stroke="none" points="1440.75,-780 1440.75,-800 1521.5,-800 1521.5,-780 1440.75,-780"/>
+<text xml:space="preserve" text-anchor="start" x="1444.75" y="-787.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Association</text>
+<polygon fill="none" stroke="black" points="1440.75,-780 1440.75,-800 1521.5,-800 1521.5,-780 1440.75,-780"/>
 </g>
 <!-- n3&#45;&gt;n39 -->
-<g id="edge24" class="edge">
-<title>n3&#45;&gt;n39</title>
-<path fill="none" stroke="#555555" d="M1162.89,-1103.95C1170.51,-1107.56 1178.01,-1111.25 1185.25,-1115 1195.54,-1120.33 1197.29,-1123.07 1207.25,-1129 1264.7,-1163.18 1277.45,-1175.35 1338.75,-1202 1356.97,-1209.92 1376.93,-1217.25 1396.14,-1223.67"/>
-<polygon fill="#555555" stroke="#555555" points="1395,-1226.98 1405.59,-1226.77 1397.18,-1220.33 1395,-1226.98"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-1193.51" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalProperty</text>
-</g>
-<!-- n40 -->
-<g id="node36" class="node">
-<title>n40</title>
-<polygon fill="#ffffff" stroke="none" points="1396.5,-1117 1396.5,-1191 1579.25,-1191 1579.25,-1117 1396.5,-1117"/>
-<text xml:space="preserve" text-anchor="start" x="1438.75" y="-1178.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
-<text xml:space="preserve" text-anchor="start" x="1400.5" y="-1159.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Number of analyses</text>
-<text xml:space="preserve" text-anchor="start" x="1400.5" y="-1141.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:propertyID: number of analyses</text>
-<text xml:space="preserve" text-anchor="start" x="1400.5" y="-1123.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: 142</text>
-<polygon fill="none" stroke="black" points="1396.5,-1117 1396.5,-1191 1579.25,-1191 1579.25,-1117 1396.5,-1117"/>
-</g>
-<!-- n3&#45;&gt;n40 -->
 <g id="edge25" class="edge">
-<title>n3&#45;&gt;n40</title>
-<path fill="none" stroke="#555555" d="M1185.16,-1085.5C1251.68,-1100.6 1326.8,-1117.66 1385.44,-1130.97"/>
-<polygon fill="#555555" stroke="#555555" points="1384.57,-1134.36 1395.1,-1133.16 1386.12,-1127.54 1384.57,-1134.36"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-1115.94" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalProperty</text>
-</g>
-<!-- n41 -->
-<g id="node37" class="node">
-<title>n41</title>
-<polygon fill="#ffffff" stroke="none" points="1395.75,-1003 1395.75,-1095 1580,-1095 1580,-1003 1395.75,-1003"/>
-<text xml:space="preserve" text-anchor="start" x="1438.75" y="-1082.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
-<text xml:space="preserve" text-anchor="start" x="1399.75" y="-1063.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Accelerating voltage</text>
-<text xml:space="preserve" text-anchor="start" x="1399.75" y="-1045.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:propertyID: accelerating voltage</text>
-<text xml:space="preserve" text-anchor="start" x="1399.75" y="-1027.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:unitText: kV</text>
-<text xml:space="preserve" text-anchor="start" x="1399.75" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: 15</text>
-<polygon fill="none" stroke="black" points="1395.75,-1003 1395.75,-1095 1580,-1095 1580,-1003 1395.75,-1003"/>
-</g>
-<!-- n3&#45;&gt;n41 -->
-<g id="edge26" class="edge">
-<title>n3&#45;&gt;n41</title>
-<path fill="none" stroke="#555555" d="M1185.16,-1049C1251.3,-1049 1325.94,-1049 1384.43,-1049"/>
-<polygon fill="#555555" stroke="#555555" points="1384.39,-1052.5 1394.39,-1049 1384.39,-1045.5 1384.39,-1052.5"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-1050.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalProperty</text>
-</g>
-<!-- n42 -->
-<g id="node38" class="node">
-<title>n42</title>
-<polygon fill="#ffffff" stroke="none" points="1410.75,-889 1410.75,-981 1565,-981 1565,-889 1410.75,-889"/>
-<text xml:space="preserve" text-anchor="start" x="1438.75" y="-968.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
-<text xml:space="preserve" text-anchor="start" x="1414.75" y="-949.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Beam current</text>
-<text xml:space="preserve" text-anchor="start" x="1414.75" y="-931.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:propertyID: beam current</text>
-<text xml:space="preserve" text-anchor="start" x="1414.75" y="-913.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:unitText: nA</text>
-<text xml:space="preserve" text-anchor="start" x="1414.75" y="-895.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: 20</text>
-<polygon fill="none" stroke="black" points="1410.75,-889 1410.75,-981 1565,-981 1565,-889 1410.75,-889"/>
-</g>
-<!-- n3&#45;&gt;n42 -->
-<g id="edge27" class="edge">
-<title>n3&#45;&gt;n42</title>
-<path fill="none" stroke="#555555" d="M1185.16,-1009.37C1257.34,-991.58 1339.65,-971.29 1400.05,-956.4"/>
-<polygon fill="#555555" stroke="#555555" points="1400.72,-959.84 1409.59,-954.05 1399.05,-953.04 1400.72,-959.84"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-1004.16" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalProperty</text>
+<title>n3&#45;&gt;n39</title>
+<path fill="none" stroke="#555555" d="M1185.06,-808.78C1271.07,-803.3 1371.11,-796.94 1429.82,-793.2"/>
+<polygon fill="#555555" stroke="#555555" points="1429.73,-796.71 1439.49,-792.59 1429.29,-789.73 1429.73,-796.71"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.62" y="-809.05" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedAssociation</text>
 </g>
 <!-- n43 -->
 <g id="node39" class="node">
 <title>n43</title>
-<polygon fill="#ffffff" stroke="none" points="1388.25,-793 1388.25,-867 1587.5,-867 1587.5,-793 1388.25,-793"/>
-<text xml:space="preserve" text-anchor="start" x="1438.75" y="-854.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
-<text xml:space="preserve" text-anchor="start" x="1392.25" y="-835.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Matrix correction model</text>
-<text xml:space="preserve" text-anchor="start" x="1392.25" y="-817.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:propertyID: matrix correction model</text>
-<text xml:space="preserve" text-anchor="start" x="1392.25" y="-799.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: ZAF (LINEMU MACs)</text>
-<polygon fill="none" stroke="black" points="1388.25,-793 1388.25,-867 1587.5,-867 1587.5,-793 1388.25,-793"/>
+<polygon fill="#e8e8e8" stroke="none" points="1452,-702 1452,-722 1510.25,-722 1510.25,-702 1452,-702"/>
+<text xml:space="preserve" text-anchor="start" x="1456" y="-709.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
+<polygon fill="none" stroke="black" points="1452,-702 1452,-722 1510.25,-722 1510.25,-702 1452,-702"/>
 </g>
 <!-- n3&#45;&gt;n43 -->
 <g id="edge28" class="edge">
 <title>n3&#45;&gt;n43</title>
-<path fill="none" stroke="#555555" d="M1166.65,-994.04C1173.04,-990.51 1179.28,-986.83 1185.25,-983 1196.5,-975.79 1196.7,-970.7 1207.25,-962.5 1262.1,-919.87 1275.96,-907.73 1338.75,-878 1351.09,-872.16 1364.32,-866.75 1377.62,-861.84"/>
-<polygon fill="#555555" stroke="#555555" points="1378.63,-865.19 1386.86,-858.52 1376.26,-858.61 1378.63,-865.19"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-964.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalProperty</text>
-</g>
-<!-- n44 -->
-<g id="node40" class="node">
-<title>n44</title>
-<polygon fill="#e8e8e8" stroke="none" points="1447.5,-1369 1447.5,-1389 1528.25,-1389 1528.25,-1369 1447.5,-1369"/>
-<text xml:space="preserve" text-anchor="start" x="1451.5" y="-1376.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Association</text>
-<polygon fill="none" stroke="black" points="1447.5,-1369 1447.5,-1389 1528.25,-1389 1528.25,-1369 1447.5,-1369"/>
-</g>
-<!-- n3&#45;&gt;n44 -->
-<g id="edge30" class="edge">
-<title>n3&#45;&gt;n44</title>
-<path fill="none" stroke="#555555" d="M1175.43,-1103.79C1178.95,-1107.3 1182.24,-1111.03 1185.25,-1115 1236.09,-1182.02 1156.64,-1235.8 1207.25,-1303 1260.22,-1373.32 1371.43,-1383.01 1436.51,-1382.11"/>
-<polygon fill="#555555" stroke="#555555" points="1436.28,-1385.62 1446.2,-1381.88 1436.12,-1378.62 1436.28,-1385.62"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-1371.04" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedAssociation</text>
-</g>
-<!-- n48 -->
-<g id="node44" class="node">
-<title>n48</title>
-<polygon fill="#e8e8e8" stroke="none" points="1458.75,-709 1458.75,-729 1517,-729 1517,-709 1458.75,-709"/>
-<text xml:space="preserve" text-anchor="start" x="1462.75" y="-716.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
-<polygon fill="none" stroke="black" points="1458.75,-709 1458.75,-729 1517,-729 1517,-709 1458.75,-709"/>
-</g>
-<!-- n3&#45;&gt;n48 -->
-<g id="edge33" class="edge">
-<title>n3&#45;&gt;n48</title>
-<path fill="none" stroke="#555555" d="M1175.48,-994.25C1178.99,-990.73 1182.26,-986.98 1185.25,-983 1240.9,-908.81 1147.05,-846.05 1207.25,-775.5 1266.59,-705.95 1385.75,-707.33 1447.6,-713.5"/>
-<polygon fill="#555555" stroke="#555555" points="1446.99,-716.96 1457.31,-714.57 1447.76,-710 1446.99,-716.96"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-777.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
+<path fill="none" stroke="#555555" d="M1185.06,-781.28C1276.88,-759.72 1384.7,-734.4 1441.15,-721.15"/>
+<polygon fill="#555555" stroke="#555555" points="1441.65,-724.63 1450.59,-718.93 1440.05,-717.81 1441.65,-724.63"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.62" y="-777.03" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
 </g>
 <!-- n0_22 -->
-<g id="node52" class="node">
+<g id="node47" class="node">
 <title>n0_22</title>
-<polygon fill="#ffffff" stroke="none" points="1408.88,-667 1408.88,-687 1566.88,-687 1566.88,-667 1408.88,-667"/>
-<text xml:space="preserve" text-anchor="start" x="1412.88" y="-674.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">schema:CompletedActionStatus</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="1408.88,-667 1408.88,-687 1566.88,-687 1566.88,-667 1408.88,-667"/>
+<polygon fill="#ffffff" stroke="none" points="1402.12,-660 1402.12,-680 1560.12,-680 1560.12,-660 1402.12,-660"/>
+<text xml:space="preserve" text-anchor="start" x="1406.12" y="-667.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">schema:CompletedActionStatus</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="1402.12,-660 1402.12,-680 1560.12,-680 1560.12,-660 1402.12,-660"/>
 </g>
 <!-- n3&#45;&gt;n0_22 -->
 <g id="edge23" class="edge">
 <title>n3&#45;&gt;n0_22</title>
-<path fill="none" stroke="#555555" d="M1175.94,-994.03C1179.29,-990.58 1182.4,-986.9 1185.25,-983 1221.96,-932.66 1163.55,-747.9 1207.25,-703.5 1266.66,-643.13 1374.17,-652.48 1437.17,-664.74"/>
-<polygon fill="#555555" stroke="#555555" points="1436.41,-668.15 1446.91,-666.74 1437.82,-661.3 1436.41,-668.15"/>
-<text xml:space="preserve" text-anchor="middle" x="1262" y="-705.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:actionStatus</text>
+<path fill="none" stroke="#555555" d="M1163.94,-764.04C1171.22,-760.46 1178.37,-756.77 1185.25,-753 1195.74,-747.25 1196.67,-743.08 1207.25,-737.5 1259.59,-709.9 1274.65,-705.57 1332,-691 1350.83,-686.21 1371.31,-682.43 1390.86,-679.48"/>
+<polygon fill="#555555" stroke="#555555" points="1391.35,-682.94 1400.75,-678.05 1390.35,-676.01 1391.35,-682.94"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.62" y="-739.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:actionStatus</text>
 </g>
 <!-- n4 -->
 <g id="node3" class="node">
 <title>n4</title>
-<polygon fill="#9fb1fc" stroke="none" points="1743.62,-454 1743.62,-564 2056.12,-564 2056.12,-454 1743.62,-454"/>
-<text xml:space="preserve" text-anchor="start" x="1833.88" y="-551.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:EPMASamplePreparation</text>
-<text xml:space="preserve" text-anchor="start" x="1833.12" y="-533.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">bios:LabProcess, prov:Activity</text>
-<text xml:space="preserve" text-anchor="start" x="1747.62" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:endedAtTime: 2024&#45;06&#45;03T00:00:00</text>
-<text xml:space="preserve" text-anchor="start" x="1747.62" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:startedAtTime: 2024&#45;06&#45;01T00:00:00</text>
+<polygon fill="#9fb1fc" stroke="none" points="1736.88,-419 1736.88,-529 2049.38,-529 2049.38,-419 1736.88,-419"/>
+<text xml:space="preserve" text-anchor="start" x="1827.12" y="-516.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:EPMASamplePreparation</text>
+<text xml:space="preserve" text-anchor="start" x="1826.38" y="-498.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">bios:LabProcess, prov:Activity</text>
+<text xml:space="preserve" text-anchor="start" x="1740.88" y="-479.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:endedAtTime: 2024&#45;06&#45;03T00:00:00</text>
+<text xml:space="preserve" text-anchor="start" x="1740.88" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:startedAtTime: 2024&#45;06&#45;01T00:00:00</text>
 <g id="a_node3_2"><a xlink:href="#" xlink:title="Olivine grains from drill core KI81&#45;1 were mounted in epoxy, ground, polished, and carbon coated for electron microprobe analysis.">
-<text xml:space="preserve" text-anchor="start" x="1747.62" y="-478.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Olivine grains from drill core KI81&#45;1 were moun…</text>
+<text xml:space="preserve" text-anchor="start" x="1740.88" y="-443.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Olivine grains from drill core KI81&#45;1 were moun…</text>
 </a>
 </g>
-<text xml:space="preserve" text-anchor="start" x="1747.62" y="-460.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Sample preparation for EPMA</text>
-<polygon fill="none" stroke="black" points="1743.62,-454 1743.62,-564 2056.12,-564 2056.12,-454 1743.62,-454"/>
+<text xml:space="preserve" text-anchor="start" x="1740.88" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Sample preparation for EPMA</text>
+<polygon fill="none" stroke="black" points="1736.88,-419 1736.88,-529 2049.38,-529 2049.38,-419 1736.88,-419"/>
 </g>
 <!-- n29 -->
 <g id="node25" class="node">
 <title>n29</title>
-<polygon fill="#e8e8e8" stroke="none" points="2294,-447 2294,-467 2352.25,-467 2352.25,-447 2294,-447"/>
-<text xml:space="preserve" text-anchor="start" x="2298" y="-454.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
-<polygon fill="none" stroke="black" points="2294,-447 2294,-467 2352.25,-467 2352.25,-447 2294,-447"/>
+<polygon fill="#e8e8e8" stroke="none" points="2287.25,-461 2287.25,-481 2345.5,-481 2345.5,-461 2287.25,-461"/>
+<text xml:space="preserve" text-anchor="start" x="2291.25" y="-468.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
+<polygon fill="none" stroke="black" points="2287.25,-461 2287.25,-481 2345.5,-481 2345.5,-461 2287.25,-461"/>
 </g>
 <!-- n4&#45;&gt;n29 -->
-<g id="edge36" class="edge">
+<g id="edge31" class="edge">
 <title>n4&#45;&gt;n29</title>
-<path fill="none" stroke="#555555" d="M2055.77,-488.23C2065.74,-486.95 2075.64,-485.7 2085.25,-484.5 2154.75,-475.85 2235.83,-466.62 2282.84,-461.36"/>
-<polygon fill="#555555" stroke="#555555" points="2282.98,-464.87 2292.53,-460.28 2282.2,-457.91 2282.98,-464.87"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-486.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
+<path fill="none" stroke="#555555" d="M2049.19,-472.9C2130.8,-472.31 2224.41,-471.65 2276.02,-471.28"/>
+<polygon fill="#555555" stroke="#555555" points="2275.81,-474.78 2285.78,-471.21 2275.76,-467.78 2275.81,-474.78"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-474.63" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
 </g>
 <!-- n34 -->
 <g id="node30" class="node">
 <title>n34</title>
-<polygon fill="#e8e8e8" stroke="none" points="2244.5,-573 2244.5,-611 2401.75,-611 2401.75,-573 2244.5,-573"/>
-<text xml:space="preserve" text-anchor="start" x="2288.62" y="-598.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Generation</text>
-<text xml:space="preserve" text-anchor="start" x="2248.5" y="-579.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:atTime: 2024&#45;06&#45;03T00:00:00</text>
-<polygon fill="none" stroke="black" points="2244.5,-573 2244.5,-611 2401.75,-611 2401.75,-573 2244.5,-573"/>
+<polygon fill="#e8e8e8" stroke="none" points="2237.75,-663 2237.75,-701 2395,-701 2395,-663 2237.75,-663"/>
+<text xml:space="preserve" text-anchor="start" x="2281.88" y="-688.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Generation</text>
+<text xml:space="preserve" text-anchor="start" x="2241.75" y="-669.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:atTime: 2024&#45;06&#45;03T00:00:00</text>
+<polygon fill="none" stroke="black" points="2237.75,-663 2237.75,-701 2395,-701 2395,-663 2237.75,-663"/>
 </g>
 <!-- n4&#45;&gt;n34 -->
 <g id="edge12" class="edge">
 <title>n4&#45;&gt;n34</title>
-<path fill="none" stroke="#555555" d="M2066.95,-542.38C2073.13,-543.6 2079.24,-544.81 2085.25,-546 2138.47,-556.51 2198.46,-568.16 2244.76,-577.1"/>
-<polygon fill="#555555" stroke="#555555" points="2067.76,-538.97 2057.27,-540.45 2066.39,-545.84 2067.76,-538.97"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-567.05" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:activity</text>
+<path fill="none" stroke="#555555" d="M2053.66,-536.69C2054.63,-537.78 2055.57,-538.88 2056.5,-540 2088.52,-578.78 2041.79,-616.62 2078.5,-651 2120.43,-690.27 2186.32,-696.12 2237.98,-693.22"/>
+<polygon fill="#555555" stroke="#555555" points="2056.4,-534.49 2046.9,-529.81 2051.41,-539.4 2056.4,-534.49"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-693.51" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:activity</text>
+</g>
+<!-- n40 -->
+<g id="node36" class="node">
+<title>n40</title>
+<polygon fill="#e8e8e8" stroke="none" points="2276,-546 2276,-566 2356.75,-566 2356.75,-546 2276,-546"/>
+<text xml:space="preserve" text-anchor="start" x="2280" y="-553.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Association</text>
+<polygon fill="none" stroke="black" points="2276,-546 2276,-566 2356.75,-566 2356.75,-546 2276,-546"/>
+</g>
+<!-- n4&#45;&gt;n40 -->
+<g id="edge30" class="edge">
+<title>n4&#45;&gt;n40</title>
+<path fill="none" stroke="#555555" d="M2049.13,-510.93C2059.06,-513.05 2068.91,-515.09 2078.5,-517 2142.51,-529.72 2216.84,-541.47 2264.92,-548.68"/>
+<polygon fill="#555555" stroke="#555555" points="2264.35,-552.13 2274.75,-550.14 2265.38,-545.21 2264.35,-552.13"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-536.54" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedAssociation</text>
 </g>
 <!-- n45 -->
 <g id="node41" class="node">
 <title>n45</title>
-<polygon fill="#e8e8e8" stroke="none" points="2282.75,-1046 2282.75,-1066 2363.5,-1066 2363.5,-1046 2282.75,-1046"/>
-<text xml:space="preserve" text-anchor="start" x="2286.75" y="-1053.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Association</text>
-<polygon fill="none" stroke="black" points="2282.75,-1046 2282.75,-1066 2363.5,-1066 2363.5,-1046 2282.75,-1046"/>
+<polygon fill="#e8e8e8" stroke="none" points="2287.25,-504 2287.25,-524 2345.5,-524 2345.5,-504 2287.25,-504"/>
+<text xml:space="preserve" text-anchor="start" x="2291.25" y="-511.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
+<polygon fill="none" stroke="black" points="2287.25,-504 2287.25,-524 2345.5,-524 2345.5,-504 2287.25,-504"/>
 </g>
 <!-- n4&#45;&gt;n45 -->
-<g id="edge35" class="edge">
+<g id="edge32" class="edge">
 <title>n4&#45;&gt;n45</title>
-<path fill="none" stroke="#555555" d="M2051.87,-563.75C2055.9,-567.27 2059.71,-571.02 2063.25,-575 2087.75,-602.56 2060.95,-627.26 2085.25,-655 2117.92,-692.3 2156.96,-659.82 2188,-698.5 2221.8,-740.62 2193.47,-766.59 2210,-818 2237.3,-902.87 2288.15,-996.68 2310.77,-1036.46"/>
-<polygon fill="#555555" stroke="#555555" points="2307.71,-1038.16 2315.72,-1045.08 2313.78,-1034.67 2307.71,-1038.16"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-700.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedAssociation</text>
+<path fill="none" stroke="#555555" d="M2049.19,-488.72C2130.8,-496.47 2224.41,-505.36 2276.02,-510.26"/>
+<polygon fill="#555555" stroke="#555555" points="2275.5,-513.73 2285.79,-511.19 2276.16,-506.76 2275.5,-513.73"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-503.01" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
 </g>
-<!-- n50 -->
-<g id="node46" class="node">
-<title>n50</title>
-<polygon fill="#e8e8e8" stroke="none" points="2294,-531 2294,-551 2352.25,-551 2352.25,-531 2294,-531"/>
-<text xml:space="preserve" text-anchor="start" x="2298" y="-538.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
-<polygon fill="none" stroke="black" points="2294,-531 2294,-551 2352.25,-551 2352.25,-531 2294,-531"/>
+<!-- n0_28 -->
+<g id="node48" class="node">
+<title>n0_28</title>
+<polygon fill="#ffffff" stroke="none" points="2237.38,-419 2237.38,-439 2395.38,-439 2395.38,-419 2237.38,-419"/>
+<text xml:space="preserve" text-anchor="start" x="2241.38" y="-426.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">schema:CompletedActionStatus</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2237.38,-419 2237.38,-439 2395.38,-439 2395.38,-419 2237.38,-419"/>
 </g>
-<!-- n4&#45;&gt;n50 -->
-<g id="edge37" class="edge">
-<title>n4&#45;&gt;n50</title>
-<path fill="none" stroke="#555555" d="M2055.94,-520.78C2137.55,-526.98 2231.16,-534.09 2282.77,-538.01"/>
-<polygon fill="#555555" stroke="#555555" points="2282.3,-541.48 2292.54,-538.75 2282.83,-534.5 2282.3,-541.48"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-532.6" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
-</g>
-<!-- n0_33 -->
-<g id="node53" class="node">
-<title>n0_33</title>
-<polygon fill="#ffffff" stroke="none" points="2244.12,-489 2244.12,-509 2402.12,-509 2402.12,-489 2244.12,-489"/>
-<text xml:space="preserve" text-anchor="start" x="2248.12" y="-496.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">schema:CompletedActionStatus</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2244.12,-489 2244.12,-509 2402.12,-509 2402.12,-489 2244.12,-489"/>
-</g>
-<!-- n4&#45;&gt;n0_33 -->
-<g id="edge34" class="edge">
-<title>n4&#45;&gt;n0_33</title>
-<path fill="none" stroke="#555555" d="M2055.78,-502.36C2065.75,-502.04 2075.64,-501.75 2085.25,-501.5 2134.04,-500.25 2188.5,-499.62 2232.88,-499.31"/>
-<polygon fill="#555555" stroke="#555555" points="2232.74,-502.81 2242.72,-499.24 2232.7,-495.81 2232.74,-502.81"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-503.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:actionStatus</text>
+<!-- n4&#45;&gt;n0_28 -->
+<g id="edge29" class="edge">
+<title>n4&#45;&gt;n0_28</title>
+<path fill="none" stroke="#555555" d="M2049.19,-457.44C2108.73,-451.07 2174.65,-444.03 2225.99,-438.55"/>
+<polygon fill="#555555" stroke="#555555" points="2226.31,-442.03 2235.88,-437.49 2225.56,-435.07 2226.31,-442.03"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-456.14" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:actionStatus</text>
 </g>
 <!-- n7 -->
 <g id="node4" class="node">
 <title>n7</title>
-<polygon fill="#fffc87" stroke="none" points="2599.88,-330 2599.88,-422 2870.38,-422 2870.38,-330 2599.88,-330"/>
-<text xml:space="preserve" text-anchor="start" x="2713.75" y="-409.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:KI81&#45;1</text>
-<text xml:space="preserve" text-anchor="start" x="2678.12" y="-391.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Thing</text>
-<text xml:space="preserve" text-anchor="start" x="2603.88" y="-372.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Drill core from the Kilauea Iki lava lake.</text>
-<text xml:space="preserve" text-anchor="start" x="2603.88" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:identifier: KI81&#45;1</text>
-<text xml:space="preserve" text-anchor="start" x="2603.88" y="-336.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Drill core KI81&#45;1</text>
-<polygon fill="none" stroke="black" points="2599.88,-330 2599.88,-422 2870.38,-422 2870.38,-330 2599.88,-330"/>
+<polygon fill="#fffc87" stroke="none" points="2593.12,-330 2593.12,-422 2863.62,-422 2863.62,-330 2593.12,-330"/>
+<text xml:space="preserve" text-anchor="start" x="2707" y="-409.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:KI81&#45;1</text>
+<text xml:space="preserve" text-anchor="start" x="2671.38" y="-391.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Thing</text>
+<text xml:space="preserve" text-anchor="start" x="2597.12" y="-372.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Drill core from the Kilauea Iki lava lake.</text>
+<text xml:space="preserve" text-anchor="start" x="2597.12" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:identifier: KI81&#45;1</text>
+<text xml:space="preserve" text-anchor="start" x="2597.12" y="-336.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Drill core KI81&#45;1</text>
+<polygon fill="none" stroke="black" points="2593.12,-330 2593.12,-422 2863.62,-422 2863.62,-330 2593.12,-330"/>
 </g>
-<!-- n2_37 -->
-<g id="node54" class="node">
-<title>n2_37</title>
-<polygon fill="#ffffff" stroke="none" points="3100,-366 3100,-386 3166.5,-386 3166.5,-366 3100,-366"/>
-<text xml:space="preserve" text-anchor="start" x="3104" y="-373.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">bios:Sample</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="3100,-366 3100,-386 3166.5,-386 3166.5,-366 3100,-366"/>
+<!-- n2_32 -->
+<g id="node49" class="node">
+<title>n2_32</title>
+<polygon fill="#ffffff" stroke="none" points="3093.25,-366 3093.25,-386 3159.75,-386 3159.75,-366 3093.25,-366"/>
+<text xml:space="preserve" text-anchor="start" x="3097.25" y="-373.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">bios:Sample</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="3093.25,-366 3093.25,-386 3159.75,-386 3159.75,-366 3093.25,-366"/>
 </g>
-<!-- n7&#45;&gt;n2_37 -->
-<g id="edge38" class="edge">
-<title>n7&#45;&gt;n2_37</title>
-<path fill="none" stroke="#555555" d="M2870.23,-376C2946.24,-376 3036.32,-376 3088.61,-376"/>
-<polygon fill="#555555" stroke="#555555" points="3088.6,-379.5 3098.6,-376 3088.6,-372.5 3088.6,-379.5"/>
-<text xml:space="preserve" text-anchor="middle" x="2958.38" y="-377.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
+<!-- n7&#45;&gt;n2_32 -->
+<g id="edge33" class="edge">
+<title>n7&#45;&gt;n2_32</title>
+<path fill="none" stroke="#555555" d="M2863.48,-376C2939.49,-376 3029.57,-376 3081.86,-376"/>
+<polygon fill="#555555" stroke="#555555" points="3081.85,-379.5 3091.85,-376 3081.85,-372.5 3081.85,-379.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2951.62" y="-377.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
 </g>
 <!-- n8 -->
 <g id="node5" class="node">
 <title>n8</title>
-<polygon fill="#9fb1fc" stroke="none" points="1748.12,-227 1748.12,-301 2051.62,-301 2051.62,-227 1748.12,-227"/>
-<text xml:space="preserve" text-anchor="start" x="1865" y="-288.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:KI81Drilling</text>
-<text xml:space="preserve" text-anchor="start" x="1833.12" y="-270.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">cdifact:Sampling, prov:Activity</text>
+<polygon fill="#9fb1fc" stroke="none" points="1741.38,-221 1741.38,-295 2044.88,-295 2044.88,-221 1741.38,-221"/>
+<text xml:space="preserve" text-anchor="start" x="1858.25" y="-282.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:KI81Drilling</text>
+<text xml:space="preserve" text-anchor="start" x="1826.38" y="-264.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">cdifact:Sampling, prov:Activity</text>
 <g id="a_node5_3"><a xlink:href="#" xlink:title="Core drilled through the crust of the Kilauea Iki lava lake (the 1959 eruption&#39;s ponded lava), recovering a vertical section of the lake&#39;s olivine&#45;bearing basalt, in 1981.">
-<text xml:space="preserve" text-anchor="start" x="1752.12" y="-251.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Core drilled through the crust of the Kilauea I…</text>
+<text xml:space="preserve" text-anchor="start" x="1745.38" y="-245.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Core drilled through the crust of the Kilauea I…</text>
 </a>
 </g>
-<text xml:space="preserve" text-anchor="start" x="1752.12" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Drilling of core KI81&#45;1, Kilauea Iki lava lake</text>
-<polygon fill="none" stroke="black" points="1748.12,-227 1748.12,-301 2051.62,-301 2051.62,-227 1748.12,-227"/>
+<text xml:space="preserve" text-anchor="start" x="1745.38" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Drilling of core KI81&#45;1, Kilauea Iki lava lake</text>
+<polygon fill="none" stroke="black" points="1741.38,-221 1741.38,-295 2044.88,-295 2044.88,-221 1741.38,-221"/>
 </g>
 <!-- n27 -->
 <g id="node23" class="node">
 <title>n27</title>
-<polygon fill="#e8e8e8" stroke="none" points="2294,-183 2294,-203 2352.25,-203 2352.25,-183 2294,-183"/>
-<text xml:space="preserve" text-anchor="start" x="2298" y="-190.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
-<polygon fill="none" stroke="black" points="2294,-183 2294,-203 2352.25,-203 2352.25,-183 2294,-183"/>
+<polygon fill="#e8e8e8" stroke="none" points="2287.25,-183 2287.25,-203 2345.5,-203 2345.5,-183 2287.25,-183"/>
+<text xml:space="preserve" text-anchor="start" x="2291.25" y="-190.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Usage</text>
+<polygon fill="none" stroke="black" points="2287.25,-183 2287.25,-203 2345.5,-203 2345.5,-183 2287.25,-183"/>
 </g>
 <!-- n8&#45;&gt;n27 -->
-<g id="edge43" class="edge">
+<g id="edge38" class="edge">
 <title>n8&#45;&gt;n27</title>
-<path fill="none" stroke="#555555" d="M2051.47,-238.62C2134.25,-224.67 2230.53,-208.44 2283.03,-199.59"/>
-<polygon fill="#555555" stroke="#555555" points="2283.4,-203.08 2292.68,-197.96 2282.23,-196.17 2283.4,-203.08"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-234.7" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
+<path fill="none" stroke="#555555" d="M2044.72,-234.76C2127.5,-221.99 2223.78,-207.13 2276.28,-199.03"/>
+<polygon fill="#555555" stroke="#555555" points="2276.57,-202.53 2285.92,-197.54 2275.51,-195.61 2276.57,-202.53"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-231.34" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedUsage</text>
 </g>
 <!-- n33 -->
 <g id="node29" class="node">
 <title>n33</title>
-<polygon fill="#ffffff" stroke="none" points="2223.5,-66 2223.5,-104 2422.75,-104 2422.75,-66 2223.5,-66"/>
-<text xml:space="preserve" text-anchor="start" x="2259.75" y="-91.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Location, schema:Place</text>
-<text xml:space="preserve" text-anchor="start" x="2227.5" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Kilauea Iki lava lake, Hawaii</text>
-<polygon fill="none" stroke="black" points="2223.5,-66 2223.5,-104 2422.75,-104 2422.75,-66 2223.5,-66"/>
+<polygon fill="#ffffff" stroke="none" points="2216.75,-66 2216.75,-104 2416,-104 2416,-66 2216.75,-66"/>
+<text xml:space="preserve" text-anchor="start" x="2253" y="-91.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Location, schema:Place</text>
+<text xml:space="preserve" text-anchor="start" x="2220.75" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Kilauea Iki lava lake, Hawaii</text>
+<polygon fill="none" stroke="black" points="2216.75,-66 2216.75,-104 2416,-104 2416,-66 2216.75,-66"/>
 </g>
 <!-- n8&#45;&gt;n33 -->
-<g id="edge41" class="edge">
+<g id="edge36" class="edge">
 <title>n8&#45;&gt;n33</title>
-<path fill="none" stroke="#555555" d="M1987.9,-227.02C2071.77,-191.38 2196.11,-138.55 2267.1,-108.38"/>
-<polygon fill="#555555" stroke="#555555" points="2268.38,-111.64 2276.21,-104.51 2265.64,-105.2 2268.38,-111.64"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-187.17" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:atLocation</text>
+<path fill="none" stroke="#555555" d="M1983.98,-221.1C2067.18,-186.93 2188.35,-137.17 2258.8,-108.24"/>
+<polygon fill="#555555" stroke="#555555" points="2259.91,-111.56 2267.83,-104.52 2257.25,-105.09 2259.91,-111.56"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-183.81" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:atLocation</text>
 </g>
 <!-- n35 -->
 <g id="node31" class="node">
 <title>n35</title>
-<polygon fill="#e8e8e8" stroke="none" points="2282.75,-254 2282.75,-274 2363.5,-274 2363.5,-254 2282.75,-254"/>
-<text xml:space="preserve" text-anchor="start" x="2286.75" y="-261.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Association</text>
-<polygon fill="none" stroke="black" points="2282.75,-254 2282.75,-274 2363.5,-274 2363.5,-254 2282.75,-254"/>
+<polygon fill="#e8e8e8" stroke="none" points="2276,-248 2276,-268 2356.75,-268 2356.75,-248 2276,-248"/>
+<text xml:space="preserve" text-anchor="start" x="2280" y="-255.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Association</text>
+<polygon fill="none" stroke="black" points="2276,-248 2276,-268 2356.75,-268 2356.75,-248 2276,-248"/>
 </g>
 <!-- n8&#45;&gt;n35 -->
-<g id="edge42" class="edge">
+<g id="edge37" class="edge">
 <title>n8&#45;&gt;n35</title>
-<path fill="none" stroke="#555555" d="M2051.47,-264C2128.48,-264 2217.18,-264 2271.44,-264"/>
-<polygon fill="#555555" stroke="#555555" points="2271.3,-267.5 2281.3,-264 2271.3,-260.5 2271.3,-267.5"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-265.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedAssociation</text>
+<path fill="none" stroke="#555555" d="M2044.72,-258C2121.73,-258 2210.43,-258 2264.69,-258"/>
+<polygon fill="#555555" stroke="#555555" points="2264.55,-261.5 2274.55,-258 2264.55,-254.5 2264.55,-261.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-259.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedAssociation</text>
 </g>
-<!-- n46 -->
-<g id="node42" class="node">
-<title>n46</title>
-<polygon fill="#e8e8e8" stroke="none" points="2284.62,-345 2284.62,-365 2361.62,-365 2361.62,-345 2284.62,-345"/>
-<text xml:space="preserve" text-anchor="start" x="2288.62" y="-352.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Generation</text>
-<polygon fill="none" stroke="black" points="2284.62,-345 2284.62,-365 2361.62,-365 2361.62,-345 2284.62,-345"/>
+<!-- n41 -->
+<g id="node37" class="node">
+<title>n41</title>
+<polygon fill="#e8e8e8" stroke="none" points="2277.88,-357 2277.88,-377 2354.88,-377 2354.88,-357 2277.88,-357"/>
+<text xml:space="preserve" text-anchor="start" x="2281.88" y="-364.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Generation</text>
+<polygon fill="none" stroke="black" points="2277.88,-357 2277.88,-377 2354.88,-377 2354.88,-357 2277.88,-357"/>
 </g>
-<!-- n8&#45;&gt;n46 -->
+<!-- n8&#45;&gt;n41 -->
 <g id="edge18" class="edge">
-<title>n8&#45;&gt;n46</title>
-<path fill="none" stroke="#555555" d="M2062.66,-302.98C2070.29,-304.7 2077.85,-306.38 2085.25,-308 2155.5,-323.35 2237.93,-339.22 2284.7,-348.03"/>
-<polygon fill="#555555" stroke="#555555" points="2063.45,-299.57 2052.92,-300.77 2061.9,-306.4 2063.45,-299.57"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-330.2" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:activity</text>
+<title>n8&#45;&gt;n41</title>
+<path fill="none" stroke="#555555" d="M2048.13,-297.85C2131.14,-319.33 2226.81,-344.08 2278.16,-357.37"/>
+<polygon fill="#555555" stroke="#555555" points="2049.06,-294.47 2038.5,-295.36 2047.3,-301.25 2049.06,-294.47"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-333.69" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:activity</text>
 </g>
-<!-- n0_39 -->
-<g id="node55" class="node">
-<title>n0_39</title>
-<polygon fill="#ffffff" stroke="none" points="2244.12,-296 2244.12,-316 2402.12,-316 2402.12,-296 2244.12,-296"/>
-<text xml:space="preserve" text-anchor="start" x="2248.12" y="-303.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">schema:CompletedActionStatus</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2244.12,-296 2244.12,-316 2402.12,-316 2402.12,-296 2244.12,-296"/>
+<!-- n0_34 -->
+<g id="node50" class="node">
+<title>n0_34</title>
+<polygon fill="#ffffff" stroke="none" points="2237.38,-290 2237.38,-310 2395.38,-310 2395.38,-290 2237.38,-290"/>
+<text xml:space="preserve" text-anchor="start" x="2241.38" y="-297.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">schema:CompletedActionStatus</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2237.38,-290 2237.38,-310 2395.38,-310 2395.38,-290 2237.38,-290"/>
 </g>
-<!-- n8&#45;&gt;n0_39 -->
-<g id="edge40" class="edge">
-<title>n8&#45;&gt;n0_39</title>
-<path fill="none" stroke="#555555" d="M2051.47,-279.01C2112.2,-285.07 2180.19,-291.85 2232.84,-297.1"/>
-<polygon fill="#555555" stroke="#555555" points="2232.37,-300.57 2242.67,-298.08 2233.06,-293.6 2232.37,-300.57"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-294.36" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:actionStatus</text>
+<!-- n8&#45;&gt;n0_34 -->
+<g id="edge35" class="edge">
+<title>n8&#45;&gt;n0_34</title>
+<path fill="none" stroke="#555555" d="M2044.72,-273.01C2105.45,-279.07 2173.44,-285.85 2226.09,-291.1"/>
+<polygon fill="#555555" stroke="#555555" points="2225.62,-294.57 2235.92,-292.08 2226.31,-287.6 2225.62,-294.57"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-288.36" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:actionStatus</text>
 </g>
 <!-- n9 -->
 <g id="node6" class="node">
 <title>n9</title>
-<polygon fill="#ffffff" stroke="none" points="1868.88,-700 1868.88,-738 1930.88,-738 1930.88,-700 1868.88,-700"/>
-<text xml:space="preserve" text-anchor="start" x="1872.88" y="-725.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:Software</text>
-<text xml:space="preserve" text-anchor="start" x="1878.88" y="-707.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
-<polygon fill="none" stroke="black" points="1868.88,-700 1868.88,-738 1930.88,-738 1930.88,-700 1868.88,-700"/>
+<polygon fill="#ffffff" stroke="none" points="1862.12,-665 1862.12,-703 1924.12,-703 1924.12,-665 1862.12,-665"/>
+<text xml:space="preserve" text-anchor="start" x="1866.12" y="-690.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:Software</text>
+<text xml:space="preserve" text-anchor="start" x="1872.12" y="-672.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
+<polygon fill="none" stroke="black" points="1862.12,-665 1862.12,-703 1924.12,-703 1924.12,-665 1862.12,-665"/>
 </g>
 <!-- n10 -->
 <g id="node7" class="node">
 <title>n10</title>
-<polygon fill="#fed37f" stroke="none" points="2643.75,-234 2643.75,-308 2826.5,-308 2826.5,-234 2643.75,-234"/>
-<text xml:space="preserve" text-anchor="start" x="2714.12" y="-295.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:USGS</text>
-<text xml:space="preserve" text-anchor="start" x="2647.75" y="-277.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Organization, schema:Organization</text>
-<text xml:space="preserve" text-anchor="start" x="2647.75" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: U.S. Geological Survey</text>
-<text xml:space="preserve" text-anchor="start" x="2647.75" y="-240.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:url: https://www.usgs.gov/</text>
-<polygon fill="none" stroke="black" points="2643.75,-234 2643.75,-308 2826.5,-308 2826.5,-234 2643.75,-234"/>
+<polygon fill="#fed37f" stroke="none" points="2637,-234 2637,-308 2819.75,-308 2819.75,-234 2637,-234"/>
+<text xml:space="preserve" text-anchor="start" x="2707.38" y="-295.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:USGS</text>
+<text xml:space="preserve" text-anchor="start" x="2641" y="-277.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Organization, schema:Organization</text>
+<text xml:space="preserve" text-anchor="start" x="2641" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: U.S. Geological Survey</text>
+<text xml:space="preserve" text-anchor="start" x="2641" y="-240.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:url: https://www.usgs.gov/</text>
+<polygon fill="none" stroke="black" points="2637,-234 2637,-308 2819.75,-308 2819.75,-234 2637,-234"/>
 </g>
 <!-- n11 -->
 <g id="node8" class="node">
 <title>n11</title>
-<polygon fill="#fed37f" stroke="none" points="1832.5,-1337 1832.5,-1393 1967.25,-1393 1967.25,-1337 1832.5,-1337"/>
-<text xml:space="preserve" text-anchor="start" x="1873.25" y="-1380.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:chenWei</text>
-<text xml:space="preserve" text-anchor="start" x="1836.5" y="-1362.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Person, schema:Person</text>
-<text xml:space="preserve" text-anchor="start" x="1836.5" y="-1343.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Chen, Wei</text>
-<polygon fill="none" stroke="black" points="1832.5,-1337 1832.5,-1393 1967.25,-1393 1967.25,-1337 1832.5,-1337"/>
+<polygon fill="#fed37f" stroke="none" points="1825.75,-785 1825.75,-841 1960.5,-841 1960.5,-785 1825.75,-785"/>
+<text xml:space="preserve" text-anchor="start" x="1866.5" y="-828.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:chenWei</text>
+<text xml:space="preserve" text-anchor="start" x="1829.75" y="-810.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Person, schema:Person</text>
+<text xml:space="preserve" text-anchor="start" x="1829.75" y="-791.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Chen, Wei</text>
+<polygon fill="none" stroke="black" points="1825.75,-785 1825.75,-841 1960.5,-841 1960.5,-785 1825.75,-785"/>
 </g>
 <!-- n31 -->
 <g id="node27" class="node">
 <title>n31</title>
-<polygon fill="#ffffff" stroke="none" points="2210,-1286 2210,-1342 2436.25,-1342 2436.25,-1286 2210,-1286"/>
-<text xml:space="preserve" text-anchor="start" x="2274" y="-1329.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
-<text xml:space="preserve" text-anchor="start" x="2214" y="-1310.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:url: https://orcid.org/0000&#45;0002&#45;5555&#45;6666</text>
-<text xml:space="preserve" text-anchor="start" x="2214" y="-1292.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: 0000&#45;0002&#45;5555&#45;6666</text>
-<polygon fill="none" stroke="black" points="2210,-1286 2210,-1342 2436.25,-1342 2436.25,-1286 2210,-1286"/>
+<polygon fill="#ffffff" stroke="none" points="2203.25,-723 2203.25,-779 2429.5,-779 2429.5,-723 2203.25,-723"/>
+<text xml:space="preserve" text-anchor="start" x="2267.25" y="-766.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
+<text xml:space="preserve" text-anchor="start" x="2207.25" y="-747.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:url: https://orcid.org/0000&#45;0002&#45;5555&#45;6666</text>
+<text xml:space="preserve" text-anchor="start" x="2207.25" y="-729.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: 0000&#45;0002&#45;5555&#45;6666</text>
+<polygon fill="none" stroke="black" points="2203.25,-723 2203.25,-779 2429.5,-779 2429.5,-723 2203.25,-723"/>
 </g>
 <!-- n11&#45;&gt;n31 -->
-<g id="edge45" class="edge">
+<g id="edge40" class="edge">
 <title>n11&#45;&gt;n31</title>
-<path fill="none" stroke="#555555" d="M1967.16,-1356.98C2029.21,-1349.46 2123.48,-1338.05 2199.27,-1328.87"/>
-<polygon fill="#555555" stroke="#555555" points="2199.31,-1332.39 2208.81,-1327.72 2198.47,-1325.45 2199.31,-1332.39"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-1344.5" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:identifier</text>
+<path fill="none" stroke="#555555" d="M1960.41,-803.24C2022.46,-794.11 2116.73,-780.24 2192.52,-769.08"/>
+<polygon fill="#555555" stroke="#555555" points="2192.69,-772.6 2202.07,-767.68 2191.67,-765.67 2192.69,-772.6"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-787.66" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:identifier</text>
 </g>
-<!-- n11&#45;&gt;n45 -->
+<!-- n11&#45;&gt;n40 -->
 <g id="edge17" class="edge">
-<title>n11&#45;&gt;n45</title>
-<path fill="none" stroke="#555555" d="M1977.92,-1355.76C2006.1,-1350.05 2037.39,-1340.84 2063.25,-1326 2187.72,-1254.56 2290.21,-1105.25 2315.91,-1065.75"/>
-<polygon fill="#555555" stroke="#555555" points="1977.54,-1352.27 1968.37,-1357.58 1978.84,-1359.15 1977.54,-1352.27"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-1311.99" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:agent</text>
+<title>n11&#45;&gt;n40</title>
+<path fill="none" stroke="#555555" d="M1971.55,-812.18C2002.07,-807.79 2034.91,-797.29 2056.5,-774 2098.27,-728.93 2036.9,-682.73 2078.5,-637.5 2110.35,-602.87 2143.13,-639.59 2181.25,-612 2196.13,-601.23 2188.06,-587.33 2203.25,-577 2224.54,-562.52 2253.12,-557.33 2276.1,-555.73"/>
+<polygon fill="#555555" stroke="#555555" points="1971.44,-808.67 1961.94,-813.35 1972.29,-815.62 1971.44,-808.67"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-639.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:agent</text>
 </g>
-<!-- n47 -->
-<g id="node43" class="node">
-<title>n47</title>
-<polygon fill="#ffffff" stroke="none" points="2238.5,-1364 2238.5,-1402 2407.75,-1402 2407.75,-1364 2238.5,-1364"/>
-<text xml:space="preserve" text-anchor="start" x="2275.88" y="-1389.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:ContactPoint</text>
-<text xml:space="preserve" text-anchor="start" x="2242.5" y="-1370.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:email: w.chen@example.org</text>
-<polygon fill="none" stroke="black" points="2238.5,-1364 2238.5,-1402 2407.75,-1402 2407.75,-1364 2238.5,-1364"/>
+<!-- n42 -->
+<g id="node38" class="node">
+<title>n42</title>
+<polygon fill="#ffffff" stroke="none" points="2231.75,-801 2231.75,-839 2401,-839 2401,-801 2231.75,-801"/>
+<text xml:space="preserve" text-anchor="start" x="2269.12" y="-826.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:ContactPoint</text>
+<text xml:space="preserve" text-anchor="start" x="2235.75" y="-807.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:email: w.chen@example.org</text>
+<polygon fill="none" stroke="black" points="2231.75,-801 2231.75,-839 2401,-839 2401,-801 2231.75,-801"/>
 </g>
-<!-- n11&#45;&gt;n47 -->
-<g id="edge44" class="edge">
-<title>n11&#45;&gt;n47</title>
-<path fill="none" stroke="#555555" d="M1967.16,-1367.83C2037.16,-1370.82 2148.16,-1375.57 2227.39,-1378.95"/>
-<polygon fill="#555555" stroke="#555555" points="2227.19,-1382.45 2237.33,-1379.38 2227.49,-1375.45 2227.19,-1382.45"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-1379.13" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:contactPoint</text>
+<!-- n11&#45;&gt;n42 -->
+<g id="edge39" class="edge">
+<title>n11&#45;&gt;n42</title>
+<path fill="none" stroke="#555555" d="M1960.41,-814.1C2030.41,-815.26 2141.41,-817.11 2220.64,-818.43"/>
+<polygon fill="#555555" stroke="#555555" points="2220.52,-821.92 2230.58,-818.59 2220.64,-814.93 2220.52,-821.92"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-819.69" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:contactPoint</text>
 </g>
 <!-- n12 -->
 <g id="node9" class="node">
 <title>n12</title>
-<polygon fill="#fffc87" stroke="none" points="2584.12,-570 2584.12,-644 2886.12,-644 2886.12,-570 2584.12,-570"/>
-<text xml:space="preserve" text-anchor="start" x="2693.5" y="-631.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:dentonDV502A</text>
-<text xml:space="preserve" text-anchor="start" x="2673.25" y="-613.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Product</text>
-<text xml:space="preserve" text-anchor="start" x="2588.12" y="-594.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Used to coat the polished mounts with carbon.</text>
-<text xml:space="preserve" text-anchor="start" x="2588.12" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Denton DV&#45;502A vacuum evaporator</text>
-<polygon fill="none" stroke="black" points="2584.12,-570 2584.12,-644 2886.12,-644 2886.12,-570 2584.12,-570"/>
+<polygon fill="#fffc87" stroke="none" points="2577.38,-564 2577.38,-638 2879.38,-638 2879.38,-564 2577.38,-564"/>
+<text xml:space="preserve" text-anchor="start" x="2686.75" y="-625.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:dentonDV502A</text>
+<text xml:space="preserve" text-anchor="start" x="2666.5" y="-607.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Product</text>
+<text xml:space="preserve" text-anchor="start" x="2581.38" y="-588.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Used to coat the polished mounts with carbon.</text>
+<text xml:space="preserve" text-anchor="start" x="2581.38" y="-570.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Denton DV&#45;502A vacuum evaporator</text>
+<polygon fill="none" stroke="black" points="2577.38,-564 2577.38,-638 2879.38,-638 2879.38,-564 2577.38,-564"/>
 </g>
-<!-- n24_45 -->
-<g id="node56" class="node">
-<title>n24_45</title>
-<polygon fill="#ffffff" stroke="none" points="3028,-597 3028,-617 3238.5,-617 3238.5,-597 3028,-597"/>
-<text xml:space="preserve" text-anchor="start" x="3032" y="-604.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://www.wikidata.org/entity/Q3099911&gt;</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="3028,-597 3028,-617 3238.5,-617 3238.5,-597 3028,-597"/>
+<!-- n24_40 -->
+<g id="node51" class="node">
+<title>n24_40</title>
+<polygon fill="#ffffff" stroke="none" points="3021.25,-591 3021.25,-611 3231.75,-611 3231.75,-591 3021.25,-591"/>
+<text xml:space="preserve" text-anchor="start" x="3025.25" y="-598.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://www.wikidata.org/entity/Q3099911&gt;</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="3021.25,-591 3021.25,-611 3231.75,-611 3231.75,-591 3021.25,-591"/>
 </g>
-<!-- n12&#45;&gt;n24_45 -->
-<g id="edge46" class="edge">
-<title>n12&#45;&gt;n24_45</title>
-<path fill="none" stroke="#555555" d="M2885.88,-607C2929.24,-607 2975.89,-607 3016.8,-607"/>
-<polygon fill="#555555" stroke="#555555" points="3016.67,-610.5 3026.67,-607 3016.67,-603.5 3016.67,-610.5"/>
-<text xml:space="preserve" text-anchor="middle" x="2958.38" y="-608.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
+<!-- n12&#45;&gt;n24_40 -->
+<g id="edge41" class="edge">
+<title>n12&#45;&gt;n24_40</title>
+<path fill="none" stroke="#555555" d="M2879.13,-601C2922.49,-601 2969.14,-601 3010.05,-601"/>
+<polygon fill="#555555" stroke="#555555" points="3009.92,-604.5 3019.92,-601 3009.92,-597.5 3009.92,-604.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2951.62" y="-602.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
 </g>
 <!-- n13 -->
 <g id="node10" class="node">
 <title>n13</title>
-<polygon fill="#fffc87" stroke="none" points="1748.12,-1475 1748.12,-1531 2051.62,-1531 2051.62,-1475 1748.12,-1475"/>
-<text xml:space="preserve" text-anchor="start" x="1861.25" y="-1518.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:jeolJXA8530F</text>
-<text xml:space="preserve" text-anchor="start" x="1838" y="-1500.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Product</text>
+<polygon fill="#fffc87" stroke="none" points="1741.38,-1079 1741.38,-1135 2044.88,-1135 2044.88,-1079 1741.38,-1079"/>
+<text xml:space="preserve" text-anchor="start" x="1854.5" y="-1122.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:jeolJXA8530F</text>
+<text xml:space="preserve" text-anchor="start" x="1831.25" y="-1104.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Product</text>
 <g id="a_node10_4"><a xlink:href="#" xlink:title="JEOL JXA&#45;8530F Plus field emission electron microprobe">
-<text xml:space="preserve" text-anchor="start" x="1752.12" y="-1481.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: JEOL JXA&#45;8530F Plus field emission electron mic…</text>
+<text xml:space="preserve" text-anchor="start" x="1745.38" y="-1085.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: JEOL JXA&#45;8530F Plus field emission electron mic…</text>
 </a>
 </g>
-<polygon fill="none" stroke="black" points="1748.12,-1475 1748.12,-1531 2051.62,-1531 2051.62,-1475 1748.12,-1475"/>
+<polygon fill="none" stroke="black" points="1741.38,-1079 1741.38,-1135 2044.88,-1135 2044.88,-1079 1741.38,-1079"/>
 </g>
 <!-- n26 -->
 <g id="node22" class="node">
 <title>n26</title>
-<polygon fill="#ffffff" stroke="none" points="2249.75,-1544 2249.75,-1582 2396.5,-1582 2396.5,-1544 2249.75,-1544"/>
-<text xml:space="preserve" text-anchor="start" x="2274.38" y="-1569.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:ProductModel</text>
-<text xml:space="preserve" text-anchor="start" x="2253.75" y="-1550.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: JXA&#45;8530F Plus</text>
-<polygon fill="none" stroke="black" points="2249.75,-1544 2249.75,-1582 2396.5,-1582 2396.5,-1544 2249.75,-1544"/>
+<polygon fill="#ffffff" stroke="none" points="2243,-1148 2243,-1186 2389.75,-1186 2389.75,-1148 2243,-1148"/>
+<text xml:space="preserve" text-anchor="start" x="2267.62" y="-1173.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:ProductModel</text>
+<text xml:space="preserve" text-anchor="start" x="2247" y="-1154.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: JXA&#45;8530F Plus</text>
+<polygon fill="none" stroke="black" points="2243,-1148 2243,-1186 2389.75,-1186 2389.75,-1148 2243,-1148"/>
 </g>
 <!-- n13&#45;&gt;n26 -->
-<g id="edge49" class="edge">
+<g id="edge44" class="edge">
 <title>n13&#45;&gt;n26</title>
-<path fill="none" stroke="#555555" d="M2051.47,-1524.45C2114.53,-1533.43 2185.43,-1543.53 2238.84,-1551.14"/>
-<polygon fill="#555555" stroke="#555555" points="2238.07,-1554.56 2248.46,-1552.51 2239.05,-1547.63 2238.07,-1554.56"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-1545.54" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:model</text>
+<path fill="none" stroke="#555555" d="M2044.72,-1128.45C2107.78,-1137.43 2178.68,-1147.53 2232.09,-1155.14"/>
+<polygon fill="#555555" stroke="#555555" points="2231.32,-1158.56 2241.71,-1156.51 2232.3,-1151.63 2231.32,-1158.56"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-1149.54" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:model</text>
 </g>
-<!-- n49 -->
-<g id="node45" class="node">
-<title>n49</title>
-<polygon fill="#fed37f" stroke="none" points="2273,-1484 2273,-1522 2373.25,-1522 2373.25,-1484 2273,-1484"/>
-<text xml:space="preserve" text-anchor="start" x="2277" y="-1509.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:Organization</text>
-<text xml:space="preserve" text-anchor="start" x="2277" y="-1490.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: JEOL</text>
-<polygon fill="none" stroke="black" points="2273,-1484 2273,-1522 2373.25,-1522 2373.25,-1484 2273,-1484"/>
+<!-- n44 -->
+<g id="node40" class="node">
+<title>n44</title>
+<polygon fill="#fed37f" stroke="none" points="2266.25,-1088 2266.25,-1126 2366.5,-1126 2366.5,-1088 2266.25,-1088"/>
+<text xml:space="preserve" text-anchor="start" x="2270.25" y="-1113.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:Organization</text>
+<text xml:space="preserve" text-anchor="start" x="2270.25" y="-1094.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: JEOL</text>
+<polygon fill="none" stroke="black" points="2266.25,-1088 2266.25,-1126 2366.5,-1126 2366.5,-1088 2266.25,-1088"/>
 </g>
-<!-- n13&#45;&gt;n49 -->
-<g id="edge48" class="edge">
-<title>n13&#45;&gt;n49</title>
-<path fill="none" stroke="#555555" d="M2051.47,-1503C2124.23,-1503 2207.43,-1503 2262.15,-1503"/>
-<polygon fill="#555555" stroke="#555555" points="2261.87,-1506.5 2271.87,-1503 2261.87,-1499.5 2261.87,-1506.5"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-1504.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:manufacturer</text>
+<!-- n13&#45;&gt;n44 -->
+<g id="edge43" class="edge">
+<title>n13&#45;&gt;n44</title>
+<path fill="none" stroke="#555555" d="M2044.72,-1107C2117.48,-1107 2200.68,-1107 2255.4,-1107"/>
+<polygon fill="#555555" stroke="#555555" points="2255.12,-1110.5 2265.12,-1107 2255.12,-1103.5 2255.12,-1110.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-1108.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:manufacturer</text>
 </g>
-<!-- n24_46 -->
-<g id="node57" class="node">
-<title>n24_46</title>
-<polygon fill="#ffffff" stroke="none" points="2217.88,-1442 2217.88,-1462 2428.38,-1462 2428.38,-1442 2217.88,-1442"/>
-<text xml:space="preserve" text-anchor="start" x="2221.88" y="-1449.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://www.wikidata.org/entity/Q3099911&gt;</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2217.88,-1442 2217.88,-1462 2428.38,-1462 2428.38,-1442 2217.88,-1442"/>
+<!-- n24_41 -->
+<g id="node52" class="node">
+<title>n24_41</title>
+<polygon fill="#ffffff" stroke="none" points="2211.12,-1046 2211.12,-1066 2421.62,-1066 2421.62,-1046 2211.12,-1046"/>
+<text xml:space="preserve" text-anchor="start" x="2215.12" y="-1053.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://www.wikidata.org/entity/Q3099911&gt;</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2211.12,-1046 2211.12,-1066 2421.62,-1066 2421.62,-1046 2211.12,-1046"/>
 </g>
-<!-- n13&#45;&gt;n24_46 -->
-<g id="edge47" class="edge">
-<title>n13&#45;&gt;n24_46</title>
-<path fill="none" stroke="#555555" d="M2051.47,-1484.77C2110.55,-1477.62 2176.5,-1469.63 2228.52,-1463.33"/>
-<polygon fill="#555555" stroke="#555555" points="2228.72,-1466.83 2238.23,-1462.16 2227.88,-1459.88 2228.72,-1466.83"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-1482.5" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
+<!-- n13&#45;&gt;n24_41 -->
+<g id="edge42" class="edge">
+<title>n13&#45;&gt;n24_41</title>
+<path fill="none" stroke="#555555" d="M2044.72,-1088.77C2103.8,-1081.62 2169.75,-1073.63 2221.77,-1067.33"/>
+<polygon fill="#555555" stroke="#555555" points="2221.97,-1070.83 2231.48,-1066.16 2221.13,-1063.88 2221.97,-1070.83"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-1086.5" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
 </g>
 <!-- n14 -->
 <g id="node11" class="node">
 <title>n14</title>
-<polygon fill="#fffc87" stroke="none" points="2581.5,-78 2581.5,-152 2888.75,-152 2888.75,-78 2581.5,-78"/>
-<text xml:space="preserve" text-anchor="start" x="2684.5" y="-139.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:kilaueaIkiLavaLake</text>
-<text xml:space="preserve" text-anchor="start" x="2677.75" y="-121.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Place</text>
+<polygon fill="#fffc87" stroke="none" points="2574.75,-78 2574.75,-152 2882,-152 2882,-78 2574.75,-78"/>
+<text xml:space="preserve" text-anchor="start" x="2677.75" y="-139.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:kilaueaIkiLavaLake</text>
+<text xml:space="preserve" text-anchor="start" x="2671" y="-121.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Place</text>
 <g id="a_node11_5"><a xlink:href="#" xlink:title="The lava lake ponded in Kilauea Iki crater by the 1959 eruption.">
-<text xml:space="preserve" text-anchor="start" x="2585.5" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: The lava lake ponded in Kilauea Iki crater by t…</text>
+<text xml:space="preserve" text-anchor="start" x="2578.75" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: The lava lake ponded in Kilauea Iki crater by t…</text>
 </a>
 </g>
-<text xml:space="preserve" text-anchor="start" x="2585.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Kilauea Iki lava lake</text>
-<polygon fill="none" stroke="black" points="2581.5,-78 2581.5,-152 2888.75,-152 2888.75,-78 2581.5,-78"/>
+<text xml:space="preserve" text-anchor="start" x="2578.75" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Kilauea Iki lava lake</text>
+<polygon fill="none" stroke="black" points="2574.75,-78 2574.75,-152 2882,-152 2882,-78 2574.75,-78"/>
 </g>
 <!-- n15 -->
 <g id="node12" class="node">
 <title>n15</title>
-<polygon fill="#fffc87" stroke="none" points="0,-1024 0,-1116 329,-1116 329,-1024 0,-1024"/>
-<text xml:space="preserve" text-anchor="start" x="118.75" y="-1103.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:olivineKilaueaIki</text>
-<text xml:space="preserve" text-anchor="start" x="102.25" y="-1085.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Dataset</text>
-<text xml:space="preserve" text-anchor="start" x="4" y="-1066.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:dateModified: 2024&#45;08&#45;15</text>
+<polygon fill="#fffc87" stroke="none" points="0,-794 0,-886 329,-886 329,-794 0,-794"/>
+<text xml:space="preserve" text-anchor="start" x="118.75" y="-873.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:olivineKilaueaIki</text>
+<text xml:space="preserve" text-anchor="start" x="102.25" y="-855.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Dataset</text>
+<text xml:space="preserve" text-anchor="start" x="4" y="-836.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:dateModified: 2024&#45;08&#45;15</text>
 <g id="a_node12_6"><a xlink:href="#" xlink:title="EPMA major and minor element compositions of olivine from Kilauea Iki drill core KI81&#45;1. The field&#45;sample scenario of the provenance&#45;approach comparison (implementationTesting/APPROACHES.md), based on examples/exampleEPMAProvenance.json.">
-<text xml:space="preserve" text-anchor="start" x="4" y="-1048.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: EPMA major and minor element compositions of ol…</text>
+<text xml:space="preserve" text-anchor="start" x="4" y="-818.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: EPMA major and minor element compositions of ol…</text>
 </a>
 </g>
 <g id="a_node12_7"><a xlink:href="#" xlink:title="Olivine major element compositions, Kilauea Iki lava lake">
-<text xml:space="preserve" text-anchor="start" x="4" y="-1030.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Olivine major element compositions, Kilauea Iki…</text>
+<text xml:space="preserve" text-anchor="start" x="4" y="-800.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Olivine major element compositions, Kilauea Iki…</text>
 </a>
 </g>
-<polygon fill="none" stroke="black" points="0,-1024 0,-1116 329,-1116 329,-1024 0,-1024"/>
+<polygon fill="none" stroke="black" points="0,-794 0,-886 329,-886 329,-794 0,-794"/>
 </g>
 <!-- n16 -->
 <g id="node13" class="node">
 <title>n16</title>
-<polygon fill="#ffffff" stroke="none" points="532,-1117 532,-1155 664.5,-1155 664.5,-1117 532,-1117"/>
-<text xml:space="preserve" text-anchor="start" x="536" y="-1142.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:olivineKilaueaIki&#45;record</text>
-<text xml:space="preserve" text-anchor="start" x="562.25" y="-1124.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:Dataset</text>
-<polygon fill="none" stroke="black" points="532,-1117 532,-1155 664.5,-1155 664.5,-1117 532,-1117"/>
+<polygon fill="#ffffff" stroke="none" points="532,-887 532,-925 664.5,-925 664.5,-887 532,-887"/>
+<text xml:space="preserve" text-anchor="start" x="536" y="-912.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:olivineKilaueaIki&#45;record</text>
+<text xml:space="preserve" text-anchor="start" x="562.25" y="-894.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:Dataset</text>
+<polygon fill="none" stroke="black" points="532,-887 532,-925 664.5,-925 664.5,-887 532,-887"/>
 </g>
 <!-- n15&#45;&gt;n16 -->
-<g id="edge51" class="edge">
+<g id="edge46" class="edge">
 <title>n15&#45;&gt;n16</title>
-<path fill="none" stroke="#555555" d="M328.77,-1101.38C336.28,-1102.64 343.72,-1103.86 351,-1105 407.65,-1113.9 471.95,-1121.93 520.63,-1127.58"/>
-<polygon fill="#555555" stroke="#555555" points="520.19,-1131.05 530.53,-1128.72 520.99,-1124.1 520.19,-1131.05"/>
-<text xml:space="preserve" text-anchor="middle" x="401.62" y="-1121.2" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:subjectOf</text>
+<path fill="none" stroke="#555555" d="M328.77,-871.38C336.28,-872.64 343.72,-873.86 351,-875 407.65,-883.9 471.95,-891.93 520.63,-897.58"/>
+<polygon fill="#555555" stroke="#555555" points="520.19,-901.05 530.53,-898.72 520.99,-894.1 520.19,-901.05"/>
+<text xml:space="preserve" text-anchor="middle" x="401.62" y="-891.2" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:subjectOf</text>
 </g>
 <!-- n15&#45;&gt;n16 -->
-<g id="edge55" class="edge">
+<g id="edge50" class="edge">
 <title>n15&#45;&gt;n16</title>
-<path fill="none" stroke="#555555" d="M340.42,-1076.88C377.54,-1080.08 416.35,-1084.73 452.25,-1091.5 483.82,-1097.45 518.23,-1107.84 545.61,-1117.08"/>
-<polygon fill="#555555" stroke="#555555" points="340.72,-1073.39 330.47,-1076.06 340.15,-1080.37 340.72,-1073.39"/>
-<text xml:space="preserve" text-anchor="middle" x="401.62" y="-1093.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:about</text>
+<path fill="none" stroke="#555555" d="M340.42,-846.88C377.54,-850.08 416.35,-854.73 452.25,-861.5 483.82,-867.45 518.23,-877.84 545.61,-887.08"/>
+<polygon fill="#555555" stroke="#555555" points="340.72,-843.39 330.47,-846.06 340.15,-850.37 340.72,-843.39"/>
+<text xml:space="preserve" text-anchor="middle" x="401.62" y="-863.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:about</text>
 </g>
 <!-- n30 -->
 <g id="node26" class="node">
 <title>n30</title>
-<polygon fill="#e8e8e8" stroke="none" points="504.62,-1031 504.62,-1069 691.88,-1069 691.88,-1031 504.62,-1031"/>
-<text xml:space="preserve" text-anchor="start" x="563.75" y="-1056.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Generation</text>
-<text xml:space="preserve" text-anchor="start" x="508.62" y="-1037.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:atTime: 2024&#45;06&#45;10T17:30:00+00:00</text>
-<polygon fill="none" stroke="black" points="504.62,-1031 504.62,-1069 691.88,-1069 691.88,-1031 504.62,-1031"/>
+<polygon fill="#e8e8e8" stroke="none" points="504.62,-801 504.62,-839 691.88,-839 691.88,-801 504.62,-801"/>
+<text xml:space="preserve" text-anchor="start" x="563.75" y="-826.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Generation</text>
+<text xml:space="preserve" text-anchor="start" x="508.62" y="-807.5" font-family="Helvetica,sans-Serif" font-size="10.00">prov:atTime: 2024&#45;06&#45;10T17:30:00+00:00</text>
+<polygon fill="none" stroke="black" points="504.62,-801 504.62,-839 691.88,-839 691.88,-801 504.62,-801"/>
 </g>
 <!-- n15&#45;&gt;n30 -->
-<g id="edge52" class="edge">
+<g id="edge47" class="edge">
 <title>n15&#45;&gt;n30</title>
-<path fill="none" stroke="#555555" d="M328.83,-1055.76C336.32,-1055.29 343.74,-1054.87 351,-1054.5 397.75,-1052.12 449.54,-1050.96 493.52,-1050.4"/>
-<polygon fill="#555555" stroke="#555555" points="493.35,-1053.9 503.31,-1050.28 493.27,-1046.9 493.35,-1053.9"/>
-<text xml:space="preserve" text-anchor="middle" x="401.62" y="-1056.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedGeneration</text>
+<path fill="none" stroke="#555555" d="M328.83,-825.76C336.32,-825.29 343.74,-824.87 351,-824.5 397.75,-822.12 449.54,-820.96 493.52,-820.4"/>
+<polygon fill="#555555" stroke="#555555" points="493.35,-823.9 503.31,-820.28 493.27,-816.9 493.35,-823.9"/>
+<text xml:space="preserve" text-anchor="middle" x="401.62" y="-826.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedGeneration</text>
 </g>
 <!-- n37 -->
 <g id="node33" class="node">
 <title>n37</title>
-<polygon fill="#ffffff" stroke="none" points="474.25,-943 474.25,-999 722.25,-999 722.25,-943 474.25,-943"/>
-<text xml:space="preserve" text-anchor="start" x="549.12" y="-986.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
-<text xml:space="preserve" text-anchor="start" x="478.25" y="-967.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:url: https://doi.org/10.1234/olivine&#45;kilauea&#45;2024</text>
-<text xml:space="preserve" text-anchor="start" x="478.25" y="-949.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: doi:10.1234/olivine&#45;kilauea&#45;2024</text>
-<polygon fill="none" stroke="black" points="474.25,-943 474.25,-999 722.25,-999 722.25,-943 474.25,-943"/>
+<polygon fill="#ffffff" stroke="none" points="474.25,-713 474.25,-769 722.25,-769 722.25,-713 474.25,-713"/>
+<text xml:space="preserve" text-anchor="start" x="549.12" y="-756.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
+<text xml:space="preserve" text-anchor="start" x="478.25" y="-737.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:url: https://doi.org/10.1234/olivine&#45;kilauea&#45;2024</text>
+<text xml:space="preserve" text-anchor="start" x="478.25" y="-719.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: doi:10.1234/olivine&#45;kilauea&#45;2024</text>
+<polygon fill="none" stroke="black" points="474.25,-713 474.25,-769 722.25,-769 722.25,-713 474.25,-713"/>
 </g>
 <!-- n15&#45;&gt;n37 -->
-<g id="edge50" class="edge">
+<g id="edge45" class="edge">
 <title>n15&#45;&gt;n37</title>
-<path fill="none" stroke="#555555" d="M328.73,-1032.57C373.43,-1022.32 421.34,-1011.34 464.14,-1001.52"/>
-<polygon fill="#555555" stroke="#555555" points="464.75,-1004.97 473.72,-999.33 463.19,-998.15 464.75,-1004.97"/>
-<text xml:space="preserve" text-anchor="middle" x="401.62" y="-1028.38" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:identifier</text>
+<path fill="none" stroke="#555555" d="M328.73,-802.57C373.43,-792.32 421.34,-781.34 464.14,-771.52"/>
+<polygon fill="#555555" stroke="#555555" points="464.75,-774.97 473.72,-769.33 463.19,-768.15 464.75,-774.97"/>
+<text xml:space="preserve" text-anchor="middle" x="401.62" y="-798.38" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:identifier</text>
 </g>
 <!-- n16&#45;&gt;n1 -->
-<g id="edge56" class="edge">
+<g id="edge51" class="edge">
 <title>n16&#45;&gt;n1</title>
-<path fill="none" stroke="#555555" d="M661.74,-1155C687.2,-1162.39 717,-1170.6 744.25,-1177 818.46,-1194.42 905.5,-1206.57 962.19,-1213.41"/>
-<polygon fill="#555555" stroke="#555555" points="961.61,-1216.87 971.95,-1214.57 962.43,-1209.92 961.61,-1216.87"/>
-<text xml:space="preserve" text-anchor="middle" x="791.88" y="-1197.08" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
+<path fill="none" stroke="#555555" d="M661.74,-925C687.2,-932.39 717,-940.6 744.25,-947 818.46,-964.42 905.5,-976.57 962.19,-983.41"/>
+<polygon fill="#555555" stroke="#555555" points="961.61,-986.87 971.95,-984.57 962.43,-979.92 961.61,-986.87"/>
+<text xml:space="preserve" text-anchor="middle" x="791.88" y="-967.08" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
 </g>
 <!-- n22 -->
 <g id="node19" class="node">
 <title>n22</title>
-<polygon fill="#ffffff" stroke="none" points="947,-1168 947,-1188 1099.75,-1188 1099.75,-1168 947,-1168"/>
-<text xml:space="preserve" text-anchor="start" x="951" y="-1175.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://w3id.org/cdif/core/2.0&gt;</text>
-<polygon fill="none" stroke="black" points="947,-1168 947,-1188 1099.75,-1188 1099.75,-1168 947,-1168"/>
+<polygon fill="#ffffff" stroke="none" points="947,-938 947,-958 1099.75,-958 1099.75,-938 947,-938"/>
+<text xml:space="preserve" text-anchor="start" x="951" y="-945.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://w3id.org/cdif/core/2.0&gt;</text>
+<polygon fill="none" stroke="black" points="947,-938 947,-958 1099.75,-958 1099.75,-938 947,-938"/>
 </g>
 <!-- n16&#45;&gt;n22 -->
-<g id="edge53" class="edge">
+<g id="edge48" class="edge">
 <title>n16&#45;&gt;n22</title>
-<path fill="none" stroke="#555555" d="M664.19,-1143.4C689.2,-1146.19 718.05,-1149.33 744.25,-1152 808.32,-1158.53 880.77,-1165.28 935.65,-1170.27"/>
-<polygon fill="#555555" stroke="#555555" points="935.31,-1173.75 945.58,-1171.17 935.94,-1166.78 935.31,-1173.75"/>
-<text xml:space="preserve" text-anchor="middle" x="791.88" y="-1162.96" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">dcterms:conformsTo</text>
+<path fill="none" stroke="#555555" d="M664.19,-913.4C689.2,-916.19 718.05,-919.33 744.25,-922 808.32,-928.53 880.77,-935.28 935.65,-940.27"/>
+<polygon fill="#555555" stroke="#555555" points="935.31,-943.75 945.58,-941.17 935.94,-936.78 935.31,-943.75"/>
+<text xml:space="preserve" text-anchor="middle" x="791.88" y="-932.96" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">dcterms:conformsTo</text>
 </g>
 <!-- n23 -->
 <g id="node20" class="node">
 <title>n23</title>
-<polygon fill="#ffffff" stroke="none" points="930.12,-1126 930.12,-1146 1116.62,-1146 1116.62,-1126 930.12,-1126"/>
-<text xml:space="preserve" text-anchor="start" x="934.12" y="-1133.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://w3id.org/cdif/provenance/2.0&gt;</text>
-<polygon fill="none" stroke="black" points="930.12,-1126 930.12,-1146 1116.62,-1146 1116.62,-1126 930.12,-1126"/>
+<polygon fill="#ffffff" stroke="none" points="930.12,-896 930.12,-916 1116.62,-916 1116.62,-896 930.12,-896"/>
+<text xml:space="preserve" text-anchor="start" x="934.12" y="-903.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://w3id.org/cdif/provenance/2.0&gt;</text>
+<polygon fill="none" stroke="black" points="930.12,-896 930.12,-916 1116.62,-916 1116.62,-896 930.12,-896"/>
 </g>
 <!-- n16&#45;&gt;n23 -->
-<g id="edge54" class="edge">
+<g id="edge49" class="edge">
 <title>n16&#45;&gt;n23</title>
-<path fill="none" stroke="#555555" d="M664.44,-1136C732.27,-1136 839.48,-1136 918.9,-1136"/>
-<polygon fill="#555555" stroke="#555555" points="918.89,-1139.5 928.89,-1136 918.89,-1132.5 918.89,-1139.5"/>
-<text xml:space="preserve" text-anchor="middle" x="791.88" y="-1137.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">dcterms:conformsTo</text>
+<path fill="none" stroke="#555555" d="M664.44,-906C732.27,-906 839.48,-906 918.9,-906"/>
+<polygon fill="#555555" stroke="#555555" points="918.89,-909.5 928.89,-906 918.89,-902.5 918.89,-909.5"/>
+<text xml:space="preserve" text-anchor="middle" x="791.88" y="-907.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">dcterms:conformsTo</text>
 </g>
 <!-- n17 -->
 <g id="node14" class="node">
 <title>n17</title>
-<polygon fill="#fffc87" stroke="none" points="1741.75,-760 1741.75,-834 2058,-834 2058,-760 1741.75,-760"/>
-<text xml:space="preserve" text-anchor="start" x="1854.5" y="-821.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:polishedMountA</text>
-<text xml:space="preserve" text-anchor="start" x="1842.88" y="-803.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Thing</text>
+<polygon fill="#fffc87" stroke="none" points="1735,-863 1735,-937 2051.25,-937 2051.25,-863 1735,-863"/>
+<text xml:space="preserve" text-anchor="start" x="1847.75" y="-924.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:polishedMountA</text>
+<text xml:space="preserve" text-anchor="start" x="1836.12" y="-906.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:Thing</text>
 <g id="a_node14_8"><a xlink:href="#" xlink:title="Hand&#45;picked olivine grains (Fo85&#45;88) from KI81&#45;1 in a 1&#45;inch epoxy round.">
-<text xml:space="preserve" text-anchor="start" x="1745.75" y="-784.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Hand&#45;picked olivine grains (Fo85&#45;88) from KI81&#45;…</text>
+<text xml:space="preserve" text-anchor="start" x="1739" y="-887.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Hand&#45;picked olivine grains (Fo85&#45;88) from KI81&#45;…</text>
 </a>
 </g>
-<text xml:space="preserve" text-anchor="start" x="1745.75" y="-766.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Polished and carbon&#45;coated epoxy mount A</text>
-<polygon fill="none" stroke="black" points="1741.75,-760 1741.75,-834 2058,-834 2058,-760 1741.75,-760"/>
+<text xml:space="preserve" text-anchor="start" x="1739" y="-869.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Polished and carbon&#45;coated epoxy mount A</text>
+<polygon fill="none" stroke="black" points="1735,-863 1735,-937 2051.25,-937 2051.25,-863 1735,-863"/>
 </g>
 <!-- n17&#45;&gt;n34 -->
-<g id="edge58" class="edge">
+<g id="edge53" class="edge">
 <title>n17&#45;&gt;n34</title>
-<path fill="none" stroke="#555555" d="M2057.97,-782.21C2105.4,-770.39 2153.88,-749.75 2188,-714 2217.03,-683.59 2180.67,-652.12 2210,-622 2216.89,-614.92 2225.26,-609.45 2234.29,-605.24"/>
-<polygon fill="#555555" stroke="#555555" points="2235.37,-608.58 2243.31,-601.56 2232.73,-602.09 2235.37,-608.58"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-776.26" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedGeneration</text>
+<path fill="none" stroke="#555555" d="M2051.17,-878.94C2107.61,-868.21 2162.11,-853.11 2181.25,-833 2218.93,-793.41 2166.21,-752.19 2203.25,-712 2210,-704.68 2218.32,-699.07 2227.35,-694.78"/>
+<polygon fill="#555555" stroke="#555555" points="2228.49,-698.09 2236.41,-691.05 2225.83,-691.62 2228.49,-698.09"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-874.01" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedGeneration</text>
 </g>
-<!-- n2_56 -->
-<g id="node58" class="node">
-<title>n2_56</title>
-<polygon fill="#ffffff" stroke="none" points="2289.88,-787 2289.88,-807 2356.38,-807 2356.38,-787 2289.88,-787"/>
-<text xml:space="preserve" text-anchor="start" x="2293.88" y="-794.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">bios:Sample</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2289.88,-787 2289.88,-807 2356.38,-807 2356.38,-787 2289.88,-787"/>
+<!-- n2_51 -->
+<g id="node53" class="node">
+<title>n2_51</title>
+<polygon fill="#ffffff" stroke="none" points="2283.12,-890 2283.12,-910 2349.62,-910 2349.62,-890 2283.12,-890"/>
+<text xml:space="preserve" text-anchor="start" x="2287.12" y="-897.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">bios:Sample</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2283.12,-890 2283.12,-910 2349.62,-910 2349.62,-890 2283.12,-890"/>
 </g>
-<!-- n17&#45;&gt;n2_56 -->
-<g id="edge57" class="edge">
-<title>n17&#45;&gt;n2_56</title>
-<path fill="none" stroke="#555555" d="M2057.73,-797C2136.73,-797 2226.53,-797 2278.53,-797"/>
-<polygon fill="#555555" stroke="#555555" points="2278.45,-800.5 2288.45,-797 2278.45,-793.5 2278.45,-800.5"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-798.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
+<!-- n17&#45;&gt;n2_51 -->
+<g id="edge52" class="edge">
+<title>n17&#45;&gt;n2_51</title>
+<path fill="none" stroke="#555555" d="M2050.98,-900C2129.98,-900 2219.78,-900 2271.78,-900"/>
+<polygon fill="#555555" stroke="#555555" points="2271.7,-903.5 2281.7,-900 2271.7,-896.5 2271.7,-903.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-901.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
 </g>
 <!-- n18 -->
 <g id="node15" class="node">
 <title>n18</title>
-<polygon fill="#fffc87" stroke="none" points="1743.25,-586 1743.25,-678 2056.5,-678 2056.5,-586 1743.25,-586"/>
-<text xml:space="preserve" text-anchor="start" x="1857.12" y="-665.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:probeForEPMA</text>
-<text xml:space="preserve" text-anchor="start" x="1811.38" y="-647.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:SoftwareApplication</text>
+<polygon fill="#fffc87" stroke="none" points="1736.5,-551 1736.5,-643 2049.75,-643 2049.75,-551 1736.5,-551"/>
+<text xml:space="preserve" text-anchor="start" x="1850.38" y="-630.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:probeForEPMA</text>
+<text xml:space="preserve" text-anchor="start" x="1804.62" y="-612.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, schema:SoftwareApplication</text>
 <g id="a_node15_9"><a xlink:href="#" xlink:title="Used for the ZAF matrix correction and quantification.">
-<text xml:space="preserve" text-anchor="start" x="1747.25" y="-628.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Used for the ZAF matrix correction and quantifi…</text>
+<text xml:space="preserve" text-anchor="start" x="1740.5" y="-593.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:description: Used for the ZAF matrix correction and quantifi…</text>
 </a>
 </g>
-<text xml:space="preserve" text-anchor="start" x="1747.25" y="-610.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Probe for EPMA</text>
-<text xml:space="preserve" text-anchor="start" x="1747.25" y="-592.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:version: 13.0.6</text>
-<polygon fill="none" stroke="black" points="1743.25,-586 1743.25,-678 2056.5,-678 2056.5,-586 1743.25,-586"/>
+<text xml:space="preserve" text-anchor="start" x="1740.5" y="-575.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Probe for EPMA</text>
+<text xml:space="preserve" text-anchor="start" x="1740.5" y="-557.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:version: 13.0.6</text>
+<polygon fill="none" stroke="black" points="1736.5,-551 1736.5,-643 2049.75,-643 2049.75,-551 1736.5,-551"/>
 </g>
 <!-- n25 -->
 <g id="node21" class="node">
 <title>n25</title>
-<polygon fill="#ffffff" stroke="none" points="2225.75,-633 2225.75,-653 2420.5,-653 2420.5,-633 2225.75,-633"/>
-<text xml:space="preserve" text-anchor="start" x="2229.75" y="-640.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://www.wikidata.org/entity/Q7397&gt;</text>
-<polygon fill="none" stroke="black" points="2225.75,-633 2225.75,-653 2420.5,-653 2420.5,-633 2225.75,-633"/>
+<polygon fill="#ffffff" stroke="none" points="2219,-588 2219,-608 2413.75,-608 2413.75,-588 2219,-588"/>
+<text xml:space="preserve" text-anchor="start" x="2223" y="-595.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://www.wikidata.org/entity/Q7397&gt;</text>
+<polygon fill="none" stroke="black" points="2219,-588 2219,-608 2413.75,-608 2413.75,-588 2219,-588"/>
 </g>
 <!-- n18&#45;&gt;n25 -->
-<g id="edge59" class="edge">
+<g id="edge54" class="edge">
 <title>n18&#45;&gt;n25</title>
-<path fill="none" stroke="#555555" d="M2056.24,-636.06C2108.88,-637.43 2166.48,-638.94 2214.56,-640.19"/>
-<polygon fill="#555555" stroke="#555555" points="2214.34,-643.69 2224.42,-640.45 2214.52,-636.69 2214.34,-643.69"/>
-<text xml:space="preserve" text-anchor="middle" x="2136.62" y="-641.39" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
+<path fill="none" stroke="#555555" d="M2049.49,-597.37C2102.13,-597.49 2159.73,-597.63 2207.81,-597.74"/>
+<polygon fill="#555555" stroke="#555555" points="2207.67,-601.24 2217.67,-597.77 2207.68,-594.24 2207.67,-601.24"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.88" y="-599.63" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalType</text>
 </g>
 <!-- n19 -->
 <g id="node16" class="node">
 <title>n19</title>
-<polygon fill="#ffffff" stroke="none" points="917.75,-952 917.75,-972 1129,-972 1129,-952 917.75,-952"/>
-<text xml:space="preserve" text-anchor="start" x="921.75" y="-959.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://registry.identifiers.org/registry/doi&gt;</text>
-<polygon fill="none" stroke="black" points="917.75,-952 917.75,-972 1129,-972 1129,-952 917.75,-952"/>
+<polygon fill="#ffffff" stroke="none" points="917.75,-722 917.75,-742 1129,-742 1129,-722 917.75,-722"/>
+<text xml:space="preserve" text-anchor="start" x="921.75" y="-729.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://registry.identifiers.org/registry/doi&gt;</text>
+<polygon fill="none" stroke="black" points="917.75,-722 917.75,-742 1129,-742 1129,-722 917.75,-722"/>
 </g>
 <!-- n20 -->
 <g id="node17" class="node">
 <title>n20</title>
-<polygon fill="#ffffff" stroke="none" points="2625,-1304 2625,-1324 2845.25,-1324 2845.25,-1304 2625,-1304"/>
-<text xml:space="preserve" text-anchor="start" x="2629" y="-1311.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://registry.identifiers.org/registry/orcid&gt;</text>
-<polygon fill="none" stroke="black" points="2625,-1304 2625,-1324 2845.25,-1324 2845.25,-1304 2625,-1304"/>
+<polygon fill="#ffffff" stroke="none" points="2618.25,-741 2618.25,-761 2838.5,-761 2838.5,-741 2618.25,-741"/>
+<text xml:space="preserve" text-anchor="start" x="2622.25" y="-748.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://registry.identifiers.org/registry/orcid&gt;</text>
+<polygon fill="none" stroke="black" points="2618.25,-741 2618.25,-761 2838.5,-761 2838.5,-741 2618.25,-741"/>
 </g>
 <!-- n21 -->
 <g id="node18" class="node">
 <title>n21</title>
-<polygon fill="#fffc87" stroke="none" points="1736.5,-1277 1736.5,-1315 2063.25,-1315 2063.25,-1277 1736.5,-1277"/>
-<text xml:space="preserve" text-anchor="start" x="1740.5" y="-1302.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://registry.onegeochemistry.org/methods/jeol&#45;8530f&#45;olivine&#45;v1&gt;</text>
-<text xml:space="preserve" text-anchor="start" x="1853" y="-1284.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, prov:Plan</text>
-<polygon fill="none" stroke="black" points="1736.5,-1277 1736.5,-1315 2063.25,-1315 2063.25,-1277 1736.5,-1277"/>
+<polygon fill="#fffc87" stroke="none" points="1729.75,-725 1729.75,-763 2056.5,-763 2056.5,-725 1729.75,-725"/>
+<text xml:space="preserve" text-anchor="start" x="1733.75" y="-750.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">&lt;https://registry.onegeochemistry.org/methods/jeol&#45;8530f&#45;olivine&#45;v1&gt;</text>
+<text xml:space="preserve" text-anchor="start" x="1846.25" y="-732.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, prov:Plan</text>
+<polygon fill="none" stroke="black" points="1729.75,-725 1729.75,-763 2056.5,-763 2056.5,-725 1729.75,-725"/>
 </g>
 <!-- n27&#45;&gt;n14 -->
 <g id="edge1" class="edge">
 <title>n27&#45;&gt;n14</title>
-<path fill="none" stroke="#555555" d="M2351.98,-187.7C2396.79,-179.18 2488.16,-161.79 2570.32,-146.16"/>
-<polygon fill="#555555" stroke="#555555" points="2570.93,-149.61 2580.1,-144.3 2569.62,-142.73 2570.93,-149.61"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-167.49" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
+<path fill="none" stroke="#555555" d="M2345.23,-187.7C2390.04,-179.18 2481.41,-161.79 2563.57,-146.16"/>
+<polygon fill="#555555" stroke="#555555" points="2564.18,-149.61 2573.35,-144.3 2562.87,-142.73 2564.18,-149.61"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-167.49" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
 </g>
 <!-- n5_1 -->
-<g id="node47" class="node">
+<g id="node42" class="node">
 <title>n5_1</title>
-<polygon fill="#ffffff" stroke="none" points="2701.88,-174 2701.88,-212 2768.38,-212 2768.38,-174 2701.88,-174"/>
-<text xml:space="preserve" text-anchor="start" x="2705.88" y="-199.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:InputData</text>
-<text xml:space="preserve" text-anchor="start" x="2714.12" y="-181.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2701.88,-174 2701.88,-212 2768.38,-212 2768.38,-174 2701.88,-174"/>
+<polygon fill="#ffffff" stroke="none" points="2695.12,-174 2695.12,-212 2761.62,-212 2761.62,-174 2695.12,-174"/>
+<text xml:space="preserve" text-anchor="start" x="2699.12" y="-199.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:InputData</text>
+<text xml:space="preserve" text-anchor="start" x="2707.38" y="-181.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2695.12,-174 2695.12,-212 2761.62,-212 2761.62,-174 2695.12,-174"/>
 </g>
 <!-- n27&#45;&gt;n5_1 -->
 <g id="edge2" class="edge">
 <title>n27&#45;&gt;n5_1</title>
-<path fill="none" stroke="#555555" d="M2351.98,-193C2422.06,-193 2606.07,-193 2690.56,-193"/>
-<polygon fill="#555555" stroke="#555555" points="2690.53,-196.5 2700.53,-193 2690.53,-189.5 2690.53,-196.5"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-194.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
+<path fill="none" stroke="#555555" d="M2345.23,-193C2415.31,-193 2599.32,-193 2683.81,-193"/>
+<polygon fill="#555555" stroke="#555555" points="2683.78,-196.5 2693.78,-193 2683.78,-189.5 2683.78,-196.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-194.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
 </g>
 <!-- n28&#45;&gt;n13 -->
 <g id="edge3" class="edge">
 <title>n28&#45;&gt;n13</title>
-<path fill="none" stroke="#555555" d="M1516.73,-1438.69C1561.88,-1446.29 1654.32,-1461.84 1736.97,-1475.75"/>
-<polygon fill="#555555" stroke="#555555" points="1736.36,-1479.2 1746.8,-1477.41 1737.52,-1472.3 1736.36,-1479.2"/>
-<text xml:space="preserve" text-anchor="middle" x="1686.75" y="-1472.52" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
+<path fill="none" stroke="#555555" d="M1509.98,-1042.69C1555.13,-1050.29 1647.57,-1065.84 1730.22,-1079.75"/>
+<polygon fill="#555555" stroke="#555555" points="1729.61,-1083.2 1740.05,-1081.41 1730.77,-1076.3 1729.61,-1083.2"/>
+<text xml:space="preserve" text-anchor="middle" x="1680" y="-1076.52" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
 </g>
 <!-- n6_3 -->
-<g id="node48" class="node">
+<g id="node43" class="node">
 <title>n6_3</title>
-<polygon fill="#ffffff" stroke="none" points="1864,-1415 1864,-1453 1935.75,-1453 1935.75,-1415 1864,-1415"/>
-<text xml:space="preserve" text-anchor="start" x="1868" y="-1440.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:Instrument</text>
-<text xml:space="preserve" text-anchor="start" x="1878.88" y="-1422.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="1864,-1415 1864,-1453 1935.75,-1453 1935.75,-1415 1864,-1415"/>
+<polygon fill="#ffffff" stroke="none" points="1857.25,-1019 1857.25,-1057 1929,-1057 1929,-1019 1857.25,-1019"/>
+<text xml:space="preserve" text-anchor="start" x="1861.25" y="-1044.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:Instrument</text>
+<text xml:space="preserve" text-anchor="start" x="1872.12" y="-1026.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="1857.25,-1019 1857.25,-1057 1929,-1057 1929,-1019 1857.25,-1019"/>
 </g>
 <!-- n28&#45;&gt;n6_3 -->
 <g id="edge4" class="edge">
 <title>n28&#45;&gt;n6_3</title>
-<path fill="none" stroke="#555555" d="M1516.73,-1434C1586.11,-1434 1767.14,-1434 1852.74,-1434"/>
-<polygon fill="#555555" stroke="#555555" points="1852.65,-1437.5 1862.65,-1434 1852.65,-1430.5 1852.65,-1437.5"/>
-<text xml:space="preserve" text-anchor="middle" x="1686.75" y="-1435.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
+<path fill="none" stroke="#555555" d="M1509.98,-1038C1579.36,-1038 1760.39,-1038 1845.99,-1038"/>
+<polygon fill="#555555" stroke="#555555" points="1845.9,-1041.5 1855.9,-1038 1845.9,-1034.5 1845.9,-1041.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1680" y="-1039.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
 </g>
 <!-- n29&#45;&gt;n7 -->
 <g id="edge5" class="edge">
 <title>n29&#45;&gt;n7</title>
-<path fill="none" stroke="#555555" d="M2351.98,-451.5C2400.16,-441.98 2502.18,-421.82 2588.69,-404.73"/>
-<polygon fill="#555555" stroke="#555555" points="2589.36,-408.17 2598.49,-402.8 2588,-401.3 2589.36,-408.17"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-430.44" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
+<path fill="none" stroke="#555555" d="M2345.11,-466.27C2367.86,-462.28 2400.86,-456.23 2429.5,-450 2479.48,-439.12 2533.86,-426 2582.31,-413.84"/>
+<polygon fill="#555555" stroke="#555555" points="2582.89,-417.3 2591.73,-411.47 2581.18,-410.52 2582.89,-417.3"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-446.57" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
 </g>
 <!-- n5_5 -->
-<g id="node49" class="node">
+<g id="node44" class="node">
 <title>n5_5</title>
-<polygon fill="#ffffff" stroke="none" points="2701.88,-444 2701.88,-482 2768.38,-482 2768.38,-444 2701.88,-444"/>
-<text xml:space="preserve" text-anchor="start" x="2705.88" y="-469.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:InputData</text>
-<text xml:space="preserve" text-anchor="start" x="2714.12" y="-451.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2701.88,-444 2701.88,-482 2768.38,-482 2768.38,-444 2701.88,-444"/>
+<polygon fill="#ffffff" stroke="none" points="2695.12,-444 2695.12,-482 2761.62,-482 2761.62,-444 2695.12,-444"/>
+<text xml:space="preserve" text-anchor="start" x="2699.12" y="-469.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:InputData</text>
+<text xml:space="preserve" text-anchor="start" x="2707.38" y="-451.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2695.12,-444 2695.12,-482 2761.62,-482 2761.62,-444 2695.12,-444"/>
 </g>
 <!-- n29&#45;&gt;n5_5 -->
 <g id="edge6" class="edge">
 <title>n29&#45;&gt;n5_5</title>
-<path fill="none" stroke="#555555" d="M2351.98,-457.41C2422.06,-458.43 2606.07,-461.13 2690.56,-462.36"/>
-<polygon fill="#555555" stroke="#555555" points="2690.48,-465.86 2700.53,-462.51 2690.58,-458.86 2690.48,-465.86"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-462.31" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
+<path fill="none" stroke="#555555" d="M2345.23,-470.46C2415.31,-469.09 2599.32,-465.5 2683.81,-463.85"/>
+<polygon fill="#555555" stroke="#555555" points="2683.85,-467.35 2693.78,-463.66 2683.72,-460.35 2683.85,-467.35"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-470.13" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
 </g>
 <!-- n30&#45;&gt;n3 -->
 <g id="edge7" class="edge">
 <title>n30&#45;&gt;n3</title>
-<path fill="none" stroke="#555555" d="M691.85,-1049.78C738.28,-1049.67 796.04,-1049.53 850.23,-1049.41"/>
-<polygon fill="#555555" stroke="#555555" points="850.23,-1052.91 860.22,-1049.38 850.21,-1045.91 850.23,-1052.91"/>
-<text xml:space="preserve" text-anchor="middle" x="791.88" y="-1051.6" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:activity</text>
+<path fill="none" stroke="#555555" d="M691.85,-819.78C738.28,-819.67 796.04,-819.53 850.23,-819.41"/>
+<polygon fill="#555555" stroke="#555555" points="850.23,-822.91 860.22,-819.38 850.21,-815.91 850.23,-822.91"/>
+<text xml:space="preserve" text-anchor="middle" x="791.88" y="-821.6" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:activity</text>
 </g>
 <!-- n31&#45;&gt;n20 -->
 <g id="edge8" class="edge">
 <title>n31&#45;&gt;n20</title>
-<path fill="none" stroke="#555555" d="M2436.16,-1314C2491.17,-1314 2557.51,-1314 2613.62,-1314"/>
-<polygon fill="#555555" stroke="#555555" points="2613.55,-1317.5 2623.55,-1314 2613.55,-1310.5 2613.55,-1317.5"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-1315.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:propertyID</text>
+<path fill="none" stroke="#555555" d="M2429.41,-751C2484.42,-751 2550.76,-751 2606.87,-751"/>
+<polygon fill="#555555" stroke="#555555" points="2606.8,-754.5 2616.8,-751 2606.8,-747.5 2606.8,-754.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-752.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:propertyID</text>
 </g>
 <!-- n32&#45;&gt;n17 -->
 <g id="edge9" class="edge">
 <title>n32&#45;&gt;n17</title>
-<path fill="none" stroke="#555555" d="M1516.73,-763.45C1560.71,-767.31 1649.58,-775.11 1730.55,-782.22"/>
-<polygon fill="#555555" stroke="#555555" points="1730.14,-785.7 1740.41,-783.09 1730.75,-778.72 1730.14,-785.7"/>
-<text xml:space="preserve" text-anchor="middle" x="1686.75" y="-782.03" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
+<path fill="none" stroke="#555555" d="M1509.98,-900C1553.96,-900 1642.83,-900 1723.8,-900"/>
+<polygon fill="#555555" stroke="#555555" points="1723.65,-903.5 1733.65,-900 1723.65,-896.5 1723.65,-903.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1680" y="-901.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
 </g>
 <!-- n5_9 -->
-<g id="node50" class="node">
+<g id="node45" class="node">
 <title>n5_9</title>
-<polygon fill="#ffffff" stroke="none" points="1866.62,-856 1866.62,-894 1933.12,-894 1933.12,-856 1866.62,-856"/>
-<text xml:space="preserve" text-anchor="start" x="1870.62" y="-881.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:InputData</text>
-<text xml:space="preserve" text-anchor="start" x="1878.88" y="-863.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="1866.62,-856 1866.62,-894 1933.12,-894 1933.12,-856 1866.62,-856"/>
+<polygon fill="#ffffff" stroke="none" points="1859.88,-959 1859.88,-997 1926.38,-997 1926.38,-959 1859.88,-959"/>
+<text xml:space="preserve" text-anchor="start" x="1863.88" y="-984.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:InputData</text>
+<text xml:space="preserve" text-anchor="start" x="1872.12" y="-966.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="1859.88,-959 1859.88,-997 1926.38,-997 1926.38,-959 1859.88,-959"/>
 </g>
 <!-- n32&#45;&gt;n5_9 -->
 <g id="edge10" class="edge">
 <title>n32&#45;&gt;n5_9</title>
-<path fill="none" stroke="#555555" d="M1516.76,-761.46C1547.19,-762.75 1596.92,-767.2 1637,-782 1647.87,-786.02 1649.21,-789.79 1659,-796 1693.41,-817.83 1698.55,-830.14 1736.5,-845 1775.18,-860.15 1822.1,-867.76 1855.54,-871.51"/>
-<polygon fill="#555555" stroke="#555555" points="1854.95,-874.97 1865.26,-872.53 1855.68,-868.01 1854.95,-874.97"/>
-<text xml:space="preserve" text-anchor="middle" x="1686.75" y="-836.52" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
+<path fill="none" stroke="#555555" d="M1509.96,-905.48C1555.77,-914.48 1649.94,-932.89 1729.75,-948 1770.19,-955.66 1816.34,-964.16 1849.08,-970.15"/>
+<polygon fill="#555555" stroke="#555555" points="1848.11,-973.53 1858.58,-971.89 1849.37,-966.65 1848.11,-973.53"/>
+<text xml:space="preserve" text-anchor="middle" x="1680" y="-944.84" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
 </g>
 <!-- n38 -->
 <g id="node34" class="node">
 <title>n38</title>
-<polygon fill="#ffffff" stroke="none" points="2671.12,0 2671.12,-56 2799.12,-56 2799.12,0 2671.12,0"/>
-<text xml:space="preserve" text-anchor="start" x="2681.12" y="-43.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:GeoCoordinates</text>
-<text xml:space="preserve" text-anchor="start" x="2675.12" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:latitude: 19.414</text>
-<text xml:space="preserve" text-anchor="start" x="2675.12" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:longitude: &#45;155.249</text>
-<polygon fill="none" stroke="black" points="2671.12,0 2671.12,-56 2799.12,-56 2799.12,0 2671.12,0"/>
+<polygon fill="#ffffff" stroke="none" points="2664.38,0 2664.38,-56 2792.38,-56 2792.38,0 2664.38,0"/>
+<text xml:space="preserve" text-anchor="start" x="2674.38" y="-43.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:GeoCoordinates</text>
+<text xml:space="preserve" text-anchor="start" x="2668.38" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:latitude: 19.414</text>
+<text xml:space="preserve" text-anchor="start" x="2668.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:longitude: &#45;155.249</text>
+<polygon fill="none" stroke="black" points="2664.38,0 2664.38,-56 2792.38,-56 2792.38,0 2664.38,0"/>
 </g>
 <!-- n33&#45;&gt;n38 -->
 <g id="edge11" class="edge">
 <title>n33&#45;&gt;n38</title>
-<path fill="none" stroke="#555555" d="M2422.59,-71.31C2495.61,-61.16 2593.59,-47.54 2660.03,-38.3"/>
-<polygon fill="#555555" stroke="#555555" points="2660.31,-41.8 2669.74,-36.95 2659.35,-34.86 2660.31,-41.8"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-66.89" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:geo</text>
+<path fill="none" stroke="#555555" d="M2415.84,-71.31C2488.86,-61.16 2586.84,-47.54 2653.28,-38.3"/>
+<polygon fill="#555555" stroke="#555555" points="2653.56,-41.8 2662.99,-36.95 2652.6,-34.86 2653.56,-41.8"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-66.89" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:geo</text>
 </g>
 <!-- n35&#45;&gt;n10 -->
 <g id="edge13" class="edge">
 <title>n35&#45;&gt;n10</title>
-<path fill="none" stroke="#555555" d="M2363.44,-264.67C2424.82,-265.72 2545.39,-267.78 2632.39,-269.26"/>
-<polygon fill="#555555" stroke="#555555" points="2632.32,-272.76 2642.38,-269.43 2632.44,-265.76 2632.32,-272.76"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-269.87" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:agent</text>
+<path fill="none" stroke="#555555" d="M2356.69,-259.25C2418.07,-261.19 2538.64,-265.02 2625.64,-267.77"/>
+<polygon fill="#555555" stroke="#555555" points="2625.53,-271.27 2635.63,-268.09 2625.75,-264.28 2625.53,-271.27"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-267.23" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:agent</text>
 </g>
 <!-- n37&#45;&gt;n19 -->
 <g id="edge14" class="edge">
 <title>n37&#45;&gt;n19</title>
-<path fill="none" stroke="#555555" d="M722.2,-968.38C780.42,-967.15 849.56,-965.68 906.81,-964.46"/>
-<polygon fill="#555555" stroke="#555555" points="906.65,-967.96 916.58,-964.25 906.51,-960.96 906.65,-967.96"/>
-<text xml:space="preserve" text-anchor="middle" x="791.88" y="-969.78" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:propertyID</text>
+<path fill="none" stroke="#555555" d="M722.2,-738.38C780.42,-737.15 849.56,-735.68 906.81,-734.46"/>
+<polygon fill="#555555" stroke="#555555" points="906.65,-737.96 916.58,-734.25 906.51,-730.96 906.65,-737.96"/>
+<text xml:space="preserve" text-anchor="middle" x="791.88" y="-739.78" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:propertyID</text>
 </g>
-<!-- n44&#45;&gt;n11 -->
+<!-- n39&#45;&gt;n11 -->
 <g id="edge15" class="edge">
-<title>n44&#45;&gt;n11</title>
-<path fill="none" stroke="#555555" d="M1528.19,-1377.66C1595.52,-1375.36 1734.06,-1370.63 1821.39,-1367.65"/>
-<polygon fill="#555555" stroke="#555555" points="1821.45,-1371.15 1831.32,-1367.31 1821.21,-1364.15 1821.45,-1371.15"/>
-<text xml:space="preserve" text-anchor="middle" x="1686.75" y="-1374.79" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:agent</text>
+<title>n39&#45;&gt;n11</title>
+<path fill="none" stroke="#555555" d="M1521.44,-792.21C1588.77,-795.98 1727.31,-803.75 1814.64,-808.65"/>
+<polygon fill="#555555" stroke="#555555" points="1814.39,-812.14 1824.57,-809.21 1814.78,-805.16 1814.39,-812.14"/>
+<text xml:space="preserve" text-anchor="middle" x="1680" y="-804.14" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:agent</text>
 </g>
-<!-- n44&#45;&gt;n21 -->
+<!-- n39&#45;&gt;n21 -->
 <g id="edge16" class="edge">
-<title>n44&#45;&gt;n21</title>
-<path fill="none" stroke="#555555" d="M1528.19,-1375.27C1558.24,-1371.98 1600.55,-1366.38 1637,-1358 1682.27,-1347.59 1691.46,-1337.35 1736.5,-1326 1748.88,-1322.88 1761.86,-1319.94 1774.87,-1317.2"/>
-<polygon fill="#555555" stroke="#555555" points="1775.22,-1320.71 1784.31,-1315.27 1773.81,-1313.85 1775.22,-1320.71"/>
-<text xml:space="preserve" text-anchor="middle" x="1686.75" y="-1353.71" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadPlan</text>
+<title>n39&#45;&gt;n21</title>
+<path fill="none" stroke="#555555" d="M1521.44,-785.59C1567.19,-780.46 1645.84,-771.63 1718.95,-763.43"/>
+<polygon fill="#555555" stroke="#555555" points="1719.1,-766.93 1728.65,-762.34 1718.32,-759.98 1719.1,-766.93"/>
+<text xml:space="preserve" text-anchor="middle" x="1680" y="-771.7" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadPlan</text>
 </g>
-<!-- n46&#45;&gt;n7 -->
-<g id="edge39" class="edge">
-<title>n46&#45;&gt;n7</title>
-<path fill="none" stroke="#555555" d="M2372.9,-357.5C2428.67,-360.35 2522.31,-365.15 2600.28,-369.14"/>
-<polygon fill="#555555" stroke="#555555" points="2373.27,-354.01 2363.11,-357 2372.92,-361 2373.27,-354.01"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-368.71" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedGeneration</text>
+<!-- n41&#45;&gt;n7 -->
+<g id="edge34" class="edge">
+<title>n41&#45;&gt;n7</title>
+<path fill="none" stroke="#555555" d="M2366.15,-368.07C2421.92,-369.29 2515.56,-371.35 2593.53,-373.06"/>
+<polygon fill="#555555" stroke="#555555" points="2366.43,-364.58 2356.36,-367.86 2366.28,-371.57 2366.43,-364.58"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-373.99" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:qualifiedGeneration</text>
 </g>
-<!-- n48&#45;&gt;n9 -->
+<!-- n43&#45;&gt;n9 -->
 <g id="edge20" class="edge">
-<title>n48&#45;&gt;n9</title>
-<path fill="none" stroke="#555555" d="M1516.73,-719C1587.5,-719 1774.44,-719 1857.77,-719"/>
-<polygon fill="#555555" stroke="#555555" points="1857.54,-722.5 1867.54,-719 1857.54,-715.5 1857.54,-722.5"/>
-<text xml:space="preserve" text-anchor="middle" x="1686.75" y="-720.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
+<title>n43&#45;&gt;n9</title>
+<path fill="none" stroke="#555555" d="M1509.98,-710.1C1580.75,-705.26 1767.69,-692.5 1851.02,-686.81"/>
+<polygon fill="#555555" stroke="#555555" points="1851.06,-690.31 1860.8,-686.14 1850.58,-683.33 1851.06,-690.31"/>
+<text xml:space="preserve" text-anchor="middle" x="1680" y="-701.63" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
 </g>
-<!-- n48&#45;&gt;n18 -->
+<!-- n43&#45;&gt;n18 -->
 <g id="edge19" class="edge">
-<title>n48&#45;&gt;n18</title>
-<path fill="none" stroke="#555555" d="M1516.87,-715.93C1546.76,-712.44 1595.46,-706.16 1637,-698 1667.97,-691.92 1700.76,-684.47 1732.27,-676.8"/>
-<polygon fill="#555555" stroke="#555555" points="1733.01,-680.22 1741.89,-674.44 1731.34,-673.43 1733.01,-680.22"/>
-<text xml:space="preserve" text-anchor="middle" x="1686.75" y="-694.05" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
+<title>n43&#45;&gt;n18</title>
+<path fill="none" stroke="#555555" d="M1510.15,-710.26C1540.29,-707.88 1589.37,-702.5 1630.25,-691 1640.5,-688.12 1642.34,-685.39 1652.25,-681.5 1682.34,-669.68 1714.84,-657.71 1745.92,-646.64"/>
+<polygon fill="#555555" stroke="#555555" points="1746.71,-650.07 1754.97,-643.43 1744.37,-643.47 1746.71,-650.07"/>
+<text xml:space="preserve" text-anchor="middle" x="1680" y="-683.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
 </g>
-<!-- n50&#45;&gt;n12 -->
+<!-- n45&#45;&gt;n12 -->
 <g id="edge21" class="edge">
-<title>n50&#45;&gt;n12</title>
-<path fill="none" stroke="#555555" d="M2351.98,-545.48C2397.3,-552.78 2490.27,-567.75 2573.16,-581.09"/>
-<polygon fill="#555555" stroke="#555555" points="2572.6,-584.54 2583.03,-582.68 2573.71,-577.63 2572.6,-584.54"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-579.9" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
+<title>n45&#45;&gt;n12</title>
+<path fill="none" stroke="#555555" d="M2345.07,-518.93C2367.79,-523.03 2400.78,-529.13 2429.5,-535 2473.99,-544.09 2522.09,-554.5 2566.39,-564.32"/>
+<polygon fill="#555555" stroke="#555555" points="2565.57,-567.72 2576.09,-566.47 2567.09,-560.89 2565.57,-567.72"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-563.18" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:entity</text>
 </g>
 <!-- n6_21 -->
-<g id="node51" class="node">
+<g id="node46" class="node">
 <title>n6_21</title>
-<polygon fill="#ffffff" stroke="none" points="2699.25,-510 2699.25,-548 2771,-548 2771,-510 2699.25,-510"/>
-<text xml:space="preserve" text-anchor="start" x="2703.25" y="-535.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:Instrument</text>
-<text xml:space="preserve" text-anchor="start" x="2714.12" y="-517.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
-<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2699.25,-510 2699.25,-548 2771,-548 2771,-510 2699.25,-510"/>
+<polygon fill="#ffffff" stroke="none" points="2692.5,-504 2692.5,-542 2764.25,-542 2764.25,-504 2692.5,-504"/>
+<text xml:space="preserve" text-anchor="start" x="2696.5" y="-529.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">ex:Instrument</text>
+<text xml:space="preserve" text-anchor="start" x="2707.38" y="-511.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Role</text>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2692.5,-504 2692.5,-542 2764.25,-542 2764.25,-504 2692.5,-504"/>
 </g>
-<!-- n50&#45;&gt;n6_21 -->
+<!-- n45&#45;&gt;n6_21 -->
 <g id="edge22" class="edge">
-<title>n50&#45;&gt;n6_21</title>
-<path fill="none" stroke="#555555" d="M2351.98,-540.18C2421.36,-538.15 2602.39,-532.86 2687.99,-530.35"/>
-<polygon fill="#555555" stroke="#555555" points="2688.01,-533.85 2697.9,-530.06 2687.81,-526.85 2688.01,-533.85"/>
-<text xml:space="preserve" text-anchor="middle" x="2508.88" y="-538.73" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
+<title>n45&#45;&gt;n6_21</title>
+<path fill="none" stroke="#555555" d="M2345.23,-514.61C2414.61,-516.13 2595.64,-520.11 2681.24,-521.99"/>
+<polygon fill="#555555" stroke="#555555" points="2681.08,-525.48 2691.15,-522.2 2681.23,-518.49 2681.08,-525.48"/>
+<text xml:space="preserve" text-anchor="middle" x="2502.12" y="-520.99" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:hadRole</text>
 </g>
 </g>
 </svg>
