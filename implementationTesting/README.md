@@ -87,7 +87,7 @@ beside its source and with the same name:
 |-|-|-|
 | `<name>.svg` | none | the whole graph; the longest chain of arrows runs left to right |
 | `<name>.rooted.svg` | `--rooted` | the whole graph, laid out from the record's root (the dataset first), as its tree is |
-| `<name>.simple.svg` | `--rooted --omit schema:additionalProperty` | the rooted diagram without parameter values, so the topology of the resources shows |
+| `<name>.simple.svg` | `--rooted --omit schema:additionalProperty` | the rooted diagram without parameter values, so the topology of the resources shows; every diagram now leaves out `schema:additionalProperty` and the PropertyValues in a crate's `object`, so it is the same as `<name>.rooted.svg` |
 
 ```bash
 python tools/rdfToSvg.py implementationTesting/prov-o-qualified/cdif_provenance_workflow.ttl implementationTesting/prov-o-qualified/cdif_provenance_workflow.svg

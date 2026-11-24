@@ -163,7 +163,8 @@ Boxes take the PROV-O colours: entities yellow, activities blue, agents orange, 
 of qualified relations grey. A leaf that several boxes point to, such as a role or a Wikidata kind
 term, is drawn at each reference with a dashed border. `schema:additionalProperty` is left out, with the parameter
 values (`schema:PropertyValue`) only it reaches: the diagrams show how the resources link, and the
-parameters are in the record. An RO-Crate step's parameters are in its `object`, so they stay. Open a diagram in a browser to zoom it.
+parameters are in the record. An RO-Crate lists a step's parameters as PropertyValues in its
+`object`, beside its inputs; those are left out too. Open a diagram in a browser to zoom it.
 For example, [prov-o-qualified/cdif\_provenance\_minimal.svg](prov-o-qualified/cdif_provenance_minimal.svg)
 and the lab measurement pair,
 [qualified](prov-o-qualified/cdif_provenance_quantitative.from-cdifprov.svg) and
@@ -197,7 +198,8 @@ above, without the parameter values (`--omit schema:additionalProperty`; a crate
 them as PropertyValues in `object`, also takes `--omit schema:object@schema:PropertyValue`). Each
 parameter PropertyValue goes with its values, which leaves the topology of the record's resources:
 the workflow drops 138 of its 377 triples. A record with no parameters (minimal) draws as its
-rooted diagram. For example, the
+rooted diagram. Since 2026-11-24 every diagram leaves these out, so each simplified diagram is the
+same as its rooted one. For example, the
 [workflow, qualified](prov-o-qualified/cdif_provenance_workflow.simple.svg). How every file here
 is made is in [README.md](README.md).
 
