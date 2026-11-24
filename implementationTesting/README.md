@@ -99,11 +99,12 @@ python tools/rdfToSvg.py implementationTesting/prov-o-qualified/cdif_provenance_
   The cdifProv run-rooted tree is the same graph as its record, and the superseded snapshot is not
   drawn.
 - **The masters** take `--root ex:validationResult` in place of `--rooted`.
-- **RO-Crates** have only the rooted and simple diagrams, drawn from `ro-crate-metadata.json` with
+- **RO-Crates** have all three, drawn from `ro-crate-metadata.json` with
   `--base http://rocrate.invalid/crate/ --prefix ex=https://example.org/cdif-prov/`. A crate lists its
   parameter values as PropertyValues in `object`, so its simple diagram also takes
-  `--omit schema:object@schema:PropertyValue`. The run-rooted crate diagrams
-  (`cdif_provenance_quantitative.run-rooted.*.svg`) take `--root ex:concentrationRun`.
+  `--omit schema:object@schema:PropertyValue`. The run-rooted crate tree is the same graph as the
+  quantitative crate, so it has only `cdif_provenance_quantitative.run-rooted.rooted.svg` and
+  `….run-rooted.simple.svg`, both with `--root ex:concentrationRun` in place of `--rooted`.
 
 ## PROV-JSON
 

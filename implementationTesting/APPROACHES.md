@@ -180,13 +180,15 @@ output, as their trees are. For example, the workflow:
 [qualified](prov-o-qualified/cdif_provenance_workflow.rooted.svg) starts at `ex:fes2FitResults`,
 then its generation by `ex:fes2Run`, then the run's steps.
 
-Each RO-Crate in `ro-crate/` has only a rooted diagram, `ro-crate/<name>.rooted.svg` beside its tree,
-drawn from its `ro-crate-metadata.json` with the tree's base and the record's prefix
-(`--base http://rocrate.invalid/crate/ --prefix ex=https://example.org/cdif-prov/ --rooted`). It
-starts at the crate's root dataset, `./`, as the tree does; the run-rooted one starts at
-`ex:concentrationRun` (`--root ex:concentrationRun`), as its tree does. A `CreateAction` is
-coloured as an activity. For example, the
-[workflow crate](ro-crate/cdif_provenance_workflow.rooted.svg).
+Each RO-Crate in `ro-crate/` has both diagrams beside its tree, `ro-crate/<name>.svg` and
+`ro-crate/<name>.rooted.svg`, drawn from its `ro-crate-metadata.json` with the tree's base and the
+record's prefix (`--base http://rocrate.invalid/crate/ --prefix ex=https://example.org/cdif-prov/`,
+and `--rooted` for the rooted one). The run-rooted crate tree is the same graph as the
+quantitative crate, so it has only its rooted diagram. The rooted one starts at the crate's root
+dataset, `./`, as the tree does; the run-rooted one starts at `ex:concentrationRun`
+(`--root ex:concentrationRun`), as its tree does. A `CreateAction` is coloured as an activity. For
+example, the workflow crate, [default](ro-crate/cdif_provenance_workflow.svg) and
+[rooted](ro-crate/cdif_provenance_workflow.rooted.svg).
 
 Every record, RO-Crates included, also has a simplified diagram, `<name>.simple.svg`: rooted as
 above, without the parameter values (`--omit schema:additionalProperty`; a crate, which lists
