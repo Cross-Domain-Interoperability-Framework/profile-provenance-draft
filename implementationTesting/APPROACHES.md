@@ -166,6 +166,17 @@ and the lab measurement pair,
 [plain](prov-o-unqualified/cdif_provenance_quantitative.from-cdifprov.svg), with their cdifProv source,
 [cdifprov-schemaorg/cdif\_provenance\_quantitative.svg](cdifprov-schemaorg/cdif_provenance_quantitative.svg).
 
+Each diagram also has a `.rooted.svg` beside it (`python tools/rdfToSvg.py SRC OUT.rooted.svg --rooted`),
+laid out from the record's root, as its JSON-LD tree is: the dataset is the first box, and each node
+follows the node nearer the root that it is linked to. In the other diagrams the longest chain of
+arrows sets the layout, so in PROV-O, where every step points at its run (`dcterms:isPartOf`), a
+step can come before the dataset. In the rooted ones an arrow that points back toward the root is
+laid out from the root's side, its arrowhead unchanged. The two hand-written `quantitative.ttl`
+files have no `schema:Dataset`, so they are rooted on the named node nothing links to that reaches
+the most others, `ex:validationResult`. For example, the workflow:
+[qualified](prov-o-qualified/cdif_provenance_workflow.rooted.svg) starts at `ex:fes2FitResults`,
+then its generation by `ex:fes2Run`, then the run's steps.
+
 ## The matrix
 
 ✔ native · ◐ partial, see note · **ann** only as an annotation from another vocabulary

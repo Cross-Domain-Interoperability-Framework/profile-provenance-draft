@@ -9,16 +9,26 @@ A leaf that several nodes point to (a node with no literals and no links of its 
 an action status or a Wikidata kind term) is drawn once per reference, with a dashed border, so it
 does not pull arrows across the whole diagram.
 
+With --rooted (or --root IRI) the diagram is laid out from a root: the --root node, else the
+schema:Dataset that is not a catalog record (the node a CDIF record describes, and the root of its
+JSON-LD tree), else the named node nothing links to that reaches the most others. An arrow that points
+back toward the root (a step's dcterms:isPartOf its run, a catalog record's schema:about) is laid out
+from the root's side, its arrowhead still at its object, so the root is the first box and each node
+follows the one nearer the root that it is linked to. Without either option, arrows alone set the
+layout (the longest chain of arrows runs left to right).
+
 Boxes take the PROV-O colours: entities yellow, activities blue, agents orange. The nodes of a
 qualified relation (prov:Usage, prov:Generation, prov:Association, ...) are grey, and anything else
 is white.
 
 usage:
-    python tools/rdfToSvg.py SRC OUT.svg [--base IRI] [--rankdir LR|RL|TB|BT] [--width N] [--dot OUT.dot]
+    python tools/rdfToSvg.py SRC OUT.svg [--base IRI] [--rooted | --root IRI] [--rankdir LR|RL|TB|BT] [--width N]
+                             [--dot OUT.dot]
 SRC is Turtle (.ttl) or JSON-LD (any other extension).
 The SVG has no fixed size, so a browser fits it to the window; zoom in with Ctrl + mouse wheel.
 """
 import argparse
+import collections
 import html
 import re
 import subprocess
@@ -57,6 +67,9 @@ def main():
     ap.add_argument("src")
     ap.add_argument("out")
     ap.add_argument("--base", help="base IRI for relative @ids (an RO-Crate: http://rocrate.invalid/crate/)")
+    ap.add_argument("--rooted", action="store_true",
+                    help="lay the diagram out from its root (the schema:Dataset that is not a catalog record)")
+    ap.add_argument("--root", help="IRI or CURIE of the node to lay the diagram out from (implies --rooted)")
     ap.add_argument("--rankdir", default="LR", choices=["LR", "RL", "TB", "BT"])
     ap.add_argument("--width", type=int, default=48, help="longest literal shown in full (characters)")
     ap.add_argument("--dot", help="also write the Graphviz source here")
@@ -98,6 +111,47 @@ def main():
         refs[o] = refs.get(o, 0) + 1
     split = {n for n in nodes if n not in has_out and refs.get(n, 0) > 1}
 
+    # distance of each node from the root, following links either way
+    if args.root:
+        root = URIRef(nm.expand_curie(args.root)) if ":" in args.root and not args.root.startswith(
+            ("http:", "https:")) else URIRef(args.root)
+        if root not in nodes:
+            sys.exit(f"--root {args.root}: no such node in {args.src}")
+    elif args.rooted:
+        datasets = [n for n in g.subjects(RDF.type, URIRef(SCHEMA[0] + "Dataset"))
+                    if not any(str(t).endswith("CatalogRecord") for t in g.objects(n, RDF.type))]
+        root = min(datasets, key=str) if datasets else None
+        if root is None:
+            # no dataset (plain PROV-O): the named node nothing links to that reaches the most nodes
+            out_links = collections.defaultdict(set)
+            for s, _, o in links:
+                out_links[s].add(o)
+            targets = {o for _, _, o in links}
+
+            def reach(n):
+                seen, todo = {n}, [n]
+                while todo:
+                    for m in out_links[todo.pop()] - seen:
+                        seen.add(m); todo.append(m)
+                return len(seen)
+            tops = [n for n in nodes if isinstance(n, URIRef) and n not in targets]
+            root = min(tops, key=lambda n: (-reach(n), str(n))) if tops else None
+    else:
+        root = None
+    dist = {}
+    if root is not None:
+        nbrs = collections.defaultdict(set)
+        for s, _, o in links:
+            nbrs[s].add(o); nbrs[o].add(s)
+        dist[root] = 0
+        queue = collections.deque([root])
+        while queue:
+            n = queue.popleft()
+            for m in sorted(nbrs[n], key=str):
+                if m not in dist:
+                    dist[m] = dist[n] + 1
+                    queue.append(m)
+
     out = [f'digraph G {{ rankdir={args.rankdir}; nodesep=0.3; ranksep=0.6;',
            '  node [shape=plain, fontname="Helvetica", fontsize=10];',
            '  edge [fontname="Helvetica", fontsize=9, color="#555555", fontcolor="#333333"];']
@@ -128,7 +182,11 @@ def main():
         if o in split:
             target = f"{ids[o]}_{k}"
             box(o, target, dashed=True)
-        out.append(f'  {ids[s]} -> {target} [label="{esc(curie(p))}"];')
+        if o not in split and dist.get(o, -1) >= 0 and dist[o] < dist.get(s, dist[o]):
+            # o is nearer the root: lay the arrow out from o, drawn pointing at o as before
+            out.append(f'  {target} -> {ids[s]} [label="{esc(curie(p))}", dir=back];')
+        else:
+            out.append(f'  {ids[s]} -> {target} [label="{esc(curie(p))}"];')
     out.append("}")
     dot = "\n".join(out) + "\n"
     if args.dot:
@@ -140,7 +198,8 @@ def main():
     # viewBox, a browser fits the whole diagram to the window instead of opening on an empty corner
     svg = re.sub(rb'<svg width="[^"]*" height="[^"]*"', b"<svg", r.stdout, count=1)
     open(args.out, "wb").write(svg)
-    print(f"{args.out}: {len(ids)} nodes ({len(split)} shared leaves drawn per reference), "
+    print(f"{args.out}: root {curie(root) if root is not None else 'none'}, "
+          f"{len(ids)} nodes ({len(split)} shared leaves drawn per reference), "
           f"{len(links)} links, {len(g)} triples")
 
 
