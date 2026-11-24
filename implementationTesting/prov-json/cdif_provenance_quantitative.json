@@ -145,10 +145,6 @@
         "$": "ex:laboratory01",
         "type": "xsd:QName"
       },
-      "dcterms:isPartOf": {
-        "$": "ex:concentrationRun",
-        "type": "xsd:QName"
-      },
       "schema:actionStatus": {
         "$": "schema:CompletedActionStatus",
         "type": "xsd:QName"
@@ -161,7 +157,29 @@
         "$": "schema:CompletedActionStatus",
         "type": "xsd:QName"
       },
-      "prov:startTime": "2026-11-05T10:18:00Z"
+      "prov:startTime": "2026-11-05T10:18:00Z",
+      "dcterms:hasPart": [
+        {
+          "$": "ex:absorbanceMeasurement",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:blankCorrection",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:calibrationDerivation",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:uncertaintyAssessment",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "ex:validation",
+          "type": "xsd:QName"
+        }
+      ]
     },
     "ex:blankCorrection": {
       "prov:type": [
@@ -174,10 +192,6 @@
           "type": "xsd:QName"
         }
       ],
-      "dcterms:isPartOf": {
-        "$": "ex:concentrationRun",
-        "type": "xsd:QName"
-      },
       "prov:endTime": "2026-11-05T10:21:04Z",
       "prov:startTime": "2026-11-05T10:21:00Z"
     },
@@ -193,10 +207,6 @@
         }
       ],
       "prov:startTime": "2026-11-05T10:23:14Z",
-      "dcterms:isPartOf": {
-        "$": "ex:concentrationRun",
-        "type": "xsd:QName"
-      },
       "prov:endTime": "2026-11-05T10:23:18Z"
     },
     "ex:uncertaintyAssessment": {
@@ -209,11 +219,7 @@
           "$": "ex:UncertaintyAssessment",
           "type": "xsd:QName"
         }
-      ],
-      "dcterms:isPartOf": {
-        "$": "ex:concentrationRun",
-        "type": "xsd:QName"
-      }
+      ]
     },
     "ex:validation": {
       "prov:type": [
@@ -225,11 +231,7 @@
           "$": "ex:Validation",
           "type": "xsd:QName"
         }
-      ],
-      "dcterms:isPartOf": {
-        "$": "ex:concentrationRun",
-        "type": "xsd:QName"
-      }
+      ]
     }
   },
   "agent": {

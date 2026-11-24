@@ -12,7 +12,7 @@ does not pull arrows across the whole diagram.
 With --rooted (or --root IRI) the diagram is laid out from a root: the --root node, else the
 schema:Dataset that is not a catalog record (the node a CDIF record describes, and the root of its
 JSON-LD tree), else the named node nothing links to that reaches the most others. An arrow that points
-back toward the root (a step's dcterms:isPartOf its run, a catalog record's schema:about) is laid out
+back toward the root (a ProvONE step's provone:wasPartOf its run, a catalog record's schema:about) is laid out
 from the root's side, its arrowhead still at its object, so the root is the first box and each node
 follows the one nearer the root that it is linked to. Without either option, arrows alone set the
 layout (the longest chain of arrows runs left to right).
