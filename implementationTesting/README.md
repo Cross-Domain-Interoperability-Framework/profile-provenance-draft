@@ -80,31 +80,30 @@ python tools/rdfToJsonLdTree.py implementationTesting/ro-crate/cdif_provenance_w
 ## Diagrams
 
 [`tools/rdfToSvg.py`](../tools/rdfToSvg.py) draws a graph with Graphviz (`dot` on the PATH): a box
-per resource with its literal properties, an arrow per link. Each record has up to three diagrams,
+per resource with its literal properties, an arrow per link. Each record has up to two diagrams,
 beside its source and with the same name:
 
 | file | options | what it shows |
 |-|-|-|
 | `<name>.svg` | none | the whole graph; the longest chain of arrows runs left to right |
 | `<name>.rooted.svg` | `--rooted` | the whole graph, laid out from the record's root (the dataset first), as its tree is |
-| `<name>.simple.svg` | `--rooted --omit schema:additionalProperty` | the rooted diagram without parameter values, so the topology of the resources shows; every diagram now leaves out `schema:additionalProperty` and the PropertyValues in a crate's `object`, so it is the same as `<name>.rooted.svg` |
 
 ```bash
 python tools/rdfToSvg.py implementationTesting/prov-o-qualified/cdif_provenance_workflow.ttl implementationTesting/prov-o-qualified/cdif_provenance_workflow.svg
 python tools/rdfToSvg.py implementationTesting/prov-o-qualified/cdif_provenance_workflow.ttl implementationTesting/prov-o-qualified/cdif_provenance_workflow.rooted.svg --rooted
-python tools/rdfToSvg.py implementationTesting/prov-o-qualified/cdif_provenance_workflow.ttl implementationTesting/prov-o-qualified/cdif_provenance_workflow.simple.svg --rooted --omit schema:additionalProperty
 ```
 
-- **Which records:** every cdifProv record (from its `.json`) and every PROV-O `.ttl` has all three.
+- **Which records:** every cdifProv record (from its `.json`) and every PROV-O `.ttl` has both.
   The cdifProv run-rooted tree is the same graph as its record, and the superseded snapshot is not
   drawn.
 - **The masters** take `--root ex:validationResult` in place of `--rooted`.
-- **RO-Crates** have all three, drawn from `ro-crate-metadata.json` with
-  `--base http://rocrate.invalid/crate/ --prefix ex=https://example.org/cdif-prov/`. A crate lists its
-  parameter values as PropertyValues in `object`, so its simple diagram also takes
-  `--omit schema:object@schema:PropertyValue`. The run-rooted crate tree is the same graph as the
-  quantitative crate, so it has only `cdif_provenance_quantitative.run-rooted.rooted.svg` and
-  `….run-rooted.simple.svg`, both with `--root ex:concentrationRun` in place of `--rooted`.
+- **RO-Crates** have both, drawn from `ro-crate-metadata.json` with
+  `--base http://rocrate.invalid/crate/ --prefix ex=https://example.org/cdif-prov/`. The run-rooted
+  crate tree is the same graph as the quantitative crate, so it has only
+  `cdif_provenance_quantitative.run-rooted.rooted.svg`, with `--root ex:concentrationRun` in place
+  of `--rooted`.
+- **Parameters:** every diagram leaves out `schema:additionalProperty` and the PropertyValues in a
+  crate step's `object`, with the values only they reach; `--omit PREDICATE[@TYPE]` leaves out more.
 
 ## PROV-JSON
 

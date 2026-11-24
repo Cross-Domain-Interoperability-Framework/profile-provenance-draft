@@ -193,15 +193,7 @@ dataset, `./`, as the tree does; the run-rooted one starts at `ex:concentrationR
 example, the workflow crate, [default](ro-crate/cdif_provenance_workflow.svg) and
 [rooted](ro-crate/cdif_provenance_workflow.rooted.svg).
 
-Every record, RO-Crates included, also has a simplified diagram, `<name>.simple.svg`: rooted as
-above, without the parameter values (`--omit schema:additionalProperty`; a crate, which lists
-them as PropertyValues in `object`, also takes `--omit schema:object@schema:PropertyValue`). Each
-parameter PropertyValue goes with its values, which leaves the topology of the record's resources:
-the workflow drops 138 of its 377 triples. A record with no parameters (minimal) draws as its
-rooted diagram. Since 2026-11-24 every diagram leaves these out, so each simplified diagram is the
-same as its rooted one. For example, the
-[workflow, qualified](prov-o-qualified/cdif_provenance_workflow.simple.svg). How every file here
-is made is in [README.md](README.md).
+How every file here is made is in [README.md](README.md).
 
 ## The matrix
 
