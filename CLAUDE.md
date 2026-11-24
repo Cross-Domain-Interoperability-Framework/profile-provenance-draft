@@ -83,7 +83,7 @@ python tools/rdfToJsonLdTree.py <src.ttl|src.json> <out.jsonld> [--base <iri>] [
 # a prov-o-unqualified tree is written --order-like its prov-o-qualified counterpart, so the pair reads side by side;
 # an ro-crate tree --order-like its cdifprov-schemaorg source (with --base http://rocrate.invalid/crate/)
 
-# Any RDF -> SVG node-link diagram (Graphviz `dot` on the PATH); each prov-o-*/*.ttl has one beside it
+# Any RDF -> SVG node-link diagram (Graphviz `dot` on the PATH); each prov-o-*/*.ttl and cdifprov-schemaorg record has one beside it
 python tools/rdfToSvg.py <src.ttl|src.json> <out.svg> [--base <iri>] [--rankdir LR|RL|TB|BT]
 
 # cdifProv -> PROV-O, qualified or plain relations (the mapping is implementationTesting/MAPPING.md);

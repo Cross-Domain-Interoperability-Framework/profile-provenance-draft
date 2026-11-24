@@ -186,9 +186,9 @@
 <polygon fill="#555555" stroke="#555555" points="3202.23,-209.83 3211.38,-204.5 3200.9,-202.96 3202.23,-209.83"/>
 <text xml:space="preserve" text-anchor="middle" x="3135.75" y="-233.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:used</text>
 </g>
-<!-- n30 -->
-<g id="node30" class="node">
-<title>n30</title>
+<!-- n31 -->
+<g id="node31" class="node">
+<title>n31</title>
 <polygon fill="#ffffff" stroke="none" points="3293.5,-335 3293.5,-409 3448.5,-409 3448.5,-335 3293.5,-335"/>
 <text xml:space="preserve" text-anchor="start" x="3321.88" y="-396.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
 <text xml:space="preserve" text-anchor="start" x="3297.5" y="-377.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Coding unit</text>
@@ -196,9 +196,9 @@
 <text xml:space="preserve" text-anchor="start" x="3297.5" y="-341.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: response segment</text>
 <polygon fill="none" stroke="black" points="3293.5,-335 3293.5,-409 3448.5,-409 3448.5,-335 3293.5,-335"/>
 </g>
-<!-- n15&#45;&gt;n30 -->
+<!-- n15&#45;&gt;n31 -->
 <g id="edge5" class="edge">
-<title>n15&#45;&gt;n30</title>
+<title>n15&#45;&gt;n31</title>
 <path fill="none" stroke="#555555" d="M3058.88,-320.24C3135.98,-333.06 3220.8,-347.18 3282.38,-357.42"/>
 <polygon fill="#555555" stroke="#555555" points="3281.67,-360.85 3292.11,-359.04 3282.82,-353.95 3281.67,-360.85"/>
 <text xml:space="preserve" text-anchor="middle" x="3135.75" y="-341.94" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalProperty</text>
@@ -294,9 +294,9 @@
 <polygon fill="#555555" stroke="#555555" points="1667.23,-562.53 1676.61,-557.59 1666.2,-555.6 1667.23,-562.53"/>
 <text xml:space="preserve" text-anchor="middle" x="1601.25" y="-577.37" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">prov:wasGeneratedBy</text>
 </g>
-<!-- n31 -->
-<g id="node31" class="node">
-<title>n31</title>
+<!-- n33 -->
+<g id="node33" class="node">
+<title>n33</title>
 <polygon fill="#ffffff" stroke="none" points="1747,-588 1747,-662 1992,-662 1992,-588 1747,-588"/>
 <text xml:space="preserve" text-anchor="start" x="1820.38" y="-649.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:PropertyValue</text>
 <text xml:space="preserve" text-anchor="start" x="1751" y="-630.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:name: Inter&#45;coder agreement (Cohen&#39;s kappa)</text>
@@ -304,9 +304,9 @@
 <text xml:space="preserve" text-anchor="start" x="1751" y="-594.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:value: 0.78</text>
 <polygon fill="none" stroke="black" points="1747,-588 1747,-662 1992,-662 1992,-588 1747,-588"/>
 </g>
-<!-- n17&#45;&gt;n31 -->
+<!-- n17&#45;&gt;n33 -->
 <g id="edge11" class="edge">
-<title>n17&#45;&gt;n31</title>
+<title>n17&#45;&gt;n33</title>
 <path fill="none" stroke="#555555" d="M1524.4,-610.64C1592.6,-613.49 1671.32,-616.77 1736.24,-619.48"/>
 <polygon fill="#555555" stroke="#555555" points="1735.72,-622.96 1745.86,-619.88 1736.01,-615.97 1735.72,-622.96"/>
 <text xml:space="preserve" text-anchor="middle" x="1601.25" y="-617.71" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:additionalProperty</text>
@@ -319,32 +319,32 @@
 <text xml:space="preserve" text-anchor="start" x="32.88" y="-710.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">prov:Entity, prov:Plan</text>
 <polygon fill="none" stroke="black" points="28.88,-703 28.88,-741 130.62,-741 130.62,-703 28.88,-703"/>
 </g>
-<!-- n33 -->
-<g id="node33" class="node">
-<title>n33</title>
+<!-- n32 -->
+<g id="node32" class="node">
+<title>n32</title>
 <polygon fill="#ffffff" stroke="none" points="4588.75,-240 4588.75,-278 4781.25,-278 4781.25,-240 4588.75,-240"/>
 <text xml:space="preserve" text-anchor="start" x="4637.75" y="-265.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:ContactPoint</text>
 <text xml:space="preserve" text-anchor="start" x="4592.75" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:email: researcher.a@example.org</text>
 <polygon fill="none" stroke="black" points="4588.75,-240 4588.75,-278 4781.25,-278 4781.25,-240 4588.75,-240"/>
 </g>
-<!-- n19&#45;&gt;n33 -->
+<!-- n19&#45;&gt;n32 -->
 <g id="edge14" class="edge">
-<title>n19&#45;&gt;n33</title>
+<title>n19&#45;&gt;n32</title>
 <path fill="none" stroke="#555555" d="M4360.68,-259C4420.08,-259 4508.39,-259 4577.72,-259"/>
 <polygon fill="#555555" stroke="#555555" points="4577.6,-262.5 4587.6,-259 4577.6,-255.5 4577.6,-262.5"/>
 <text xml:space="preserve" text-anchor="middle" x="4519.12" y="-260.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:contactPoint</text>
 </g>
-<!-- n32 -->
-<g id="node32" class="node">
-<title>n32</title>
+<!-- n30 -->
+<g id="node30" class="node">
+<title>n30</title>
 <polygon fill="#ffffff" stroke="none" points="2767.88,-630 2767.88,-668 2960.38,-668 2960.38,-630 2767.88,-630"/>
 <text xml:space="preserve" text-anchor="start" x="2816.88" y="-655.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">schema:ContactPoint</text>
 <text xml:space="preserve" text-anchor="start" x="2771.88" y="-636.5" font-family="Helvetica,sans-Serif" font-size="10.00">schema:email: researcher.b@example.org</text>
 <polygon fill="none" stroke="black" points="2767.88,-630 2767.88,-668 2960.38,-668 2960.38,-630 2767.88,-630"/>
 </g>
-<!-- n20&#45;&gt;n32 -->
+<!-- n20&#45;&gt;n30 -->
 <g id="edge15" class="edge">
-<title>n20&#45;&gt;n32</title>
+<title>n20&#45;&gt;n30</title>
 <path fill="none" stroke="#555555" d="M2435.1,-649C2517.68,-649 2659.33,-649 2756.92,-649"/>
 <polygon fill="#555555" stroke="#555555" points="2756.78,-652.5 2766.78,-649 2756.78,-645.5 2756.78,-652.5"/>
 <text xml:space="preserve" text-anchor="middle" x="2599.62" y="-650.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">schema:contactPoint</text>
