@@ -17,6 +17,13 @@ from the root's side, its arrowhead still at its object, so the root is the firs
 follows the one nearer the root that it is linked to. Without either option, arrows alone set the
 layout (the longest chain of arrows runs left to right).
 
+--omit PREDICATE (repeatable) leaves out that predicate's links, and every node reachable only
+through them, with its own triples: --omit schema:additionalProperty drops each parameter
+PropertyValue and its values, so the diagram shows the topology of the record's resources. A node
+something else still links to stays. PREDICATE@TYPE leaves out only the links whose object has that
+type: an RO-Crate lists parameter values as PropertyValues in schema:object, beside the real inputs,
+so --omit schema:object@schema:PropertyValue drops just those.
+
 Boxes take the PROV-O colours: entities yellow, activities blue (a prov:Activity, or any schema.org
 Action type, such as an RO-Crate's CreateAction), agents orange. The nodes of a
 qualified relation (prov:Usage, prov:Generation, prov:Association, ...) are grey, and anything else
@@ -24,7 +31,7 @@ is white.
 
 usage:
     python tools/rdfToSvg.py SRC OUT.svg [--base IRI] [--prefix PFX=IRI ...] [--rooted | --root IRI]
-                             [--rankdir LR|RL|TB|BT] [--width N]
+                             [--omit PREDICATE[@TYPE] ...] [--rankdir LR|RL|TB|BT] [--width N]
                              [--dot OUT.dot]
 SRC is Turtle (.ttl) or JSON-LD (any other extension). With --base, an IRI under the base is shown
 relative to it (an RO-Crate's root as ./), as rdfToJsonLdTree.py writes it. --prefix binds a prefix
@@ -73,6 +80,9 @@ def main():
     ap.add_argument("--base", help="base IRI for relative @ids (an RO-Crate: http://rocrate.invalid/crate/)")
     ap.add_argument("--prefix", action="append", default=[], metavar="PFX=IRI",
                     help="bind a prefix for compact IRIs (repeatable)")
+    ap.add_argument("--omit", action="append", default=[], metavar="PREDICATE[@TYPE]",
+                    help="leave out this predicate's links (only those to a TYPE node, with @TYPE), "
+                         "and what is reachable only through them (repeatable)")
     ap.add_argument("--rooted", action="store_true",
                     help="lay the diagram out from its root (the schema:Dataset that is not a catalog record)")
     ap.add_argument("--root", help="IRI or CURIE of the node to lay the diagram out from (implies --rooted)")
@@ -98,6 +108,29 @@ def main():
     # rdflib binds schema: to https; CDIF uses http://schema.org/, which would show as schema1:
     if any(str(t).startswith(SCHEMA[0]) for tr in g for t in tr if isinstance(t, URIRef)):
         nm.bind("schema", SCHEMA[0], override=True, replace=True)
+
+    # --omit: drop the predicate's triples, then each object nothing else links to, with its own
+    # triples, recursively (a PropertyValue and its values; a shared vocabulary term stays)
+    omitted = 0
+    def iri(name):
+        return URIRef(name) if name.startswith(("http:", "https:")) else URIRef(nm.expand_curie(name))
+    for spec in args.omit:
+        name, _, typ = spec.partition("@")
+        pred = iri(name)
+        drop = [(s, o) for s, o in g.subject_objects(pred)
+                if not typ or (not isinstance(o, Literal) and (o, RDF.type, iri(typ)) in g)]
+        todo = [o for _, o in drop if not isinstance(o, Literal)]
+        omitted += len(drop)
+        for s, o in drop:
+            g.remove((s, pred, o))
+        while todo:
+            n = todo.pop()
+            if any(p != RDF.type for _, p in g.subject_predicates(n)):
+                continue  # still linked from elsewhere
+            kids = [o for p, o in g.predicate_objects(n) if p != RDF.type and not isinstance(o, Literal)]
+            omitted += len(list(g.triples((n, None, None))))
+            g.remove((n, None, None))
+            todo += kids
 
     def curie(t):
         if args.base and isinstance(t, URIRef) and str(t).startswith(args.base):
@@ -209,6 +242,8 @@ def main():
     # viewBox, a browser fits the whole diagram to the window instead of opening on an empty corner
     svg = re.sub(rb'<svg width="[^"]*" height="[^"]*"', b"<svg", r.stdout, count=1)
     open(args.out, "wb").write(svg)
+    if args.omit:
+        print(f"{args.out}: omitted {omitted} triples ({', '.join(args.omit)})")
     print(f"{args.out}: root {curie(root) if root is not None else 'none'}, "
           f"{len(ids)} nodes ({len(split)} shared leaves drawn per reference), "
           f"{len(links)} links, {len(g)} triples")
