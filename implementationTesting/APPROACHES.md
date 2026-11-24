@@ -177,6 +177,14 @@ the most others, `ex:validationResult`. For example, the workflow:
 [qualified](prov-o-qualified/cdif_provenance_workflow.rooted.svg) starts at `ex:fes2FitResults`,
 then its generation by `ex:fes2Run`, then the run's steps.
 
+Each RO-Crate in `ro-crate/` has only a rooted diagram, `ro-crate/<name>.rooted.svg` beside its tree,
+drawn from its `ro-crate-metadata.json` with the tree's base and the record's prefix
+(`--base http://rocrate.invalid/crate/ --prefix ex=https://example.org/cdif-prov/ --rooted`). It
+starts at the crate's root dataset, `./`, as the tree does; the run-rooted one starts at
+`ex:concentrationRun` (`--root ex:concentrationRun`), as its tree does. A `CreateAction` is
+coloured as an activity. For example, the
+[workflow crate](ro-crate/cdif_provenance_workflow.rooted.svg).
+
 ## The matrix
 
 ✔ native · ◐ partial, see note · **ann** only as an annotation from another vocabulary

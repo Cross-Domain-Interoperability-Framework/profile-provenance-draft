@@ -17,14 +17,18 @@ from the root's side, its arrowhead still at its object, so the root is the firs
 follows the one nearer the root that it is linked to. Without either option, arrows alone set the
 layout (the longest chain of arrows runs left to right).
 
-Boxes take the PROV-O colours: entities yellow, activities blue, agents orange. The nodes of a
+Boxes take the PROV-O colours: entities yellow, activities blue (a prov:Activity, or any schema.org
+Action type, such as an RO-Crate's CreateAction), agents orange. The nodes of a
 qualified relation (prov:Usage, prov:Generation, prov:Association, ...) are grey, and anything else
 is white.
 
 usage:
-    python tools/rdfToSvg.py SRC OUT.svg [--base IRI] [--rooted | --root IRI] [--rankdir LR|RL|TB|BT] [--width N]
+    python tools/rdfToSvg.py SRC OUT.svg [--base IRI] [--prefix PFX=IRI ...] [--rooted | --root IRI]
+                             [--rankdir LR|RL|TB|BT] [--width N]
                              [--dot OUT.dot]
-SRC is Turtle (.ttl) or JSON-LD (any other extension).
+SRC is Turtle (.ttl) or JSON-LD (any other extension). With --base, an IRI under the base is shown
+relative to it (an RO-Crate's root as ./), as rdfToJsonLdTree.py writes it. --prefix binds a prefix
+the source does not (an RO-Crate's remote context binds none of the record's own).
 The SVG has no fixed size, so a browser fits it to the window; zoom in with Ctrl + mouse wheel.
 """
 import argparse
@@ -55,7 +59,7 @@ def fill(types):
     if types & AGENTS or any(n.endswith(("/Person", "/Organization")) and n.startswith(SCHEMA)
                              for n in names):
         return AGENT
-    if types & ACTIVITIES or any(n.endswith("/Action") and n.startswith(SCHEMA) for n in names):
+    if types & ACTIVITIES or any(n.endswith("Action") and n.startswith(SCHEMA) for n in names):
         return ACTIVITY
     if PROV.Entity in types or PROV.Plan in types:
         return ENTITY
@@ -67,6 +71,8 @@ def main():
     ap.add_argument("src")
     ap.add_argument("out")
     ap.add_argument("--base", help="base IRI for relative @ids (an RO-Crate: http://rocrate.invalid/crate/)")
+    ap.add_argument("--prefix", action="append", default=[], metavar="PFX=IRI",
+                    help="bind a prefix for compact IRIs (repeatable)")
     ap.add_argument("--rooted", action="store_true",
                     help="lay the diagram out from its root (the schema:Dataset that is not a catalog record)")
     ap.add_argument("--root", help="IRI or CURIE of the node to lay the diagram out from (implies --rooted)")
@@ -86,11 +92,16 @@ def main():
         canon.bind(prefix, ns, override=True, replace=True)
     g = canon
     nm = g.namespace_manager
+    for b in args.prefix:
+        pfx, _, ns = b.partition("=")
+        nm.bind(pfx, ns, override=True, replace=True)
     # rdflib binds schema: to https; CDIF uses http://schema.org/, which would show as schema1:
     if any(str(t).startswith(SCHEMA[0]) for tr in g for t in tr if isinstance(t, URIRef)):
         nm.bind("schema", SCHEMA[0], override=True, replace=True)
 
     def curie(t):
+        if args.base and isinstance(t, URIRef) and str(t).startswith(args.base):
+            return str(t)[len(args.base):] or "./"
         try:
             return nm.normalizeUri(t) if isinstance(t, URIRef) else str(t)
         except Exception:

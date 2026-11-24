@@ -86,6 +86,7 @@ python tools/rdfToJsonLdTree.py <src.ttl|src.json> <out.jsonld> [--base <iri>] [
 # Any RDF -> SVG node-link diagram (Graphviz `dot` on the PATH); each prov-o-*/*.ttl and cdifprov-schemaorg record has one beside it
 python tools/rdfToSvg.py <src.ttl|src.json> <out.svg> [--base <iri>] [--rankdir LR|RL|TB|BT]
 # --rooted (or --root <iri>) lays it out from the record's root, the dataset first; each diagram also has a <name>.rooted.svg
+# an ro-crate/<name>.rooted.svg is drawn from its crate with --base http://rocrate.invalid/crate/ --prefix ex=https://example.org/cdif-prov/ --rooted
 
 # cdifProv -> PROV-O, qualified or plain relations (the mapping is implementationTesting/MAPPING.md);
 # --unqualify turns a qualified PROV-O Turtle into plain relations
