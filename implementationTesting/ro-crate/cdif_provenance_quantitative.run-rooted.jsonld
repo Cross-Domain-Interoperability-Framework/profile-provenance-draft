@@ -88,60 +88,6 @@
     },
     "schema:step": [
       {
-        "@id": "ex:validation",
-        "@type": [
-          "schema:CreateAction",
-          "schema:HowToStep"
-        ],
-        "schema:name": "Validation",
-        "schema:description": "Concentration and its uncertainty checked against the acceptance criterion for the method.",
-        "schema:instrument": [
-          {
-            "@id": "ex:analysisSoftware",
-            "@type": [
-              "schema:SoftwareApplication"
-            ],
-            "schema:name": "Analysis software",
-            "schema:identifier": "https://example.org/cdif-prov/software/analysis/2.4.1",
-            "schema:url": "https://example.org/cdif-prov/software/analysis",
-            "schema:softwareVersion": "2.4.1"
-          }
-        ],
-        "schema:actionStatus": "http://schema.org/CompletedActionStatus",
-        "schema:agent": {"@id": "ex:analyst01"},
-        "schema:object": [
-          {
-            "@id": "ex:concentration",
-            "@type": [
-              "schema:CreativeWork"
-            ],
-            "schema:name": "Analyte concentration",
-            "schema:about": {"@id": "ex:waterSample01"},
-            "schema:url": "https://example.org/cdif-prov/data/concentration.csv",
-            "schema:encodingFormat": "text/csv"
-          },
-          {
-            "@id": "ex:concentrationUncertainty",
-            "@type": [
-              "schema:CreativeWork"
-            ],
-            "schema:name": "Concentration uncertainty",
-            "schema:url": "https://example.org/cdif-prov/data/uncertainty.csv",
-            "schema:encodingFormat": "text/csv"
-          },
-          {
-            "@id": "ex:validationCriterion",
-            "@type": [
-              "schema:CreativeWork"
-            ],
-            "schema:name": "Acceptance criterion: relative expanded uncertainty at most 10 %",
-            "schema:url": "https://example.org/cdif-prov/methods/acceptance-criterion"
-          }
-        ],
-        "schema:result": {"@id": "ex:validationResult"},
-        "schema:position": "7"
-      },
-      {
         "@id": "ex:instrumentCalibration01",
         "@type": [
           "schema:CreateAction",
@@ -421,7 +367,16 @@
         "schema:name": "Blank correction",
         "schema:description": "Reagent-blank absorbance subtracted from the sample absorbance.",
         "schema:instrument": [
-          {"@id": "ex:analysisSoftware"}
+          {
+            "@id": "ex:analysisSoftware",
+            "@type": [
+              "schema:SoftwareApplication"
+            ],
+            "schema:name": "Analysis software",
+            "schema:identifier": "https://example.org/cdif-prov/software/analysis/2.4.1",
+            "schema:url": "https://example.org/cdif-prov/software/analysis",
+            "schema:softwareVersion": "2.4.1"
+          }
         ],
         "schema:startTime": "2026-11-05T10:21:00+00:00",
         "schema:endTime": "2026-11-05T10:21:04+00:00",
@@ -472,7 +427,16 @@
           {"@id": "ex:calibrationCurve"},
           {"@id": "ex:correctedAbsorbance"}
         ],
-        "schema:result": {"@id": "ex:concentration"},
+        "schema:result": {
+          "@id": "ex:concentration",
+          "@type": [
+            "schema:CreativeWork"
+          ],
+          "schema:name": "Analyte concentration",
+          "schema:about": {"@id": "ex:waterSample01"},
+          "schema:url": "https://example.org/cdif-prov/data/concentration.csv",
+          "schema:encodingFormat": "text/csv"
+        },
         "schema:actionProcess": {
           "@id": "ex:calibrationDerivationProcedure",
           "@type": [
@@ -544,7 +508,15 @@
         "schema:actionStatus": "http://schema.org/CompletedActionStatus",
         "schema:agent": {"@id": "ex:analyst01"},
         "schema:object": {"@id": "ex:concentration"},
-        "schema:result": {"@id": "ex:concentrationUncertainty"},
+        "schema:result": {
+          "@id": "ex:concentrationUncertainty",
+          "@type": [
+            "schema:CreativeWork"
+          ],
+          "schema:name": "Concentration uncertainty",
+          "schema:url": "https://example.org/cdif-prov/data/uncertainty.csv",
+          "schema:encodingFormat": "text/csv"
+        },
         "schema:actionProcess": {
           "@id": "ex:uncertaintyAssessmentProcedure",
           "@type": [
@@ -571,6 +543,34 @@
             "schema:value": 2
           }
         ]
+      },
+      {
+        "@id": "ex:validation",
+        "@type": [
+          "schema:CreateAction",
+          "schema:HowToStep"
+        ],
+        "schema:name": "Validation",
+        "schema:description": "Concentration and its uncertainty checked against the acceptance criterion for the method.",
+        "schema:instrument": [
+          {"@id": "ex:analysisSoftware"}
+        ],
+        "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+        "schema:agent": {"@id": "ex:analyst01"},
+        "schema:object": [
+          {"@id": "ex:concentration"},
+          {"@id": "ex:concentrationUncertainty"},
+          {
+            "@id": "ex:validationCriterion",
+            "@type": [
+              "schema:CreativeWork"
+            ],
+            "schema:name": "Acceptance criterion: relative expanded uncertainty at most 10 %",
+            "schema:url": "https://example.org/cdif-prov/methods/acceptance-criterion"
+          }
+        ],
+        "schema:result": {"@id": "ex:validationResult"},
+        "schema:position": "7"
       }
     ]
   },
