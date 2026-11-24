@@ -148,6 +148,21 @@ nearest node it points at; anything unconnected goes in `@included`. Each file i
 source under rdflib and pyld (`xsd:double` values compared by value: pyld writes them in canonical
 E-notation).
 
+### Diagrams
+
+Each PROV-O Turtle file in `prov-o-qualified/` and `prov-o-unqualified/` has an SVG diagram beside
+it with the same name, generated with [`tools/rdfToSvg.py`](../tools/rdfToSvg.py)
+(`python tools/rdfToSvg.py SRC.ttl OUT.svg`, Graphviz `dot` on the PATH). Each resource is a box:
+its compact IRI and types, then one row per literal-valued property (a long value is cut, and the
+full value is its tooltip). Each link between resources is an arrow labelled with its predicate.
+Boxes take the PROV-O colours: entities yellow, activities blue, agents orange, and the blank nodes
+of qualified relations grey. A leaf that several boxes point to, such as a role or a Wikidata kind
+term, is drawn at each reference with a dashed border. Open a diagram in a browser to zoom it.
+For example, [prov-o-qualified/cdif\_provenance\_minimal.svg](prov-o-qualified/cdif_provenance_minimal.svg)
+and the lab measurement pair,
+[qualified](prov-o-qualified/cdif_provenance_quantitative.from-cdifprov.svg) and
+[plain](prov-o-unqualified/cdif_provenance_quantitative.from-cdifprov.svg).
+
 ## The matrix
 
 ✔ native · ◐ partial, see note · **ann** only as an annotation from another vocabulary
