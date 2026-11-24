@@ -8,7 +8,8 @@ and the full value is the row's tooltip. Every other triple is an arrow labelled
 schema:additionalProperty is left out, with the nodes only it reaches (a parameter or setting and
 what hangs off it), and so is each schema:PropertyValue in schema:object (where an RO-Crate lists a
 step's parameter values, beside its real inputs): the diagram shows how the record's resources
-link, not each parameter value.
+link, not each parameter value. A note above the diagram says what was left out, and a legend
+explains the box colours and borders.
 A leaf that several nodes point to (a node with no literals and no links of its own, such as a role,
 an action status or a Wikidata kind term) is drawn once per reference, with a dashed border, so it
 does not pull arrows across the whole diagram.
@@ -119,6 +120,11 @@ def main():
     drop = [(s, p, o) for p, typ in OMIT for s, o in g.subject_objects(p)
             if typ is None or (o, RDF.type, typ) in g]
     gone = [o for _, _, o in drop]
+    hidden = []  # what the note above the diagram says was left out
+    if any(p.endswith("additionalProperty") for _, p, _ in drop):
+        hidden.append("schema:additionalProperty values (parameters and settings)")
+    if any(p.endswith("/object") for _, p, _ in drop):
+        hidden.append("the schema:PropertyValue items in schema:object (step parameters)")
     for t in drop:
         g.remove(t)
     while gone:
@@ -140,6 +146,8 @@ def main():
                 if not typ or (not isinstance(o, Literal) and (o, RDF.type, iri(typ)) in g)]
         todo = [o for _, o in drop if not isinstance(o, Literal)]
         omitted += len(drop)
+        if drop:
+            hidden.append(spec)
         for s, o in drop:
             g.remove((s, pred, o))
         while todo:
@@ -250,6 +258,22 @@ def main():
             out.append(f'  {target} -> {ids[s]} [label="{esc(curie(p))}", dir=back];')
         else:
             out.append(f'  {ids[s]} -> {target} [label="{esc(curie(p))}"];')
+    # the note on what is left out, then a legend of the box colours and borders
+    rows = []
+    if hidden:
+        rows.append('<TR><TD ALIGN="LEFT" COLSPAN="6"><I>Not shown, to simplify the diagram: '
+                    f'{esc("; ".join(hidden))}. They are in the record.</I></TD></TR>')
+    keys = [(ENTITY, "entity", ""), (ACTIVITY, "activity", ""), (AGENT, "agent", ""),
+            (INFLUENCE, "qualified relation", ""), ("#FFFFFF", "other", ""),
+            ("#FFFFFF", "shared leaf, drawn at each reference", ' STYLE="dashed"')]
+    rows.append("<TR>" + "".join(f'<TD BORDER="1"{style} BGCOLOR="{c}">{esc(t)}</TD>'
+                                 for c, t, style in keys) + "</TR>")
+    rows.append('<TR><TD ALIGN="LEFT" COLSPAN="6">entity: prov:Entity, prov:Plan; activity: '
+                'prov:Activity or a schema.org Action; agent: a prov:Agent, schema:Person or '
+                'schema:Organization; qualified relation: prov:Usage, prov:Generation, '
+                'prov:Association, ...</TD></TR>')
+    out.append(f'  labelloc=t; labeljust=l; fontname="Helvetica"; fontsize=10; '
+               f'label=<<TABLE BORDER="0" CELLSPACING="4" CELLPADDING="3">{"".join(rows)}</TABLE>>;')
     out.append("}")
     dot = "\n".join(out) + "\n"
     if args.dot:

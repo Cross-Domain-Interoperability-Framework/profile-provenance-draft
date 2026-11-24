@@ -164,7 +164,8 @@ of qualified relations grey. A leaf that several boxes point to, such as a role 
 term, is drawn at each reference with a dashed border. `schema:additionalProperty` is left out, with the parameter
 values (`schema:PropertyValue`) only it reaches: the diagrams show how the resources link, and the
 parameters are in the record. An RO-Crate lists a step's parameters as PropertyValues in its
-`object`, beside its inputs; those are left out too. Open a diagram in a browser to zoom it.
+`object`, beside its inputs; those are left out too. Above each diagram is a legend of the box
+colours and borders and, when something was left out, a note saying what. Open a diagram in a browser to zoom it.
 For example, [prov-o-qualified/cdif\_provenance\_minimal.svg](prov-o-qualified/cdif_provenance_minimal.svg)
 and the lab measurement pair,
 [qualified](prov-o-qualified/cdif_provenance_quantitative.from-cdifprov.svg) and
