@@ -99,7 +99,7 @@ tree-shaped JSON-LD copy beside its source:
 |approach|JSON-LD tree|roots|
 |-|-|-|
 |PROV-O, qualified|[prov-o-qualified/cdif\_provenance\_quantitative.jsonld](prov-o-qualified/cdif_provenance_quantitative.jsonld)|1: `ex:validationResult`|
-|PROV-O, plain relations|[prov-o-unqualified/cdif\_provenance\_quantitative.jsonld](prov-o-unqualified/cdif_provenance_quantitative.jsonld)|3: `ex:validationResult`, plus the two plans, cut off once `hadPlan` is dropped|
+|PROV-O, plain relations|[prov-o-unqualified/cdif\_provenance\_quantitative.jsonld](prov-o-unqualified/cdif_provenance_quantitative.jsonld)|1: `ex:validationResult`; the two plans, cut off once `hadPlan` is dropped, are in its `@included`|
 |RO-Crate|[ro-crate/cdif\_provenance\_quantitative.jsonld](ro-crate/cdif_provenance_quantitative.jsonld)|1: the crate's root `schema:Dataset` (`./`), with the metadata descriptor nested under `@reverse`|
 |DDI-CDI|[ddi-cdi/cdif\_provenance\_quantitative.jsonld](ddi-cdi/cdif_provenance_quantitative.jsonld)|4: the agents (`ProcessingAgent\_performs\_Activity` points from agent to activity)|
 |P-Plan|[p-plan/cdif\_provenance\_quantitative.jsonld](p-plan/cdif_provenance_quantitative.jsonld)|20: each activity and entity of the run, with its step or variable, and the plan, nested inside|
@@ -109,7 +109,9 @@ tree-shaped JSON-LD copy beside its source:
 Each is generated from its source with [`tools/rdfToJsonLdTree.py`](../tools/rdfToJsonLdTree.py)
 (`python tools/rdfToJsonLdTree.py SRC OUT`; the RO-Crate also takes `--base http://rocrate.invalid/crate/`
 for its relative `@id`s; each plain PROV-O tree takes `--order-like` its qualified counterpart, so the two list keys and values in the same order, a qualified relation standing for its plain form, and each RO-Crate tree `--order-like` its cdifProv source in `cdifprov-schemaorg/`), which checks that rdflib and pyld both read the output back as a graph
-isomorphic to the source. The qualified master's copy predates it and was made the same way. A node is described in full where it is first reached and is an `{"@id"}` reference after that;
+isomorphic to the source. The two master trees take `--root ex:validationResult`: since the run
+lists its steps (`dcterms:hasPart`, 2026-11-23) nothing points at it either, so without the option
+it would be a second root; with it, the run is nested under the validation step with `@reverse`. A node is described in full where it is first reached and is an `{"@id"}` reference after that;
 the root is the `schema:Dataset` when there is one, as in CDIF records (anything pointing at it that is not otherwise reached is nested under it with `@reverse`); otherwise roots are the nodes nothing else points at, largest tree first, in `@graph` when there are several. Only the RO-Crate has a Dataset; the PROV-O master's root `ex:validationResult` is untyped as to schema.org.
 The number of roots is itself a comparison: the overlays point outward from the run's
 activities, entities or agents, so they do not form one record. Prefixes are the source's;
@@ -173,8 +175,8 @@ arrows sets the layout, so a node that points into the record, such as its catal
 (`schema:about`), can come before the dataset; until 2026-11-23, when each PROV-O step pointed at
 its run (`dcterms:isPartOf`, now the run's `dcterms:hasPart`), a step could. In the rooted ones an arrow that points back toward the root is
 laid out from the root's side, its arrowhead unchanged. The two hand-written `quantitative.ttl`
-files have no `schema:Dataset`, so they are rooted on the named node nothing links to that reaches
-the most others, `ex:validationResult`. For example, the workflow:
+files have no `schema:Dataset`, so they are drawn with `--root ex:validationResult`, the final
+output, as their trees are. For example, the workflow:
 [qualified](prov-o-qualified/cdif_provenance_workflow.rooted.svg) starts at `ex:fes2FitResults`,
 then its generation by `ex:fes2Run`, then the run's steps.
 
@@ -185,6 +187,15 @@ starts at the crate's root dataset, `./`, as the tree does; the run-rooted one s
 `ex:concentrationRun` (`--root ex:concentrationRun`), as its tree does. A `CreateAction` is
 coloured as an activity. For example, the
 [workflow crate](ro-crate/cdif_provenance_workflow.rooted.svg).
+
+Every record, RO-Crates included, also has a simplified diagram, `<name>.simple.svg`: rooted as
+above, without the parameter values (`--omit schema:additionalProperty`; a crate, which lists
+them as PropertyValues in `object`, also takes `--omit schema:object@schema:PropertyValue`). Each
+parameter PropertyValue goes with its values, which leaves the topology of the record's resources:
+the workflow drops 138 of its 377 triples. A record with no parameters (minimal) draws as its
+rooted diagram. For example, the
+[workflow, qualified](prov-o-qualified/cdif_provenance_workflow.simple.svg). How every file here
+is made is in [README.md](README.md).
 
 ## The matrix
 
