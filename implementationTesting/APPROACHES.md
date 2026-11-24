@@ -159,7 +159,9 @@ its compact IRI and types, then one row per literal-valued property (a long valu
 full value is its tooltip). Each link between resources is an arrow labelled with its predicate.
 Boxes take the PROV-O colours: entities yellow, activities blue, agents orange, and the blank nodes
 of qualified relations grey. A leaf that several boxes point to, such as a role or a Wikidata kind
-term, is drawn at each reference with a dashed border. Open a diagram in a browser to zoom it.
+term, is drawn at each reference with a dashed border. `schema:additionalProperty` is left out, with the parameter
+values (`schema:PropertyValue`) only it reaches: the diagrams show how the resources link, and the
+parameters are in the record. An RO-Crate step's parameters are in its `object`, so they stay. Open a diagram in a browser to zoom it.
 For example, [prov-o-qualified/cdif\_provenance\_minimal.svg](prov-o-qualified/cdif_provenance_minimal.svg)
 and the lab measurement pair,
 [qualified](prov-o-qualified/cdif_provenance_quantitative.from-cdifprov.svg) and

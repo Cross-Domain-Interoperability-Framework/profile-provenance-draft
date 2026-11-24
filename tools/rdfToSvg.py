@@ -5,6 +5,8 @@ Every IRI or blank node that is a subject, or the object of a predicate other th
 box. Its header is its compact IRI (none for a blank node) and its types; below that is one row per
 property with a literal value ("predicate: value"). A value longer than --width characters is cut,
 and the full value is the row's tooltip. Every other triple is an arrow labelled with its predicate.
+schema:additionalProperty is left out, with the nodes only it reaches (a parameter or setting and
+what hangs off it): the diagram shows how the record's resources link, not each parameter value.
 A leaf that several nodes point to (a node with no literals and no links of its own, such as a role,
 an action status or a Wikidata kind term) is drawn once per reference, with a dashed border, so it
 does not pull arrows across the whole diagram.
@@ -47,6 +49,7 @@ SCHEMA = ("http://schema.org/", "https://schema.org/")
 ENTITY, ACTIVITY, AGENT, INFLUENCE = "#FFFC87", "#9FB1FC", "#FED37F", "#E8E8E8"
 AGENTS = {PROV.Agent, PROV.Person, PROV.Organization, PROV.SoftwareAgent}
 ACTIVITIES = {PROV.Activity}
+OMIT = [URIRef(ns + "additionalProperty") for ns in SCHEMA]
 INFLUENCES = {PROV[n] for n in ("Usage", "Generation", "Association", "Attribution", "Delegation",
                                 "Derivation", "Invalidation", "Start", "End", "Communication",
                                 "Influence", "Revision", "Quotation", "PrimarySource")}
@@ -98,6 +101,16 @@ def main():
     # rdflib binds schema: to https; CDIF uses http://schema.org/, which would show as schema1:
     if any(str(t).startswith(SCHEMA[0]) for tr in g for t in tr if isinstance(t, URIRef)):
         nm.bind("schema", SCHEMA[0], override=True, replace=True)
+    # leave out schema:additionalProperty and each node only it reaches, and what only those reach
+    gone = [o for p in OMIT for o in g.objects(None, p)]
+    for p in OMIT:
+        g.remove((None, p, None))
+    while gone:
+        n = gone.pop()
+        if isinstance(n, Literal) or any(p != RDF.type for p in g.predicates(None, n)):
+            continue
+        gone += [o for p, o in g.predicate_objects(n) if p != RDF.type]
+        g.remove((n, None, None))
 
     def curie(t):
         if args.base and isinstance(t, URIRef) and str(t).startswith(args.base):
