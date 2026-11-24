@@ -16,9 +16,11 @@ is white.
 usage:
     python tools/rdfToSvg.py SRC OUT.svg [--base IRI] [--rankdir LR|RL|TB|BT] [--width N] [--dot OUT.dot]
 SRC is Turtle (.ttl) or JSON-LD (any other extension).
+The SVG has no fixed size, so a browser fits it to the window; zoom in with Ctrl + mouse wheel.
 """
 import argparse
 import html
+import re
 import subprocess
 import sys
 
@@ -131,9 +133,13 @@ def main():
     dot = "\n".join(out) + "\n"
     if args.dot:
         open(args.dot, "w", encoding="utf-8", newline="\n").write(dot)
-    r = subprocess.run(["dot", "-Tsvg", "-o", args.out], input=dot.encode("utf-8"), capture_output=True)
+    r = subprocess.run(["dot", "-Tsvg"], input=dot.encode("utf-8"), capture_output=True)
     if r.returncode:
         sys.exit(r.stderr.decode("utf-8", "replace"))
+    # drop dot's fixed width and height (thousands of points for a large graph): with only the
+    # viewBox, a browser fits the whole diagram to the window instead of opening on an empty corner
+    svg = re.sub(rb'<svg width="[^"]*" height="[^"]*"', b"<svg", r.stdout, count=1)
+    open(args.out, "wb").write(svg)
     print(f"{args.out}: {len(ids)} nodes ({len(split)} shared leaves drawn per reference), "
           f"{len(links)} links, {len(g)} triples")
 
