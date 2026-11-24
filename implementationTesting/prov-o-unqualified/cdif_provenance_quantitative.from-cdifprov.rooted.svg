@@ -5,10 +5,30 @@
  -->
 <!-- Title: G Pages: 1 -->
 <svg
- viewBox="0.00 0.00 2766.00 1924.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1920)">
+ viewBox="0.00 0.00 2766.00 2004.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2000)">
 <title>G</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-1920 2762.25,-1920 2762.25,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-2000 2762.25,-2000 2762.25,4 -4,4"/>
+<text xml:space="preserve" text-anchor="start" x="15" y="-1976.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00">Not shown, to simplify the diagram: schema:additionalProperty values (parameters and settings). They are in the record.</text>
+<polygon fill="#fffc87" stroke="none" points="12,-1946 12,-1966 128.42,-1966 128.42,-1946 12,-1946"/>
+<polygon fill="none" stroke="black" points="12,-1946 12,-1966 128.42,-1966 128.42,-1946 12,-1946"/>
+<text xml:space="preserve" text-anchor="start" x="58.21" y="-1952.5" font-family="Helvetica,sans-Serif" font-size="10.00">entity</text>
+<polygon fill="#9fb1fc" stroke="none" points="132.42,-1946 132.42,-1966 256.33,-1966 256.33,-1946 132.42,-1946"/>
+<polygon fill="none" stroke="black" points="132.42,-1946 132.42,-1966 256.33,-1966 256.33,-1946 132.42,-1946"/>
+<text xml:space="preserve" text-anchor="start" x="178.62" y="-1952.5" font-family="Helvetica,sans-Serif" font-size="10.00">activity</text>
+<polygon fill="#fed37f" stroke="none" points="260.33,-1946 260.33,-1966 376.75,-1966 376.75,-1946 260.33,-1946"/>
+<polygon fill="none" stroke="black" points="260.33,-1946 260.33,-1966 376.75,-1966 376.75,-1946 260.33,-1946"/>
+<text xml:space="preserve" text-anchor="start" x="306.54" y="-1952.5" font-family="Helvetica,sans-Serif" font-size="10.00">agent</text>
+<polygon fill="#e8e8e8" stroke="none" points="380.75,-1946 380.75,-1966 543.67,-1966 543.67,-1946 380.75,-1946"/>
+<polygon fill="none" stroke="black" points="380.75,-1946 380.75,-1966 543.67,-1966 543.67,-1946 380.75,-1946"/>
+<text xml:space="preserve" text-anchor="start" x="426.96" y="-1952.5" font-family="Helvetica,sans-Serif" font-size="10.00">qualified relation</text>
+<polygon fill="#ffffff" stroke="none" points="547.67,-1946 547.67,-1966 661.83,-1966 661.83,-1946 547.67,-1946"/>
+<polygon fill="none" stroke="black" points="547.67,-1946 547.67,-1966 661.83,-1966 661.83,-1946 547.67,-1946"/>
+<text xml:space="preserve" text-anchor="start" x="593.88" y="-1952.5" font-family="Helvetica,sans-Serif" font-size="10.00">other</text>
+<polygon fill="#ffffff" stroke="none" points="665.83,-1946 665.83,-1966 917.25,-1966 917.25,-1946 665.83,-1946"/>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="665.83,-1946 665.83,-1966 917.25,-1966 917.25,-1946 665.83,-1946"/>
+<text xml:space="preserve" text-anchor="start" x="712.04" y="-1952.5" font-family="Helvetica,sans-Serif" font-size="10.00">shared leaf, drawn at each reference</text>
+<text xml:space="preserve" text-anchor="start" x="15" y="-1929.5" font-family="Helvetica,sans-Serif" font-size="10.00">entity: prov:Entity, prov:Plan; activity: prov:Activity or a schema.org Action; agent: a prov:Agent, schema:Person or schema:Organization; qualified relation: prov:Usage, prov:Generation, prov:Association, ...</text>
 <!-- n1 -->
 <g id="node1" class="node">
 <title>n1</title>
