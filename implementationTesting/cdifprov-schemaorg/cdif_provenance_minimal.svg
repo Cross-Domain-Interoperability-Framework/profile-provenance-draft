@@ -5,10 +5,29 @@
  -->
 <!-- Title: G Pages: 1 -->
 <svg
- viewBox="0.00 0.00 2198.00 486.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 482)">
+ viewBox="0.00 0.00 2198.00 544.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 540)">
 <title>G</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-482 2193.5,-482 2193.5,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-540 2193.5,-540 2193.5,4 -4,4"/>
+<polygon fill="#fffc87" stroke="none" points="12,-508 12,-528 128.42,-528 128.42,-508 12,-508"/>
+<polygon fill="none" stroke="black" points="12,-508 12,-528 128.42,-528 128.42,-508 12,-508"/>
+<text xml:space="preserve" text-anchor="start" x="58.21" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">entity</text>
+<polygon fill="#9fb1fc" stroke="none" points="132.42,-508 132.42,-528 256.33,-528 256.33,-508 132.42,-508"/>
+<polygon fill="none" stroke="black" points="132.42,-508 132.42,-528 256.33,-528 256.33,-508 132.42,-508"/>
+<text xml:space="preserve" text-anchor="start" x="178.62" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">activity</text>
+<polygon fill="#fed37f" stroke="none" points="260.33,-508 260.33,-528 376.75,-528 376.75,-508 260.33,-508"/>
+<polygon fill="none" stroke="black" points="260.33,-508 260.33,-528 376.75,-528 376.75,-508 260.33,-508"/>
+<text xml:space="preserve" text-anchor="start" x="306.54" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">agent</text>
+<polygon fill="#e8e8e8" stroke="none" points="380.75,-508 380.75,-528 543.67,-528 543.67,-508 380.75,-508"/>
+<polygon fill="none" stroke="black" points="380.75,-508 380.75,-528 543.67,-528 543.67,-508 380.75,-508"/>
+<text xml:space="preserve" text-anchor="start" x="426.96" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">qualified relation</text>
+<polygon fill="#ffffff" stroke="none" points="547.67,-508 547.67,-528 661.83,-528 661.83,-508 547.67,-508"/>
+<polygon fill="none" stroke="black" points="547.67,-508 547.67,-528 661.83,-528 661.83,-508 547.67,-508"/>
+<text xml:space="preserve" text-anchor="start" x="593.88" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">other</text>
+<polygon fill="#ffffff" stroke="none" points="665.83,-508 665.83,-528 917.25,-528 917.25,-508 665.83,-508"/>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="665.83,-508 665.83,-528 917.25,-528 917.25,-508 665.83,-508"/>
+<text xml:space="preserve" text-anchor="start" x="712.04" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">shared leaf, drawn at each reference</text>
+<text xml:space="preserve" text-anchor="start" x="15" y="-491.5" font-family="Helvetica,sans-Serif" font-size="10.00">entity: prov:Entity, prov:Plan; activity: prov:Activity or a schema.org Action; agent: a prov:Agent, schema:Person or schema:Organization; qualified relation: prov:Usage, prov:Generation, prov:Association, ...</text>
 <!-- n0 -->
 <g id="node1" class="node">
 <title>n0</title>
