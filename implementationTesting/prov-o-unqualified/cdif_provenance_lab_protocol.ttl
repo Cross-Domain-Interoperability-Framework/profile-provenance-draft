@@ -12,7 +12,8 @@ ex:20231121_002_OREX-803003-0.cdf a schema1:MediaObject,
     schema1:description "Raw analytical data (full scan and MRM) in Common Data Format, from Chromeleon sequence 20231929_Bennu_01.seq." ;
     schema1:encodingFormat "application/x-netcdf" ;
     schema1:name "20231121_002_OREX-803003-0.cdf" ;
-    prov:wasGeneratedBy ex:bennuMSDetection .
+    prov:generatedAtTime "2023-11-21T23:59:59+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:bennuPyGCMSRun .
 
 ex:GCSeparation_Protocol a prov:Entity,
         prov:Plan .
@@ -29,42 +30,13 @@ ex:Pyrolysis_Protocol a prov:Entity,
 ex:SamplePrep_Protocol a prov:Entity,
         prov:Plan .
 
-ex:bennuGCSeparation a prov:Activity ;
-    dcterms:isPartOf ex:bennuPyGCMSRun ;
-    schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "Split ratio" ;
-            schema1:propertyID ex:param_splitRatio ;
-            schema1:value "10:1" ],
-        [ a schema1:PropertyValue ;
-            schema1:name "Carrier gas flow" ;
-            schema1:propertyID ex:param_carrierGasFlow ;
-            schema1:unitText "mL/min" ;
-            schema1:value 1.5e+00 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "Column" ;
-            schema1:propertyID ex:param_columnType ;
-            schema1:value "Rtx-5ms, 30 m × 0.250 mm × 0.50 µm + 5 m guard" ],
-        [ a schema1:PropertyValue ;
-            schema1:name "Inlet temperature" ;
-            schema1:propertyID ex:param_inletTemp ;
-            schema1:unitText "°C" ;
-            schema1:value 300 ] ;
-    schema1:description "Chromatographic separation on an Rtx-5ms column (30 m × 0.250 mm × 0.50 µm, 5 m guard), with split injection 10:1 at 300 °C and helium carrier at 1.500 mL/min. Run time 87.79 min." ;
-    schema1:name "GC separation on an Rtx-5ms column" ;
-    schema1:position 3 ;
-    prov:used ex:bennuPyrolysisProducts,
-        ex:gasChromatograph,
-        ex:helium ;
-    prov:wasAssociatedWith ex:NASA_GSFC .
-
 ex:bennuMSDetection a prov:Activity ;
     dcterms:isPartOf ex:bennuPyGCMSRun ;
     schema1:actionStatus schema1:CompletedActionStatus ;
     schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "MRM target compounds" ;
-            schema1:propertyID ex:param_mrmCompoundCount ;
-            schema1:value 38 ],
+            schema1:name "Ionization mode" ;
+            schema1:propertyID ex:param_ionizationMode ;
+            schema1:value "electron ionization (EI), positive polarity" ],
         [ a schema1:PropertyValue ;
             schema1:name "Full scan range" ;
             schema1:propertyID ex:param_scanRange ;
@@ -80,14 +52,43 @@ ex:bennuMSDetection a prov:Activity ;
             schema1:unitText "°C" ;
             schema1:value 300 ],
         [ a schema1:PropertyValue ;
-            schema1:name "Ionization mode" ;
-            schema1:propertyID ex:param_ionizationMode ;
-            schema1:value "electron ionization (EI), positive polarity" ] ;
+            schema1:name "MRM target compounds" ;
+            schema1:propertyID ex:param_mrmCompoundCount ;
+            schema1:value 38 ] ;
     schema1:description "Simultaneous full scan (m/z 50–500, EI positive, 0.100 s scan time) and timed SRM/MRM (38 compounds, 2–3 transitions each). Ion source and transfer line at 300 °C; detector gain 100,000." ;
     schema1:name "Dual-mode MS detection (full scan and MRM)" ;
     schema1:position 4 ;
     prov:used ex:bennuSeparatedEluent,
         ex:tsqMassSpectrometer ;
+    prov:wasAssociatedWith ex:NASA_GSFC .
+
+ex:bennuGCSeparation a prov:Activity ;
+    dcterms:isPartOf ex:bennuPyGCMSRun ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Split ratio" ;
+            schema1:propertyID ex:param_splitRatio ;
+            schema1:value "10:1" ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Inlet temperature" ;
+            schema1:propertyID ex:param_inletTemp ;
+            schema1:unitText "°C" ;
+            schema1:value 300 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Carrier gas flow" ;
+            schema1:propertyID ex:param_carrierGasFlow ;
+            schema1:unitText "mL/min" ;
+            schema1:value 1.5e+00 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Column" ;
+            schema1:propertyID ex:param_columnType ;
+            schema1:value "Rtx-5ms, 30 m × 0.250 mm × 0.50 µm + 5 m guard" ] ;
+    schema1:description "Chromatographic separation on an Rtx-5ms column (30 m × 0.250 mm × 0.50 µm, 5 m guard), with split injection 10:1 at 300 °C and helium carrier at 1.500 mL/min. Run time 87.79 min." ;
+    schema1:name "GC separation on an Rtx-5ms column" ;
+    schema1:position 3 ;
+    prov:used ex:bennuPyrolysisProducts,
+        ex:gasChromatograph,
+        ex:helium ;
     prov:wasAssociatedWith ex:NASA_GSFC .
 
 ex:bennuPreparedSample a schema1:Thing,
@@ -115,6 +116,11 @@ ex:bennuPyrolysis a prov:Activity ;
     dcterms:isPartOf ex:bennuPyGCMSRun ;
     schema1:actionStatus schema1:CompletedActionStatus ;
     schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Target temperature" ;
+            schema1:propertyID ex:param_pyrolysisTemp ;
+            schema1:unitText "°C" ;
+            schema1:value 600 ],
+        [ a schema1:PropertyValue ;
             schema1:name "Transfer line temperature" ;
             schema1:propertyID ex:param_transferLineTemp ;
             schema1:unitText "°C" ;
@@ -123,12 +129,7 @@ ex:bennuPyrolysis a prov:Activity ;
             schema1:name "Heating rate" ;
             schema1:propertyID ex:param_pyrolysisRate ;
             schema1:unitText "°C/ms" ;
-            schema1:value 10 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "Target temperature" ;
-            schema1:propertyID ex:param_pyrolysisTemp ;
-            schema1:unitText "°C" ;
-            schema1:value 600 ] ;
+            schema1:value 10 ] ;
     schema1:description "Flash-heated at 10 °C/ms to about 600 °C. The volatiles were carried in helium through the heated transfer line (300 °C) to the GC inlet. Bulk samples may contain soluble organic matter, which produces thermal degradation products and rearrangements." ;
     schema1:name "Flash pyrolysis at about 600 °C" ;
     schema1:position 2 ;

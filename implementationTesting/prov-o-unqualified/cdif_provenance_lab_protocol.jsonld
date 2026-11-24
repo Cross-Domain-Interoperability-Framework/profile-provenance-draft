@@ -57,6 +57,17 @@
       "prov:endedAtTime": "2023-11-21T23:59:59+00:00",
       "prov:startedAtTime": "2023-11-21T00:00:00+00:00",
       "@reverse": {
+        "prov:wasGeneratedBy": {
+          "@id": "ex:20231121_002_OREX-803003-0.cdf",
+          "@type": [
+            "schema:MediaObject",
+            "prov:Entity"
+          ],
+          "schema:description": "Raw analytical data (full scan and MRM) in Common Data Format, from Chromeleon sequence 20231929_Bennu_01.seq.",
+          "schema:encodingFormat": "application/x-netcdf",
+          "schema:name": "20231121_002_OREX-803003-0.cdf",
+          "prov:generatedAtTime": "2023-11-21T23:59:59+00:00"
+        },
         "dcterms:isPartOf": {
           "@id": "ex:bennuMSDetection",
           "@type": [
@@ -70,10 +81,9 @@
               "@type": [
                 "schema:PropertyValue"
               ],
-              "schema:name": "Full scan time",
-              "schema:propertyID": "full scan time",
-              "schema:unitText": "s",
-              "schema:value": 0.1
+              "schema:name": "MRM target compounds",
+              "schema:propertyID": {"@id": "ex:param_mrmCompoundCount"},
+              "schema:value": 38
             },
             {
               "@type": [
@@ -87,6 +97,15 @@
               "@type": [
                 "schema:PropertyValue"
               ],
+              "schema:name": "Ion source temperature",
+              "schema:propertyID": "ion source temperature",
+              "schema:value": 300,
+              "schema:unitText": "°C"
+            },
+            {
+              "@type": [
+                "schema:PropertyValue"
+              ],
               "schema:name": "Full scan range",
               "schema:propertyID": {"@id": "ex:param_scanRange"},
               "schema:value": "m/z 50–500"
@@ -95,18 +114,10 @@
               "@type": [
                 "schema:PropertyValue"
               ],
-              "schema:name": "MRM target compounds",
-              "schema:propertyID": {"@id": "ex:param_mrmCompoundCount"},
-              "schema:value": 38
-            },
-            {
-              "@type": [
-                "schema:PropertyValue"
-              ],
-              "schema:name": "Ion source temperature",
-              "schema:propertyID": "ion source temperature",
-              "schema:unitText": "°C",
-              "schema:value": 300
+              "schema:name": "Full scan time",
+              "schema:propertyID": "full scan time",
+              "schema:value": 0.1,
+              "schema:unitText": "s"
             }
           ],
           "schema:position": 4,
@@ -151,8 +162,8 @@
                       ],
                       "schema:name": "Inlet temperature",
                       "schema:propertyID": {"@id": "ex:param_inletTemp"},
-                      "schema:unitText": "°C",
-                      "schema:value": 300
+                      "schema:value": 300,
+                      "schema:unitText": "°C"
                     },
                     {
                       "@type": [
@@ -166,23 +177,35 @@
                       "@type": [
                         "schema:PropertyValue"
                       ],
-                      "schema:name": "Split ratio",
-                      "schema:propertyID": {"@id": "ex:param_splitRatio"},
-                      "schema:value": "10:1"
+                      "schema:name": "Carrier gas flow",
+                      "schema:propertyID": {"@id": "ex:param_carrierGasFlow"},
+                      "schema:value": 1.5,
+                      "schema:unitText": "mL/min"
                     },
                     {
                       "@type": [
                         "schema:PropertyValue"
                       ],
-                      "schema:name": "Carrier gas flow",
-                      "schema:propertyID": {"@id": "ex:param_carrierGasFlow"},
-                      "schema:unitText": "mL/min",
-                      "schema:value": 1.5
+                      "schema:name": "Split ratio",
+                      "schema:propertyID": {"@id": "ex:param_splitRatio"},
+                      "schema:value": "10:1"
                     }
                   ],
                   "schema:position": 3,
                   "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
                   "prov:used": [
+                    {
+                      "@id": "ex:helium",
+                      "@type": [
+                        "prov:Entity",
+                        "schema:ChemicalSubstance"
+                      ],
+                      "schema:description": "Carrier gas for the pyrolysis products and the GC.",
+                      "schema:name": "Helium",
+                      "schema:additionalType": [
+                        {"@id": "https://www.wikidata.org/entity/Q2356542"}
+                      ]
+                    },
                     {
                       "@id": "ex:gasChromatograph",
                       "@type": [
@@ -220,17 +243,8 @@
                               ],
                               "schema:name": "Target temperature",
                               "schema:propertyID": {"@id": "ex:param_pyrolysisTemp"},
-                              "schema:unitText": "°C",
-                              "schema:value": 600
-                            },
-                            {
-                              "@type": [
-                                "schema:PropertyValue"
-                              ],
-                              "schema:name": "Transfer line temperature",
-                              "schema:propertyID": {"@id": "ex:param_transferLineTemp"},
-                              "schema:unitText": "°C",
-                              "schema:value": 300
+                              "schema:value": 600,
+                              "schema:unitText": "°C"
                             },
                             {
                               "@type": [
@@ -238,37 +252,23 @@
                               ],
                               "schema:name": "Heating rate",
                               "schema:propertyID": {"@id": "ex:param_pyrolysisRate"},
-                              "schema:unitText": "°C/ms",
-                              "schema:value": 10
+                              "schema:value": 10,
+                              "schema:unitText": "°C/ms"
+                            },
+                            {
+                              "@type": [
+                                "schema:PropertyValue"
+                              ],
+                              "schema:name": "Transfer line temperature",
+                              "schema:propertyID": {"@id": "ex:param_transferLineTemp"},
+                              "schema:value": 300,
+                              "schema:unitText": "°C"
                             }
                           ],
                           "schema:position": 2,
                           "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
                           "prov:used": [
-                            {
-                              "@id": "ex:helium",
-                              "@type": [
-                                "prov:Entity",
-                                "schema:ChemicalSubstance"
-                              ],
-                              "schema:description": "Carrier gas for the pyrolysis products and the GC.",
-                              "schema:name": "Helium",
-                              "schema:additionalType": [
-                                {"@id": "https://www.wikidata.org/entity/Q2356542"}
-                              ]
-                            },
-                            {
-                              "@id": "ex:pyrolysisOven",
-                              "@type": [
-                                "prov:Entity",
-                                "schema:Product"
-                              ],
-                              "schema:description": "Pyrolysis front-end interface coupled to the GC-MS. Flash heats at 10 °C/ms to temperatures up to 1300 °C.",
-                              "schema:name": "Pyrolysis oven",
-                              "schema:additionalType": [
-                                {"@id": "https://www.wikidata.org/entity/Q3099911"}
-                              ]
-                            },
+                            {"@id": "ex:helium"},
                             {
                               "@id": "ex:bennuPreparedSample",
                               "@type": [
@@ -294,14 +294,26 @@
                                       ],
                                       "schema:name": "Sample mass",
                                       "schema:propertyID": {"@id": "ex:param_sampleMass"},
-                                      "schema:unitText": "mg",
-                                      "schema:value": 1
+                                      "schema:value": 1,
+                                      "schema:unitText": "mg"
                                     }
                                   ],
                                   "schema:position": 1,
                                   "prov:wasAssociatedWith": {"@id": "ex:NASA_GSFC"},
                                   "prov:used": [
-                                    {"@id": "ex:pyrolysisOven"},
+                                    {"@id": "ex:OREX-803003-0"},
+                                    {
+                                      "@id": "ex:pyrolysisOven",
+                                      "@type": [
+                                        "prov:Entity",
+                                        "schema:Product"
+                                      ],
+                                      "schema:description": "Pyrolysis front-end interface coupled to the GC-MS. Flash heats at 10 °C/ms to temperatures up to 1300 °C.",
+                                      "schema:name": "Pyrolysis oven",
+                                      "schema:additionalType": [
+                                        {"@id": "https://www.wikidata.org/entity/Q3099911"}
+                                      ]
+                                    },
                                     {
                                       "@id": "ex:quartzTubes",
                                       "@type": [
@@ -313,23 +325,22 @@
                                       "schema:additionalType": [
                                         {"@id": "https://www.wikidata.org/entity/Q3099911"}
                                       ]
-                                    },
-                                    {"@id": "ex:OREX-803003-0"}
+                                    }
                                   ]
                                 }
                               ],
                               "schema:additionalType": [
                                 {"@id": "bios:Sample"}
                               ]
-                            }
+                            },
+                            {"@id": "ex:pyrolysisOven"}
                           ]
                         }
                       ],
                       "schema:additionalType": [
                         {"@id": "bios:Sample"}
                       ]
-                    },
-                    {"@id": "ex:helium"}
+                    }
                   ]
                 }
               ],
@@ -337,19 +348,7 @@
                 {"@id": "bios:Sample"}
               ]
             }
-          ],
-          "@reverse": {
-            "prov:wasGeneratedBy": {
-              "@id": "ex:20231121_002_OREX-803003-0.cdf",
-              "@type": [
-                "schema:MediaObject",
-                "prov:Entity"
-              ],
-              "schema:description": "Raw analytical data (full scan and MRM) in Common Data Format, from Chromeleon sequence 20231929_Bennu_01.seq.",
-              "schema:encodingFormat": "application/x-netcdf",
-              "schema:name": "20231121_002_OREX-803003-0.cdf"
-            }
-          }
+          ]
         }
       }
     }

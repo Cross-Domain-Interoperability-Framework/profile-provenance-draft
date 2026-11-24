@@ -20,21 +20,43 @@ ex:absorbanceMeasurementAttempt01 a prov:Activity ;
             prov:hadRole ex:InputData ] ;
     prov:startedAtTime "2026-11-05T10:12:00+00:00"^^xsd:dateTime .
 
+ex:validation a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:description "Concentration and its uncertainty checked against the acceptance criterion for the method." ;
+    schema:name "Validation" ;
+    schema:position 7 ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:analyst01 ;
+            prov:hadRole ex:Supervisor ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:concentrationUncertainty ;
+            prov:hadRole ex:InputData ],
+        [ a prov:Usage ;
+            prov:entity ex:concentration ;
+            prov:hadRole ex:InputData ],
+        [ a prov:Usage ;
+            prov:entity ex:validationCriterion ;
+            prov:hadRole ex:InputData ],
+        [ a prov:Usage ;
+            prov:entity ex:analysisSoftware ;
+            prov:hadRole ex:Software ] .
+
 ex:HostingInstitution a prov:Role .
 
 ex:absorbanceMeasurement a prov:Activity ;
     dcterms:isPartOf ex:concentrationRun ;
     schema:actionStatus schema:CompletedActionStatus ;
     schema:additionalProperty [ a schema:PropertyValue ;
-            schema:name "Cuvette path length" ;
-            schema:propertyID "cuvette path length" ;
-            schema:unitText "cm" ;
-            schema:value 1 ],
-        [ a schema:PropertyValue ;
             schema:name "Colour development time" ;
             schema:propertyID "colour development time" ;
             schema:unitText "min" ;
-            schema:value 10 ] ;
+            schema:value 10 ],
+        [ a schema:PropertyValue ;
+            schema:name "Cuvette path length" ;
+            schema:propertyID "cuvette path length" ;
+            schema:unitText "cm" ;
+            schema:value 1 ] ;
     schema:description "Colour reagent added to an aliquot of the sample; absorbance read at 540 nm against a reagent blank." ;
     schema:identifier "MEAS-2026-11-05-002" ;
     schema:name "Absorbance measurement" ;
@@ -49,15 +71,15 @@ ex:absorbanceMeasurement a prov:Activity ;
             schema:name "Analytical laboratory, room B12" ] ;
     prov:endedAtTime "2026-11-05T10:19:00+00:00"^^xsd:dateTime ;
     prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:laboratory01 ;
+            prov:hadRole ex:HostingInstitution ],
+        [ a prov:Association ;
             prov:agent ex:analyst01 ;
             prov:hadPlan ex:absorbanceProcedure ;
-            prov:hadRole ex:DataCollector ],
-        [ a prov:Association ;
-            prov:agent ex:laboratory01 ;
-            prov:hadRole ex:HostingInstitution ] ;
+            prov:hadRole ex:DataCollector ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:entity ex:waterSample01 ;
-            prov:hadRole ex:InputData ],
+            prov:entity ex:spectrophotometer01 ;
+            prov:hadRole ex:Instrument ],
         [ a prov:Usage ;
             prov:entity ex:cuvette01 ;
             prov:hadRole ex:Instrument ],
@@ -65,8 +87,8 @@ ex:absorbanceMeasurement a prov:Activity ;
             prov:entity ex:colourReagent01 ;
             prov:hadRole ex:Reagent ],
         [ a prov:Usage ;
-            prov:entity ex:spectrophotometer01 ;
-            prov:hadRole ex:Instrument ] ;
+            prov:entity ex:waterSample01 ;
+            prov:hadRole ex:InputData ] ;
     prov:startedAtTime "2026-11-05T10:18:00+00:00"^^xsd:dateTime .
 
 ex:absorbanceProcedure a prov:Entity,
@@ -95,11 +117,11 @@ ex:blankCorrection a prov:Activity ;
             prov:hadPlan ex:blankCorrectionSpec ;
             prov:hadRole ex:Researcher ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:entity ex:analysisSoftware ;
-            prov:hadRole ex:Software ],
-        [ a prov:Usage ;
             prov:entity ex:absorbanceSource ;
-            prov:hadRole ex:InputData ] ;
+            prov:hadRole ex:InputData ],
+        [ a prov:Usage ;
+            prov:entity ex:analysisSoftware ;
+            prov:hadRole ex:Software ] ;
     prov:startedAtTime "2026-11-05T10:21:00+00:00"^^xsd:dateTime .
 
 ex:blankCorrectionSpec a prov:Entity,
@@ -119,23 +141,23 @@ ex:calibrationDerivation a prov:Activity ;
     dcterms:isPartOf ex:concentrationRun ;
     schema:actionStatus schema:CompletedActionStatus ;
     schema:additionalProperty [ a schema:PropertyValue ;
-            schema:name "Calibration intercept" ;
-            schema:propertyID "calibration intercept" ;
-            schema:value 3e-03 ],
+            schema:name "Treatment of values below the limit of detection" ;
+            schema:propertyID "treatment of values below the limit of detection" ;
+            schema:value "Reported as '<0.02'; no value substituted." ],
         [ a schema:PropertyValue ;
             schema:name "Limit of detection" ;
             schema:propertyID "limit of detection" ;
             schema:unitText "mg/L" ;
             schema:value 2e-02 ],
         [ a schema:PropertyValue ;
-            schema:name "Treatment of values below the limit of detection" ;
-            schema:propertyID "treatment of values below the limit of detection" ;
-            schema:value "Reported as '<0.02'; no value substituted." ],
-        [ a schema:PropertyValue ;
             schema:name "Calibration slope" ;
             schema:propertyID "calibration slope" ;
             schema:unitText "L/mg" ;
-            schema:value 4.12e-01 ] ;
+            schema:value 4.12e-01 ],
+        [ a schema:PropertyValue ;
+            schema:name "Calibration intercept" ;
+            schema:propertyID "calibration intercept" ;
+            schema:value 3e-03 ] ;
     schema:description "Concentration computed from corrected absorbance with the calibration curve." ;
     schema:name "Calibration-based derivation" ;
     schema:position 5 ;
@@ -148,11 +170,11 @@ ex:calibrationDerivation a prov:Activity ;
             prov:entity ex:correctedAbsorbance ;
             prov:hadRole ex:InputData ],
         [ a prov:Usage ;
-            prov:entity ex:analysisSoftware ;
-            prov:hadRole ex:Software ],
-        [ a prov:Usage ;
             prov:entity ex:calibrationCurve ;
-            prov:hadRole ex:InputData ] ;
+            prov:hadRole ex:InputData ],
+        [ a prov:Usage ;
+            prov:entity ex:analysisSoftware ;
+            prov:hadRole ex:Software ] ;
     prov:startedAtTime "2026-11-05T10:23:14+00:00"^^xsd:dateTime .
 
 ex:calibrationRelationship a prov:Entity,
@@ -207,11 +229,11 @@ ex:instrumentCalibration01 a prov:Activity ;
             prov:agent ex:analyst01 ;
             prov:hadRole ex:DataCollector ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:entity ex:calibrationStandards01 ;
-            prov:hadRole ex:Reagent ],
-        [ a prov:Usage ;
             prov:entity ex:spectrophotometer01 ;
-            prov:hadRole ex:Instrument ] ;
+            prov:hadRole ex:Instrument ],
+        [ a prov:Usage ;
+            prov:entity ex:calibrationStandards01 ;
+            prov:hadRole ex:Reagent ] ;
     prov:startedAtTime "2026-11-05T09:40:00+00:00"^^xsd:dateTime .
 
 ex:riverReach01 a schema:Place,
@@ -233,36 +255,14 @@ ex:uncertaintyAssessment a prov:Activity ;
             prov:hadPlan ex:uncertaintySpec ;
             prov:hadRole ex:Researcher ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:entity ex:analysisSoftware ;
-            prov:hadRole ex:Software ],
-        [ a prov:Usage ;
             prov:entity ex:concentration ;
-            prov:hadRole ex:InputData ] .
+            prov:hadRole ex:InputData ],
+        [ a prov:Usage ;
+            prov:entity ex:analysisSoftware ;
+            prov:hadRole ex:Software ] .
 
 ex:uncertaintySpec a prov:Entity,
         prov:Plan .
-
-ex:validation a prov:Activity ;
-    dcterms:isPartOf ex:concentrationRun ;
-    schema:actionStatus schema:CompletedActionStatus ;
-    schema:description "Concentration and its uncertainty checked against the acceptance criterion for the method." ;
-    schema:name "Validation" ;
-    schema:position 7 ;
-    prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent ex:analyst01 ;
-            prov:hadRole ex:Supervisor ] ;
-    prov:qualifiedUsage [ a prov:Usage ;
-            prov:entity ex:concentration ;
-            prov:hadRole ex:InputData ],
-        [ a prov:Usage ;
-            prov:entity ex:concentrationUncertainty ;
-            prov:hadRole ex:InputData ],
-        [ a prov:Usage ;
-            prov:entity ex:analysisSoftware ;
-            prov:hadRole ex:Software ],
-        [ a prov:Usage ;
-            prov:entity ex:validationCriterion ;
-            prov:hadRole ex:InputData ] .
 
 ex:validationCriterion a schema:CreativeWork,
         prov:Entity ;
@@ -275,7 +275,7 @@ ex:validationResult a schema:Dataset,
     schema:name "Validation of the analyte concentration in water sample 01" ;
     schema:subjectOf ex:validationResult-record ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity ex:validation ] .
+            prov:activity ex:concentrationRun ] .
 
 ex:validationResult-record a schema:Dataset ;
     dcterms:conformsTo <https://w3id.org/cdif/provenance/2.0> ;
@@ -321,15 +321,15 @@ ex:spectrophotometer01 a schema:Product,
         schema:Thing,
         prov:Entity ;
     schema:additionalProperty [ a schema:PropertyValue ;
-            schema:name "Spectral bandwidth" ;
-            schema:propertyID "spectral bandwidth" ;
-            schema:unitText "nm" ;
-            schema:value 2 ],
-        [ a schema:PropertyValue ;
             schema:name "Measurement wavelength" ;
             schema:propertyID "measurement wavelength" ;
             schema:unitText "nm" ;
-            schema:value 540 ] ;
+            schema:value 540 ],
+        [ a schema:PropertyValue ;
+            schema:name "Spectral bandwidth" ;
+            schema:propertyID "spectral bandwidth" ;
+            schema:unitText "nm" ;
+            schema:value 2 ] ;
     schema:additionalType <https://www.wikidata.org/entity/Q3099911> ;
     schema:category [ a schema:DefinedTerm ;
             schema:name "UV-Vis spectrophotometer" ] ;
@@ -337,9 +337,9 @@ ex:spectrophotometer01 a schema:Product,
     schema:hasPart [ a schema:Thing ;
             schema:name "Silicon photodiode detector" ],
         [ a schema:Thing ;
-            schema:name "Grating monochromator" ],
+            schema:name "Deuterium and tungsten lamps" ],
         [ a schema:Thing ;
-            schema:name "Deuterium and tungsten lamps" ] ;
+            schema:name "Grating monochromator" ] ;
     schema:identifier [ a schema:PropertyValue ;
             schema:propertyID "manufacturer serial number" ;
             schema:value "SN-000123" ] ;
