@@ -20,7 +20,61 @@ ex:chikr_FeS2.png a schema1:MediaObject,
     schema1:encodingFormat "image/png" ;
     schema1:name "chikr_FeS2" ;
     prov:generatedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
-    prov:wasGeneratedBy ex:fes2Step4 .
+    prov:wasGeneratedBy ex:fes2Run .
+
+ex:fes2Step4 a prov:Activity ;
+    dcterms:isPartOf ex:fes2Run ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "R range start" ;
+            schema1:propertyID "fit_vars.rmin" ;
+            schema1:unitText "Å" ;
+            schema1:value 0 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "k range end" ;
+            schema1:propertyID "fit_vars.kmax" ;
+            schema1:unitText "Å⁻¹" ;
+            schema1:value 20 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "k range start" ;
+            schema1:propertyID "fit_vars.kmin" ;
+            schema1:unitText "Å⁻¹" ;
+            schema1:value 0 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "window width dk" ;
+            schema1:propertyID "fit_vars.dk" ;
+            schema1:unitText "Å⁻¹" ;
+            schema1:value 4 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "window" ;
+            schema1:propertyID "fit_vars.window" ;
+            schema1:value "kaiser" ],
+        [ a schema1:PropertyValue ;
+            schema1:name "k weight" ;
+            schema1:propertyID "fit_vars.kweight" ;
+            schema1:value 2 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "execution" ;
+            schema1:propertyID "execution.execution" ;
+            schema1:value "parallel" ],
+        [ a schema1:PropertyValue ;
+            schema1:name "R range end" ;
+            schema1:propertyID "fit_vars.rmax" ;
+            schema1:unitText "Å" ;
+            schema1:value 10 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "fit space" ;
+            schema1:propertyID "fit_vars.fitspace" ;
+            schema1:value "r" ] ;
+    schema1:name "Fit the paths to the spectrum (Larch Artemis)" ;
+    schema1:position 4 ;
+    prov:endedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
+    prov:startedAtTime "2024-10-23T14:09:57.141933"^^xsd:dateTime ;
+    prov:used ex:FeS2_athena.prj,
+        ex:fes2FeffPaths,
+        ex:fes2_gds.gds,
+        ex:fes2_sp.sp,
+        ex:larchArtemis .
 
 ex:fes2Workflow a prov:Entity,
         prov:Plan .
@@ -31,7 +85,7 @@ ex:fit_report_FeS2.feffit a schema1:MediaObject,
     schema1:encodingFormat "text/plain" ;
     schema1:name "fit_report_FeS2" ;
     prov:generatedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
-    prov:wasGeneratedBy ex:fes2Step4 .
+    prov:wasGeneratedBy ex:fes2Run .
 
 ex:rmr_FeS2.png a schema1:MediaObject,
         prov:Entity ;
@@ -39,7 +93,7 @@ ex:rmr_FeS2.png a schema1:MediaObject,
     schema1:encodingFormat "image/png" ;
     schema1:name "rmr_FeS2" ;
     prov:generatedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
-    prov:wasGeneratedBy ex:fes2Step4 .
+    prov:wasGeneratedBy ex:fes2Run .
 
 ex:FeS2_athena.prj a schema1:MediaObject,
         prov:Entity ;
@@ -80,14 +134,14 @@ ex:fes2Step2 a prov:Activity ;
     dcterms:isPartOf ex:fes2Run ;
     schema1:actionStatus schema1:CompletedActionStatus ;
     schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "absorbing atom index" ;
-            schema1:propertyID "format.absorbing_atom" ;
-            schema1:value 0 ],
-        [ a schema1:PropertyValue ;
             schema1:name "cluster radius" ;
             schema1:propertyID "format.radius" ;
             schema1:unitText "Å" ;
             schema1:value 4 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "absorbing atom index" ;
+            schema1:propertyID "format.absorbing_atom" ;
+            schema1:value 0 ],
         [ a schema1:PropertyValue ;
             schema1:name "input format" ;
             schema1:propertyID "format.format" ;
@@ -168,20 +222,6 @@ ex:fes2Step1 a prov:Activity ;
     dcterms:isPartOf ex:fes2Run ;
     schema1:actionStatus schema1:CompletedActionStatus ;
     schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "pre-edge range start" ;
-            schema1:propertyID "processing.pre_edge.pre1" ;
-            schema1:unitText "eV" ;
-            schema1:value -117 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "normalization polynomial order" ;
-            schema1:propertyID "processing.pre_edge.nnorm" ;
-            schema1:value 3 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "normalization range end" ;
-            schema1:propertyID "processing.pre_edge.norm2" ;
-            schema1:unitText "eV" ;
-            schema1:value 850 ],
-        [ a schema1:PropertyValue ;
             schema1:name "pre-edge range end" ;
             schema1:propertyID "processing.pre_edge.pre2" ;
             schema1:unitText "eV" ;
@@ -191,6 +231,11 @@ ex:fes2Step1 a prov:Activity ;
             schema1:propertyID "processing.rebin" ;
             schema1:value 0 ],
         [ a schema1:PropertyValue ;
+            schema1:name "normalization range end" ;
+            schema1:propertyID "processing.pre_edge.norm2" ;
+            schema1:unitText "eV" ;
+            schema1:value 850 ],
+        [ a schema1:PropertyValue ;
             schema1:name "normalization range start" ;
             schema1:propertyID "processing.pre_edge.norm1" ;
             schema1:unitText "eV" ;
@@ -198,7 +243,16 @@ ex:fes2Step1 a prov:Activity ;
         [ a schema1:PropertyValue ;
             schema1:name "input format" ;
             schema1:propertyID "merge_inputs.format.format" ;
-            schema1:value "plaintext" ] ;
+            schema1:value "plaintext" ],
+        [ a schema1:PropertyValue ;
+            schema1:name "normalization polynomial order" ;
+            schema1:propertyID "processing.pre_edge.nnorm" ;
+            schema1:value 3 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "pre-edge range start" ;
+            schema1:propertyID "processing.pre_edge.pre1" ;
+            schema1:unitText "eV" ;
+            schema1:value -117 ] ;
     schema1:name "Normalize the absorption spectrum (Larch Athena)" ;
     schema1:position 1 ;
     prov:endedAtTime "2024-10-23T14:10:04.994552"^^xsd:dateTime ;
@@ -210,32 +264,32 @@ ex:fes2Step3 a prov:Activity ;
     dcterms:isPartOf ex:fes2Run ;
     schema1:actionStatus schema1:CompletedActionStatus ;
     schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "initial sigma2" ;
-            schema1:propertyID "feff_outputs[0].selection.paths[*].sigma2.value" ;
-            schema1:unitText "Å²" ;
-            schema1:value 3e-03 ],
-        [ a schema1:PropertyValue ;
             schema1:name "initial deltaR" ;
             schema1:propertyID "feff_outputs[0].selection.paths[*].deltar.value" ;
             schema1:unitText "Å" ;
             schema1:value 0 ],
         [ a schema1:PropertyValue ;
-            schema1:name "initial S02" ;
-            schema1:propertyID "feff_outputs[0].selection.paths[*].s02.value" ;
-            schema1:value 1 ],
+            schema1:name "paths selected" ;
+            schema1:propertyID "feff_outputs[0].selection.paths" ;
+            schema1:value 3 ],
         [ a schema1:PropertyValue ;
             schema1:name "selection" ;
             schema1:propertyID "feff_outputs[0].selection.selection" ;
             schema1:value "manual" ],
         [ a schema1:PropertyValue ;
-            schema1:name "paths selected" ;
-            schema1:propertyID "feff_outputs[0].selection.paths" ;
-            schema1:value 3 ],
+            schema1:name "initial S02" ;
+            schema1:propertyID "feff_outputs[0].selection.paths[*].s02.value" ;
+            schema1:value 1 ],
         [ a schema1:PropertyValue ;
             schema1:name "initial E0" ;
             schema1:propertyID "feff_outputs[0].selection.paths[*].e0.value" ;
             schema1:unitText "eV" ;
-            schema1:value 0 ] ;
+            schema1:value 0 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "initial sigma2" ;
+            schema1:propertyID "feff_outputs[0].selection.paths[*].sigma2.value" ;
+            schema1:unitText "Å²" ;
+            schema1:value 3e-03 ] ;
     schema1:name "Select the paths to fit (Larch select paths)" ;
     schema1:position 3 ;
     prov:endedAtTime "2024-10-23T14:10:09.006182"^^xsd:dateTime ;
@@ -248,60 +302,6 @@ ex:fes2_rt01_mar02.xmu a schema1:MediaObject,
     schema1:description "Fe K-edge absorption spectrum of FeS2 at room temperature: energy and mu(E) columns." ;
     schema1:encodingFormat "text/plain" ;
     schema1:name "fes2_rt01_mar02.xmu" .
-
-ex:fes2Step4 a prov:Activity ;
-    dcterms:isPartOf ex:fes2Run ;
-    schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "k range start" ;
-            schema1:propertyID "fit_vars.kmin" ;
-            schema1:unitText "Å⁻¹" ;
-            schema1:value 0 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "k range end" ;
-            schema1:propertyID "fit_vars.kmax" ;
-            schema1:unitText "Å⁻¹" ;
-            schema1:value 20 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "execution" ;
-            schema1:propertyID "execution.execution" ;
-            schema1:value "parallel" ],
-        [ a schema1:PropertyValue ;
-            schema1:name "k weight" ;
-            schema1:propertyID "fit_vars.kweight" ;
-            schema1:value 2 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "R range start" ;
-            schema1:propertyID "fit_vars.rmin" ;
-            schema1:unitText "Å" ;
-            schema1:value 0 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "window" ;
-            schema1:propertyID "fit_vars.window" ;
-            schema1:value "kaiser" ],
-        [ a schema1:PropertyValue ;
-            schema1:name "window width dk" ;
-            schema1:propertyID "fit_vars.dk" ;
-            schema1:unitText "Å⁻¹" ;
-            schema1:value 4 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "R range end" ;
-            schema1:propertyID "fit_vars.rmax" ;
-            schema1:unitText "Å" ;
-            schema1:value 10 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "fit space" ;
-            schema1:propertyID "fit_vars.fitspace" ;
-            schema1:value "r" ] ;
-    schema1:name "Fit the paths to the spectrum (Larch Artemis)" ;
-    schema1:position 4 ;
-    prov:endedAtTime "2024-10-23T14:10:18.969215"^^xsd:dateTime ;
-    prov:startedAtTime "2024-10-23T14:09:57.141933"^^xsd:dateTime ;
-    prov:used ex:FeS2_athena.prj,
-        ex:fes2FeffPaths,
-        ex:fes2_gds.gds,
-        ex:fes2_sp.sp,
-        ex:larchArtemis .
 
 ex:fes2Run a prov:Activity,
         cdifact:Analysis ;

@@ -32,19 +32,31 @@ ex:concentrationDeterminationPlan a prov:Entity,
 ex:uncertaintySpec a prov:Entity,
         prov:Plan .
 
+ex:validation a prov:Activity ;
+    dcterms:isPartOf ex:concentrationRun ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Concentration and its uncertainty checked against the acceptance criterion for the method." ;
+    schema1:name "Validation" ;
+    schema1:position 7 ;
+    prov:used ex:analysisSoftware,
+        ex:concentration,
+        ex:concentrationUncertainty,
+        ex:validationCriterion ;
+    prov:wasAssociatedWith ex:analyst01 .
+
 ex:absorbanceMeasurement a prov:Activity ;
     dcterms:isPartOf ex:concentrationRun ;
     schema1:actionStatus schema1:CompletedActionStatus ;
     schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "Colour development time" ;
-            schema1:propertyID "colour development time" ;
-            schema1:unitText "min" ;
-            schema1:value 10 ],
-        [ a schema1:PropertyValue ;
             schema1:name "Cuvette path length" ;
             schema1:propertyID "cuvette path length" ;
             schema1:unitText "cm" ;
-            schema1:value 1 ] ;
+            schema1:value 1 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Colour development time" ;
+            schema1:propertyID "colour development time" ;
+            schema1:unitText "min" ;
+            schema1:value 10 ] ;
     schema1:description "Colour reagent added to an aliquot of the sample; absorbance read at 540 nm against a reagent blank." ;
     schema1:identifier "MEAS-2026-11-05-002" ;
     schema1:name "Absorbance measurement" ;
@@ -101,23 +113,23 @@ ex:calibrationDerivation a prov:Activity ;
     dcterms:isPartOf ex:concentrationRun ;
     schema1:actionStatus schema1:CompletedActionStatus ;
     schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "Calibration intercept" ;
-            schema1:propertyID "calibration intercept" ;
-            schema1:value 3e-03 ],
-        [ a schema1:PropertyValue ;
             schema1:name "Calibration slope" ;
             schema1:propertyID "calibration slope" ;
             schema1:unitText "L/mg" ;
             schema1:value 4.12e-01 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Treatment of values below the limit of detection" ;
+            schema1:propertyID "treatment of values below the limit of detection" ;
+            schema1:value "Reported as '<0.02'; no value substituted." ],
         [ a schema1:PropertyValue ;
             schema1:name "Limit of detection" ;
             schema1:propertyID "limit of detection" ;
             schema1:unitText "mg/L" ;
             schema1:value 2e-02 ],
         [ a schema1:PropertyValue ;
-            schema1:name "Treatment of values below the limit of detection" ;
-            schema1:propertyID "treatment of values below the limit of detection" ;
-            schema1:value "Reported as '<0.02'; no value substituted." ] ;
+            schema1:name "Calibration intercept" ;
+            schema1:propertyID "calibration intercept" ;
+            schema1:value 3e-03 ] ;
     schema1:description "Concentration computed from corrected absorbance with the calibration curve." ;
     schema1:name "Calibration-based derivation" ;
     schema1:position 5 ;
@@ -191,18 +203,6 @@ ex:uncertaintyAssessment a prov:Activity ;
         ex:concentration ;
     prov:wasAssociatedWith ex:analyst01 .
 
-ex:validation a prov:Activity ;
-    dcterms:isPartOf ex:concentrationRun ;
-    schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:description "Concentration and its uncertainty checked against the acceptance criterion for the method." ;
-    schema1:name "Validation" ;
-    schema1:position 7 ;
-    prov:used ex:analysisSoftware,
-        ex:concentration,
-        ex:concentrationUncertainty,
-        ex:validationCriterion ;
-    prov:wasAssociatedWith ex:analyst01 .
-
 ex:validationCriterion a schema1:CreativeWork,
         prov:Entity ;
     schema1:name "Acceptance criterion: relative expanded uncertainty at most 10 %" ;
@@ -213,7 +213,7 @@ ex:validationResult a schema1:Dataset,
     schema1:description "cdifProv (schema.org) rendering of implementationTesting/prov-o-qualified/cdif_provenance_quantitative.ttl, the Dagstuhl quantitative scenario extended with illustrative sampling, instrument, reagent, tool and analyst. This file goes further than the master to exercise every slot the cdifProvenance schema offers: activity types from the CDIF activityType vocabulary, identifiers and descriptions, a full instrument description, software version, located places, procedures with steps and constants, vocabulary roles, an instrument calibration activity and a failed measurement attempt. Every fact beyond the Dagstuhl source is illustrative. See implementationTesting/APPROACHES.md for what this form keeps and loses." ;
     schema1:name "Validation of the analyte concentration in water sample 01" ;
     schema1:subjectOf ex:validationResult-record ;
-    prov:wasGeneratedBy ex:validation .
+    prov:wasGeneratedBy ex:concentrationRun .
 
 ex:validationResult-record a schema1:Dataset ;
     dcterms:conformsTo <https://w3id.org/cdif/provenance/2.0> ;
@@ -250,25 +250,25 @@ ex:spectrophotometer01 a schema1:Product,
         schema1:Thing,
         prov:Entity ;
     schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "Measurement wavelength" ;
-            schema1:propertyID "measurement wavelength" ;
-            schema1:unitText "nm" ;
-            schema1:value 540 ],
-        [ a schema1:PropertyValue ;
             schema1:name "Spectral bandwidth" ;
             schema1:propertyID "spectral bandwidth" ;
             schema1:unitText "nm" ;
-            schema1:value 2 ] ;
+            schema1:value 2 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Measurement wavelength" ;
+            schema1:propertyID "measurement wavelength" ;
+            schema1:unitText "nm" ;
+            schema1:value 540 ] ;
     schema1:additionalType <https://www.wikidata.org/entity/Q3099911> ;
     schema1:category [ a schema1:DefinedTerm ;
             schema1:name "UV-Vis spectrophotometer" ] ;
     schema1:description "Double-beam UV-Vis spectrophotometer, 190-1100 nm." ;
     schema1:hasPart [ a schema1:Thing ;
-            schema1:name "Silicon photodiode detector" ],
+            schema1:name "Grating monochromator" ],
         [ a schema1:Thing ;
             schema1:name "Deuterium and tungsten lamps" ],
         [ a schema1:Thing ;
-            schema1:name "Grating monochromator" ] ;
+            schema1:name "Silicon photodiode detector" ] ;
     schema1:identifier [ a schema1:PropertyValue ;
             schema1:propertyID "manufacturer serial number" ;
             schema1:value "SN-000123" ] ;

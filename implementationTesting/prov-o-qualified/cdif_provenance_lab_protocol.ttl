@@ -13,7 +13,46 @@ ex:20231121_002_OREX-803003-0.cdf a schema:MediaObject,
     schema:encodingFormat "application/x-netcdf" ;
     schema:name "20231121_002_OREX-803003-0.cdf" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity ex:bennuMSDetection ] .
+            prov:activity ex:bennuPyGCMSRun ;
+            prov:atTime "2023-11-21T23:59:59+00:00"^^xsd:dateTime ] .
+
+ex:bennuMSDetection a prov:Activity ;
+    dcterms:isPartOf ex:bennuPyGCMSRun ;
+    schema:actionStatus schema:CompletedActionStatus ;
+    schema:additionalProperty [ a schema:PropertyValue ;
+            schema:name "MRM target compounds" ;
+            schema:propertyID ex:param_mrmCompoundCount ;
+            schema:value 38 ],
+        [ a schema:PropertyValue ;
+            schema:name "Ionization mode" ;
+            schema:propertyID ex:param_ionizationMode ;
+            schema:value "electron ionization (EI), positive polarity" ],
+        [ a schema:PropertyValue ;
+            schema:name "Ion source temperature" ;
+            schema:propertyID "ion source temperature" ;
+            schema:unitText "°C" ;
+            schema:value 300 ],
+        [ a schema:PropertyValue ;
+            schema:name "Full scan range" ;
+            schema:propertyID ex:param_scanRange ;
+            schema:value "m/z 50–500" ],
+        [ a schema:PropertyValue ;
+            schema:name "Full scan time" ;
+            schema:propertyID "full scan time" ;
+            schema:unitText "s" ;
+            schema:value 1e-01 ] ;
+    schema:description "Simultaneous full scan (m/z 50–500, EI positive, 0.100 s scan time) and timed SRM/MRM (38 compounds, 2–3 transitions each). Ion source and transfer line at 300 °C; detector gain 100,000." ;
+    schema:name "Dual-mode MS detection (full scan and MRM)" ;
+    schema:position 4 ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:NASA_GSFC ;
+            prov:hadPlan ex:MSDetection_Protocol ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:tsqMassSpectrometer ;
+            prov:hadRole ex:Instrument ],
+        [ a prov:Usage ;
+            prov:entity ex:bennuSeparatedEluent ;
+            prov:hadRole ex:InputData ] .
 
 ex:GCSeparation_Protocol a prov:Entity,
         prov:Plan .
@@ -43,14 +82,14 @@ ex:bennuGCSeparation a prov:Activity ;
             schema:propertyID ex:param_columnType ;
             schema:value "Rtx-5ms, 30 m × 0.250 mm × 0.50 µm + 5 m guard" ],
         [ a schema:PropertyValue ;
-            schema:name "Split ratio" ;
-            schema:propertyID ex:param_splitRatio ;
-            schema:value "10:1" ],
-        [ a schema:PropertyValue ;
             schema:name "Carrier gas flow" ;
             schema:propertyID ex:param_carrierGasFlow ;
             schema:unitText "mL/min" ;
-            schema:value 1.5e+00 ] ;
+            schema:value 1.5e+00 ],
+        [ a schema:PropertyValue ;
+            schema:name "Split ratio" ;
+            schema:propertyID ex:param_splitRatio ;
+            schema:value "10:1" ] ;
     schema:description "Chromatographic separation on an Rtx-5ms column (30 m × 0.250 mm × 0.50 µm, 5 m guard), with split injection 10:1 at 300 °C and helium carrier at 1.500 mL/min. Run time 87.79 min." ;
     schema:name "GC separation on an Rtx-5ms column" ;
     schema:position 3 ;
@@ -58,51 +97,13 @@ ex:bennuGCSeparation a prov:Activity ;
             prov:agent ex:NASA_GSFC ;
             prov:hadPlan ex:GCSeparation_Protocol ] ;
     prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:helium ;
+            prov:hadRole ex:Reagent ],
+        [ a prov:Usage ;
             prov:entity ex:gasChromatograph ;
             prov:hadRole ex:Instrument ],
         [ a prov:Usage ;
             prov:entity ex:bennuPyrolysisProducts ;
-            prov:hadRole ex:InputData ],
-        [ a prov:Usage ;
-            prov:entity ex:helium ;
-            prov:hadRole ex:Reagent ] .
-
-ex:bennuMSDetection a prov:Activity ;
-    dcterms:isPartOf ex:bennuPyGCMSRun ;
-    schema:actionStatus schema:CompletedActionStatus ;
-    schema:additionalProperty [ a schema:PropertyValue ;
-            schema:name "Full scan time" ;
-            schema:propertyID "full scan time" ;
-            schema:unitText "s" ;
-            schema:value 1e-01 ],
-        [ a schema:PropertyValue ;
-            schema:name "Ionization mode" ;
-            schema:propertyID ex:param_ionizationMode ;
-            schema:value "electron ionization (EI), positive polarity" ],
-        [ a schema:PropertyValue ;
-            schema:name "Full scan range" ;
-            schema:propertyID ex:param_scanRange ;
-            schema:value "m/z 50–500" ],
-        [ a schema:PropertyValue ;
-            schema:name "MRM target compounds" ;
-            schema:propertyID ex:param_mrmCompoundCount ;
-            schema:value 38 ],
-        [ a schema:PropertyValue ;
-            schema:name "Ion source temperature" ;
-            schema:propertyID "ion source temperature" ;
-            schema:unitText "°C" ;
-            schema:value 300 ] ;
-    schema:description "Simultaneous full scan (m/z 50–500, EI positive, 0.100 s scan time) and timed SRM/MRM (38 compounds, 2–3 transitions each). Ion source and transfer line at 300 °C; detector gain 100,000." ;
-    schema:name "Dual-mode MS detection (full scan and MRM)" ;
-    schema:position 4 ;
-    prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent ex:NASA_GSFC ;
-            prov:hadPlan ex:MSDetection_Protocol ] ;
-    prov:qualifiedUsage [ a prov:Usage ;
-            prov:entity ex:tsqMassSpectrometer ;
-            prov:hadRole ex:Instrument ],
-        [ a prov:Usage ;
-            prov:entity ex:bennuSeparatedEluent ;
             prov:hadRole ex:InputData ] .
 
 ex:bennuPreparedSample a schema:Thing,
@@ -137,15 +138,15 @@ ex:bennuPyrolysis a prov:Activity ;
             schema:unitText "°C" ;
             schema:value 600 ],
         [ a schema:PropertyValue ;
-            schema:name "Transfer line temperature" ;
-            schema:propertyID ex:param_transferLineTemp ;
-            schema:unitText "°C" ;
-            schema:value 300 ],
-        [ a schema:PropertyValue ;
             schema:name "Heating rate" ;
             schema:propertyID ex:param_pyrolysisRate ;
             schema:unitText "°C/ms" ;
-            schema:value 10 ] ;
+            schema:value 10 ],
+        [ a schema:PropertyValue ;
+            schema:name "Transfer line temperature" ;
+            schema:propertyID ex:param_transferLineTemp ;
+            schema:unitText "°C" ;
+            schema:value 300 ] ;
     schema:description "Flash-heated at 10 °C/ms to about 600 °C. The volatiles were carried in helium through the heated transfer line (300 °C) to the GC inlet. Bulk samples may contain soluble organic matter, which produces thermal degradation products and rearrangements." ;
     schema:name "Flash pyrolysis at about 600 °C" ;
     schema:position 2 ;
@@ -156,11 +157,11 @@ ex:bennuPyrolysis a prov:Activity ;
             prov:entity ex:helium ;
             prov:hadRole ex:Reagent ],
         [ a prov:Usage ;
-            prov:entity ex:pyrolysisOven ;
-            prov:hadRole ex:Instrument ],
-        [ a prov:Usage ;
             prov:entity ex:bennuPreparedSample ;
-            prov:hadRole ex:InputData ] .
+            prov:hadRole ex:InputData ],
+        [ a prov:Usage ;
+            prov:entity ex:pyrolysisOven ;
+            prov:hadRole ex:Instrument ] .
 
 ex:bennuPyrolysisProducts a schema:Thing,
         prov:Entity ;
@@ -185,14 +186,14 @@ ex:bennuSamplePrep a prov:Activity ;
             prov:agent ex:NASA_GSFC ;
             prov:hadPlan ex:SamplePrep_Protocol ] ;
     prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:OREX-803003-0 ;
+            prov:hadRole ex:InputData ],
+        [ a prov:Usage ;
             prov:entity ex:pyrolysisOven ;
             prov:hadRole ex:Instrument ],
         [ a prov:Usage ;
             prov:entity ex:quartzTubes ;
-            prov:hadRole ex:Instrument ],
-        [ a prov:Usage ;
-            prov:entity ex:OREX-803003-0 ;
-            prov:hadRole ex:InputData ] .
+            prov:hadRole ex:Instrument ] .
 
 ex:bennuSeparatedEluent a schema:Thing,
         prov:Entity ;
