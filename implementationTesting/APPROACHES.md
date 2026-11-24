@@ -150,9 +150,11 @@ E-notation).
 
 ### Diagrams
 
-Each PROV-O Turtle file in `prov-o-qualified/` and `prov-o-unqualified/` has an SVG diagram beside
-it with the same name, generated with [`tools/rdfToSvg.py`](../tools/rdfToSvg.py)
-(`python tools/rdfToSvg.py SRC.ttl OUT.svg`, Graphviz `dot` on the PATH). Each resource is a box:
+Each PROV-O Turtle file in `prov-o-qualified/` and `prov-o-unqualified/`, and each cdifProv record in
+`cdifprov-schemaorg/`, has an SVG diagram beside it with the same name, generated with
+[`tools/rdfToSvg.py`](../tools/rdfToSvg.py) (`python tools/rdfToSvg.py SRC OUT.svg`, Graphviz `dot`
+on the PATH). The cdifProv run-rooted tree is the same graph as its record, and the
+`before-schemaorg-validator` file is a superseded snapshot, so neither has one. Each resource is a box:
 its compact IRI and types, then one row per literal-valued property (a long value is cut, and the
 full value is its tooltip). Each link between resources is an arrow labelled with its predicate.
 Boxes take the PROV-O colours: entities yellow, activities blue, agents orange, and the blank nodes
@@ -161,7 +163,8 @@ term, is drawn at each reference with a dashed border. Open a diagram in a brows
 For example, [prov-o-qualified/cdif\_provenance\_minimal.svg](prov-o-qualified/cdif_provenance_minimal.svg)
 and the lab measurement pair,
 [qualified](prov-o-qualified/cdif_provenance_quantitative.from-cdifprov.svg) and
-[plain](prov-o-unqualified/cdif_provenance_quantitative.from-cdifprov.svg).
+[plain](prov-o-unqualified/cdif_provenance_quantitative.from-cdifprov.svg), with their cdifProv source,
+[cdifprov-schemaorg/cdif\_provenance\_quantitative.svg](cdifprov-schemaorg/cdif_provenance_quantitative.svg).
 
 ## The matrix
 

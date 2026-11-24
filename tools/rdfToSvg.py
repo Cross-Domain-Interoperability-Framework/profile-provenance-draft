@@ -24,6 +24,7 @@ import sys
 
 import rdflib
 from rdflib import RDF, BNode, Literal, URIRef
+from rdflib.compare import to_canonical_graph
 
 PROV = rdflib.Namespace("http://www.w3.org/ns/prov#")
 SCHEMA = ("http://schema.org/", "https://schema.org/")
@@ -61,6 +62,14 @@ def main():
 
     g = rdflib.Graph().parse(args.src, format="turtle" if args.src.endswith(".ttl") else "json-ld",
                              publicID=args.base)
+    # parsers label blank nodes at random (JSON-LD differently on every run); canonical labels keep
+    # the node order, and so the drawing, the same from run to run
+    canon = rdflib.Graph()
+    for t in to_canonical_graph(g):
+        canon.add(t)
+    for prefix, ns in g.namespaces():
+        canon.bind(prefix, ns, override=True, replace=True)
+    g = canon
     nm = g.namespace_manager
     # rdflib binds schema: to https; CDIF uses http://schema.org/, which would show as schema1:
     if any(str(t).startswith(SCHEMA[0]) for tr in g for t in tr if isinstance(t, URIRef)):
