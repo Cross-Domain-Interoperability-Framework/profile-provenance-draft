@@ -67,7 +67,7 @@ settled. It now follows them:
 | approach | file | how it was made | checked with |
 |---|---|---|---|
 | **cdifProv** (master for this page) | [cdifprov-schemaorg/cdif\_provenance\_quantitative.json](cdifprov-schemaorg/cdif_provenance_quantitative.json), [run-rooted tree](cdifprov-schemaorg/cdif_provenance_quantitative.run-rooted.jsonld) | hand-written, then restructured as above | `FrameAndValidate.py -v` against cdifProvenance 2.0: passes; conformance consistent (provenance 2.0; not core 2.0, since the dataset has no identifier); 404 triples, all kept by framing; `provenanceRules.shacl` (advanced): conforms, no results; key counts = triple counts |
-| **PROV-O, qualified** | [prov-o-qualified/cdif\_provenance\_quantitative.from-cdifprov.ttl](prov-o-qualified/cdif_provenance_quantitative.from-cdifprov.ttl), [.jsonld](prov-o-qualified/cdif_provenance_quantitative.from-cdifprov.jsonld) | generated: `python tools/cdifProvToProvO.py <cdifProv> <out.ttl>` | 431 triples: 9 activities (the 7 steps `dcterms:isPartOf` the run), 7 generations, 20 usages, 10 associations (5 with a plan), 2 `prov:atLocation`; the tree is isomorphic under rdflib and pyld |
+| **PROV-O, qualified** | [prov-o-qualified/cdif\_provenance\_quantitative.from-cdifprov.ttl](prov-o-qualified/cdif_provenance_quantitative.from-cdifprov.ttl), [.jsonld](prov-o-qualified/cdif_provenance_quantitative.from-cdifprov.jsonld) | generated: `python tools/cdifProvToProvO.py <cdifProv> <out.ttl>` | 431 triples: 9 activities (the 7 steps in the run's `dcterms:hasPart`), 7 generations, 20 usages, 10 associations (5 with a plan), 2 `prov:atLocation`; the tree is isomorphic under rdflib and pyld |
 | **PROV-O, plain** | [prov-o-unqualified/cdif\_provenance\_quantitative.from-cdifprov.ttl](prov-o-unqualified/cdif_provenance_quantitative.from-cdifprov.ttl), [.jsonld](prov-o-unqualified/cdif_provenance_quantitative.from-cdifprov.jsonld) | generated: the same with `--unqualified` | 315 triples; the plans and roles are lost; `--unqualify` of the qualified file gives the same graph; the tree is isomorphic |
 | **RO-Crate 1.1** | [ro-crate/cdif\_provenance\_quantitative/ro-crate-metadata.json](ro-crate/cdif_provenance_quantitative/ro-crate-metadata.json), [tree](ro-crate/cdif_provenance_quantitative.jsonld) | written from the cdifProv file | 64 entities; 345 triples; the tree is isomorphic. `rocrate-validator` 0.14.0, `-p ro-crate-1.1 -m` (metadata only): every REQUIRED check passes; 6 RECOMMENDED checks fail, listed below |
 
@@ -124,7 +124,7 @@ association.
   `schema:result`, and so does its validation step. `tools/cdifProvToProvO.py` first gave the
   dataset two generations (the step's and the run's, as the last activity of the chain), then only
   the step's. Since 2026-11-23 it keeps the run's: the run is the activity the record is about, and
-  the step is `dcterms:isPartOf` it. A step still generates the results its activity does not list.
+  the step is one of its parts (`dcterms:hasPart`). A step still generates the results its activity does not list.
   The same rule moved the workflow's three final outputs to the run, and the lab protocol's data
   file to the session.
 - **Role names kept their case.** A DataCite `termCode` such as `DataCollector` became

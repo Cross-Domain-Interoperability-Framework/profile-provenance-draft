@@ -6,17 +6,6 @@
 @prefix schema1: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:absorbanceMeasurementAttempt01 a prov:Activity ;
-    dcterms:isPartOf ex:concentrationRun ;
-    schema1:actionStatus schema1:FailedActionStatus ;
-    schema1:error "Air bubble in the cuvette gave an unstable reading; the reading was rejected and the measurement repeated." ;
-    schema1:name "Absorbance measurement, first attempt" ;
-    schema1:position 2 ;
-    prov:endedAtTime "2026-11-05T10:13:00+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-11-05T10:12:00+00:00"^^xsd:dateTime ;
-    prov:used ex:waterSample01 ;
-    prov:wasAssociatedWith ex:analyst01 .
-
 ex:absorbanceProcedure a prov:Entity,
         prov:Plan .
 
@@ -32,51 +21,15 @@ ex:concentrationDeterminationPlan a prov:Entity,
 ex:uncertaintySpec a prov:Entity,
         prov:Plan .
 
-ex:validation a prov:Activity ;
-    dcterms:isPartOf ex:concentrationRun ;
-    schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:description "Concentration and its uncertainty checked against the acceptance criterion for the method." ;
-    schema1:name "Validation" ;
-    schema1:position 7 ;
-    prov:used ex:analysisSoftware,
-        ex:concentration,
-        ex:concentrationUncertainty,
-        ex:validationCriterion ;
+ex:absorbanceMeasurementAttempt01 a prov:Activity ;
+    schema1:actionStatus schema1:FailedActionStatus ;
+    schema1:error "Air bubble in the cuvette gave an unstable reading; the reading was rejected and the measurement repeated." ;
+    schema1:name "Absorbance measurement, first attempt" ;
+    schema1:position 2 ;
+    prov:endedAtTime "2026-11-05T10:13:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:12:00+00:00"^^xsd:dateTime ;
+    prov:used ex:waterSample01 ;
     prov:wasAssociatedWith ex:analyst01 .
-
-ex:absorbanceMeasurement a prov:Activity ;
-    dcterms:isPartOf ex:concentrationRun ;
-    schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "Cuvette path length" ;
-            schema1:propertyID "cuvette path length" ;
-            schema1:unitText "cm" ;
-            schema1:value 1 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "Colour development time" ;
-            schema1:propertyID "colour development time" ;
-            schema1:unitText "min" ;
-            schema1:value 10 ] ;
-    schema1:description "Colour reagent added to an aliquot of the sample; absorbance read at 540 nm against a reagent blank." ;
-    schema1:identifier "MEAS-2026-11-05-002" ;
-    schema1:name "Absorbance measurement" ;
-    schema1:position 3 ;
-    prov:atLocation [ a schema1:Place,
-                prov:Location ;
-            schema1:additionalType "analytical laboratory" ;
-            schema1:geo [ a schema1:GeoCoordinates ;
-                    schema1:latitude 4.695e+01 ;
-                    schema1:longitude 7.44e+00 ] ;
-            schema1:identifier "LAB-B12" ;
-            schema1:name "Analytical laboratory, room B12" ] ;
-    prov:endedAtTime "2026-11-05T10:19:00+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-11-05T10:18:00+00:00"^^xsd:dateTime ;
-    prov:used ex:colourReagent01,
-        ex:cuvette01,
-        ex:spectrophotometer01,
-        ex:waterSample01 ;
-    prov:wasAssociatedWith ex:analyst01,
-        ex:laboratory01 .
 
 ex:absorbanceSource a schema1:CreativeWork,
         prov:Entity ;
@@ -88,18 +41,6 @@ ex:absorbanceSource a schema1:CreativeWork,
     prov:generatedAtTime "2026-11-05T10:19:00+00:00"^^xsd:dateTime ;
     prov:wasGeneratedBy ex:absorbanceMeasurement .
 
-ex:blankCorrection a prov:Activity ;
-    dcterms:isPartOf ex:concentrationRun ;
-    schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:description "Reagent-blank absorbance subtracted from the sample absorbance." ;
-    schema1:name "Blank correction" ;
-    schema1:position 4 ;
-    prov:endedAtTime "2026-11-05T10:21:04+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-11-05T10:21:00+00:00"^^xsd:dateTime ;
-    prov:used ex:absorbanceSource,
-        ex:analysisSoftware ;
-    prov:wasAssociatedWith ex:analyst01 .
-
 ex:calibrationCurve a schema1:CreativeWork,
         prov:Entity ;
     schema1:description "Linear fit of absorbance against standard concentration." ;
@@ -108,37 +49,6 @@ ex:calibrationCurve a schema1:CreativeWork,
     schema1:url "https://example.org/cdif-prov/data/calibration-curve.csv" ;
     prov:generatedAtTime "2026-11-05T10:05:00+00:00"^^xsd:dateTime ;
     prov:wasGeneratedBy ex:instrumentCalibration01 .
-
-ex:calibrationDerivation a prov:Activity ;
-    dcterms:isPartOf ex:concentrationRun ;
-    schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "Calibration slope" ;
-            schema1:propertyID "calibration slope" ;
-            schema1:unitText "L/mg" ;
-            schema1:value 4.12e-01 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "Treatment of values below the limit of detection" ;
-            schema1:propertyID "treatment of values below the limit of detection" ;
-            schema1:value "Reported as '<0.02'; no value substituted." ],
-        [ a schema1:PropertyValue ;
-            schema1:name "Limit of detection" ;
-            schema1:propertyID "limit of detection" ;
-            schema1:unitText "mg/L" ;
-            schema1:value 2e-02 ],
-        [ a schema1:PropertyValue ;
-            schema1:name "Calibration intercept" ;
-            schema1:propertyID "calibration intercept" ;
-            schema1:value 3e-03 ] ;
-    schema1:description "Concentration computed from corrected absorbance with the calibration curve." ;
-    schema1:name "Calibration-based derivation" ;
-    schema1:position 5 ;
-    prov:endedAtTime "2026-11-05T10:23:18+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-11-05T10:23:14+00:00"^^xsd:dateTime ;
-    prov:used ex:analysisSoftware,
-        ex:calibrationCurve,
-        ex:correctedAbsorbance ;
-    prov:wasAssociatedWith ex:analyst01 .
 
 ex:calibrationStandards01 a schema1:ChemicalSubstance,
         schema1:Thing,
@@ -151,6 +61,25 @@ ex:colourReagent01 a schema1:ChemicalSubstance,
         prov:Entity ;
     schema1:additionalType <https://www.wikidata.org/entity/Q2356542> ;
     schema1:name "Colour-forming reagent, 2 mL" .
+
+ex:concentrationRun a prov:Activity,
+        cdifact:Analysis ;
+    dcterms:hasPart ex:absorbanceMeasurement,
+        ex:absorbanceMeasurementAttempt01,
+        ex:blankCorrection,
+        ex:calibrationDerivation,
+        ex:instrumentCalibration01,
+        ex:uncertaintyAssessment,
+        ex:validation ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Analysis of water sample 01: instrument calibration, absorbance measurement (a failed attempt and its repeat), blank correction, derivation of concentration from the calibration, uncertainty assessment and validation against the acceptance criterion." ;
+    schema1:identifier [ a schema1:PropertyValue ;
+            schema1:propertyID "laboratory run number" ;
+            schema1:value "RUN-2026-11-05-01" ] ;
+    schema1:name "Concentration determination run" ;
+    prov:startedAtTime "2026-11-05T09:40:00+00:00"^^xsd:dateTime ;
+    prov:used ex:waterSample01 ;
+    prov:wasAssociatedWith ex:analyst01 .
 
 ex:concentrationUncertainty a schema1:CreativeWork,
         prov:Entity ;
@@ -173,34 +102,19 @@ ex:cuvette01 a schema1:Product,
     schema1:additionalType <https://www.wikidata.org/entity/Q3099911> ;
     schema1:name "1 cm quartz cuvette" .
 
-ex:instrumentCalibration01 a prov:Activity ;
-    dcterms:isPartOf ex:concentrationRun ;
-    schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:description "Absorbance of five certified standards measured to fit the response line used to convert sample absorbance to concentration." ;
-    schema1:name "Instrument calibration" ;
-    schema1:position 1 ;
-    prov:endedAtTime "2026-11-05T10:05:00+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-11-05T09:40:00+00:00"^^xsd:dateTime ;
-    prov:used ex:calibrationStandards01,
-        ex:spectrophotometer01 ;
-    prov:wasAssociatedWith ex:analyst01 .
-
 ex:riverReach01 a schema1:Place,
         prov:Entity ;
     schema1:name "River reach the water was taken from" .
 
-ex:uncertaintyAssessment a prov:Activity ;
-    dcterms:isPartOf ex:concentrationRun ;
+ex:validation a prov:Activity ;
     schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "Coverage factor" ;
-            schema1:propertyID "coverage factor" ;
-            schema1:value 2 ] ;
-    schema1:description "Combined standard uncertainty of the concentration from calibration, repeatability and volume contributions." ;
-    schema1:name "Uncertainty assessment" ;
-    schema1:position 6 ;
+    schema1:description "Concentration and its uncertainty checked against the acceptance criterion for the method." ;
+    schema1:name "Validation" ;
+    schema1:position 7 ;
     prov:used ex:analysisSoftware,
-        ex:concentration ;
+        ex:concentration,
+        ex:concentrationUncertainty,
+        ex:validationCriterion ;
     prov:wasAssociatedWith ex:analyst01 .
 
 ex:validationCriterion a schema1:CreativeWork,
@@ -237,6 +151,80 @@ ex:waterSampling01 a prov:Activity,
     prov:used ex:riverReach01 ;
     prov:wasAssociatedWith ex:analyst01 .
 
+ex:absorbanceMeasurement a prov:Activity ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Colour development time" ;
+            schema1:propertyID "colour development time" ;
+            schema1:unitText "min" ;
+            schema1:value 10 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Cuvette path length" ;
+            schema1:propertyID "cuvette path length" ;
+            schema1:unitText "cm" ;
+            schema1:value 1 ] ;
+    schema1:description "Colour reagent added to an aliquot of the sample; absorbance read at 540 nm against a reagent blank." ;
+    schema1:identifier "MEAS-2026-11-05-002" ;
+    schema1:name "Absorbance measurement" ;
+    schema1:position 3 ;
+    prov:atLocation [ a schema1:Place,
+                prov:Location ;
+            schema1:additionalType "analytical laboratory" ;
+            schema1:geo [ a schema1:GeoCoordinates ;
+                    schema1:latitude 4.695e+01 ;
+                    schema1:longitude 7.44e+00 ] ;
+            schema1:identifier "LAB-B12" ;
+            schema1:name "Analytical laboratory, room B12" ] ;
+    prov:endedAtTime "2026-11-05T10:19:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:18:00+00:00"^^xsd:dateTime ;
+    prov:used ex:colourReagent01,
+        ex:cuvette01,
+        ex:spectrophotometer01,
+        ex:waterSample01 ;
+    prov:wasAssociatedWith ex:analyst01,
+        ex:laboratory01 .
+
+ex:blankCorrection a prov:Activity ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Reagent-blank absorbance subtracted from the sample absorbance." ;
+    schema1:name "Blank correction" ;
+    schema1:position 4 ;
+    prov:endedAtTime "2026-11-05T10:21:04+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:21:00+00:00"^^xsd:dateTime ;
+    prov:used ex:absorbanceSource,
+        ex:analysisSoftware ;
+    prov:wasAssociatedWith ex:analyst01 .
+
+ex:calibrationDerivation a prov:Activity ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Limit of detection" ;
+            schema1:propertyID "limit of detection" ;
+            schema1:unitText "mg/L" ;
+            schema1:value 2e-02 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Calibration slope" ;
+            schema1:propertyID "calibration slope" ;
+            schema1:unitText "L/mg" ;
+            schema1:value 4.12e-01 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Treatment of values below the limit of detection" ;
+            schema1:propertyID "treatment of values below the limit of detection" ;
+            schema1:value "Reported as '<0.02'; no value substituted." ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Calibration intercept" ;
+            schema1:propertyID "calibration intercept" ;
+            schema1:value 3e-03 ] ;
+    schema1:description "Concentration computed from corrected absorbance with the calibration curve." ;
+    schema1:name "Calibration-based derivation" ;
+    schema1:position 5 ;
+    prov:endedAtTime "2026-11-05T10:23:18+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T10:23:14+00:00"^^xsd:dateTime ;
+    prov:used ex:analysisSoftware,
+        ex:calibrationCurve,
+        ex:correctedAbsorbance ;
+    prov:wasAssociatedWith ex:analyst01 .
+
 ex:concentration a schema1:CreativeWork,
         prov:Entity ;
     schema1:about ex:waterSample01 ;
@@ -246,19 +234,30 @@ ex:concentration a schema1:CreativeWork,
     prov:generatedAtTime "2026-11-05T10:23:18+00:00"^^xsd:dateTime ;
     prov:wasGeneratedBy ex:calibrationDerivation .
 
+ex:instrumentCalibration01 a prov:Activity ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:description "Absorbance of five certified standards measured to fit the response line used to convert sample absorbance to concentration." ;
+    schema1:name "Instrument calibration" ;
+    schema1:position 1 ;
+    prov:endedAtTime "2026-11-05T10:05:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-11-05T09:40:00+00:00"^^xsd:dateTime ;
+    prov:used ex:calibrationStandards01,
+        ex:spectrophotometer01 ;
+    prov:wasAssociatedWith ex:analyst01 .
+
 ex:spectrophotometer01 a schema1:Product,
         schema1:Thing,
         prov:Entity ;
     schema1:additionalProperty [ a schema1:PropertyValue ;
-            schema1:name "Spectral bandwidth" ;
-            schema1:propertyID "spectral bandwidth" ;
-            schema1:unitText "nm" ;
-            schema1:value 2 ],
-        [ a schema1:PropertyValue ;
             schema1:name "Measurement wavelength" ;
             schema1:propertyID "measurement wavelength" ;
             schema1:unitText "nm" ;
-            schema1:value 540 ] ;
+            schema1:value 540 ],
+        [ a schema1:PropertyValue ;
+            schema1:name "Spectral bandwidth" ;
+            schema1:propertyID "spectral bandwidth" ;
+            schema1:unitText "nm" ;
+            schema1:value 2 ] ;
     schema1:additionalType <https://www.wikidata.org/entity/Q3099911> ;
     schema1:category [ a schema1:DefinedTerm ;
             schema1:name "UV-Vis spectrophotometer" ] ;
@@ -278,6 +277,19 @@ ex:spectrophotometer01 a schema1:Product,
             schema1:name "SP-1000" ] ;
     schema1:name "UV-Vis spectrophotometer" ;
     schema1:owner ex:laboratory01 .
+
+ex:uncertaintyAssessment a prov:Activity ;
+    schema1:actionStatus schema1:CompletedActionStatus ;
+    schema1:additionalProperty [ a schema1:PropertyValue ;
+            schema1:name "Coverage factor" ;
+            schema1:propertyID "coverage factor" ;
+            schema1:value 2 ] ;
+    schema1:description "Combined standard uncertainty of the concentration from calibration, repeatability and volume contributions." ;
+    schema1:name "Uncertainty assessment" ;
+    schema1:position 6 ;
+    prov:used ex:analysisSoftware,
+        ex:concentration ;
+    prov:wasAssociatedWith ex:analyst01 .
 
 ex:laboratory01 a schema1:Organization,
         prov:Organization ;
@@ -300,18 +312,6 @@ ex:waterSample01 a schema1:Thing,
     schema1:name "Filtered water sample" ;
     prov:generatedAtTime "2026-11-04T08:15:00+00:00"^^xsd:dateTime ;
     prov:wasGeneratedBy ex:waterSampling01 .
-
-ex:concentrationRun a prov:Activity,
-        cdifact:Analysis ;
-    schema1:actionStatus schema1:CompletedActionStatus ;
-    schema1:description "Analysis of water sample 01: instrument calibration, absorbance measurement (a failed attempt and its repeat), blank correction, derivation of concentration from the calibration, uncertainty assessment and validation against the acceptance criterion." ;
-    schema1:identifier [ a schema1:PropertyValue ;
-            schema1:propertyID "laboratory run number" ;
-            schema1:value "RUN-2026-11-05-01" ] ;
-    schema1:name "Concentration determination run" ;
-    prov:startedAtTime "2026-11-05T09:40:00+00:00"^^xsd:dateTime ;
-    prov:used ex:waterSample01 ;
-    prov:wasAssociatedWith ex:analyst01 .
 
 ex:analyst01 a schema1:Person,
         prov:Person ;

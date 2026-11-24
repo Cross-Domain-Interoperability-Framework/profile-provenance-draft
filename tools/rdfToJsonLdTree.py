@@ -216,6 +216,13 @@ def node(s, skip=None, ref=None):       # skip: a (predicate, object) to leave o
     preds = sorted({p for p in g.predicates(s) if p != RDF.type}, key=lambda p: (first_pos(p), q(p)))
     for p in follow(preds, q, keys):
         objs = sorted(g.objects(s, p), key=lambda o: (first_pos(o) if not isinstance(o, (Literal, BNode)) else 0))
+        # values that all have a schema:position (a run's steps in dcterms:hasPart) go in step order
+        pos = [g.value(o, POSITION) for o in objs]
+        if len(objs) > 1 and all(isinstance(v, Literal) for v in pos):
+            try:
+                objs = [o for _, o in sorted(zip((float(v) for v in pos), objs), key=lambda x: x[0])]
+            except ValueError:
+                pass
         objs = [o for o in objs if (p, o) != skip]
         if not objs: continue
         refs = {}
@@ -229,10 +236,11 @@ def node(s, skip=None, ref=None):       # skip: a (predicate, object) to leave o
 # A node that is not reached from it but points into the tree (an RO-Crate metadata descriptor's
 # schema:about, a DDI-CDI agent's ProcessingAgent_performs_Activity) is nested with @reverse under the
 # node nearest the root that it points at. Nodes that point at the root itself (a DDI-CDI run's agent,
-# PROV steps that are dcterms:isPartOf the run) are reserved and placed directly under it, so the forward
+# ProvONE steps that are provone:wasPartOf the run) are reserved and placed directly under it, so the forward
 # walk cannot bury them deeper in the tree. Anything still unconnected goes in the root's @included, so
 # the root stays the one top-level object.
 DATASET = URIRef('http://schema.org/Dataset')
+POSITION = URIRef('http://schema.org/position')
 def expand(t):
     pre, _, local = t.partition(':')
     return URIRef(PFX[pre] + local if pre in PFX and not t.startswith('http') else t)

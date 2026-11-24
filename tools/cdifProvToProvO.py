@@ -14,8 +14,8 @@ The mapping (implementationTesting/MAPPING.md has the table):
 - An activity, and each step of an inline schema:actionProcess HowTo that is a schema:Action, is a
   prov:Activity; its schema:additionalType IRIs become rdf:type; schema:startTime / schema:endTime
   become prov:startedAtTime / prov:endedAtTime, and schema:location prov:atLocation (a prov:Location).
-  A date with no time becomes midnight of that date, since PROV-O times are xsd:dateTime. A step is dcterms:isPartOf the activity whose
-  procedure it is in, and keeps schema:position; the HowTo node itself has no PROV counterpart.
+  A date with no time becomes midnight of that date, since PROV-O times are xsd:dateTime. The activity whose procedure a step is in lists
+  the step in dcterms:hasPart, and the step keeps schema:position; the HowTo node itself has no PROV counterpart.
 - schema:agent and schema:participant become a prov:qualifiedAssociation. The plan (the HowTo's
   schema:isBasedOn, or an actionProcess that is only an {@id}) is that association's prov:hadPlan,
   and a prov:Plan. A step with a plan (its own actionProcess) and no agent of its own is associated
@@ -141,7 +141,7 @@ class Mapper:
         if st is not None:
             o.add((a, S.actionStatus, URIRef(str(st).replace("schema:", str(S)).replace("https://", "http://"))))
         if parent is not None:
-            o.add((a, DCT.isPartOf, parent))
+            o.add((parent, DCT.hasPart, a))
         for loc in g.objects(a, S.location):
             o.add((a, PROV.atLocation, loc)); o.add((loc, RDF.type, PROV.Location)); self.copy(loc)
         self.copy(a, skip=MAPPED | {S.step})

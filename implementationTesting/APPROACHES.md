@@ -132,7 +132,7 @@ the run shows how each approach ties a step to it:
 
 |approach|run-rooted tree|under the run|
 |---|---|---|
-|PROV-O, qualified|[prov-o-qualified/cdif\_provenance\_quantitative.run-rooted.jsonld](prov-o-qualified/cdif_provenance_quantitative.run-rooted.jsonld)|5 steps, by `@reverse dcterms:isPartOf` (the sampling is not part of the run; it is reached through the sample)|
+|PROV-O, qualified|[prov-o-qualified/cdif\_provenance\_quantitative.run-rooted.jsonld](prov-o-qualified/cdif_provenance_quantitative.run-rooted.jsonld)|5 steps, forward, by `dcterms:hasPart` (the sampling is not part of the run; it is reached through the sample)|
 |PROV-O, plain relations|[prov-o-unqualified/cdif\_provenance\_quantitative.run-rooted.jsonld](prov-o-unqualified/cdif_provenance_quantitative.run-rooted.jsonld)|the same 5 steps; the two plans no longer linked by `hadPlan` are in `@included`|
 |cdifProv|[cdifprov-schemaorg/cdif\_provenance\_quantitative.run-rooted.jsonld](cdifprov-schemaorg/cdif_provenance_quantitative.run-rooted.jsonld)|7 steps, forward, by `schema:actionProcess` → `schema:step`; the sampling is reached through the sample, the run's `schema:object`|
 |RO-Crate|[ro-crate/cdif\_provenance\_quantitative.run-rooted.jsonld](ro-crate/cdif_provenance_quantitative.run-rooted.jsonld)|the same 7 steps, by `actionProcess` → `step`|
@@ -169,8 +169,9 @@ and the lab measurement pair,
 Each diagram also has a `.rooted.svg` beside it (`python tools/rdfToSvg.py SRC OUT.rooted.svg --rooted`),
 laid out from the record's root, as its JSON-LD tree is: the dataset is the first box, and each node
 follows the node nearer the root that it is linked to. In the other diagrams the longest chain of
-arrows sets the layout, so in PROV-O, where every step points at its run (`dcterms:isPartOf`), a
-step can come before the dataset. In the rooted ones an arrow that points back toward the root is
+arrows sets the layout, so a node that points into the record, such as its catalog record
+(`schema:about`), can come before the dataset; until 2026-11-23, when each PROV-O step pointed at
+its run (`dcterms:isPartOf`, now the run's `dcterms:hasPart`), a step could. In the rooted ones an arrow that points back toward the root is
 laid out from the root's side, its arrowhead unchanged. The two hand-written `quantitative.ttl`
 files have no `schema:Dataset`, so they are rooted on the named node nothing links to that reaches
 the most others, `ex:validationResult`. For example, the workflow:
