@@ -87,7 +87,7 @@ python tools/rdfToJsonLdTree.py <src.ttl|src.json> <out.jsonld> [--base <iri>] [
 python tools/rdfToSvg.py <src.ttl|src.json> <out.svg> [--base <iri>] [--rankdir LR|RL|TB|BT]
 # --rooted (or --root <iri>) lays it out from the record's root, the dataset first; each diagram also has a <name>.rooted.svg
 # an ro-crate/<name>.svg (and .rooted.svg, with --rooted) is drawn from its crate with --base http://rocrate.invalid/crate/ --prefix ex=https://example.org/cdif-prov/
-# every diagram leaves out schema:additionalProperty and a crate step's PropertyValue objects; --omit PREDICATE[@TYPE] drops more; implementationTesting/README.md has every command
+# every diagram leaves out schema:additionalProperty and a crate step's PropertyValue objects (--parameters keeps them); --omit PREDICATE[@TYPE] drops more; implementationTesting/README.md has every command
 
 # cdifProv -> PROV-O, qualified or plain relations (the mapping is implementationTesting/MAPPING.md);
 # --unqualify turns a qualified PROV-O Turtle into plain relations
