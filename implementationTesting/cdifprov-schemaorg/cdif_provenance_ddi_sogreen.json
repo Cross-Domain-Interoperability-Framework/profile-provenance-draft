@@ -1,0 +1,212 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "bios": "https://bioschemas.org/"
+  },
+  "@id": "urn:int-esseric:9b46ea10-67eb-4faa-862b-4c38566b0b85",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Raw daily weather – ERA5-Seamless (test run)",
+  "schema:description": "TEST OUTPUT. One Parquet file per location (100 files, ~47 KB each), daily values in local calendar days from 2024-01-01 to 2026-09-14 (988 days) from the Open-Meteo Historical Weather API, model era5_seamless (ERA5-Land 0.1° for temperature, ERA5 0.25° for wind), wind in m/s. Run record: output_test/weather_run_20260921T200756Z.json. Estimated ~0.5 GB for the ~10k production locations. The SoGreen air-quality workflow, rendered from the DDI-CDI model sogreen-air-quality-100-locations-BB.jsonld and rooted on this dataset.",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "int.esseric",
+    "schema:value": "9b46ea10-67eb-4faa-862b-4c38566b0b85"
+  },
+  "schema:subjectOf": {
+    "@id": "urn:int-esseric:9b46ea10-67eb-4faa-862b-4c38566b0b85-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "urn:int-esseric:9b46ea10-67eb-4faa-862b-4c38566b0b85"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ]
+  },
+  "prov:wasGeneratedBy": [
+    {
+      "@id": "urn:int-esseric:3dcb2a1d-6f90-4a6f-ac6d-40e3d9674330",
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:additionalType": [
+        {
+          "@id": "http://unece.org/5.5-DeriveNewVariablesAndUnits"
+        }
+      ],
+      "schema:name": "Prepare the location file",
+      "schema:description": "Build the id, coordinate and interview-date file the downloads run on. Test run: 100 cases sampled from the CRONOS3 file with synthetic coordinates. Production: geo-impute the postcodes of all 9,677 respondents into id,latitude,longitude,interview_date (D7.1).",
+      "schema:startTime": "2026-09-21T20:20:00Z",
+      "schema:endTime": "2026-09-21T20:20:00Z",
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:agent": {
+        "@id": "urn:int-esseric:e2a3d6c6-4b9d-44d2-afc1-d42be5a34802",
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Benjamin Beuster",
+        "schema:identifier": {
+          "@type": [
+            "schema:PropertyValue"
+          ],
+          "schema:propertyID": {
+            "@id": "https://registry.identifiers.org/registry/orcid"
+          },
+          "schema:value": "0000-0002-1117-4124",
+          "schema:url": "https://orcid.org/0000-0002-1117-4124"
+        },
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "benjamin.beuster@sikt.no"
+        }
+      },
+      "schema:participant": {
+        "@id": "urn:int-esseric:56b09350-298d-4a37-b764-889df8d91b43",
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Sikt - Norwegian Agency for Shared Services in Education and Research",
+        "schema:url": "https://www.sikt.no/"
+      },
+      "schema:object": [
+        {
+          "@id": "urn:int-esseric:0a2c46eb-f2e4-49ce-919d-13320f7c1bbd",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "CRONOS3 SoGreen respondents with postcodes",
+          "schema:description": "Restricted (non-public) CRONOS3 wave 6 file with the SoGreen module, merged with the respondents' postcodes: 9,677 respondents in 11 countries, 150 columns. Only the columns used by this workflow are documented here. Source of ids and interview dates for the test locations; input to the geo-imputation for the production run."
+        }
+      ],
+      "schema:result": [
+        {
+          "@id": "urn:int-esseric:e9d264d0-e979-43bb-856c-e4c89dde8d44",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "Test locations – 100 synthetic points",
+          "schema:description": "TEST INPUT. 100 CRONOS3 ids sampled by country (at least one per country, rest proportional) with their real interview date and a random coordinate inside the country's bounding box. The coordinates are synthetic stand-ins for the D7.1 geo-imputed points and must not be read as respondent locations. Postcodes are not carried over."
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "urn:int-esseric:3dcb2a1d-6f90-4a6f-ac6d-40e3d9674330-howto",
+        "@type": [
+          "schema:HowTo"
+        ],
+        "schema:name": "Prepare the location file",
+        "schema:isBasedOn": {
+          "@id": "https://gitlab.sikt.no/nsd-no/dataforvaltning/dataprosessering/faggruppe/sogreen-open-meteo/-/blob/6f3b4ce71575c68898d4e23fb52266af5171c698/make_test_locations.py"
+        },
+        "schema:step": [
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 1,
+            "schema:name": "Sample 100 test locations – make_test_locations.py",
+            "schema:description": "python make_test_locations.py (defaults: -n 100 --seed 20260921). Keeps respondents with an interview date in the 11 SoGreen countries, draws a country-stratified sample, assigns a uniform random point inside a land-heavy country bounding box and takes the interview date from w6inwds. Output coordinates are synthetic."
+          }
+        ]
+      }
+    },
+    {
+      "@id": "urn:int-esseric:96032b1d-6add-4cb0-8f4c-6e6cb2a03173",
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:additionalType": [
+        {
+          "@id": "http://unece.org/4.3-RunCollection"
+        }
+      ],
+      "schema:name": "Retrieve raw weather data – Open-Meteo Historical Weather API",
+      "schema:description": "Download the 8 daily weather variables of D7.3 Table 2 (ERA5-Seamless) at every location from 2024-01-01, optionally the 1991–2020 baseline (planned). One Parquet file per location plus a provenance JSON per run; resumable. Test run on the free tier with --sleep 2; the ~10k production run needs --apikey.",
+      "schema:startTime": "2026-09-21T20:07:56Z",
+      "schema:endTime": "2026-09-22T07:39:01Z",
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:agent": {
+        "@id": "urn:int-esseric:e2a3d6c6-4b9d-44d2-afc1-d42be5a34802"
+      },
+      "schema:participant": {
+        "@id": "urn:int-esseric:56b09350-298d-4a37-b764-889df8d91b43"
+      },
+      "schema:instrument": [
+        {
+          "@id": "https://archive-api.open-meteo.com/v1/archive",
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q7397"
+            }
+          ],
+          "schema:name": "Open-Meteo Historical Weather API",
+          "schema:description": "Historical reanalysis weather API; model pinned to era5_seamless (ERA5-Land 0.1° + ERA5 0.25°), daily values, wind in m/s, timezone=auto."
+        }
+      ],
+      "schema:object": [
+        {
+          "@id": "urn:int-esseric:e9d264d0-e979-43bb-856c-e4c89dde8d44"
+        }
+      ],
+      "schema:result": [
+        {
+          "@id": "urn:int-esseric:cf50818c-c272-41d1-898b-9b93e8698c1b",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "Raw daily weather baseline 1991–2020 – ERA5-Seamless (planned)",
+          "schema:description": "PLANNED, not produced in the test run. Same columns, model and variables as the daily weather files, for the fixed WMO normal period 1991-01-01 to 2020-12-31. Needed only for the multi-year means and anomalies of D7.3 Table 4."
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "urn:int-esseric:96032b1d-6add-4cb0-8f4c-6e6cb2a03173-howto",
+        "@type": [
+          "schema:HowTo"
+        ],
+        "schema:name": "Retrieve raw weather data",
+        "schema:step": [
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 1,
+            "schema:name": "Download daily weather – download_weather.py",
+            "schema:description": "python download_weather.py --locations files/test_locations_100.csv --output-dir output_test --sleep 2. models=era5_seamless, daily, 2024-01-01 to today−7 days (ERA5 lag; here 2026-09-14), wind_speed_unit=ms, timezone=auto, 20 points per request. 100 written, 0 failed. Long runtime due to free-tier rate-limit pauses. Script: https://gitlab.sikt.no/nsd-no/dataforvaltning/dataprosessering/faggruppe/sogreen-open-meteo/-/blob/6f3b4ce71575c68898d4e23fb52266af5171c698/download_weather.py"
+          },
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 2,
+            "schema:name": "Download weather baseline 1991–2020 – download_weather_baseline.py (planned)",
+            "schema:description": "python download_weather_baseline.py --locations <file> --apikey $OPENMETEO_KEY. Same variables and model as the daily weather, fixed 1991-01-01 to 2020-12-31, 5 points per request (~800–900 call units per location, so commercial key only). Not run in the test; produces the planned 1991–2020 baseline dataset. Script: https://gitlab.sikt.no/nsd-no/dataforvaltning/dataprosessering/faggruppe/sogreen-open-meteo/-/blob/6f3b4ce71575c68898d4e23fb52266af5171c698/download_weather_baseline.py"
+          }
+        ]
+      }
+    }
+  ]
+}

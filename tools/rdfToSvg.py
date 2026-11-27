@@ -185,7 +185,7 @@ def main():
     # distance of each node from the root, following links either way
     if args.root:
         root = URIRef(nm.expand_curie(args.root)) if ":" in args.root and not args.root.startswith(
-            ("http:", "https:")) else URIRef(args.root)
+            ("http:", "https:", "urn:")) else URIRef(args.root)
         if root not in nodes:
             sys.exit(f"--root {args.root}: no such node in {args.src}")
     elif args.rooted:

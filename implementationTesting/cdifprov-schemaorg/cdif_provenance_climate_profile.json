@@ -1,0 +1,457 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "bios": "https://bioschemas.org/"
+  },
+  "@id": "urn:int-esseric:8d8c2426-1c8f-4150-80a9-9e30a22f414c",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:additionalType": [
+    {
+      "@id": "dcat:Catalog"
+    }
+  ],
+  "schema:name": "Climate Profile Dataset Collection",
+  "schema:description": "A collection of the climate-profile datasets produced by the EU-CORDEX climate-profile workflow, rendered from the DDI-CDI model climate-profile-BB.jsonld. In the source this is the Climate Indicator Dataset Collection (9e30a22f414c) produced by the Climate Profile Generation activity. Its member time series is exported as CSV, NetCDF and plain text.",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "int.esseric",
+    "schema:value": "8d8c2426-1c8f-4150-80a9-9e30a22f414c"
+  },
+  "schema:contributor": [
+    {
+      "@id": "urn:int-esseric:25ed6904-282d-466d-a8b7-995031504343",
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Nandia Politi",
+      "schema:roleName": "Creator"
+    },
+    {
+      "@id": "urn:int-esseric:08959deb-ba4d-461f-9be9-87ca2eb61cdb",
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Thanasis Sfetsos",
+      "schema:roleName": "Creator"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "urn:int-esseric:8d8c2426-1c8f-4150-80a9-9e30a22f414c-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "urn:int-esseric:8d8c2426-1c8f-4150-80a9-9e30a22f414c"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/manifest/2.0"
+      }
+    ]
+  },
+  "schema:hasPart": [
+    {
+      "@id": "urn:int-esseric:30dd2f73-1e8d-4b01-ba05-e9d415d716c3",
+      "@type": [
+        "schema:Dataset"
+      ],
+      "schema:name": "Climate Profile Time Series",
+      "schema:description": "Annual spatial-mean time series of the climate indicators (RR total precipitation, TX, TG, TM temperatures, WS wind speed, RH relative humidity) for the selected scenario. In the source: Spatial Mean Climate Time Series, computed in step S6.2 and exported in step S6.3.",
+      "schema:distribution": [
+        {
+          "@id": "urn:int-esseric:1c7ba25f-61b5-4be4-96ff-633a38b9d507",
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:name": "Climate Profile CSV",
+          "schema:encodingFormat": "text/csv",
+          "schema:description": "Climate profile time series exported as a comma-separated text file (delimiter ',', header row)."
+        },
+        {
+          "@id": "urn:int-esseric:3ae2b2e3-942b-4e2a-a9c6-fec7033154cd",
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:name": "Climate Profile NetCDF",
+          "schema:encodingFormat": "application/x-netcdf",
+          "schema:description": "Climate profile time series exported as NetCDF."
+        },
+        {
+          "@id": "urn:int-esseric:55bce2b7-b8ac-4496-9826-a688343f9d66",
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:name": "Climate Profile TXT",
+          "schema:encodingFormat": "text/plain",
+          "schema:description": "Climate profile time series exported as plain text."
+        }
+      ]
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@id": "urn:int-esseric:263bd85c-0263-4cb7-8451-8c66a414d580",
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:additionalType": [
+        {
+          "@id": "http://unece.org/Collect"
+        }
+      ],
+      "schema:name": "Raw Data Collection",
+      "schema:description": "Download historical and future climate projections from the Copernicus Climate Data Store (CDS) using the EU-CORDEX regional climate model. Data are retrieved for the selected area of interest and cropped to the study area before storage.",
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:object": [
+        {
+          "@id": "https://cds.climate.copernicus.eu/datasets/projections-cordex-domains-single-levels",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "EU-CORDEX regional climate projections (Copernicus Climate Data Store)"
+        }
+      ],
+      "schema:result": [
+        {
+          "@id": "urn:int-esseric:7f1974c3-e0cd-4059-9f9e-c728aea4e649",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "cropped_climate_dataset",
+          "schema:description": "EU-CORDEX NetCDF projections retrieved from the Copernicus Climate Data Store and cropped to the study area."
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "urn:int-esseric:263bd85c-0263-4cb7-8451-8c66a414d580-howto",
+        "@type": [
+          "schema:HowTo"
+        ],
+        "schema:name": "Raw Data Collection",
+        "schema:isBasedOn": {
+          "@id": "https://github.com/CA4EOSC/climate-profile-service/blob/main/copernikus_down.ipynb"
+        },
+        "schema:step": [
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 1,
+            "schema:name": "S1: Configure climate data request",
+            "schema:description": "Configure the climate model, emission scenario, temporal period, variables, and area of interest. The workflow iterates through the selected climate scenarios and variables."
+          },
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 2,
+            "schema:name": "S2: Download and crop climate datasets",
+            "schema:description": "For each selected scenario and climate variable, retrieve EU-CORDEX NetCDF files from CDS and crop them to the study area. Store the resulting datasets as NetCDF files in OUT_DIR."
+          }
+        ]
+      }
+    },
+    {
+      "@id": "urn:int-esseric:23011d98-d87a-493a-b06e-202d3a41242f",
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:additionalType": [
+        {
+          "@id": "http://unece.org/Process"
+        }
+      ],
+      "schema:name": "Climate Data Preparation",
+      "schema:description": "Combine cropped NetCDF files covering consecutive time periods into a single continuous climate dataset for the selected variable and scenario.",
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:object": [
+        {
+          "@id": "urn:int-esseric:7f1974c3-e0cd-4059-9f9e-c728aea4e649"
+        }
+      ],
+      "schema:result": [
+        {
+          "@id": "urn:int-esseric:e9dcba37-9694-4cb4-b45c-b17bf1052bc9",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "10m_wind_speed-2025-2049.nc",
+          "schema:description": "Merged continuous NetCDF climate dataset (10m wind speed), 2025–2049, one field per emission scenario."
+        },
+        {
+          "@id": "urn:int-esseric:f4cccd74-9d10-4411-9698-8196e8b3c83f",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "2m_air_temperature-2025-2049.nc",
+          "schema:description": "Merged continuous NetCDF climate dataset (2m air temperature), 2025–2049, one field per emission scenario."
+        },
+        {
+          "@id": "urn:int-esseric:8c2bffef-5b2d-4cc6-8074-2f7a7ef7dea8",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "2m_relative_humidity-2025-2049.nc",
+          "schema:description": "Merged continuous NetCDF climate dataset (2m relative humidity), 2025–2049, one field per emission scenario."
+        },
+        {
+          "@id": "urn:int-esseric:b608d6a2-505c-4fea-8f81-0d4139cf13ac",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "minimum_2m_temperature_in_the_last_24_hours-2025-2049.nc",
+          "schema:description": "Merged continuous NetCDF climate dataset (minimum 2m temperature in the last 24 hours), 2025–2049, one field per emission scenario."
+        },
+        {
+          "@id": "urn:int-esseric:5292d260-7edb-4fce-be40-a266b37706b9",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "maximum_2m_temperature_in_the_last_24_hours-2025-2049.nc",
+          "schema:description": "Merged continuous NetCDF climate dataset (maximum 2m temperature in the last 24 hours), 2025–2049, one field per emission scenario."
+        },
+        {
+          "@id": "urn:int-esseric:999a6f60-abef-4bf0-9c28-a2d0d2ee199b",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "surface_solar_radiation_downwards-2025-2049.nc",
+          "schema:description": "Merged continuous NetCDF climate dataset (surface solar radiation downwards), 2025–2049, one field per emission scenario."
+        },
+        {
+          "@id": "urn:int-esseric:212346bc-26fc-4bfc-9cca-cf05a11b7645",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "mean_precipitation_flux-2025-2049.nc",
+          "schema:description": "Merged continuous NetCDF climate dataset (mean precipitation flux), 2025–2049, one field per emission scenario."
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "urn:int-esseric:23011d98-d87a-493a-b06e-202d3a41242f-howto",
+        "@type": [
+          "schema:HowTo"
+        ],
+        "schema:name": "Climate Data Preparation",
+        "schema:isBasedOn": {
+          "@id": "https://github.com/CA4EOSC/climate-profile-service/blob/main/copernikus_down.ipynb"
+        },
+        "schema:step": [
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 1,
+            "schema:name": "S3: Merge Cropped Climate Datasets",
+            "schema:description": "Identify all cropped NetCDF files corresponding to the selected climate variable and scenario, merge them into a single chronological dataset, remove duplicate timestamps, subset to the requested analysis period, and generate a final continuous NetCDF file."
+          }
+        ]
+      }
+    },
+    {
+      "@id": "urn:int-esseric:d79d4725-73c0-4db2-b538-d70adc69fa10",
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:additionalType": [
+        {
+          "@id": "http://unece.org/5.5-DeriveNewVariablesAndUnits"
+        }
+      ],
+      "schema:name": "Climate Indicator Generation",
+      "schema:description": "Transform daily climate datasets into annual climate indicators through unit conversion and temporal aggregation.",
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:object": [
+        {
+          "@id": "urn:int-esseric:e9dcba37-9694-4cb4-b45c-b17bf1052bc9"
+        },
+        {
+          "@id": "urn:int-esseric:f4cccd74-9d10-4411-9698-8196e8b3c83f"
+        },
+        {
+          "@id": "urn:int-esseric:8c2bffef-5b2d-4cc6-8074-2f7a7ef7dea8"
+        },
+        {
+          "@id": "urn:int-esseric:b608d6a2-505c-4fea-8f81-0d4139cf13ac"
+        },
+        {
+          "@id": "urn:int-esseric:5292d260-7edb-4fce-be40-a266b37706b9"
+        },
+        {
+          "@id": "urn:int-esseric:999a6f60-abef-4bf0-9c28-a2d0d2ee199b"
+        },
+        {
+          "@id": "urn:int-esseric:212346bc-26fc-4bfc-9cca-cf05a11b7645"
+        }
+      ],
+      "schema:result": [
+        {
+          "@id": "urn:int-esseric:0a33c44b-8935-43b6-b27b-80f03f79c5ef",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "Annual Climate Indicator Dataset",
+          "schema:description": "Annual climate indicators derived from the daily climate variables by unit conversion (Kelvin to Celsius for temperature, precipitation flux to annual totals) and temporal aggregation, per grid point."
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "urn:int-esseric:d79d4725-73c0-4db2-b538-d70adc69fa10-howto",
+        "@type": [
+          "schema:HowTo"
+        ],
+        "schema:name": "Climate Indicator Generation",
+        "schema:isBasedOn": {
+          "@id": "https://github.com/CA4EOSC/climate-profile-service/blob/main/copernikus_down.ipynb"
+        },
+        "schema:step": [
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 1,
+            "schema:name": "S4: Generate annual climate indicators",
+            "schema:description": "Convert climate variables to analysis units and aggregate daily observations into annual climate indicators. Temperature variables are converted from Kelvin to Celsius and averaged annually. Precipitation flux is converted to annual precipitation totals. The resulting datasets contain annual climate indicators for each grid point."
+          }
+        ]
+      }
+    },
+    {
+      "@id": "urn:int-esseric:837b63f7-de5c-4b15-b2f7-33ee051a416d",
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:additionalType": [
+        {
+          "@id": "http://unece.org/5.1-IntegrateData"
+        }
+      ],
+      "schema:name": "Climate Scenario Integration",
+      "schema:description": "Combine historical climate indicators with future climate scenario indicators to produce continuous climate projection datasets covering the full analysis horizon.",
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:object": [
+        {
+          "@id": "urn:int-esseric:0a33c44b-8935-43b6-b27b-80f03f79c5ef"
+        },
+        {
+          "@id": "urn:int-esseric:b44de2bc-d250-4150-9e35-6343f75c4398",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "Historical Annual Climate Dataset"
+        }
+      ],
+      "schema:result": [
+        {
+          "@id": "urn:int-esseric:a0d0b61d-7419-4abb-9897-358df8b85a75",
+          "@type": [
+            "schema:Dataset"
+          ],
+          "schema:name": "Continuous Scenario Climate Dataset",
+          "schema:description": "Continuous climate projection dataset covering the full time horizon, formed by merging the historical and future (RCP4.5 and RCP8.5) annual climate indicators and removing duplicate years."
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "urn:int-esseric:837b63f7-de5c-4b15-b2f7-33ee051a416d-howto",
+        "@type": [
+          "schema:HowTo"
+        ],
+        "schema:name": "Climate Scenario Integration",
+        "schema:isBasedOn": {
+          "@id": "https://github.com/CA4EOSC/climate-profile-service/blob/main/copernikus_down.ipynb"
+        },
+        "schema:step": [
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 1,
+            "schema:name": "S5: Merge Historical and Scenario Climate Indicators",
+            "schema:description": "Merge annual climate indicator datasets from the historical period and future climate scenarios (RCP4.5 and RCP8.5), remove duplicate years, preserve metadata, and generate continuous climate projection datasets covering the full time horizon."
+          }
+        ]
+      }
+    },
+    {
+      "@id": "urn:int-esseric:1d12ef34-74f2-4566-8e2b-dc430e019e16",
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:additionalType": [
+        {
+          "@id": "http://unece.org/6.1-PrepareDraftOutputs"
+        }
+      ],
+      "schema:name": "Climate Profile Generation",
+      "schema:description": "Extract the annual climate-indicator time series for the selected scenario, compute annual spatial-mean time series across the study area, and export the climate profile as CSV, NetCDF and plain text.",
+      "schema:actionStatus": "http://schema.org/CompletedActionStatus",
+      "schema:object": [
+        {
+          "@id": "urn:int-esseric:a0d0b61d-7419-4abb-9897-358df8b85a75"
+        }
+      ],
+      "schema:result": [
+        {
+          "@id": "urn:int-esseric:30dd2f73-1e8d-4b01-ba05-e9d415d716c3"
+        }
+      ],
+      "schema:actionProcess": {
+        "@id": "urn:int-esseric:1d12ef34-74f2-4566-8e2b-dc430e019e16-howto",
+        "@type": [
+          "schema:HowTo"
+        ],
+        "schema:name": "Climate Profile Generation",
+        "schema:isBasedOn": {
+          "@id": "https://github.com/CA4EOSC/climate-profile-service/blob/main/copernikus_down.ipynb"
+        },
+        "schema:step": [
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 1,
+            "schema:name": "S6.1: Extract Climate Indicator Time Series",
+            "schema:description": "Read annual climate indicator datasets for the selected scenario and identify climate variables available for analysis."
+          },
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 2,
+            "schema:name": "S6.2: Compute Spatial Mean Time Series",
+            "schema:description": "Calculate annual spatial averages for each climate indicator by averaging across all spatial dimensions while preserving the annual dimension."
+          },
+          {
+            "@type": [
+              "schema:HowToStep"
+            ],
+            "schema:position": 3,
+            "schema:name": "S6.3: Export Climate Profile Outputs",
+            "schema:description": "Combine the annual spatial averages per variable into a table (one variable per column) — RR (annual total precipitation), TX, TG, TM (annual mean temperatures), WS (annual mean wind speed), RH (annual mean relative humidity) — and export as CSV, NetCDF and plain text."
+          }
+        ]
+      }
+    }
+  ]
+}
