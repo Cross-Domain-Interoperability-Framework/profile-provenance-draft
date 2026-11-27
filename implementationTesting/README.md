@@ -104,8 +104,7 @@ python tools/rdfToSvg.py implementationTesting/prov-o-qualified/cdif_provenance_
   of `--rooted`.
 - **Parameters:** every diagram leaves out `schema:additionalProperty` and the PropertyValues in a
   crate step's `object`, with the values only they reach; `--omit PREDICATE[@TYPE]` leaves out more.
-  `--parameters` keeps them: `cdifprov-schemaorg/cdif_provenance_climate_profile_v4.parameters.svg`
-  is drawn with `--parameters --root https://example.org/cdif-prov/climateProfileDatasetCollection`.
+  `--parameters` keeps them.
 
 ## PROV-JSON
 
