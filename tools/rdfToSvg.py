@@ -8,7 +8,7 @@ and the full value is the row's tooltip. Every other triple is an arrow labelled
 schema:additionalProperty is left out, with the nodes only it reaches (a parameter or setting and
 what hangs off it), and so is each schema:PropertyValue in schema:object (where an RO-Crate lists a
 step's parameter values, beside its real inputs): the diagram shows how the record's resources
-link, not each parameter value. A note above the diagram says what was left out, and a legend
+link, not each parameter value; --parameters keeps both. A note above the diagram says what was left out, and a legend
 explains the box colours and borders.
 A leaf that several nodes point to (a node with no literals and no links of its own, such as a role,
 an action status or a Wikidata kind term) is drawn once per reference, with a dashed border, so it
@@ -36,7 +36,7 @@ is white.
 
 usage:
     python tools/rdfToSvg.py SRC OUT.svg [--base IRI] [--prefix PFX=IRI ...] [--rooted | --root IRI]
-                             [--omit PREDICATE[@TYPE] ...] [--rankdir LR|RL|TB|BT] [--width N]
+                             [--omit PREDICATE[@TYPE] ...] [--parameters] [--rankdir LR|RL|TB|BT] [--width N]
                              [--dot OUT.dot]
 SRC is Turtle (.ttl) or JSON-LD (any other extension). With --base, an IRI under the base is shown
 relative to it (an RO-Crate's root as ./), as rdfToJsonLdTree.py writes it. --prefix binds a prefix
@@ -91,6 +91,9 @@ def main():
     ap.add_argument("--omit", action="append", default=[], metavar="PREDICATE[@TYPE]",
                     help="leave out this predicate's links (only those to a TYPE node, with @TYPE), "
                          "and what is reachable only through them (repeatable)")
+    ap.add_argument("--parameters", action="store_true",
+                    help="keep schema:additionalProperty and the PropertyValues in schema:object, "
+                         "which are otherwise left out")
     ap.add_argument("--rooted", action="store_true",
                     help="lay the diagram out from its root (the schema:Dataset that is not a catalog record)")
     ap.add_argument("--root", help="IRI or CURIE of the node to lay the diagram out from (implies --rooted)")
@@ -117,7 +120,7 @@ def main():
     if any(str(t).startswith(SCHEMA[0]) for tr in g for t in tr if isinstance(t, URIRef)):
         nm.bind("schema", SCHEMA[0], override=True, replace=True)
     # leave out the OMIT links and each node only they reach, and what only those reach
-    drop = [(s, p, o) for p, typ in OMIT for s, o in g.subject_objects(p)
+    drop = [(s, p, o) for p, typ in ([] if args.parameters else OMIT) for s, o in g.subject_objects(p)
             if typ is None or (o, RDF.type, typ) in g]
     gone = [o for _, _, o in drop]
     hidden = []  # what the note above the diagram says was left out
@@ -185,7 +188,7 @@ def main():
     # distance of each node from the root, following links either way
     if args.root:
         root = URIRef(nm.expand_curie(args.root)) if ":" in args.root and not args.root.startswith(
-            ("http:", "https:")) else URIRef(args.root)
+            ("http:", "https:", "urn:")) else URIRef(args.root)
         if root not in nodes:
             sys.exit(f"--root {args.root}: no such node in {args.src}")
     elif args.rooted:
