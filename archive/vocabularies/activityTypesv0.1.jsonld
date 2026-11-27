@@ -1,0 +1,381 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dag": "http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/",
+    "at": "https://w3id.org/cdif/provenance/activityType/",
+    "skos:broadMatch": {"@type": "@id"},
+    "skos:exactMatch": {"@type": "@id"}
+  },
+  "@id": "https://w3id.org/cdif/provenance/activityType",
+  "@type": ["skos:ConceptScheme"],
+  "skos:prefLabel": {"@value": "CDIF provenance activity types", "@language": "en"},
+  "skos:definition": {"@value": "Kinds of activity in a research, laboratory or data workflow. A workflow step (schema:step, or a prov:Activity in a multi-activity chain) is typed with one of these concepts through schema:additionalType, while its schema:name stays free to say what the step specifically did. Each concept is mapped to the provenance activity classes proposed at the Dagstuhl workshop (PROV_Classes.ttl).", "@language": "en"},
+  "schema:version": "0.2",
+  "dcterms:modified": "2026-10-27",
+  "skos:editorialNote": [
+    {"@value": "Draft, 2026-10-27. Two layers. The top layer is every activity class on the Activity sheet of the ProvWork2025 spreadsheet (23 classes; definitions and examples from the sheet, with its spelling slips fixed as PROV_Classes.ttl fixes them). Data cleaning and Deriving sit under Data transforming and Creating because their sheet definitions say so ('A data transformation during which...', 'A creation process during which...'); the rest are top concepts.", "@language": "en"},
+    {"@value": "The narrower layer is the laboratory steps actually used in the 500 TAPP plans in the ADA method registry (Sample preparation 320, Data processing 264, Data acquisition 147, Quality control 86, Instrument calibration 83, Ion milling 39, Sample digestion 30, and seven technique-specific variants used by 1 to 4 plans each). Each sits under the general activity it specialises; the sheet's Geochemistry column supports Sample preparation under Conditioning (intentional) ('crushing, milling; dissolution, leaching, extraction'), Data acquisition under Observing / measuring and Data processing under Data transforming.", "@language": "en"},
+    {"@value": "The Dagstuhl class URIs (dag: prefix) are taken from PROV_Classes.ttl in this repository; the sheet has labels but no URIs. That namespace is a draft and may not resolve. Each top-layer concept is a skos:exactMatch to its class; the ADA-derived concepts carry skos:broadMatch to the class of the concept they sit under. Concepts the workshop marked as tentative (a question mark on the label, or 'potential new categories, components of other classes, or folded into context') say so in their own editorial note; revisit them, and the ADA concepts under them, when the workshop settles them.", "@language": "en"},
+    {"@value": "The https://w3id.org/cdif/provenance/activityType identifiers do not resolve yet; they need a w3id.org redirect.", "@language": "en"}
+  ],
+  "skos:hasTopConcept": [
+    {
+      "@id": "at:accessing",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Accessing", "@language": "en"},
+      "skos:notation": "accessing",
+      "skos:definition": {"@value": "An activity during which an agent realises its rights and abilities to approach and interact with an entity.", "@language": "en"},
+      "skos:example": {"@value": "Accessing data through services in a data enclave to perform secure analysis;", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Accessing"]
+    },
+    {
+      "@id": "at:aggregating",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Aggregating", "@language": "en"},
+      "skos:notation": "aggregating",
+      "skos:definition": {"@value": "An activity during which multiple entities are gathered together and assembled into a whole based on a defined set of criteria.", "@language": "en"},
+      "skos:example": {"@value": "For example, assembling a set of records to form a combined collection of observations of a given phenemenon, often for a metastudy or to create a broader understanding of the phenomenon.", "@language": "en"},
+      "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Aggregating"]
+    },
+    {
+      "@id": "at:analysing",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Analysing", "@language": "en"},
+      "skos:notation": "analysing",
+      "skos:definition": {"@value": "An activity during which one or more entities are studied by examining their constituent parts and the interrelationships between those parts in order to increase one's knowledge about those entities.", "@language": "en"},
+      "skos:example": {"@value": "The calculation of column means and their standard deviations in a table.", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Analyzing"]
+    },
+    {
+      "@id": "at:archiving",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Archiving", "@language": "en"},
+      "skos:notation": "archiving",
+      "skos:definition": {"@value": "An activity during which an entity is transferred to a facility charged with its long-term (generally >10 years) preservation.", "@language": "en"},
+      "skos:example": {"@value": "Depositing a digital object in a trusted data archive guaranteeing preservation for a defined period generally at least 10 years, ideally more.", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Archiving"]
+    },
+    {
+      "@id": "at:calibrating",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Calibrating", "@language": "en"},
+      "skos:notation": "calibrating",
+      "skos:definition": {"@value": "An activity during which measurement data produced by an entity are compared to a reference dataset with known accuracy in order to establish, verify, or document the accuracy of the entity.", "@language": "en"},
+      "skos:example": {"@value": "Chemistry: The set of operations which establish, under specified conditions, the relationship between values indicated by the analytical instrument and the corresponding known values of an analyte (https://goldbook.iupac.org/terms/view/C00775).", "@language": "en"},
+      "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Calibrating"],
+      "skos:narrower": [
+        {
+          "@id": "at:instrumentCalibration",
+          "@type": ["skos:Concept"],
+          "skos:prefLabel": {"@value": "Instrument calibration", "@language": "en"},
+          "skos:notation": "instrumentCalibration",
+          "skos:definition": {"@value": "An activity that measures reference materials or standards of known value to establish the relationship between the instrument's response and the quantity being measured.", "@language": "en"},
+          "skos:scopeNote": {"@value": "Covers technique-specific steps such as 'Laser calibration' and 'Laser ablation calibration'.", "@language": "en"},
+          "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+          "skos:broader": [{"@id": "at:calibrating"}],
+          "skos:broadMatch": ["dag:Calibrating"]
+        }
+      ]
+    },
+    {
+      "@id": "at:cataloguing",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Cataloguing", "@language": "en"},
+      "skos:notation": "cataloguing",
+      "skos:definition": {"@value": "An activity during which the existence of an entity is described in a systematic list.", "@language": "en"},
+      "skos:example": {"@value": "Adding metadata about a dataset into the GBIF catalogue of assets; Cataloguing JSON-LD documents embedded in HTML pages via a sitemap.txt file;", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Cataloguing"]
+    },
+    {
+      "@id": "at:intentionalConditioning",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Conditioning (intentional)", "@language": "en"},
+      "skos:notation": "intentionalConditioning",
+      "skos:definition": {"@value": "An activity in which the state of an entity is intentionally changed by an agent, in preparation for a specified and subsequent activity.", "@language": "en"},
+      "skos:example": {"@value": "For example, the exposure of an experimental unit to radiation, the treatment of a patient with a drug, culturing organisms and acclimating them to the test conditions, dosing in a toxicology study or clinical trial, Transformation of the surface of nanomaterial in a specific environment,", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:IntentionalConditioning"],
+      "skos:narrower": [
+        {
+          "@id": "at:samplePreparation",
+          "@type": ["skos:Concept"],
+          "skos:prefLabel": {"@value": "Sample preparation", "@language": "en"},
+          "skos:notation": "samplePreparation",
+          "skos:definition": {"@value": "An activity that changes the physical or chemical state of a sample to make it suitable for measurement, for example cutting, mounting, polishing, coating, crushing, sieving or dissolving it.", "@language": "en"},
+          "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+          "skos:broader": [{"@id": "at:intentionalConditioning"}],
+          "skos:narrower": [
+            {
+              "@id": "at:sampleDigestion",
+              "@type": ["skos:Concept"],
+              "skos:prefLabel": {"@value": "Sample digestion", "@language": "en"},
+              "skos:notation": "sampleDigestion",
+              "skos:definition": {"@value": "Sample preparation that dissolves a solid sample, typically in acid, to produce a solution for analysis.", "@language": "en"},
+              "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+              "skos:broader": [{"@id": "at:samplePreparation"}],
+              "skos:broadMatch": ["dag:IntentionalConditioning"]
+            },
+            {
+              "@id": "at:ionMilling",
+              "@type": ["skos:Concept"],
+              "skos:prefLabel": {"@value": "Ion milling", "@language": "en"},
+              "skos:notation": "ionMilling",
+              "skos:definition": {"@value": "Sample preparation that thins or shapes a sample by sputtering it with an ion beam, for example to make an electron-transparent section.", "@language": "en"},
+              "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+              "skos:broader": [{"@id": "at:samplePreparation"}],
+              "skos:broadMatch": ["dag:IntentionalConditioning"]
+            }
+          ],
+          "skos:broadMatch": ["dag:IntentionalConditioning"]
+        }
+      ]
+    },
+    {
+      "@id": "at:passiveConditioning",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Conditioning (passive)", "@language": "en"},
+      "skos:notation": "passiveConditioning",
+      "skos:definition": {"@value": "A non-intentional process in which the state of an entity is changed, such that it impacts or precipitates a planned and subsequent activity.", "@language": "en"},
+      "skos:example": {"@value": "For example, a train crash, radiation leak, meteor hitting earth, environmental exposure to chemicals (for biomonitoring), parade or cultural event, volcano eruption", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:PassiveConditioning"]
+    },
+    {
+      "@id": "at:configuring",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Configuring", "@language": "en"},
+      "skos:notation": "configuring",
+      "skos:definition": {"@value": "An activity during which an entity is modified to grant it desirable properties or dispose it to desirable behaviour.", "@language": "en"},
+      "skos:example": {"@value": "Reconfiguring a dataset based to correct instrumental drift using a calibration result;", "@language": "en"},
+      "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Configuring"],
+      "skos:narrower": [
+        {
+          "@id": "at:instrumentTuning",
+          "@type": ["skos:Concept"],
+          "skos:prefLabel": {"@value": "Instrument tuning", "@language": "en"},
+          "skos:notation": "instrumentTuning",
+          "skos:definition": {"@value": "An activity that adjusts instrument settings to optimise performance for a measurement, judged by the instrument's response rather than against reference materials of known value.", "@language": "en"},
+          "skos:scopeNote": {"@value": "Distinct from instrument calibration, which compares the response with standards of known value. Covers technique-specific steps such as 'ICP-MS tuning and optimization'.", "@language": "en"},
+          "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+          "skos:broader": [{"@id": "at:configuring"}],
+          "skos:broadMatch": ["dag:Configuring"]
+        }
+      ]
+    },
+    {
+      "@id": "at:consuming",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Consuming", "@language": "en"},
+      "skos:notation": "consuming",
+      "skos:definition": {"@value": "An activity during which an agent acquires and uses an entity.", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Consuming"]
+    },
+    {
+      "@id": "at:creating",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Creating", "@language": "en"},
+      "skos:notation": "creating",
+      "skos:definition": {"@value": "An activity through which an entity is brought into existence. Serves as a superclass for other more expressive classes that create entities, such as authoring.", "@language": "en"},
+      "skos:example": {"@value": "The creation of a narrative document by an author; the creation of synthetic data. The creation of a dataset from a set of observations; the creation of a dataset summarising the stream of real-time data from a sensor;", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Creating"],
+      "skos:narrower": [
+        {
+          "@id": "at:deriving",
+          "@type": ["skos:Concept"],
+          "skos:prefLabel": {"@value": "Deriving", "@language": "en"},
+          "skos:notation": "deriving",
+          "skos:definition": {"@value": "A creation process during which a new entity arises from parts or all of pre-existing entities.", "@language": "en"},
+          "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
+          "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+          "skos:broader": [{"@id": "at:creating"}],
+          "skos:exactMatch": ["dag:Deriving"]
+        }
+      ]
+    },
+    {
+      "@id": "at:dataTransforming",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Data transforming", "@language": "en"},
+      "skos:notation": "dataTransforming",
+      "skos:definition": {"@value": "An activity during which a volume of data is modified.", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:DataTransforming"],
+      "skos:narrower": [
+        {
+          "@id": "at:dataCleaning",
+          "@type": ["skos:Concept"],
+          "skos:prefLabel": {"@value": "Data cleaning", "@language": "en"},
+          "skos:notation": "dataCleaning",
+          "skos:definition": {"@value": "A data transformation during which erroneous, duplicated, or corrupted data is removed from a volume of data.", "@language": "en"},
+          "skos:example": {"@value": "For example, data cleaning can include removing impossible combinations of values from the raw data collected for a register of births, marriages, divorces, and deaths.", "@language": "en"},
+          "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+          "skos:broader": [{"@id": "at:dataTransforming"}],
+          "skos:exactMatch": ["dag:DataCleaning"]
+        },
+        {
+          "@id": "at:dataProcessing",
+          "@type": ["skos:Concept"],
+          "skos:prefLabel": {"@value": "Data processing", "@language": "en"},
+          "skos:altLabel": {"@value": "Data reduction", "@language": "en"},
+          "skos:notation": "dataProcessing",
+          "skos:definition": {"@value": "An activity that transforms acquired data into reported results, for example background and blank correction, drift correction, matrix correction, applying a calibration, or converting units.", "@language": "en"},
+          "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+          "skos:broader": [{"@id": "at:dataTransforming"}],
+          "skos:broadMatch": ["dag:DataTransforming"]
+        }
+      ]
+    },
+    {
+      "@id": "at:dataValidating",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Data validating", "@language": "en"},
+      "skos:notation": "dataValidating",
+      "skos:definition": {"@value": "An activity during which a volume of data is evaluated in relation to some specification or criteria, usually assessing its soundness, justifiability, or appropriateness for a given purpose.", "@language": "en"},
+      "skos:example": {"@value": "Checking whether a model prediction is wtihin the Domain of Applicability of the model Confirming that a measured value is over the limit of quantification / Limit of detectionC", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:DataValidating"]
+    },
+    {
+      "@id": "at:extracting",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Extracting", "@language": "en"},
+      "skos:notation": "extracting",
+      "skos:definition": {"@value": "An activity during which an entity is moved to a new location.", "@language": "en"},
+      "skos:example": {"@value": "Includes retreival or all or part of a dataset; Extraction of data from an archive (in the ETL sense); the extraction of a specimen from a collection;", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Extracting"]
+    },
+    {
+      "@id": "at:harmonising",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Harmonising", "@language": "en"},
+      "skos:notation": "harmonising",
+      "skos:definition": {"@value": "An activity during which a set of entities are transformed to regularise their properties, allowing meaningful collective treatment.", "@language": "en"},
+      "skos:example": {"@value": "The harmonisation of metadata catalogues into JSON-LD format using schema.org semantics to support bulk analysis and interoperability; The adjustment of measurements generated by a miscalibrated sensor based on an accurate calibration standard to allow comparison with other datasets;", "@language": "en"},
+      "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Harmonizing"]
+    },
+    {
+      "@id": "at:integrating",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Integrating", "@language": "en"},
+      "skos:notation": "integrating",
+      "skos:definition": {"@value": "An activity during which multiple entities are unified into a coherent whole, often losing their distinctiveness.", "@language": "en"},
+      "skos:example": {"@value": "The incorporation of varied datasets using different semantics and formats into a common database, complying with its schema;", "@language": "en"},
+      "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context.", "@language": "en"}],
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Integrating"]
+    },
+    {
+      "@id": "at:observingMeasuring",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Observing / measuring", "@language": "en"},
+      "skos:notation": "observingMeasuring",
+      "skos:definition": {"@value": "An activity during which an entity gathers data or information about another entity or itself. Measuring is observing during which reference standards or similar entities are used for the quantitative comparison of properties.", "@language": "en"},
+      "skos:example": {"@value": "For example, observation of features of an event; quantification of property; identification and description of qualitiative features of a phenomenon.", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Observing_Measuring"],
+      "skos:narrower": [
+        {
+          "@id": "at:dataAcquisition",
+          "@type": ["skos:Concept"],
+          "skos:prefLabel": {"@value": "Data acquisition", "@language": "en"},
+          "skos:notation": "dataAcquisition",
+          "skos:definition": {"@value": "An activity in which an instrument or observer measures or observes the object of study and records the result as data.", "@language": "en"},
+          "skos:scopeNote": {"@value": "Covers technique-specific steps such as 'Laser ablation data acquisition' and 'WDS data acquisition'.", "@language": "en"},
+          "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+          "skos:broader": [{"@id": "at:observingMeasuring"}],
+          "skos:broadMatch": ["dag:Observing_Measuring"]
+        }
+      ]
+    },
+    {
+      "@id": "at:preserving",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Preserving", "@language": "en"},
+      "skos:notation": "preserving",
+      "skos:definition": {"@value": "An activity during which an entity is modified to stabilise its make-up and properties, facilitating future use.", "@language": "en"},
+      "skos:example": {"@value": "Includes digital preservation actions such as file format transformation, e.g. converting data in a proprietary format to a generic non-proprietary, and more preservation ready format to maximise fidelity over time and accessibility and usefulness in the future. Also includes the preservation of physical samples for future use.", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Preserving"]
+    },
+    {
+      "@id": "at:provisioning",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Provisioning", "@language": "en"},
+      "skos:notation": "provisioning",
+      "skos:definition": {"@value": "An activity during which an agent supplies an entity to other agents.", "@language": "en"},
+      "skos:example": {"@value": "The provisioning of a report to a reviewer; the targeted supply of data to a specific user community. The release of a dataset via a public registry; The public release of a report;", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Provisioning"]
+    },
+    {
+      "@id": "at:qualityControlling",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Quality controlling", "@language": "en"},
+      "skos:notation": "qualityControlling",
+      "skos:definition": {"@value": "An activity during which an entity's compliance to a set of defined criteria is assessed, resulting in acceptance or rejection of that entity in a set of further activities.", "@language": "en"},
+      "skos:editorialNote": [{"@value": "Tentative in ProvWork2025: the workshop label carries a question mark.", "@language": "en"}],
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:QualityControlling"],
+      "skos:narrower": [
+        {
+          "@id": "at:qualityControl",
+          "@type": ["skos:Concept"],
+          "skos:prefLabel": {"@value": "Quality control", "@language": "en"},
+          "skos:notation": "qualityControl",
+          "skos:definition": {"@value": "An activity that assesses data or a process against defined criteria, for example measuring secondary standards, checking precision and accuracy, or flagging anomalous values.", "@language": "en"},
+          "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+          "skos:broader": [{"@id": "at:qualityControlling"}],
+          "skos:broadMatch": ["dag:QualityControlling"]
+        }
+      ]
+    },
+    {
+      "@id": "at:sampling",
+      "@type": ["skos:Concept"],
+      "skos:prefLabel": {"@value": "Sampling", "@language": "en"},
+      "skos:notation": "sampling",
+      "skos:definition": {"@value": "An activity in which a portion or part of an entity is extracted from or identified within a whole.", "@language": "en"},
+      "skos:example": {"@value": "The extraction of a tissue sample from a plant; The selection of participants from a registry; the acquisition of a sediment core from the deep sea;", "@language": "en"},
+      "skos:inScheme": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:topConceptOf": {"@id": "https://w3id.org/cdif/provenance/activityType"},
+      "skos:exactMatch": ["dag:Sampling"]
+    }
+  ]
+}

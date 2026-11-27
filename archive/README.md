@@ -21,3 +21,14 @@ the step that used or produced them. Its converter is
 |---|---|
 | [tools/galaxyROCrateToCDIF.py](tools/galaxyROCrateToCDIF.py) | the HowTo/step converter |
 | [examples/](examples/) | its six outputs (`FeS2-Analysis`, `Paper_1`, `_2`, `_3`, `_5`, `_8`), from the crates in [../examples/ROCRATE/](../examples/ROCRATE/) |
+
+## Vocabulary drafts
+
+Earlier states of the files in [../vocabularies/](../vocabularies/):
+
+| archived | what it is |
+|---|---|
+| [vocabularies/CDIF_Activities (2).ttl](<vocabularies/CDIF_Activities (2).ttl>) | the CDIF provenance activity vocabulary after the review of the draft (40 concepts, 271 triples, before `skos:notation` was added): the same graph as `vocabularies/CDIF_Activities.ttl` at commit `a059838` |
+| [vocabularies/CDIF_Activities_CHANGES.md](vocabularies/CDIF_Activities_CHANGES.md) | that review of the draft: the changes made and the open points for the group |
+| [vocabularies/activityTypesv0.1.jsonld](vocabularies/activityTypesv0.1.jsonld), [.ttl](vocabularies/activityTypesv0.1.ttl) | the v0.1 activity types before they were deprecated in commit `2db94d4` |
+| [vocabularies/.project](vocabularies/.project) | an Eclipse project file for the folder |

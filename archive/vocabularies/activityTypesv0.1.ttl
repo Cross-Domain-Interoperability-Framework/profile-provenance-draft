@@ -1,0 +1,326 @@
+@prefix at: <https://w3id.org/cdif/provenance/activityType/> .
+@prefix cdifprov: <https://w3id.org/cdif/provenance/> .
+@prefix dag: <http://ddialliance.org/Specification/DDI-CDI/1.0/PROV/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+at:accessing a skos:Concept ;
+    skos:definition "An activity during which an agent realises its rights and abilities to approach and interact with an entity."@en ;
+    skos:exactMatch dag:Accessing ;
+    skos:example "Accessing data through services in a data enclave to perform secure analysis;"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "accessing" ;
+    skos:prefLabel "Accessing"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:aggregating a skos:Concept ;
+    skos:definition "An activity during which multiple entities are gathered together and assembled into a whole based on a defined set of criteria."@en ;
+    skos:editorialNote "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context."@en ;
+    skos:exactMatch dag:Aggregating ;
+    skos:example "For example, assembling a set of records to form a combined collection of observations of a given phenemenon, often for a metastudy or to create a broader understanding of the phenomenon."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "aggregating" ;
+    skos:prefLabel "Aggregating"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:analysing a skos:Concept ;
+    skos:definition "An activity during which one or more entities are studied by examining their constituent parts and the interrelationships between those parts in order to increase one's knowledge about those entities."@en ;
+    skos:exactMatch dag:Analyzing ;
+    skos:example "The calculation of column means and their standard deviations in a table."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "analysing" ;
+    skos:prefLabel "Analysing"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:archiving a skos:Concept ;
+    skos:definition "An activity during which an entity is transferred to a facility charged with its long-term (generally >10 years) preservation."@en ;
+    skos:exactMatch dag:Archiving ;
+    skos:example "Depositing a digital object in a trusted data archive guaranteeing preservation for a defined period generally at least 10 years, ideally more."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "archiving" ;
+    skos:prefLabel "Archiving"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:cataloguing a skos:Concept ;
+    skos:definition "An activity during which the existence of an entity is described in a systematic list."@en ;
+    skos:exactMatch dag:Cataloguing ;
+    skos:example "Adding metadata about a dataset into the GBIF catalogue of assets; Cataloguing JSON-LD documents embedded in HTML pages via a sitemap.txt file;"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "cataloguing" ;
+    skos:prefLabel "Cataloguing"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:consuming a skos:Concept ;
+    skos:definition "An activity during which an agent acquires and uses an entity."@en ;
+    skos:exactMatch dag:Consuming ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "consuming" ;
+    skos:prefLabel "Consuming"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:dataAcquisition a skos:Concept ;
+    skos:broadMatch dag:Observing_Measuring ;
+    skos:broader at:observingMeasuring ;
+    skos:definition "An activity in which an instrument or observer measures or observes the object of study and records the result as data."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "dataAcquisition" ;
+    skos:prefLabel "Data acquisition"@en ;
+    skos:scopeNote "Covers technique-specific steps such as 'Laser ablation data acquisition' and 'WDS data acquisition'."@en .
+
+at:dataCleaning a skos:Concept ;
+    skos:broader at:dataTransforming ;
+    skos:definition "A data transformation during which erroneous, duplicated, or corrupted data is removed from a volume of data."@en ;
+    skos:exactMatch dag:DataCleaning ;
+    skos:example "For example, data cleaning can include removing impossible combinations of values from the raw data collected for a register of births, marriages, divorces, and deaths."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "dataCleaning" ;
+    skos:prefLabel "Data cleaning"@en .
+
+at:dataProcessing a skos:Concept ;
+    skos:altLabel "Data reduction"@en ;
+    skos:broadMatch dag:DataTransforming ;
+    skos:broader at:dataTransforming ;
+    skos:definition "An activity that transforms acquired data into reported results, for example background and blank correction, drift correction, matrix correction, applying a calibration, or converting units."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "dataProcessing" ;
+    skos:prefLabel "Data processing"@en .
+
+at:dataValidating a skos:Concept ;
+    skos:definition "An activity during which a volume of data is evaluated in relation to some specification or criteria, usually assessing its soundness, justifiability, or appropriateness for a given purpose."@en ;
+    skos:exactMatch dag:DataValidating ;
+    skos:example "Checking whether a model prediction is wtihin the Domain of Applicability of the model Confirming that a measured value is over the limit of quantification / Limit of detectionC"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "dataValidating" ;
+    skos:prefLabel "Data validating"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:deriving a skos:Concept ;
+    skos:broader at:creating ;
+    skos:definition "A creation process during which a new entity arises from parts or all of pre-existing entities."@en ;
+    skos:editorialNote "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context."@en ;
+    skos:exactMatch dag:Deriving ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "deriving" ;
+    skos:prefLabel "Deriving"@en .
+
+at:extracting a skos:Concept ;
+    skos:definition "An activity during which an entity is moved to a new location."@en ;
+    skos:exactMatch dag:Extracting ;
+    skos:example "Includes retreival or all or part of a dataset; Extraction of data from an archive (in the ETL sense); the extraction of a specimen from a collection;"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "extracting" ;
+    skos:prefLabel "Extracting"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:harmonising a skos:Concept ;
+    skos:definition "An activity during which a set of entities are transformed to regularise their properties, allowing meaningful collective treatment."@en ;
+    skos:editorialNote "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context."@en ;
+    skos:exactMatch dag:Harmonizing ;
+    skos:example "The harmonisation of metadata catalogues into JSON-LD format using schema.org semantics to support bulk analysis and interoperability; The adjustment of measurements generated by a miscalibrated sensor based on an accurate calibration standard to allow comparison with other datasets;"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "harmonising" ;
+    skos:prefLabel "Harmonising"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:instrumentCalibration a skos:Concept ;
+    skos:broadMatch dag:Calibrating ;
+    skos:broader at:calibrating ;
+    skos:definition "An activity that measures reference materials or standards of known value to establish the relationship between the instrument's response and the quantity being measured."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "instrumentCalibration" ;
+    skos:prefLabel "Instrument calibration"@en ;
+    skos:scopeNote "Covers technique-specific steps such as 'Laser calibration' and 'Laser ablation calibration'."@en .
+
+at:instrumentTuning a skos:Concept ;
+    skos:broadMatch dag:Configuring ;
+    skos:broader at:configuring ;
+    skos:definition "An activity that adjusts instrument settings to optimise performance for a measurement, judged by the instrument's response rather than against reference materials of known value."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "instrumentTuning" ;
+    skos:prefLabel "Instrument tuning"@en ;
+    skos:scopeNote "Distinct from instrument calibration, which compares the response with standards of known value. Covers technique-specific steps such as 'ICP-MS tuning and optimization'."@en .
+
+at:integrating a skos:Concept ;
+    skos:definition "An activity during which multiple entities are unified into a coherent whole, often losing their distinctiveness."@en ;
+    skos:editorialNote "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context."@en ;
+    skos:exactMatch dag:Integrating ;
+    skos:example "The incorporation of varied datasets using different semantics and formats into a common database, complying with its schema;"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "integrating" ;
+    skos:prefLabel "Integrating"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:ionMilling a skos:Concept ;
+    skos:broadMatch dag:IntentionalConditioning ;
+    skos:broader at:samplePreparation ;
+    skos:definition "Sample preparation that thins or shapes a sample by sputtering it with an ion beam, for example to make an electron-transparent section."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "ionMilling" ;
+    skos:prefLabel "Ion milling"@en .
+
+at:passiveConditioning a skos:Concept ;
+    skos:definition "A non-intentional process in which the state of an entity is changed, such that it impacts or precipitates a planned and subsequent activity."@en ;
+    skos:exactMatch dag:PassiveConditioning ;
+    skos:example "For example, a train crash, radiation leak, meteor hitting earth, environmental exposure to chemicals (for biomonitoring), parade or cultural event, volcano eruption"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "passiveConditioning" ;
+    skos:prefLabel "Conditioning (passive)"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:preserving a skos:Concept ;
+    skos:definition "An activity during which an entity is modified to stabilise its make-up and properties, facilitating future use."@en ;
+    skos:exactMatch dag:Preserving ;
+    skos:example "Includes digital preservation actions such as file format transformation, e.g. converting data in a proprietary format to a generic non-proprietary, and more preservation ready format to maximise fidelity over time and accessibility and usefulness in the future. Also includes the preservation of physical samples for future use."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "preserving" ;
+    skos:prefLabel "Preserving"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:provisioning a skos:Concept ;
+    skos:definition "An activity during which an agent supplies an entity to other agents."@en ;
+    skos:exactMatch dag:Provisioning ;
+    skos:example "The provisioning of a report to a reviewer; the targeted supply of data to a specific user community. The release of a dataset via a public registry; The public release of a report;"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "provisioning" ;
+    skos:prefLabel "Provisioning"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:qualityControl a skos:Concept ;
+    skos:broadMatch dag:QualityControlling ;
+    skos:broader at:qualityControlling ;
+    skos:definition "An activity that assesses data or a process against defined criteria, for example measuring secondary standards, checking precision and accuracy, or flagging anomalous values."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "qualityControl" ;
+    skos:prefLabel "Quality control"@en .
+
+at:sampleDigestion a skos:Concept ;
+    skos:broadMatch dag:IntentionalConditioning ;
+    skos:broader at:samplePreparation ;
+    skos:definition "Sample preparation that dissolves a solid sample, typically in acid, to produce a solution for analysis."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "sampleDigestion" ;
+    skos:prefLabel "Sample digestion"@en .
+
+at:sampling a skos:Concept ;
+    skos:definition "An activity in which a portion or part of an entity is extracted from or identified within a whole."@en ;
+    skos:exactMatch dag:Sampling ;
+    skos:example "The extraction of a tissue sample from a plant; The selection of participants from a registry; the acquisition of a sediment core from the deep sea;"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:notation "sampling" ;
+    skos:prefLabel "Sampling"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:calibrating a skos:Concept ;
+    skos:definition "An activity during which measurement data produced by an entity are compared to a reference dataset with known accuracy in order to establish, verify, or document the accuracy of the entity."@en ;
+    skos:editorialNote "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context."@en ;
+    skos:exactMatch dag:Calibrating ;
+    skos:example "Chemistry: The set of operations which establish, under specified conditions, the relationship between values indicated by the analytical instrument and the corresponding known values of an analyte (https://goldbook.iupac.org/terms/view/C00775)."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:narrower at:instrumentCalibration ;
+    skos:notation "calibrating" ;
+    skos:prefLabel "Calibrating"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:configuring a skos:Concept ;
+    skos:definition "An activity during which an entity is modified to grant it desirable properties or dispose it to desirable behaviour."@en ;
+    skos:editorialNote "Tentative in ProvWork2025: the workshop marked this class as a potential new category, a component of other classes, or something to fold into context."@en ;
+    skos:exactMatch dag:Configuring ;
+    skos:example "Reconfiguring a dataset based to correct instrumental drift using a calibration result;"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:narrower at:instrumentTuning ;
+    skos:notation "configuring" ;
+    skos:prefLabel "Configuring"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:creating a skos:Concept ;
+    skos:definition "An activity through which an entity is brought into existence. Serves as a superclass for other more expressive classes that create entities, such as authoring."@en ;
+    skos:exactMatch dag:Creating ;
+    skos:example "The creation of a narrative document by an author; the creation of synthetic data. The creation of a dataset from a set of observations; the creation of a dataset summarising the stream of real-time data from a sensor;"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:narrower at:deriving ;
+    skos:notation "creating" ;
+    skos:prefLabel "Creating"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:intentionalConditioning a skos:Concept ;
+    skos:definition "An activity in which the state of an entity is intentionally changed by an agent, in preparation for a specified and subsequent activity."@en ;
+    skos:exactMatch dag:IntentionalConditioning ;
+    skos:example "For example, the exposure of an experimental unit to radiation, the treatment of a patient with a drug, culturing organisms and acclimating them to the test conditions, dosing in a toxicology study or clinical trial, Transformation of the surface of nanomaterial in a specific environment,"@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:narrower at:samplePreparation ;
+    skos:notation "intentionalConditioning" ;
+    skos:prefLabel "Conditioning (intentional)"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:observingMeasuring a skos:Concept ;
+    skos:definition "An activity during which an entity gathers data or information about another entity or itself. Measuring is observing during which reference standards or similar entities are used for the quantitative comparison of properties."@en ;
+    skos:exactMatch dag:Observing_Measuring ;
+    skos:example "For example, observation of features of an event; quantification of property; identification and description of qualitiative features of a phenomenon."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:narrower at:dataAcquisition ;
+    skos:notation "observingMeasuring" ;
+    skos:prefLabel "Observing / measuring"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:qualityControlling a skos:Concept ;
+    skos:definition "An activity during which an entity's compliance to a set of defined criteria is assessed, resulting in acceptance or rejection of that entity in a set of further activities."@en ;
+    skos:editorialNote "Tentative in ProvWork2025: the workshop label carries a question mark."@en ;
+    skos:exactMatch dag:QualityControlling ;
+    skos:inScheme cdifprov:activityType ;
+    skos:narrower at:qualityControl ;
+    skos:notation "qualityControlling" ;
+    skos:prefLabel "Quality controlling"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:dataTransforming a skos:Concept ;
+    skos:definition "An activity during which a volume of data is modified."@en ;
+    skos:exactMatch dag:DataTransforming ;
+    skos:inScheme cdifprov:activityType ;
+    skos:narrower at:dataCleaning,
+        at:dataProcessing ;
+    skos:notation "dataTransforming" ;
+    skos:prefLabel "Data transforming"@en ;
+    skos:topConceptOf cdifprov:activityType .
+
+at:samplePreparation a skos:Concept ;
+    skos:broadMatch dag:IntentionalConditioning ;
+    skos:broader at:intentionalConditioning ;
+    skos:definition "An activity that changes the physical or chemical state of a sample to make it suitable for measurement, for example cutting, mounting, polishing, coating, crushing, sieving or dissolving it."@en ;
+    skos:inScheme cdifprov:activityType ;
+    skos:narrower at:ionMilling,
+        at:sampleDigestion ;
+    skos:notation "samplePreparation" ;
+    skos:prefLabel "Sample preparation"@en .
+
+cdifprov:activityType a skos:ConceptScheme ;
+    dcterms:modified "2026-10-27" ;
+    schema:version "0.2" ;
+    skos:definition "Kinds of activity in a research, laboratory or data workflow. A workflow step (schema:step, or a prov:Activity in a multi-activity chain) is typed with one of these concepts through schema:additionalType, while its schema:name stays free to say what the step specifically did. Each concept is mapped to the provenance activity classes proposed at the Dagstuhl workshop (PROV_Classes.ttl)."@en ;
+    skos:editorialNote "Draft, 2026-10-27. Two layers. The top layer is every activity class on the Activity sheet of the ProvWork2025 spreadsheet (23 classes; definitions and examples from the sheet, with its spelling slips fixed as PROV_Classes.ttl fixes them). Data cleaning and Deriving sit under Data transforming and Creating because their sheet definitions say so ('A data transformation during which...', 'A creation process during which...'); the rest are top concepts."@en,
+        "The Dagstuhl class URIs (dag: prefix) are taken from PROV_Classes.ttl in this repository; the sheet has labels but no URIs. That namespace is a draft and may not resolve. Each top-layer concept is a skos:exactMatch to its class; the ADA-derived concepts carry skos:broadMatch to the class of the concept they sit under. Concepts the workshop marked as tentative (a question mark on the label, or 'potential new categories, components of other classes, or folded into context') say so in their own editorial note; revisit them, and the ADA concepts under them, when the workshop settles them."@en,
+        "The https://w3id.org/cdif/provenance/activityType identifiers do not resolve yet; they need a w3id.org redirect."@en,
+        "The narrower layer is the laboratory steps actually used in the 500 TAPP plans in the ADA method registry (Sample preparation 320, Data processing 264, Data acquisition 147, Quality control 86, Instrument calibration 83, Ion milling 39, Sample digestion 30, and seven technique-specific variants used by 1 to 4 plans each). Each sits under the general activity it specialises; the sheet's Geochemistry column supports Sample preparation under Conditioning (intentional) ('crushing, milling; dissolution, leaching, extraction'), Data acquisition under Observing / measuring and Data processing under Data transforming."@en ;
+    skos:hasTopConcept at:accessing,
+        at:aggregating,
+        at:analysing,
+        at:archiving,
+        at:calibrating,
+        at:cataloguing,
+        at:configuring,
+        at:consuming,
+        at:creating,
+        at:dataTransforming,
+        at:dataValidating,
+        at:extracting,
+        at:harmonising,
+        at:integrating,
+        at:intentionalConditioning,
+        at:observingMeasuring,
+        at:passiveConditioning,
+        at:preserving,
+        at:provisioning,
+        at:qualityControlling,
+        at:sampling ;
+    skos:prefLabel "CDIF provenance activity types"@en .
+
